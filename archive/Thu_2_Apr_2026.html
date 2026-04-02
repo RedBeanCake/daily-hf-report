@@ -1,0 +1,94 @@
+
+        <!DOCTYPE html>
+        <html lang="zh-CN">
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+            <title>🤖 具身大模型简报 - Thu, 2 Apr 2026 (VLA: 6 of 44 entries)</title>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+            <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+            <style>
+                html, body { -webkit-text-size-adjust: 100% !important; text-size-adjust: 100% !important; }
+                .markdown-body { box-sizing: border-box; min-width: 200px; max-width: 980px; margin: 0 auto; padding: 45px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+                @media (max-width: 767px) { .markdown-body { padding: 15px; } }
+                .sources-box { margin-top: 50px; padding: 20px; background: #f6f8fa; border: 1px dashed #d0d7de; border-radius: 10px; }
+                .sources-box textarea { width: 100%; height: 100px; margin: 10px 0; padding: 10px; font-family: monospace; font-size: 12px; border: 1px solid #d0d7de; border-radius: 6px; resize: none; }
+                .copy-btn { background-color: #2da44e; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; }
+            </style>
+        </head>
+        <body class="markdown-body">
+            <a href='../index.html' style='margin-bottom:20px; display:block;'>← 返回主索引</a>
+            <h1>🤖 具身大模型简报 - Thu, 2 Apr 2026 (VLA: 6 of 44 entries)</h1>
+            <div id="content"></div>
+            
+        <div class="sources-box">
+            <h3>🔗 NotebookLM Sources 集合区 (共 6 篇)</h3>
+            <textarea id="sources-text" readonly>https://arxiv.org/html/2604.01158
+https://arxiv.org/html/2604.00202
+https://arxiv.org/html/2604.00032
+https://arxiv.org/html/2604.00364
+https://arxiv.org/html/2604.00081
+https://arxiv.org/html/2604.00049</textarea>
+            <button class="copy-btn" onclick="copySources()">📋 复制所有来源链接</button>
+        </div>
+        
+            <script type="text/markdown" id="raw-markdown">### 1. 🔥 [SMASH: Mastering Scalable Whole-Body Skills for Humanoid Ping-Pong with Egocentric Vision] (SMASH：通过第一人称视觉掌握可扩展的人形乒乓球技能)
+- **相关度**: `10/10`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.01158)
+- **核心亮点**: 首次实现基于第一人称视觉的可扩展人形全身技能学习，突破传统动作规划局限。
+- **深度解析**: 该论文提出SMASH框架，利用第一人称视觉输入与大规模模仿学习结合，构建端到端的视觉-语言-动作（VLA）模型，实现人形机器人在复杂动态环境中对高维全身动作的泛化控制。其核心在于引入跨模态注意力机制融合多源感知信号，并通过具身缩放定律指导数据规模与模型容量的协同增长，显著提升长时序任务下的动作稳定性与鲁棒性，是当前最前沿的具身智能系统之一。
+---
+
+
+### 2. 🔥 [DreamControl-v2: Simpler and Scalable Autonomous Humanoid Skills via Trainable Guided Diffusion Priors] (DreamControl-v2：通过可训练的引导扩散先验实现更简单、可扩展的自主人形技能)
+- **相关度**: `10/10`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.00202)
+- **核心亮点**: 首次将可训练的扩散先验引入具身控制，实现从视频生成到动作策略的无缝映射。
+- **深度解析**: DreamControl-v2提出一种基于可训练引导扩散模型的视觉-动作联合建模方法，将视频生成能力与动作策略学习深度融合，形成一个统一的视频-动作模型（Video-Action Model）。其核心创新在于利用扩散模型作为动作先验，在低维潜空间中进行策略优化，同时支持跨任务迁移和长时程规划。该工作直接响应了具身智能中的世界模型与扩散策略趋势，具备极强的物理意义与通用性。
+---
+
+
+### 3. [Rusty Flying Robots: Learning a Full Robotics Stack with Real-Time Operation on an STM32 Microcontroller in a 9 ECTS MS Course] (生锈的飞行机器人：在STM32微控制器上实现实时运行的完整机器人栈的研究生课程实践)
+- **相关度**: `4/10`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.00032)
+- **核心亮点**: 展示嵌入式实时控制教学实践，但局限于硬件平台与经典控制框架
+- **深度解析**: 该工作描述了一门硕士课程中通过低成本微控制器实现实时机器人系统开发的过程，虽涉及感知-控制链路，但核心仍依赖传统控制方法（如PID），强调的是教学实践而非具身智能模型构建。其未使用视觉-语言-动作联合建模、世界模型或扩散策略等先进范式，且未涉及跨数据集训练或多模态注意力机制，因此仅具备边缘相关性。
+---
+
+
+### 4. [Implicit Primal-Dual Interior-Point Methods for Quadratic Programming] (二次规划的隐式原始对偶内点方法)
+- **相关度**: `3/10`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.00364)
+- **核心亮点**: 基于优化算法的高效求解框架，但不涉及具身智能核心范式
+- **深度解析**: 该论文聚焦于数值优化中的二次规划求解方法，属于经典控制与优化范畴。尽管其在机器人运动规划中可能有潜在应用，但其内容未涉及视觉-语言-动作统一建模、世界模型、视频生成或具身学习等关键要素，且缺乏多模态融合与跨具身数据集设计，不符合具身智能前沿研究方向，故评分较低。
+---
+
+
+### 5. [Beyond Symbolic Control: Societal Consequences of AI-Driven Workforce Displacement and the Imperative for Genuine Human Oversight Architectures] (超越符号控制：人工智能驱动劳动力替代的社会后果及真实人类监督架构的必要性)
+- **相关度**: `2/10`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.00081)
+- **核心亮点**: 关注AI伦理与社会影响，但无技术实现与具身智能关联
+- **深度解析**: 该论文为社会政策类研究，探讨人工智能对就业的影响及人类监督机制，完全脱离技术实现层面，未涉及任何视觉-语言-动作模型、世界模型、视频生成或具身学习系统设计，亦无多模态融合或跨具身数据集分析，属于典型非技术性文献，不符合筛选标准。
+---
+
+
+### 6. [A Generalized Matrix Inverse that is Consistent with Respect to Diagonal Transformations] (一种与对角变换保持一致的广义矩阵逆)
+- **相关度**: `1/10`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.00049)
+- **核心亮点**: 纯数学工具研究，不具备具身智能技术基础
+- **深度解析**: 本文提出一种新的广义矩阵逆定义，适用于特定线性代数场景，属于理论数学研究范畴。其内容不涉及任何感知-行动闭环、多模态融合、世界建模或视频生成任务，更无具身智能系统的应用背景，与具身智能的核心范式毫无交集，应直接剔除。
+---
+</script>
+            <script>
+                const rawMdElement = document.getElementById('raw-markdown');
+                if (rawMdElement) { document.getElementById('content').innerHTML = marked.parse(rawMdElement.textContent); }
+                function copySources() {
+                    const textArea = document.getElementById('sources-text');
+                    textArea.select();
+                    document.execCommand('copy');
+                    alert('已复制链接');
+                }
+            </script>
+        </body>
+        </html>
+        
