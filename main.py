@@ -57,51 +57,53 @@ def scrape_hf_daily():
         return []
 
 def process_hf_with_ai(hf_papers):
-    """结合摘要进行 AI 总结，采用通用化命名并保留折叠框"""
+    """结合摘要进行 AI 总结，确保排序和点赞数准确"""
     if not hf_papers: return ""
     
-    # 提取信息并排序
     simple_list = []
     for p in hf_papers:
         paper_info = p.get('paper', {})
         pid = paper_info.get('id', '')
         if not pid: continue
         
-        # 实时获取摘要以供总结
         print(f"Fetching abstract for {pid}...")
         abstract = get_arxiv_abstract(pid)
-        time.sleep(0.5) # 避免请求过快
+        time.sleep(0.5) 
         
         simple_list.append({
             "id": pid,
             "title": paper_info.get('title', 'Unknown'),
-            "upvotes": p.get('upvotes', 0),
+            # 确保转换为整数以防万一
+            "upvotes": int(p.get('upvotes', 0)),
             "abstract": abstract
         })
     
+    # 1. 确保降序排序（点赞最多的排在最前面）
     simple_list.sort(key=lambda x: x['upvotes'], reverse=True)
 
-    # 分批处理防止 Token 超限
     chunk_size = 8
     all_chunks_md = []
     global_counter = 1
     
     for i in range(0, len(simple_list), chunk_size):
         chunk = simple_list[i : i + chunk_size]
-        # 根据用户偏好：要求简明扼要 [cite: 2026-02-26]
+        
+        # 2. 修改 Prompt：不要硬编码 global_counter 到点赞位置
+        # 要求 AI 从 JSON 的 'upvotes' 字段读取真实数据
         prompt = f"""你是一个前沿 AI 研究专家。请根据提供的论文摘要进行深度且精炼的中文解析。
         要求：
         1. 必须保留所有提供的论文。
-        2. 从编号 {global_counter} 开始。
+        2. 条目编号请从 {global_counter} 开始顺序递增。
         3. 请结合摘要(abstract)总结核心贡献，不要只看标题。
         4. 语言要专业且简明扼要，直接击中技术要点。
         5. 输出 Markdown 格式：
-           ### 编号. [英文标题] (中文简译)
-           - **热度/链接**: `👍 {global_counter} Upvotes` | [Arxiv](https://arxiv.org/abs/[id])
-           - **核心突破**: (基于摘要的一句话总结)
-           - **技术路径**: (简要描述方案，如：引入了XX机制，解决了XX问题)
+           ### [此处填写递增后的编号]. [英文标题] (中文简译)
+           - **热度/链接**: 👍 [此处填写该论文对应的 upvotes 字段数值] Upvotes | [Arxiv](https://arxiv.org/abs/[此处填写该论文的 id])
+           - **研究任务**: [论文研究的任务是什么，如：根据文本生成图像]
+           - **研究动机**: [例如发现了什么问题需要改进，比如VLA生成动作的速度太慢]
+           - **本质改动**: [本质改动，如：用视频生成代替扩散策略做轨迹预测]
            ---
-        待处理数据：{json.dumps(chunk)}
+        待处理数据：{json.dumps(chunk, ensure_ascii=False)}
         """
         try:
             completion = client_llm.chat.completions.create(
@@ -113,11 +115,9 @@ def process_hf_with_ai(hf_papers):
         except Exception as e:
             print(f"AI Error: {e}")
 
-    # 封装为通用命名的折叠框
-    full_content = "\n\n".join(all_chunks_md)
     hf_md = "<details>\n<summary><b>🔥 社区高热度动态 (点击展开今日趋势详情)</b></summary>\n\n"
     hf_md += "## 🌐 全球科研趋势快报\n\n"
-    hf_md += full_content
+    hf_md += "\n\n".join(all_chunks_md)
     hf_md += "\n</details>"
     
     return hf_md
