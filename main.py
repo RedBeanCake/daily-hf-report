@@ -107,7 +107,7 @@ def process_hf_with_ai(hf_papers):
         """
         try:
             completion = client_llm.chat.completions.create(
-                model="qwen-flash", 
+                model="qwen-plus", 
                 messages=[{"role": "user", "content": prompt}]
             )
             all_chunks_md.append(completion.choices[0].message.content)
