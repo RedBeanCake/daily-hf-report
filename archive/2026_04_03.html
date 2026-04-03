@@ -22,170 +22,193 @@
 
 ## 🌐 全球科研趋势快报
 
-### 1. DataFlex: 一种面向大语言模型数据驱动动态训练的统一框架 (A Unified Framework for Data-Centric Dynamic Training of Large Language Models)
-- **热度/链接**: `👍 0 Upvotes` | [Arxiv](https://arxiv.org/abs/2603.26164)
-- **核心突破**: 提出首个统一的数据中心化动态训练框架，集成样本选择、域混合调整与样本重加权三大范式，实现可复现、可比较、无缝嵌入标准训练流程。
-- **技术路径**: 基于LLaMA-Factory构建模块化抽象接口，统一嵌入提取、推理与梯度计算等关键操作，支持DeepSpeed ZeRO-3的大规模训练，通过标准化组件设计解决现有方法碎片化问题。
-
----
-### 2. 隐空间：基础、演化、机制、能力与展望 (The Latent Space: Foundation, Evolution, Mechanism, Ability, and Outlook)
-- **热度/链接**: `👍 0 Upvotes` | [Arxiv](https://arxiv.org/abs/2604.02029)
-- **核心突破**: 系统性构建语言模型中隐空间（latent space）的全景图谱，揭示其超越显式文本生成的本质作用。
-- **技术路径**: 从“基础”出发界定隐空间与显式空间、视觉生成隐空间的区别；按“演化”梳理发展脉络；以“机制”与“能力”双视角解构关键技术路径，涵盖连续表示、动态推理、语义保真等核心议题。
-
----
-### 3. SKILL0: 上下文内代理强化学习用于技能内化 (In-Context Agentic Reinforcement Learning for Skill Internalization)
-- **热度/链接**: `👍 0 Upvotes` | [Arxiv](https://arxiv.org/abs/2604.02268)
-- **核心突破**: 实现无需运行时检索的零样本自主行为，首次通过上下文内强化学习完成代理技能向模型参数的真正内化。
-- **技术路径**: 设计渐进式动态课程（Dynamic Curriculum），逐步撤回技能上下文；将技能按类别离线聚合为紧凑视觉上下文，结合交互历史训练模型掌握工具调用与多轮任务执行能力，最终达成完全零样本推理。
-
----
-### 4. 生成世界渲染器 (Generative World Renderer)
-- **热度/链接**: `👍 0 Upvotes` | [Arxiv](https://arxiv.org/abs/2604.02329)
-- **核心突破**: 构建首个大规模动态真实场景生成数据集，支持双向渲染与高保真视频生成，并提出基于视觉语言模型的无真值评估协议。
-- **技术路径**: 采用双屏拼接捕获法，从AAA级游戏中提取400万帧720p/30fps同步RGB与五通道G-buffer数据；利用该数据训练逆渲染器实现跨域泛化；引入VLM评估体系量化语义、空间与时间一致性，验证人类感知相关性。
-
----
-### 5. EgoSim: 身体中心世界模拟器用于具身交互生成 (Egocentric World Simulator for Embodied Interaction Generation)
-- **热度/链接**: `👍 0 Upvotes` | [Arxiv](https://arxiv.org/abs/2604.01001)
-- **核心突破**: 构建闭环身体中心世界模拟器，实现三维场景状态持续更新与空间一致的交互视频生成，突破传统静态或非结构化模拟瓶颈。
-- **技术路径**: 引入“几何-动作感知观察模拟”与“交互感知状态更新”双模块，构建可演化的3D世界状态；通过从真实单目视频中提取点云、相机轨迹与动作序列，建立可扩展的数据采集管道；并开发低成本未标定手机采集系统（EgoCap）。
-
----
-### 6. Omni-SimpleMem: 自研究引导发现终身多模态代理记忆 (Autoresearch-Guided Discovery of Lifelong Multimodal Agent Memory)
-- **热度/链接**: `👍 0 Upvotes` | [Arxiv](https://arxiv.org/abs/2604.01007)
-- **核心突破**: 首次实现全自动化探索复杂记忆架构设计空间，成功发现性能显著提升的终身多模态记忆框架，大幅超越人工调参效率。
-- **技术路径**: 构建自主研究流水线，在无需人工干预的情况下自动执行约50次实验，诊断失败模式、修复数据管道缺陷、优化架构与提示工程；最终在LoCoMo与Mem-Gallery上分别实现+411%和+214%的F1提升，证明架构与错误修复比超参调整更具影响力。
-
----
-### 7. LatentUM: 通过隐空间统一模型释放交错跨模态推理潜力 (Unleashing the Potential of Interleaved Cross-Modal Reasoning via a Latent-Space Unified Model)
-- **热度/链接**: `👍 0 Upvotes` | [Arxiv](https://arxiv.org/abs/2604.02097)
-- **核心突破**: 提出首个所有模态共享统一语义隐空间的联合模型，彻底消除像素空间中介，实现高效灵活的交错跨模态推理与生成。
-- **技术路径**: 摒弃传统视觉理解与生成之间的像素解码桥梁，将图像、文本、动作等全部映射至同一隐空间；通过共享表示增强跨模态对齐，缓解编解码偏差，显著提升视觉空间规划等任务表现。
-
----
-### 8. UniDriveVLA: 统一理解、感知与行动规划的自动驾驶模型 (Unifying Understanding, Perception, and Action Planning for Autonomous Driving)
-- **热度/链接**: `👍 0 Upvotes` | [Arxiv](https://arxiv.org/abs/2604.02190)
-- **核心突破**: 解决自动驾驶中感知与语义推理耦合导致的性能折衷难题，通过专家解耦实现高质量空间感知与强认知推理的协同统一。
-- **技术路径**: 基于混合变压器（Mixture-of-Transformers）构建三专家结构——驾驶理解、场景感知、行动规划，由掩码联合注意力协调；结合稀疏感知策略与三阶段渐进式训练，有效分离空间感知与语义推理优化目标，避免相互干扰。
-
-### 9. Investigating Autonomous Agent Contributions in the Wild: Activity Patterns and Code Change over Time (探索真实世界中自主编码代理的贡献：行为模式与随时间的代码变更)
-- **热度/链接**: `👍 0 Upvotes` | [Arxiv](https://arxiv.org/abs/2604.00917)
-- **核心突破**: 构建首个大规模真实开源项目中自主编码代理的纵向数据集，揭示其在合并频率、文件类型编辑及开发者交互中的动态行为模式。
-- **技术路径**: 收集约11万条开源拉取请求（PR）及其关联提交、评论、评审和文件变更，系统比较OpenAI Codex、Claude Code、GitHub Copilot等五类主流编码代理在开发流程中的实际参与特征，并通过生存率与代码流失率分析其对软件长期可维护性的影响。
-
+### 1. DataFlex: A Unified Framework for Data-Centric Dynamic Training of Large Language Models (数据动态优化统一框架)
+- **热度/链接**: 👍 0 Upvotes | [Arxiv](https://arxiv.org/abs/2603.26164)  
+- **研究任务**: 支持LLM训练中数据层面的动态优化（样本选择、领域混合调整、样本重加权）  
+- **研究动机**: 现有数据优化方法分散于异构代码库，接口不一致，严重阻碍可复现性、公平对比与工业集成  
+- **本质改动**: 构建基于LLaMA-Factory的模块化统一框架，将embedding提取、推理、梯度计算等模型依赖操作标准化，并原生支持DeepSpeed ZeRO-3等大规模训练范式，实现零侵入式替换标准训练流程  
 ---
 
-### 10. VOID: Video Object and Interaction Deletion (VOID：视频对象与交互删除)
-- **热度/链接**: `👍 0 Upvotes` | [Arxiv](https://arxiv.org/abs/2604.02296)
-- **核心突破**: 首次实现物理上合理的视频对象删除，能正确重构被移除对象引发的下游物理交互（如碰撞），显著提升复杂场景下的视觉一致性。
-- **技术路径**: 引入基于因果反事实生成的配对数据集（使用Kubric与HUMOTO），利用视觉-语言模型识别受干扰区域，再由视频扩散模型生成符合物理规律的替代动态结果，实现端到端的因果推理驱动的视频编辑。
-
+### 2. The Latent Space: Foundation, Evolution, Mechanism, Ability, and Outlook (潜在空间：基础、演进、机制、能力与展望)  
+- **热度/链接**: 👍 0 Upvotes | [Arxiv](https://arxiv.org/abs/2604.02029)  
+- **研究任务**: 对语言模型中连续潜在空间（latent space）的研究进行系统性综述与理论重构  
+- **研究动机**: 揭示显式token级生成范式存在语义损失、离散瓶颈、序列低效等结构性缺陷，亟需建立以潜在空间为“原生计算基底”的新范式  
+- **本质改动**: 首次提出五维分析框架（Foundation/Evolution/Mechanism/Ability/Outlook），严格区分语言模型中的语义潜在空间与视觉生成模型中的表征潜在空间，并从机制（如隐式推理路径、流形约束）与能力（如zero-shot泛化、跨模态对齐）双视角统一建模  
 ---
 
-### 11. GPA: Learning GUI Process Automation from Demonstrations (GPA：从演示中学习图形用户界面流程自动化)
-- **热度/链接**: `👍 0 Upvotes` | [Arxiv](https://arxiv.org/abs/2604.01676)
-- **核心突破**: 提出一种无需训练、高鲁棒、高可靠且完全本地执行的GUI自动化框架，支持企业级长时序任务的稳定重放。
-- **技术路径**: 采用基于顺序蒙特卡洛的定位机制应对界面缩放与检测不确定性；通过就绪校准保障确定性执行；结合快速本地化执行实现隐私保护；可作为独立MCP/CLI工具供其他智能体调用，实现“决策-执行”解耦。
-
+### 3. SKILL0: In-Context Agentic Reinforcement Learning for Skill Internalization (SKILL0：面向技能内化的上下文强化学习框架)  
+- **热度/链接**: 👍 0 Upvotes | [Arxiv](https://arxiv.org/abs/2604.02268)  
+- **研究任务**: 将外部检索式技能（skills）参数化内化为LLM固有能力，实现零样本自主行为  
+- **研究动机**: 当前推理时技能注入受制于检索噪声、token开销大、知识未真正习得，导致代理缺乏鲁棒性与泛化性  
+- **本质改动**: 提出渐进式消退课程（dynamic curriculum）——训练初期提供完整技能上下文，随策略提升线性削减上下文供给，直至完全零样本；并引入交互历史驱动的紧凑视觉化技能编码，使模型在参数内隐习得工具调用与多轮任务分解逻辑  
 ---
 
-### 12. Tex3D: Objects as Attack Surfaces via Adversarial 3D Textures for Vision-Language-Action Models (Tex3D：通过对抗性3D纹理将物体变为攻击面以针对视觉-语言-动作模型)
-- **热度/链接**: `👍 0 Upvotes` | [Arxiv](https://arxiv.org/abs/2604.01618)
-- **核心突破**: 首次提出在物理环境中可部署的对抗性3D纹理攻击，暴露视觉-语言-动作（VLA）模型在现实部署下的严重脆弱性。
-- **技术路径**: 设计前景-背景解耦（FBD）机制，通过双渲染器对齐实现从VLA目标函数到物体外观的可微优化路径，使对抗纹理能在不同视角和长时间操作中保持有效性，突破传统3D模拟器不可导的瓶颈。
-
+### 4. Generative World Renderer (生成式世界渲染器)  
+- **热度/链接**: 👍 0 Upvotes | [Arxiv](https://arxiv.org/abs/2604.02329)  
+- **研究任务**: 推动逆向渲染（geometry/material decomposition）与正向渲染（G-buffer-guided video generation）在真实世界场景中的联合可扩展性  
+- **研究动机**: 现有合成数据集 realism 与 temporal coherence 不足，导致渲染模型在野外场景中泛化失败  
+- **本质改动**: 构建首个源自AAA游戏的4M帧级动态G-buffer数据集（含5通道G-buffer + RGB + 多样化天气/运动模糊），并首创VLM驱动的无真值评估协议——通过语义一致性（scene understanding）、空间一致性（object layout）、时间一致性（motion smoothness）三维度量化逆向渲染质量，且与人类评估强相关  
 ---
 
-### 13. VideoZeroBench: Probing the Limits of Video MLLMs with Spatio-Temporal Evidence Verification (VideoZeroBench：通过时空证据验证探测视频多模态大模型的极限)
-- **热度/链接**: `👍 0 Upvotes` | [Arxiv](https://arxiv.org/abs/2604.01569)
-- **核心突破**: 建立首个严格验证时空证据的层级化视频问答基准，揭示当前视频多模态大模型在细粒度理解与推理上的根本缺陷。
-- **技术路径**: 构建500个跨13个领域的手动标注问题，配备精确的时间区间与空间边界框作为证据标签；设计五级评估协议，逐步收紧对回答生成、时间定位与空间定位的要求，结果显示最先进模型在强约束下准确率低于1%。
-
+### 5. EgoSim: Egocentric World Simulator for Embodied Interaction Generation (EgoSim：面向具身交互生成的自我中心世界模拟器)  
+- **热度/链接**: 👍 0 Upvotes | [Arxiv](https://arxiv.org/abs/2604.01001)  
+- **研究任务**: 构建闭环、可更新3D状态的自我中心（egocentric）世界模拟器，生成空间一致的具身交互视频  
+- **研究动机**: 现有模拟器或缺失显式3D接地（导致视角变化下结构漂移），或假设场景静态（无法支持多阶段状态演化）  
+- **本质改动**: 将世界建模为**可更新的3D状态容器**，由Geometry-action-aware Observation Simulation模型生成观测，配合Interaction-aware State Updating模块实现物理一致的状态持续演化；并设计低成本单目视频自动标注管线（含EgoCap手机采集系统），突破密集对齐场景-交互数据稀缺瓶颈  
 ---
 
-### 14. AutoMIA: Improved Baselines for Membership Inference Attack via Agentic Self-Exploration (AutoMIA：通过代理自我探索改进成员推断攻击基线)
-- **热度/链接**: `👍 0 Upvotes` | [Arxiv](https://arxiv.org/abs/2604.01014)
-- **核心突破**: 将成员推断攻击（MIA）转化为自动化的自我探索与策略演化过程，实现无需人工特征工程的自适应攻击优化。
-- **技术路径**: 提出基于闭环反馈的代理框架，通过生成可执行的逻辑层策略并迭代优化，在抽象策略推理与低层执行之间解耦，实现对任意大模型的高效、模型无关的攻击搜索，性能超越现有静态启发式方法。
-
+### 6. Omni-SimpleMem: Autoresearch-Guided Discovery of Lifelong Multimodal Agent Memory (Omni-SimpleMem：自主研究驱动的终生多模态代理记忆发现)  
+- **热度/链接**: 👍 0 Upvotes | [Arxiv](https://arxiv.org/abs/2604.01007)  
+- **研究任务**: 自动发现适用于长周期、多模态具身代理的终生记忆架构与数据处理范式  
+- **研究动机**: 记忆系统设计空间高维耦合（架构/检索/提示/数据流水线），人工探索与传统AutoML均不可行  
+- **本质改动**: 部署端到端自主研究管道（autoresearch pipeline），在无内循环人工干预下完成约50次实验迭代：自动诊断失败模式→生成架构修改提案→修复数据流水线bug→验证改进效果；关键增益源于非超参类发现——bug修复（+175% F1）、架构变更（+44%）、提示工程（+29%）  
 ---
 
-### 15. FlowSlider: Training-Free Continuous Image Editing via Fidelity-Steering Decomposition (FlowSlider：通过保真度-引导分解实现免训练连续图像编辑)
-- **热度/链接**: `👍 0 Upvotes` | [Arxiv](https://arxiv.org/abs/2604.02088)
-- **核心突破**: 提出无需训练的连续图像编辑方法，实现对编辑强度的平滑、稳定控制，同时保持源图像结构与语义的一致性。
-- **技术路径**: 在修正流（Rectified Flow）框架中分解编辑更新为保真项（稳定身份与结构）与引导项（驱动语义迁移），二者近似正交，可通过仅缩放引导项实现强度调节，无需后训练，具备强泛化能力与分布外鲁棒性。
-
+### 7. LatentUM: Unleashing the Potential of Interleaved Cross-Modal Reasoning via a Latent-Space Unified Model (LatentUM：基于潜在空间统一模型释放交织式跨模态推理潜力)  
+- **热度/链接**: 👍 0 Upvotes | [Arxiv](https://arxiv.org/abs/2604.02097)  
+- **研究任务**: 构建支持理解与生成无缝交织的跨模态统一模型（UM）  
+- **研究动机**: 现有UM强制通过像素解码桥接视觉理解与生成，引入codec偏差、计算冗余与对齐弱化，制约密集视觉推理（如空间规划）能力  
+- **本质改动**: 彻底摒弃像素空间中介，将文本、图像、视频等所有模态映射至**共享语义潜在空间**；该空间直接支撑任意粒度的跨模态交错推理（如“观察→反思→修正→生成”闭环），同步消除编解码失真并强化跨模态对齐，在Visual Spatial Planning基准上达SOTA  
 ---
 
-### 16. Gated Condition Injection without Multimodal Attention: Towards Controllable Linear-Attention Transformers (无多模态注意力的门控条件注入：迈向可控线性注意力变换器)
-- **热度/链接**: `👍 0 Upvotes` | [Arxiv](https://arxiv.org/abs/2603.27666)
-- **核心突破**: 首次在轻量级线性注意力架构（如SANA）上实现多类型条件输入的统一、高效、灵活控制生成，克服现有方法在异构条件融合与收敛速度上的局限。
-- **技术路径**: 设计统一的门控条件注入模块，采用双路径流水线结构，分别处理空间对齐与非对齐的条件信号，避免引入多模态注意力，从而在边缘设备上实现高效、安全、可扩展的可控扩散生成。
+### 8. UniDriveVLA: Unifying Understanding, Perception, and Action Planning for Autonomous Driving (UniDriveVLA：面向自动驾驶的理解、感知与动作规划统一模型)  
+- **热度/链接**: 👍 0 Upvotes | [Arxiv](https://arxiv.org/abs/2604.02190)  
+- **研究任务**: 解决自动驾驶VLA模型中空间感知能力与语义推理能力的固有冲突  
+- **研究动机**: 耦合优化导致两难：纯2D VLM空间感知弱，强3D增强又损伤原生语言推理能力  
+- **本质改动**: 提出基于Mixture-of-Transformers的专家解耦架构——理解（language grounding）、感知（3D scene parsing）、规划（action tokenization）三专家分离，通过masked joint attention实现条件化协同；辅以稀疏感知范式（仅关键区域高分辨率建模）与三阶段渐进训练（预训练→感知对齐→端到端微调），解耦优化目标并保留各专家专精能力
 
-### 17. DynaVid: Learning to Generate Highly Dynamic Videos using Synthetic Motion Data (基于合成运动数据生成高度动态视频)
-- **热度/链接**: `👍 17 Upvotes` | [Arxiv](https://arxiv.org/abs/2604.01666)
-- **核心突破**: 通过在训练中引入由计算机图形学渲染的光学流数据，实现对高度动态运动的可控生成，同时保持视觉真实感。
-- **技术路径**: 提出两阶段生成框架——先由运动生成器合成光学流（仅编码运动信息），再由运动引导的视频生成器基于该流生成帧；利用合成运动数据丰富运动模式并解耦运动与外观，避免模型学习到非自然视觉特征。
+### 9. Investigating Autonomous Agent Contributions in the Wild: Activity Patterns and Code Change over Time (野外自主代理贡献实证研究：活动模式与代码变更的时序演化)  
+- **热度/链接**: 👍 0 Upvotes | [Arxiv](https://arxiv.org/abs/2604.00917)  
+- **研究任务**: 实证分析真实开源项目中AI编码代理（如Copilot、Devin等）对软件工程全生命周期的实际影响，涵盖PR提交、代码审查、文件编辑、交互行为及长期代码维护（生存率/流失率）。  
+- **研究动机**: 现有研究多聚焦代理的瞬时代码生成能力，忽视其在真实协作生态中的长期行为模式、团队互动效应及代码可维护性退化风险。  
+- **本质改动**: 构建首个大规模纵向开源PR数据集（≈11万条PR，含完整commit/comment/review/file-change链），首次引入**代码生存率（survival rate）与 churn rate 作为代理影响的因果性度量指标**，将评估维度从“是否生成”拓展至“生成后是否被持续采纳与演进”。  
+---  
 
+### 10. VOID: Video Object and Interaction Deletion (VOID：面向物理交互一致性的视频对象删除框架)  
+- **热度/链接**: 👍 0 Upvotes | [Arxiv](https://arxiv.org/abs/2604.02296)  
+- **研究任务**: 视频对象删除（video object removal），特别针对存在强物理交互（如碰撞、遮挡传递、力反馈）的复杂场景。  
+- **研究动机**: 现有方法仅修复外观级伪影（阴影/反射），无法修正因对象移除引发的下游物理动力学不一致（e.g., 滚动球体突然停止），导致结果违反物理常识。  
+- **本质改动**: 提出**因果感知的反事实视频编辑范式**：① 构建基于Kubric+HUMOTO的物理可导反事实配对数据集（显式建模移除对象对后续交互的扰动）；② 以VLM定位受干扰时空区域，驱动视频扩散模型生成符合物理约束的反事实轨迹——**将视频编辑升维为世界模型驱动的因果干预**。  
+---  
+
+### 11. GPA: Learning GUI Process Automation from Demonstrations (GPA：基于单次演示的GUI流程自动化学习框架)  
+- **热度/链接**: 👍 0 Upvotes | [Arxiv](https://arxiv.org/abs/2604.01676)  
+- **研究任务**: GUI层面的轻量级鲁棒流程自动化（GUI Process Automation），支持企业级长周期、高可靠性人机协同任务执行。  
+- **研究动机**: 传统RPA易受UI缩放/元素漂移破坏；VLM-based GUI agents存在非确定性（如点击坐标抖动）与隐私泄露风险（需云端推理）。  
+- **本质改动**: 设计**三重解耦架构**：① 基于序贯蒙特卡洛（SMC）的像素级定位器，显式建模检测不确定性并动态重采样；② 就绪度校准（readiness calibration）机制，将GUI状态可观测性转化为确定性执行门控；③ 全本地化执行（无网络外传），支持作为MCP/CLI工具被其他智能体调用——**将GUI自动化重构为可验证、可审计、可组合的确定性系统服务**。  
+---  
+
+### 12. Tex3D: Objects as Attack Surfaces via Adversarial 3D Textures for Vision-Language-Action Models (Tex3D：面向VLA模型的对抗性3D纹理攻击——以物体为攻击面)  
+- **热度/链接**: 👍 0 Upvotes | [Arxiv](https://arxiv.org/abs/2604.01618)  
+- **研究任务**: 对视觉-语言-动作（VLA）机器人模型实施物理可实现的对抗攻击，提升其在真实部署中的鲁棒性评估能力。  
+- **研究动机**: 现有攻击（2D贴图/文本扰动）缺乏物理真实性；而3D纹理攻击虽更贴近现实，但受限于标准仿真器不可微分，无法端到端优化纹理参数。  
+- **本质改动**: 提出**前景-背景解耦（FBD）可微渲染框架**：通过双渲染器（物理仿真器+可微神经渲染器）对齐，构建从VLA策略损失到3D物体表面纹理的梯度通路，在保持原始仿真环境完整性前提下，实现**面向长视野、多视角鲁棒性的3D纹理联合优化**。  
+---  
+
+### 13. VideoZeroBench: Probing the Limits of Video MLLMs with Spatio-Temporal Evidence Verification (VideoZeroBench：基于时空证据验证的视频多模态大模型极限评测基准)  
+- **热度/链接**: 👍 0 Upvotes | [Arxiv](https://arxiv.org/abs/2604.01569)  
+- **研究任务**: 视频多模态大语言模型（Video MLLM）的细粒度能力评测，聚焦长视频理解中的时空定位与证据支撑能力。  
+- **研究动机**: 当前评测（如EgoSchema）仅考核答案正确性，忽略模型是否真正定位到支撑结论的**精确时空片段（frame-level + bounding box）**，导致高分掩盖视觉推理缺陷。  
+- **本质改动**: 构建首个**证据可验证的五级分层评测协议**：Level-1~5逐级强制要求模型输出对应问题的准确时间区间+空间包围框+答案，揭示所有主流模型（含Gemini-3-Pro）在严格接地约束下性能断崖式下跌（<1%），**将评测目标从“答对”转向“答之有据”**。  
+---  
+
+### 14. AutoMIA: Improved Baselines for Membership Inference Attack via Agentic Self-Exploration (AutoMIA：基于智能体自探索的成员推断攻击增强框架)  
+- **热度/链接**: 👍 0 Upvotes | [Arxiv](https://arxiv.org/abs/2604.01014)  
+- **研究任务**: 成员推断攻击（Membership Inference Attack, MIA），即判断某样本是否属于目标模型训练集。  
+- **研究动机**: 现有MIA依赖人工设计统计特征（如loss/entropy），泛化性差且难以适配不同规模/架构的大模型，导致跨模型迁移时性能骤降。  
+- **本质改动**: 将MIA重构为**智能体自主策略进化问题**：① 抽象出“logits-level策略空间”（如加权差异、梯度符号掩码等可执行原语）；② 通过闭环反馈（attack success → strategy refinement）自动搜索最优策略组合；③ **完全解耦策略设计与模型执行，实现零手工特征、零模型假设的通用MIA框架**。  
+---  
+
+### 15. FlowSlider: Training-Free Continuous Image Editing via Fidelity-Steering Decomposition (FlowSlider：基于保真-导向分解的免训练连续图像编辑)  
+- **热度/链接**: 👍 0 Upvotes | [Arxiv](https://arxiv.org/abs/2604.02088)  
+- **研究任务**: 扩散模型驱动的连续图像编辑（slider-style control），支持任意强度调节且保持源图结构与编辑方向一致性。  
+- **研究动机**: 现有学习式slider方法（如SliderDiffusion）需额外训练辅助模块，导致分布偏移下控制失效，且强度调节与语义方向耦合。  
+- **本质改动**: 在Rectified Flow框架内提出**几何正交分解**：将编辑更新流显式解耦为① 源图条件保真项（稳定身份/结构）与② 语义导向项（驱动向目标编辑）；理论证明二者近似正交，故仅缩放导向项即可实现**强度解耦、方向锁定、零训练的平滑控制**。  
+---  
+
+### 16. Gated Condition Injection without Multimodal Attention: Towards Controllable Linear-Attention Transformers (无多模态注意力的门控条件注入：面向可控线性注意力Transformer)  
+- **热度/链接**: 👍 0 Upvotes | [Arxiv](https://arxiv.org/abs/2603.27666)  
+- **研究任务**: 在计算高效的线性注意力Transformer（如SANA）上实现多类型条件（文本/边缘/深度图等）可控图像生成。  
+- **研究动机**: ControlNet/OminiControl等主流条件注入方法在低秩线性注意力架构上收敛慢、多条件融合僵化，且难以兼顾空间对齐与非对齐条件。  
+- **本质改动**: 设计**双路径门控条件注入模块**：① 并行处理对齐（spatially aligned）与非对齐（non-aligned）条件；② 通过可学习门控动态加权各条件贡献，避免显式多模态注意力计算；③ **在保持线性复杂度前提下，实现条件类型无关、收敛稳定的可控生成**。  
 ---
-### 18. T5Gemma-TTS Technical Report (T5Gemma-TTS 技术报告)
-- **热度/链接**: `👍 17 Upvotes` | [Arxiv](https://arxiv.org/abs/2604.01760)
-- **核心突破**: 采用编码器-解码器架构与跨注意力持久文本条件机制，在长语音生成中显著提升说话人相似性与时长控制能力。
-- **技术路径**: 构建基于T5Gemma的40亿参数编码器-解码器模型，通过跨注意力层持续传递双向文本表示以强化文本条件；引入进度监控旋转位置嵌入（PM-RoPE）在所有交叉注意力层注入归一化进度信号，实现对目标语音长度的精准追踪。
 
+### 17. DynaVid: Learning to Generate Highly Dynamic Videos using Synthetic Motion Data (动态视频生成：基于合成运动数据的解耦式建模)  
+- **热度/链接**: 👍 0 Upvotes | [Arxiv](https://arxiv.org/abs/2604.01666)  
+- **研究任务**: 高动态、细粒度可控的视频生成  
+- **研究动机**: 真实视频数据中高度动态运动样本稀缺，且现有扩散模型难以解耦运动与外观建模，导致运动失真或视觉不自然。  
+- **本质改动**: 引入**光学流（optical flow）作为纯运动表征的合成数据源**，构建两阶段解耦框架——先由运动生成器合成结构化流动场，再由运动引导的视频生成器在真实外观分布上渲染帧；通过渲染flow而非完整视频规避合成外观伪影，实现运动可控性与视觉真实性的正交优化。  
+---  
+
+### 18. T5Gemma-TTS Technical Report (T5Gemma-TTS技术报告：面向长语音的编码器-解码器端到端语音合成)  
+- **热度/链接**: 👍 0 Upvotes | [Arxiv](https://arxiv.org/abs/2604.01760)  
+- **研究任务**: 多语言零样本语音克隆与高保真TTS生成  
+- **研究动机**: 自回归编解码语言模型中，decoder-only架构下文本前缀与增长音频序列竞争位置容量，导致长句文本条件弱化；传统时长建模缺乏对目标语音长度的显式、鲁棒跟踪机制。  
+- **本质改动**: 采用**T5Gemma encoder-decoder backbone + 全层跨注意力文本路由**，保持双向文本表征持续注入；创新引入**Progress-Monitoring RoPE（PM-RoPE）**，在全部26个cross-attention层注入归一化进度信号，使decoder显式感知剩余语音长度，实现无额外参数的动态时长调控。  
+---  
+
+### 19. Omni123: Exploring 3D Native Foundation Models with Limited 3D Data by Unifying Text to 2D and 3D Generation (Omni123：基于图文-三维统一自回归建模的3D原生基础模型)  
+- **热度/链接**: 👍 0 Upvotes | [Arxiv](https://arxiv.org/abs/2604.02289)  
+- **研究任务**: 文本到3D生成（text-to-3D）与文本到2D生成的联合建模  
+- **研究动机**: 高质量3D数据极度稀缺，导致3D生成严重欠约束；现有间接方法（2D编辑→3D提升）破坏几何一致性，且无法利用海量2D数据提供几何先验。  
+- **本质改动**: 将文本、图像、3D统一映射为**共享离散token序列空间**，通过**交错X-to-X训练范式**（如text→image→3D→image循环）隐式建模跨模态结构一致性；以2D数据作为几何约束源，在无需text-image-3D三元组对齐前提下，用2D先验蒸馏3D表征，实现3D原生建模。  
+---  
+
+### 20. Automatic Image-Level Morphological Trait Annotation for Organismal Images (生物体图像级形态性状自动标注)  
+- **热度/链接**: 👍 0 Upvotes | [Arxiv](https://arxiv.org/abs/2604.01619)  
+- **研究任务**: 生物图像中形态性状（如翅脉模式、触角分节数）的细粒度、可解释性标注  
+- **研究动机**: 形态性状标注依赖专家经验，高质量图像-性状配对数据匮乏，制约生态学大规模分析；现有VLMs难以定位解剖部位并生成符合生物学语义的描述。  
+- **本质改动**: 利用**稀疏自编码器从多模态基础模型特征中提取单义性（monosemantic）、空间定位的神经元**，激活区域即形态部件；以此驱动视觉-语言提示工程，将局部视觉特征→生物学概念描述，构建首个可验证的昆虫形态性状数据集Bioscan-Traits（80K annotations），实现端到端、可解释、免人工标注流水线。  
+---  
+
+### 21. Apriel-Reasoner: RL Post-Training for General-Purpose and Efficient Reasoning (Apriel-Reasoner：面向通用性与效率的强化学习后训练推理模型)  
+- **热度/链接**: 👍 0 Upvotes | [Arxiv](https://arxiv.org/abs/2604.02007)  
+- **研究任务**: 多领域通用推理能力增强（数学、代码、逻辑、指令、函数调用）  
+- **研究动机**: 多领域RL联合优化面临rollout长度异构、难度差异大、采样效率不均等问题；标准length penalty无法自适应平衡推理深度与效率，长思维链推断延迟高。  
+- **本质改动**: 提出**自适应领域采样机制**（维持目标域比例不变）与**难度感知长度惩罚**（difficulty-aware length penalty）：在16K token严格预算下，对难问题鼓励更长chain-of-thought，对易问题强制压缩，零开销实现推理深度动态调控，兼顾性能与实时性。  
+---  
+
+### 22. Executing as You Generate: Hiding Execution Latency in LLM Code Generation (边生成边执行：隐藏LLM代码生成中的执行延迟)  
+- **热度/链接**: 👍 0 Upvotes | [Arxiv](https://arxiv.org/abs/2604.00491)  
+- **研究任务**: 降低LLM代码生成+执行端到端延迟  
+- **研究动机**: 当前串行范式（生成全代码→执行）导致生成期执行器空闲、执行期生成器空闲，造成显著资源闲置与端到端延迟；而LLM代码生成具有不可逆、逐token流式特性，天然支持并行化。  
+- **本质改动**: 提出**三阶段流水线（生成→AST感知检测→动态批执行）**，实现token级执行隐藏：通过AST chunking识别可执行子单元，结合gated execution与early error interruption，在生成过程中异步触发安全子表达式执行，理论证明可达近100%非重叠延迟消除，实测端到端加速最高55%。  
+---  
+
+### 23. LinguDistill: Recovering Linguistic Ability in Vision-Language Models via Selective Cross-Modal Distillation (LinguDistill：基于选择性跨模态蒸馏的语言能力恢复)  
+- **热度/链接**: 👍 0 Upvotes | [Arxiv](https://arxiv.org/abs/2604.00829)  
+- **研究任务**: 视觉-语言模型（VLM）中退化语言能力的无损恢复  
+- **研究动机**: VLM多模态微调导致语言模型原始表征偏移（representation shift）与跨模态干扰，标准微调或插件式对齐模块（如adapter）增加推理负担、牺牲泛化性。  
+- **本质改动**: **零参数适配器蒸馏**：冻结原始LM为teacher，学生VLM通过**layer-wise KV-cache sharing**机制，使teacher在vision-conditioned前向传播中“看到”学生中间表征，从而提供精准语言监督；仅在language-intensive数据上选择性蒸馏，保留VLM视觉接地能力，实现语言能力恢复与多模态能力解耦。  
+---  
+
+### 24. UniRecGen: Unifying Multi-View 3D Reconstruction and Generation (UniRecGen：多视角3D重建与生成的统一框架)  
+- **热度/链接**: 👍 0 Upvotes | [Arxiv](https://arxiv.org/abs/2604.01479)  
+- **研究任务**: 稀疏视角下的高保真、几何一致3D模型生成  
+- **研究动机**: 重建范式（reconstruction）高效但缺乏全局先验致结构缺失；生成范式（generation）细节丰富但多视角不一致；二者坐标系、表征、目标冲突，难以协同。  
+- **本质改动**: 构建**共享规范空间（canonical space）对齐双路径**，采用**解耦协作学习**：重建分支输出规范几何锚点（canonical anchors）作为强几何约束，生成分支通过**latent-augmented conditioning**融合该锚点，在扩散去噪中完成结构补全与细节增强，实现重建精度与生成合理性的闭环互补。  
 ---
-### 19. Omni123: Exploring 3D Native Foundation Models with Limited 3D Data by Unifying Text to 2D and 3D Generation (通过统一文本到2D与3D生成探索有限3D数据下的3D原生基础模型)
-- **热度/链接**: `👍 17 Upvotes` | [Arxiv](https://arxiv.org/abs/2604.02289)
-- **核心突破**: 在缺乏高质量3D数据的情况下，通过共享序列空间中的跨模态一致性，将丰富的2D图像数据作为几何先验来增强3D生成质量。
-- **技术路径**: 提出交错式X-to-X训练范式，将文本、图像和3D统一为离散令牌序列；通过自回归序列中循环遍历“文→图→3D→图”等语义-视觉-几何路径，利用2D数据隐式约束3D结构，无需完全对齐的三元组数据。
 
+### 25. Memory-Augmented Vision-Language Agents for Persistent and Semantically Consistent Object Captioning (面向持续性与语义一致性的记忆增强型视觉-语言具身智能体)  
+- **热度/链接**: 👍 0 Upvotes | [Arxiv](https://arxiv.org/abs/2603.24257)  
+- **研究任务**: 具身智能体在多视角导航中对同一物理对象生成跨帧语义一致的自然语言描述（即持久性物体标注）  
+- **研究动机**: 现有VLMs在不同视角下对同一物体产生矛盾描述，导致具身智能体无法构建稳定的语义表征；离线多视图聚合或解耦式多阶段方法缺乏对历史观测的在线因果推理能力  
+- **本质改动**: 提出统一自回归框架，将数据关联（data association）、物体标注（captioning）与探索策略（exploration policy）三者联合建模，并引入**对象级情节记忆（object-level episodic memory）**——以序列化对象token形式显式维护跨时间步的物体身份与语义状态，辅以基于分歧驱动的伪标注自监督训练范式  
+---  
+
+### 26. Woosh: A Sound Effects Foundation Model (Woosh：面向音效生成的基础模型)  
+- **热度/链接**: 👍 0 Upvotes | [Arxiv](https://arxiv.org/abs/2604.01929)  
+- **研究任务**: 面向专业音效（SFX）生成的端到端文本/视频条件音频合成  
+- **研究动机**: 开源音频生成模型普遍缺乏针对短时、高瞬态、强语义耦合音效（如玻璃碎裂、金属碰撞）的专用架构与对齐机制，且推理效率难以满足交互式创作需求  
+- **本质改动**: 构建首个专用于音效的模块化基础模型：（1）高保真频谱编码器-解码器（非通用WaveNet/VAE），（2）细粒度文本-音频对齐模块（强化动词/拟声词与声学事件的时序绑定），（3）蒸馏轻量级text-to-audio与video-to-audio双路径生成器，实现毫秒级推理与资源受限部署  
+---  
+
+### 27. Friends and Grandmothers in Silico: Localizing Entity Cells in Language Models (硅基“朋友”与“祖母”：语言模型中实体神经元的定位)  
+- **热度/链接**: 👍 0 Upvotes | [Arxiv](https://arxiv.org/abs/2604.01404)  
+- **研究任务**: 在预训练语言模型内部定位并因果验证承载特定实体知识（如“Barack Obama”）的稀疏神经回路  
+- **研究动机**: 尽管LLMs能回答实体相关问题，但其知识存储机制（分布式 vs. 局部化）及可干预性仍不明确，制约可控编辑与可解释性分析  
+- **本质改动**: 提出基于模板提示的**实体选择性MLP神经元定位法**，并通过负向消融（neuron ablation）与正向注入（controlled activation）双重因果验证：发现约200个高频实体的知识高度浓缩于早期层单个MLP神经元，该神经元激活即可触发实体一致性预测，且对别名/拼写变体/多语言形式鲁棒，揭示LLMs存在可定位、可干预的“实体细胞”（entity cells）结构  
 ---
-### 20. Automatic Image-Level Morphological Trait Annotation for Organismal Images (生物图像层面形态特征自动标注)
-- **热度/链接**: `👍 17 Upvotes` | [Arxiv](https://arxiv.org/abs/2604.01619)
-- **核心突破**: 利用基础模型特征上的稀疏自编码器识别出具有生物学意义的单义空间神经元，实现高可解释性的自动形态特征标注。
-- **技术路径**: 基于预训练视觉模型提取特征，训练稀疏自编码器以发现激活区域与特定形态部件一致的神经元；结合视觉-语言提示生成可解释的描述，并构建包含8万条标注的Bioscan-Traits数据集，经人工评估验证其生物合理性。
-
----
-### 21. Apriel-Reasoner: RL Post-Training for General-Purpose and Efficient Reasoning (面向通用高效推理的强化学习后训练)
-- **热度/链接**: `👍 17 Upvotes` | [Arxiv](https://arxiv.org/abs/2604.02007)
-- **核心突破**: 在多领域联合强化学习训练中实现推理效率与性能的平衡，支持长链推理的同时控制输出长度，适用于实际部署。
-- **技术路径**: 针对阿普里尔-基础模型（15B参数）设计可复现的多领域强化学习后训练流程，涵盖数学、代码、指令遵循等五类任务；提出自适应领域采样机制应对异构采样动态，并引入难度感知长度惩罚，使模型根据问题难易自动调整思维链长度。
-
----
-### 22. Executing as You Generate: Hiding Execution Latency in LLM Code Generation (边生成边执行：隐藏大模型代码生成的执行延迟)
-- **热度/链接**: `👍 17 Upvotes` | [Arxiv](https://arxiv.org/abs/2604.00491)
-- **核心突破**: 打破传统串行生成-执行范式，实现代码生成与执行的并行化，大幅降低端到端延迟。
-- **技术路径**: 提出“生成-检测-执行”三阶段并行流水线，基于抽象语法树（AST）进行代码分块，采用动态批处理与门控执行机制，支持早期错误中断；实测显示在七种模型与四基准上，非重叠执行延迟降低高达99.9%，端到端延迟减少55%。
-
----
-### 23. LinguDistill: Recovering Linguistic Ability in Vision-Language Models via Selective Cross-Modal Distillation (通过选择性跨模态蒸馏恢复视觉-语言模型的语言能力)
-- **热度/链接**: `👍 17 Upvotes` | [Arxiv](https://arxiv.org/abs/2604.00829)
-- **核心突破**: 在不增加额外模块的前提下，通过层间键值缓存共享实现冻结语言模型作为教师的高效语言能力恢复。
-- **技术路径**: 设计无适配器的蒸馏方法，利用原始冻结语言模型作为教师，通过层间KV缓存共享使教师能感知学生多模态输入；仅对语言密集型数据进行选择性蒸馏，有效恢复语言理解能力，同时保留视觉对齐性。
-
----
-### 24. UniRecGen: Unifying Multi-View 3D Reconstruction and Generation (统一多视角3D重建与生成)
-- **热度/链接**: `👍 17 Upvotes` | [Arxiv](https://arxiv.org/abs/2604.01479)
-- **核心突破**: 融合前馈重建与扩散生成的优势，构建协同系统，在稀疏观测下生成结构完整且视图一致的高质量3D模型。
-- **技术路径**: 将重建与生成模型统一于共享规范空间，采用解耦协作学习策略：重建模块提供几何锚点，扩散生成器通过潜变量增强条件进行结构细化与补全；训练稳定且推理时无缝协作，显著提升重建完整性与一致性。
-
-### 25. Memory-Augmented Vision-Language Agents for Persistent and Semantically Consistent Object Captioning (用于持久且语义一致的物体描述的记忆增强型视觉-语言智能体)
-- **热度/链接**: `👍 25 Upvotes` | [Arxiv](https://arxiv.org/abs/2603.24257)
-- **核心突破**: 提出统一的自回归记忆增强框架，实现跨视角下物体身份与语义的一致性建模。
-- **技术路径**: 引入基于对象级情景记忆的序列化令牌机制，融合当前视觉观测、自顶向下探索地图与历史记忆，在单一模型中联合处理数据关联、物体描述生成与探索策略，通过基于分歧的自监督训练策略强制多视角描述一致性。
-
----
-### 26. Woosh: A Sound Effects Foundation Model (Woosh：声音效果基础模型)
-- **热度/链接**: `👍 25 Upvotes` | [Arxiv](https://arxiv.org/abs/2604.01929)
-- **核心突破**: 首个专为声音效果优化的开源基础模型，实现高质量文本到音频与视频到音频的生成能力。
-- **技术路径**: 构建四模块体系——高保真音频编码器/解码器、文本-音频对齐模型、文本到音频生成器、视频到音频生成器，并提供轻量化蒸馏版本，支持低资源快速推理；在公开与私有数据集上表现优于StableAudio-Open与TangoFlux。
-
----
-### 27. Friends and Grandmothers in Silico: Localizing Entity Cells in Language Models (虚拟世界中的朋友与祖母：语言模型中实体单元的定位)
-- **热度/链接**: `👍 25 Upvotes` | [Arxiv](https://arxiv.org/abs/2604.01404)
-- **核心突破**: 在多个语言模型中识别出可被因果干预操控的稀疏实体特异性神经元，揭示了实体知识的局部化存储机制。
-- **技术路径**: 采用模板提示定位实体选择性MLP神经元，通过因果消融与注入实验验证其功能；发现多数实体信息集中于早期层，单个神经元激活即可恢复一致预测，支持“紧凑化实体检索”而非渐进式深度传播，且对别名、拼写变体具有鲁棒性，体现标准化映射特性。
 </details></script>
         <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
     </body>
