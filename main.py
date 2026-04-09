@@ -19,35 +19,24 @@ repo_owner = os.getenv('GITHUB_REPOSITORY_OWNER', 'owner')
 repo_name = repo_full_name.split('/')[-1]
 GITHUB_PAGES_URL = f"https://{repo_owner}.github.io/{repo_name}/"
 
-def get_arxiv_abstract(paper_id):
-    """根据 Arxiv ID 抓取摘要"""
-    if not paper_id or not re.match(r'\d+\.\d+', paper_id):
-        return ""
-    url = f"https://arxiv.org/abs/{paper_id}"
-    try:
-        res = requests.get(url, timeout=10)
-        if res.status_code == 200:
-            soup = BeautifulSoup(res.text, 'html.parser')
-            abs_tag = soup.find('blockquote', class_='abstract')
-            if abs_tag:
-                # 移除 "Abstract:" 前缀并精简
-                return abs_tag.text.replace('Abstract:', '').strip()[:1200]
-    except Exception as e:
-        print(f"Error fetching abstract for {paper_id}: {e}")
-    return ""
-
 def scrape_hf_daily():
-    """抓取 HF 热门论文数据"""
+    """抓取 Hugging Face Daily Papers（智能处理时差与数据沉淀）"""
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36'}
     try:
+        # 获取当前 UTC 时间
         utc_now = datetime.datetime.now(datetime.timezone.utc)
         today_str = utc_now.strftime('%Y-%m-%d')
         yesterday_str = (utc_now - datetime.timedelta(days=1)).strftime('%Y-%m-%d')
         
+        # 1. 获取今天的论文
         res_today = requests.get(f"https://huggingface.co/api/daily_papers?date={today_str}&limit=100", headers=headers, timeout=15)
         papers = res_today.json() if res_today.status_code == 200 else []
         
-        if not isinstance(papers, list) or len(papers) < 15:
+        # 2. 【核心修复】：判断今天的数据量是否充足。
+        # 如果少于 20 篇（说明新的一天刚开始，比如你遇到的只有 7 篇），
+        # 我们自动去抓取昨天已经完整积累一整天的数据（即你看到的 52 篇）！
+        if not isinstance(papers, list) or len(papers) < 20:
+            print(f"Today ({today_str}) only has {len(papers) if isinstance(papers, list) else 0} papers. Fetching yesterday ({yesterday_str})...")
             res_yesterday = requests.get(f"https://huggingface.co/api/daily_papers?date={yesterday_str}&limit=100", headers=headers, timeout=15)
             papers = res_yesterday.json() if res_yesterday.status_code == 200 else []
             
@@ -57,67 +46,65 @@ def scrape_hf_daily():
         return []
 
 def process_hf_with_ai(hf_papers):
-    """结合摘要进行 AI 总结，确保排序和点赞数准确"""
-    if not hf_papers: return ""
+    """分批次调用 AI 处理 HF 论文，彻底解决篇幅限制导致的截断问题"""
+    if not hf_papers or not isinstance(hf_papers, list): return ""
     
+    # 1. 提取信息并预先按点赞数排序
     simple_list = []
     for p in hf_papers:
         paper_info = p.get('paper', {})
-        pid = paper_info.get('id', '')
-        if not pid: continue
-        
-        print(f"Fetching abstract for {pid}...")
-        abstract = get_arxiv_abstract(pid)
-        time.sleep(0.5) 
-        
+        if not paper_info or 'id' not in paper_info: continue
+        upvotes_val = p.get('upvotes') or paper_info.get('upvotes', 0)
         simple_list.append({
-            "id": pid,
-            "title": paper_info.get('title', 'Unknown'),
-            # 确保转换为整数以防万一
-            "upvotes": int(p.get('upvotes', 0)),
-            "abstract": abstract
+            "id": paper_info.get('id', ''),
+            "title": paper_info.get('title', 'Unknown Title'),
+            "upvotes": upvotes_val
         })
-    
-    # 1. 确保降序排序（点赞最多的排在最前面）
-    simple_list.sort(key=lambda x: x['upvotes'], reverse=True)
+    simple_list.sort(key=lambda x: x.get('upvotes', 0), reverse=True)
 
-    chunk_size = 8
+    # 2. 分批处理（建议每批 10-12 篇，保证 AI 输出详尽）
+    chunk_size = 10
     all_chunks_md = []
     global_counter = 1
     
     for i in range(0, len(simple_list), chunk_size):
         chunk = simple_list[i : i + chunk_size]
         
-        # 2. 修改 Prompt：不要硬编码 global_counter 到点赞位置
-        # 要求 AI 从 JSON 的 'upvotes' 字段读取真实数据
-        prompt = f"""你是一个前沿 AI 研究专家。请根据提供的论文摘要进行深度且精炼的中文解析。
+        prompt = f"""你是一个 AI 大模型专家。请为以下 Hugging Face 热门论文提供深度中文解析。
         要求：
-        1. 必须保留所有提供的论文。
-        2. 条目编号请从 {global_counter} 开始顺序递增。
-        3. 请结合摘要(abstract)总结核心贡献，不要只看标题。
-        4. 语言要专业且简明扼要，直接击中技术要点。
-        5. 输出 Markdown 格式：
-           ### [此处填写递增后的编号]. [英文标题] (中文简译)
-           - **热度/链接**: 👍 [此处填写该论文对应的 upvotes 字段数值] Upvotes | [Arxiv](https://arxiv.org/abs/[此处填写该论文的 id])
-           - **研究任务**: [论文研究的任务是什么，如：根据文本生成图像]
-           - **研究动机**: [例如发现了什么问题需要改进，比如VLA生成动作的速度太慢]
-           - **本质改动**: [本质改动，如：用视频生成代替扩散策略做轨迹预测]
+        1. **不要剔除**任何论文，全部保留并翻译。
+        2. 请从编号 {global_counter} 开始连续编号。
+        3. 为每篇论文提供：中文标题翻译、核心亮点（一句话）、深度解析（技术方案简述）、领域归类。
+        4. 输出格式（Markdown）：
+           ### {global_counter}. [英文标题] (中文标题翻译)
+           - **社区热度**: `👍 [对应 upvotes] Upvotes`
+           - **论文链接**: [点击跳转](https://arxiv.org/abs/[对应 id])
+           - **核心亮点**: ...
+           - **深度解析**: ...
+           - **领域归类**: [...]
            ---
-        待处理数据：{json.dumps(chunk, ensure_ascii=False)}
+
+        待处理数据内容：
+        {json.dumps(chunk)}
         """
+
         try:
             completion = client_llm.chat.completions.create(
-                model="qwen-plus", 
+                model="qwen-flash", 
                 messages=[{"role": "user", "content": prompt}]
             )
-            all_chunks_md.append(completion.choices[0].message.content)
+            res_content = completion.choices[0].message.content
+            all_chunks_md.append(res_content)
+            # 更新计数器，确保下一批次编号连续
             global_counter += len(chunk)
         except Exception as e:
-            print(f"AI Error: {e}")
+            print(f"AI Process HF Chunk Error: {e}")
 
-    hf_md = "<details>\n<summary><b>🔥 社区高热度动态 (点击展开今日趋势详情)</b></summary>\n\n"
-    hf_md += "## 🌐 全球科研趋势快报\n\n"
-    hf_md += "\n\n".join(all_chunks_md)
+    # 3. 汇总所有批次内容并封装进折叠框
+    full_content = "\n\n".join(all_chunks_md)
+    hf_md = "<details>\n<summary><b>🤗 Hugging Face Community Choice (点击展开今日全部热门详情)</b></summary>\n\n"
+    hf_md += "## 🤗 Hugging Face Community Choice\n\n"
+    hf_md += full_content
     hf_md += "\n</details>"
     
     return hf_md
