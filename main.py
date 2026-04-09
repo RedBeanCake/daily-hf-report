@@ -61,7 +61,7 @@ def scrape_hf(mode="daily"):
         print(f"HF Scrape Error ({mode}): {e}")
         return []
 
-def process_hf_with_ai(hf_papers):
+def process_hf_with_ai(hf_papers, mode="daily"):
     """分批次调用 AI 处理论文，确保编号连续"""
     if not hf_papers or not isinstance(hf_papers, list): return ""
     
@@ -127,7 +127,7 @@ def process_hf_with_ai(hf_papers):
     hf_md += "\n</details>"
     return hf_md
 
-def generate_page(content):
+def generate_page(content, mode="daily"):
     """生成网页并增量更新索引"""
     now = get_beijing_time()
 
@@ -202,9 +202,9 @@ def generate_page(content):
             requests.post(FEISHU_WEBHOOK, json={
                 "msg_type": "interactive",
                 "card": {
-                    "header": {"title": {"tag": "plain_text", "content": f"🌟 前沿科研发现 | {display_date}"}, "template": "orange"},
+                    "header": {"title": {"tag": "plain_text", "content": f"🌟 {page_title}"}, "template": "orange" if mode=="daily" else "blue"},
                     "elements": [
-                        {"tag": "div", "text": {"tag": "lark_md", "content": f"今日已自动汇总社区最受关注的科研成果。"}},
+                        {"tag": "div", "text": {"tag": "lark_md", "content": f"{'今日' if mode=='daily' else '本周'}已自动汇总社区最受关注的科研成果。"}},
                         {"tag": "action", "actions": [{"tag": "button", "text": {"tag": "plain_text", "content": "查看详情"}, "type": "primary", "url": GITHUB_PAGES_URL}]}
                     ]
                 }
