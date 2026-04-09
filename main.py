@@ -29,16 +29,20 @@ def scrape_hf_daily():
         yesterday_str = (utc_now - datetime.timedelta(days=1)).strftime('%Y-%m-%d')
         
         # 1. 获取今天的论文
-        res_today = requests.get(f"https://huggingface.co/api/daily_papers?date={today_str}&limit=100", headers=headers, timeout=15)
-        papers = res_today.json() if res_today.status_code == 200 else []
+        def fetch_data(date_str):
+            res = requests.get(f"https://huggingface.co/api/daily_papers?date={date_str}&limit=100", headers=headers, timeout=15)
+            if res.status_code == 200:
+                try:
+                    return res.json()
+                except Exception:
+                    return []
+            return []
         
-        # 2. 【核心修复】：判断今天的数据量是否充足。
-        # 如果少于 20 篇（说明新的一天刚开始，比如你遇到的只有 7 篇），
-        # 我们自动去抓取昨天已经完整积累一整天的数据（即你看到的 52 篇）！
-        if not isinstance(papers, list) or len(papers) < 20:
-            print(f"Today ({today_str}) only has {len(papers) if isinstance(papers, list) else 0} papers. Fetching yesterday ({yesterday_str})...")
-            res_yesterday = requests.get(f"https://huggingface.co/api/daily_papers?date={yesterday_str}&limit=100", headers=headers, timeout=15)
-            papers = res_yesterday.json() if res_yesterday.status_code == 200 else []
+        papers = fetch_data(today_str)
+        # 如果今天数据不足，抓取昨天
+        if not isinstance(papers, list) or len(papers) < 10:
+            print(f"Fetching yesterday ({yesterday_str})...")
+            papers = fetch_data(yesterday_str)
             
         return papers if isinstance(papers, list) else []
     except Exception as e:
@@ -95,10 +99,12 @@ def process_hf_with_ai(hf_papers):
             )
             res_content = completion.choices[0].message.content
             all_chunks_md.append(res_content)
-            # 更新计数器，确保下一批次编号连续
-            global_counter += len(chunk)
         except Exception as e:
-            print(f"AI Process HF Chunk Error: {e}")
+            # 记录失败但不中断流程
+            all_chunks_md.append(f"\n> ⚠️ 批次 {global_counter}-{global_counter+len(chunk)-1} 处理失败: {e}\n")
+            
+        # 更新计数器，确保下一批次编号连续
+        global_counter += len(chunk)
 
     # 3. 汇总所有批次内容并封装进折叠框
     full_content = "\n\n".join(all_chunks_md)
@@ -146,22 +152,42 @@ def generate_page(content):
     
     with open(filename, "w", encoding="utf-8") as f: f.write(html_template)
     
-    # 更新通用化的历史索引
-    with open("index.html", "w", encoding="utf-8") as f:
-        f.write(f"<h1>📚 全球 AI 技术雷达 - 历史索引</h1><p><a href='{filename}'>{page_title}</a></p>")
+    index_file = "index.html"
+    new_link = f"<p><a href='{filename}'>{page_title}</a></p>\n"
+    
+    if os.path.exists(index_file):
+        with open(index_file, "r", encoding="utf-8") as f:
+            old_content = f.read()
+        
+        # 尝试将新链接插入到第一个 <p> 标签之前，实现“最新日期排在最前”
+        if "<p>" in old_content:
+            parts = old_content.split("<p>", 1)
+            updated_index = f"{parts[0]}{new_link}<p>{parts[1]}"
+        else:
+            # 如果没找到标签，直接追加在末尾
+            updated_index = old_content + new_link
+    else:
+        # 如果 index.html 还不存在，则创建初始内容
+        updated_index = f"<h1>📚 冒烟小脑瓜简报 - 历史索引</h1>\n{new_link}"
 
-    # 飞书推送使用笼统化标题
+    with open(index_file, "w", encoding="utf-8") as f:
+        f.write(updated_index)
+
+    # 飞书推送逻辑
     if FEISHU_WEBHOOK:
-        requests.post(FEISHU_WEBHOOK, json={
-            "msg_type": "interactive",
-            "card": {
-                "header": {"title": {"tag": "plain_text", "content": f"🌟 前沿科研发现 | {display_date}"}, "template": "orange"},
-                "elements": [
-                    {"tag": "div", "text": {"tag": "lark_md", "content": f"今日已自动汇总社区最受关注的科研成果。"}},
-                    {"tag": "action", "actions": [{"tag": "button", "text": {"tag": "plain_text", "content": "查看详情"}, "type": "primary", "url": GITHUB_PAGES_URL}]}
-                ]
-            }
-        })
+        try:
+            requests.post(FEISHU_WEBHOOK, json={
+                "msg_type": "interactive",
+                "card": {
+                    "header": {"title": {"tag": "plain_text", "content": f"🌟 前沿科研发现 | {display_date}"}, "template": "orange"},
+                    "elements": [
+                        {"tag": "div", "text": {"tag": "lark_md", "content": f"今日已自动汇总社区最受关注的科研成果。"}},
+                        {"tag": "action", "actions": [{"tag": "button", "text": {"tag": "plain_text", "content": "查看详情"}, "type": "primary", "url": GITHUB_PAGES_URL}]}
+                    ]
+                }
+            }, timeout=10)
+        except Exception as e:
+            print(f"Feishu Push Error: {e}")
 
 if __name__ == "__main__":
     raw_papers = scrape_hf_daily()
