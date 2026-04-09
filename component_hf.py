@@ -50,6 +50,7 @@ def process_hf_with_ai(client_llm, hf_papers, mode="daily"):
     all_chunks_md = []
     report_type = "每周" if mode == "weekly" else "今日"
     
+    global_counter = 1
     for i in range(0, len(simple_list[:30]), chunk_size):  # 最多处理前30篇
         chunk = simple_list[i : i + chunk_size]
       
@@ -80,6 +81,8 @@ def process_hf_with_ai(client_llm, hf_papers, mode="daily"):
             all_chunks_md.append(completion.choices[0].message.content)
         except:
             continue
+
+        global_counter += len(chunk)
 
     full_content = "\n\n".join(all_chunks_md)
     return f"<details>\n<summary><b>🤗 Hugging Face {report_type}论文 (点击展开)</b></summary>\n\n{full_content}\n</details>"
