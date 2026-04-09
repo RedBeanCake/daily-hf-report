@@ -4,6 +4,16 @@ on:
   schedule:
     - cron: '0 14 * * 1-5' # 北京时间 22:00
   workflow_dispatch:
+    # --- 新增配置：允许手动选择模式 ---
+    inputs:
+      mode:
+        description: '选择运行模式'
+        required: true
+        default: 'daily'
+        type: choice
+        options:
+          - daily
+          - weekly
 
 permissions:
   contents: write
@@ -33,13 +43,15 @@ jobs:
           GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
           GITHUB_REPOSITORY: ${{ github.repository }}
         run: |
-          # 始终运行日报
-          python main.py --mode daily
-          
-          # 如果今天是周一，则额外运行一次周报
-          if [ "$(date +%u)" = "1" ]; then
-            echo "今天是周一，正在生成 Weekly Report..."
-            python main.py --mode weekly
+          # 如果是手动触发，使用选择的模式；如果是定时触发，运行默认逻辑
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            python main.py --mode ${{ github.event.inputs.mode }}
+          else
+            # 定时任务逻辑：始终跑日报，周一加跑周报
+            python main.py --mode daily
+            if [ "$(date +%u)" = "1" ]; then
+              python main.py --mode weekly
+            fi
           fi
 
       - name: Commit and push changes
