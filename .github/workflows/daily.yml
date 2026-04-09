@@ -32,7 +32,15 @@ jobs:
           FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
           GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
           GITHUB_REPOSITORY: ${{ github.repository }}
-        run: python main.py
+        run: |
+          # 始终运行日报
+          python main.py --mode daily
+          
+          # 如果今天是周一，则额外运行一次周报
+          if [ "$(date +%u)" = "1" ]; then
+            echo "今天是周一，正在生成 Weekly Report..."
+            python main.py --mode weekly
+          fi
 
       - name: Commit and push changes
         run: |
