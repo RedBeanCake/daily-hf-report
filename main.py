@@ -116,10 +116,9 @@ def process_hf_with_ai(hf_papers):
     return hf_md
 
 def generate_page(content):
-    """生成网页，使用更笼统的命名"""
+    """生成网页，如果 index.html 中已存在同名标题，则先覆盖（移除旧的）再添加"""
     now = (datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=8))
     display_date = now.strftime('%Y-%m-%d')
-    # 笼统化标题
     page_title = f"前沿科研情报 - {display_date}"
     
     os.makedirs('archive', exist_ok=True)
@@ -150,7 +149,9 @@ def generate_page(content):
     </html>
     """
     
-    with open(filename, "w", encoding="utf-8") as f: f.write(html_template)
+    # 写入当天的详情页
+    with open(filename, "w", encoding="utf-8") as f: 
+        f.write(html_template)
     
     index_file = "index.html"
     new_link = f"<p><a href='{filename}'>{page_title}</a></p>\n"
@@ -159,16 +160,20 @@ def generate_page(content):
         with open(index_file, "r", encoding="utf-8") as f:
             old_content = f.read()
         
-        # 尝试将新链接插入到第一个 <p> 标签之前，实现“最新日期排在最前”
-        if "<p>" in old_content:
-            parts = old_content.split("<p>", 1)
-            updated_index = f"{parts[0]}{new_link}<p>{parts[1]}"
+        # --- 修改部分：使用正则移除已存在的相同标题链接 ---
+        # 该正则会匹配包含相同标题的整个 <p> 标签块，并将其替换为空字符串
+        pattern = rf"<p><a href='[^']*'>{re.escape(page_title)}</a></p>\n?"
+        clean_content = re.sub(pattern, "", old_content)
+        
+        # 在第一个 </h1> 标签后插入新链接，确保最新的始终在最上面
+        if "</h1>" in clean_content:
+            parts = clean_content.split("</h1>", 1)
+            updated_index = f"{parts[0]}</h1>\n{new_link}{parts[1].lstrip()}"
         else:
-            # 如果没找到标签，直接追加在末尾
-            updated_index = old_content + new_link
+            updated_index = new_link + clean_content
     else:
-        # 如果 index.html 还不存在，则创建初始内容
-        updated_index = f"<h1>📚 冒烟小脑瓜简报 - 历史索引</h1>\n{new_link}"
+        # 如果 index.html 不存在，创建初始内容
+        updated_index = f"<h1>📚 全球 AI 技术雷达 - 历史索引</h1>\n{new_link}"
 
     with open(index_file, "w", encoding="utf-8") as f:
         f.write(updated_index)
