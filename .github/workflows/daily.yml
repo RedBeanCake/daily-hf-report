@@ -2,7 +2,7 @@ name: Daily VLA Report
 
 on:
   schedule:
-    - cron: '0 6 * * 1-5' # 北京时间 14:00
+    - cron: '0 14 * * 1-5' # 北京时间 22:00
   workflow_dispatch:
 
 permissions:
