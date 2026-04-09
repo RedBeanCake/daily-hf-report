@@ -59,12 +59,32 @@ def generate_page(content, mode="daily"):
 
     # 更新 index.html
     index_file = "index.html"
+    placeholder = ""
     new_link = f"<p><a href='{filename}'>{page_title}</a></p>\n"
-    old_content = open(index_file, "r", encoding="utf-8").read() if os.path.exists(index_file) else "<h1>📚 全球 AI 技术雷达</h1>"
     
-    # 避免重复并插入最新
-    clean_content = re.sub(rf"<p><a href='[^']*'>{re.escape(page_title)}</a></p>\n?", "", old_content)
-    updated_index = clean_content.replace("</h1>", f"</h1>\n{new_link}")
+    # 如果文件不存在，初始化内容
+    if not os.path.exists(index_file):
+        old_content = f"<h1>📚 全球 AI 技术雷达 - 历史索引</h1>\n{placeholder}\n"
+    else:
+        with open(index_file, "r", encoding="utf-8") as f:
+            old_content = f.read()
+    
+    # 1. 使用正则清理旧的同名链接（防止重复）
+    pattern = rf"<p><a href='[^']*'>{re.escape(page_title)}</a></p>\n?"
+    clean_content = re.sub(pattern, "", old_content)
+    
+    # 2. 稳健地插入新链接
+    if placeholder in clean_content:
+        # 在占位符后面插入新链接，确保最新的始终在最上面
+        updated_index = clean_content.replace(placeholder, f"{placeholder}\n{new_link}")
+    else:
+        # 如果万一占位符被删了，回退到备用逻辑（如插在 </h1> 后）
+        if "</h1>" in clean_content:
+            parts = clean_content.split("</h1>", 1)
+            updated_index = f"{parts[0]}</h1>\n{placeholder}\n{new_link}{parts[1].lstrip()}"
+        else:
+            updated_index = f"{new_link}{clean_content}"
+
     with open(index_file, "w", encoding="utf-8") as f:
         f.write(updated_index)
 
