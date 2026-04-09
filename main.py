@@ -91,7 +91,7 @@ def generate_page(content, mode="daily"):
     # 更新 index.html
     index_file = "index.html"
     # --- 修改点 1: 使用唯一的非空占位符 ---
-    placeholder = "``" 
+    placeholder = "<!-- ARCHIVE_LIST -->" 
     new_link = f"<p><a href='{filename}'>{page_title}</a></p>\n"
     
     if not os.path.exists(index_file):
