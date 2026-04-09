@@ -5,6 +5,8 @@ from component_hf import scrape_hf, process_hf_with_ai, get_beijing_time
 from component_github import scrape_github_trending, process_github_with_ai
 import re
 import requests
+import json
+from datetime import datetime, timedelta
 
 # --- 1. 初始化配置 ---
 client_llm = OpenAI(
@@ -13,6 +15,35 @@ client_llm = OpenAI(
 )
 FEISHU_WEBHOOK = os.getenv("FEISHU_WEBHOOK")
 GITHUB_PAGES_URL = f"https://{os.getenv('GITHUB_REPOSITORY_OWNER')}.github.io/{os.getenv('GITHUB_REPOSITORY').split('/')[-1]}/"
+
+# 加载历史记录
+def load_history(file_path='processed_repos.json'):
+    if os.path.exists(file_path):
+        with open(file_path, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    return {}
+
+# 保存历史记录
+def save_history(history, file_path='processed_repos.json'):
+    with open(file_path, 'w', encoding='utf-8') as f:
+        json.dump(history, f, ensure_ascii=False, indent=2)
+
+def filter_repos(repos, history, cooldown_days=7):
+    new_repos = []
+    now = datetime.now()
+    
+    for repo in repos:
+        name = repo['name']
+        last_date_str = history.get(name)
+        
+        if last_date_str:
+            last_date = datetime.strptime(last_date_str, '%Y-%m-%d')
+            # 如果上次总结时间在冷却期内，则跳过
+            if now - last_date < timedelta(days=cooldown_days):
+                continue
+        
+        new_repos.append(repo)
+    return new_repos
 
 def generate_page(content, mode="daily"):
     """生成详情页与索引页"""
@@ -59,31 +90,31 @@ def generate_page(content, mode="daily"):
 
     # 更新 index.html
     index_file = "index.html"
-    placeholder = ""
+    # --- 修改点 1: 使用唯一的非空占位符 ---
+    placeholder = "" 
     new_link = f"<p><a href='{filename}'>{page_title}</a></p>\n"
     
-    # 如果文件不存在，初始化内容
     if not os.path.exists(index_file):
         old_content = f"<h1>📚 全球 AI 技术雷达 - 历史索引</h1>\n{placeholder}\n"
     else:
         with open(index_file, "r", encoding="utf-8") as f:
             old_content = f.read()
     
-    # 1. 使用正则清理旧的同名链接（防止重复）
+    # 1. 清理旧链接
     pattern = rf"<p><a href='[^']*'>{re.escape(page_title)}</a></p>\n?"
     clean_content = re.sub(pattern, "", old_content)
     
-    # 2. 稳健地插入新链接
+    # 2. 插入新链接
     if placeholder in clean_content:
-        # 在占位符后面插入新链接，确保最新的始终在最上面
+        # --- 修改点 2: 在占位符下方插入，确保占位符本身不消失且不重复触发 ---
         updated_index = clean_content.replace(placeholder, f"{placeholder}\n{new_link}")
     else:
-        # 如果万一占位符被删了，回退到备用逻辑（如插在 </h1> 后）
+        # 备用逻辑
         if "</h1>" in clean_content:
             parts = clean_content.split("</h1>", 1)
             updated_index = f"{parts[0]}</h1>\n{placeholder}\n{new_link}{parts[1].lstrip()}"
         else:
-            updated_index = f"{new_link}{clean_content}"
+            updated_index = f"{new_link}\n{placeholder}\n{clean_content}"
 
     with open(index_file, "w", encoding="utf-8") as f:
         f.write(updated_index)
@@ -113,8 +144,23 @@ if __name__ == "__main__":
     # 执行 GitHub Trending 流程
     gh_md = ""
     if args.mode == "daily":
-        gh_data = scrape_github_trending()
-        gh_md = process_github_with_ai(client_llm, gh_data)
+        gh_data = scrape_github_trending() #
+        
+        # --- 新增过滤逻辑 ---
+        history = load_history()
+        filtered_gh_data = filter_repos(gh_data, history)
+        
+        if filtered_gh_data:
+            # 只把过滤后的新仓库发给 AI
+            gh_md = process_github_with_ai(client_llm, filtered_gh_data)
+            
+            # 更新历史记录
+            today_str = datetime.now().strftime('%Y-%m-%d')
+            for repo in filtered_gh_data:
+                history[repo['name']] = today_str
+            save_history(history)
+        else:
+            gh_md = "> 今日无新增趋势项目（已在近期总结过）。"
 
     # 汇总生成
     full_md = hf_md + "\n\n" + gh_md
