@@ -1,4 +1,4 @@
-name: Daily VLA Report
+name: Daily/Weekly HF Report
 
 on:
   schedule:
