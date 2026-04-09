@@ -1,83 +1,105 @@
-import requests
-from bs4 import BeautifulSoup
-import datetime
-from openai import OpenAI
 import os
-import re
-import json
-import time
 import argparse
+from openai import OpenAI
+from component_hf import scrape_hf, process_hf_with_ai, get_beijing_time
+from component_github import scrape_github_trending, process_github_with_ai
+import re
+import requests
 
-# --- 1. 核心配置 ---
+# --- 1. 初始化配置 ---
 client_llm = OpenAI(
     api_key=os.getenv("DASHSCOPE_API_KEY"),
     base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
 )
 FEISHU_WEBHOOK = os.getenv("FEISHU_WEBHOOK")
+GITHUB_PAGES_URL = f"https://{os.getenv('GITHUB_REPOSITORY_OWNER')}.github.io/{os.getenv('GITHUB_REPOSITORY').split('/')[-1]}/"
 
-repo_full_name = os.getenv('GITHUB_REPOSITORY', 'owner/repo')
-repo_owner = os.getenv('GITHUB_REPOSITORY_OWNER', 'owner')
-repo_name = repo_full_name.split('/')[-1]
-GITHUB_PAGES_URL = f"https://{repo_owner}.github.io/{repo_name}/"
-
-def get_beijing_time():
-    """获取北京时间 (UTC+8)"""
-    return datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=8)
-    
-def scrape_hf(mode="daily"):
-    """抓取 Hugging Face Daily Papers（智能处理时差与数据沉淀）"""
-    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36'}
+def generate_page(content, mode="daily"):
+    """生成详情页与索引页"""
     now = get_beijing_time()
-    try:
-        if mode == "weekly":
-            # 获取当前 ISO 周 (例如 2026-W15)
-            year, week, _ = now.isocalendar()
-            target_str = f"{year}-W{week:02d}"
-            url = f"https://huggingface.co/api/daily_papers?week={target_str}&limit=100"
-            print(f"正在执行周报模式抓取: {target_str}")
-        else:
-            # 日报模式
-            target_str = now.strftime('%Y-%m-%d')
-            url = f"https://huggingface.co/api/daily_papers?date={target_str}&limit=100"
-            print(f"正在执行日报模式抓取: {target_str}")
-
-        def fetch(api_url):
-            res = requests.get(api_url, headers=headers, timeout=15)
-            if res.status_code == 200:
-                try: return res.json()
-                except: return []
-            return []
-
-        papers = fetch(url)
-
-        # 日报模式下的回退逻辑：如果今天数据不足 10 篇，抓取昨天
-        if mode == "daily" and (not isinstance(papers, list) or len(papers) < 10):
-            yesterday_str = (now - datetime.timedelta(days=1)).strftime('%Y-%m-%d')
-            print(f"今日日报数据不足 ({len(papers) if isinstance(papers, list) else 0} 篇)，尝试抓取昨日 ({yesterday_str})...")
-            papers = fetch(f"https://huggingface.co/api/daily_papers?date={yesterday_str}&limit=100")
-
-        return papers if isinstance(papers, list) else []
-    except Exception as e:
-        print(f"HF Scrape Error ({mode}): {e}")
-        return []
-
-def process_hf_with_ai(hf_papers, mode="daily"):
-    """分批次调用 AI 处理论文，确保编号连续"""
-    if not hf_papers or not isinstance(hf_papers, list): return ""
+    if mode == "weekly":
+        year, week, _ = now.isocalendar()
+        date_label = f"{year}-W{week:02d}"
+        page_title = f"AI 技术周报 - {date_label}"
+    else:
+        date_label = now.strftime('%Y-%m-%d')
+        page_title = f"前沿科研情报 - {date_label}"
     
-    # 1. 提取信息并预先按点赞数排序
-    simple_list = []
-    for p in hf_papers:
-        paper_info = p.get('paper', {})
-        if not paper_info or 'id' not in paper_info: continue
-        upvotes_val = p.get('upvotes') or paper_info.get('upvotes', 0)
-        simple_list.append({
-            "id": paper_info.get('id', ''),
-            "title": paper_info.get('title', 'Unknown Title'),
-            "upvotes": upvotes_val
-        })
-    simple_list.sort(key=lambda x: x.get('upvotes', 0), reverse=True)
+    filename = f"archive/{date_label.replace('-', '_')}.html"
+    os.makedirs('archive', exist_ok=True)
 
+    # HTML 模版
+    html_template = f"""
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{page_title}</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <style>
+            .markdown-body {{ box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 30px; }}
+            details {{ background: #f6f8fa; padding: 15px; border-radius: 8px; border: 1px solid #d0d7de; margin-bottom: 20px; }}
+            summary {{ cursor: pointer; color: #0969da; font-weight: bold; font-size: 1.1em; }}
+        </style>
+    </head>
+    <body class="markdown-body">
+        <a href='../index.html'>← 返回索引</a>
+        <h1>{page_title}</h1>
+        <div id="content"></div>
+        <script type="text/markdown" id="raw-md">{content}</script>
+        <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
+    </body>
+    </html>
+    """
+
+    with open(filename, "w", encoding="utf-8") as f:
+        f.write(html_template)
+
+    # 更新 index.html
+    index_file = "index.html"
+    new_link = f"<p><a href='{filename}'>{page_title}</a></p>\n"
+    old_content = open(index_file, "r", encoding="utf-8").read() if os.path.exists(index_file) else "<h1>📚 全球 AI 技术雷达</h1>"
+    
+    # 避免重复并插入最新
+    clean_content = re.sub(rf"<p><a href='[^']*'>{re.escape(page_title)}</a></p>\n?", "", old_content)
+    updated_index = clean_content.replace("</h1>", f"</h1>\n{new_link}")
+    with open(index_file, "w", encoding="utf-8") as f:
+        f.write(updated_index)
+
+    # 飞书推送
+    if FEISHU_WEBHOOK:
+        requests.post(FEISHU_WEBHOOK, json={
+            "msg_type": "interactive",
+            "card": {
+                "header": {"title": {"tag": "plain_text", "content": f"🚀 {page_title}"}, "template": "orange"},
+                "elements": [
+                    {"tag": "div", "text": {"tag": "lark_md", "content": "今日 AI 论文与开源趋势已更新。"}},
+                    {"tag": "action", "actions": [{"tag": "button", "text": {"tag": "plain_text", "content": "阅读全文"}, "type": "primary", "url": GITHUB_PAGES_URL}]}
+                ]
+            }
+        })
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--mode', type=str, default='daily', choices=['daily', 'weekly'])
+    args = parser.parse_args()
+
+    # 执行 Hugging Face 流程
+    hf_data = scrape_hf(mode=args.mode)
+    hf_md = process_hf_with_ai(client_llm, hf_data, mode=args.mode)
+
+    # 执行 GitHub Trending 流程
+    gh_md = ""
+    if args.mode == "daily":
+        gh_data = scrape_github_trending()
+        gh_md = process_github_with_ai(client_llm, gh_data)
+
+    # 汇总生成
+    full_md = hf_md + "\n\n" + gh_md
+    if hf_data or gh_data:
+        generate_page(full_md, mode=args.mode)
     # 2. 分批处理（建议每批 10-12 篇，保证 AI 输出详尽）
     chunk_size = 10
     all_chunks_md = []
