@@ -19,38 +19,49 @@ repo_owner = os.getenv('GITHUB_REPOSITORY_OWNER', 'owner')
 repo_name = repo_full_name.split('/')[-1]
 GITHUB_PAGES_URL = f"https://{repo_owner}.github.io/{repo_name}/"
 
-def scrape_hf_daily():
+def get_beijing_time():
+    """获取北京时间 (UTC+8)"""
+    return datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=8)
+    
+def scrape_hf(mode="daily"):
     """抓取 Hugging Face Daily Papers（智能处理时差与数据沉淀）"""
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36'}
+    now = get_beijing_time()
     try:
-        # 获取当前 UTC 时间
-        utc_now = datetime.datetime.now(datetime.timezone.utc)
-        today_str = utc_now.strftime('%Y-%m-%d')
-        yesterday_str = (utc_now - datetime.timedelta(days=1)).strftime('%Y-%m-%d')
-        
-        # 1. 获取今天的论文
-        def fetch_data(date_str):
-            res = requests.get(f"https://huggingface.co/api/daily_papers?date={date_str}&limit=100", headers=headers, timeout=15)
+        if mode == "weekly":
+            # 获取当前 ISO 周 (例如 2026-W15)
+            year, week, _ = now.isocalendar()
+            target_str = f"{year}-W{week:02d}"
+            url = f"https://huggingface.co/api/daily_papers?week={target_str}&limit=100"
+            print(f"正在执行周报模式抓取: {target_str}")
+        else:
+            # 日报模式
+            target_str = now.strftime('%Y-%m-%d')
+            url = f"https://huggingface.co/api/daily_papers?date={target_str}&limit=100"
+            print(f"正在执行日报模式抓取: {target_str}")
+
+        def fetch(api_url):
+            res = requests.get(api_url, headers=headers, timeout=15)
             if res.status_code == 200:
-                try:
-                    return res.json()
-                except Exception:
-                    return []
+                try: return res.json()
+                except: return []
             return []
-        
-        papers = fetch_data(today_str)
-        # 如果今天数据不足，抓取昨天
-        if not isinstance(papers, list) or len(papers) < 10:
-            print(f"Fetching yesterday ({yesterday_str})...")
-            papers = fetch_data(yesterday_str)
-            
+
+        papers = fetch(url)
+
+        # 日报模式下的回退逻辑：如果今天数据不足 10 篇，抓取昨天
+        if mode == "daily" and (not isinstance(papers, list) or len(papers) < 10):
+            yesterday_str = (now - datetime.timedelta(days=1)).strftime('%Y-%m-%d')
+            print(f"今日日报数据不足 ({len(papers) if isinstance(papers, list) else 0} 篇)，尝试抓取昨日 ({yesterday_str})...")
+            papers = fetch(f"https://huggingface.co/api/daily_papers?date={yesterday_str}&limit=100")
+
         return papers if isinstance(papers, list) else []
     except Exception as e:
-        print(f"HF Scrape Error: {e}")
+        print(f"HF Scrape Error ({mode}): {e}")
         return []
 
 def process_hf_with_ai(hf_papers):
-    """分批次调用 AI 处理 HF 论文，彻底解决篇幅限制导致的截断问题"""
+    """分批次调用 AI 处理论文，确保编号连续"""
     if not hf_papers or not isinstance(hf_papers, list): return ""
     
     # 1. 提取信息并预先按点赞数排序
@@ -70,11 +81,13 @@ def process_hf_with_ai(hf_papers):
     chunk_size = 10
     all_chunks_md = []
     global_counter = 1
+
+    report_type = "每周热门" if mode == "weekly" else "今日热门"
     
     for i in range(0, len(simple_list), chunk_size):
         chunk = simple_list[i : i + chunk_size]
         
-        prompt = f"""你是一个 AI 大模型专家。请为以下 Hugging Face 热门论文提供深度中文解析。
+        prompt = f"""你是一个 AI 大模型专家。请为以下 Hugging Face {report_type}论文提供深度中文解析。
         要求：
         1. **不要剔除**任何论文，全部保留并翻译。
         2. 请从编号 {global_counter} 开始连续编号。
@@ -97,32 +110,37 @@ def process_hf_with_ai(hf_papers):
                 model="qwen-flash", 
                 messages=[{"role": "user", "content": prompt}]
             )
-            res_content = completion.choices[0].message.content
-            all_chunks_md.append(res_content)
+            all_chunks_md.append(completion.choices[0].message.content)
         except Exception as e:
-            # 记录失败但不中断流程
-            all_chunks_md.append(f"\n> ⚠️ 批次 {global_counter}-{global_counter+len(chunk)-1} 处理失败: {e}\n")
-            
-        # 更新计数器，确保下一批次编号连续
+            all_chunks_md.append(f"\n> ⚠️ 批次 {global_counter}-{global_counter+len(chunk)-1} AI 解析失败: {e}\n")
+        
         global_counter += len(chunk)
 
     # 3. 汇总所有批次内容并封装进折叠框
     full_content = "\n\n".join(all_chunks_md)
-    hf_md = "<details>\n<summary><b>🤗 Hugging Face Community Choice (点击展开今日全部热门详情)</b></summary>\n\n"
-    hf_md += "## 🤗 Hugging Face Community Choice\n\n"
+    summary_title = "Weekly Community Choice" if mode == "weekly" else "Daily Community Choice"
+    
+    hf_md = f"<details>\n<summary><b>🤗 Hugging Face {summary_title} (点击展开详情)</b></summary>\n\n"
+    hf_md += f"## 🤗 Hugging Face {summary_title}\n\n"
     hf_md += full_content
     hf_md += "\n</details>"
-    
     return hf_md
 
 def generate_page(content):
-    """生成网页，如果 index.html 中已存在同名标题，则先覆盖（移除旧的）再添加"""
-    now = (datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=8))
-    display_date = now.strftime('%Y-%m-%d')
-    page_title = f"前沿科研情报 - {display_date}"
+    """生成网页并增量更新索引"""
+    now = get_beijing_time()
+
+    if mode == "weekly":
+        year, week, _ = now.isocalendar()
+        date_label = f"{year}-W{week:02d}"
+        page_title = f"AI 技术周报 - {date_label}"
+        filename = f"archive/{date_label.replace('-', '_')}.html"
+    else:
+        date_label = now.strftime('%Y-%m-%d')
+        page_title = f"前沿科研情报 - {date_label}"
+        filename = f"archive/{date_label.replace('-', '_')}.html"
     
     os.makedirs('archive', exist_ok=True)
-    filename = f"archive/{display_date.replace('-', '_')}.html"
 
     html_template = f"""
     <!DOCTYPE html>
@@ -160,7 +178,6 @@ def generate_page(content):
         with open(index_file, "r", encoding="utf-8") as f:
             old_content = f.read()
         
-        # --- 修改部分：使用正则移除已存在的相同标题链接 ---
         # 该正则会匹配包含相同标题的整个 <p> 标签块，并将其替换为空字符串
         pattern = rf"<p><a href='[^']*'>{re.escape(page_title)}</a></p>\n?"
         clean_content = re.sub(pattern, "", old_content)
@@ -195,7 +212,13 @@ def generate_page(content):
             print(f"Feishu Push Error: {e}")
 
 if __name__ == "__main__":
-    raw_papers = scrape_hf_daily()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--mode', type=str, default='daily', choices=['daily', 'weekly'], help='运行模式：daily(日报) 或 weekly(周报)')
+    args = parser.parse_args()
+
+    raw_papers = scrape_hf(mode=args.mode)
     if raw_papers:
-        md_content = process_hf_with_ai(raw_papers)
-        generate_page(md_content)
+        md_content = process_hf_with_ai(raw_papers, mode=args.mode)
+        generate_page(md_content, mode=args.mode)
+    else:
+        print(f"未抓取到数据，跳过生成步骤。模式: {args.mode}")
