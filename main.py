@@ -90,12 +90,28 @@ def generate_page(content, mode="daily"):
 
     # 更新 index.html
     index_file = "index.html"
-    # --- 修改点 1: 使用唯一的非空占位符 ---
+    # --- 使用唯一的非空占位符 ---
     placeholder = "<!-- ARCHIVE_LIST -->" 
     new_link = f"<p><a href='{filename}'>{page_title}</a></p>\n"
     
-    if not os.path.exists(index_file):
-        old_content = f"<h1>📚 全球 AI 技术雷达 - 历史索引</h1>\n{placeholder}\n"
+    # 初始化一个完整的 HTML 结构，包含 <title> 确保收藏时显示名字
+    if not os.path.exists(index_file) or os.path.getsize(index_file) == 0:
+        old_content = f"""<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 全球 AI 技术雷达 - 历史索引</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+    <style>
+        body {{ box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 30px; }}
+    </style>
+</head>
+<body class="markdown-body">
+    <h1>📚 全球 AI 技术雷达 - 历史索引</h1>
+    {placeholder}
+</body>
+</html>"""
     else:
         with open(index_file, "r", encoding="utf-8") as f:
             old_content = f.read()
@@ -106,7 +122,7 @@ def generate_page(content, mode="daily"):
     
     # 2. 插入新链接
     if placeholder in clean_content:
-        # --- 修改点 2: 在占位符下方插入，确保占位符本身不消失且不重复触发 ---
+        # --- 在占位符下方插入，确保占位符本身不消失且不重复触发 ---
         updated_index = clean_content.replace(placeholder, f"{placeholder}\n{new_link}")
     else:
         # 备用逻辑
