@@ -25,5 +25,10 @@
   "yt-dlp /yt-dlp": "2026-04-13",
   "axolotl-ai-cloud /axolotl": "2026-04-13",
   "microsoft /agent-lightning": "2026-04-13",
-  "AIDC-AI /Pixelle-Video": "2026-04-13"
+  "AIDC-AI /Pixelle-Video": "2026-04-13",
+  "vllm-project /vllm": "2026-04-14",
+  "paperswithbacktest /awesome-systematic-trading": "2026-04-14",
+  "Tracer-Cloud /opensre": "2026-04-14",
+  "ultralytics /ultralytics": "2026-04-14",
+  "alirezarezvani /claude-skills": "2026-04-14"
 }
