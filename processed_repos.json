@@ -30,5 +30,13 @@
   "paperswithbacktest /awesome-systematic-trading": "2026-04-14",
   "Tracer-Cloud /opensre": "2026-04-14",
   "ultralytics /ultralytics": "2026-04-14",
-  "alirezarezvani /claude-skills": "2026-04-14"
+  "alirezarezvani /claude-skills": "2026-04-14",
+  "public-apis /public-apis": "2026-04-15",
+  "lsdefine /GenericAgent": "2026-04-15",
+  "google /magika": "2026-04-15",
+  "agentscope-ai /agentscope": "2026-04-15",
+  "zhayujie /CowAgent": "2026-04-15",
+  "donnemartin /system-design-primer": "2026-04-15",
+  "sgl-project /sglang": "2026-04-15",
+  "iam-veeramalla /aws-devops-zero-to-hero": "2026-04-15"
 }
