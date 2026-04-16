@@ -1,0 +1,313 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>前沿科研情报 - 2026-04-16</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <style>
+            .markdown-body { box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 30px; }
+            details { background: #f6f8fa; padding: 15px; border-radius: 8px; border: 1px solid #d0d7de; margin-bottom: 20px; }
+            summary { cursor: pointer; color: #0969da; font-weight: bold; font-size: 1.1em; }
+        </style>
+    </head>
+    <body class="markdown-body">
+        <a href='../index.html'>← 返回索引</a>
+        <h1>前沿科研情报 - 2026-04-16</h1>
+        <div id="content"></div>
+        <script type="text/markdown" id="raw-md"><details>
+<summary><b>🤗 Hugging Face 今日论文 (点击展开)</b></summary>
+
+### 1. GameWorld: Towards Standardized and Verifiable Evaluation of Multimodal Game Agents (GameWorld：迈向标准化且可验证的多模态游戏智能体评估)
+- **社区热度**: `👍 105 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.07429)
+- **研究任务**: 多模态游戏智能体评测
+- **核心亮点**: 提出了一套标准且结果可验证的游戏评测环境。
+- **深度解析**: 针对当前游戏智能体评测标准混乱的问题，构建了 GameWorld 环境。支持多模态输入（画面、文本），重点在于任务结果可自动验证，解决了人工评估成本高、不一致的痛点，方便横向对比不同模型性能。
+- **领域归类**: [智能体评测] [多模态] [游戏 AI]
+---
+
+### 2. Seedance 2.0: Advancing Video Generation for World Complexity (Seedance 2.0：提升视频生成的世界复杂度)
+- **社区热度**: `👍 102 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.14148)
+- **研究任务**: 视频生成
+- **核心亮点**: 增强了模型对复杂世界动态和物理规律的理解。
+- **深度解析**: 在 1.0 基础上改进，重点优化了生成视频中的世界一致性。通过引入更复杂的场景动态数据训练，让生成的视频在物体交互、物理运动上更合理，减少闪烁和逻辑错误，提升长视频生成的稳定性。
+- **领域归类**: [视频生成] [多模态] [生成式 AI]
+---
+
+### 3. RationalRewards: Reasoning Rewards Scale Visual Generation Both Training and Test Time (RationalRewards：推理奖励缩放视觉生成的训练与测试时)
+- **社区热度**: `👍 92 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.11626)
+- **研究任务**: 视觉生成强化学习
+- **核心亮点**: 将推理过程的奖励信号同时应用到训练和测试阶段。
+- **深度解析**: 传统方法只在训练时用奖励函数，这篇提出在测试采样时也利用推理奖励进行引导。通过设计基于逻辑推理的奖励机制，显著提升了生成图像的语义准确性和复杂指令遵循能力。
+- **领域归类**: [强化学习] [视觉生成] [奖励模型]
+---
+
+### 4. SpatialEvo: Self-Evolving Spatial Intelligence via Deterministic Geometric Environments (SpatialEvo：通过确定性几何环境实现空间智能自进化)
+- **社区热度**: `👍 60 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.14144)
+- **研究任务**: 空间智能推理
+- **核心亮点**: 让智能体在确定性几何环境中自我进化提升空间能力。
+- **深度解析**: 构建了一个可控的几何环境，智能体通过不断试错自我迭代。因为环境是确定性的，模型能清晰归因错误，从而高效学习空间关系和推理能力，无需大量人工标注数据。
+- **领域归类**: [空间智能] [自我进化] [强化学习]
+---
+
+### 5. OccuBench: Evaluating AI Agents on Real-World Professional Tasks via Language World Models (OccuBench：通过语言世界模型评估真实世界专业任务上的 AI 智能体)
+- **社区热度**: `👍 45 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.10866)
+- **研究任务**: 专业领域智能体评测
+- **核心亮点**: 用语言世界模型模拟真实职业场景来评测智能体。
+- **深度解析**: 针对律师、医生等专业任务难评测的问题，利用语言模型构建虚拟世界模型来模拟工作流程。智能体在模拟环境中完成任务，系统自动评估其专业性和合规性，降低了真实场景测试的风险和成本。
+- **领域归类**: [智能体评测] [垂直领域] [世界模型]
+---
+
+### 6. Memory Transfer Learning: How Memories are Transferred Across Domains in Coding Agents (记忆迁移学习：编码智能体跨域记忆如何迁移)
+- **社区热度**: `👍 23 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.14004)
+- **研究任务**: 编码智能体记忆机制
+- **核心亮点**: 分析了编码智能体如何在不同任务域之间迁移记忆。
+- **深度解析**: 研究了智能体在写代码时产生的记忆（如代码片段、调试经验）如何存储和复用。提出了跨域迁移机制，让模型在处理新语言或新框架时，能调用旧任务中的有效记忆，减少重复学习。
+- **领域归类**: [编码智能体] [迁移学习] [记忆机制]
+---
+
+### 7. From P(y|x) to P(y): Investigating Reinforcement Learning in Pre-train Space (从 P(y|x) 到 P(y)：探究预训练空间中的强化学习)
+- **社区热度**: `👍 22 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.14142)
+- **研究任务**: 强化学习与预训练结合
+- **核心亮点**: 尝试在预训练阶段直接优化边际概率 P(y) 而非条件概率。
+- **深度解析**: 传统 RL 多优化给定输入下的输出概率 P(y|x)，这篇探索在预训练空间直接优化输出分布 P(y)。旨在让模型先学会“什么是好结果”，再学“如何生成”，为后续对齐任务打下更好的基础分布。
+- **领域归类**: [强化学习] [预训练] [理论基础]
+---
+
+### 8. Target Policy Optimization (目标策略优化)
+- **社区热度**: `👍 18 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.06159)
+- **研究任务**: 强化学习策略优化
+- **核心亮点**: 提出了一种新的目标策略更新优化方法。
+- **深度解析**: 针对现有策略优化算法（如 PPO）在特定场景下不稳定的问题，改进了目标策略的更新规则。通过调整裁剪机制或损失函数，提高了训练收敛速度和最终策略的稳定性，适用于连续控制任务。
+- **领域归类**: [强化学习] [算法优化]
+---
+
+### 9. Sema Code: Decoupling AI Coding Agents into Programmable, Embeddable Infrastructure (Sema Code：将 AI 编码智能体解耦为可编程、可嵌入的基础设施)
+- **社区热度**: `👍 17 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.11045)
+- **研究任务**: 编码智能体架构
+- **核心亮点**: 把编码智能体拆解成可编程、可嵌入的模块设施。
+- **深度解析**: 不再把 Coding Agent 当作一个黑盒模型，而是解耦成解析、生成、调试等独立模块。开发者可以像调用库一样嵌入这些功能，方便集成到现有 IDE 或工作流中，提高了灵活性和可维护性。
+- **领域归类**: [编码智能体] [系统工程] [架构设计]
+---
+
+### 10. SemaClaw: A Step Towards General-Purpose Personal AI Agents through Harness Engineering (SemaClaw：通过 Harness 工程迈向通用个人 AI 智能体)
+- **社区热度**: `👍 15 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.11548)
+- **研究任务**: 个人通用智能体
+- **核心亮点**: 利用 Harness 工程模式构建通用个人智能体。
+- **深度解析**: 提出了一种名为 Harness 的工程框架，用于管理个人智能体的工具调用和记忆。重点解决个人数据隐私和任务泛化问题，让单个智能体能安全地处理日程、邮件、文档等多种个人任务。
+- **领域归类**: [个人智能体] [系统工程] [通用 AI]
+---
+
+### 11. Free Geometry: Refining 3D Reconstruction from Longer Versions of Itself (Free Geometry：基于自身长版本优化的 3D 重建)
+- **社区热度**: `👍 14 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.14048)
+- **研究任务**: 3D 重建优化
+- **核心亮点**: 利用输入序列的长版本信息迭代修正几何结构，无需额外监督。
+- **深度解析**: 针对单目或多视图 3D 重建中的几何模糊问题，提出一种自修正机制。模型通过处理更长时序或更高分辨率的“自身版本”，提取一致性约束来 refine 初始几何预测，减少伪影和结构错误。
+- **领域归类**: [3D Vision, Self-Supervised Learning]
+---
+
+### 12. Exploration and Exploitation Errors Are Measurable for Language Model Agents (语言模型智能体的探索与利用误差可量化)
+- **社区热度**: `👍 10 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.13151)
+- **研究任务**: Agent 评估与诊断
+- **核心亮点**: 提出可量化指标，区分 Agent 犯错是源于探索不足还是利用不当。
+- **深度解析**: 将 Agent 轨迹错误分解为“探索误差”（未尝试正确路径）和“利用误差”（已知正确路径但执行失败）。通过反事实推理或轨迹回溯，计算两类误差占比，帮助定位模型是缺乏知识还是推理能力不足。
+- **领域归类**: [LLM Agents, Evaluation]
+---
+
+### 13. TIP: Token Importance in On-Policy Distillation (TIP：在线策略蒸馏中的 Token 重要性)
+- **社区热度**: `👍 9 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.14084)
+- **研究任务**: 模型蒸馏
+- **核心亮点**: 在在线策略蒸馏中引入 Token 重要性权重，优化学生模型学习重点。
+- **深度解析**: 传统蒸馏对所有 Token 损失一视同仁。该方法根据 Teacher 模型输出的置信度或信息量，为不同 Token 分配权重，使学生模型更关注关键决策点，提升蒸馏效率和下游任务表现。
+- **领域归类**: [LLM Training, Distillation]
+---
+
+### 14. UI-Zoomer: Uncertainty-Driven Adaptive Zoom-In for GUI Grounding (UI-Zoomer：不确定性驱动的自适应缩放 GUI 定位)
+- **社区热度**: `👍 8 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.14113)
+- **研究任务**: GUI 元素定位
+- **核心亮点**: 根据模型预测不确定性动态缩放界面区域，提高定位精度。
+- **深度解析**: 针对复杂界面元素过小导致定位失败的问题，模型先进行全局预测，若某区域不确定性高，则自动裁剪并放大该区域进行二次推理。通过级联推理机制，平衡计算成本与小目标识别准确率。
+- **领域归类**: [Multimodal, GUI Agents]
+---
+
+### 15. ReconPhys: Reconstruct Appearance and Physical Attributes from Single Video (ReconPhys：从单视频重建外观与物理属性)
+- **社区热度**: `👍 8 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.07882)
+- **研究任务**: 视频物理属性理解
+- **核心亮点**: 单目视频即可联合恢复物体外观纹理及质量、摩擦等物理参数。
+- **深度解析**: 构建联合优化框架，利用视频中物体运动动力学反推物理属性，同时通过神经渲染恢复外观。引入物理引擎作为可微分层，确保重建结果不仅视觉逼真，且符合物理规律。
+- **领域归类**: [Video Understanding, Physics AI]
+---
+
+### 16. TREX: Automating LLM Fine-tuning via Agent-Driven Tree-based Exploration (TREX：基于智能体树搜索的 LLM 微调自动化)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.14116)
+- **研究任务**: 自动机器学习 (AutoML)
+- **核心亮点**: 用智能体驱动树搜索算法，自动探索最优微调超参配置。
+- **深度解析**: 将微调配置空间建模为树结构，利用 LLM Agent 作为搜索策略，根据中间评估结果动态剪枝或扩展节点。相比网格搜索或随机搜索，能更高效地找到适配特定任务的学习率、Batch Size 等组合。
+- **领域归类**: [AutoML, LLM Ops]
+---
+
+### 17. MERRIN: A Benchmark for Multimodal Evidence Retrieval and Reasoning in Noisy Web Environments (MERRIN：噪声 Web 环境下的多模态证据检索与推理基准)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.13418)
+- **研究任务**: 基准测试与检索增强
+- **核心亮点**: 首个针对噪声 Web 数据的多模态检索与推理评估基准。
+- **深度解析**: 收集包含广告、无关文本和干扰图像的真实 Web 数据，构建需要跨模态证据链才能回答的问题集。用于评估模型在非洁净数据下的信息筛选、证据定位及逻辑推理能力。
+- **领域归类**: [Benchmark, RAG, Multimodal]
+---
+
+### 18. UI-Copilot: Advancing Long-Horizon GUI Automation via Tool-Integrated Policy Optimization (UI-Copilot：基于工具集成策略优化的长程 GUI 自动化)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.13822)
+- **研究任务**: GUI 自动化任务
+- **核心亮点**: 结合工具调用与策略优化，解决长步骤界面操作任务。
+- **深度解析**: 针对长程任务中误差累积问题，将常用 UI 操作封装为工具函数。通过强化学习优化策略网络，使其学会何时调用工具而非直接生成底层动作，提升多步任务的成功率和鲁棒性。
+- **领域归类**: [GUI Agents, Reinforcement Learning]
+---
+
+### 19. SkVM: Compiling Skills for Efficient Execution Everywhere (SkVM：面向跨平台高效执行的技能编译虚拟机)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.03088)
+- **研究任务**: 代码执行与系统优化
+- **核心亮点**: 将 Agent 技能编译为中间表示，实现跨平台高效执行。
+- **深度解析**: 设计轻量级虚拟机（VM），将 LLM 生成的技能代码编译为统一字节码。屏蔽底层环境差异，优化执行路径，使同一套技能脚本能在不同设备或沙箱中快速、安全地运行。
+- **领域归类**: [System, Code Agent]
+---
+
+### 20. Do AI Coding Agents Log Like Humans? An Empirical Study (AI 编程智能体的日志记录像人类吗？一项实证研究)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.09409)
+- **研究任务**: 代码智能体行为分析
+- **核心亮点**: 实证对比 AI 与人类开发者在日志记录行为上的差异。
+- **深度解析**: 收集大量人类与 AI 生成的代码仓库日志，分析日志频率、粒度及内容模式。发现 AI 倾向于生成结构化但缺乏上下文信息的日志，为改进 Agent 的可解释性和调试辅助功能提供依据。
+- **领域归类**: [Code Agent, Empirical Study]
+---
+
+### 21. ROSE: Retrieval-Oriented Segmentation Enhancement (ROSE：面向检索的分割增强)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.14147)
+- **研究任务**: 图像分割
+- **核心亮点**: 把检索机制引入分割任务，用相似样本辅助提升边界精度。
+- **深度解析**: 传统分割模型只依赖当前图像特征，遇到模糊边界容易出错。这篇论文加了一个检索模块，从数据库里找结构相似的已知样本，把它们的分割先验信息拿来参考，修正当前图像的预测结果，主要解决难例分割不准的问题。
+- **领域归类**: [计算机视觉，图像分割]
+---
+
+### 22. InfiniteScienceGym: An Unbounded, Procedurally-Generated Benchmark for Scientific Analysis (InfiniteScienceGym：用于科学分析的无限程序化生成基准)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.13201)
+- **研究任务**: 大模型评测基准
+- **核心亮点**: 搞了个能无限生成新题目的评测环境，防止模型刷分。
+- **深度解析**: 现有的科学推理基准题目固定，模型容易背答案。这篇论文设计了一套程序化生成规则，能不断产出新的科学分析任务和数据，用来测试模型真正的推理上限和泛化能力，适合长期评估科学类 Agent。
+- **领域归类**: [大模型评测，科学智能]
+---
+
+### 23. Mobile GUI Agents under Real-world Threats: Are We There Yet? (真实威胁下的移动 GUI 智能体：我们准备好了吗？)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2507.04227)
+- **研究任务**: 智能体安全
+- **核心亮点**: 实测了手机操作智能体在真实攻击场景下的安全性，发现风险还挺大。
+- **深度解析**: 针对能自动操作手机界面的 Agent，论文模拟了恶意弹窗、诱导点击等真实威胁场景。测试发现现有模型容易受干扰，执行危险操作，文章分析了漏洞原因，呼吁加强安全对齐和防御机制。
+- **领域归类**: [智能体安全，人机交互]
+---
+
+### 24. Geometric Context Transformer for Streaming 3D Reconstruction (用于流式 3D 重建的几何上下文 Transformer)
+- **社区热度**: `👍 0 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.14141)
+- **研究任务**: 3D 重建
+- **核心亮点**: 用 Transformer 处理连续输入的 3D 流数据，边收数据边重建。
+- **深度解析**: 传统 3D 重建往往需要离线处理完整数据。这篇论文设计了一个几何上下文 Transformer，能利用注意力机制捕捉连续帧之间的几何关系，支持流式输入，不用等数据全收完就能输出重建结果，适合实时应用场景。
+- **领域归类**: [3D 视觉，深度学习]
+---
+</details>
+
+<details>
+<summary><b>🚀 GitHub 今日热门项目 (点击展开)</b></summary>
+
+### [topoteretes/cognee](https://github.com/topoteretes/cognee)
+- **今日趋势**: 总 Stars: 15,672 | Forks: 1,620 | 今日新增：156
+- **项目简介**: 一个仅需 6 行代码即可为 AI Agent 构建记忆系统的知识引擎。
+- **AI 相关性**: 是
+- **核心价值**: 解决了 AI Agent 开发中记忆管理复杂、代码冗余的痛点。面向 AI 开发者，核心技术在于简化知识图谱与向量存储的交互，使 Agent 能够高效存储和检索上下文信息，大幅降低构建具备长期记忆能力的智能体门槛。
+---
+### [z-lab/dflash](https://github.com/z-lab/dflash)
+- **今日趋势**: 总 Stars: 1,510 | Forks: 103 | 今日新增：183
+- **项目简介**: 一种用于 Flash 推测性解码的块扩散（Block Diffusion）优化技术。
+- **AI 相关性**: 是
+- **核心价值**: 解决了大模型推理速度慢、延迟高的问题。面向大模型推理优化工程师，核心技术结合了扩散模型思想与推测性解码，旨在通过算法创新提升 LLM 的生成效率，特别是在高并发场景下的吞吐量优化。
+---
+### [openai/openai-agents-python](https://github.com/openai/openai-agents-python)
+- **今日趋势**: 总 Stars: 21,051 | Forks: 3,439 | 今日新增：110
+- **项目简介**: OpenAI 官方推出的轻量级且强大的多 Agent 工作流 Python 框架。
+- **AI 相关性**: 是
+- **核心价值**: 解决了多 Agent 协作缺乏标准框架、集成难度大的痛点。面向企业级 AI 应用开发者，核心技术提供了标准化的 Agent 编排、状态管理和工具调用接口，帮助开发者快速构建可靠的多智能体系统，享受官方生态支持。
+---
+### [virattt/ai-hedge-fund](https://github.com/virattt/ai-hedge-fund)
+- **今日趋势**: 总 Stars: 55,558 | Forks: 9,621 | 今日新增：844
+- **项目简介**: 一个模拟对冲基金团队运作模式的 AI 多智能体系统。
+- **AI 相关性**: 是
+- **核心价值**: 解决了金融交易策略开发中单人视角局限及自动化程度低的问题。面向量化交易员及 AI 爱好者，核心技术利用多 Agent 协作模拟分析师、风控经理等角色，实现自动化的市场分析、决策生成与交易执行，展示了 AI 在复杂金融场景的协作潜力。
+---
+### [jundot/omlx](https://github.com/jundot/omlx)
+- **今日趋势**: 总 Stars: 10,351 | Forks: 890 | 今日新增：234
+- **项目简介**: 专为 Apple Silicon 优化的本地 LLM 推理服务器，支持菜单栏管理。
+- **AI 相关性**: 是
+- **核心价值**: 解决了 Mac 用户本地运行大模型资源调度难、缺乏便捷管理工具的问题。面向 macOS 开发者及隐私敏感用户，核心技术包含连续批处理（continuous batching）与 SSD 缓存优化，显著提升了苹果芯片上的推理性能，并提供极简的本地化部署体验。
+---
+### [google-research/timesfm](https://github.com/google-research/timesfm)
+- **今日趋势**: 总 Stars: 17,875 | Forks: 1,715 | 今日新增：275
+- **项目简介**: 谷歌研究院开发的预训练时间序列基础模型，用于高精度预测。
+- **AI 相关性**: 是
+- **核心价值**: 解决了传统时间序列预测模型需要大量定制训练且泛化能力弱的问题。面向数据科学家及预测分析领域从业者，核心技术是基于 Transformer 架构的基础模型（Foundation Model），支持零样本或少样本学习，能够处理多种领域的时间序列数据并提供 SOTA 级别的预测效果。
+---
+### [datawhalechina/hello-agents](https://github.com/datawhalechina/hello-agents)
+- **今日趋势**: 总 Stars: 37,512 | Forks: 4,444 | 今日新增：470
+- **项目简介**: 一本从零开始构建智能体的原理与实践教程（中文版）。
+- **AI 相关性**: 是
+- **核心价值**: 解决了 AI Agent 学习资源分散、缺乏系统性中文教程的痛点。面向 AI 初学者及学生群体，核心技术内容涵盖 Agent 架构设计、记忆机制、工具使用等全流程，通过开源教程降低智能体开发的学习曲线，促进社区知识共享。
+---
+### [oobabooga/textgen](https://github.com/oobabooga/textgen)
+- **今日趋势**: 总 Stars: 46,673 | Forks: 5,943 | 今日新增：79
+- **项目简介**: 经典的本地大模型交互界面，支持文本、视觉、工具调用及训练。
+- **AI 相关性**: 是
+- **核心价值**: 解决了本地部署大模型缺乏统一、功能丰富且隐私安全的 UI 界面的问题。面向隐私倡导者及本地 AI 玩家，核心技术集成了多种后端推理引擎，提供 100% 离线运行的 Web UI 和 API，支持多模态交互与模型微调，是本地 LLM 生态的基石工具。
+---
+### [github/awesome-copilot](https://github.com/github/awesome-copilot)
+- **今日趋势**: 总 Stars: 30,028 | Forks: 3,551 | 今日新增：195
+- **项目简介**: 社区贡献的 GitHub Copilot 指令、Agent 技能及配置资源合集。
+- **AI 相关性**: 是
+- **核心价值**: 解决了开发者难以充分发挥 GitHub Copilot 潜力、缺乏最佳实践指南的问题。面向所有使用 Copilot 的程序员，核心技术在于汇总了高效的 Prompt 工程技巧和代理配置，帮助用户更好地利用 AI 编程助手提升编码效率和质量。
+---
+### [Polymarket/agents](https://github.com/Polymarket/agents)
+- **今日趋势**: 总 Stars: 3,021 | Forks: 686 | 今日新增：58
+- **项目简介**: 利用 AI Agent 在 Polymarket 预测市场上进行自主交易的系统。
+- **AI 相关性**: 是
+- **核心价值**: 解决了预测市场交易中人工监控成本高及反应速度慢的问题。面向加密货币交易者及量化开发者，核心技术结合了链上数据分析与 Agent 决策逻辑，实现自动化策略执行，展示了 AI 在去中心化金融（DeFi）场景中的自主应用能力。
+---
+### [dimensionalOS/dimos](https://github.com/dimensionalOS/dimos)
+- **今日趋势**: 总 Stars: 2,877 | Forks: 459 | 今日新增：123
+- **项目简介**: 面向物理空间的智能体操作系统，支持通过自然语言控制机器人硬件。
+- **AI 相关性**: 是
+- **核心价值**: 解决了 AI 智能体与物理世界硬件（如机器人、无人机）交互困难的问题。面向机器人开发者及硬件工程师，核心技术构建了连接大模型与物理传感器/执行器的中间层，允许使用自然语言编排多智能体系统，实现虚实结合的自动化控制。
+---
+</details></script>
+        <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
+    </body>
+    </html>
+    
