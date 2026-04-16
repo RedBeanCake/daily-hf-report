@@ -5,9 +5,9 @@
   "TheCraigHewitt /seomachine": "2026-04-09",
   "shiyu-coder /Kronos": "2026-04-09",
   "microsoft /BitNet": "2026-04-09",
-  "virattt /ai-hedge-fund": "2026-04-09",
+  "virattt /ai-hedge-fund": "2026-04-16",
   "atilaahmettaner /tradingview-mcp": "2026-04-09",
-  "z-lab /dflash": "2026-04-09",
+  "z-lab /dflash": "2026-04-16",
   "521xueweihan /HelloGitHub": "2026-04-09",
   "huggingface /skills": "2026-04-09",
   "open-webui /open-webui": "2026-04-09",
@@ -38,5 +38,14 @@
   "zhayujie /CowAgent": "2026-04-15",
   "donnemartin /system-design-primer": "2026-04-15",
   "sgl-project /sglang": "2026-04-15",
-  "iam-veeramalla /aws-devops-zero-to-hero": "2026-04-15"
+  "iam-veeramalla /aws-devops-zero-to-hero": "2026-04-15",
+  "topoteretes /cognee": "2026-04-16",
+  "openai /openai-agents-python": "2026-04-16",
+  "jundot /omlx": "2026-04-16",
+  "google-research /timesfm": "2026-04-16",
+  "datawhalechina /hello-agents": "2026-04-16",
+  "oobabooga /textgen": "2026-04-16",
+  "github /awesome-copilot": "2026-04-16",
+  "Polymarket /agents": "2026-04-16",
+  "dimensionalOS /dimos": "2026-04-16"
 }
