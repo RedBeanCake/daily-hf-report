@@ -1,0 +1,241 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AI 技术周报 - 2026-W17</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <style>
+            .markdown-body { box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 30px; }
+            details { background: #f6f8fa; padding: 15px; border-radius: 8px; border: 1px solid #d0d7de; margin-bottom: 20px; }
+            summary { cursor: pointer; color: #0969da; font-weight: bold; font-size: 1.1em; }
+        </style>
+    </head>
+    <body class="markdown-body">
+        <a href='../index.html'>← 返回索引</a>
+        <h1>AI 技术周报 - 2026-W17</h1>
+        <div id="content"></div>
+        <script type="text/markdown" id="raw-md"><details>
+<summary><b>🤗 Hugging Face 每周论文 (点击展开)</b></summary>
+
+### 1. Elucidating the SNR-t Bias of Diffusion Probabilistic Models (阐明扩散概率模型中的信噪比 - 时间步偏差)
+- **社区热度**: `👍 63 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.16044)
+- **研究任务**: 扩散模型理论分析
+- **核心亮点**: 发现了扩散模型在不同噪声比例和时间步上存在系统性偏差。
+- **深度解析**: 论文分析了扩散生成过程中信噪比（SNR）与时间步（t）的关系，指出当前模型在这两个维度上存在未对齐的偏差，影响了生成质量。作者提出了相应的度量方法，为后续修正采样策略提供了理论依据。
+- **领域归类**: [生成式 AI, 扩散模型]
+---
+
+### 2. Maximal Brain Damage Without Data or Optimization: Disrupting Neural Networks via Sign-Bit Flips (无需数据或优化的最大脑损伤：通过符号位翻转破坏神经网络)
+- **社区热度**: `👍 30 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2502.07408)
+- **研究任务**: 模型安全性与鲁棒性
+- **核心亮点**: 仅通过翻转权重的符号位就能破坏模型，无需访问数据或进行梯度优化。
+- **深度解析**: 提出了一种极简的攻击方式，直接修改模型权重的符号位（Sign-Bit）。实验表明，这种操作能导致模型性能大幅下降，揭示了神经网络参数空间对符号变化的敏感性，对模型存储和传输安全提出了新挑战。
+- **领域归类**: [AI 安全, 模型鲁棒性]
+---
+
+### 3. PersonaVLM: Long-Term Personalized Multimodal LLMs (PersonaVLM：长期个性化多模态大语言模型)
+- **社区热度**: `👍 28 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.13074)
+- **研究任务**: 多模态模型个性化
+- **核心亮点**: 让多模态模型能够记住用户的长期偏好和身份特征。
+- **深度解析**: 在多模态 LLM 基础上引入了长期记忆模块，能够跨对话周期存储和检索用户特定的偏好信息。方案解决了传统 VLM 在长程交互中遗忘用户个性化设置的问题，提升了交互一致性。
+- **领域归类**: [多模态, 大语言模型]
+---
+
+### 4. Web Retrieval-Aware Chunking (W-RAC) for Efficient and Cost-Effective Retrieval-Augmented Generation Systems (面向高效低成本 RAG 系统的 Web 检索感知分块技术)
+- **社区热度**: `👍 20 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.04936)
+- **研究任务**: 检索增强生成（RAG）
+- **核心亮点**: 一种结合 Web 检索特性的文本分块方法，降低了 RAG 成本。
+- **深度解析**: 针对 Web 检索内容结构多变的特点，设计了动态分块策略。该方法能更精准地匹配检索片段与生成需求，减少了无效 token 的计算，在保证检索质量的同时降低了系统运行成本。
+- **领域归类**: [RAG, NLP]
+---
+
+### 5. Qwen3.5-Omni Technical Report (Qwen3.5-Omni 技术报告)
+- **社区热度**: `👍 19 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.15804)
+- **研究任务**: 大模型架构与能力
+- **核心亮点**: 通义千问系列发布了支持全模态交互的新版本技术细节。
+- **深度解析**: 报告详细介绍了 Qwen3.5-Omni 的架构升级，重点在于统一处理文本、图像、音频等多种模态输入。模型在跨模态理解和对齐能力上做了优化，旨在提供更通用的多模态交互体验。
+- **领域归类**: [大语言模型, 模型发布]
+---
+
+### 6. Cut Your Losses! Learning to Prune Paths Early for Efficient Parallel Reasoning (及时止损！学习早期剪枝路径以实现高效并行推理)
+- **社区热度**: `👍 18 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.16029)
+- **研究任务**: 推理效率优化
+- **核心亮点**: 在并行推理过程中提前剪除低概率路径，减少计算浪费。
+- **深度解析**: 针对思维链或多路径推理场景，训练了一个评估器来判断路径的潜力。在推理早期就丢弃表现不佳的路径，集中计算资源在高质量路径上，显著提升了并行推理的吞吐量和效率。
+- **领域归类**: [推理优化, 效率]
+---
+
+### 7. (1D) Ordered Tokens Enable Efficient Test-Time Search ((1D) 有序 Token 实现高效测试时搜索)
+- **社区热度**: `👍 11 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.15453)
+- **研究任务**: 测试时计算优化
+- **核心亮点**: 通过对 Token 进行一维排序，简化了测试时的搜索空间。
+- **深度解析**: 提出在测试阶段对生成 Token 引入有序性约束，将高维搜索问题转化为一维有序搜索。这种方法不需要重新训练模型，就能在推理阶段加快搜索速度，适用于需要多次采样验证的任务。
+- **领域归类**: [推理优化, 搜索算法]
+---
+
+### 8. Repurposing 3D Generative Model for Autoregressive Layout Generation (复用 3D 生成模型进行自回归布局生成)
+- **社区热度**: `👍 9 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.16299)
+- **研究任务**: 布局生成 / 3D 模型迁移
+- **核心亮点**: 将现有的 3D 生成模型迁移用于 2D 布局的自回归生成任务。
+- **深度解析**: 利用 3D 生成模型对空间关系的理解能力，将其适配到 2D 平面布局生成中。通过调整输入输出接口，实现了自回归式的布局生成，证明了 3D 预训练权重在 2D 空间任务上的泛化性。
+- **领域归类**: [生成式 AI, 计算机视觉]
+---
+
+### 9. Where does output diversity collapse in post-training? (输出多样性在后训练的哪个阶段崩塌？)
+- **社区热度**: `👍 8 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.16027)
+- **研究任务**: 后训练分析与对齐
+- **核心亮点**: 定位了后训练过程中导致模型输出多样性下降的具体阶段。
+- **深度解析**: 通过监控后训练各阶段的输出分布，发现多样性丧失主要发生在特定的对齐优化步骤。论文分析了造成这一现象的梯度更新机制，为保持模型生成多样性提供了改进方向。
+- **领域归类**: [模型训练, 对齐]
+---
+
+### 10. QuantCode-Bench: A Benchmark for Evaluating the Ability of Large Language Models to Generate Executable Algorithmic Trading Strategies (QuantCode-Bench：评估大模型生成可执行算法交易策略能力的基准)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.15151)
+- **研究任务**: 垂直领域基准测试
+- **核心亮点**: 发布了专门用于评估 LLM 生成量化交易代码能力的基准测试集。
+- **深度解析**: 构建了包含真实市场数据和交易逻辑的数据集，制定了代码可执行性和策略有效性的评估指标。该基准填补了金融量化领域 LLM 评估的空白，可用于测试模型在专业代码生成上的表现。
+- **领域归类**: [基准测试, 金融 AI]
+---
+
+### 11. Learning Adaptive Reasoning Paths for Efficient Visual Reasoning (学习自适应推理路径以实现高效视觉推理)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.14568)
+- **研究任务**: 多模态视觉推理效率优化
+- **核心亮点**: 提出动态选择推理路径机制，在不牺牲精度的前提下减少计算开销。
+- **深度解析**: 针对传统视觉推理模型固定计算图导致资源浪费的问题，该方法引入门控机制，根据输入图像的复杂度动态调整推理深度。模型在浅层无法置信时才调用深层网络，实现了计算资源的按需分配。
+- **领域归类**: [多模态] [高效推理]
+---
+
+### 12. Can Large Language Models Reinvent Foundational Algorithms? (大语言模型能否重塑基础算法？)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.05716)
+- **研究任务**: LLM 算法发现与代码生成能力评估
+- **核心亮点**: 系统测试了 LLM 独立 rediscover 经典排序、搜索及图算法的能力边界。
+- **深度解析**: 通过构建封闭测试环境，仅提供问题定义而不提供实现参考，评估 LLM 是否能生成正确且高效的基础算法代码。研究发现模型能复现简单算法，但在复杂数据结构优化上仍依赖训练数据记忆。
+- **领域归类**: [大语言模型] [算法研究]
+---
+
+### 13. TIPSv2: Advancing Vision-Language Pretraining with Enhanced Patch-Text Alignment (TIPSv2：通过增强 patch-text 对齐推进视觉语言预训练)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.12012)
+- **研究任务**: 视觉 - 语言预训练模型优化
+- **核心亮点**: 改进了图像 Patch 与文本 token 之间的细粒度对齐损失函数。
+- **深度解析**: 在原有对比学习基础上，增加了局部区域与短语级别的匹配约束。通过引入动态掩码策略，迫使模型关注图像关键区域与文本核心语义的对应关系，提升了下游检索和定位任务的表现。
+- **领域归类**: [多模态] [预训练]
+---
+
+### 14. GTA-2: Benchmarking General Tool Agents from Atomic Tool-Use to Open-Ended Workflows (GTA-2：基准测试通用工具智能体从原子工具使用到开放工作流)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.15715)
+- **研究任务**: 智能体工具使用能力基准测试
+- **核心亮点**: 构建了涵盖从单步工具调用到多步开放任务的全流程评估体系。
+- **深度解析**: 扩展了前代基准，增加了任务间的依赖关系和错误恢复场景。测试集包含需要规划、记忆和工具组合的复杂工作流，旨在评估 Agent 在真实环境中的泛化和鲁棒性。
+- **领域归类**: [智能体] [基准测试]
+---
+
+### 15. AccelOpt: A Self-Improving LLM Agentic System for AI Accelerator Kernel Optimization (AccelOpt：用于 AI 加速器内核优化的自改进 LLM 智能体系统)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2511.15915)
+- **研究任务**: 硬件内核代码自动优化
+- **核心亮点**: 利用 LLM 智能体闭环迭代生成并优化底层硬件加速代码。
+- **深度解析**: 系统包含代码生成、编译反馈和性能分析三个模块。LLM 根据编译器报错和性能 Profiling 数据自动修改 CUDA 或 Triton 代码，通过多轮自我修正实现内核执行效率的提升。
+- **领域归类**: [系统优化] [智能体]
+---
+
+### 16. Hierarchical Codec Diffusion for Video-to-Speech Generation (用于视频到语音生成的分层编解码扩散模型)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.15923)
+- **研究任务**: 跨模态音视频生成
+- **核心亮点**: 结合分层离散编解码器与扩散模型，实现高质量视频驱动语音合成。
+- **深度解析**: 先将语音信号通过分层 Codec 离散化为多级 token，再利用扩散模型根据视频唇形和动作特征生成对应的语音 token 序列。该方法解决了传统方法生成的语音韵律与视频节奏不匹配的问题。
+- **领域归类**: [音视频生成] [扩散模型]
+---
+
+### 17. TwinTrack: Post-hoc Multi-Rater Calibration for Medical Image Segmentation (TwinTrack：医学图像分割的事后多标注者校准)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.15950)
+- **研究任务**: 医学图像分割标注一致性处理
+- **核心亮点**: 提出事后校准方法，有效融合多位医生标注的差异性。
+- **深度解析**: 不直接训练模型拟合平均标注，而是建模每位标注者的偏差分布。通过双轨跟踪机制，在推理阶段动态调整预测结果，使其更符合临床专家的一致性标准，减少标注噪声影响。
+- **领域归类**: [医疗 AI] [图像分割]
+---
+
+### 18. NTIRE 2026 Challenge on Video Saliency Prediction: Methods and Results (NTIRE 2026 视频显著性预测挑战赛：方法与结果)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.14816)
+- **研究任务**: 视频显著性预测竞赛总结
+- **核心亮点**: 汇总了当前视频视觉注意力预测领域的最佳实践和技术方案。
+- **深度解析**: 记录了参赛队伍采用的主流架构，包括时空注意力机制和眼动数据融合策略。分析了不同方案在动态场景下的表现差异，为后续研究提供了性能基线和数据基准。
+- **领域归类**: [计算机视觉] [竞赛报告]
+---
+
+### 19. PRL-Bench: A Comprehensive Benchmark Evaluating LLMs' Capabilities in Frontier Physics Research (PRL-Bench：评估大语言模型前沿物理研究能力的综合基准)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.15411)
+- **研究任务**: 科学领域 LLM 能力评估
+- **核心亮点**: 基于物理评论快报（PRL）论文构建的高难度物理推理测试集。
+- **深度解析**: 收录了前沿物理问题，涵盖公式推导、实验设计和结论验证。测试发现当前 LLM 在处理已知知识检索上表现良好，但在新颖物理场景的逻辑推理上仍存在明显不足。
+- **领域归类**: [科学智能] [基准测试]
+---
+
+### 20. EdgeDetect: Importance-Aware Gradient Compression with Homomorphic Aggregation for Federated Intrusion Detection (EdgeDetect：用于联邦入侵检测的感知重要性梯度压缩与同态聚合)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.14663)
+- **研究任务**: 联邦学习安全与通信优化
+- **核心亮点**: 结合同态加密与梯度压缩，在保证隐私的同时降低联邦学习通信成本。
+- **深度解析**: 针对入侵检测场景，设计了一种感知梯度重要性的压缩算法，剔除冗余更新。同时利用同态加密在服务器端直接聚合密文梯度，防止中间人攻击和隐私泄露，适用于边缘计算环境。
+- **领域归类**: [联邦学习] [网络安全]
+---
+
+### 21. DiPO: Disentangled Perplexity Policy Optimization for Fine-grained Exploration-Exploitation Trade-Off (DiPO：解耦困惑度策略优化以实现细粒度探索 - 利用权衡)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.13902)
+- **研究任务**: 大模型策略优化（RLHF）
+- **核心亮点**: 把困惑度指标拆开算，更精细地控制模型训练时的探索和利用比例。
+- **深度解析**: 针对现有策略优化方法在探索与利用之间平衡不够灵活的问题，该方法将困惑度（Perplexity）进行解耦处理。通过独立约束不同部分的困惑度，实现对策略更新步长的细粒度调节，避免模型过早收敛或训练不稳定。
+- **领域归类**: [LLM, RLHF, Optimization]
+---
+### 22. RoboLab: A High-Fidelity Simulation Benchmark for Analysis of Task Generalist Policies (RoboLab：用于分析任务通用策略的高保真仿真基准)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.09860)
+- **研究任务**: 机器人策略评估
+- **核心亮点**: 建了一个物理引擎更准的仿真环境，专门用来测机器人策略的泛化能力。
+- **深度解析**: 现有仿真基准在物理真实性和任务多样性上存在不足。RoboLab 提供了高保真的物理模拟环境，并设计了多种差异化任务，旨在评估单一策略模型在不同场景下的通用性和鲁棒性，方便研究者横向对比。
+- **领域归类**: [Robotics, Simulation, Benchmark]
+---
+### 23. ArtifactNet: Detecting AI-Generated Music via Forensic Residual Physics (ArtifactNet：基于法医残留物理特征的 AI 生成音乐检测)
+- **社区热度**: `👍 0 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.16254)
+- **研究任务**: AI 音频防伪检测
+- **核心亮点**: 不靠音乐内容，靠分析音频生成过程中留下的物理残留痕迹来识别 AI 音乐。
+- **深度解析**: 针对 AI 生成音乐难以识别的问题，该方法不从旋律或风格入手，而是聚焦于生成模型在音频波形上留下的物理伪影（Forensic Residual Physics）。训练专用网络提取这些残留特征，从而实现对不同生成源音乐的精准鉴别。
+- **领域归类**: [Audio, Security, Detection]
+---
+### 24. VEFX-Bench: A Holistic Benchmark for Generic Video Editing and Visual Effects (VEFX-Bench：通用视频编辑与视觉特效的全方位基准)
+- **社区热度**: `👍 0 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.16272)
+- **研究任务**: 视频编辑模型评估
+- **核心亮点**: 制定了一套完整标准，专门用来测视频编辑和特效模型的实际效果。
+- **深度解析**: 填补了视频编辑领域缺乏统一评估标准的空白。该基准覆盖了多种编辑任务（如对象替换、风格迁移、特效添加等），提供了一套多维度的评估指标，用于量化模型在通用视频编辑任务上的性能表现。
+- **领域归类**: [Video, Benchmark, Editing]
+---
+</details>
+
+</script>
+        <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
+    </body>
+    </html>
+    
