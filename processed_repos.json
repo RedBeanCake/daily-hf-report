@@ -9,7 +9,7 @@
   "atilaahmettaner /tradingview-mcp": "2026-04-09",
   "z-lab /dflash": "2026-04-16",
   "521xueweihan /HelloGitHub": "2026-04-09",
-  "huggingface /skills": "2026-04-09",
+  "huggingface /skills": "2026-04-21",
   "open-webui /open-webui": "2026-04-09",
   "apache /airflow": "2026-04-09",
   "microsoft /markitdown": "2026-04-10",
@@ -57,5 +57,9 @@
   "zhinianboke /xianyu-auto-reply": "2026-04-20",
   "kyegomez /swarms": "2026-04-20",
   "HKUDS /RAG-Anything": "2026-04-20",
-  "TheAlgorithms /Python": "2026-04-20"
+  "TheAlgorithms /Python": "2026-04-20",
+  "OthmanAdi /planning-with-files": "2026-04-21",
+  "MoonshotAI /kimi-cli": "2026-04-21",
+  "swisskyrepo /PayloadsAllTheThings": "2026-04-21",
+  "PrefectHQ /fastmcp": "2026-04-21"
 }
