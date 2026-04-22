@@ -1,0 +1,336 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>前沿科研情报 - 2026-04-22</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <style>
+            .markdown-body { box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 30px; }
+            details { background: #f6f8fa; padding: 15px; border-radius: 8px; border: 1px solid #d0d7de; margin-bottom: 20px; }
+            summary { cursor: pointer; color: #0969da; font-weight: bold; font-size: 1.1em; }
+        </style>
+    </head>
+    <body class="markdown-body">
+        <a href='../index.html'>← 返回索引</a>
+        <h1>前沿科研情报 - 2026-04-22</h1>
+        <div id="content"></div>
+        <script type="text/markdown" id="raw-md"><details>
+<summary><b>🤗 Hugging Face 今日论文 (点击展开)</b></summary>
+
+### 1. Tstars-Tryon 1.0: Robust and Realistic Virtual Try-On for Diverse Fashion Items (Tstars-Tryon 1.0：面向多样时尚物品的鲁棒逼真虚拟试穿)
+- **社区热度**: `👍 77 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.19748)
+- **研究任务**: 虚拟试穿（Virtual Try-On）
+- **核心亮点**: 解决了不同种类服装试穿时的稳定性问题，生成效果更真实。
+- **深度解析**: 针对现有试穿模型在处理多样品类（如上衣、裙子、外套）时容易失真或结构错误的问题，提出了一种鲁棒性更强的生成架构。该方法可能引入了品类感知的控制模块，在不重新训练的情况下适应不同衣物结构，保持人体姿态和衣物纹理的一致性。
+- **领域归类**: [计算机视觉], [生成式 AI], [时尚科技]
+---
+
+### 2. CoInteract: Physically-Consistent Human-Object Interaction Video Synthesis via Spatially-Structured Co-Generation (CoInteract：基于空间结构协同生成的物理一致人机交互视频合成)
+- **社区热度**: `👍 56 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.19636)
+- **研究任务**: 人与物体交互视频生成
+- **核心亮点**: 生成的视频中人手与物体的接触符合物理规律，没有穿模或漂浮。
+- **深度解析**: 传统视频生成模型常忽略物理约束，导致交互动作不自然。该论文通过空间结构化的协同生成机制，显式建模人与物体的空间关系。在生成过程中同步优化两者位置，确保接触点合理，动作连贯，提升了视频的物理可信度。
+- **领域归类**: [视频生成], [计算机视觉], [物理仿真]
+---
+
+### 3. AgentSPEX: An Agent SPecification and EXecution Language (AgentSPEX：一种代理规范与执行语言)
+- **社区热度**: `👍 46 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.13346)
+- **研究任务**: 智能体指令规范与执行
+- **核心亮点**: 定义了一套专门的语言，让大模型代理的操作更规范、可执行。
+- **深度解析**: 针对大模型代理在执行复杂任务时指令模糊、易出错的问题，设计了 AgentSPEX 语言。该语言明确了代理的行为规范和执行流程，类似于编程接口，降低了自然语言指令的歧义性，提高了代理任务执行的成功率和可复现性。
+- **领域归类**: [大模型代理], [编程语言], [自动化]
+---
+
+### 4. AnyRecon: Arbitrary-View 3D Reconstruction with Video Diffusion Model (AnyRecon：基于视频扩散模型的任意视角三维重建)
+- **社区热度**: `👍 33 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.19747)
+- **研究任务**: 三维重建
+- **核心亮点**: 利用视频扩散模型，实现了从任意视角输入重建高质量 3D 模型。
+- **深度解析**: 利用视频扩散模型强大的时序和视角先验知识，解决稀疏视角下的重建难题。方法允许输入非标准视角的图像或视频片段，通过扩散模型补全未见视角的几何和纹理信息，实现了更灵活的三维重建流程。
+- **领域归类**: [3D 生成], [计算机视觉], [扩散模型]
+---
+
+### 5. TEMPO: Scaling Test-time Training for Large Reasoning Models (TEMPO：扩展大推理模型的测试时训练)
+- **社区热度**: `👍 24 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.19295)
+- **研究任务**: 测试时训练（Test-time Training）
+- **核心亮点**: 在推理阶段进行训练优化，显著提升了大模型的推理能力。
+- **深度解析**: 针对复杂推理任务，该方法在模型推理时动态调整参数，而非仅依赖预训练权重。通过扩展测试时训练的规模和策略，让模型适应当前问题的分布，从而在不改变主干结构的情况下，提高解题准确率和逻辑连贯性。
+- **领域归类**: [大模型推理], [机器学习优化], [测试时适应]
+---
+
+### 6. PlayCoder: Making LLM-Generated GUI Code Playable (PlayCoder：让大模型生成的 GUI 代码可运行)
+- **社区热度**: `👍 19 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.19742)
+- **研究任务**: 代码生成（GUI 方向）
+- **核心亮点**: 确保生成的图形界面代码不仅能看，还能直接运行交互。
+- **深度解析**: 解决了大模型生成前端代码常出现的语法错误或逻辑不可运行问题。通过引入执行反馈机制或特定的约束解码，保证生成的 HTML/CSS/JS 代码符合规范，用户可以直接在浏览器中操作生成的界面，提升了代码生成的实用性。
+- **领域归类**: [代码生成], [大模型应用], [前端开发]
+---
+
+### 7. ShadowPEFT: Shadow Network for Parameter-Efficient Fine-Tuning (ShadowPEFT：用于参数高效微调的阴影网络)
+- **社区热度**: `👍 17 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.19254)
+- **研究任务**: 参数高效微调（PEFT）
+- **核心亮点**: 引入阴影网络结构，在不改动主网络的情况下高效更新参数。
+- **深度解析**: 提出了一种新的微调架构，通过并联一个“阴影网络”来学习任务特定知识。主网络权重冻结，仅训练阴影部分，减少了显存占用和计算量。这种方法在保持预训练模型通用能力的同时，快速适应下游任务。
+- **领域归类**: [大模型微调], [深度学习架构], [高效计算]
+---
+
+### 8. Chat2Workflow: A Benchmark for Generating Executable Visual Workflows with Natural Language (Chat2Workflow：自然语言生成可执行可视化工作流基准)
+- **社区热度**: `👍 13 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.19667)
+- **研究任务**: 工作流生成基准测试
+- **核心亮点**: 提供了一个评估大模型将自然语言转为可执行工作流能力的标准。
+- **深度解析**: 针对自动化工作流生成缺乏统一评估标准的问题，构建了该基准数据集。包含自然语言指令到可视化节点流程的映射，支持评估生成工作流的可执行性和逻辑正确性，推动了智能自动化领域的研究进展。
+- **领域归类**: [基准测试], [工作流自动化], [大模型评估]
+---
+
+### 9. AJ-Bench: Benchmarking Agent-as-a-Judge for Environment-Aware Evaluation (AJ-Bench：面向环境感知评估的代理即裁判基准)
+- **社区热度**: `👍 10 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.18240)
+- **研究任务**: 智能体评估
+- **核心亮点**: 评估大模型代理作为“裁判”在特定环境中打分的能力。
+- **深度解析**: 探讨了用代理来评估其他代理表现的有效性。该基准测试关注代理是否理解环境上下文，能否给出公正的反馈。结果揭示了当前代理在评估任务中的偏见和局限性，为构建更可靠的自评系统提供了依据。
+- **领域归类**: [大模型代理], [评估基准], [强化学习]
+---
+
+### 10. Dual-View Training for Instruction-Following Information Retrieval (Dual-View Training：用于指令跟随信息检索的双视图训练)
+- **社区热度**: `👍 8 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.18845)
+- **研究任务**: 信息检索（指令跟随）
+- **核心亮点**: 通过双视图训练策略，提升了检索模型对指令的理解和匹配精度。
+- **深度解析**: 在检索任务中，同时从查询（Query）和文档（Document）两个视角进行建模训练。这种方法增强了模型对复杂指令的敏感度，改善了检索结果的相关性，特别是在需要遵循特定约束条件的检索场景下表现更好。
+- **领域归类**: [信息检索], [大模型应用], [训练策略]
+---
+
+### 11. Code-Switching Information Retrieval: Benchmarks, Analysis, and the Limits of Current Retrievers (语码转换信息检索：基准、分析与当前检索器的局限)
+- **社区热度**: `👍 8 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.17632)
+- **研究任务**: 信息检索（多语言混合场景）
+- **核心亮点**: 构建了语码混合检索基准，发现现有检索器在处理混合语言查询时性能显著下降。
+- **深度解析**: 收集了包含多种语言混合的查询 - 文档对，构建了评测基准。测试了主流稠密检索模型，分析其在词汇重叠少、语义跨度大时的失效模式，指出当前模型缺乏对混合语言语义的对齐能力。
+- **领域归类**: `[NLP, Information Retrieval, Multilingual]`
+---
+
+### 12. Understanding and Enforcing Weight Disentanglement in Task Arithmetic (理解与强制任务算术中的权重解耦)
+- **社区热度**: `👍 8 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.17078)
+- **研究任务**: 模型合并 / 任务算术
+- **核心亮点**: 提出了一种约束方法，减少不同任务向量在权重空间中的干扰，提升合并效果。
+- **深度解析**: 分析了任务向量在参数空间中的重叠问题，引入了正交化或稀疏化约束，确保不同任务的权重更新方向尽可能独立，从而在合并多个任务模型时减少性能衰退。
+- **领域归类**: `[LLM, Model Merging, Optimization]`
+---
+
+### 13. Speculative Decoding for Autoregressive Video Generation (自回归视频生成的推测解码)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.17397)
+- **研究任务**: 视频生成加速
+- **核心亮点**: 将文本领域的推测解码技术迁移到视频生成，显著减少了采样步数。
+- **深度解析**: 使用一个轻量级草稿模型预测后续视频帧的 Token，再由主模型进行验证和修正。通过并行验证机制，在保证生成质量的前提下，降低了自回归视频生成的推理延迟。
+- **领域归类**: `[Computer Vision, Video Generation, Inference Acceleration]`
+---
+
+### 14. Target-Oriented Pretraining Data Selection via Neuron-Activated Graph (基于神经元激活图的目标导向预训练数据选择)
+- **社区热度**: `👍 6 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.15706)
+- **研究任务**: 预训练数据筛选
+- **核心亮点**: 利用神经元激活图匹配目标任务，筛选出高价值预训练数据。
+- **深度解析**: 构建数据样本与模型神经元激活状态的映射图，针对特定下游任务目标，选择能最大程度激活相关神经元子集的数据子集，提高预训练数据的使用效率。
+- **领域归类**: `[LLM, Pretraining, Data Selection]`
+---
+
+### 15. UniMesh: Unifying 3D Mesh Understanding and Generation (UniMesh：统一 3D 网格理解与生成)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.17472)
+- **研究任务**: 3D 网格处理
+- **核心亮点**: 单个模型同时支持 3D 网格的理解（分类/分割）和生成任务。
+- **深度解析**: 设计了统一的 Transformer 架构，将 3D 网格序列化为 Token 序列。通过不同的提示词或掩码策略，在同一权重下切换理解与生成模式，避免了维护多个专用模型。
+- **领域归类**: `[3D Vision, Generative AI, Multimodal]`
+---
+
+### 16. CityRAG: Stepping Into a City via Spatially-Grounded Video Generation (CityRAG：通过空间接地视频生成走进城市)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.19741)
+- **研究任务**: 视频生成 / 检索增强生成
+- **核心亮点**: 结合城市空间数据检索，生成具有地理一致性的城市视频。
+- **深度解析**: 引入检索模块获取特定城市的地理空间信息（如地标、布局），作为条件输入到视频生成模型中。确保生成的视频内容符合真实城市的空间逻辑，减少幻觉。
+- **领域归类**: `[Computer Vision, RAG, Video Generation]`
+---
+
+### 17. RDP LoRA: Geometry-Driven Identification for Parameter-Efficient Adaptation in Large Language Models (RDP LoRA：大模型参数高效适配的几何驱动识别)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.19321)
+- **研究任务**: 参数高效微调 (PEFT)
+- **核心亮点**: 基于参数空间几何特征，自动识别并选择最优的 LoRA 适配结构。
+- **深度解析**: 分析了预训练权重空间的几何属性（如曲率、梯度方向），以此为依据决定在哪些层插入 LoRA 模块以及设定何种秩，比固定配置更高效且性能更好。
+- **领域归类**: `[LLM, PEFT, Optimization]`
+---
+
+### 18. LoopCTR: Unlocking the Loop Scaling Power for Click-Through Rate Prediction (LoopCTR：解锁循环缩放能力用于点击率预测)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.19550)
+- **研究任务**: 点击率 (CTR) 预测
+- **核心亮点**: 引入循环缩放机制，增强了模型对用户行为序列的捕捉能力。
+- **深度解析**: 在推荐模型中设计了循环结构，通过迭代缩放特征表示，深化对用户历史行为序列的建模，提升了长序列依赖的捕捉效果，进而提高 CTR 预测准确率。
+- **领域归类**: `[RecSys, Deep Learning]`
+---
+
+### 19. HP-Edit: A Human-Preference Post-Training Framework for Image Editing (HP-Edit：图像编辑的人类偏好后训练框架)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.18164)
+- **研究任务**: 图像编辑
+- **核心亮点**: 利用人类偏好数据对图像编辑模型进行后训练，使编辑结果更符合人意。
+- **深度解析**: 收集人类对编辑结果的偏好评分，构建奖励模型或直接进行偏好优化（如 DPO）。微调编辑模型，使其生成的图像在保持内容一致性的同时，更符合审美和编辑意图。
+- **领域归类**: `[Computer Vision, Image Editing, RLHF]`
+---
+
+### 20. MM-JudgeBias: A Benchmark for Evaluating Compositional Biases in MLLM-as-a-Judge (MM-JudgeBias：评估 MLLM 作为评委的组合偏差基准)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.18164)
+- **研究任务**: MLLM 评估 / 偏差检测
+- **核心亮点**: 提出了一个基准，专门检测多模态大模型作为评委时的组合性偏差。
+- **深度解析**: 构造了包含不同属性组合的测试样本，观察模型评分是否因输入内容的组合方式（如对象 + 属性）而产生不一致。量化了模型在作为裁判时的公平性和稳定性问题。
+- **领域归类**: `[MLLM, Evaluation, Bias]`
+---
+
+### 21. UDM-GRPO: Stable and Efficient Group Relative Policy Optimization for Uniform Discrete Diffusion Models (UDM-GRPO：面向均匀离散扩散模型的稳定高效组相对策略优化)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.18518)
+- **研究任务**: 离散扩散模型强化学习优化
+- **核心亮点**: 将 GRPO 算法改进后应用于离散扩散模型，解决了训练不稳定问题。
+- **深度解析**: 针对离散扩散过程中的策略更新方差大问题，引入了组相对策略优化（GRPO）机制。通过分组采样和相对优势计算，稳定了离散空间下的策略梯度更新，提升了训练效率和生成质量。
+- **领域归类**: [生成模型] [强化学习]
+---
+
+### 22. Accurate and scalable exchange-correlation with deep learning (基于深度学习的准确可扩展交换关联泛函)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2506.14665)
+- **研究任务**: 计算化学/密度泛函理论（DFT）
+- **核心亮点**: 用深度学习模型替代传统交换关联泛函，兼顾精度与计算扩展性。
+- **深度解析**: 传统 DFT 计算中交换关联泛函近似误差较大。该工作训练神经网络直接拟合交换关联能，在保证量子化学计算精度的同时，降低了大规模体系下的计算成本。
+- **领域归类**: [AI for Science] [计算化学]
+---
+
+### 23. Contrastive Attribution in the Wild: An Interpretability Analysis of LLM Failures on Realistic Benchmarks (野外对比归因：真实基准下 LLM 失败的可解释性分析)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.17761)
+- **研究任务**: 大模型可解释性与故障分析
+- **核心亮点**: 通过对比归因方法，定位大模型在真实场景基准测试中失败的具体原因。
+- **深度解析**: 收集模型在真实基准上的成功与失败案例，利用对比归因技术分析注意力分布和激活差异。找出了导致模型出错的关键神经元或输入特征，为修复漏洞提供依据。
+- **领域归类**: [可解释性] [大模型安全]
+---
+
+### 24. What Makes an LLM a Good Optimizer? A Trajectory Analysis of LLM-Guided Evolutionary Search (什么让 LLM 成为好的优化器？LLM 引导进化搜索的轨迹分析)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.19440)
+- **研究任务**: 进化算法与大模型结合
+- **核心亮点**: 分析了 LLM 在引导进化搜索过程中的行为轨迹，总结了有效优化特征。
+- **深度解析**: 记录了 LLM 参与进化搜索的每一步状态变化。通过轨迹分析，识别出哪些模型能力（如多样性保持、局部搜索能力）对优化结果贡献最大，指导后续算法设计。
+- **领域归类**: [优化算法] [大模型应用]
+---
+
+### 25. SmartPhotoCrafter: Unified Reasoning, Generation and Optimization for Automatic Photographic Image Editing (SmartPhotoCrafter：面向自动摄影图像编辑的统一推理、生成与优化)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.19587)
+- **研究任务**: 自动图像编辑
+- **核心亮点**: 将审美推理、图像生成和参数优化整合到一个框架中，实现自动修图。
+- **深度解析**: 使用多模态模型理解照片美学问题，生成编辑指令，并通过反馈循环优化生成参数。解决了传统编辑工具需要人工调整参数的问题，实现端到端自动处理。
+- **领域归类**: [多模态] [图像生成]
+---
+
+### 26. ClawNet: Human-Symbiotic Agent Network for Cross-User Autonomous Cooperation (ClawNet：面向跨用户自主协作的人机共生代理网络)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.19211)
+- **研究任务**: 多智能体协作与人机交互
+- **核心亮点**: 构建了允许不同用户的代理自主协商与合作的网络架构。
+- **深度解析**: 设计了一种代理网络协议，使代表不同用户的智能体能在无需人工干预的情况下进行任务分配和资源协调。重点解决了跨用户隐私保护和协作效率的平衡问题。
+- **领域归类**: [多智能体系统] [人机交互]
+---
+
+### 27. Evaluation-driven Scaling for Scientific Discovery (评估驱动的科学发现扩展方法)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.19341)
+- **研究任务**: 科学发现中的模型扩展
+- **核心亮点**: 提出依据评估反馈来决定模型和数据扩展策略的方法。
+- **深度解析**: 在科学任务中，盲目扩大模型规模效果不佳。该工作建立了一套评估指标体系，根据中间实验结果动态调整计算资源投入和数据采集方向，提高发现效率。
+- **领域归类**: [AI for Science] [ scaling laws]
+---
+
+### 28. Micro Language Models Enable Instant Responses (微型语言模型实现即时响应)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.19642)
+- **研究任务**: 高效大模型与端侧部署
+- **核心亮点**: 优化微型语言模型架构，实现在边缘设备上的即时推理。
+- **深度解析**: 通过结构剪枝和量化技术，将模型参数量压缩至极小规模。针对端侧硬件特性优化算子，消除了推理延迟，适用于对响应速度要求极高的交互场景。
+- **领域归类**: [高效 AI] [大模型]
+---
+
+### 29. Mitigating Multimodal Hallucination via Phase-wise Self-reward (通过分阶段自奖励缓解多模态幻觉)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.17982)
+- **研究任务**: 多模态幻觉抑制
+- **核心亮点**: 在生成过程的不同阶段引入自奖励机制，减少图文不一致。
+- **深度解析**: 将生成过程划分为多个阶段，每个阶段模型自我评估内容的一致性并给予奖励信号。通过强化学习微调，迫使模型在生成早期就规避潜在的幻觉错误。
+- **领域归类**: [多模态] [强化学习]
+---
+
+### 30. Predicting integers from continuous parameters (从连续参数预测整数)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2602.10751)
+- **研究任务**: 机器学习基础理论/回归任务
+- **核心亮点**: 解决了神经网络从连续输出映射到离散整数时的精度损失问题。
+- **深度解析**: 针对传统回归模型输出连续值难以直接对应整数标签的问题，提出了新的损失函数或输出层结构。改善了模型在需要离散输出任务（如计数、分类编码）上的表现。
+- **领域归类**: [机器学习理论] [数学]
+---
+</details>
+
+<details>
+<summary><b>🚀 GitHub 今日热门项目 (点击展开)</b></summary>
+
+### [AIDC-AI /Pixelle-Video](https://github.com/AIDC-AI/Pixelle-Video)
+- **今日趋势**: ⭐ 5,320 | 🍴 866 | 📈 237 (今日)
+- **项目简介**: 一个 AI 全自动短视频生成引擎，旨在实现视频内容的自动化创作。
+- **核心价值**: 【AI 相关性：是】目标人群为内容创作者及营销人员。该项目解决了传统视频制作成本高、耗时长的痛点，通过 AI 生成技术核心，实现从脚本到成片的自动化流程，大幅降低短视频生产门槛。
+---
+### [Z4nzu /hackingtool](https://github.com/Z4nzu/hackingtool)
+- **今日趋势**: ⭐ 59,225 | 🍴 6,679 | 📈 509 (今日)
+- **项目简介**: 一款集成了多种功能的黑客工具包，专为安全研究人员和渗透测试者设计。
+- **核心价值**: 【AI 相关性：否】目标人群为网络安全从业者及伦理黑客。该项目解决了安全测试中需要频繁切换不同工具的痛点，通过 Python 脚本聚合各类安全工具核心技术，提供一站式渗透测试解决方案，提高效率。
+---
+### [Alishahryar1 /free-claude-code](https://github.com/Alishahryar1/free-claude-code)
+- **今日趋势**: ⭐ 2,206 | 🍴 415 | 📈 51 (今日)
+- **项目简介**: 允许用户在终端、VSCode 或 Discord 中免费使用 Claude Code 的客户端工具。
+- **核心价值**: 【AI 相关性：是】目标人群为希望低成本使用 AI 编程助手的开发者。该项目解决了官方接口可能存在的费用或访问限制痛点，通过封装 CLI 及扩展程序技术核心，提供便捷的本地化 AI  coding 体验。
+---
+### [davila7 /claude-code-templates](https://github.com/davila7/claude-code-templates)
+- **今日趋势**: ⭐ 24,930 | 🍴 2,464 | 📈 99 (今日)
+- **项目简介**: 用于配置和监控 Claude Code 的命令行工具及模板集合。
+- **核心价值**: 【AI 相关性：是】目标人群为深度使用 Claude Code 的开发者。该项目解决了 AI 编程工作流配置复杂、难以标准化的痛点，通过 CLI 配置管理技术核心，帮助用户快速搭建和监控个性化的 AI 开发环境。
+---
+### [open-webui /open-webui](https://github.com/open-webui/open-webui)
+- **今日趋势**: ⭐ 133,337 | 🍴 18,916 | 📈 355 (今日)
+- **项目简介**: 一个支持 Ollama、OpenAI API 等多种后端的学生友好型 AI 交互界面。
+- **核心价值**: 【AI 相关性：是】目标人群为 AI 爱好者及自托管用户。该项目解决了本地大模型部署后缺乏美观易用交互界面的痛点，通过 Web UI 及多 API 适配技术核心，提供类似 ChatGPT 的流畅体验，降低大模型使用门槛。
+---
+### [mvanhorn /last30days-skill](https://github.com/mvanhorn/last30days-skill)
+- **今日趋势**: ⭐ 23,467 | 🍴 1,941 | 📈 254 (今日)
+- **项目简介**: 一个 AI 代理技能，可跨多个平台研究主题并生成综合摘要。
+- **核心价值**: 【AI 相关性：是】目标人群为市场分析师及研究人员。该项目解决了信息过载及跨平台调研耗时的痛点，通过 AI Agent 及网络爬虫技术核心，自动聚合 Reddit、X、YouTube 等多源信息并生成接地气的总结，提升情报收集效率。
+---
+### [EbookFoundation /free-programming-books](https://github.com/EbookFoundation/free-programming-books)
+- **今日趋势**: ⭐ 385,866 | 🍴 66,118 | 📈 80 (今日)
+- **项目简介**: 一个收录了全球各地免费编程书籍资源的仓库。
+- **核心价值**: 【AI 相关性：否】目标人群为编程学习者及开发者。该项目解决了优质学习资源昂贵且分散的痛点，通过社区维护的 Markdown 列表技术核心，集中提供免费合法的编程书籍链接，促进知识共享与教育公平。
+---
+</details></script>
+        <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
+    </body>
+    </html>
+    

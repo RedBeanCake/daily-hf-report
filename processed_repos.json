@@ -10,7 +10,7 @@
   "z-lab /dflash": "2026-04-16",
   "521xueweihan /HelloGitHub": "2026-04-09",
   "huggingface /skills": "2026-04-21",
-  "open-webui /open-webui": "2026-04-09",
+  "open-webui /open-webui": "2026-04-22",
   "apache /airflow": "2026-04-09",
   "microsoft /markitdown": "2026-04-10",
   "FloatingPragma /observer-patch-holography": "2026-04-10",
@@ -25,7 +25,7 @@
   "yt-dlp /yt-dlp": "2026-04-13",
   "axolotl-ai-cloud /axolotl": "2026-04-13",
   "microsoft /agent-lightning": "2026-04-13",
-  "AIDC-AI /Pixelle-Video": "2026-04-13",
+  "AIDC-AI /Pixelle-Video": "2026-04-22",
   "vllm-project /vllm": "2026-04-14",
   "paperswithbacktest /awesome-systematic-trading": "2026-04-14",
   "Tracer-Cloud /opensre": "2026-04-14",
@@ -61,5 +61,10 @@
   "OthmanAdi /planning-with-files": "2026-04-21",
   "MoonshotAI /kimi-cli": "2026-04-21",
   "swisskyrepo /PayloadsAllTheThings": "2026-04-21",
-  "PrefectHQ /fastmcp": "2026-04-21"
+  "PrefectHQ /fastmcp": "2026-04-21",
+  "Z4nzu /hackingtool": "2026-04-22",
+  "Alishahryar1 /free-claude-code": "2026-04-22",
+  "davila7 /claude-code-templates": "2026-04-22",
+  "mvanhorn /last30days-skill": "2026-04-22",
+  "EbookFoundation /free-programming-books": "2026-04-22"
 }
