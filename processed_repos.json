@@ -12,7 +12,7 @@
   "huggingface /skills": "2026-04-21",
   "open-webui /open-webui": "2026-04-22",
   "apache /airflow": "2026-04-09",
-  "microsoft /markitdown": "2026-04-10",
+  "microsoft /markitdown": "2026-04-23",
   "FloatingPragma /observer-patch-holography": "2026-04-10",
   "D4Vinci /Scrapling": "2026-04-10",
   "PrefectHQ /prefect": "2026-04-10",
@@ -66,5 +66,12 @@
   "Alishahryar1 /free-claude-code": "2026-04-22",
   "davila7 /claude-code-templates": "2026-04-22",
   "mvanhorn /last30days-skill": "2026-04-22",
-  "EbookFoundation /free-programming-books": "2026-04-22"
+  "EbookFoundation /free-programming-books": "2026-04-22",
+  "huggingface /ml-intern": "2026-04-23",
+  "crewAIInc /crewAI": "2026-04-23",
+  "onyx-dot-app /onyx": "2026-04-23",
+  "PostHog /posthog": "2026-04-23",
+  "funstory-ai /BabelDOC": "2026-04-23",
+  "hiroi-sora /Umi-OCR": "2026-04-23",
+  "BerriAI /litellm": "2026-04-23"
 }
