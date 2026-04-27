@@ -36,7 +36,7 @@
   "google /magika": "2026-04-15",
   "agentscope-ai /agentscope": "2026-04-15",
   "zhayujie /CowAgent": "2026-04-15",
-  "donnemartin /system-design-primer": "2026-04-15",
+  "donnemartin /system-design-primer": "2026-04-27",
   "sgl-project /sglang": "2026-04-15",
   "iam-veeramalla /aws-devops-zero-to-hero": "2026-04-15",
   "topoteretes /cognee": "2026-04-16",
@@ -53,7 +53,7 @@
   "alexzhang13 /rlm": "2026-04-20",
   "barry-far /V2ray-Config": "2026-04-20",
   "sansan0 /TrendRadar": "2026-04-20",
-  "home-assistant /core": "2026-04-20",
+  "home-assistant /core": "2026-04-27",
   "zhinianboke /xianyu-auto-reply": "2026-04-20",
   "kyegomez /swarms": "2026-04-20",
   "HKUDS /RAG-Anything": "2026-04-20",
@@ -80,5 +80,14 @@
   "mlflow /mlflow": "2026-04-24",
   "microsoft /presidio": "2026-04-24",
   "ZhuLinsen /daily_stock_analysis": "2026-04-24",
-  "Azure /Azure-Sentinel": "2026-04-24"
+  "Azure /Azure-Sentinel": "2026-04-24",
+  "ComposioHQ /awesome-codex-skills": "2026-04-27",
+  "microsoft /VibeVoice": "2026-04-27",
+  "TauricResearch /TradingAgents": "2026-04-27",
+  "deepseek-ai /DeepSeek-V3": "2026-04-27",
+  "sherlock-project /sherlock": "2026-04-27",
+  "HunxByts /GhostTrack": "2026-04-27",
+  "hydropix /TranslateBooksWithLLMs": "2026-04-27",
+  "nikopueringer /CorridorKey": "2026-04-27",
+  "openai /openai-cs-agents-demo": "2026-04-27"
 }
