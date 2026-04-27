@@ -1,0 +1,163 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AI 技术周报 - 2026-W18</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <style>
+            .markdown-body { box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 30px; }
+            details { background: #f6f8fa; padding: 15px; border-radius: 8px; border: 1px solid #d0d7de; margin-bottom: 20px; }
+            summary { cursor: pointer; color: #0969da; font-weight: bold; font-size: 1.1em; }
+        </style>
+    </head>
+    <body class="markdown-body">
+        <a href='../index.html'>← 返回索引</a>
+        <h1>AI 技术周报 - 2026-W18</h1>
+        <div id="content"></div>
+        <script type="text/markdown" id="raw-md"><details>
+<summary><b>🤗 Hugging Face 每周论文 (点击展开)</b></summary>
+
+### 1. Agentic World Modeling: Foundations, Capabilities, Laws, and Beyond (智能体世界建模：基础、能力、法则及延伸)
+- **社区热度**: `👍 141 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.22748)
+- **研究任务**: 智能体与世界模型的理论框架构建
+- **核心亮点**: 系统性地定义了智能体构建内部世界模型的基础理论与能力边界。
+- **深度解析**: 这篇论文没提具体模型架构，主要是定规矩。它梳理了智能体如何感知、预测和规划世界状态，提出了世界模型应具备的基本定律。目的是让后续做 Agent 的研究有个统一的理论参照，避免各自为战。
+- **领域归类**: [Agent, World Model, Theory]
+---
+
+### 2. Video Analysis and Generation via a Semantic Progress Function (基于语义进程函数的视频分析与生成)
+- **社区热度**: `👍 30 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.22554)
+- **研究任务**: 视频理解与生成控制
+- **核心亮点**: 引入语义进程函数，实现对视频生成和分析过程的细粒度控制。
+- **深度解析**: 传统视频生成很难控制中间状态变化。这篇论文设计了一个函数来量化视频内容的语义进展（比如动作做到哪一步了），把这个信号喂给生成模型。这样既能分析视频进展，也能指导生成模型按步骤产出视频，时序一致性更好。
+- **领域归类**: [Video, Generation, Control]
+---
+
+### 3. DiffNR: Diffusion-Enhanced Neural Representation Optimization for Sparse-View 3D Tomographic Reconstruction (DiffNR：用于稀疏视角 3D 断层重建的扩散增强神经表示优化)
+- **社区热度**: `👍 26 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.21518)
+- **研究任务**: 3D 医学图像重建
+- **核心亮点**: 利用扩散模型先验优化神经表示，解决稀疏视角下的 3D 重建模糊问题。
+- **深度解析**: 针对 CT 等扫描数据视角少导致重建质量差的问题，该方法结合了扩散模型的生成能力和神经辐射场（NeRF）类表示。用扩散模型补全缺失视角的几何信息，优化神经表示场的训练，显著提升稀疏数据下的重建清晰度。
+- **领域归类**: [3D, Medical Imaging, Diffusion]
+---
+
+### 4. LLM Safety From Within: Detecting Harmful Content with Internal Representations (源自内部的 LLM 安全：利用内部表示检测有害内容)
+- **社区热度**: `👍 21 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.18519)
+- **研究任务**: 大模型安全与对齐
+- **核心亮点**: 不靠输出过滤，直接通过模型内部隐藏状态检测有害意图。
+- **深度解析**: 传统安全过滤多在输出层做，容易被绕过且慢。这篇论文训练了一个探测头（Probe），监控模型中间层的激活值。一旦发现内部表示指向有害内容，就在生成过程中提前拦截。这种方法延迟更低，且更难被提示词攻击绕过。
+- **领域归类**: [Safety, LLM, Alignment]
+---
+
+### 5. FlowAnchor: Stabilizing the Editing Signal for Inversion-Free Video Editing (FlowAnchor：稳定免反转视频编辑的编辑信号)
+- **社区热度**: `👍 10 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.22586)
+- **研究任务**: 视频编辑
+- **核心亮点**: 无需潜在空间反转，通过锚点机制稳定视频编辑信号。
+- **深度解析**: 现有视频编辑常需要做耗时的噪声反转（Inversion）。这篇论文提出了 FlowAnchor 机制，在流匹配（Flow Matching）过程中固定关键锚点，确保编辑指令能稳定传递到视频帧，同时保持背景不变。省去了反转步骤，编辑速度更快，画面更稳。
+- **领域归类**: [Video, Editing, Diffusion]
+---
+
+### 6. AgentSearchBench: A Benchmark for AI Agent Search in the Wild (AgentSearchBench：野外 AI 智能体搜索基准)
+- **社区热度**: `👍 8 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.22436)
+- **研究任务**: 智能体能力评估
+- **核心亮点**: 提供了一个针对真实场景下智能体搜索能力的评估基准。
+- **深度解析**: 目前缺少评估 Agent 在复杂环境中搜索信息能力的标准。这篇论文构建了一个包含多种搜索任务的数据集，模拟真实网页或数据库环境。重点考察智能体检索信息的准确率、步数和抗干扰能力，方便横向对比不同搜索策略。
+- **领域归类**: [Agent, Benchmark, Search]
+---
+
+### 7. Contexts are Never Long Enough: Structured Reasoning for Scalable Question Answering over Long Document Sets (上下文永远不够长：面向长文档集可扩展问答的结构化推理)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.22294)
+- **研究任务**: 长上下文问答
+- **核心亮点**: 通过结构化推理方法，突破模型上下文长度限制处理长文档。
+- **深度解析**: 单纯增加上下文窗口成本高且效率低。这篇论文主张把长文档转换成结构化形式（如图谱或层级摘要），让模型在结构上进行推理而不是读原始文本。这样既能处理超长文档集，又能减少 Token 消耗，提升问答准确率。
+- **领域归类**: [NLP, Long Context, QA]
+---
+
+### 8. Building a Precise Video Language with Human-AI Oversight (构建具有人机监督的精确视频语言)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.21718)
+- **研究任务**: 视频 - 语言模态对齐
+- **核心亮点**: 引入人机协作监督，构建更精确的视频语言表示。
+- **深度解析**: 自动生成的视频描述往往不够准。这篇论文设计了一个流程，让人类专家对 AI 生成的视频语言标注进行修正和反馈。利用这些高质量修正数据微调模型，使得视频和文本的嵌入空间对齐更紧密，提升检索和理解精度。
+- **领域归类**: [Multimodal, Video, Human-in-the-loop]
+---
+
+### 9. dWorldEval: Scalable Robotic Policy Evaluation via Discrete Diffusion World Model (dWorldEval：通过离散扩散世界模型进行可扩展机器人策略评估)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.22152)
+- **研究任务**: 机器人策略评估
+- **核心亮点**: 利用离散扩散世界模型模拟环境，低成本评估机器人策略。
+- **深度解析**: 真机评估机器人策略太慢且危险。这篇论文用离散扩散模型构建了一个世界模型，能预测机器人动作后的状态变化。在这个模拟环境里大规模跑策略评估，筛选出好的策略再去真机测试，大幅降低了评估成本和风险。
+- **领域归类**: [Robotics, World Model, Evaluation]
+---
+
+### 10. Memanto: Typed Semantic Memory with Information-Theoretic Retrieval for Long-Horizon Agents (Memanto：面向长程智能体的类型化语义记忆与信息论检索)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.22085)
+- **研究任务**: 智能体长期记忆
+- **核心亮点**: 结合类型化记忆与信息论检索，优化长程任务中的记忆调用。
+- **深度解析**: 智能体做长任务容易忘事或检索到无关信息。这篇论文把记忆按类型分类存储，并用信息论方法计算哪些记忆对当前任务最有价值。这样检索更准，噪音更少，帮助智能体在长周期任务中保持连贯性。
+- **领域归类**: [Agent, Memory, Retrieval]
+---
+
+### 11. Sessa: Selective State Space Attention (Sessa：选择性状态空间注意力)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.18580)
+- **研究任务**: 序列建模与高效注意力机制优化
+- **核心亮点**: 将选择性状态空间模型（SSM）与注意力机制结合，兼顾线性复杂度与关键信息捕捉能力。
+- **深度解析**: 针对 SSM 在长序列建模中可能丢失全局依赖的问题，在状态更新过程中引入注意力选择机制。模型不再被动接收所有输入，而是动态筛选重要状态进行更新，试图在保持推理速度的同时提升对长上下文的理解精度。
+- **领域归类**: [基础架构], [高效计算], [序列建模]
+---
+
+### 12. EmbodiedMidtrain: Bridging the Gap between Vision-Language Models and Vision-Language-Action Models via Mid-training (EmbodiedMidtrain：通过中间训练 bridging 视觉语言模型与视觉语言动作模型)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.20012)
+- **研究任务**: 具身智能与模型适配
+- **核心亮点**: 提出“中间训练”阶段，低成本将通用 VLM 适配为具身动作模型（VLA）。
+- **深度解析**: 在 VLM 预训练和具体任务微调之间增加一个中间训练步骤。利用大量未标注或弱标注的具身数据，让模型先适应动作空间分布和时序逻辑，减少对昂贵指令微调数据的依赖，提升泛化性。
+- **领域归类**: [具身智能], [多模态], [模型训练策略]
+---
+
+### 13. AgriIR: A Scalable Framework for Domain-Specific Knowledge Retrieval (AgriIR：可扩展的领域特定知识检索框架)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.16353)
+- **研究任务**: 垂直领域检索增强生成（RAG）
+- **核心亮点**: 构建针对农业领域的可扩展检索框架，解决专业术语匹配难的问题。
+- **深度解析**: 设计了专门的知识索引结构和检索流程，针对农业数据的多源异构特点进行优化。支持动态扩展知识库，改进嵌入模型对农业专有名词的理解，提升检索结果的相关性和准确性。
+- **领域归类**: [RAG], [垂直领域应用], [信息检索]
+---
+
+### 14. DiagramBank: A Large-scale Dataset of Diagram Design Exemplars with Paper Metadata for Retrieval-Augmented Generation (DiagramBank：用于 RAG 的大规模图表设计范例与论文元数据集)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.20857)
+- **研究任务**: 多模态数据集构建与图表生成
+- **核心亮点**: 提供带元数据的大规模图表数据集，支持基于检索的图表生成任务。
+- **深度解析**: 从学术论文中收集图表及其对应的元数据（如标题、章节、引用关系）。构建检索系统，使模型在生成新图表时能参考现有高质量范例的结构和风格，提升生成图表的专业性和可读性。
+- **领域归类**: [数据集], [多模态生成], [科学文献处理]
+---
+
+### 15. Learning Evidence Highlighting for Frozen LLMs (面向冻结大语言模型的证据高亮学习)
+- **社区热度**: `👍 0 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.22565)
+- **研究任务**: 模型可解释性与幻觉抑制
+- **核心亮点**: 在不更新主模型权重的情况下，教会 LLM 标记生成内容的依据来源。
+- **深度解析**: 通过附加轻量级模块或特定提示策略，训练模型在输出文本时同步高亮参考文档中的证据片段。主模型权重保持冻结，降低训练成本，同时增强输出的可验证性，减少无依据生成。
+- **领域归类**: [可解释性], [幻觉抑制], [高效微调]
+---
+</details>
+
+</script>
+        <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
+    </body>
+    </html>
+    
