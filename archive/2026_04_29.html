@@ -1,0 +1,315 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>前沿科研情报 - 2026-04-29</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <style>
+            .markdown-body { box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 30px; }
+            details { background: #f6f8fa; padding: 15px; border-radius: 8px; border: 1px solid #d0d7de; margin-bottom: 20px; }
+            summary { cursor: pointer; color: #0969da; font-weight: bold; font-size: 1.1em; }
+        </style>
+    </head>
+    <body class="markdown-body">
+        <a href='../index.html'>← 返回索引</a>
+        <h1>前沿科研情报 - 2026-04-29</h1>
+        <div id="content"></div>
+        <script type="text/markdown" id="raw-md"><details>
+<summary><b>🤗 Hugging Face 今日论文 (点击展开)</b></summary>
+
+### 1. World-R1: Reinforcing 3D Constraints for Text-to-Video Generation (World-R1: 强化文本生成视频中的 3D 约束)
+- **社区热度**: `👍 87 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.24764)
+- **研究任务**: 文生视频的一致性优化
+- **核心亮点**: 用强化学习给视频生成加上 3D 几何约束，减少物体变形。
+- **深度解析**: 针对文生视频里物体结构容易崩坏的问题，在训练时引入 3D 约束作为奖励信号，通过 RL 微调模型，让生成的视频在几何结构上更稳定，帧间一致性更好。
+- **领域归类**: [视频生成，强化学习]
+---
+
+### 2. From Skills to Talent: Organising Heterogeneous Agents as a Real-World Company (从技能到人才：将异构智能体组织成现实公司)
+- **社区热度**: `👍 74 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.22446)
+- **研究任务**: 多智能体协作架构
+- **核心亮点**: 模拟真实公司的组织架构来管理不同能力的智能体。
+- **深度解析**: 把不同技能的 agent 分配成不同部门职位，用公司流程代替简单的任务分解，解决复杂协作中职责不清的问题，提升多智能体系统的整体效率。
+- **领域归类**: [多智能体，组织管理]
+---
+
+### 3. ReVSI: Rebuilding Visual Spatial Intelligence Evaluation for Accurate Assessment of VLM 3D Reasoning (ReVSI: 重建视觉空间智能评估以准确测评 VLM 3D 推理)
+- **社区热度**: `👍 53 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.24300)
+- **研究任务**: VLM 空间推理评测
+- **核心亮点**: 出了一个新基准，专门测模型懂不懂三维空间关系。
+- **深度解析**: 现有评测太浅，这篇构建了涉及遮挡、透视、深度关系的测试集，能更准确判断 VLM 是否具备真正的 3D 理解能力，而非单纯靠记忆答题。
+- **领域归类**: [评测基准，视觉语言模型]
+---
+
+### 4. Vision-Language-Action Safety: Threats, Challenges, Evaluations, and Mechanisms (视觉 - 语言 - 动作安全：威胁、挑战、评估与机制)
+- **社区热度**: `👍 40 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.23775)
+- **研究任务**: 具身智能安全
+- **核心亮点**: 系统梳理了 VLA 模型在物理世界行动时的安全风险和防御方案。
+- **深度解析**: 针对机器人执行动作的场景，分析了潜在危险，给出了评估标准和具体的安全机制，算是该方向的基础设施工作，为后续安全研究提供参考。
+- **领域归类**: [具身智能，安全]
+---
+
+### 5. Tuna-2: Pixel Embeddings Beat Vision Encoders for Multimodal Understanding and Generation (Tuna-2: 像素嵌入在多模态理解与生成中胜过视觉编码器)
+- **社区热度**: `👍 35 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.24763)
+- **研究任务**: 多模态模型架构
+- **核心亮点**: 不用 ViT 编码器，直接用像素嵌入输入大模型，效果更好。
+- **深度解析**: 传统方法先用 ViT 提特征再输入 LLM。这篇尝试直接把像素映射为 embedding，减少了信息压缩损失，提升了理解和生成质量，架构更简洁。
+- **领域归类**: [多模态大模型，模型架构]
+---
+
+### 6. ClawMark: A Living-World Benchmark for Multi-Turn, Multi-Day, Multimodal Coworker Agents (ClawMark: 面向多轮、多天、多模态同事智能体的活世界基准)
+- **社区热度**: `👍 23 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.23781)
+- **研究任务**: 智能体长期协作评测
+- **核心亮点**: 一个模拟长期工作流环境的智能体评测基准。
+- **深度解析**: 之前的评测多是单轮任务。这个基准模拟了多天的协作场景，要求智能体有长期记忆和多模态处理能力，更贴近真实办公环境，测的是持久战能力。
+- **领域归类**: [智能体评测，长期任务]
+---
+
+### 7. SketchVLM: Vision language models can annotate images to explain thoughts and guide users (SketchVLM: 视觉语言模型可通过标注图像来解释思路并引导用户)
+- **社区热度**: `👍 17 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.22875)
+- **研究任务**: 可解释性人机交互
+- **核心亮点**: 让模型直接在图上画草图来解释它的想法。
+- **深度解析**: 除了输出文字，还让 VLM 学会在图像上画圈、箭头进行标注，用视觉方式辅助说明推理过程，让用户更容易理解模型意图，交互更直观。
+- **领域归类**: [视觉语言模型，可解释性]
+---
+
+### 8. Rewarding the Scientific Process: Process-Level Reward Modeling for Agentic Data Analysis (奖励科学过程：代理数据分析的过程级奖励建模)
+- **社区热度**: `👍 14 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.24198)
+- **研究任务**: 智能体数据分析
+- **核心亮点**: 不只看结果对不对，更奖励分析过程的合理性。
+- **深度解析**: 针对数据分析 agent，引入过程奖励模型（PRM），对每一步代码编写、数据清洗进行打分，引导模型学会正确的分析流程而非凑结果。
+- **领域归类**: [强化学习，智能体]
+---
+
+### 9. Efficient Agent Evaluation via Diversity-Guided User Simulation (通过多样性引导的用户模拟进行高效智能体评估)
+- **社区热度**: `👍 11 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.21480)
+- **研究任务**: 智能体自动化评估
+- **核心亮点**: 用模拟用户代替真人来测智能体，且保证了用户多样性。
+- **深度解析**: 真人评测成本高。这篇用大模型模拟不同性格、需求的用户，自动化测试 agent 的表现，降低了评估成本且覆盖更广，适合快速迭代。
+- **领域归类**: [智能体评估，用户模拟]
+---
+
+### 10. Taming Actor-Observer Asymmetry in Agents via Dialectical Alignment (通过辩证对齐驯服智能体中的行动者 - 观察者不对称)
+- **社区热度**: `👍 8 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.19548)
+- **研究任务**: 智能体对齐
+- **核心亮点**: 解决了智能体自身视角与他人视角不一致导致的对齐问题。
+- **深度解析**: 智能体自己做决策和看别人做决策时有偏差。这篇用辩证对齐的方法，让模型同时考虑行动者和观察者视角，减少这种不对称带来的错误。
+- **领域归类**: [智能体对齐，认知偏差]
+---
+
+### 11. OmniShotCut: Holistic Relational Shot Boundary Detection with Shot-Query Transformer (OmniShotCut：基于 Shot-Query Transformer 的整体关系镜头边界检测)
+- **社区热度**: `👍 6 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.24762)
+- **研究任务**: 视频镜头边界检测 (Shot Boundary Detection)
+- **核心亮点**: 提出 Shot-Query Transformer，通过全局关系建模替代传统的逐帧判断。
+- **深度解析**: 传统方法多依赖局部帧差异，该文引入查询向量（Shot-Query）在 Transformer 中捕捉镜头间的整体依赖关系，解决复杂转场下的漏检问题，提升边界定位的一致性。
+- **领域归类**: [视频理解] [时序动作定位]
+
+---
+
+### 12. UniGeo: Unifying Geometric Guidance for Camera-Controllable Image Editing via Video Models (UniGeo： via 视频模型统一相机可控图像编辑的几何引导)
+- **社区热度**: `👍 6 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.17565)
+- **研究任务**: 相机可控的图像编辑 (Camera-Controllable Image Editing)
+- **核心亮点**: 利用视频模型的几何先验，统一指导图像编辑中的视角与结构变化。
+- **深度解析**: 借用视频生成模型对时序几何变化的理解能力，将其迁移至静态图像编辑任务，实现对相机姿态、焦距等几何参数的精确控制，避免编辑后的结构畸变。
+- **领域归类**: [AIGC] [图像编辑] [几何深度学习]
+
+---
+
+### 13. Stabilizing Efficient Reasoning with Step-Level Advantage Selection (通过步级优势选择稳定高效推理)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.24003)
+- **研究任务**: 大模型推理稳定性优化 (Reasoning Stability)
+- **核心亮点**: 在推理链的每一步进行优势选择，防止误差累积导致推理失效。
+- **深度解析**: 针对高效推理策略容易不稳定的问题，引入步级优势评估机制，在生成每个推理步骤时筛选高价值路径，平衡推理速度与逻辑正确率。
+- **领域归类**: [LLM 推理] [强化学习]
+
+---
+
+### 14. How Much Is One Recurrence Worth? Iso-Depth Scaling Laws for Looped Language Models (一次递归价值几何？循环语言模型的等深度缩放律)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.21106)
+- **研究任务**: 循环语言模型架构缩放 (Looped LLM Scaling)
+- **核心亮点**: 量化了循环层相对于增加模型深度的性价比，提出等深度缩放律。
+- **深度解析**: 系统评估了循环架构（Looped）与标准深层架构的性能收益对比，建立了缩放公式，为在有限参数预算下选择循环次数还是增加层数提供理论依据。
+- **领域归类**: [模型架构] [缩放律] [高效训练]
+
+---
+
+### 15. For-Value: Efficient Forward-Only Data Valuation for finetuning LLMs and VLMs (For-Value：面向 LLM 和 VLM 微调的高效前向仅数据估值)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2508.10180)
+- **研究任务**: 微调数据价值评估 (Data Valuation for Finetuning)
+- **核心亮点**: 省去反向传播，仅通过前向计算即可评估数据对微调的贡献。
+- **深度解析**: 传统数据估值需多次梯度更新，成本高昂。该方法设计前向-only 算法，近似计算数据夏普利值，大幅降低显存和计算开销，适用于大规模多模模型的数据筛选。
+- **领域归类**: [数据效率] [模型微调] [多模态]
+
+---
+
+### 16. PageGuide: Browser extension to assist users in navigating a webpage and locating information (PageGuide：辅助用户导航网页及定位信息的浏览器扩展)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.23772)
+- **研究任务**: 网页导航与信息定位辅助 (Webpage Navigation Assistance)
+- **核心亮点**: 开发浏览器插件，帮助用户快速定位网页关键信息。
+- **深度解析**: 结合 DOM 结构分析与语义理解，自动高亮或引导用户至目标信息区域，降低复杂网页下的认知负荷，提升信息检索效率。
+- **领域归类**: [人机交互] [Web AI] [辅助工具]
+
+---
+
+### 17. Learning to Identify Out-of-Distribution Objects for 3D LiDAR Anomaly Segmentation (学习识别分布外物体以用于 3D 激光雷达异常分割)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.23604)
+- **研究任务**: 3D 激光雷达异常分割 (3D LiDAR Anomaly Segmentation)
+- **核心亮点**: 专门针对训练集未出现的分布外（OOD）物体进行识别与分割。
+- **深度解析**: 针对自动驾驶中长尾异常物体难检测的问题，通过特征空间约束或能量模型，增强模型对未知类别的敏感度，提升安全冗余。
+- **领域归类**: [自动驾驶] [3D 视觉] [异常检测]
+
+---
+
+### 18. TexOCR: Advancing Document OCR Models for Compilable Page-to-LaTeX Reconstruction (TexOCR：推进文档 OCR 模型实现可编译的页面到 LaTeX 重建)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.22880)
+- **研究任务**: 文档 OCR 与 LaTeX 还原 (Document OCR to LaTeX)
+- **核心亮点**: 优化 OCR 输出，确保生成的 LaTeX 代码可直接编译还原文档。
+- **深度解析**: 不仅识别文字，还重点建模文档布局、公式结构和表格逻辑，解决传统 OCR 生成代码语法错误多、无法直接运行的痛点。
+- **领域归类**: [OCR] [文档智能] [代码生成]
+
+---
+
+### 19. ATTN-FIQA: Interpretable Attention-based Face Image Quality Assessment with Vision Transformers (ATTN-FIQA：基于 Vision Transformer 的可解释注意力人脸图像质量评估)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.22841)
+- **研究任务**: 人脸图像质量评估 (Face Image Quality Assessment)
+- **核心亮点**: 利用 ViT 注意力机制实现质量评分的可解释性。
+- **深度解析**: 通过可视化注意力权重，展示模型是依据哪些面部区域（如模糊、遮挡、光照）给出的质量分，解决黑盒评估难以信任的问题。
+- **领域归类**: [人脸识别] [图像质量评估] [可解释性]
+
+---
+
+### 20. Improving Vision-language Models with Perception-centric Process Reward Models (通过以感知为中心的过程奖励模型改进视觉语言模型)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.24583)
+- **研究任务**: 视觉语言模型优化 (VLM Improvement)
+- **核心亮点**: 在推理过程中强化视觉感知步骤的奖励信号。
+- **深度解析**: 传统过程奖励模型侧重逻辑推理，该方法增加对视觉感知环节（如物体识别、区域定位）的奖励权重，提升 VLM 在多步任务中的视觉 grounding 能力。
+- **领域归类**: [视觉语言模型] [强化学习] [多模态推理]
+
+### 21. RaV-IDP: A Reconstruction-as-Validation Framework for Faithful Intelligent Document Processing (RaV-IDP：用于忠实智能文档处理的重建即验证框架)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.23644)
+- **研究任务**: 智能文档处理（IDP）、信息提取验证
+- **核心亮点**: 提出用文档重建任务来验证信息提取的忠实度，防止模型幻觉。
+- **深度解析**: 模型提取结构化信息后，尝试利用生成模型重建原文档图像。通过计算重建图与原件的相似度作为验证信号，若重建误差大则说明提取内容不可信，以此抑制文档理解中的瞎编问题。
+- **领域归类**: [Document AI, Verification, Multimodal]
+---
+
+### 22. ProEval: Proactive Failure Discovery and Efficient Performance Estimation for Generative AI Evaluation (ProEval：生成式 AI 评估的主动失败发现与高效性能估算)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.23099)
+- **研究任务**: 大模型评估、测试用例生成
+- **核心亮点**: 变被动测试为主动探测，用少量高价值样本高效估算模型性能。
+- **深度解析**: 不依赖大规模静态测试集，而是主动生成容易导致模型出错的边缘案例。通过在这些高难度样本上的表现，快速推算模型整体性能边界，大幅降低评估成本。
+- **领域归类**: [Evaluation, LLM, Testing]
+---
+
+### 23. Discovering Agentic Safety Specifications from 1-Bit Danger Signals (从 1 比特危险信号中发现智能体安全规范)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.23210)
+- **研究任务**: 智能体安全、规则挖掘
+- **核心亮点**: 仅凭极简的二元危险反馈，反推具体的安全约束规则。
+- **深度解析**: 针对智能体操作风险，只使用“安全/危险”的 1 比特信号作为反馈。通过逆推算法从稀疏信号中还原出详细的安全执行规范，减少了对复杂人工标注的依赖。
+- **领域归类**: [Safety, Agents, RL]
+---
+
+### 24. EX-FIQA: Leveraging Intermediate Early eXit Representations from Vision Transformers for Face Image Quality Assessment (EX-FIQA：利用 Vision Transformer 中间早退表示进行人脸图像质量评估)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.22842)
+- **研究任务**: 人脸质量评估、模型加速
+- **核心亮点**: 利用 ViT 中间层特征做质量评估，无需走完整个网络。
+- **深度解析**: 在 Vision Transformer 的不同深度设置早退出口，直接使用中间层表示来预测人脸图像质量。在保证评估精度的前提下，避免冗余计算，显著节省推理算力。
+- **领域归类**: [Computer Vision, Biometrics, Efficiency]
+---
+
+### 25. Stochastic KV Routing: Enabling Adaptive Depth-Wise Cache Sharing (随机 KV 路由：实现自适应深度方向缓存共享)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.22782)
+- **研究任务**: LLM 推理优化、显存管理
+- **核心亮点**: 允许 Transformer 不同层之间自适应共享 KV 缓存，降低显存占用。
+- **深度解析**: 引入随机路由机制，将 KV 缓存头动态分配给不同层共享。根据注意力分布自适应调整缓存策略，减少重复存储，在长上下文推理中显著降低内存压力。
+- **领域归类**: [LLM, System, Inference Optimization]
+---
+
+### 26. Disentangled Robot Learning via Separate Forward and Inverse Dynamics Pretraining (通过分离前向与逆动力学预训练实现解耦机器人学习)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.16391)
+- **研究任务**: 机器人控制、动力学建模
+- **核心亮点**: 将前向和逆动力学分开预训练，提高控制策略的泛化性。
+- **深度解析**: 把机器人学习拆解为预测状态变化（前向）和预测动作（逆动力学）两个任务。分别预训练这两个模块后再融合，使策略学习更解耦，适应不同物理环境。
+- **领域归类**: [Robotics, Control, Pretraining]
+---
+
+### 27. Quantum Kernel Advantage over Classical Collapse in Medical Foundation Model Embeddings (量子核方法在医疗基础模型嵌入中优于经典坍缩)
+- **社区热度**: `👍 0 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.24597)
+- **研究任务**: 医疗 AI、量子机器学习
+- **核心亮点**: 用量子核方法解决医疗嵌入空间中的特征坍缩问题。
+- **深度解析**: 在医疗基础模型的嵌入空间应用量子核函数，增强高维特征的区分度。相比经典方法，能更好保持样本间的差异性，避免特征表示趋同导致的性能下降。
+- **领域归类**: [Healthcare, Quantum ML, Embeddings]
+---
+
+### 28. Zero-to-CAD: Agentic Synthesis of Interpretable CAD Programs at Million-Scale Without Real Data (Zero-to-CAD：无真实数据百万级可解释 CAD 程序智能体合成)
+- **社区热度**: `👍 0 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.24479)
+- **研究任务**: CAD 生成、代码智能体
+- **核心亮点**: 无需真实标注数据，靠智能体自生成百万级数据训练 CAD 模型。
+- **深度解析**: 利用智能体自主生成可执行的 CAD 程序代码作为训练数据，完全摆脱对人类设计文件的依赖。生成的代码可解释性强，支持大规模工程设计自动化。
+- **领域归类**: [Generative AI, Engineering, Agents]
+---
+</details>
+
+<details>
+<summary><b>🚀 GitHub 今日热门项目 (点击展开)</b></summary>
+
+### [public-apis/public-apis](https://github.com/public-apis/public-apis)
+- **今日趋势**: ⭐ 427,800 | 🍴 46,733 | 今日 +600
+- **项目简介**: 一个社区协作维护的免费公共 API 集合列表。
+- **核心价值**: 解决了开发者在原型开发或数据获取时寻找可靠、免费接口的痛点，极大节省了调研与测试成本，是开发者必备的资源索引库。
+- **AI 相关性**: 否
+---
+### [hsliuping/TradingAgents-CN](https://github.com/hsliuping/TradingAgents-CN)
+- **今日趋势**: ⭐ 24,970 | 🍴 5,257 | 今日 +175
+- **项目简介**: 基于多智能体大模型（LLM）的中文金融交易框架增强版。
+- **核心价值**: 降低了利用 AI 进行量化交易的门槛，通过模拟多智能体协作（如研究员、交易员角色）来解决单一模型在金融决策中的局限性，提供本地化支持。
+- **AI 相关性**: 是（多智能体 LLM）
+---
+### [keephq/keep](https://github.com/keephq/keep)
+- **今日趋势**: ⭐ 11,742 | 🍴 1,334 | 今日 +9
+- **项目简介**: 开源的 AIOps（智能运维）和告警管理平台。
+- **核心价值**: 解决运维团队面临的“告警疲劳”痛点，通过告警关联分析、去噪和自动化工作流，将分散的监控信号转化为可操作的业务洞察，提升系统稳定性。
+- **AI 相关性**: 是（AIOps 涉及机器学习/算法）
+---
+### [NVIDIA/personaplex](https://github.com/NVIDIA/personaplex)
+- **今日趋势**: ⭐ 9,683 | 🍴 1,352 | 今日 +64
+- **项目简介**: NVIDIA 推出的 PersonaPlex 项目源代码。
+- **核心价值**: 提供基于用户画像（Persona）的复杂建模能力，可能服务于个性化推荐、智能体角色管理或用户行为理解，依托 NVIDIA 生态优化性能。
+- **AI 相关性**: 是（NVIDIA 生态通常涉及深度学习/个性化算法）
+---
+</details></script>
+        <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
+    </body>
+    </html>
+    
