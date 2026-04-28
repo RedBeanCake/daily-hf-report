@@ -31,7 +31,7 @@
   "Tracer-Cloud /opensre": "2026-04-24",
   "ultralytics /ultralytics": "2026-04-14",
   "alirezarezvani /claude-skills": "2026-04-14",
-  "public-apis /public-apis": "2026-04-15",
+  "public-apis /public-apis": "2026-04-28",
   "lsdefine /GenericAgent": "2026-04-15",
   "google /magika": "2026-04-15",
   "agentscope-ai /agentscope": "2026-04-15",
@@ -89,5 +89,8 @@
   "HunxByts /GhostTrack": "2026-04-27",
   "hydropix /TranslateBooksWithLLMs": "2026-04-27",
   "nikopueringer /CorridorKey": "2026-04-27",
-  "openai /openai-cs-agents-demo": "2026-04-27"
+  "openai /openai-cs-agents-demo": "2026-04-27",
+  "hsliuping /TradingAgents-CN": "2026-04-28",
+  "keephq /keep": "2026-04-28",
+  "NVIDIA /personaplex": "2026-04-28"
 }
