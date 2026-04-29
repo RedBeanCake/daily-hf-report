@@ -66,7 +66,7 @@
   "Alishahryar1 /free-claude-code": "2026-04-22",
   "davila7 /claude-code-templates": "2026-04-22",
   "mvanhorn /last30days-skill": "2026-04-22",
-  "EbookFoundation /free-programming-books": "2026-04-22",
+  "EbookFoundation /free-programming-books": "2026-04-29",
   "huggingface /ml-intern": "2026-04-23",
   "crewAIInc /crewAI": "2026-04-23",
   "onyx-dot-app /onyx": "2026-04-23",
@@ -92,5 +92,11 @@
   "openai /openai-cs-agents-demo": "2026-04-27",
   "hsliuping /TradingAgents-CN": "2026-04-28",
   "keephq /keep": "2026-04-28",
-  "NVIDIA /personaplex": "2026-04-28"
+  "NVIDIA /personaplex": "2026-04-28",
+  "soxoj /maigret": "2026-04-29",
+  "neuphonic /neutts": "2026-04-29",
+  "KellerJordan /modded-nanogpt": "2026-04-29",
+  "shaxiu /XianyuAutoAgent": "2026-04-29",
+  "hugohe3 /ppt-master": "2026-04-29",
+  "p-e-w /heretic": "2026-04-29"
 }
