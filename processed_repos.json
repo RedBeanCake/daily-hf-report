@@ -25,7 +25,7 @@
   "yt-dlp /yt-dlp": "2026-04-13",
   "axolotl-ai-cloud /axolotl": "2026-04-13",
   "microsoft /agent-lightning": "2026-04-13",
-  "AIDC-AI /Pixelle-Video": "2026-04-22",
+  "AIDC-AI /Pixelle-Video": "2026-05-01",
   "vllm-project /vllm": "2026-04-14",
   "paperswithbacktest /awesome-systematic-trading": "2026-04-14",
   "Tracer-Cloud /opensre": "2026-04-24",
@@ -42,10 +42,10 @@
   "topoteretes /cognee": "2026-04-16",
   "openai /openai-agents-python": "2026-04-16",
   "jundot /omlx": "2026-04-16",
-  "google-research /timesfm": "2026-04-16",
+  "google-research /timesfm": "2026-05-01",
   "datawhalechina /hello-agents": "2026-04-16",
   "oobabooga /textgen": "2026-04-16",
-  "github /awesome-copilot": "2026-04-16",
+  "github /awesome-copilot": "2026-05-01",
   "Polymarket /agents": "2026-04-16",
   "dimensionalOS /dimos": "2026-04-16",
   "Fincept-Corporation /FinceptTerminal": "2026-04-20",
@@ -99,5 +99,10 @@
   "shaxiu /XianyuAutoAgent": "2026-04-29",
   "hugohe3 /ppt-master": "2026-04-29",
   "p-e-w /heretic": "2026-04-29",
-  "google /langextract": "2026-04-30"
+  "google /langextract": "2026-04-30",
+  "NVlabs /GR00T-WholeBodyControl": "2026-05-01",
+  "Lightricks /LTX-2": "2026-05-01",
+  "the-momentum /open-wearables": "2026-05-01",
+  "Tencent /AngelSlim": "2026-05-01",
+  "microsoft /TRELLIS": "2026-05-01"
 }
