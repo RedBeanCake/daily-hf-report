@@ -1,7 +1,7 @@
 {
   "NousResearch /hermes-agent": "2026-04-09",
   "HKUDS /DeepTutor": "2026-04-09",
-  "OpenBMB /VoxCPM": "2026-04-09",
+  "OpenBMB /VoxCPM": "2026-05-04",
   "TheCraigHewitt /seomachine": "2026-04-09",
   "shiyu-coder /Kronos": "2026-04-09",
   "microsoft /BitNet": "2026-04-09",
@@ -52,7 +52,7 @@
   "paperless-ngx /paperless-ngx": "2026-04-20",
   "alexzhang13 /rlm": "2026-04-20",
   "barry-far /V2ray-Config": "2026-04-20",
-  "sansan0 /TrendRadar": "2026-04-20",
+  "sansan0 /TrendRadar": "2026-05-04",
   "home-assistant /core": "2026-04-27",
   "zhinianboke /xianyu-auto-reply": "2026-04-20",
   "kyegomez /swarms": "2026-04-20",
@@ -83,7 +83,7 @@
   "Azure /Azure-Sentinel": "2026-04-24",
   "ComposioHQ /awesome-codex-skills": "2026-04-27",
   "microsoft /VibeVoice": "2026-04-27",
-  "TauricResearch /TradingAgents": "2026-04-27",
+  "TauricResearch /TradingAgents": "2026-05-04",
   "deepseek-ai /DeepSeek-V3": "2026-04-27",
   "sherlock-project /sherlock": "2026-04-27",
   "HunxByts /GhostTrack": "2026-04-27",
@@ -104,5 +104,13 @@
   "Lightricks /LTX-2": "2026-05-01",
   "the-momentum /open-wearables": "2026-05-01",
   "Tencent /AngelSlim": "2026-05-01",
-  "microsoft /TRELLIS": "2026-05-01"
+  "microsoft /TRELLIS": "2026-05-01",
+  "cocoindex-io /cocoindex": "2026-05-04",
+  "OWASP /Nettacker": "2026-05-04",
+  "raullenchai /Rapid-MLX": "2026-05-04",
+  "Q00 /ouroboros": "2026-05-04",
+  "MervinPraison /PraisonAI": "2026-05-04",
+  "alexgreensh /token-optimizer": "2026-05-04",
+  "ag2ai /ag2": "2026-05-04",
+  "LearningCircuit /local-deep-research": "2026-05-04"
 }

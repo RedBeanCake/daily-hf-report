@@ -1,0 +1,190 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AI 技术周报 - 2026-W19</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <style>
+            .markdown-body { box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 30px; }
+            details { background: #f6f8fa; padding: 15px; border-radius: 8px; border: 1px solid #d0d7de; margin-bottom: 20px; }
+            summary { cursor: pointer; color: #0969da; font-weight: bold; font-size: 1.1em; }
+        </style>
+    </head>
+    <body class="markdown-body">
+        <a href='../index.html'>← 返回索引</a>
+        <h1>AI 技术周报 - 2026-W19</h1>
+        <div id="content"></div>
+        <script type="text/markdown" id="raw-md"><details>
+<summary><b>🤗 Hugging Face 每周论文 (点击展开)</b></summary>
+
+### 1. UniVidX: A Unified Multimodal Framework for Versatile Video Generation via Diffusion Priors (UniVidX：基于扩散先验的统一多模态视频生成框架)
+- **社区热度**: `👍 65 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.00658)
+- **研究任务**: 视频生成
+- **核心亮点**: 用一个统一框架处理多种视频生成任务，利用扩散模型先验保证质量。
+- **深度解析**: 不再为文本生视频、图像生视频等任务单独训练模型，而是构建统一架构。核心是借用预训练扩散模型的先验知识，在不同模态输入下保持生成视频的一致性和高质量，减少重复训练成本。
+- **领域归类**: [视频生成，多模态，扩散模型]
+---
+
+### 2. Web2BigTable: A Bi-Level Multi-Agent LLM System for Internet-Scale Information Search and Extraction (Web2BigTable：面向互联网规模信息搜索提取的双层多 Agent 系统)
+- **社区热度**: `👍 23 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.27221)
+- **研究任务**: 信息提取，Agent
+- **核心亮点**: 采用双层 Agent 架构，实现大规模网页信息的结构化提取。
+- **深度解析**: 系统分两层：上层 Agent 负责规划搜索路径和任务分解，下层 Agent 负责具体网页浏览和数据抽取。最终将非结构化网页内容整理成大表结构，解决大规模数据获取中的协调和效率问题。
+- **领域归类**: [Agent，信息提取，大模型应用]
+---
+
+### 3. Map2World: Segment Map Conditioned Text to 3D World Generation (Map2World：分段地图条件的文本到 3D 世界生成)
+- **社区热度**: `👍 10 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.00781)
+- **研究任务**: 3D 生成
+- **核心亮点**: 引入语义分段地图作为条件，控制文本生成 3D 世界的布局。
+- **深度解析**: 单纯文本生成 3D 场景往往布局混乱。该方法将语义分割图作为额外条件输入，约束生成模型的几何结构，使生成的 3D 世界物体位置、区域划分更符合文本描述的逻辑。
+- **领域归类**: [3D 生成，可控生成，计算机视觉]
+---
+
+### 4. Prox-E: Fine-Grained 3D Shape Editing via Primitive-Based Abstractions (Prox-E：基于图元抽象的细粒度 3D 形状编辑)
+- **社区热度**: `👍 9 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.23774)
+- **研究任务**: 3D 编辑
+- **核心亮点**: 将 3D 形状抽象为基本图元，实现更精准的细粒度编辑。
+- **深度解析**: 直接编辑复杂 3D 网格很难控制。该方法先把模型分解成立方体、球体等基本图元组合，用户编辑图元参数后再重组。这样比直接操作顶点或网格更直观，编辑结果更规整。
+- **领域归类**: [3D 编辑，几何处理，计算机图形学]
+---
+
+### 5. Learning while Deploying: Fleet-Scale Reinforcement Learning for Generalist Robot Policies (部署中学习：面向通用机器人策略的车队规模强化学习)
+- **社区热度**: `👍 8 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.00416)
+- **研究任务**: 机器人学习，强化学习
+- **核心亮点**: 机器人在实际部署过程中持续学习，车队规模共享经验更新策略。
+- **深度解析**: 传统机器人策略训练完就固定了。该方法让机器人在执行任务时收集数据，通过强化学习在线更新策略。多台机器人共享数据，提升通用策略在不同环境下的适应能力和鲁棒性。
+- **领域归类**: [机器人，强化学习，持续学习]
+---
+
+### 6. Let ViT Speak: Generative Language-Image Pre-training (让 ViT 说话：生成式语言 - 图像预训练)
+- **社区热度**: `👍 8 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.00809)
+- **研究任务**: 多模态预训练
+- **核心亮点**: 修改 ViT 架构，使其具备直接生成语言的能力，加强图文对齐。
+- **深度解析**: 传统 ViT 多做分类或对比学习。这篇工作让 Vision Transformer 直接作为生成模型的一部分，输出文本序列。通过生成式任务预训练，让视觉编码器更懂语言，提升多模态理解效果。
+- **领域归类**: [多模态，预训练，视觉变压器]
+---
+
+### 7. From Skill Text to Skill Structure: The Scheduling-Structural-Logical Representation for Agent Skills (从技能文本到技能结构：Agent 技能的调度 - 结构 - 逻辑表示法)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.24026)
+- **研究任务**: Agent 技能表示
+- **核心亮点**: 提出 SSL（调度 - 结构 - 逻辑）表示法，将自然语言技能结构化。
+- **深度解析**: 自然语言描述技能太模糊，Agent 难执行。该方法把技能拆解为调度顺序、结构组成和逻辑约束三部分。结构化表示让 Agent 规划更清晰，执行错误率更低，便于复杂任务拆解。
+- **领域归类**: [Agent，规划，技能学习]
+---
+
+### 8. Stable-GFlowNet: Toward Diverse and Robust LLM Red-Teaming via Contrastive Trajectory Balance (Stable-GFlowNet：通过对比轨迹平衡实现多样且鲁棒的 LLM 红队测试)
+- **社区热度**: `👍 6 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.00553)
+- **研究任务**: LLM 安全，红队测试
+- **核心亮点**: 利用 GFlowNet 生成多样化攻击提示词，通过对比轨迹平衡保证稳定性。
+- **深度解析**: 红队测试需要大量多样化的攻击样本。该方法用生成流网络（GFlowNet）采样提示词，引入对比轨迹平衡损失，避免生成模式坍塌。能测出更多模型漏洞，且生成过程更稳定可控。
+- **领域归类**: [LLM 安全，生成模型，红队测试]
+---
+
+### 9. When Do Diffusion Models learn to Generate Multiple Objects? (扩散模型何时学会生成多个物体？)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.00273)
+- **研究任务**: 模型分析，扩散模型
+- **核心亮点**: 实证分析扩散模型在训练过程中何时获得多物体生成能力。
+- **深度解析**: 扩散模型常出现物体计数错误或粘连问题。这篇论文通过实验监测训练动态，找出模型开始能正确生成多个物体的时间节点，帮助理解模型组合性泛化能力的形成机制。
+- **领域归类**: [扩散模型，模型分析，基础理论]
+---
+
+### 10. Trees to Flows and Back: Unifying Decision Trees and Diffusion Models (从树到流再回来：统一决策树与扩散模型)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.00414)
+- **研究任务**: 模型理论，架构统一
+- **核心亮点**: 建立决策树与扩散模型之间的理论联系，探索架构统一。
+- **深度解析**: 决策树和扩散模型看似无关。这篇工作从数学层面统一两者，可能利用决策树的可解释性优化扩散过程，或用扩散流程改进树的构建。为生成模型架构设计提供新视角。
+- **领域归类**: [基础理论，生成模型，架构创新]
+---
+
+### 11. End-to-End Autoregressive Image Generation with 1D Semantic Tokenizer (基于 1D 语义 Tokenizer 的端到端自回归图像生成)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.00503)
+- **研究任务**: 图像生成
+- **核心亮点**: 把图像 Token 化从 2D 改成 1D，简化了自回归生成流程。
+- **深度解析**: 传统方法多用 VQVAE 做 2D 量化，这篇提出 1D 语义 Tokenizer，直接把图像序列化，配合自回归模型端到端训练，减少了中间编码解码的损耗和架构复杂度。
+- **领域归类**: [计算机视觉，生成模型]
+---
+
+### 12. Online Self-Calibration Against Hallucination in Vision-Language Models (视觉语言模型对抗幻觉的在线自校准)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.00323)
+- **研究任务**: 多模态幻觉抑制
+- **核心亮点**: 不用额外训练，推理时在线校准模型信心，减少胡说八道。
+- **深度解析**: 针对 VLM 容易产生幻觉的问题，设计了一个在线校准模块，在推理阶段动态调整输出概率或特征，抑制高置信度的错误生成，无需微调模型权重。
+- **领域归类**: [多模态，模型可靠性]
+---
+
+### 13. Learning to Act and Cooperate for Distributed Black-Box Consensus Optimization (学习行动与协作以实现分布式黑盒共识优化)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.00691)
+- **研究任务**: 分布式优化
+- **核心亮点**: 多个代理协作，在没有梯度信息的情况下优化黑盒函数。
+- **深度解析**: 针对无法求梯度的黑盒优化问题，用强化学习让多个代理学会协作，通过交互达成共识，找到最优解，适用于分布式系统参数调优。
+- **领域归类**: [强化学习，优化算法]
+---
+
+### 14. Themis: Training Robust Multilingual Code Reward Models for Flexible Multi-Criteria Scoring (Themis：训练鲁棒的多语言代码奖励模型以支持灵活多标准评分)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.00754)
+- **研究任务**: 代码奖励模型
+- **核心亮点**: 支持多语言和多维度的代码质量评分，提升代码模型 RLHF 效果。
+- **深度解析**: 收集多语言代码数据，训练奖励模型不仅看对错，还看风格、效率等多个标准，让代码生成的反馈信号更准确，支持灵活配置评分权重。
+- **领域归类**: [代码大模型，强化学习]
+---
+
+### 15. LASE: Language-Adversarial Speaker Encoding for Indic Cross-Script Identity Preservation (LASE：用于印度语跨脚本身份保留的语言对抗说话人编码)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.00777)
+- **研究任务**: 语音转换/说话人验证
+- **核心亮点**: 在印度语系不同脚本间转换语音时，保持说话人身份不变。
+- **深度解析**: 用对抗训练把说话人特征里的语言信息去掉，确保换语言或脚本时，音色身份特征不丢失，解决多语言场景下的语音身份一致性问题。
+- **领域归类**: [语音处理，身份识别]
+---
+
+### 16. Talker-T2AV: Joint Talking Audio-Video Generation with Autoregressive Diffusion Modeling (Talker-T2AV：基于自回归扩散模型的联合说话音视频生成)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.23586)
+- **研究任务**: 数字人生成
+- **核心亮点**: 用自回归扩散模型同时生成同步的说话音频和视频。
+- **深度解析**: 结合自回归和扩散模型的优势，统一建模音频和视频序列，解决口型对不上或声音不同步的问题，实现端到端的音视频联合生成。
+- **领域归类**: [多模态生成，视频合成]
+---
+
+### 17. AnalogRetriever: Learning Cross-Modal Representations for Analog Circuit Retrieval (AnalogRetriever：学习用于模拟电路检索的跨模态表示)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.23195)
+- **研究任务**: 电路检索
+- **核心亮点**: 把电路图和文本描述映射到同一空间，实现以文搜电路。
+- **深度解析**: 针对模拟电路设计，训练跨模态编码器，让电路结构特征和自然语言需求对齐，方便工程师检索现有设计，减少重复设计工作。
+- **领域归类**: [AI for Science, 电子设计自动化]
+---
+
+### 18. Better Models, Faster Training: Sigmoid Attention for single-cell Foundation Models (更好的模型，更快的训练：用于单细胞基础模型的 Sigmoid 注意力机制)
+- **社区热度**: `👍 0 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.27124)
+- **研究任务**: 单细胞数据分析
+- **核心亮点**: 用 Sigmoid 注意力替换 Softmax，提速单细胞模型训练。
+- **深度解析**: 在单细胞基础模型中，将标准的 Softmax 注意力改为 Sigmoid 变体，降低计算复杂度，加快收敛速度且效果不差，适合大规模生物数据处理。
+- **领域归类**: [AI for Science, 生物信息学]
+---
+</details>
+
+</script>
+        <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
+    </body>
+    </html>
+    
