@@ -7,7 +7,7 @@
   "microsoft /BitNet": "2026-04-09",
   "virattt /ai-hedge-fund": "2026-04-16",
   "atilaahmettaner /tradingview-mcp": "2026-04-09",
-  "z-lab /dflash": "2026-04-16",
+  "z-lab /dflash": "2026-05-07",
   "521xueweihan /HelloGitHub": "2026-04-24",
   "huggingface /skills": "2026-04-21",
   "open-webui /open-webui": "2026-04-22",
@@ -119,5 +119,13 @@
   "bytedance /deer-flow": "2026-05-05",
   "cheahjs /free-llm-api-resources": "2026-05-05",
   "anthropics /financial-services": "2026-05-06",
-  "pytorch /pytorch": "2026-05-06"
+  "pytorch /pytorch": "2026-05-06",
+  "VectifyAI /PageIndex": "2026-05-07",
+  "freemocap /freemocap": "2026-05-07",
+  "Open-LLM-VTuber /Open-LLM-VTuber": "2026-05-07",
+  "github /spec-kit": "2026-05-07",
+  "openai /plugins": "2026-05-07",
+  "Blaizzy /mlx-vlm": "2026-05-07",
+  "awslabs /aidlc-workflows": "2026-05-07",
+  "xming521 /WeClone": "2026-05-07"
 }
