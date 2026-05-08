@@ -43,7 +43,7 @@
   "openai /openai-agents-python": "2026-04-16",
   "jundot /omlx": "2026-04-16",
   "google-research /timesfm": "2026-05-01",
-  "datawhalechina /hello-agents": "2026-04-16",
+  "datawhalechina /hello-agents": "2026-05-08",
   "oobabooga /textgen": "2026-04-16",
   "github /awesome-copilot": "2026-05-01",
   "Polymarket /agents": "2026-04-16",
@@ -127,5 +127,10 @@
   "openai /plugins": "2026-05-07",
   "Blaizzy /mlx-vlm": "2026-05-07",
   "awslabs /aidlc-workflows": "2026-05-07",
-  "xming521 /WeClone": "2026-05-07"
+  "xming521 /WeClone": "2026-05-07",
+  "CloakHQ /CloakBrowser": "2026-05-08",
+  "HKUDS /AI-Trader": "2026-05-08",
+  "PaddlePaddle /PaddleOCR": "2026-05-08",
+  "vllm-project /vllm-ascend": "2026-05-08",
+  "anthropics /claude-plugins-official": "2026-05-08"
 }
