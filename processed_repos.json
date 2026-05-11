@@ -1,5 +1,5 @@
 {
-  "NousResearch /hermes-agent": "2026-04-09",
+  "NousResearch /hermes-agent": "2026-05-11",
   "HKUDS /DeepTutor": "2026-04-09",
   "OpenBMB /VoxCPM": "2026-05-04",
   "TheCraigHewitt /seomachine": "2026-04-09",
@@ -9,7 +9,7 @@
   "atilaahmettaner /tradingview-mcp": "2026-04-09",
   "z-lab /dflash": "2026-05-07",
   "521xueweihan /HelloGitHub": "2026-04-24",
-  "huggingface /skills": "2026-04-21",
+  "huggingface /skills": "2026-05-11",
   "open-webui /open-webui": "2026-04-22",
   "apache /airflow": "2026-04-09",
   "microsoft /markitdown": "2026-05-05",
@@ -41,7 +41,7 @@
   "iam-veeramalla /aws-devops-zero-to-hero": "2026-04-15",
   "topoteretes /cognee": "2026-04-16",
   "openai /openai-agents-python": "2026-04-16",
-  "jundot /omlx": "2026-04-16",
+  "jundot /omlx": "2026-05-11",
   "google-research /timesfm": "2026-05-01",
   "datawhalechina /hello-agents": "2026-05-08",
   "oobabooga /textgen": "2026-04-16",
@@ -132,5 +132,11 @@
   "HKUDS /AI-Trader": "2026-05-08",
   "PaddlePaddle /PaddleOCR": "2026-05-08",
   "vllm-project /vllm-ascend": "2026-05-08",
-  "anthropics /claude-plugins-official": "2026-05-08"
+  "anthropics /claude-plugins-official": "2026-05-08",
+  "AUTOMATIC1111 /stable-diffusion-webui": "2026-05-11",
+  "jwadow /kiro-gateway": "2026-05-11",
+  "bytedance /UI-TARS": "2026-05-11",
+  "ylytdeng /wechat-decrypt": "2026-05-11",
+  "wanshuiyin /Auto-claude-code-research-in-sleep": "2026-05-11",
+  "romainsimon /paperasse": "2026-05-11"
 }
