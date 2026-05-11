@@ -1,0 +1,298 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AI 技术周报 - 2026-W20</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <style>
+            .markdown-body { box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 30px; }
+            details { background: #f6f8fa; padding: 15px; border-radius: 8px; border: 1px solid #d0d7de; margin-bottom: 20px; }
+            summary { cursor: pointer; color: #0969da; font-weight: bold; font-size: 1.1em; }
+        </style>
+    </head>
+    <body class="markdown-body">
+        <a href='../index.html'>← 返回索引</a>
+        <h1>AI 技术周报 - 2026-W20</h1>
+        <div id="content"></div>
+        <script type="text/markdown" id="raw-md"><details>
+<summary><b>🤗 Hugging Face 每周论文 (点击展开)</b></summary>
+
+### 1. MACE-Dance: Motion-Appearance Cascaded Experts for Music-Driven Dance Video Generation (MACE-Dance：音乐驱动舞蹈视频生成的运动 - 外观级联专家模型)
+- **社区热度**: `👍 80 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2512.18181)
+- **研究任务**: 音乐驱动的舞蹈视频生成。
+- **核心亮点**: 将运动生成与外观渲染解耦，采用级联专家结构分别处理。
+- **深度解析**: 针对现有方法运动与画面一致性差的问题，设计了级联专家网络。第一阶段专家专注音乐节奏与骨骼运动匹配，第二阶段专家负责基于运动序列生成高保真视频外观。这种分治策略降低了单模型学习难度，提升了动作卡点准确率和视频清晰度。
+- **领域归类**: [AIGC, 视频生成, 多模态]
+---
+
+### 2. Mean Mode Screaming: Mean--Variance Split Residuals for 1000-Layer Diffusion Transformers (Mean Mode Screaming：面向千层扩散 Transformer 的均值 - 方差分裂残差结构)
+- **社区热度**: `👍 74 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.06169)
+- **研究任务**: 超深扩散 Transformer 模型的训练稳定性。
+- **核心亮点**: 提出均值 - 方差分裂残差连接，支持扩散 Transformer 堆叠至 1000 层。
+- **深度解析**: 针对深层 DiT 训练中的梯度消失和模式坍塌问题，修改了残差连接方式。将残差信号分解为均值和方差两部分分别传递，稳定了深层网络的信号传播。实验证明该结构能显著加深网络层数而不损失收敛性，提升了模型表达能力。
+- **领域归类**: [深度学习架构, 扩散模型, 基础模型]
+---
+
+### 3. Flow-OPD: On-Policy Distillation for Flow Matching Models (Flow-OPD：流匹配模型的在线策略蒸馏)
+- **社区热度**: `👍 73 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.08063)
+- **研究任务**: 流匹配模型的加速与蒸馏。
+- **核心亮点**: 将在线策略蒸馏引入流匹配，减少采样步数并保持生成质量。
+- **深度解析**: 传统蒸馏多用于离线场景，该方法在流匹配训练过程中引入在线策略蒸馏机制。学生模型直接模仿教师模型的流轨迹，通过优化策略分布一致性，实现了更少步数下的高质量生成，解决了流匹配采样速度慢的痛点。
+- **领域归类**: [生成模型, 模型蒸馏, 流匹配]
+---
+
+### 4. Listwise Policy Optimization: Group-based RLVR as Target-Projection on the LLM Response Simplex (列表式策略优化：基于分组的 RLVR 作为 LLM 响应单纯形上的目标投影)
+- **社区热度**: `👍 57 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.06139)
+- **研究任务**: 大语言模型对齐与强化学习验证（RLVR）。
+- **核心亮点**: 将列表式排序优化转化为响应单纯形上的投影问题，提升 RL 训练稳定性。
+- **深度解析**: 针对 pairwise 奖励信号信息利用率低的问题，提出 listwise 优化框架。将一组回复的概率分布视为单纯形上的点，通过投影操作直接优化整体排序分布。该方法减少了策略更新的方差，使模型在复杂偏好对齐任务中收敛更快。
+- **领域归类**: [RLHF, 大模型对齐, 强化学习]
+---
+
+### 5. HyperEyes: Dual-Grained Efficiency-Aware Reinforcement Learning for Parallel Multimodal Search Agents (HyperEyes：并行多模态搜索代理的双粒度效率感知强化学习)
+- **社区热度**: `👍 55 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.07177)
+- **研究任务**: 多模态搜索智能体的效率优化。
+- **核心亮点**: 利用双粒度强化学习平衡搜索代理的准确率与计算成本。
+- **深度解析**: 面向并行运行的多模态搜索 Agent，设计了粗粒度和细粒度两层奖励机制。粗粒度控制整体搜索路径，细粒度优化单次检索动作。通过效率感知 RL，模型学会在有限预算下分配计算资源，提升了复杂检索任务下的性价比。
+- **领域归类**: [AI 智能体, 多模态搜索, 强化学习]
+---
+
+### 6. LLMs Improving LLMs: Agentic Discovery for Test-Time Scaling (LLM 改进 LLM：用于测试时 scaling 的代理发现机制)
+- **社区热度**: `👍 52 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.08083)
+- **研究任务**: 大模型推理时的测试时计算扩展（Test-Time Scaling）。
+- **核心亮点**: 通过代理发现机制，让 LLM 在推理阶段自主优化自身表现。
+- **深度解析**: 探索不更新权重的情况下提升推理效果的方法。引入代理发现流程，模型在测试时自主生成验证策略、筛选最佳推理路径。实现了计算资源动态分配，随着测试时计算量增加，任务准确率呈可扩展式提升。
+- **领域归类**: [大模型推理, 测试时计算, 自我改进]
+---
+
+### 7. HumanNet: Scaling Human-centric Video Learning to One Million Hours (HumanNet：将以人为本的视频学习扩展至一百万小时)
+- **社区热度**: `👍 40 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.06747)
+- **研究任务**: 大规模人体中心视频理解。
+- **核心亮点**: 构建百万小时级人体视频数据集并验证 scaling law 在视频领域的有效性。
+- **深度解析**: 发布了大规模人体动作与交互视频数据集，训练了对应的基础模型。研究发现随着数据量增至百万小时，模型对人体细微动作和长时序交互的理解能力持续上升，未出现明显饱和，为视频大模型提供了数据 scaling 依据。
+- **领域归类**: [视频理解, 大规模数据集, 基础模型]
+---
+
+### 8. Anisotropic Modality Align (各向异性模态对齐)
+- **社区热度**: `👍 22 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.07825)
+- **研究任务**: 多模态嵌入空间对齐。
+- **核心亮点**: 考虑嵌入空间的各向异性特性进行模态对齐，而非传统的各向同性假设。
+- **深度解析**: 指出当前对比学习假设嵌入空间均匀分布不符合实际。该方法建模了不同模态嵌入分布的方向性差异，通过各向异性变换矩阵进行对齐。在跨模态检索任务中，尤其是长尾分布数据上，匹配精度优于标准对比损失。
+- **领域归类**: [多模态学习, 表示学习, 对比学习]
+---
+
+### 9. Beyond Retrieval: A Multitask Benchmark and Model for Code Search (超越检索：代码搜索的多任务基准与模型)
+- **社区热度**: `👍 22 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.04615)
+- **研究任务**: 代码搜索与理解。
+- **核心亮点**: 提出多任务基准，推动代码搜索从单纯检索向综合理解转变。
+- **深度解析**: 现有代码搜索仅关注语义匹配，该工作构建了包含代码生成、缺陷检测、检索的多任务基准。训练了一个共享编码器模型，通过多任务联合优化，提升了模型对代码逻辑的深层理解能力，检索结果更符合开发者意图。
+- **领域归类**: [代码智能, 信息检索, 多任务学习]
+---
+
+### 10. TextLDM: Language Modeling with Continuous Latent Diffusion (TextLDM：基于连续潜在扩散的语言建模)
+- **社区热度**: `👍 18 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.07748)
+- **研究任务**: 语言模型生成机制改进。
+- **核心亮点**: 将连续潜在扩散机制引入语言建模，探索非自回归生成路径。
+- **深度解析**: 传统 LM 多为离散自回归生成，该方法在连续潜在空间应用扩散模型进行文本建模。通过编码文本到连续空间进行扩散去噪，再解码回文本。旨在解决自回归模型的暴露偏差问题，并提供更可控的文本生成能力。
+- **领域归类**: [NLP, 语言模型, 扩散模型]
+---
+
+### 11. UniPrefill: Universal Long-Context Prefill Acceleration via Block-wise Dynamic Sparsification (通用长上下文预填充加速：基于块动态稀疏化)
+- **社区热度**: `👍 18 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.06221)
+- **研究任务**: 长上下文 LLM 推理加速
+- **核心亮点**: 通过动态跳过不重要的 token 块，显著加快预填充阶段速度。
+- **深度解析**: 针对长文本输入，提出块级动态稀疏化机制。在预填充（Prefill）阶段实时评估 token 块的重要性，直接跳过低信息量块的计算，减少 KV 缓存生成量，不影响最终生成质量。
+- **领域归类**: [推理优化] [长上下文] [稀疏注意力]
+---
+
+### 12. AEM: Adaptive Entropy Modulation for Multi-Turn Agentic Reinforcement Learning (多轮智能体强化学习的自适应熵调节)
+- **社区热度**: `👍 15 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.00425)
+- **研究任务**: 智能体多轮对话强化学习
+- **核心亮点**: 根据对话轮次动态调整熵值，平衡探索与利用。
+- **深度解析**: 在多轮交互场景中，固定熵值容易导致早期探索不足或后期不稳定。该方法根据当前回合的状态不确定性，自适应调节策略熵，提升智能体在长程任务中的收敛速度和鲁棒性。
+- **领域归类**: [智能体] [强化学习] [多轮对话]
+---
+
+### 13. 4DThinker: Thinking with 4D Imagery for Dynamic Spatial Understanding (基于 4D 影像的动态空间理解思考)
+- **社区热度**: `👍 15 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.05997)
+- **研究任务**: 多模态空间推理
+- **核心亮点**: 引入 4D 影像数据，增强模型对动态空间变化的理解能力。
+- **深度解析**: 传统 3D 理解缺乏时间维度。该模型将 3D 几何信息与时间序列结合（4D），让模型在推理过程中显式利用物体运动轨迹和状态变化，解决动态场景下的空间问答任务。
+- **领域归类**: [多模态] [空间推理] [视频理解]
+---
+
+### 14. DecodingTrust-Agent Platform (DTap): A Controllable and Interactive Red-Teaming Platform for AI Agents (可控交互式 AI 智能体红队平台)
+- **社区热度**: `👍 15 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.04808)
+- **研究任务**: 智能体安全与红队测试
+- **核心亮点**: 提供可控、交互式的平台，专门用于测试 AI 智能体漏洞。
+- **深度解析**: 针对智能体自主行动带来的安全风险，构建了一个标准化测试环境。支持自定义攻击策略和交互流程，自动化评估智能体在诱导、越权等场景下的安全性，便于批量红队测试。
+- **领域归类**: [安全] [智能体评估] [红队测试]
+---
+
+### 15. Rethinking State Tracking in Recurrent Models Through Error Control Dynamics (通过误差控制动力学重思循环模型状态追踪)
+- **社区热度**: `👍 14 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.07755)
+- **研究任务**: 循环模型架构优化
+- **核心亮点**: 利用误差控制动力学机制，改善循环模型的状态追踪能力。
+- **深度解析**: 针对 RNN 或 SSM 类模型在长序列中状态丢失的问题，引入误差控制动态机制。通过监控隐藏状态更新时的误差传播，动态调整状态转移函数，减少信息累积误差。
+- **领域归类**: [模型架构] [状态空间模型] [序列建模]
+---
+
+### 16. MatryoshkaLoRA: Learning Accurate Hierarchical Low-Rank Representations for LLM Fine-Tuning (用于 LLM 微调的准确分层低秩表示)
+- **社区热度**: `👍 13 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.07850)
+- **研究任务**: 参数高效微调 (PEFT)
+- **核心亮点**: 提出嵌套式 LoRA 结构，支持灵活调整推理时的秩大小。
+- **深度解析**: 借鉴套娃结构，训练分层低秩适配器。大秩包含小秩信息，推理时可根据算力需求裁剪秩的大小，无需重新训练即可在不同性能/速度档位间切换，保持精度损失最小。
+- **领域归类**: [微调] [PEFT] [模型压缩]
+---
+
+### 17. MISA: Mixture of Indexer Sparse Attention for Long-Context LLM Inference (长上下文 LLM 推理的混合索引稀疏注意力)
+- **社区热度**: `👍 12 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.07363)
+- **研究任务**: 长上下文注意力机制优化
+- **核心亮点**: 使用混合索引器实现稀疏注意力，降低长文本推理成本。
+- **深度解析**: 为减少 Attention 的计算复杂度，设计了一组索引器来预测关键 Token 位置。混合多个索引器的结果构建稀疏掩码，只计算高相关性键值对，大幅降低显存占用和计算量。
+- **领域归类**: [注意力机制] [推理优化] [长上下文]
+---
+
+### 18. A^2RD: Agentic Autoregressive Diffusion for Long Video Consistency (用于长视频一致性的智能体自回归扩散)
+- **社区热度**: `👍 11 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.06924)
+- **研究任务**: 长视频生成
+- **核心亮点**: 结合智能体规划与自回归扩散，解决长视频内容一致性问题。
+- **深度解析**: 传统扩散模型生成长视频容易出现画面闪烁或逻辑断裂。该方法引入智能体模块进行场景规划，指导自回归扩散模型按步骤生成，确保角色、背景在时间维度上保持一致。
+- **领域归类**: [视频生成] [扩散模型] [一致性控制]
+---
+
+### 19. UniSD: Towards a Unified Self-Distillation Framework for Large Language Models (面向大语言模型的统一自蒸馏框架)
+- **社区热度**: `👍 10 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.06597)
+- **研究任务**: 模型蒸馏与训练
+- **核心亮点**: 建立统一的自蒸馏框架，简化 LLM 知识内化流程。
+- **深度解析**: 整合了现有的多种自蒸馏策略（如 logits 匹配、特征对齐等），提供一个标准化框架。支持在不同训练阶段灵活配置蒸馏目标，提升模型泛化能力，减少对外部教师模型的依赖。
+- **领域归类**: [模型训练] [知识蒸馏] [框架]
+---
+
+### 20. Normalizing Trajectory Models (轨迹模型归一化)
+- **社区热度**: `👍 8 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.08078)
+- **研究任务**: 轨迹建模与强化学习
+- **核心亮点**: 提出针对轨迹数据的归一化方法，稳定模型训练。
+- **深度解析**: 针对决策 Transformer 或轨迹类模型中状态分布变化大的问题，设计专门的归一化层。对轨迹序列中的状态和动作进行标准化处理，缓解梯度爆炸，加速收敛，提升策略稳定性。
+- **领域归类**: [强化学习] [轨迹建模] [训练技巧]
+---
+
+### 21. SCOPE: Structured Decomposition and Conditional Skill Orchestration for Complex Image Generation (SCOPE：面向复杂图像生成的结构化分解与条件技能编排)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.08043)
+- **研究任务**: 复杂指令下的图像生成。
+- **核心亮点**: 将生成过程分解为结构化步骤，并通过条件机制编排不同生成技能。
+- **深度解析**: 针对单一模型难以处理复杂 prompt 的问题，提出结构化分解模块，把大任务拆解为子任务。随后利用条件技能编排器，根据子任务需求动态调用特定的生成技能或模型组件，提升复杂场景下的生成可控性。
+- **领域归类**: [计算机视觉], [生成模型], [可控生成]
+---
+
+### 22. What Matters for Diffusion-Friendly Latent Manifold? Prior-Aligned Autoencoders for Latent Diffusion (什么构成了扩散友好的潜在流形？用于潜在扩散的先验对齐自编码器)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.07915)
+- **研究任务**: 潜在扩散模型（LDM）的编码器优化。
+- **核心亮点**: 通过对齐自编码器先验，构建更适合扩散过程的潜在空间。
+- **深度解析**: 指出标准 VAE 的潜在空间并不完全适合扩散模型。该工作修改了自编码器的训练目标，使其潜在流形分布与扩散模型的先验假设更一致，从而减少重建误差，提升生成质量和采样效率。
+- **领域归类**: [计算机视觉], [扩散模型], [表示学习]
+---
+
+### 23. Scaling Continual Learning to 300+ Tasks with Bi-Level Routing Mixture-of-Experts (使用双层路由混合专家将持续学习扩展至 300+ 任务)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2602.03473)
+- **研究任务**: 多任务持续学习。
+- **核心亮点**: 利用双层路由 MoE 架构，在 300 多个任务上实现持续学习而不遗忘。
+- **深度解析**: 结合混合专家（MoE）与持续学习，设计双层路由机制。第一层路由分配任务簇，第二层路由细化到具体专家。这种层级结构有效隔离了不同任务的知识，大幅缓解了灾难性遗忘问题，支持大规模任务序列。
+- **领域归类**: [自然语言处理], [模型架构], [持续学习]
+---
+
+### 24. What if AI systems weren't chatbots? (如果 AI 系统不是聊天机器人会怎样？)
+- **社区热度**: `👍 6 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.07896)
+- **研究任务**: AI 交互范式探索。
+- **核心亮点**: 探讨除对话式交互外，AI 系统的其他潜在形态与交互模式。
+- **深度解析**: 反思当前以 Chatbot 为主导的 AI 交互界面。文章分析了背景式代理、工具化集成等非对话形态的可行性，主张根据任务场景选择交互方式，而非强制所有 AI 能力都通过聊天窗口交付。
+- **领域归类**: [人机交互], [AI 系统], [产品设计]
+---
+
+### 25. STARFlow2: Bridging Language Models and Normalizing Flows for Unified Multimodal Generation (STARFlow2： bridging 语言模型与归一化流以实现统一多模态生成)
+- **社区热度**: `👍 6 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.08029)
+- **研究任务**: 统一多模态生成。
+- **核心亮点**: 融合语言模型的序列建模能力与归一化流的精确分布建模能力。
+- **深度解析**: 针对多模态数据分布复杂的问题，将 LLM 的自回归特性与 Normalizing Flows 的可逆变换结合。LLM 负责高层语义规划，Flow 负责底层数据分布的精确映射，实现文本、图像等多模态内容的统一生成框架。
+- **领域归类**: [多模态], [生成模型], [模型架构]
+---
+
+### 26. SkCC: Portable and Secure Skill Compilation for Cross-Framework LLM Agents (SkCC：面向跨框架 LLM 代理的可移植且安全的技能编译)
+- **社区热度**: `👍 6 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.03353)
+- **研究任务**: LLM 代理技能管理。
+- **核心亮点**: 提出技能编译层，实现技能在不同代理框架间的移植与安全控制。
+- **深度解析**: 解决不同 Agent 框架间技能不兼容的问题。通过编译层将技能抽象为中间表示，屏蔽底层框架差异。同时引入安全约束检查，确保技能在执行过程中不会越权或泄露敏感信息。
+- **领域归类**: [AI 代理], [系统工程], [安全性]
+---
+
+### 27. InterLV-Search: Benchmarking Interleaved Multimodal Agentic Search (InterLV-Search：交错多模态代理搜索基准测试)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.07510)
+- **研究任务**: 多模态代理搜索能力评估。
+- **核心亮点**: 构建基准测试，评估代理在交错文本与图像数据中的搜索能力。
+- **深度解析**: 现有基准多针对单一模态。该工作创建了一个包含交错图文数据的环境，要求代理在其中进行多步搜索和信息检索。旨在衡量代理理解混合模态上下文并定位关键信息的能力。
+- **领域归类**: [基准测试], [AI 代理], [多模态]
+---
+
+### 28. Fast Byte Latent Transformer (快速字节潜在 Transformer)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.08044)
+- **研究任务**: 高效 Transformer 架构。
+- **核心亮点**: 在字节级潜在空间上进行 Transformer 运算，提升处理速度。
+- **深度解析**: 传统 Token 化存在词汇表限制和长度问题。该模型直接在字节级别的潜在表示上运行 Transformer，减少了序列长度和 Embedding 查找开销，旨在实现更快的推理速度和更低的内存占用。
+- **领域归类**: [模型架构], [效率优化], [自然语言处理]
+---
+
+### 29. From Storage to Experience: A Survey on the Evolution of LLM Agent Memory Mechanisms (从存储到经验：LLM 代理记忆机制演变综述)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.06716)
+- **研究任务**: 代理记忆机制综述。
+- **核心亮点**: 梳理了代理记忆从简单向量存储向经验式记忆演化的技术路径。
+- **深度解析**: 总结了 LLM Agent 记忆模块的发展阶段。早期主要依赖向量数据库检索，近期趋势转向结构化记忆、反思机制和经验学习。文章分类对比了不同机制的优缺点及适用场景。
+- **领域归类**: [综述], [AI 代理], [记忆机制]
+---
+
+### 30. IntentGrasp: A Comprehensive Benchmark for Intent Understanding (IntentGrasp：意图理解综合基准测试)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.06832)
+- **研究任务**: 用户意图理解评估。
+- **核心亮点**: 提供综合基准，全面评估模型对用户意图的识别与理解能力。
+- **深度解析**: 针对意图理解缺乏统一评估标准的问题，构建了包含多领域、多复杂度指令的数据集。不仅评估意图分类准确率，还考察模型对隐含意图和上下文依赖意图的理解深度。
+- **领域归类**: [基准测试], [自然语言处理], [意图识别]
+---
+</details>
+
+</script>
+        <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
+    </body>
+    </html>
+    
