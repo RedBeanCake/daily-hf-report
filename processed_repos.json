@@ -19,7 +19,7 @@
   "jingyaogong /minimind": "2026-04-10",
   "unslothai /unsloth": "2026-04-24",
   "feast-dev /feast": "2026-04-10",
-  "666ghj /MiroFish": "2026-04-10",
+  "666ghj /MiroFish": "2026-05-12",
   "ahujasid /blender-mcp": "2026-04-13",
   "hacksider /Deep-Live-Cam": "2026-04-13",
   "yt-dlp /yt-dlp": "2026-04-13",
@@ -73,7 +73,7 @@
   "PostHog /posthog": "2026-04-23",
   "funstory-ai /BabelDOC": "2026-04-23",
   "hiroi-sora /Umi-OCR": "2026-04-23",
-  "BerriAI /litellm": "2026-04-23",
+  "BerriAI /litellm": "2026-05-12",
   "Shubhamsaboo /awesome-llm-apps": "2026-05-06",
   "openai /skills": "2026-04-24",
   "google /adk-samples": "2026-04-24",
@@ -138,5 +138,9 @@
   "bytedance /UI-TARS": "2026-05-11",
   "ylytdeng /wechat-decrypt": "2026-05-11",
   "wanshuiyin /Auto-claude-code-research-in-sleep": "2026-05-11",
-  "romainsimon /paperasse": "2026-05-11"
+  "romainsimon /paperasse": "2026-05-11",
+  "fishaudio /fish-speech": "2026-05-12",
+  "openinterpreter /open-interpreter": "2026-05-12",
+  "FoundationAgents /MetaGPT": "2026-05-12",
+  "huggingface /transformers": "2026-05-12"
 }
