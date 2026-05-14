@@ -1,0 +1,378 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>前沿科研情报 - 2026-05-15</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <style>
+            .markdown-body { box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 30px; }
+            details { background: #f6f8fa; padding: 15px; border-radius: 8px; border: 1px solid #d0d7de; margin-bottom: 20px; }
+            summary { cursor: pointer; color: #0969da; font-weight: bold; font-size: 1.1em; }
+        </style>
+    </head>
+    <body class="markdown-body">
+        <a href='../index.html'>← 返回索引</a>
+        <h1>前沿科研情报 - 2026-05-15</h1>
+        <div id="content"></div>
+        <script type="text/markdown" id="raw-md"><details>
+<summary><b>🤗 Hugging Face 今日论文 (点击展开)</b></summary>
+
+### 1. MinT: Managed Infrastructure for Training and Serving Millions of LLMs (MinT：用于训练和服务数百万大模型的管理式基础设施)
+- **社区热度**: `👍 131 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.13779)
+- **研究任务**: 大模型基础设施与资源调度
+- **核心亮点**: 提出了一套能同时支撑百万级模型训练和推理服务的统一资源管理架构。
+- **深度解析**: 主要针对多模型并发场景下的资源碎片化问题。设计了动态调度器，根据模型大小和请求负载自动分配显存和计算单元。支持训练任务和服务任务在同一集群内混合部署，通过优先级队列避免互相干扰。实测在高负载下资源利用率提升明显，降低了运维成本。
+- **领域归类**: [LLM 基础设施], [系统优化], [资源调度]
+---
+
+### 2. MulTaBench: Benchmarking Multimodal Tabular Learning with Text and Image (MulTaBench：图文多模态表格学习基准)
+- **社区热度**: `👍 108 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.10616)
+- **研究任务**: 多模态表格数据理解基准测试
+- **核心亮点**: 构建了首个结合文本、图像和表格结构的多模态评估基准。
+- **深度解析**: 现有基准多侧重纯表格或纯图文，这篇 work 把三者结合起来。数据集包含带图表说明的复杂表格，任务涉及数据检索、趋势分析和跨模态推理。测试了当前主流多模态模型在该任务上的表现，发现模型在处理表格结构与图像关联时仍有较大短板，为后续研究提供了明确改进方向。
+- **领域归类**: [多模态学习], [基准测试], [表格理解]
+---
+
+### 3. AnyFlow: Any-Step Video Diffusion Model with On-Policy Flow Map Distillation (AnyFlow：基于在线策略流图蒸馏的任意步数视频扩散模型)
+- **社区热度**: `👍 73 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.13724)
+- **研究任务**: 视频生成与加速采样
+- **核心亮点**: 实现了视频扩散模型的任意步数采样，并通过蒸馏技术大幅减少推理时间。
+- **深度解析**: 传统扩散模型采样步数固定，这篇提出“流图蒸馏”方法。让模型学习从任意噪声状态直接映射到清晰视频帧的流形，支持在推理时灵活调整步数（如从 50 步减到 5 步）。在线策略蒸馏保证了少步数下的生成质量不崩塌，适合对延迟敏感的视频生成应用。
+- **领域归类**: [视频生成], [扩散模型], [模型蒸馏]
+---
+
+### 4. Training Long-Context Vision-Language Models Effectively with Generalization Beyond 128K Context (有效训练长上下文视觉语言模型，泛化能力超越 128K)
+- **社区热度**: `👍 70 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.13831)
+- **研究任务**: 长上下文视觉语言模型训练
+- **核心亮点**: 解决了 VLM 在超过 128K 上下文长度下的训练不稳定和泛化差的问题。
+- **深度解析**: 主要针对长序列训练中的注意力分散和梯度消失问题。改进了位置编码插值策略，并引入了一种分段注意力机制，让模型能聚焦关键视觉 token。在 128K 以上长度测试中，信息 retrieval 准确率优于现有方案，且无需微调即可泛化到更长上下文。
+- **领域归类**: [视觉语言模型], [长上下文], [训练策略]
+---
+
+### 5. Predicting Decisions of AI Agents from Limited Interaction through Text-Tabular Modeling (通过文本 - 表格建模从有限交互中预测 AI 代理决策)
+- **社区热度**: `👍 42 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.12411)
+- **研究任务**: AI 代理行为预测与可解释性
+- **核心亮点**: 仅需少量交互数据，就能通过文本 - 表格混合模型预测代理的后续决策。
+- **深度解析**: 将代理的交互历史转化为结构化表格数据，结合自然语言描述。使用轻量级模型学习状态与动作之间的映射关系。重点在于“有限交互”，意味着不需要大量 rollout 数据。实验显示能较准确预测代理在未知环境中的行为，有助于调试和评估代理安全性。
+- **领域归类**: [AI 代理], [行为预测], [可解释性]
+---
+
+### 6. Qwen-Image-VAE-2.0 Technical Report (Qwen-Image-VAE-2.0 技术报告)
+- **社区热度**: `👍 37 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.13565)
+- **研究任务**: 图像变分自编码器优化
+- **核心亮点**: 更新了 Qwen 系列的图像 VAE 模型，提升了压缩率和重建质量。
+- **深度解析**: 这是 Qwen 团队的基础组件更新。2.0 版本主要优化了潜在空间的分布对齐，减少了高分辨率图像下的伪影。支持更高的压缩倍数，同时保持细节清晰。作为生成模型的前置组件，该 VAE 能直接提升下游文生图任务的效率和效果。
+- **领域归类**: [图像生成], [VAE], [基础模型组件]
+---
+
+### 7. Edit-Compass & EditReward-Compass: A Unified Benchmark for Image Editing and Reward Modeling (Edit-Compass & EditReward-Compass：图像编辑与奖励模型的统一基准)
+- **社区热度**: `👍 30 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.13062)
+- **研究任务**: 图像编辑效果评估与奖励模型 benchmark
+- **核心亮点**: 建立了一套统一标准，同时评估图像编辑质量和奖励模型的打分能力。
+- **深度解析**: 以往编辑任务和奖励模型评估是分开做的，这篇把它们合在一起。基准包含多种编辑指令（如物体替换、风格迁移），并提供人工标注的偏好数据。用来测试奖励模型能否准确判断编辑后的图像是否符合指令。发现现有奖励模型在细粒度编辑评估上误差较大。
+- **领域归类**: [图像编辑], [奖励模型], [基准测试]
+---
+
+### 8. TrackCraft3R: Repurposing Video Diffusion Transformers for Dense 3D Tracking (TrackCraft3R：复用视频扩散 Transformer 进行密集 3D 跟踪)
+- **社区热度**: `👍 27 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.12587)
+- **研究任务**: 3D 视觉跟踪
+- **核心亮点**: 不重新训练，直接将视频扩散 Transformer 迁移用于密集 3D 点跟踪。
+- **深度解析**: 利用了视频扩散模型中已有的时空注意力机制。通过添加简单的适配层，让模型输出 3D 轨迹而不是生成视频。这种方法避免了从头训练跟踪模型的高成本。在标准 3D 跟踪数据集上，精度接近专用模型，但泛化性更好，尤其在遮挡场景下表现稳定。
+- **领域归类**: [3D 视觉], [视频理解], [模型复用]
+---
+
+### 9. Many-Shot CoT-ICL: Making In-Context Learning Truly Learn (Many-Shot CoT-ICL：让上下文学习真正具备学习能力)
+- **社区热度**: `👍 26 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.13511)
+- **研究任务**: 上下文学习（ICL）优化
+- **核心亮点**: 通过多样本思维链（CoT），显著提升了 ICL 在复杂任务上的泛化性能。
+- **深度解析**: 传统 ICL 只是示例检索，这篇强调“真正学习”。在上下文中注入大量带有推理步骤的样本（Many-Shot），并优化了样本的排序和多样性。模型能从中归纳出解题规则，而不仅仅是模仿格式。在数学和逻辑推理任务上，效果接近微调模型，但保持了零样本的灵活性。
+- **领域归类**: [大语言模型], [上下文学习], [推理能力]
+---
+
+### 10. FrameSkip: Learning from Fewer but More Informative Frames in VLA Training (FrameSkip：在 VLA 训练中从更少但信息量更大的帧学习)
+- **社区热度**: `👍 19 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.13757)
+- **研究任务**: 视觉 - 语言 - 动作（VLA）模型训练效率
+- **核心亮点**: 通过筛选关键帧进行训练，减少了 VLA 模型的数据冗余和计算开销。
+- **深度解析**: 机器人视频数据中大量帧是重复或无效的。这篇提出一个帧选择模块，根据动作变化率和信息熵筛选关键帧。训练时只使用这些帧，大幅降低了显存占用和训练时间。实验表明，在数据量减少 50% 的情况下，策略执行成功率未下降，甚至因噪声减少而略有提升。
+- **领域归类**: [机器人学习], [VLA 模型], [训练效率]
+---
+
+### 11. The DAWN of World-Action Interactive Models (世界 - 动作交互模型的曙光)
+- **社区热度**: `👍 15 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.11550)
+- **研究任务**: 世界模型与智能体交互
+- **核心亮点**: 将动作空间直接融入世界模型建模，提升交互预测准确性。
+- **深度解析**: 传统世界模型多侧重状态预测，该文提出 DAWN 架构，在潜在空间显式建模动作与状态的耦合关系。通过引入动作条件化的状态转移函数，模型能更准确预测智能体干预后的环境变化，适用于需要长期规划的控制任务。
+- **领域归类**: [World Models, Reinforcement Learning, Agent]
+---
+
+### 12. Asymmetric Flow Models (非对称流模型)
+- **社区热度**: `👍 12 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.12964)
+- **研究任务**: 生成模型 / 流匹配
+- **核心亮点**: 在流匹配过程中采用非对称结构，平衡采样速度与生成质量。
+- **深度解析**: 针对标准 Flow Matching 前后向过程对称导致的计算冗余，设计了非对称的向量场网络。前向过程侧重噪声调度效率，后向过程侧重细节重建，减少了推理步数，同时在高频细节保留上优于对称架构。
+- **领域归类**: [Generative AI, Flow Matching, Diffusion]
+---
+
+### 13. Learning Agentic Policy from Action Guidance (从动作指导中学习智能体策略)
+- **社区热度**: `👍 11 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.12004)
+- **研究任务**: 策略学习 / 智能体
+- **核心亮点**: 利用外部动作指导信号bootstrap 智能体策略训练，降低探索成本。
+- **深度解析**: 提出一种动作引导机制，将启发式规则或专家演示转化为软约束信号，注入到策略梯度更新中。该方法不需要完整的专家轨迹，仅需关键步骤的动作建议，显著减少了强化学习在稀疏奖励环境下的采样需求。
+- **领域归类**: [Reinforcement Learning, Agent, Policy Optimization]
+---
+
+### 14. HAGE: Harnessing Agentic Memory via RL-Driven Weighted Graph Evolution (HAGE：通过 RL 驱动加权图演化利用智能体记忆)
+- **社区热度**: `👍 9 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.09942)
+- **研究任务**: 智能体记忆 / 图神经网络
+- **核心亮点**: 用强化学习动态优化记忆图的结构和权重，提升长程任务表现。
+- **深度解析**: 将智能体记忆建模为加权图，节点为历史片段，边为关联强度。使用 RL 代理决定边的增删改查及权重更新，使记忆结构随任务需求演化。相比固定记忆库，该方法能主动遗忘无关信息，强化关键路径连接。
+- **领域归类**: [Agent, Memory Mechanism, Graph Neural Network]
+---
+
+### 15. Retrieval is Cheap, Show Me the Code: Executable Multi-Hop Reasoning for Retrieval-Augmented Generation (检索很便宜，给我看代码：用于检索增强生成的可执行多跳推理)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.12975)
+- **研究任务**: RAG / 推理
+- **核心亮点**: 用可执行代码替代纯文本检索，解决复杂多跳推理中的逻辑断裂问题。
+- **深度解析**: 针对传统 RAG 在多跳查询中容易丢失中间逻辑的问题，模型生成 Python 代码片段来调用检索工具和处理数据。代码执行过程显式记录了推理步骤，避免了语言模型内部幻觉，提升了复杂问答的准确率。
+- **领域归类**: [RAG, Reasoning, Code Generation]
+---
+
+### 16. PresentAgent-2: Towards Generalist Multimodal Presentation Agents (PresentAgent-2：迈向通用多模态演示智能体)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.11363)
+- **研究任务**: 多模态智能体 / 内容生成
+- **核心亮点**: 端到端生成包含图文排版的演示文稿，支持多模态输入理解。
+- **深度解析**: 升级了前代架构，引入统一的 multimodal encoder 处理文档、图片和大纲。模型不仅生成文本内容，还直接输出布局代码（如 LaTeX 或 PPTX 结构），实现了从素材到成品的自动化，增强了排版的美观性和逻辑性。
+- **领域归类**: [Multimodal, Agent, Content Generation]
+---
+
+### 17. RoboEvolve: Co-Evolving Planner-Simulator for Robotic Manipulation with Limited Data (RoboEvolve：有限数据下用于机器人操作的可共进化规划器 - 模拟器)
+- **社区热度**: `👍 6 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.13775)
+- **研究任务**: 机器人学习 / 仿真
+- **核心亮点**: 规划器与模拟器联合进化，在少样本条件下提升机器人操作成功率。
+- **深度解析**: 针对真机数据稀缺问题，建立闭环系统：模拟器根据规划器的失败案例更新物理参数，规划器利用更新后的模拟器训练策略。两者交替优化，缩小 Sim-to-Real 差距，无需大量真机微调即可适应新任务。
+- **领域归类**: [Robotics, Simulation, Planning]
+---
+
+### 18. Orthrus: Memory-Efficient Parallel Token Generation via Dual-View Diffusion (Orthrus：通过双视图扩散实现内存高效的并行 Token 生成)
+- **社区热度**: `👍 6 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.12825)
+- **研究任务**: LLM 推理 / 扩散模型
+- **核心亮点**: 利用双视图扩散机制并行生成 Token，显著降低显存占用。
+- **深度解析**: 传统自回归生成串行且显存随序列线性增长。Orthrus 采用两个互补的扩散视图，一个负责全局语义，一个负责局部细节，支持块状并行生成。配合内存优化算子，在长序列生成场景下比标准 Transformer 节省约 40% 显存。
+- **领域归类**: [LLM, Inference Optimization, Diffusion]
+---
+
+### 19. Offline Preference Optimization for Rectified Flow with Noise-Tracked Pairs (基于噪声跟踪对的校正流离线偏好优化)
+- **社区热度**: `👍 6 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.09433)
+- **研究任务**: 模型对齐 / 流模型
+- **核心亮点**: 将离线偏好优化（Offline DPO）扩展至校正流模型，利用噪声轨迹对进行对齐。
+- **深度解析**: 针对 Flow Model 难以直接应用 RLHF 的问题，构建了含噪声轨迹的偏好数据集。通过跟踪噪声路径的差异来计算偏好梯度，在不在线采样的情况下优化生成分布，使其更符合人类审美或特定约束。
+- **领域归类**: [Alignment, Flow Matching, Preference Optimization]
+---
+
+### 20. Revisiting DAgger in the Era of LLM-Agents (重访 LLM 智能体时代的 DAgger 算法)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.12913)
+- **研究任务**: 模仿学习 / 智能体
+- **核心亮点**: 改进经典 DAgger 算法，适配 LLM 智能体的交互反馈机制。
+- **深度解析**: 经典 DAgger 依赖专家实时纠正，成本高。该文利用 LLM 的自我反思能力模拟专家反馈，构建合成纠正数据。通过迭代训练策略模型，解决了 LLM 智能体在长程任务中误差累积的问题，降低了对外部专家的依赖。
+- **领域归类**: [Imitation Learning, LLM Agent, Algorithm]
+---
+
+### 21. Results and Retrospective Analysis of the CODS 2025 AssetOpsBench Challenge (CODS 2025 资产运营基准挑战结果与回顾分析)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.08518)
+- **研究任务**: 基准测试分析与复盘
+- **核心亮点**: 对 2025 年资产运营基准挑战的结果进行了系统性回顾和问题分析。
+- **深度解析**: 这篇论文主要整理了 CODS 2025 挑战赛的参赛情况，分析了现有模型在资产运营任务上的表现瓶颈。通过复盘 submissions，指出了当前方法在处理特定运营场景时的不足，为后续改进提供了数据支持。
+- **领域归类**: [Benchmark, Operations, Analysis]
+---
+
+### 22. MAP: A Map-then-Act Paradigm for Long-Horizon Interactive Agent Reasoning (MAP：面向长程交互代理推理的“先映射后行动”范式)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.13037)
+- **研究任务**: 智能体长程规划
+- **核心亮点**: 提出了“先构建地图再行动”的范式，解决长任务中的连贯性问题。
+- **深度解析**: 针对长程交互任务，传统方法容易迷失方向。该方法让代理先在环境中构建状态地图或计划图，然后再基于地图执行具体动作。这种分离策略减少了盲目探索，提升了长 horizon 任务的成功率。
+- **领域归类**: [Agent, Planning, Reasoning]
+---
+
+### 23. FeatCal: Feature Calibration for Post-Merging Models (FeatCal：面向模型合并后的特征校准方法)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.13030)
+- **研究任务**: 模型合并优化
+- **核心亮点**: 在模型合并后引入特征校准步骤，缓解性能下降。
+- **深度解析**: 模型合并（Model Merging）常导致特征分布偏移。该方法在合并权重后，增加了一个特征校准环节，对齐不同模型的特征空间。不需要额外训练太多数据，就能恢复合并后的模型性能。
+- **领域归类**: [Model Merging, Efficiency, Optimization]
+---
+
+### 24. Context Training with Active Information Seeking (结合主动信息寻求的上下文训练)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.13050)
+- **研究任务**: 上下文学习与训练
+- **核心亮点**: 训练模型在上下文中主动寻找关键信息，而非被动接收。
+- **深度解析**: 传统上下文学习是被动的。这篇工作通过训练策略，让模型学会在长文本中主动定位和提取关键信息块。类似于让模型学会“带着问题读上下文”，提升了信息利用效率。
+- **领域归类**: [Context Learning, Training Strategy, RAG]
+---
+
+### 25. RealICU: Do LLM Agents Understand Long-Context ICU Data? A Benchmark Beyond Behavior Imitation (RealICU：LLM 代理是否理解长上下文 ICU 数据？一个超越行为模仿的基准)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.13542)
+- **研究任务**: 医疗长上下文 benchmark
+- **核心亮点**: 构建了 ICU 场景基准，重点评估理解能力而非单纯的行为模仿。
+- **深度解析**: 针对医疗 ICU 长文本数据，现有评估多关注动作匹配。该基准设计了需要深层推理的任务，检验模型是否真正理解病情演变逻辑，而不仅仅是模仿医生操作记录。
+- **领域归类**: [Healthcare, Benchmark, Long Context]
+---
+
+### 26. AgentLens: Revealing The Lucky Pass Problem in SWE-Agent Evaluation (AgentLens：揭示 SWE-Agent 评估中的“幸运通过”问题)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.12925)
+- **研究任务**: 代码代理评估
+- **核心亮点**: 发现并量化了代码代理在评估中靠运气通过测试的现象。
+- **深度解析**: 在软件工程代理评估中，部分通过案例其实是运气好。这篇论文提出了检测工具，区分真正的能力解决和偶然通过，帮助更准确地评估代码代理的真实水平。
+- **领域归类**: [Agent, Evaluation, Code]
+---
+
+### 27. Visual Aesthetic Benchmark: Can Frontier Models Judge Beauty? (视觉美学基准：前沿模型能判断美吗？)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.12684)
+- **研究任务**: 多模态美学评估
+- **核心亮点**: 测试了主流多模模型对人类美学判断的对齐程度。
+- **深度解析**: 构建了一个美学评分基准，对比模型打分与人类偏好的一致性。结果显示即使是前沿模型，在主观美学判断上仍存在偏差，为多模态对齐提供了参考数据。
+- **领域归类**: [Multimodal, Benchmark, Alignment]
+---
+
+### 28. Position: LLM Inference Should Be Evaluated as Energy-to-Token Production (立场论文：LLM 推理应按“能量每 Token"进行评估)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.11733)
+- **研究任务**: 推理效率评估指标
+- **核心亮点**: 主张将“能耗每 Token"作为核心评估指标，而非仅看速度。
+- **深度解析**: 随着模型规模扩大，能耗问题凸显。文章 argue 现有的延迟或吞吐量指标不够全面，建议引入能量消耗维度，推动绿色 AI 和高效推理架构的发展。
+- **领域归类**: [Efficiency, Green AI, Evaluation]
+---
+
+### 29. MemReread: Enhancing Agentic Long-Context Reasoning via Memory-Guided Rereading (MemReread：通过记忆引导重读增强代理长上下文推理)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.10268)
+- **研究任务**: 长上下文推理优化
+- **核心亮点**: 利用记忆机制引导模型重读关键上下文片段。
+- **深度解析**: 针对长上下文信息遗漏问题，该方法让代理维护一个记忆模块。当推理受阻时，根据记忆提示返回去重读相关段落，而不是盲目全量阅读，提升了推理准确率。
+- **领域归类**: [Agent, Long Context, Memory]
+---
+
+### 30. The Extrapolation Cliff in On-Policy Distillation of Near-Deterministic Structured Outputs (近确定性结构化输出在线策略蒸馏中的外推悬崖现象)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.08737)
+- **研究任务**: 知识蒸馏与结构化输出
+- **核心亮点**: 发现了结构化输出蒸馏中存在的性能急剧下降现象。
+- **深度解析**: 在蒸馏模型生成 JSON 等结构化数据时，一旦输入分布超出训练范围，性能会出现“悬崖式”下跌。文章分析了这一现象的成因，提示在严格格式任务中需谨慎使用在线蒸馏。
+- **领域归类**: [Distillation, Structured Output, Reliability]
+---
+</details>
+
+<details>
+<summary><b>🚀 GitHub 今日热门项目 (点击展开)</b></summary>
+
+### [Kronos](https://github.com/shiyu-coder/Kronos)
+- **今日趋势**: 总星数 24,684 | Forks 4,326 | 今日 +359
+- **项目简介**: 专为金融市场语言打造的基础模型（Foundation Model），旨在理解和分析金融时序数据与市场文本。
+- **核心价值**: 解决了通用大模型在金融垂直领域专业知识匮乏、对市场术语与时序信号理解不足的痛点，为量化分析师和 FinTech 开发者提供了高精度的金融预测与分析基座。
+- **AI 相关性**: 是（金融垂直领域大模型）
+
+---
+
+### [supervision](https://github.com/roboflow/supervision)
+- **今日趋势**: 总星数 38,781 | Forks 3,476 | 今日 +59
+- **项目简介**: 一套可复用的计算机视觉工具库，简化了目标检测、图像标注及模型推理后的数据处理流程。
+- **核心价值**: 降低了计算机视觉工程的落地门槛，解决了开发者在不同 CV 模型（如 YOLO 系列）之间切换时数据处理格式不统一、后处理代码重复编写的痛点，大幅提升 CV 应用开发效率。
+- **AI 相关性**: 是（计算机视觉工具链）
+
+---
+
+### [video-search-and-summarization](https://github.com/NVIDIA-AI-Blueprints/video-search-and-summarization)
+- **今日趋势**: 总星数 734 | Forks 239 | 今日 +28
+- **项目简介**: NVIDIA 提供的参考架构套件，用于构建 GPU 加速的视觉 Agent 及 AI 驱动的视频分析应用。
+- **核心价值**: 解决了企业级视频数据分析成本高、检索难的问题，通过 GPU 加速和预置架构，让开发者能快速搭建具备视频内容搜索、摘要生成能力的智能应用，适用于安防、媒体管理等场景。
+- **AI 相关性**: 是（视觉 Agent 与视频分析）
+
+---
+
+### [spec-kit](https://github.com/github/spec-kit)
+- **今日趋势**: 总星数 99,170 | Forks 8,637 | 今日 +1,240
+- **项目简介**: GitHub 推出的工具包，旨在帮助开发者快速上手“规范驱动开发”（Spec-Driven Development）模式。
+- **核心价值**: 解决了软件开发中需求模糊、代码与文档脱节的痛点，通过标准化规范流程，结合当前 AI 编码趋势， likely 辅助 AI 代理更准确地生成符合预期的代码，提升工程化质量。
+- **AI 相关性**: 是（AI 辅助开发流程工具）
+
+---
+
+### [planning-with-files](https://github.com/OthmanAdi/planning-with-files)
+- **今日趋势**: 总星数 21,247 | Forks 1,885 | 今日 +127
+- **项目简介**: 为 Claude Code 设计的技能插件，实现了类似 Manus 的持久化 Markdown 规划工作流。
+- **核心价值**: 解决了 AI 编程代理在长任务中容易迷失上下文、缺乏长期规划能力的痛点，通过文件持久化记录规划步骤，使 AI 能更稳定地执行复杂开发任务，复刻了高价收购工作流的核心逻辑。
+- **AI 相关性**: 是（AI 编程代理技能）
+
+---
+
+### [academic-research-skills](https://github.com/Imbad0202/academic-research-skills)
+- **今日趋势**: 总星数 7,126 | Forks 819 | 今日 +441
+- **项目简介**: 专为 Claude Code 设计的学术研究技能包，涵盖从研究、写作到审查、修订的全流程。
+- **核心价值**: 解决了科研人员在文献梳理、论文撰写及修改过程中效率低下的痛点，将学术规范转化为 AI 可执行的工作流，辅助研究者高效完成学术产出。
+- **AI 相关性**: 是（AI 科研辅助技能）
+
+---
+
+### [CorridorKey](https://github.com/nikopueringer/CorridorKey)
+- **今日趋势**: 总星数 13,330 | Forks 812 | 今日 +143
+- **项目简介**: 专注于实现完美绿幕抠像（Green Screen Keys）的视频处理工具。
+- **核心价值**: 解决了传统视频抠像边缘处理不自然、光影融合困难的痛点，利用先进的算法（可能结合 CV 技术）提供电影级的抠像效果，服务于视频创作者和后期制作人员。
+- **AI 相关性**: 是（计算机视觉/图像处理）
+
+---
+
+### [geo-seo-claude](https://github.com/zubair-trabzada/geo-seo-claude)
+- **今日趋势**: 总星数 7,262 | Forks 1,188 | 今日 +57
+- **项目简介**: 为 Claude Code 设计的 GEO（生成式引擎优化）优先 SEO 技能，专注于 AI 搜索优化。
+- **核心价值**: 解决了传统 SEO 在 AI 搜索时代失效的痛点，提供 AI 爬虫分析、引用评分、品牌权威度优化等功能，帮助企业在生成式 AI 搜索结果中获得更高曝光，具有明确的商业变现指导。
+- **AI 相关性**: 是（AI 搜索优化技能）
+
+---
+
+### [RedditVideoMakerBot](https://github.com/elebumm/RedditVideoMakerBot)
+- **今日趋势**: 总星数 11,920 | Forks 2,808 | 今日 +134
+- **项目简介**: 自动化工具，只需一条命令即可将 Reddit 内容转化为视频。
+- **核心价值**: 解决了短视频内容创作者素材获取难、制作耗时长的痛点，自动化完成内容抓取、语音合成（TTS）、字幕生成及视频剪辑流程，实现批量生产社交媒体视频。
+- **AI 相关性**: 是（AIGC 视频生成）
+
+---
+
+### [agent-plugins](https://github.com/awslabs/agent-plugins)
+- **今日趋势**: 总星数 691 | Forks 91 | 今日 +5
+- **项目简介**: AWS 提供的代理插件库，赋予 AI 编码代理架构、部署和操作 AWS 资源的能力。
+- **核心价值**: 解决了 AI 代理无法直接安全操作云基础设施的痛点，通过标准化插件接口，让 AI 能够理解并执行 AWS 复杂操作，加速云原生 AI 应用的开发与运维自动化。
+- **AI 相关性**: 是（AI 代理云基础设施集成）
+</details></script>
+        <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
+    </body>
+    </html>
+    
