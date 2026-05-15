@@ -45,7 +45,7 @@
   "google-research /timesfm": "2026-05-01",
   "datawhalechina /hello-agents": "2026-05-08",
   "oobabooga /textgen": "2026-04-16",
-  "github /awesome-copilot": "2026-05-01",
+  "github /awesome-copilot": "2026-05-15",
   "Polymarket /agents": "2026-04-16",
   "dimensionalOS /dimos": "2026-04-16",
   "Fincept-Corporation /FinceptTerminal": "2026-04-20",
@@ -70,7 +70,7 @@
   "huggingface /ml-intern": "2026-04-23",
   "crewAIInc /crewAI": "2026-04-23",
   "onyx-dot-app /onyx": "2026-05-06",
-  "PostHog /posthog": "2026-04-23",
+  "PostHog /posthog": "2026-05-15",
   "funstory-ai /BabelDOC": "2026-04-23",
   "hiroi-sora /Umi-OCR": "2026-04-23",
   "BerriAI /litellm": "2026-05-12",
@@ -128,7 +128,7 @@
   "Blaizzy /mlx-vlm": "2026-05-07",
   "awslabs /aidlc-workflows": "2026-05-07",
   "xming521 /WeClone": "2026-05-07",
-  "CloakHQ /CloakBrowser": "2026-05-08",
+  "CloakHQ /CloakBrowser": "2026-05-15",
   "HKUDS /AI-Trader": "2026-05-08",
   "PaddlePaddle /PaddleOCR": "2026-05-08",
   "vllm-project /vllm-ascend": "2026-05-08",
@@ -157,5 +157,9 @@
   "Imbad0202 /academic-research-skills": "2026-05-14",
   "zubair-trabzada /geo-seo-claude": "2026-05-14",
   "elebumm /RedditVideoMakerBot": "2026-05-14",
-  "awslabs /agent-plugins": "2026-05-14"
+  "awslabs /agent-plugins": "2026-05-14",
+  "joeseesun /qiaomu-anything-to-notebooklm": "2026-05-15",
+  "bregman-arie /devops-exercises": "2026-05-15",
+  "CodeBoarding /CodeBoarding": "2026-05-15",
+  "NVIDIA-NeMo /NeMo": "2026-05-15"
 }
