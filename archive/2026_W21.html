@@ -1,0 +1,298 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AI 技术周报 - 2026-W21</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <style>
+            .markdown-body { box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 30px; }
+            details { background: #f6f8fa; padding: 15px; border-radius: 8px; border: 1px solid #d0d7de; margin-bottom: 20px; }
+            summary { cursor: pointer; color: #0969da; font-weight: bold; font-size: 1.1em; }
+        </style>
+    </head>
+    <body class="markdown-body">
+        <a href='../index.html'>← 返回索引</a>
+        <h1>AI 技术周报 - 2026-W21</h1>
+        <div id="content"></div>
+        <script type="text/markdown" id="raw-md"><details>
+<summary><b>🤗 Hugging Face 每周论文 (点击展开)</b></summary>
+
+### 1. PhysBrain 1.0 Technical Report (PhysBrain 1.0 技术报告)
+- **社区热度**: `👍 129 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.15298)
+- **研究任务**: 物理仿真与脑模型结合的技术探索
+- **核心亮点**: 发布了 PhysBrain 1.0 版本，整合了物理约束与神经建模能力。
+- **深度解析**: 这是一份技术报告，主要介绍了系统架构和基础能力。方案侧重于将物理规律嵌入到类脑模型中，旨在提升模型对物理世界的理解和仿真精度，为后续机器人控制或科学计算提供底层支持。
+- **领域归类**: [物理 AI, 系统架构, 技术报告]
+---
+
+### 2. CiteVQA: Benchmarking Evidence Attribution for Trustworthy Document Intelligence (CiteVQA：面向可信文档智能的证据归属基准测试)
+- **社区热度**: `👍 123 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.12882)
+- **研究任务**: 文档视觉问答（Document VQA）中的证据溯源
+- **核心亮点**: 提出了首个专注于评估模型能否准确引用文档证据的基准测试。
+- **深度解析**: 针对文档智能中模型胡乱回答的问题，构建了 CiteVQA 数据集。任务要求模型在回答问题时必须指向原文的具体位置或段落。评估重点在于答案的正确性以及证据归属的准确性，旨在推动可信文档智能的发展。
+- **领域归类**: [多模态，基准测试，可信 AI]
+---
+
+### 3. MMSkills: Towards Multimodal Skills for General Visual Agents (MMSkills：面向通用视觉代理的多模态技能研究)
+- **社区热度**: `👍 99 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.13527)
+- **研究任务**: 通用视觉智能体的技能学习
+- **核心亮点**: 构建了一套多模态技能库，提升视觉代理在不同任务中的泛化能力。
+- **深度解析**: 方案将复杂的视觉任务拆解为可复用的多模态技能单元。通过整合视觉、语言及动作信息，使智能体能够组合调用这些技能来解决未见过的任务。重点在于技能的标准化定义与跨任务迁移效果。
+- **领域归类**: [智能体，多模态，技能学习]
+---
+
+### 4. FashionChameleon: Towards Real-Time and Interactive Human-Garment Video Customization (FashionChameleon：面向实时交互式人体服装视频定制)
+- **社区热度**: `👍 51 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.15824)
+- **研究任务**: 虚拟试衣与视频生成
+- **核心亮点**: 实现了实时、交互式的服装视频定制，支持动态更换 garment。
+- **深度解析**: 针对现有虚拟试衣视频生成慢、不可交互的痛点，提出了一种高效的视频生成架构。支持用户在视频流中实时调整服装样式，同时保持人体动作与服装物理形态的自然协调，优化了推理速度以满足实时性要求。
+- **领域归类**: [视频生成，虚拟试衣，实时系统]
+---
+
+### 5. Learning to Foresee: Unveiling the Unlocking Efficiency of On-Policy Distillation (Learning to Foresee：揭示同策略蒸馏的解锁效率)
+- **社区热度**: `👍 47 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.11739)
+- **研究任务**: 强化学习中的策略蒸馏
+- **核心亮点**: 分析了同策略蒸馏机制，发现了提升蒸馏效率的关键因素。
+- **深度解析**: 研究聚焦于如何让学生模型更高效地学习教师模型的策略。通过理论分析与实验，揭示了“预测未来状态”在同策略蒸馏中的作用，提出了优化蒸馏过程的方法，减少了训练开销并提升了策略收敛速度。
+- **领域归类**: [强化学习，模型蒸馏，效率优化]
+---
+
+### 6. DexJoCo: A Benchmark and Toolkit for Task-Oriented Dexterous Manipulation on MuJoCo (DexJoCo：MuJoCo 上面向任务的灵巧操作基准与工具包)
+- **社区热度**: `👍 46 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.16257)
+- **研究任务**: 机器人灵巧操作 benchmark
+- **核心亮点**: 提供了基于 MuJoCo 的灵巧操作基准测试及配套工具包。
+- **深度解析**: 针对灵巧手操作任务缺乏统一评估标准的问题，构建了 DexJoCo。包含多种任务场景、评估指标及基线算法代码。旨在降低研究门槛，方便不同算法在相同环境下进行公平对比，推动灵巧操作技术发展。
+- **领域归类**: [机器人，基准测试，仿真环境]
+---
+
+### 7. InsightTok: Improving Text and Face Fidelity in Discrete Tokenization for Autoregressive Image Generation (InsightTok：提升自回归图像生成中离散 token 化的文本与人脸保真度)
+- **社区热度**: `👍 31 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.14333)
+- **研究任务**: 自回归图像生成的 Tokenization 优化
+- **核心亮点**: 改进了离散 token 化方法，显著提升了生成图像中文字和人脸的清晰度。
+- **深度解析**: 针对自回归图像生成模型中细节丢失的问题，设计了 InsightTok 编码方案。重点优化了高频信息（如文字笔画、人脸五官）的量化过程，减少了重建误差，使得生成的图像在语义细节上更加准确。
+- **领域归类**: [图像生成，Tokenization，自回归模型]
+---
+
+### 8. Distilling Long-CoT Reasoning through Collaborative Step-wise Multi-Teacher Decoding (通过协作式逐步多教师解码蒸馏长链思维推理)
+- **社区热度**: `👍 31 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.02290)
+- **研究任务**: 长链思维（Long-CoT）推理能力的蒸馏
+- **核心亮点**: 利用多教师协作逐步解码，将长 CoT 能力蒸馏到小模型中。
+- **深度解析**: 方案引入了多个教师模型，在推理的每一步进行协作指导，而非仅依赖最终结果。这种逐步蒸馏机制帮助学生模型更好地学习推理路径，降低了长 CoT 任务对小模型的门槛，提升了复杂推理任务的准确率。
+- **领域归类**: [大模型，推理能力，知识蒸馏]
+---
+
+### 9. Flash-GRPO: Efficient Alignment for Video Diffusion via One-Step Policy Optimization (Flash-GRPO：通过单步策略优化实现视频扩散的高效对齐)
+- **社区热度**: `👍 27 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.15980)
+- **研究任务**: 视频扩散模型的对齐优化
+- **核心亮点**: 提出单步策略优化方法，大幅提升了视频扩散模型的对齐效率。
+- **深度解析**: 基于 GRPO 算法进行改进，针对视频生成的高计算成本问题，设计了单步优化策略。减少了强化学习对齐过程中的采样次数和计算开销，在保证视频质量和偏好对齐的前提下，显著加快了训练和推理速度。
+- **领域归类**: [视频生成，强化学习对齐，效率优化]
+---
+
+### 10. Nudging Beyond the Comfort Zone: Efficient Strategy-Guided Exploration for RLVR (Nudging Beyond the Comfort Zone：RLVR 的高效策略引导探索)
+- **社区热度**: `👍 25 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.15726)
+- **研究任务**: 基于可验证奖励的强化学习（RLVR）探索策略
+- **核心亮点**: 提出策略引导的探索方法，促使模型走出舒适区以提升学习效果。
+- **深度解析**: 针对 RLVR 训练中模型容易陷入局部最优的问题，设计了一种引导机制。通过动态调整探索策略，鼓励模型尝试难度适中且未掌握的任务样本，避免了无效重复训练，提升了模型在复杂任务上的泛化性能和收敛效率。
+- **领域归类**: [强化学习，探索策略，模型对齐]
+---
+
+### 11. ReactiveGWM: Steering NPC in Reactive Game World Models (反应式游戏世界模型中的 NPC 操控)
+- **社区热度**: `👍 22 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.15256)
+- **研究任务**: 游戏 AI 与非玩家角色（NPC）行为控制
+- **核心亮点**: 利用世界模型预测环境变化，动态调整 NPC 行为策略。
+- **深度解析**: 传统 NPC 多依赖脚本或固定策略，该方法构建了一个反应式游戏世界模型，能预测玩家行为导致的状态转移。通过将预测结果作为条件输入控制策略，NPC 能实时响应环境变化，无需硬编码规则，提升了交互自然度。
+- **领域归类**: [强化学习] [游戏 AI] [世界模型]
+---
+
+### 12. Hölder Policy Optimisation (赫尔德策略优化)
+- **社区热度**: `👍 16 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.12058)
+- **研究任务**: 强化学习策略优化稳定性
+- **核心亮点**: 在策略更新中引入赫尔德连续性约束，防止训练崩溃。
+- **深度解析**: 针对现有策略优化算法步长过大导致性能骤降的问题，该方法在目标函数中增加了赫尔德连续性约束。这限制了策略分布变化的速率，确保更新过程中的平滑性，理论上保证了更稳定的收敛边界。
+- **领域归类**: [强化学习] [优化算法]
+---
+
+### 13. Solvita: Enhancing Large Language Models for Competitive Programming via Agentic Evolution (通过代理进化增强大模型竞技编程能力)
+- **社区热度**: `👍 14 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.15301)
+- **研究任务**: 大模型代码生成与竞技编程
+- **核心亮点**: 采用多代理迭代进化机制，显著提升复杂算法题求解率。
+- **深度解析**: 单一大模型难以解决高难度竞赛题。该方案部署多个代理角色，分别负责生成代码、测试验证和批判修改。通过多轮迭代进化，代码质量逐步提升，解决了单次生成逻辑漏洞多的问题。
+- **领域归类**: [大语言模型] [代码生成] [多代理系统]
+---
+
+### 14. From Plans to Pixels: Learning to Plan and Orchestrate for Open-Ended Image Editing (从计划到像素：学习开放域图像编辑的规划与编排)
+- **社区热度**: `👍 9 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.15181)
+- **研究任务**: 开放域图像编辑
+- **核心亮点**: 将编辑任务拆解为规划与执行两阶段，处理复杂指令更准确。
+- **深度解析**: 针对复杂编辑指令难以一步到位的问题，模型先通过规划器将用户意图拆解为子任务序列，再由编排器执行具体的像素级操作。这种分层结构避免了单一模型同时处理语义理解和底层操作的负担。
+- **领域归类**: [计算机视觉] [图像编辑] [多模态]
+---
+
+### 15. CM-EVS: Sparse Panoramic RGB-D-Pose Data for Complete Scene Coverage (用于完整场景覆盖的稀疏全景 RGB-D-姿态数据)
+- **社区热度**: `👍 8 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.15597)
+- **研究任务**: 3D 场景重建与数据采集
+- **核心亮点**: 提出稀疏全景数据集方案，以低成本实现完整场景几何覆盖。
+- **深度解析**: 传统稠密数据采集成本高。该工作构建了一套稀疏全景 RGB-D 及姿态数据标准，配合特定重建算法，仅需少量稀疏输入即可恢复完整场景几何结构，降低了数据采集门槛。
+- **领域归类**: [3D 视觉] [数据集] [场景重建]
+---
+
+### 16. PAGER: Bridging the Semantic-Execution Gap in Point-Precise Geometric GUI Control (PAGER：弥合点级精确几何 GUI 控制中的语义 - 执行差距)
+- **社区热度**: `👍 8 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.15963)
+- **研究任务**: GUI 智能体控制
+- **核心亮点**: 对齐高层语义指令与底层坐标操作，提升点击精确度。
+- **深度解析**: 现有 GUI 代理常出现“懂意图但点不准”的情况。该方法引入几何约束模块，将自然语言指令映射到具体的屏幕坐标空间，专门优化了点级操作的精度，解决了语义与执行不匹配的问题。
+- **领域归类**: [智能体] [人机交互] [GUI 控制]
+---
+
+### 17. Unlocking Dense Metric Depth Estimation in VLMs (解锁 VLM 中的稠密度量深度估计)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.15876)
+- **研究任务**: 视觉语言模型深度估计
+- **核心亮点**: 赋予 VLM 输出绝对度量深度图的能力，而非仅相对深度。
+- **深度解析**: 通用 VLM 通常缺乏精确的深度感知。该工作在 VLM 架构中嵌入深度估计头，并通过度量深度数据微调，使模型不仅能理解图像内容，还能输出具有真实物理尺度的稠密深度图。
+- **领域归类**: [计算机视觉] [视觉语言模型] [深度估计]
+---
+
+### 18. Steered LLM Activations are Non-Surjective (被导向的 LLM 激活是非满射的)
+- **社区热度**: `👍 6 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2604.09839)
+- **研究任务**: 大模型可解释性与控制
+- **核心亮点**: 发现激活导向技术无法覆盖所有输出语义空间。
+- **深度解析**: 针对流行的激活 steering 技术，论文通过几何分析证明，线性偏移激活向量无法到达所有可能的语义状态（非满射）。这指出了当前控制方法的理论局限性，提示某些行为无法通过简单导向实现。
+- **领域归类**: [大语言模型] [可解释性] [模型控制]
+---
+
+### 19. Sparse Autoencoders enable Robust and Interpretable Fine-tuning of CLIP models (稀疏自编码器实现 CLIP 模型的鲁棒可解释微调)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.15961)
+- **研究任务**: 多模态模型微调
+- **核心亮点**: 利用 SAE 分解特征，实现不影响原能力的 targeted 微调。
+- **深度解析**: 直接微调 CLIP 容易破坏原有零样本能力。该方法先用稀疏自编码器（SAE）分解 CLIP 特征空间，仅在特定特征维度上进行微调。这样既实现了任务适配，又保持了模型的可解释性和鲁棒性。
+- **领域归类**: [多模态] [模型微调] [可解释性]
+---
+
+### 20. FFAvatar: Few-Shot, Feed-Forward, and Generalizable Avatar Reconstruction (少样本、前馈且可泛化的头像重建)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.15320)
+- **研究任务**: 3D 数字人生成
+- **核心亮点**: 前馈网络实现少样本快速头像重建，无需逐案优化。
+- **深度解析**: 传统 3D 头像重建需针对每个个体进行耗时优化。该模型采用纯前馈架构，仅需少量输入图像即可直接推理出通用化的 3D 头像参数，大幅提升了重建速度和泛化能力。
+- **领域归类**: [3D 视觉] [生成模型] [数字人]
+---
+
+### 21. DiagnosticIQ: A Benchmark for LLM-Based Industrial Maintenance Action Recommendation from Symbolic Rules (DiagnosticIQ：基于符号规则的 LLM 工业维护动作推荐基准)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.08614)
+- **研究任务**: 工业场景下的维护动作推荐与评估。
+- **核心亮点**: 提出了首个评估 LLM 如何将严格符号规则转化为维护动作的基准。
+- **深度解析**: 针对工业维护中规则 rigid 而 LLM 生成灵活之间的矛盾，构建了包含符号规则库和对应动作数据集的 benchmark。主要测试 LLM 在理解工业逻辑约束下的动作推荐准确率，解决了现有模型在工业落地中合规性难验证的问题。
+- **领域归类**: [工业 AI] [基准测试] [LLM 应用]
+---
+
+### 22. MobileEgo Anywhere: Open Infrastructure for long horizon egocentric data on commodity hardware (MobileEgo Anywhere：通用硬件上的长程第一人称数据开放基础设施)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.05945)
+- **研究任务**: 第一人称视角（Egocentric）数据的采集与基础设施构建。
+- **核心亮点**: 实现了在普通消费级硬件上长时间采集第一人称数据的基础设施。
+- **深度解析**: 降低了_egocentric_数据收集门槛，不再依赖昂贵专用设备。方案优化了数据同步、存储和功耗管理，支持长时段连续记录，为训练具身智能模型提供了更易获取的数据源。
+- **领域归类**: [机器人学] [数据基础设施] [第一人称视觉]
+---
+
+### 23. WorldAct: Activating Monolithic 3D Worlds into Interactive-Ready Object-Centric Scenes (WorldAct：将单体 3D 世界激活为交互式物体中心场景)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.15843)
+- **研究任务**: 3D 场景理解与交互准备。
+- **核心亮点**: 将静态单体 3D 资产自动分解为可交互的物体中心场景。
+- **深度解析**: 针对现有 3D 世界模型多为静态网格、难以交互的问题，提出了一种激活方法。通过语义分割和物理属性推断，将单体场景拆解为独立对象，使智能体能够直接对场景内物体进行操作和交互。
+- **领域归类**: [3D 视觉] [仿真环境] [具身智能]
+---
+
+### 24. Agentic Discovery of Neural Architectures: AIRA-Compose and AIRA-Design (神经架构的代理发现：AIRA-Compose 与 AIRA-Design)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.15871)
+- **研究任务**: 神经架构搜索（NAS）。
+- **核心亮点**: 利用智能体自动化发现和设计神经网络架构。
+- **深度解析**: 引入了 AIRA 框架，包含 compose（组合）和 design（设计）两个模块。利用 LLM 代理理解任务需求，自动搜索并组合网络算子，替代了传统基于强化学习或演化的 NAS 方法，提升了搜索效率和架构可解释性。
+- **领域归类**: [AutoML] [LLM 代理] [架构搜索]
+---
+
+### 25. Look Before You Leap: Autonomous Exploration for LLM Agents (三思而后行：LLM 代理的自主探索策略)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.16143)
+- **研究任务**: LLM 智能体在未知环境中的探索。
+- **核心亮点**: 提出“先规划后行动”机制，优化智能体探索效率。
+- **深度解析**: 针对 LLM 代理在环境中盲目试错导致效率低下的问题，引入了前置评估模块。智能体在执行动作前先预测潜在结果和风险，减少无效探索步数，显著提升了在复杂任务中的成功率。
+- **领域归类**: [LLM 代理] [强化学习] [规划]
+---
+
+### 26. Learning from Failures: Correction-Oriented Policy Optimization with Verifiable Rewards (从失败中学习：基于可验证奖励的纠错导向策略优化)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.14539)
+- **研究任务**: 策略优化与强化学习。
+- **核心亮点**: 专注于利用失败案例和可验证奖励进行策略纠错。
+- **深度解析**: 传统 RL 侧重成功奖励，该方法强调从失败轨迹中提取修正信号。通过引入可验证的奖励函数，明确标识错误步骤，引导策略模型针对性修正行为，提高了样本利用率和训练稳定性。
+- **领域归类**: [强化学习] [策略优化] [奖励建模]
+---
+
+### 27. Efficient Image Synthesis with Sphere Latent Encoder (基于球体潜在编码器的高效图像合成)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.15592)
+- **研究任务**: 图像生成与合成。
+- **核心亮点**: 使用球体潜在空间编码器提升图像合成效率。
+- **深度解析**: 改进了潜在扩散模型的编码器结构，将潜在变量映射到超球面空间。这种约束减少了潜在空间的冗余，加快了采样速度，同时在保持生成质量的前提下降低了计算开销。
+- **领域归类**: [生成式 AI] [计算机视觉] [图像合成]
+---
+
+### 28. Learning POMDP World Models from Observations with Language-Model Priors (利用语言模型先验从观测中学习 POMDP 世界模型)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.13740)
+- **研究任务**: 世界模型学习与部分可观测马尔可夫决策过程（POMDP）。
+- **核心亮点**: 结合语言模型先验知识来辅助学习 POMDP 世界模型。
+- **深度解析**: 在仅凭观测数据难以构建准确世界模型的情况下，引入 LM 作为先验知识源。利用语言模型对环境和因果关系的理解，补充观测信息的不足，提升了在部分可观测环境下的预测和决策能力。
+- **领域归类**: [世界模型] [强化学习] [语言先验]
+---
+
+### 29. HodgeCover: Higher-Order Topological Coverage Drives Compression of Sparse Mixture-of-Experts (HodgeCover：高阶拓扑覆盖驱动稀疏混合专家压缩)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.13997)
+- **研究任务**: 模型压缩与稀疏混合专家（MoE）。
+- **核心亮点**: 利用高阶拓扑覆盖理论实现 MoE 模型的高效压缩。
+- **深度解析**: 针对 MoE 模型参数量大的问题，引入代数拓扑中的 Hodge 理论。通过分析专家网络之间的拓扑覆盖关系，识别并剪枝冗余专家，在不显著损失性能的情况下大幅压缩模型体积。
+- **领域归类**: [模型压缩] [高效 AI] [混合专家模型]
+---
+
+### 30. ChangeFlow -- Latent Rectified Flow for Change Detection in Remote Sensing (ChangeFlow：用于遥感变化检测的潜在整流流)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.15375)
+- **研究任务**: 遥感图像变化检测。
+- **核心亮点**: 将潜在整流流模型应用于遥感变化检测任务。
+- **深度解析**: 传统变化检测多基于分类或差分，该方法采用生成式流模型。在潜在空间建模多时相图像的分布变化，通过整流流技术精确捕捉地物变化区域，提升了检测精度和对细微变化的敏感度。
+- **领域归类**: [遥感] [生成模型] [变化检测]
+---
+</details>
+
+</script>
+        <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
+    </body>
+    </html>
+    

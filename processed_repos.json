@@ -137,7 +137,7 @@
   "jwadow /kiro-gateway": "2026-05-11",
   "bytedance /UI-TARS": "2026-05-11",
   "ylytdeng /wechat-decrypt": "2026-05-11",
-  "wanshuiyin /Auto-claude-code-research-in-sleep": "2026-05-11",
+  "wanshuiyin /Auto-claude-code-research-in-sleep": "2026-05-18",
   "romainsimon /paperasse": "2026-05-11",
   "fishaudio /fish-speech": "2026-05-12",
   "openinterpreter /open-interpreter": "2026-05-12",
@@ -161,5 +161,14 @@
   "joeseesun /qiaomu-anything-to-notebooklm": "2026-05-15",
   "bregman-arie /devops-exercises": "2026-05-15",
   "CodeBoarding /CodeBoarding": "2026-05-15",
-  "NVIDIA-NeMo /NeMo": "2026-05-15"
+  "NVIDIA-NeMo /NeMo": "2026-05-15",
+  "HKUDS /CLI-Anything": "2026-05-18",
+  "BigBodyCobain /Shadowbroker": "2026-05-18",
+  "NVlabs /Sana": "2026-05-18",
+  "mattzh72 /articraft": "2026-05-18",
+  "dograh-hq /dograh": "2026-05-18",
+  "zinja-coder /jadx-mcp-server": "2026-05-18",
+  "Light-Heart-Labs /DreamServer": "2026-05-18",
+  "yichuan-w /LEANN": "2026-05-18",
+  "GreyDGL /PentestGPT": "2026-05-18"
 }
