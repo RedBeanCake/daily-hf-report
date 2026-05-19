@@ -1,0 +1,340 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>前沿科研情报 - 2026-05-20</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <style>
+            .markdown-body { box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 30px; }
+            details { background: #f6f8fa; padding: 15px; border-radius: 8px; border: 1px solid #d0d7de; margin-bottom: 20px; }
+            summary { cursor: pointer; color: #0969da; font-weight: bold; font-size: 1.1em; }
+        </style>
+    </head>
+    <body class="markdown-body">
+        <a href='../index.html'>← 返回索引</a>
+        <h1>前沿科研情报 - 2026-05-20</h1>
+        <div id="content"></div>
+        <script type="text/markdown" id="raw-md"><details>
+<summary><b>🤗 Hugging Face 今日论文 (点击展开)</b></summary>
+
+### 1. SkillsVote: Lifecycle Governance of Agent Skills from Collection, Recommendation to Evolution (智能体技能生命周期治理：从收集、推荐到演进)
+- **社区热度**: `👍 89 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.18401)
+- **研究任务**: 智能体（Agent）技能库的管理与优化。
+- **核心亮点**: 提出了一套完整的技能生命周期治理框架，涵盖技能的收集、推荐和迭代演进。
+- **深度解析**: 针对 Agent 技能杂乱难管的问题，设计了 SkillsVote 机制。系统不仅负责收集技能，还通过投票机制评估技能质量进行推荐，并在使用反馈中自动演进技能库。重点是解决了技能冗余和过时问题，让 Agent 能动态维护自己的工具集。
+- **领域归类**: [Agent], [System Design], [Skill Management]
+---
+
+### 2. LongLive-2.0: An NVFP4 Parallel Infrastructure for Long Video Generation (LongLive-2.0：面向长视频生成的 NVFP4 并行基础设施)
+- **社区热度**: `👍 86 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.18739)
+- **研究任务**: 长视频生成的推理与训练效率优化。
+- **核心亮点**: 引入 NVFP4 量化格式并行架构，显著降低长视频生成的显存占用和计算成本。
+- **深度解析**: 长视频生成主要瓶颈在显存和算力。这篇论文利用 NVIDIA 的 FP4 精度格式，重构了并行计算基础设施。通过在底层算子上支持低精度并行，在不明显损失画质的前提下，大幅提升了长序列视频生成的吞吐量和长度上限。
+- **领域归类**: [Video Generation], [Infrastructure], [Quantization]
+---
+
+### 3. Lance: Unified Multimodal Modeling by Multi-Task Synergy (Lance：基于多任务协同的统一多模态建模)
+- **社区热度**: `👍 59 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.18678)
+- **研究任务**: 多模态模型架构统一与性能提升。
+- **核心亮点**: 通过多任务协同训练，实现单一模型处理多种多模态任务，避免重复建模。
+- **深度解析**: 传统多模态模型往往针对不同任务单独微调。Lance 设计了一个统一架构，利用多任务之间的协同效应（Synergy），让视觉、语言等任务在共享参数中互相促进。结果是减少了对特定任务数据的依赖，提升了模型在未见任务上的泛化能力。
+- **领域归类**: [Multimodal], [Model Architecture], [Multi-task Learning]
+---
+
+### 4. AI for Auto-Research: Roadmap & User Guide (AI 自主研究：路线图与用户指南)
+- **社区热度**: `👍 47 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.18451)
+- **研究任务**: AI 自动化科研流程的方法论与指导。
+- **核心亮点**: 提供了构建自主科研 AI 系统的完整路线图和实操指南，而非单一模型。
+- **深度解析**: 这是一篇方法论论文。它梳理了如何用 AI 代理自动化文献阅读、实验设计、代码实现和论文撰写的全流程。重点在于系统集成的最佳实践和潜在陷阱，为想要搭建"AI 科学家”的团队提供了工程层面的参考标准。
+- **领域归类**: [AI4Science], [Agent], [Survey]
+---
+
+### 5. Code-as-Room: Generating 3D Rooms from Top-Down View Images via Agentic Code Synthesis (Code-as-Room：基于代理代码合成的俯视图 3D 房间生成)
+- **社区热度**: `👍 34 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.18451)
+- **研究任务**: 从 2D 俯视图生成 3D 室内场景。
+- **核心亮点**: 利用 Agent 编写代码来生成 3D 房间，而非直接生成网格或体素。
+- **深度解析**: 方法核心是“代码即表示”。Agent 接收俯视图图像，编写程序代码（如 Blender 脚本）来构建 3D 房间。这种方式比直接生成 3D 数据更可控，便于后续编辑。解决了传统 3D 生成方法结构不合理、难以修改的问题。
+- **领域归类**: [3D Generation], [Code Agent], [Computer Vision]
+---
+
+### 6. KVPO: ODE-Native GRPO for Autoregressive Video Alignment via KV Semantic Exploration (KVPO：基于 KV 语义探索的自回归视频对齐 ODE 原生 GRPO)
+- **社区热度**: `👍 33 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.14278)
+- **研究任务**: 视频生成模型的对齐优化。
+- **核心亮点**: 结合常微分方程（ODE）与 GRPO 算法，利用 KV 缓存语义进行视频对齐。
+- **深度解析**: 针对视频生成中的时序一致性问题，提出了一种新的强化学习优化方法。它将生成过程视为 ODE 求解，利用 KV 缓存中的语义信息指导 GRPO（组相对策略优化）更新。目的是让生成的视频在长时间跨度下保持内容连贯，减少闪烁和突变。
+- **领域归类**: [Video Generation], [RLHF], [Alignment]
+---
+
+### 7. OProver: A Unified Framework for Agentic Formal Theorem Proving (OProver：代理形式化定理证明统一框架)
+- **社区热度**: `👍 28 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.17283)
+- **研究任务**: 自动化形式化数学定理证明。
+- **核心亮点**: 统一了多种证明策略的 Agent 框架，提升定理证明成功率。
+- **深度解析**: 数学证明通常需要多种推理工具配合。OProver 提供了一个统一框架，让多个 Agent 分别负责不同证明步骤或策略，协同工作。它解决了单一模型在处理复杂证明链时容易迷失方向的问题，提高了在 Lean 等证明助手上的通过率。
+- **领域归类**: [Math AI], [Theorem Proving], [Agent]
+---
+
+### 8. CHI-Bench: Can AI Agents Automate End-to-End, Long-Horizon, Policy-Rich Healthcare Workflows? (CHI-Bench：AI 智能体能否自动化端到端长程医疗工作流？)
+- **社区热度**: `👍 27 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.16679)
+- **研究任务**: 医疗领域 Agent 的能力评测。
+- **核心亮点**: 构建了针对长程、多策略医疗工作流的端到端评测基准。
+- **深度解析**: 现有的医疗评测多为单点任务。CHI-Bench 关注完整的诊疗流程，包含多轮决策和复杂政策约束。它测试 Agent 能否在长周期任务中保持合规和准确。结果显示当前 Agent 在处理复杂医疗逻辑上仍有较大差距，明确了后续改进方向。
+- **领域归类**: [Benchmark], [Healthcare], [Agent]
+---
+
+### 9. Post-Trained MoE Can Skip Half Experts via Self-Distillation (后训练 MoE 通过自蒸馏跳过半数专家)
+- **社区热度**: `👍 25 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.18643)
+- **研究任务**: 混合专家模型（MoE）的推理加速。
+- **核心亮点**: 训练完成后，通过自蒸馏技术剪枝，推理时可跳过一半专家而不损性能。
+- **深度解析**: MoE 模型推理成本高，因为每次都要路由到多个专家。这篇论文提出在训练后阶段，利用自蒸馏让模型学会“偷懒”，识别出不重要的专家路径并跳过。实测能减少约 50% 的计算量，且精度下降可控，适合部署场景。
+- **领域归类**: [MoE], [Efficiency], [Distillation]
+---
+
+### 10. LiteFrame: Efficient Vision Encoders Unlock Frame Scaling in Video LLMs (LiteFrame：高效视觉编码器解锁视频 LLM 帧缩放)
+- **社区热度**: `👍 19 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.17260)
+- **研究任务**: 视频大模型（Video LLM）的视觉编码效率优化。
+- **核心亮点**: 轻量化视觉编码器，支持处理更多视频帧数。
+- **深度解析**: 视频 LLM 的瓶颈通常在视觉编码器太重，导致无法输入大量帧。LiteFrame 设计了一个轻量级编码器，大幅降低了每帧的计算开销。这使得模型能在相同显存下处理更长的视频序列，提升了长视频理解能力，同时保持了特征提取质量。
+- **领域归类**: [Video LLM], [Efficiency], [Vision Encoder]
+---
+
+### 11. Stop When Reasoning Converges: Semantic-Preserving Early Exit for Reasoning Models (推理收敛即停：推理模型的语义保持早期退出)
+- **社区热度**: `👍 18 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.17672)
+- **研究任务**: 推理模型效率优化
+- **核心亮点**: 不再固定推理步数，而是实时监控语义状态，一旦收敛立即退出，减少无效计算。
+- **深度解析**: 方案在推理过程中引入语义收敛检测机制，对比相邻步骤的输出语义差异。当差异低于阈值时，判定为收敛，强制模型提前退出后续层或步骤。这种方法在保证结果一致性的前提下，显著降低了推理延迟和计算成本。
+- **领域归类**: [效率优化，推理加速]
+---
+
+### 12. Measuring Maximum Activations in Open Large Language Models (测量开放大语言模型中的最大激活值)
+- **社区热度**: `👍 15 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.15572)
+- **研究任务**: 模型内部机制分析
+- **核心亮点**: 系统性统计了主流开源模型各层的最大激活数值，建立了基准数据。
+- **深度解析**: 研究团队对多个开源 LLM 进行了大规模激活值测量，记录了不同层、不同头部的最大激活情况。这些数据揭示了模型内部的饱和现象和异常值分布，为后续的量化压缩、异常检测以及可解释性研究提供了基础数据支持。
+- **领域归类**: [可解释性，模型分析]
+---
+
+### 13. StableVLA: Towards Robust Vision-Language-Action Models without Extra Data (StableVLA：无需额外数据的鲁棒视觉 - 语言 - 动作模型)
+- **社区热度**: `👍 13 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.18287)
+- **研究任务**: 具身智能机器人控制
+- **核心亮点**: 在不增加额外训练数据的情况下，通过算法改进提升了 VLA 模型的鲁棒性。
+- **深度解析**: 针对视觉 - 语言 - 动作模型在噪声环境下表现不稳定的问题，该方法改进了训练目标或架构结构，增强了对输入扰动的抵抗力。核心在于利用现有数据挖掘更稳定的特征表示，避免了收集昂贵机器人交互数据的成本。
+- **领域归类**: [具身智能，多模态]
+---
+
+### 14. EndPrompt: Efficient Long-Context Extension via Terminal Anchoring (EndPrompt：通过末端锚定实现高效长上下文扩展)
+- **社区热度**: `👍 12 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.14589)
+- **研究任务**: 长上下文处理
+- **核心亮点**: 利用序列末端 token 作为锚点，优化长文本处理的注意力机制。
+- **深度解析**: 传统长上下文方法计算开销大，该方案提出“末端锚定”策略，修改注意力计算方式，使模型更关注序列末尾的关键信息。这种方法在不显著增加显存占用的情况下，有效扩展了模型可处理的上下文窗口长度。
+- **领域归类**: [长上下文，效率优化]
+---
+
+### 15. Where Should Diffusion Enter a Language Model? Geometry-Guided Hidden-State Replacement (扩散模型应进入语言模型的何处？几何引导隐藏状态替换)
+- **社区热度**: `👍 12 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.14368)
+- **研究任务**: 生成模型架构设计
+- **核心亮点**: 用几何引导策略决定在哪一层替换隐藏状态，将扩散过程引入语言模型。
+- **深度解析**: 探索了扩散模型与自回归模型的混合架构。通过分析隐藏空间的几何结构，确定最佳插入层，用扩散步骤替换原有的隐藏状态传递。这种混合设计旨在结合扩散模型的生成质量和语言模型的连贯性。
+- **领域归类**: [生成模型，架构设计]
+---
+
+### 16. Code as Agent Harness (代码即代理管控框架)
+- **社区热度**: `👍 11 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.18747)
+- **研究任务**: 智能体工作流管理
+- **核心亮点**: 用代码结构来管理和约束代理的行为，利用编译器特性保证逻辑正确。
+- **深度解析**: 将智能体的工作流定义为可执行的代码块，而不是自然的提示词。通过编程语言的语法检查和执行约束，防止代理产生幻觉或执行非法操作，提高了复杂任务中代理行为的可控性和可靠性。
+- **领域归类**: [智能体，代码工程]
+---
+
+### 17. Model-Adaptive Tool Necessity Reveals the Knowing-Doing Gap in LLM Tool Use (模型自适应工具必要性揭示了 LLM 工具使用的知行差距)
+- **社区热度**: `👍 11 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.14038)
+- **研究任务**: 工具使用评估
+- **核心亮点**: 发现了模型知道何时用工具但实际执行不好的“知行差距”。
+- **深度解析**: 提出了一种自适应机制来判断工具调用的必要性。实验表明，模型往往能识别出需要工具的场景，但在实际调用参数或执行步骤时出错。该研究量化了这一差距，为改进工具学习算法提供了方向。
+- **领域归类**: [工具使用，模型评估]
+---
+
+### 18. CompactAttention: Accelerating Chunked Prefill with Block-Union KV Selection (CompactAttention：通过块联合 KV 选择加速分块预填充)
+- **社区热度**: `👍 10 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.16839)
+- **研究任务**: 推理显存与速度优化
+- **核心亮点**: 用块联合 KV 选择策略加速预填充阶段，降低内存带宽压力。
+- **深度解析**: 针对长序列分块预填充时的效率瓶颈，设计了一种 KV 缓存筛选机制。通过合并块信息，减少重复的内存访问和计算量，显著提升了首 token 生成速度，特别适合长上下文输入场景。
+- **领域归类**: [效率优化，推理加速]
+---
+
+### 19. From Runnable to Shippable: Multi-Agent Test-Driven Development for Generating Full-Stack Web Applications from Requirements (从可运行到可交付：基于多代理测试驱动开发的全栈 Web 应用生成)
+- **社区热度**: `👍 9 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.17242)
+- **研究任务**: 全栈代码生成
+- **核心亮点**: 用多代理测试驱动开发，生成不仅可运行还能直接交付的 Web 应用。
+- **深度解析**: 引入多个代理角色协作，模拟软件工程的测试驱动开发（TDD）流程。代理先生成测试用例，再编写代码通过测试，确保生成的全栈应用具备完整性和稳定性，解决了以往生成代码不可用的问题。
+- **领域归类**: [代码生成，智能体]
+---
+
+### 20. Targeted Neuron Modulation via Contrastive Pair Search (基于对比对搜索的定向神经元调制)
+- **社区热度**: `👍 8 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.12290)
+- **研究任务**: 模型编辑与控制
+- **核心亮点**: 通过对比搜索找到关键神经元并进行调制，实现精准行为控制。
+- **深度解析**: 利用对比对数据搜索定位对特定行为敏感的神经元。通过微调这些神经元的激活值或权重，在不重新训练整个模型的情况下，修正或增强模型的特定能力，是一种高效的模型编辑方法。
+- **领域归类**: [模型编辑，可解释性]
+---
+
+### 21. AtlasVA: Self-Evolving Visual Skill Memory for Teacher-Free VLM Agents (AtlasVA：面向无教师 VLM 智能体的自进化视觉技能记忆)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.17933)
+- **研究任务**: VLM 智能体技能学习
+- **核心亮点**: 不用老师教，视觉技能记忆能自己进化。
+- **深度解析**: 传统 VLM 智能体依赖人类演示或奖励模型。这篇搞了个自进化记忆库，存视觉技能，智能体自己迭代优化，省了监督成本。
+- **领域归类**: [Vision-Language, Agents]
+---
+### 22. FINESSE-Bench: A Hierarchical Benchmark Suite for Financial Domain Knowledge and Technical Analysis in Large Language Models (FINESSE-Bench：面向大模型金融领域知识与技术分析的分层评测套件)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.15482)
+- **研究任务**: 金融领域 LLM 评测
+- **核心亮点**: 分层级的金融知识加技术分析评测集。
+- **深度解析**: 现有评测太泛。这篇建了个多层级测试集，从基础金融知识到复杂图表技术分析，专门测 LLM 在金融垂直领域的真本事。
+- **领域归类**: [Benchmark, Finance]
+---
+### 23. Agent Bazaar: Enabling Economic Alignment in Multi-Agent Marketplaces (Agent Bazaar：实现多智能体市场中的经济对齐)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.16893)
+- **研究任务**: 多智能体市场对齐
+- **核心亮点**: 用经济机制让多智能体在市场里自动对齐。
+- **深度解析**: 把智能体当成市场参与者，引入定价和交易机制。不用中央控制，靠经济激励让智能体合作和分配资源，解决多智能体协作问题。
+- **领域归类**: [Multi-Agent, Economics]
+---
+### 24. NGM: A Plug-and-Play Training-Free Memory Module for LLMs (NGM：面向大模型的即插即用免训练记忆模块)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.16909)
+- **研究任务**: LLM 记忆增强
+- **核心亮点**: 不用训练，即插即用的记忆模块。
+- **深度解析**: 推理时外挂一个记忆模块，通过检索或注意力机制介入。不改模型权重，就能提升长上下文或事实回忆能力，部署方便。
+- **领域归类**: [LLM Architecture, Memory]
+---
+### 25. Actionable World Representation (可行动的世界表征)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.18743)
+- **研究任务**: 智能体世界模型
+- **核心亮点**: 世界表征基于“能做什么动作”，而不是“看到什么”。
+- **深度解析**: 传统世界模型只预测观测。这篇把状态表征跟可行动作绑定，让具身智能体规划更高效，直接服务于决策。
+- **领域归类**: [World Models, Robotics]
+---
+### 26. SafeDiffusion-R1: Online Reward Steering for Safe Diffusion Post-Training (SafeDiffusion-R1：面向安全扩散后训练的在线奖励引导)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.18719)
+- **研究任务**: 扩散模型安全对齐
+- **核心亮点**: 在线奖励引导，做扩散模型的后训练安全加固。
+- **深度解析**: 针对扩散模型生成不安全内容的问题。用强化学习里的奖励引导，在后训练阶段动态抑制有害生成，比单纯过滤更有效。
+- **领域归类**: [Diffusion, Safety]
+---
+### 27. A2RBench: An Automatic Paradigm for Formally Verifiable Abstract Reasoning Benchmark Generation (A2RBench：一种自动生成可形式化验证抽象推理评测的范式)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.17278)
+- **研究任务**: 抽象推理评测生成
+- **核心亮点**: 自动生成能形式化验证的抽象推理题。
+- **深度解析**: 手动出题慢且有噪。这篇用形式化方法自动生成推理题，答案能数学验证，保证评测结果准确，适合测模型逻辑底线。
+- **领域归类**: [Benchmark, Reasoning]
+---
+### 28. TOBench: A Task-Oriented Omni-Modal Benchmark for Real-World Tool-Using Agents (TOBench：面向真实世界工具使用智能体的任务导向多模态评测)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.16909)
+- **研究任务**: 工具使用智能体评测
+- **核心亮点**: 面向真实世界任务的多模态工具评测。
+- **深度解析**: 不止测文本，覆盖图文音多模态。重点看智能体在真实场景下调用工具完成任务的能力，而不是做静态问答。
+- **领域归类**: [Benchmark, Agents]
+---
+### 29. AstraFlow: Dataflow-Oriented Reinforcement Learning for Agentic LLMs (AstraFlow：面向智能体大模型的数据流导向强化学习)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.15565)
+- **研究任务**: 智能体强化学习
+- **核心亮点**: 基于数据流的强化学习，优化智能体工作流。
+- **深度解析**: 传统 RL 只看最终奖励。这篇关注中间数据流，优化智能体多步任务中的每个环节，提升复杂任务的稳定性和成功率。
+- **领域归类**: [RL, Agents]
+---
+### 30. Evaluating Cognitive Age Alignment in Interactive AI Agents (评估交互式 AI 智能体的认知年龄对齐)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.17894)
+- **研究任务**: 智能体认知年龄对齐评测
+- **核心亮点**: 测智能体的认知水平是否符合目标年龄段。
+- **深度解析**: 针对交互型智能体（比如儿童陪伴）。提出指标测认知复杂度和安全约束，确保智能体行为跟预设年龄匹配，防止越界。
+- **领域归类**: [Safety, Evaluation]
+---
+</details>
+
+<details>
+<summary><b>🚀 GitHub 今日热门项目 (点击展开)</b></summary>
+
+### [claude-plugins-official](https://github.com/anthropics/claude-plugins-official)
+- **今日趋势**: 127 stars today (Total: 20k+)
+- **项目简介**: [AI 相关] Anthropic 官方管理的 Claude Code 高质量插件目录，旨在标准化生态。
+- **核心价值**: 解决了开发者在寻找可靠、安全且兼容的 Claude 插件时的信任与筛选痛点，通过官方背书提升插件开发者的信心与用户的使用体验。
+- **AI 相关性**: 是
+---
+### [free-claude-code](https://github.com/Alishahryar1/free-claude-code)
+- **今日趋势**: 543 stars today (Total: 26k+)
+- **项目简介**: [AI 相关] 支持在终端、VSCode 或 Discord 中免费使用 Claude Code 的非官方工具，含语音支持。
+- **核心价值**: 降低了用户的使用门槛与成本，为无法负担官方订阅或希望本地化集成的开发者提供了灵活的替代方案，同时扩展了交互方式（语音）。
+- **AI 相关性**: 是
+---
+### [erpnext](https://github.com/frappe/erpnext)
+- **今日趋势**: 65 stars today (Total: 34k+)
+- **项目简介**: [非 AI] 免费开源的企业资源规划（ERP）系统，涵盖财务、人力资源、供应链等管理模块。
+- **核心价值**: 为中小企业提供了低成本、可高度定制的全方位企业管理解决方案，解决了商业软件昂贵且封闭的痛点，支持自主部署与维护。
+- **AI 相关性**: 否
+---
+### [ViMax](https://github.com/HKUDS/ViMax)
+- **今日趋势**: 504 stars today (Total: 5k+)
+- **项目简介**: [AI 相关] 一体化代理视频生成系统，集成导演、编剧、制片及视频生成角色，实现自动化视频创作。
+- **核心价值**: 解决了传统视频生成流程复杂、需多工具协作的痛点，通过多 Agent 协作机制简化了从脚本到成片的整个创作链路，提升生成质量与一致性。
+- **AI 相关性**: 是
+---
+### [unsloth](https://github.com/unslothai/unsloth)
+- **今日趋势**: 139 stars today (Total: 64k+)
+- **项目简介**: [AI 相关] 用于本地训练和运行开源大模型（如 Gemma, Qwen, DeepSeek）的 Web UI 工作室。
+- **核心价值**: 降低了大模型本地部署与微调的技术门槛，通过可视化界面优化了推理与训练效率，使开发者能在消费级硬件上高效运行先进模型。
+- **AI 相关性**: 是
+---
+### [Gemini-API](https://github.com/HanaokaYuzu/Gemini-API)
+- **今日趋势**: 81 stars today (Total: 3k+)
+- **项目简介**: [AI 相关] Google Gemini Web 应用的逆向工程 Python API，允许非官方调用。
+- **核心价值**: 解决了开发者受限于官方 API 配额、费用或区域限制的痛点，提供了更灵活、低成本的 Gemini 能力调用方式，便于快速原型开发。
+- **AI 相关性**: 是
+---
+### [claude-skills](https://github.com/alirezarezvani/claude-skills)
+- **今日趋势**: 157 stars today (Total: 15k+)
+- **项目简介**: [AI 相关] 包含 313+ 种技能与插件，适用于 Claude Code、Cursor 等多种 AI 编程助手及 Agent。
+- **核心价值**: 扩展了 AI 编程助手的能力边界，覆盖工程、营销、合规等多领域场景，解决了通用模型在特定垂直领域专业知识不足的问题。
+- **AI 相关性**: 是
+---
+### [tg-ws-proxy](https://github.com/Flowseal/tg-ws-proxy)
+- **今日趋势**: 40 stars today (Total: 6k+)
+- **项目简介**: [非 AI] 用于部分绕过 Telegram 加载限制的本地 MTProto 代理服务器。
+- **核心价值**: 解决了特定网络环境下 Telegram 连接不稳定、加载缓慢或被阻断的问题，提供了更可靠的即时通讯连接方案。
+- **AI 相关性**: 否
+---
+</details></script>
+        <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
+    </body>
+    </html>
+    
