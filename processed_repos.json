@@ -26,7 +26,7 @@
   "axolotl-ai-cloud /axolotl": "2026-04-13",
   "microsoft /agent-lightning": "2026-04-13",
   "AIDC-AI /Pixelle-Video": "2026-05-01",
-  "vllm-project /vllm": "2026-04-14",
+  "vllm-project /vllm": "2026-05-20",
   "paperswithbacktest /awesome-systematic-trading": "2026-04-14",
   "Tracer-Cloud /opensre": "2026-04-24",
   "ultralytics /ultralytics": "2026-04-14",
@@ -79,7 +79,7 @@
   "google /adk-samples": "2026-04-24",
   "mlflow /mlflow": "2026-04-24",
   "microsoft /presidio": "2026-04-24",
-  "ZhuLinsen /daily_stock_analysis": "2026-05-13",
+  "ZhuLinsen /daily_stock_analysis": "2026-05-20",
   "Azure /Azure-Sentinel": "2026-04-24",
   "ComposioHQ /awesome-codex-skills": "2026-04-27",
   "microsoft /VibeVoice": "2026-04-27",
@@ -97,7 +97,7 @@
   "neuphonic /neutts": "2026-04-29",
   "KellerJordan /modded-nanogpt": "2026-04-29",
   "shaxiu /XianyuAutoAgent": "2026-04-29",
-  "hugohe3 /ppt-master": "2026-04-29",
+  "hugohe3 /ppt-master": "2026-05-20",
   "p-e-w /heretic": "2026-04-29",
   "google /langextract": "2026-04-30",
   "NVlabs /GR00T-WholeBodyControl": "2026-05-01",
@@ -174,5 +174,9 @@
   "frappe /erpnext": "2026-05-19",
   "HKUDS /ViMax": "2026-05-19",
   "HanaokaYuzu /Gemini-API": "2026-05-19",
-  "Flowseal /tg-ws-proxy": "2026-05-19"
+  "Flowseal /tg-ws-proxy": "2026-05-19",
+  "rohitg00 /ai-engineering-from-scratch": "2026-05-20",
+  "volcengine /OpenViking": "2026-05-20",
+  "e2b-dev /E2B": "2026-05-20",
+  "karpathy /autoresearch": "2026-05-20"
 }

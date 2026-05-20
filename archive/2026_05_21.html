@@ -1,0 +1,336 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>前沿科研情报 - 2026-05-21</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <style>
+            .markdown-body { box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 30px; }
+            details { background: #f6f8fa; padding: 15px; border-radius: 8px; border: 1px solid #d0d7de; margin-bottom: 20px; }
+            summary { cursor: pointer; color: #0969da; font-weight: bold; font-size: 1.1em; }
+        </style>
+    </head>
+    <body class="markdown-body">
+        <a href='../index.html'>← 返回索引</a>
+        <h1>前沿科研情报 - 2026-05-21</h1>
+        <div id="content"></div>
+        <script type="text/markdown" id="raw-md"><details>
+<summary><b>🤗 Hugging Face 今日论文 (点击展开)</b></summary>
+
+### 1. When Vision Speaks for Sound (视觉引导音频生成)
+- **社区热度**: `👍 63 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.16403)
+- **研究任务**: 跨模态生成，视觉条件化的音频合成
+- **核心亮点**: 利用视觉特征直接指导音频生成，解决视听语义对齐难题。
+- **深度解析**: 传统方法多依赖文本中介，该工作探索视觉编码到音频解码的直接映射。通过引入视觉语义约束，减少生成音频与画面内容的偏差，提升视听一致性，无需额外文本描述即可生成匹配画面声音。
+- **领域归类**: [多模态，音频生成，视听学习]
+---
+
+### 2. Anti-Self-Distillation for Reasoning RL via Pointwise Mutual Information (基于点互信息的推理强化学习反自蒸馏)
+- **社区热度**: `👍 60 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.11609)
+- **研究任务**: 强化学习，模型推理能力优化
+- **核心亮点**: 提出反自蒸馏策略，利用点互信息（PMI）防止推理策略过度平滑。
+- **深度解析**: 针对自蒸馏可能导致推理多样性下降的问题，该方法通过计算 token 间的 PMI 来保留关键推理路径的依赖性。在 RL 训练中加入反蒸馏损失，确保模型在优化奖励的同时，不丢失复杂的推理逻辑结构。
+- **领域归类**: [强化学习，推理能力，模型蒸馏]
+---
+
+### 3. GoLongRL: Capability-Oriented Long Context Reinforcement Learning with Multitask Alignment (GoLongRL：面向能力的长上下文强化学习与多任务对齐)
+- **社区热度**: `👍 50 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.19577)
+- **研究任务**: 长上下文处理，强化学习对齐
+- **核心亮点**: 结合多任务对齐机制，稳定长上下文场景下的 RL 训练效果。
+- **深度解析**: 长窗口 RL 训练容易出现能力遗忘或不稳定。该工作设计了一种多任务对齐目标，在优化长上下文奖励的同时，约束模型保持基础能力不退化。通过混合任务梯度更新，提升模型在长文档理解及多轮对话中的鲁棒性。
+- **领域归类**: [长上下文，强化学习，多任务学习]
+---
+
+### 4. OpenComputer: Verifiable Software Worlds for Computer-Use Agents (OpenComputer：面向电脑操作代理的可验证软件世界)
+- **社区热度**: `👍 50 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.19769)
+- **研究任务**: 智能体环境，电脑操作自动化
+- **核心亮点**: 构建可验证的模拟软件环境，解决 Agent 操作结果难以量化的问题。
+- **深度解析**: 真实电脑操作环境难以大规模并行训练且结果难验证。该工作提供了一套标准化的软件世界接口，允许 Agent 在执行操作后自动验证状态变化。支持大规模 RL 训练，加速电脑使用 Agent 的策略迭代。
+- **领域归类**: [智能体，仿真环境，自动化]
+---
+
+### 5. AutoResearchClaw: Self-Reinforcing Autonomous Research with Human-AI Collaboration (AutoResearchClaw：人机协作的自我强化自主研究)
+- **社区热度**: `👍 45 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.20025)
+- **研究任务**: 自主科研，人机协作流程
+- **核心亮点**: 建立人机协作闭环，实现研究方案的自我迭代与强化。
+- **深度解析**: 设计了一套框架，AI 负责生成假设和执行实验，人类负责关键方向修正和反馈。系统记录协作过程中的成功路径，用于微调 AI 模型，使其后续研究计划更符合人类偏好，形成自我强化的科研辅助循环。
+- **领域归类**: [自主智能体，科研辅助，人机协作]
+---
+
+### 6. Active Learners as Efficient PRP Rerankers (主动学习作为高效 PRP 重排序器)
+- **社区热度**: `👍 43 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.14236)
+- **研究任务**: 信息检索，重排序优化
+- **核心亮点**: 引入主动学习策略优化概率排序原则（PRP），降低重排序计算成本。
+- **深度解析**: 传统重排序对所有候选文档计算得分，开销大。该方法利用主动学习筛选不确定性高的样本进行精细重排序，其余样本沿用粗排结果。在保持检索精度的前提下，显著减少推理延迟和计算资源消耗。
+- **领域归类**: [检索增强，重排序，主动学习]
+---
+
+### 7. Process Rewards with Learned Reliability (具有学习可靠性的过程奖励)
+- **社区热度**: `👍 43 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.15529)
+- **研究任务**: 过程奖励模型，RLHF
+- **核心亮点**: 在过程奖励中引入可靠性评估，防止错误步骤累积导致最终失败。
+- **深度解析**: 传统过程奖励模型只打分，不评估打分置信度。该工作训练模型同时输出奖励分和可靠性分数。在 RL 训练中，低可靠性步骤的奖励权重降低或触发人工审核，避免模型利用奖励漏洞，提升对齐安全性。
+- **领域归类**: [对齐，奖励模型，强化学习]
+---
+
+### 8. EnvFactory: Scaling Tool-Use Agents via Executable Environments Synthesis and Robust RL (EnvFactory：通过可执行环境合成与鲁棒 RL 扩展工具使用代理)
+- **社区热度**: `👍 37 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.18703)
+- **研究任务**: 工具学习，环境合成
+- **核心亮点**: 自动生成可执行环境，大规模训练工具使用 Agent 并迁移至真实场景。
+- **深度解析**: 解决真实 API 调用成本高且不稳定的问题。通过合成大量可执行的工具调用环境，供 Agent 进行鲁棒性 RL 训练。模型在合成环境中学习错误恢复和参数修正，再微调迁移到真实工具链，提升泛化能力。
+- **领域归类**: [智能体，工具学习，环境合成]
+---
+
+### 9. CogOmniControl: Reasoning-Driven Controllable Video Generation via Creative Intent Cognition (CogOmniControl：基于创意意图认知的推理驱动可控视频生成)
+- **社区热度**: `👍 31 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.19995)
+- **研究任务**: 视频生成，可控生成
+- **核心亮点**: 引入意图认知模块，通过推理分解创意指令，实现精准视频控制。
+- **深度解析**: 针对用户指令模糊导致视频生成不可控的问题，该方法先让模型推理用户的创意意图，将其分解为具体的镜头、动作和风格指令。再生成视频时遵循这些中间推理结果，提升生成视频与用户预期的一致性。
+- **领域归类**: [视频生成，可控生成，推理]
+---
+
+### 10. Artifact-Bench: Evaluating MLLMs on Detecting and Assessing the Artifacts of AI-Generated Videos (Artifact-Bench：评估 MLLM 检测和评估 AI 生成视频伪影的能力)
+- **社区热度**: `👍 21 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.18984)
+- **研究任务**: 基准测试，视频鉴伪
+- **核心亮点**: 新基准测试，专门评估多模态模型识别 AI 视频伪影的细粒度能力。
+- **深度解析**: 现有基准多关注分类真假，缺乏对伪影类型的评估。该工作构建了包含闪烁、形变、纹理异常等不同类型的视频集。量化 MLLM 定位和描述伪影的能力，为开发更鲁棒的视频检测模型提供评估标准。
+- **领域归类**: [基准测试，多模态，视频鉴伪]
+---
+
+### 11. Aurora: Unified Video Editing with a Tool-Using Agent (Aurora：基于工具调用代理的统一视频编辑)
+- **社区热度**: `👍 15 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.18748)
+- **研究任务**: 视频编辑
+- **核心亮点**: 用一个 Agent 统筹调用各种编辑工具，实现统一的视频编辑流程。
+- **深度解析**: 传统视频编辑模型往往针对特定任务训练，泛化性差。该方案引入一个 LLM  Agent，根据用户指令分析意图，自主选择并调用现有的视频处理工具（如裁剪、变色、换背景等），无需为每种编辑能力单独训练大模型。
+- **领域归类**: `[Video Editing]`, `[Agent]`, `[Multimodal]`
+---
+
+### 12. CEPO: RLVR Self-Distillation using Contrastive Evidence Policy Optimization (CEPO：基于对比证据策略优化的 RLVR 自蒸馏)
+- **社区热度**: `👍 12 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.19436)
+- **研究任务**: 强化学习与模型对齐
+- **核心亮点**: 提出对比证据策略优化方法，实现 RLVR 框架下的自蒸馏。
+- **深度解析**: 针对强化学习可验证奖励（RLVR）过程，该方法利用对比学习机制，让模型从自身生成的正负证据样本中学习策略优化，减少对外部标注数据的依赖，提升推理效率。
+- **领域归类**: `[RL]`, `[LLM Alignment]`, `[Distillation]`
+---
+
+### 13. OmniGUI: Benchmarking GUI Agents in Omni-Modal Smartphone Environments (OmniGUI：全模态手机环境下的 GUI 智能体评测)
+- **社区热度**: `👍 12 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.18758)
+- **研究任务**: GUI 智能体评测
+- **核心亮点**: 建立了涵盖多模态交互的手机环境 GUI 智能体基准测试。
+- **深度解析**: 针对现有评测单一的问题，构建了包含屏幕图像、文本提示及触摸操作的多模态数据集，用于评估智能体在复杂手机界面中的任务完成能力和泛化性。
+- **领域归类**: `[Agent]`, `[Benchmark]`, `[Multimodal]`
+---
+
+### 14. MSAVBench: Towards Comprehensive and Reliable Evaluation of Multi-Shot Audio-Video Generation (MSAVBench：面向多镜头音视频生成的综合可靠评估)
+- **社区热度**: `👍 11 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.20183)
+- **研究任务**: 音视频生成评估
+- **核心亮点**: 填补了多镜头音视频生成任务在一致性和对齐度上的评估空白。
+- **深度解析**: 提出了新的评估指标，重点考察生成视频在不同镜头间的语义一致性，以及音频与视频内容的对齐质量，提供更可靠的生成效果反馈。
+- **领域归类**: `[Video Generation]`, `[Audio-Video]`, `[Benchmark]`
+---
+
+### 15. Harnessing LLM Agents with Skill Programs (利用技能程序驾驭 LLM 智能体)
+- **社区热度**: `👍 9 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.17734)
+- **研究任务**: LLM 智能体控制
+- **核心亮点**: 引入结构化技能程序来引导和规范 LLM 智能体的行为。
+- **深度解析**: 纯提示词控制的智能体容易出错，该方案将常用能力封装为可执行的“技能程序”，Agent 通过调用这些程序完成任务，提高了复杂任务规划的可靠性和执行准确率。
+- **领域归类**: `[Agent]`, `[LLM]`, `[Planning]`
+---
+
+### 16. PixVerve: Advancing Native UHR Image Generation to 100MP with a Large-Scale High-Quality Dataset (PixVerve：利用大规模高质量数据集将原生超高分辨率图像生成推进至 100MP)
+- **社区热度**: `👍 8 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.20147)
+- **研究任务**: 超高分辨率图像生成
+- **核心亮点**: 实现了原生 100MP 图像生成，无需裁剪或分块处理。
+- **深度解析**: 构建了一个大规模高质量数据集，直接训练扩散模型生成 1 亿像素级图像，解决了以往模型通过拼接或超分导致细节丢失和伪影的问题。
+- **领域归类**: `[Image Generation]`, `[Diffusion]`, `[Dataset]`
+---
+
+### 17. Video Models Can Reason with Verifiable Rewards (视频模型可通过可验证奖励进行推理)
+- **社区热度**: `👍 8 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.15458)
+- **研究任务**: 视频理解与推理
+- **核心亮点**: 将可验证奖励机制引入视频模型，提升推理能力。
+- **深度解析**: 借鉴文本领域的 RLVR 思路，为视频理解任务设计客观可验证的奖励信号，通过强化学习微调，让视频模型在回答复杂问题时逻辑更严密。
+- **领域归类**: `[Video Understanding]`, `[RL]`, `[Reasoning]`
+---
+
+### 18. Semantic Generative Tuning for Unified Multimodal Models (统一多模态模型的语义生成调优)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.18714)
+- **研究任务**: 多模态模型调优
+- **核心亮点**: 提出语义生成调优方法，统一多模态模型的理解与生成能力。
+- **深度解析**: 针对多模态模型理解与生成任务割裂的问题，通过特定的调优策略，使模型共享语义空间，同时提升图像理解准确性和文本/图像生成质量。
+- **领域归类**: `[Multimodal]`, `[Fine-tuning]`, `[Generative Model]`
+---
+
+### 19. Overcoming Catastrophic Forgetting in Visual Continual Learning with Reinforcement Fine-Tuning (利用强化微调克服视觉持续学习中的灾难性遗忘)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.09640)
+- **研究任务**: 视觉持续学习
+- **核心亮点**: 用强化学习微调方法解决持续学习中的遗忘问题。
+- **深度解析**: 在模型学习新视觉任务时，引入强化学习机制优化参数更新方向，在适应新数据的同时保留旧任务的知识权重，有效抑制灾难性遗忘。
+- **领域归类**: `[Continual Learning]`, `[Computer Vision]`, `[RL]`
+---
+
+### 20. Delta Attention Residuals (Delta 注意力残差)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.18855)
+- **研究任务**: 注意力机制优化
+- **核心亮点**: 提出 Delta 注意力残差结构，改进 Transformer 注意力机制。
+- **深度解析**: 在标准注意力层基础上，增加基于变化量（Delta）的残差连接，旨在优化梯度流动，提升模型收敛速度和长序列处理能力。
+- **领域归类**: `[Model Architecture]`, `[Transformer]`, `[Efficiency]`
+---
+
+### 21. Draft Less, Retrieve More: Hybrid Tree Construction for Speculative Decoding (少草稿多检索：推测解码的混合树构建)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.20104)
+- **研究任务**: 大模型推理加速（推测解码）
+- **核心亮点**: 结合检索机制构建混合草稿树，减少无效草稿生成。
+- **深度解析**: 传统推测解码依赖小模型顺序生成草稿，本文提出混合树构建方法，直接从历史缓存中检索匹配 token 序列作为草稿分支，降低验证失败率，提升接受长度。
+- **领域归类**: `[推理优化]` `[LLM]`
+---
+
+### 22. Context Memorization for Efficient Long Context Generation (上下文记忆用于高效长文本生成)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.18226)
+- **研究任务**: 长上下文生成效率
+- **核心亮点**: 引入显式记忆机制，避免长文本生成中的重复计算。
+- **深度解析**: 将关键上下文片段存入记忆模块，生成新 token 时直接调用记忆内容而非重新计算全量注意力，显著降低长序列生成的显存占用和延迟。
+- **领域归类**: `[长上下文]` `[效率优化]`
+---
+
+### 23. ESI-Bench: Towards Embodied Spatial Intelligence that Closes the Perception-Action Loop (ESI-Bench：迈向闭环感知 - 动作的具身空间智能)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.18746)
+- **研究任务**: 具身智能基准测试
+- **核心亮点**: 发布新基准，重点评估空间智能中的感知与动作闭环能力。
+- **深度解析**: 现有基准多侧重单一感知或规划，ESI-Bench 设计了一系列需要实时空间理解并执行动作的任务，量化评估 Agent 在闭环过程中的空间 intelligence 表现。
+- **领域归类**: `[具身智能]` `[基准测试]`
+---
+
+### 24. Code-Guided Reasoning for Small Language Models: Evaluating Executable MCQA Scaffolds (小模型代码引导推理：评估可执行选择题支架)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.18827)
+- **研究任务**: 小模型推理增强
+- **核心亮点**: 通过生成可执行代码支架，提升小模型在选择题上的推理准确率。
+- **深度解析**: 针对小模型逻辑弱的问题，引导其生成 Python 代码来解决多选题，利用代码执行结果作为反馈验证推理路径，评估了该支架的有效性。
+- **领域归类**: `[推理能力]` `[小模型]`
+---
+
+### 25. Fast 4D Mesh Generation by Spatio-Temporal Attention Chains (时空注意力链实现快速 4D 网格生成)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.19786)
+- **研究任务**: 4D 几何生成
+- **核心亮点**: 使用时空注意力链串联帧信息，加速 4D 网格生成过程。
+- **深度解析**: 提出一种注意力机制，同时在空间和时间维度上建立依赖链，避免逐帧独立生成带来的不一致和冗余计算，实现快速且连贯的 4D  Mesh 输出。
+- **领域归类**: `[3D/4D 生成]` `[计算机视觉]`
+---
+
+### 26. TideGS: Scalable Training of Over One Billion 3D Gaussian Splatting Primitives via Out-of-Core Optimization (TideGS：通过核外优化 scalable 训练超十亿 3D 高斯泼溅基元)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.20150)
+- **研究任务**: 3D 高斯泼溅训练扩展
+- **核心亮点**: 突破显存限制，支持十亿级高斯基元的可扩展训练。
+- **深度解析**: 采用核外优化策略，将超出显存的数据交换至磁盘内存，配合流水线加载，解决了大规模场景下高斯泼溅基元数量受限的问题。
+- **领域归类**: `[3D 视觉]` `[渲染]`
+---
+
+### 27. Where Does Authorship Signal Emerge in Encoder-Based Language Models? (基于编码器的语言模型中作者信号出现在何处？)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.19908)
+- **研究任务**: 模型可解释性与作者归属
+- **核心亮点**: 定位编码器模型内部承载作者风格特征的具体层级。
+- **深度解析**: 通过探针实验和激活分析，追踪不同作者文本在模型各层的表示差异，发现作者信号主要集中在特定中间层，而非均匀分布。
+- **领域归类**: `[可解释性]` `[安全]`
+---
+
+### 28. CopT: Contrastive On-Policy Thinking with Continuous Spaces for General and Agentic Reasoning (CopT：面向通用与 Agent 推理的连续空间对比在线策略思考)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.20075)
+- **研究任务**: 通用推理与 Agent 决策
+- **核心亮点**: 在连续潜空间内结合对比学习与在线策略优化推理路径。
+- **深度解析**: 将推理过程映射到连续空间，利用对比损失区分优劣推理轨迹，并结合在线策略更新，提升模型在通用推理任务及 Agent 决策中的表现。
+- **领域归类**: `[推理]` `[强化学习]`
+---
+
+### 29. PEEK: Context Map as an Orientation Cache for Long-Context LLM Agents (PEEK：上下文地图作为长上下文 LLM Agent 的方向缓存)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.19932)
+- **研究任务**: 长上下文 Agent 导航
+- **核心亮点**: 构建上下文地图缓存，帮助 Agent 在长对话中快速定位方向。
+- **深度解析**: 维护一个结构化的上下文地图，记录关键信息节点及其关系，Agent 查询时先检索地图定位方向，再读取具体内容，减少长上下文中的迷失现象。
+- **领域归类**: `[Agent]` `[长上下文]`
+---
+
+### 30. Stage-adaptive Token Selection for Efficient Omni-modal LLMs (高效全模态 LLM 的阶段自适应 Token 选择)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.20035)
+- **研究任务**: 全模态模型效率优化
+- **核心亮点**: 根据不同处理阶段动态筛选 Token，降低计算开销。
+- **深度解析**: 分析多模态处理流程，在编码、融合、解码等不同阶段自适应丢弃冗余 Token，保留关键信息，在不显著损失精度的前提下提升推理速度。
+- **领域归类**: `[多模态]` `[效率优化]`
+---
+</details>
+
+<details>
+<summary><b>🚀 GitHub 今日热门项目 (点击展开)</b></summary>
+
+### [ai-engineering-from-scratch](https://github.com/rohitg00/ai-engineering-from-scratch)
+- **今日趋势**: 今日 +762 stars | 总计 9.2k stars
+- **项目简介**: [AI 相关] 面向开发者的一站式 AI 工程化学习指南，涵盖从理论学习到构建部署的全流程，旨在帮助人员掌握 AI 系统落地技能。
+- **核心价值**: 解决了 AI 学习者面对碎片化知识难以系统落地的痛点，提供了明确的工程化路径（Learn-Build-Ship），降低了从理论模型到实际产品转化的门槛。
+---
+### [OpenViking](https://github.com/volcengine/OpenViking)
+- **今日趋势**: 今日 +120 stars | 总计 24.3k stars
+- **项目简介**: [AI 相关] 专为 AI Agent 设计的开源上下文数据库，通过文件系统范式统一管理记忆、资源和技能，支持层级化上下文交付。
+- **核心价值**: 解决了 AI Agent 在复杂任务中上下文管理混乱、记忆丢失及技能调用困难的痛点，实现了上下文的自进化与高效组织，提升了 Agent 的长期任务处理能力。
+---
+### [daily_stock_analysis](https://github.com/ZhuLinsen/daily_stock_analysis)
+- **今日趋势**: 今日 +364 stars | 总计 38.1k stars
+- **项目简介**: [AI 相关] 基于 LLM 驱动的 A/H/美股智能分析系统，整合多源行情与实时新闻，提供零成本定时运行的投资决策仪表盘。
+- **核心价值**: 解决了个人投资者信息过载且缺乏专业分析工具的痛点，利用大模型决策能力自动化处理海量金融数据，实现了低门槛、实时的智能投顾辅助。
+---
+### [vllm](https://github.com/vllm-project/vllm)
+- **今日趋势**: 今日 +98 stars | 总计 80.6k stars
+- **项目简介**: [AI 相关] 专为大语言模型（LLM）打造的高吞吐量、内存高效的推理与服务引擎，面向需要部署大规模模型的企业与开发者。
+- **核心价值**: 解决了 LLM 在生产环境中推理成本高、延迟大及显存占用高的痛点，通过先进的注意力算法和调度策略，显著提升了模型服务的性能与经济性。
+---
+### [E2B](https://github.com/e2b-dev/E2B)
+- **今日趋势**: 今日 +31 stars | 总计 12.3k stars
+- **项目简介**: [AI 相关] 为企业级 AI Agent 提供的开源安全沙箱环境，内置真实世界工具，确保 Agent 在执行代码和操作时的安全性。
+- **核心价值**: 解决了 AI Agent 在自主执行任务时可能带来的安全风险与不可控问题，提供了隔离的执行环境，使企业能放心部署具备工具调用能力的智能体。
+---
+### [autoresearch](https://github.com/karpathy/autoresearch)
+- **今日趋势**: 今日 +332 stars | 总计 82.3k stars
+- **项目简介**: [AI 相关] 由 AI 专家 Karpathy 推出的自动化研究项目，利用 AI Agent 在单 GPU 上自动运行纳米聊天模型训练与研究。
+- **核心价值**: 解决了 AI 研究资源门槛高及实验流程繁琐的痛点，展示了 Agent 自主进行科研实验的可能性，推动了自动化机器学习研究的发展。
+---
+### [ppt-master](https://github.com/hugohe3/ppt-master)
+- **今日趋势**: 今日 +428 stars | 总计 19.0k stars
+- **项目简介**: [AI 相关] 利用 AI 将任意文档转换为原生可编辑 PPTX 文件的工具，支持真实 PowerPoint 形状与原生动画，而非生成图片。
+- **核心价值**: 解决了传统 AI 生成 PPT 仅为图片不可编辑、二次修改困难的痛点，实现了真正可用的原生格式输出，大幅提升了办公场景下的文档转换效率与灵活性。
+---
+</details></script>
+        <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
+    </body>
+    </html>
+    
