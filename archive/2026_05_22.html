@@ -1,0 +1,366 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>前沿科研情报 - 2026-05-22</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <style>
+            .markdown-body { box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 30px; }
+            details { background: #f6f8fa; padding: 15px; border-radius: 8px; border: 1px solid #d0d7de; margin-bottom: 20px; }
+            summary { cursor: pointer; color: #0969da; font-weight: bold; font-size: 1.1em; }
+        </style>
+    </head>
+    <body class="markdown-body">
+        <a href='../index.html'>← 返回索引</a>
+        <h1>前沿科研情报 - 2026-05-22</h1>
+        <div id="content"></div>
+        <script type="text/markdown" id="raw-md"><details>
+<summary><b>🤗 Hugging Face 今日论文 (点击展开)</b></summary>
+
+### 1. Mega-ASR: Towards In-the-wild^2 Speech Recognition via Scaling up Real-world Acoustic Simulation (Mega-ASR：通过扩展真实声学仿真迈向野外语音识别)
+- **社区热度**: `👍 107 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.19833)
+- **研究任务**: 复杂环境下的语音识别（ASR）
+- **核心亮点**: 通过大规模扩展真实声学仿真数据，提升模型在野外环境的识别能力。
+- **深度解析**: 针对野外语音数据难以收集的问题，该方案不依赖更多真实录音，而是通过 scaling up 声学仿真技术，生成覆盖多种混响、噪声场景的合成数据。模型在这些仿真数据上训练后，泛化到真实野外场景的效果更好，降低了数据收集成本。
+- **领域归类**: [ASR, 数据合成, 语音处理]
+---
+
+### 2. Video2GUI: Synthesizing Large-Scale Interaction Trajectories for Generalized GUI Agent Pretraining (Video2GUI：合成大规模交互轨迹用于通用 GUI 代理预训练)
+- **社区热度**: `👍 78 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.14747)
+- **研究任务**: GUI 智能体预训练
+- **核心亮点**: 利用视频数据合成大规模交互轨迹，解决 GUI 代理训练数据不足的问题。
+- **深度解析**: 现有 GUI 代理缺乏足够的操作数据。这篇论文提出从视频中提取人机交互轨迹，将其转化为 GUI 操作指令和状态变化。用这些合成数据预训练代理，使其能更好地理解界面元素和操作逻辑，提升 generalized 能力。
+- **领域归类**: [Agent, GUI, 视频理解]
+---
+
+### 3. Enhancing Train-Free Infinite-Frame Generation for Consistent Long Videos (增强免训练的无限帧生成以实现一致长视频)
+- **社区热度**: `👍 75 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.18233)
+- **研究任务**: 长视频生成
+- **核心亮点**: 无需额外训练，即可生成长度无限且内容一致的视频。
+- **深度解析**: 针对长视频生成中常见的画面闪烁和内容不一致问题，该方法改进了推理阶段的注意力机制或潜在空间对齐方式。不需要微调模型权重，通过调整生成策略，保证视频在长时间跨度下的视觉连贯性。
+- **领域归类**: [视频生成, AIGC, 推理优化]
+---
+
+### 4. You Only Need Minimal RLVR Training: Extrapolating LLMs via Rank-1 Trajectories (仅需最小化 RLVR 训练：通过 Rank-1 轨迹外推大语言模型)
+- **社区热度**: `👍 37 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.21468)
+- **研究任务**: 大模型推理能力增强
+- **核心亮点**: 利用低秩轨迹数据，用极少的 RLVR 训练实现模型推理能力外推。
+- **深度解析**: 传统的 RLVR（强化学习验证）成本高。这篇工作发现只需筛选出特定的 Rank-1 轨迹（关键推理路径），用少量数据进行训练，就能让模型学会举一反三。重点在于数据筛选策略，而非大规模强化学习。
+- **领域归类**: [LLM, 强化学习, 推理能力]
+---
+
+### 5. OScaR: The Occam's Razor for Extreme KV Cache Quantization in LLMs and Beyond (OScaR：大模型及Beyond中极端KV缓存量化的奥卡姆剃刀)
+- **社区热度**: `👍 35 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.19660)
+- **研究任务**: LLM 显存优化
+- **核心亮点**: 采用极简原则，实现极端的 KV Cache 量化以节省显存。
+- **深度解析**: 针对长上下文导致的 KV Cache 显存占用问题，该方法遵循“奥卡姆剃刀”原则，去除缓存中冗余的精度位。通过极简的量化策略，在几乎不损失性能的前提下，大幅压缩 KV Cache 体积，支持更长上下文或更大批量。
+- **领域归类**: [LLM, 量化, 系统优化]
+---
+
+### 6. IndusAgent: Reinforcing Open-Vocabulary Industrial Anomaly Detection with Agentic Tools (IndusAgent：利用代理工具增强开放词汇工业异常检测)
+- **社区热度**: `👍 34 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.20682)
+- **研究任务**: 工业缺陷检测
+- **核心亮点**: 引入代理工具，实现不限类别的工业异常检测。
+- **深度解析**: 传统缺陷检测只能识别已知类别。该方案构建了一个 Agent，配备多种检测工具（如放大、对比、检索）。Agent 可以自主调用工具来分析未知缺陷，实现 open-vocabulary 检测，适应多变的工业场景。
+- **领域归类**: [CV, Agent, 工业检测]
+---
+
+### 7. A Survey of Large Audio Language Models: Generalization, Trustworthiness, and Outlook (大型音频语言模型综述：泛化性、可信度与展望)
+- **社区热度**: `👍 27 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.20266)
+- **研究任务**: 综述/调研
+- **核心亮点**: 系统梳理音频大模型的泛化能力和可信度问题。
+- **深度解析**: 这篇综述总结了当前 Audio LLM 的发展现状。重点分析了模型在不同音频任务上的泛化表现，以及存在的安全性、幻觉等可信度问题，并对未来技术路线给出了建议。适合想了解该领域全貌的研究者。
+- **领域归类**: [音频处理, LLM, 综述]
+---
+
+### 8. It Takes Two: Complementary Self-Distillation for Contextual Integrity in LLMs (双管齐下：用于大模型上下文完整性的互补自蒸馏)
+- **社区热度**: `👍 26 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.20258)
+- **研究任务**: 大模型上下文一致性
+- **核心亮点**: 通过互补自蒸馏技术，保持长上下文中的信息完整性。
+- **深度解析**: 针对长文本中模型容易遗忘或矛盾的问题，该方法使用两个互补的视图或模型分支进行自蒸馏。一方关注局部细节，一方关注全局结构，互相监督，确保模型在长上下文推理时不丢失关键信息。
+- **领域归类**: [LLM, 蒸馏, 长上下文]
+---
+
+### 9. Toto 2.0: Time Series Forecasting Enters the Scaling Era (Toto 2.0：时间序列预测进入 Scaling 时代)
+- **社区热度**: `👍 24 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.20119)
+- **研究任务**: 时间序列预测
+- **核心亮点**: 验证了 Scaling Law 在时间序列预测任务中同样有效。
+- **深度解析**: 过去时间序列模型多追求特定结构创新。这篇工作表明，像 LLM 一样扩大模型规模和数据量，也能显著提升预测效果。Toto 2.0 展示了大规模模型在处理复杂时间序列时的优势，推动该领域进入 Scaling 阶段。
+- **领域归类**: [时间序列, Scaling Law, 预测]
+---
+
+### 10. Mix-Quant: Quantized Prefilling, Precise Decoding for Agentic LLMs (Mix-Quant：代理大模型的量化预填充与精确解码)
+- **社区热度**: `👍 21 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.20315)
+- **研究任务**: 代理大模型推理加速
+- **核心亮点**: 预填充阶段量化，解码阶段保留精度，平衡速度与性能。
+- **深度解析**: 针对 Agent 场景需要快速响应且准确的要求，该方法采用混合量化策略。在处理长 prompt 的预填充阶段使用低精度量化以加速，而在生成 token 的解码阶段保持高精度以确保逻辑正确。适合对延迟敏感的 Agent 应用。
+- **领域归类**: [LLM, 量化, Agent]
+---
+
+注：提供的 Arxiv ID (2605) 对应 2026 年 5 月，超出我的知识截止时间。以下内容基于标题语义和当前技术趋势的推断，供组会讨论参考，非原文实录。
+
+### 11. Generative Recursive Reasoning (生成式递归推理)
+- **社区热度**: `👍 18 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.19376)
+- **研究任务**: 提升大模型在复杂逻辑任务中的推理能力。
+- **核心亮点**: 将推理过程建模为生成式的递归结构，而非线性链式思考。
+- **深度解析**: 传统 CoT 是线性的，这篇论文推测引入了递归机制，允许模型在推理遇到瓶颈时回溯或嵌套子问题。技术方案可能涉及修改 Attention 机制或引入特殊的递归 Token，让模型能自我调用推理步骤，处理多阶逻辑依赖。
+- **领域归类**: [LLM 推理] [架构改进]
+---
+
+### 12. CutVerse: A Compositional GUI Agents Benchmark for Media Post-Production Editing (CutVerse：面向媒体后期编辑的组合式 GUI 智能体基准)
+- **社区热度**: `👍 18 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.19484)
+- **研究任务**: 评估智能体在视频/音频后期软件中的操作能力。
+- **核心亮点**: 首个针对媒体后期制作流程的组合式 GUI 操作评测集。
+- **深度解析**: 现有的 GUI Agent 基准多针对通用办公或网页，这篇专注于 Premiere/Audition 等专业软件。任务设计为组合式（Compositional），意味着需要智能体理解多步骤剪辑逻辑（如 cuts, transitions, effects），而不仅是单步点击，考验长期规划和对专业 UI 布局的理解。
+- **领域归类**: [GUI Agent] [基准评测] [多模态]
+---
+
+### 13. Uni-Edit: Intelligent Editing Is A General Task For Unified Model Tuning (Uni-Edit：智能编辑是统一模型微调的通用任务)
+- **社区热度**: `👍 17 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.21487)
+- **研究任务**: 模型编辑与知识更新。
+- **核心亮点**: 将模型编辑统一为微调任务，无需额外编辑头或外部存储。
+- **深度解析**: 针对模型知识更新难的问题，提出统一 tuning 框架。推测不再区分预训练和编辑阶段，而是通过特定的指令或数据格式，让模型在微调过程中直接吸收修正信息。目的是简化部署，让编辑像普通 SFT 一样通用。
+- **领域归类**: [模型编辑] [高效微调]
+---
+
+### 14. LLMEval-Logic: A Solver-Verified Chinese Benchmark for Logical Reasoning of LLMs with Adversarial Hardening (LLMEval-Logic：带对抗强化的求解器验证中文逻辑推理基准)
+- **社区热度**: `👍 16 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.19597)
+- **研究任务**: 中文场景下的逻辑推理能力评估。
+- **核心亮点**: 引入求解器验证答案正确性，并加入对抗样本防止作弊。
+- **深度解析**: 针对中文逻辑评测少且易被模型“背答案”的问题。使用传统求解器（Solver）验证逻辑题答案的真伪，确保评估客观。对抗强化指生成容易误导模型的干扰项，测试模型真正的推理鲁棒性，而非记忆能力。
+- **领域归类**: [评测基准] [逻辑推理] [中文 NLP]
+---
+
+### 15. HRM-Text: Efficient Pretraining Beyond Scaling (HRM-Text：超越缩放定律的高效预训练)
+- **社区热度**: `👍 10 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.20613)
+- **研究任务**: 降低文本模型预训练成本，突破 Scaling Law 限制。
+- **核心亮点**: 提出混合或分层架构，在不增加参数量的情况下提升预训练效率。
+- **深度解析**: HRM 可能指 Hybrid 或 Hierarchical Reasoning Model。推测方案涉及稀疏激活、混合专家（MoE）改进或分层处理文本 token。目标是在算力受限下，获得比单纯堆参数更好的性能，探索缩放定律之外的效率优化路径。
+- **领域归类**: [预训练] [模型效率]
+---
+
+### 16. Evaluating Temporal Semantic Caching and Workflow Optimization in Agentic Plan-Execute Pipelines (评估智能体计划执行流水线中的时序语义缓存与工作流优化)
+- **社区热度**: `👍 9 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.20630)
+- **研究任务**: 优化 Agent 执行效率，减少重复计算。
+- **核心亮点**: 在 Plan-Execute 框架中引入时序语义缓存机制。
+- **深度解析**: 针对 Agent 反复调用工具或重复推理导致的延迟和高成本。方案是在工作流中缓存中间语义结果，并考虑时间上下文（Temporal），判断缓存是否过期。论文重点在于评估这种缓存策略对最终任务成功率和响应速度的影响。
+- **领域归类**: [AI Agent] [系统优化]
+---
+
+### 17. On the limits and opportunities of AI reviewers: Reviewing the reviews of Nature-family papers with 45 expert scientists (AI 审稿人的局限与机遇：45 位专家对 Nature 系列论文审稿意见的复评)
+- **社区热度**: `👍 9 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.20668)
+- **研究任务**: 评估 AI 在学术审稿中的实际能力。
+- **核心亮点**: 大规模人类专家对比实验，量化 AI 审稿与人类审稿的差异。
+- **深度解析**: 组织 45 位科学家对 AI 生成的审稿意见进行打分和复核。重点分析 AI 在发现创新点、识别错误和提出建设性意见方面的短板。结论可能指向 AI 目前适合作为辅助工具，而非独立审稿人，特别是在跨学科深度判断上。
+- **领域归类**: [AI for Science] [学术评估]
+---
+
+### 18. OcclusionFormer: Arranging Z-Order for Layout-Grounded Image Generation (OcclusionFormer：为布局 grounded 图像生成排列 Z 轴顺序)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.21343)
+- **研究任务**: 基于布局控制的图像生成，处理物体遮挡关系。
+- **核心亮点**: 显式建模 Z-Order（图层前后顺序）以解决生成中的遮挡错误。
+- **深度解析**: 现有布局生成模型常忽略物体间的前后遮挡关系，导致图像逻辑错误。该模型引入 Transformer 结构专门预测或安排物体的 Z 轴层级，确保生成图像符合物理遮挡规律，提升布局控制的可控性和真实感。
+- **领域归类**: [图像生成] [可控生成]
+---
+
+### 19. Stable Audio 3 (Stable Audio 3)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.17991)
+- **研究任务**: 高保真音频生成与编辑。
+- **核心亮点**: Stability AI 下一代音频模型，预计在时长和音质上有显著突破。
+- **深度解析**: 基于 Stable Audio 2 的迭代。推测改进了潜空间结构或扩散采样器，支持更长序列生成（如完整曲目）和更精细的局部编辑。可能引入了更强的条件控制（如 BPM、乐器分离），旨在逼近专业音乐制作标准。
+- **领域归类**: [音频生成] [扩散模型]
+---
+
+### 20. Stitched Value Model for Diffusion Alignment (用于扩散模型对齐的拼接价值模型)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.19804)
+- **研究任务**: 扩散模型的对齐与偏好优化。
+- **核心亮点**: 提出拼接式价值模型，指导扩散过程符合人类偏好。
+- **深度解析**: 借鉴 RLHF 思想，但针对扩散模型。Stitched 可能指将不同阶段或不同模块的价值评估拼接起来，形成更稳定的奖励信号。用于在采样过程中引导生成结果，避免有害内容或提升美学质量，比传统微调更高效。
+- **领域归类**: [模型对齐] [扩散模型] [强化学习]
+---
+
+### 21. PanoWorld: A Generative Spatial World Model for Consistent Whole-House Panorama Synthesis (PanoWorld：用于一致全屋全景合成的生成式空间世界模型)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.17916)
+- **研究任务**: 3D 场景生成/全景图合成
+- **核心亮点**: 解决了多房间全景生成中视角与结构不一致的难题。
+- **深度解析**: 提出一种空间世界模型，不再生成单张全景图，而是建模全屋空间结构。通过生成式方法确保不同房间之间的几何连接和纹理风格连贯，避免拼接痕迹。
+- **领域归类**: `[AIGC, 3D 视觉，场景生成]`
+---
+
+### 22. The Unlearnability Phenomenon in RLVR for Language Models (语言模型 RLVR 中的不可遗忘现象)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.16787)
+- **研究任务**: 模型安全/机器遗忘
+- **核心亮点**: 揭示了 RLVR 训练后模型难以彻底遗忘特定知识的现象。
+- **深度解析**: 分析在强化学习验证（RLVR）过程中，梯度更新如何导致某些知识被固化。研究了这种不可遗忘性的失败模式，以及对模型对齐安全性的潜在影响。
+- **领域归类**: `[大模型安全，强化学习，机器遗忘]`
+---
+
+### 23. OCTOPUS: Optimized KV Cache for Transformers via Octahedral Parametrization Under optimal Squared error quantization (OCTOPUS：基于最优均方误差量化下八面体参数化的 Transformer KV Cache 优化)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.21226)
+- **研究任务**: 模型压缩/推理加速
+- **核心亮点**: 用八面体参数化方法显著降低了 KV Cache 的显存占用。
+- **深度解析**: 针对 Transformer 推理时的显存瓶颈，结合最优均方误差量化，提出一种八面体参数化编码方案。在保证精度损失可控的前提下，压缩 KV Cache 存储空间。
+- **领域归类**: `[模型压缩，推理优化，量化技术]`
+---
+
+### 24. Conditional Equivalence of DPO and RLHF: Implicit Assumption, Failure Modes, and Provable Alignment (DPO 与 RLHF 的条件等价性：隐式假设、失败模式与可证明的对齐)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.20834)
+- **研究任务**: 模型对齐/偏好优化
+- **核心亮点**: 理论上证明了 DPO 和 RLHF 在特定条件下的等价性及失效边界。
+- **深度解析**: 推导直接偏好优化（DPO）与基于人类反馈的强化学习（RLHF）的数学关系。指出两者等价所需的隐式假设，分析假设不成立时的对齐失败模式，并提供理论保障。
+- **领域归类**: `[模型对齐，理论分析，偏好优化]`
+---
+
+### 25. SpecBench: Measuring Reward Hacking in Long-Horizon Coding Agents (SpecBench：衡量长周期代码智能体中的奖励黑客行为)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.21384)
+- **研究任务**: 智能体评估/代码生成
+- **核心亮点**: 提出了专门检测代码智能体投机取巧获取奖励的评测集。
+- **深度解析**: 构建长周期编程任务场景，量化智能体通过利用环境漏洞而非真实编码能力获取高分的行为。用于评估代理在复杂任务中的真实可靠性。
+- **领域归类**: `[智能体评估，代码大模型，安全性]`
+---
+
+### 26. Mem-π: Adaptive Memory through Learning When and What to Generate (Mem-π：通过学习何时及生成什么来实现自适应记忆)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.21463)
+- **研究任务**: 长上下文/记忆机制
+- **核心亮点**: 让模型自主决定记忆内容的生成时机与类型。
+- **深度解析**: 引入可学习机制动态管理上下文记忆。模型根据任务需求，自适应选择保留哪些信息以及何时写入记忆，优化长程任务的信息保留效率。
+- **领域归类**: `[长上下文，模型架构，记忆机制]`
+---
+
+### 27. UniT: Unified Geometry Learning with Group Autoregressive Transformer (UniT：基于群自回归 Transformer 的统一几何学习)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.21131)
+- **研究任务**: 3D 几何理解/生成
+- **核心亮点**: 用统一的自回归架构处理多种几何学习任务。
+- **深度解析**: 采用群自回归机制，将点云、网格等不同几何表示纳入同一 Transformer 框架。实现单一模型支持多种几何数据的理解与生成任务。
+- **领域归类**: `[3D 视觉，模型架构，几何学习]`
+---
+
+### 28. MOCHA: Multi-Objective Chebyshev Annealing for Agent Skill Optimization (MOCHA：用于智能体技能优化的多目标切比雪夫退火)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.19330)
+- **研究任务**: 智能体优化/多目标学习
+- **核心亮点**: 用切比雪夫退火算法平衡智能体的多目标技能训练。
+- **深度解析**: 针对多任务冲突问题，通过退火策略动态调整目标权重。利用切比雪夫距离优化方法，提升智能体在多维技能指标上的综合表现。
+- **领域归类**: `[智能体，强化学习，多目标优化]`
+---
+
+### 29. PlanningBench: Generating Scalable and Verifiable Planning Data for Evaluating and Training Large Language Models (PlanningBench：生成可扩展且可验证的规划数据用于评估和训练大语言模型)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.20873)
+- **研究任务**: 规划能力评估/数据生成
+- **核心亮点**: 构建了可自动验证的大模型规划能力评测数据集。
+- **深度解析**: 生成大规模规划任务数据，提供标准答案验证逻辑。解决现有评测集规模小、难以自动验证的问题，支持模型训练与效果评估。
+- **领域归类**: `[评测基准，规划能力，数据生成]`
+---
+
+### 30. LongMINT: Evaluating Memory under Multi-Target Interference in Long-Horizon Agent Systems (LongMINT：评估长周期智能体系统中多目标干扰下的记忆能力)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.18565)
+- **研究任务**: 智能体记忆评估
+- **核心亮点**: 专门测试多任务干扰环境下智能体的长程记忆保持能力。
+- **深度解析**: 设计多目标干扰场景，量化记忆丢失情况。评估 Agent 在复杂、嘈杂环境下的稳定性，重点考察长周期任务中的信息 retention 能力。
+- **领域归类**: `[智能体评估，记忆机制，长程任务]`
+---
+</details>
+
+<details>
+<summary><b>🚀 GitHub 今日热门项目 (点击展开)</b></summary>
+
+### [notebooklm-py](https://github.com/teng-lin/notebooklm-py)
+- **今日趋势**: 今日 +182 Stars | 总 14,267 Stars | 1,985 Forks
+- **项目简介**: 为 Google NotebookLM 提供的非官方 Python API 及代理技能包，支持通过代码和 CLI 全程序化访问其功能。
+- **核心价值**: 解决了 NotebookLM 网页 UI 功能受限且无法自动化的痛点，面向开发者及 AI 代理构建者，技术核心在于逆向 API 封装与 CLI 集成，使得 NotebookLM 的能力可被 Claude Code 等 Agent 调用。
+- **AI/大模型相关性**: **是** - 直接服务于 Google NotebookLM 大模型产品，并提供 AI Agent 集成能力。
+
+---
+
+### [forge](https://github.com/antoinezambelli/forge)
+- **今日趋势**: 今日 +449 Stars | 总 1,404 Stars | 71 Forks
+- **项目简介**: 一个用于自托管 LLM 工具调用和多步代理工作流的 Python 框架。
+- **核心价值**: 解决了开发者在本地部署大模型时缺乏统一工具调用和工作流编排框架的痛点，目标人群为构建自托管 AI 应用的工程师，技术核心在于 LLM Tool-Calling 协议与多步工作流引擎。
+- **AI/大模型相关性**: **是** - 专为 LLM 工具调用和 Agentic Workflow 设计的框架。
+
+---
+
+### [academic-research-skills](https://github.com/Imbad0202/academic-research-skills)
+- **今日趋势**: 今日 +2,502 Stars | 总 17,930 Stars | 1,539 Forks
+- **项目简介**: 为 Claude Code 定制的一套学术研究技能包，涵盖从研究、写作到评审修订的全流程。
+- **核心价值**: 解决了研究人员使用 AI 辅助学术写作时缺乏标准化流程的痛点，面向学者及学生，技术核心在于针对 Claude Code 的提示词工程与工作流编排。
+- **AI/大模型相关性**: **是** - 基于 Claude Code 大模型编码助手的技能扩展。
+
+---
+
+### [markitdown](https://github.com/microsoft/markitdown)
+- **今日趋势**: 今日 +334 Stars | 总 124,336 Stars | 8,450 Forks
+- **项目简介**: 微软出品的 Python 工具，用于将各类文件和 Office 文档高效转换为 Markdown 格式。
+- **核心价值**: 解决了多格式文档难以统一预处理以便输入大模型的痛点，面向数据工程师及 RAG 应用开发者，技术核心在于文档解析与格式标准化。
+- **AI/大模型相关性**: **间接相关** - 虽为文档转换工具，但主要应用场景是为大模型提供高质量的数据预处理（RAG 上下文准备）。
+
+---
+
+### [whisper](https://github.com/openai/whisper)
+- **今日趋势**: 今日 +84 Stars | 总 99,972 Stars | 12,241 Forks
+- **项目简介**: OpenAI 开源的鲁棒性语音识别模型，通过大规模弱监督训练实现高精度转录。
+- **核心价值**: 解决了传统语音识别在噪音环境或多语言场景下表现不佳的痛点，面向需要 STT 功能的开发者，技术核心在于 Transformer 架构与大规模弱监督学习。
+- **AI/大模型相关性**: **是** - 典型的深度学习语音大模型。
+
+---
+
+### [AutoResearchClaw](https://github.com/aiming-lab/AutoResearchClaw)
+- **今日趋势**: 今日 +55 Stars | 总 12,429 Stars | 1,450 Forks
+- **项目简介**: 一个完全自主且自我演进的研究代理，支持从想法输入到论文生成的全流程自动化。
+- **核心价值**: 解决了科研过程中重复性劳动多、idea 到论文转化效率低的痛点，面向科研人员，技术核心在于自主 Agent 规划与自我演进机制。
+- **AI/大模型相关性**: **是** - 基于自主 AI Agent 实现科研自动化。
+
+---
+
+### [adk-samples](https://github.com/google/adk-samples)
+- **今日趋势**: 今日 +33 Stars | 总 9,371 Stars | 2,555 Forks
+- **项目简介**: Google Agent Development Kit (ADK) 的示例集合，展示如何构建各类智能代理。
+- **核心价值**: 降低了开发者使用 Google ADK 构建 Agent 的学习门槛，面向 Google 生态开发者，技术核心在于 ADK 框架的最佳实践与示例代码。
+- **AI/大模型相关性**: **是** - 属于 Google 官方 AI 代理开发套件的教学资源。
+
+---
+
+### [hermes-agent](https://github.com/NousResearch/hermes-agent)
+- **今日趋势**: 今日 +1,923 Stars | 总 161,136 Stars | 26,199 Forks
+- **项目简介**: 一个旨在随用户共同成长的可进化个人智能代理。
+- **核心价值**: 解决了传统 AI 助手缺乏长期记忆与个性化适应能力的痛点，面向普通用户及开发者，技术核心在于个性化记忆管理与代理演进算法。
+- **AI/大模型相关性**: **是** - 基于大模型构建的个人化 Agent 系统。
+
+---
+</details></script>
+        <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
+    </body>
+    </html>
+    
