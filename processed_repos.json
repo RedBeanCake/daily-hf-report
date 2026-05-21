@@ -1,5 +1,5 @@
 {
-  "NousResearch /hermes-agent": "2026-05-11",
+  "NousResearch /hermes-agent": "2026-05-21",
   "HKUDS /DeepTutor": "2026-04-09",
   "OpenBMB /VoxCPM": "2026-05-04",
   "TheCraigHewitt /seomachine": "2026-04-09",
@@ -12,7 +12,7 @@
   "huggingface /skills": "2026-05-11",
   "open-webui /open-webui": "2026-04-22",
   "apache /airflow": "2026-04-09",
-  "microsoft /markitdown": "2026-05-05",
+  "microsoft /markitdown": "2026-05-21",
   "FloatingPragma /observer-patch-holography": "2026-04-10",
   "D4Vinci /Scrapling": "2026-05-05",
   "PrefectHQ /prefect": "2026-04-10",
@@ -76,7 +76,7 @@
   "BerriAI /litellm": "2026-05-12",
   "Shubhamsaboo /awesome-llm-apps": "2026-05-06",
   "openai /skills": "2026-04-24",
-  "google /adk-samples": "2026-04-24",
+  "google /adk-samples": "2026-05-21",
   "mlflow /mlflow": "2026-04-24",
   "microsoft /presidio": "2026-04-24",
   "ZhuLinsen /daily_stock_analysis": "2026-05-20",
@@ -154,7 +154,7 @@
   "ansible /ansible": "2026-05-13",
   "roboflow /supervision": "2026-05-14",
   "NVIDIA-AI-Blueprints /video-search-and-summarization": "2026-05-14",
-  "Imbad0202 /academic-research-skills": "2026-05-14",
+  "Imbad0202 /academic-research-skills": "2026-05-21",
   "zubair-trabzada /geo-seo-claude": "2026-05-14",
   "elebumm /RedditVideoMakerBot": "2026-05-14",
   "awslabs /agent-plugins": "2026-05-14",
@@ -178,5 +178,9 @@
   "rohitg00 /ai-engineering-from-scratch": "2026-05-20",
   "volcengine /OpenViking": "2026-05-20",
   "e2b-dev /E2B": "2026-05-20",
-  "karpathy /autoresearch": "2026-05-20"
+  "karpathy /autoresearch": "2026-05-20",
+  "teng-lin /notebooklm-py": "2026-05-21",
+  "antoinezambelli /forge": "2026-05-21",
+  "openai /whisper": "2026-05-21",
+  "aiming-lab /AutoResearchClaw": "2026-05-21"
 }
