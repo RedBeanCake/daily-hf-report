@@ -1,0 +1,199 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>前沿科研情报 - 2026-05-26</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <style>
+            .markdown-body { box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 30px; }
+            details { background: #f6f8fa; padding: 15px; border-radius: 8px; border: 1px solid #d0d7de; margin-bottom: 20px; }
+            summary { cursor: pointer; color: #0969da; font-weight: bold; font-size: 1.1em; }
+        </style>
+    </head>
+    <body class="markdown-body">
+        <a href='../index.html'>← 返回索引</a>
+        <h1>前沿科研情报 - 2026-05-26</h1>
+        <div id="content"></div>
+        <script type="text/markdown" id="raw-md"><details>
+<summary><b>🤗 Hugging Face 今日论文 (点击展开)</b></summary>
+
+### 1. SkillOpt: Executive Strategy for Self-Evolving Agent Skills (SkillOpt：自进化 Agent 技能的执行策略)
+- **社区热度**: `👍 147 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.23904)
+- **研究任务**: Agent 技能的自动优化与演进。
+- **核心亮点**: 提出一种执行策略，让 Agent 能在无需人工干预的情况下自我迭代技能。
+- **深度解析**: 设计了一个高层执行器模块，负责评估当前技能效果并调度生成新技能。通过闭环反馈机制，Agent 能根据任务成功率自动修正技能参数，减少了对预设规则库的依赖。
+- **领域归类**: [Agent], [RL], [Automation]
+---
+### 2. Lens: Rethinking Training Efficiency for Foundational Text-to-Image Models (Lens：重新思考基础文生图模型的训练效率)
+- **社区热度**: `👍 87 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.21573)
+- **研究任务**: 降低基础文生图模型的训练成本。
+- **核心亮点**: 通过优化训练流程和数据利用方式，大幅减少达到同等效果所需的计算资源。
+- **深度解析**: 分析了现有扩散模型训练中的冗余计算，提出了一种动态采样策略和简化损失函数。在保持生成质量的前提下，缩短了收敛步数，降低了显存占用。
+- **领域归类**: [Diffusion], [Efficiency], [AIGC]
+---
+### 3. Rethinking Cross-Layer Information Routing in Diffusion Transformers (重新思考扩散 Transformer 中的跨层信息路由)
+- **社区热度**: `👍 82 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.20708)
+- **研究任务**: 改进 Diffusion Transformer (DiT) 的网络架构。
+- **核心亮点**: 调整了层与层之间的信息传递机制，提升了特征融合效率。
+- **深度解析**: 传统的 DiT 主要依赖串行层传递，该工作引入了跨层连接路由机制，允许浅层信息直接流向深层。这缓解了梯度消失问题，增强了模型对全局结构的控制能力。
+- **领域归类**: [Diffusion], [Architecture], [Transformer]
+---
+### 4. SciAtlas: A Large-Scale Knowledge Graph for Automated Scientific Research (SciAtlas：面向自动化科学研究的大规模知识图谱)
+- **社区热度**: `👍 44 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.22878)
+- **研究任务**: 构建服务于科研自动化的知识库。
+- **核心亮点**: 发布了一个大规模科学领域知识图谱，支持 Agent 进行复杂科研推理。
+- **深度解析**: 整合了多篇论文中的实体、方法和结论，构建结构化图谱。Agent 可查询该图谱获取领域知识，辅助实验设计或文献综述，减少幻觉产生。
+- **领域归类**: [Knowledge Graph], [Science], [Agent]
+---
+### 5. StepAudio 2.5 Technical Report (StepAudio 2.5 技术报告)
+- **社区热度**: `👍 35 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.23463)
+- **研究任务**: 音频生成与理解模型迭代。
+- **核心亮点**: 更新了 StepAudio 模型架构，提升了音频生成的自然度和控制力。
+- **深度解析**: 报告 detailing 了 2.5 版本在数据清洗、编码器结构及采样算法上的改进。重点优化了长音频生成的连贯性，并增强了对指令的跟随能力。
+- **领域归类**: [Audio], [Multimodal], [Technical Report]
+---
+### 6. See What I Mean: Aligning Vision and Language Representations for Video Fine-grained Object Understanding (See What I Mean：对齐视觉与语言表示以实现视频细粒度对象理解)
+- **社区热度**: `👍 28 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.18018)
+- **研究任务**: 视频中的细粒度对象理解。
+- **核心亮点**: 通过对齐视觉和语言特征，实现了视频中特定对象的精准定位与描述。
+- **深度解析**: 采用对比学习策略，将视频片段特征与文本描述映射到同一空间。引入了对象级别的注意力机制，使模型能忽略背景干扰，聚焦于目标对象的动态变化。
+- **领域归类**: [Video], [Vision-Language], [Understanding]
+---
+### 7. From Raw Experience to Skill Consumption: A Systematic Study of Model-Generated Agent Skills (从原始经验到技能消费：模型生成 Agent 技能的系统研究)
+- **社区热度**: `👍 21 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.23899)
+- **研究任务**: 分析 Agent 技能的生成与使用流程。
+- **核心亮点**: 系统评估了模型如何从试错经验中提炼技能并被后续任务调用。
+- **深度解析**: 建立了从原始交互数据到标准化技能库的 pipeline。实验分析了不同抽象层级对技能复用率的影响，为构建可持续进化的 Agent 系统提供了实证依据。
+- **领域归类**: [Agent], [Analysis], [RL]
+---
+### 8. PhotoFlow: Agentic 3D Virtual Photography Missions (PhotoFlow：代理式 3D 虚拟摄影任务)
+- **社区热度**: `👍 20 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.23771)
+- **研究任务**: 3D 场景中的自动摄影构图。
+- **核心亮点**: 利用 Agent 在 3D 虚拟环境中自主完成摄影任务。
+- **深度解析**: 定义了一套摄影美学奖励函数，Agent 通过强化学习控制相机位姿和参数。系统能根据场景内容自动调整景深、角度，生成符合美学标准的图像。
+- **领域归类**: [3D], [Agent], [Vision]
+---
+### 9. VGenST-Bench: A Benchmark for Spatio-Temporal Reasoning via Active Video Synthesis (VGenST-Bench：通过主动视频合成进行时序推理的基准测试)
+- **社区热度**: `👍 18 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.22570)
+- **研究任务**: 评估模型的空间 - 时间推理能力。
+- **核心亮点**: 提出了一个基于主动视频生成的基准测试集。
+- **深度解析**: 传统基准多为静态标注，该工作通过生成特定 spatiotemporal 变化的视频来测试模型。涵盖了物体运动轨迹、因果变化等维度，更能反映模型对动态场景的理解力。
+- **领域归类**: [Benchmark], [Video], [Reasoning]
+---
+### 10. PiD: Fast and High-Resolution Latent Decoding with Pixel Diffusion (PiD：基于像素扩散的快速高分辨率潜在解码)
+- **社区热度**: `👍 17 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.23902)
+- **研究任务**: 提升潜在空间解码的速度与分辨率。
+- **核心亮点**: 结合像素级扩散方法，实现了快速且高保真的潜在变量解码。
+- **深度解析**: 针对 VAE 解码器细节丢失问题，引入轻量级像素扩散模块进行后处理。在 latent 空间完成主要生成后，利用该模块补充高频细节，平衡了推理速度与图像清晰度。
+- **领域归类**: [Diffusion], [Super-Resolution], [Architecture]
+---
+
+### 11. RankE: End-to-End Post-Training for Discrete Text-to-Image Generation with Decoder Co-Evolution (RankE：基于解码器协同演化的离散文本生成图像端到端后期训练)
+- **社区热度**: `👍 14 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.21195)
+- **研究任务**: 离散文本到图像生成（Text-to-Image）
+- **核心亮点**: 提出解码器与生成器协同演化的端到端后期训练框架，解决离散 token 重建质量差的问题。
+- **深度解析**: 传统离散生成模型中，解码器通常是固定的，导致生成 token 无法最优映射回图像。该工作让解码器参数在后期训练阶段随生成器一起更新，通过协同演化减少量化误差，显著提升了离散生成模型的图像 fidelity 和细节表现。
+- **领域归类**: [计算机视觉], [生成模型], [模型训练]
+---
+
+### 12. ETCHR: Editing To Clarify and Harness Reasoning (ETCHR：通过编辑澄清并利用推理能力)
+- **社区热度**: `👍 9 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.23897)
+- **研究任务**: 大模型推理增强（Reasoning Enhancement）
+- **核心亮点**: 无需微调模型权重，仅通过对输入或中间步骤进行编辑操作，即可显著提升模型推理清晰度。
+- **深度解析**: 针对复杂推理任务中模型容易迷失上下文的问题，该方法引入一个编辑模块，自动澄清问题陈述或修正中间推理步骤。这种轻量级干预手段有效 harness 了预训练模型已有的推理潜力，避免了高昂的全量微调成本。
+- **领域归类**: [自然语言处理], [推理], [提示工程]
+---
+
+### 13. SCOPE: Simulating Cross-game Operations in Playable Environments for FPS World Models (SCOPE：可玩环境中模拟跨游戏操作以构建 FPS 世界模型)
+- **社区热度**: `👍 8 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.23345)
+- **研究任务**: 游戏世界模型（World Models for FPS）
+- **核心亮点**: 在可玩环境中模拟跨游戏操作，实现了第一人称射击游戏世界模型的跨任务泛化。
+- **深度解析**: 现有世界模型往往局限于单一游戏机制。该工作构建了一个支持跨游戏操作的模拟环境，让模型在不同 FPS 游戏的物理规则和交互逻辑中学习通用表征，解决了世界模型难以迁移到新游戏场景的痛点。
+- **领域归类**: [强化学习], [世界模型], [游戏 AI]
+---
+
+### 14. LLMs as Noisy Channels: A Shannon Perspective on Model Capacity and Scaling Laws (LLM 作为噪声信道：基于香农视角的模型容量与缩放定律)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.23901)
+- **研究任务**: 大模型理论分析（Theoretical Analysis）
+- **核心亮点**: 将大模型建模为香农噪声信道，从信息论角度重新推导了模型容量与缩放定律。
+- **深度解析**: 论文跳出经验主义拟合，利用信息论中的信道容量概念分析 LLM 的信息传输效率。通过量化噪声对信息流的影响，给出了模型性能上限的理论解释，为模型压缩和规模扩展提供了新的理论依据。
+- **领域归类**: [机器学习理论], [信息论], [缩放定律]
+---
+
+### 15. Geo-Align: Video Generation Alignment via Metric Geometry Reward (Geo-Align：基于度量几何奖励的视频生成对齐)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.23903)
+- **研究任务**: 视频生成对齐（Video Generation Alignment）
+- **核心亮点**: 引入度量几何作为奖励函数，有效约束视频生成中的空间和时间一致性。
+- **深度解析**: 针对视频生成中常见的物体变形和闪烁问题，该方法不依赖传统感知奖励，而是计算帧间几何结构的度量差异作为 RL 奖励。这种几何约束强制模型保持场景结构的稳定性，显著改善了长视频生成的连贯性。
+- **领域归类**: [计算机视觉], [视频生成], [强化学习]
+---
+
+### 16. From Seeing to Thinking: Decoupling Perception and Reasoning Improves Post-Training of Vision-Language Models (从看到想：解耦感知与推理改善视觉语言模型后期训练)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.20177)
+- **研究任务**: 视觉语言模型后期训练（VLM Post-Training）
+- **核心亮点**: 在后期训练中解耦视觉感知和逻辑推理模块，避免了视觉噪声干扰推理过程。
+- **深度解析**: 传统 VLM 训练往往混合优化感知和推理任务，导致相互干扰。该工作设计了一种解耦训练策略，分别优化视觉编码器和推理头，使模型在处理复杂视觉问答时能更专注于逻辑推导，提升了推理准确率。
+- **领域归类**: [多模态], [视觉语言模型], [模型训练]
+---
+
+### 17. Rethinking Muon Beyond Pretraining: Spectral Failures and High-Pass Remedies for VLA and RLVR (重审 Muon 超越预训练：VLA 与 RLVR 中的频谱失效与高通 remedy)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.19282)
+- **研究任务**: 优化器改进（Optimizer Improvement）
+- **核心亮点**: 揭示了 Muon 优化器在非预训练任务中的频谱失效问题，并提出高通滤波修复方案。
+- **深度解析**: 研究发现 Muon 优化器在 VLA（视觉 - 语言 - 动作）和 RLVR 任务中因频谱分布问题导致收敛困难。论文分析了梯度频谱特性，引入高通滤波机制修正更新方向，恢复了优化器在这些下游任务中的稳定性。
+- **领域归类**: [优化算法], [强化学习], [机器人学习]
+---
+
+### 18. LatentUMM: Dual Latent Alignment for Unified Multimodal Models (LatentUMM：统一多模态模型的双重潜在对齐)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.17766)
+- **研究任务**: 统一多模态模型（Unified Multimodal Models）
+- **核心亮点**: 通过双重潜在空间对齐机制，实现了更高效的多模态统一建模。
+- **深度解析**: 为了解决多模态数据分布差异大的问题，该方法在两个不同的潜在空间层面同时对齐视觉和文本特征。这种双重对齐策略减少了模态间的语义鸿沟，使得单一模型能更好地处理跨模态生成和理解任务。
+- **领域归类**: [多模态], [表示学习], [模型架构]
+---
+
+### 19. HINT-SD: Targeted Hindsight Self-Distillation for Long-Horizon Agents (HINT-SD：面向长程智能体的目标事后自蒸馏)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.17873)
+- **研究任务**: 长程智能体训练（Long-Horizon Agents）
+- **核心亮点**: 结合事后经验回放与自蒸馏技术，针对性提升智能体在长任务中的表现。
+- **深度解析**: 长程任务中稀疏奖励导致学习困难。该工作利用 hindsight 技术重构失败轨迹为成功目标，并通过自蒸馏将这些经验固化到策略网络中。这种方法显著提高了智能体在长 horizon 任务中的样本效率和成功率。
+- **领域归类**: [强化学习], [智能体], [自蒸馏]
+---
+
+### 20. Good Token Hunting: A Hitchhiker's Guide to Token Selection for Visual Geometry Transformers (Good Token Hunting：视觉几何 Transformer 的 Token 选择指南)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.23892)
+- **研究任务**: 视觉 Transformer 优化（Visual Transformer Optimization）
+- **核心亮点**: 提供了一套针对视觉几何任务的 Token 选择策略，平衡计算量与精度。
+- **深度解析**: 针对视觉几何任务中大量冗余 token 的问题，论文分析了不同 token 对几何结构重建的贡献度。基于此提出了一套选择指南，筛选出关键 token 参与计算，在不损失几何精度的前提下降低了 Transformer 的计算开销。
+- **领域归类**: [计算机视觉], [Transformer], [模型压缩]
+---
+</details>
+
+</script>
+        <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
+    </body>
+    </html>
+    
