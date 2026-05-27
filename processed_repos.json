@@ -26,7 +26,7 @@
   "axolotl-ai-cloud /axolotl": "2026-04-13",
   "microsoft /agent-lightning": "2026-04-13",
   "AIDC-AI /Pixelle-Video": "2026-05-01",
-  "vllm-project /vllm": "2026-05-20",
+  "vllm-project /vllm": "2026-05-27",
   "paperswithbacktest /awesome-systematic-trading": "2026-04-14",
   "Tracer-Cloud /opensre": "2026-05-22",
   "ultralytics /ultralytics": "2026-04-14",
@@ -34,7 +34,7 @@
   "public-apis /public-apis": "2026-05-05",
   "lsdefine /GenericAgent": "2026-04-15",
   "google /magika": "2026-04-15",
-  "agentscope-ai /agentscope": "2026-04-15",
+  "agentscope-ai /agentscope": "2026-05-27",
   "zhayujie /CowAgent": "2026-04-15",
   "donnemartin /system-design-primer": "2026-05-25",
   "sgl-project /sglang": "2026-04-15",
@@ -148,7 +148,7 @@
   "EleutherAI /lm-evaluation-harness": "2026-05-13",
   "graphdeco-inria /gaussian-splatting": "2026-05-13",
   "opendatalab /MinerU": "2026-05-13",
-  "anthropics /skills": "2026-05-13",
+  "anthropics /skills": "2026-05-27",
   "odoo /odoo": "2026-05-22",
   "MustardChef /WSABuilds": "2026-05-13",
   "ansible /ansible": "2026-05-13",
@@ -196,5 +196,9 @@
   "freqtrade /freqtrade-strategies": "2026-05-25",
   "harvard-edge /cs249r_book": "2026-05-26",
   "shareAI-lab /learn-claude-code": "2026-05-26",
-  "francescopace /espectre": "2026-05-26"
+  "francescopace /espectre": "2026-05-26",
+  "harry0703 /MoneyPrinterTurbo": "2026-05-27",
+  "NVIDIA-NeMo /Megatron-Bridge": "2026-05-27",
+  "zai-org /GLM-OCR": "2026-05-27",
+  "unclecode /crawl4ai": "2026-05-27"
 }
