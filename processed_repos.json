@@ -12,7 +12,7 @@
   "huggingface /skills": "2026-05-11",
   "open-webui /open-webui": "2026-04-22",
   "apache /airflow": "2026-04-09",
-  "microsoft /markitdown": "2026-05-21",
+  "microsoft /markitdown": "2026-05-28",
   "FloatingPragma /observer-patch-holography": "2026-04-10",
   "D4Vinci /Scrapling": "2026-05-05",
   "PrefectHQ /prefect": "2026-04-10",
@@ -29,7 +29,7 @@
   "vllm-project /vllm": "2026-05-27",
   "paperswithbacktest /awesome-systematic-trading": "2026-04-14",
   "Tracer-Cloud /opensre": "2026-05-22",
-  "ultralytics /ultralytics": "2026-04-14",
+  "ultralytics /ultralytics": "2026-05-28",
   "alirezarezvani /claude-skills": "2026-05-19",
   "public-apis /public-apis": "2026-05-05",
   "lsdefine /GenericAgent": "2026-04-15",
@@ -118,7 +118,7 @@
   "ccxt /ccxt": "2026-05-05",
   "bytedance /deer-flow": "2026-05-05",
   "cheahjs /free-llm-api-resources": "2026-05-05",
-  "anthropics /financial-services": "2026-05-06",
+  "anthropics /financial-services": "2026-05-28",
   "pytorch /pytorch": "2026-05-06",
   "VectifyAI /PageIndex": "2026-05-07",
   "freemocap /freemocap": "2026-05-07",
@@ -200,5 +200,10 @@
   "harry0703 /MoneyPrinterTurbo": "2026-05-27",
   "NVIDIA-NeMo /Megatron-Bridge": "2026-05-27",
   "zai-org /GLM-OCR": "2026-05-27",
-  "unclecode /crawl4ai": "2026-05-27"
+  "unclecode /crawl4ai": "2026-05-27",
+  "OpenMOSS /MOSS-TTS": "2026-05-28",
+  "anthropics /claude-code": "2026-05-28",
+  "microsoft /RAMPART": "2026-05-28",
+  "ariadng /metatrader-mcp-server": "2026-05-28",
+  "adithya-s-k /omniparse": "2026-05-28"
 }
