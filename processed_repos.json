@@ -1,7 +1,7 @@
 {
   "NousResearch /hermes-agent": "2026-05-21",
   "HKUDS /DeepTutor": "2026-04-09",
-  "OpenBMB /VoxCPM": "2026-05-04",
+  "OpenBMB /VoxCPM": "2026-05-29",
   "TheCraigHewitt /seomachine": "2026-04-09",
   "shiyu-coder /Kronos": "2026-05-25",
   "microsoft /BitNet": "2026-04-09",
@@ -130,7 +130,7 @@
   "xming521 /WeClone": "2026-05-07",
   "CloakHQ /CloakBrowser": "2026-05-15",
   "HKUDS /AI-Trader": "2026-05-08",
-  "PaddlePaddle /PaddleOCR": "2026-05-08",
+  "PaddlePaddle /PaddleOCR": "2026-05-29",
   "vllm-project /vllm-ascend": "2026-05-08",
   "anthropics /claude-plugins-official": "2026-05-19",
   "AUTOMATIC1111 /stable-diffusion-webui": "2026-05-11",
@@ -147,7 +147,7 @@
   "Asabeneh /30-Days-Of-Python": "2026-05-13",
   "EleutherAI /lm-evaluation-harness": "2026-05-13",
   "graphdeco-inria /gaussian-splatting": "2026-05-13",
-  "opendatalab /MinerU": "2026-05-13",
+  "opendatalab /MinerU": "2026-05-29",
   "anthropics /skills": "2026-05-27",
   "odoo /odoo": "2026-05-22",
   "MustardChef /WSABuilds": "2026-05-13",
@@ -205,5 +205,11 @@
   "anthropics /claude-code": "2026-05-28",
   "microsoft /RAMPART": "2026-05-28",
   "ariadng /metatrader-mcp-server": "2026-05-28",
-  "adithya-s-k /omniparse": "2026-05-28"
+  "adithya-s-k /omniparse": "2026-05-28",
+  "galilai-group /stable-worldmodel": "2026-05-29",
+  "dreammis /social-auto-upload": "2026-05-29",
+  "zakirkun /deep-eye": "2026-05-29",
+  "GH05TCREW /pentestagent": "2026-05-29",
+  "apurvsinghgautam /robin": "2026-05-29",
+  "fastapi /fastapi": "2026-05-29"
 }
