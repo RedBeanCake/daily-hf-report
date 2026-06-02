@@ -122,11 +122,11 @@
   "pytorch /pytorch": "2026-05-06",
   "VectifyAI /PageIndex": "2026-05-07",
   "freemocap /freemocap": "2026-05-07",
-  "Open-LLM-VTuber /Open-LLM-VTuber": "2026-05-07",
+  "Open-LLM-VTuber /Open-LLM-VTuber": "2026-06-02",
   "github /spec-kit": "2026-05-14",
   "openai /plugins": "2026-05-07",
   "Blaizzy /mlx-vlm": "2026-05-07",
-  "awslabs /aidlc-workflows": "2026-05-22",
+  "awslabs /aidlc-workflows": "2026-06-02",
   "xming521 /WeClone": "2026-05-07",
   "CloakHQ /CloakBrowser": "2026-05-15",
   "HKUDS /AI-Trader": "2026-05-08",
@@ -144,7 +144,7 @@
   "FoundationAgents /MetaGPT": "2026-05-12",
   "huggingface /transformers": "2026-05-12",
   "K-Dense-AI /scientific-agent-skills": "2026-05-13",
-  "Asabeneh /30-Days-Of-Python": "2026-05-13",
+  "Asabeneh /30-Days-Of-Python": "2026-06-02",
   "EleutherAI /lm-evaluation-harness": "2026-05-13",
   "graphdeco-inria /gaussian-splatting": "2026-05-13",
   "opendatalab /MinerU": "2026-05-29",
@@ -215,5 +215,8 @@
   "nesquena /hermes-webui": "2026-06-01",
   "elder-plinius /OBLITERATUS": "2026-06-01",
   "freqtrade /freqtrade": "2026-06-01",
-  "emmabostian /developer-portfolios": "2026-06-01"
+  "emmabostian /developer-portfolios": "2026-06-01",
+  "chopratejas /headroom": "2026-06-02",
+  "jamwithai /production-agentic-rag-course": "2026-06-02",
+  "datalab-to /surya": "2026-06-02"
 }
