@@ -1,5 +1,5 @@
 {
-  "NousResearch /hermes-agent": "2026-05-21",
+  "NousResearch /hermes-agent": "2026-06-03",
   "HKUDS /DeepTutor": "2026-04-09",
   "OpenBMB /VoxCPM": "2026-05-29",
   "TheCraigHewitt /seomachine": "2026-04-09",
@@ -31,7 +31,7 @@
   "Tracer-Cloud /opensre": "2026-05-22",
   "ultralytics /ultralytics": "2026-05-28",
   "alirezarezvani /claude-skills": "2026-05-19",
-  "public-apis /public-apis": "2026-05-05",
+  "public-apis /public-apis": "2026-06-03",
   "lsdefine /GenericAgent": "2026-04-15",
   "google /magika": "2026-04-15",
   "agentscope-ai /agentscope": "2026-05-27",
@@ -43,7 +43,7 @@
   "openai /openai-agents-python": "2026-04-16",
   "jundot /omlx": "2026-05-11",
   "google-research /timesfm": "2026-05-01",
-  "datawhalechina /hello-agents": "2026-05-08",
+  "datawhalechina /hello-agents": "2026-06-03",
   "oobabooga /textgen": "2026-04-16",
   "github /awesome-copilot": "2026-05-15",
   "Polymarket /agents": "2026-04-16",
@@ -66,7 +66,7 @@
   "Alishahryar1 /free-claude-code": "2026-05-19",
   "davila7 /claude-code-templates": "2026-04-22",
   "mvanhorn /last30days-skill": "2026-04-22",
-  "EbookFoundation /free-programming-books": "2026-04-29",
+  "EbookFoundation /free-programming-books": "2026-06-03",
   "huggingface /ml-intern": "2026-04-23",
   "crewAIInc /crewAI": "2026-04-23",
   "onyx-dot-app /onyx": "2026-05-06",
@@ -149,7 +149,7 @@
   "graphdeco-inria /gaussian-splatting": "2026-05-13",
   "opendatalab /MinerU": "2026-05-29",
   "anthropics /skills": "2026-05-27",
-  "odoo /odoo": "2026-05-22",
+  "odoo /odoo": "2026-06-03",
   "MustardChef /WSABuilds": "2026-05-13",
   "ansible /ansible": "2026-05-13",
   "roboflow /supervision": "2026-05-14",
@@ -218,5 +218,9 @@
   "emmabostian /developer-portfolios": "2026-06-01",
   "chopratejas /headroom": "2026-06-02",
   "jamwithai /production-agentic-rag-course": "2026-06-02",
-  "datalab-to /surya": "2026-06-02"
+  "datalab-to /surya": "2026-06-02",
+  "HKUDS /Vibe-Trading": "2026-06-03",
+  "0x4m4 /hexstrike-ai": "2026-06-03",
+  "interviewstreet /hiring-agent": "2026-06-03",
+  "NVIDIA-NeMo /Gym": "2026-06-03"
 }
