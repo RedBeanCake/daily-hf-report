@@ -155,6 +155,7 @@ if __name__ == "__main__":
 
     # 执行 Hugging Face 流程
     hf_data = scrape_hf(mode=args.mode)
+    print(f"抓取到 {len(hf_data)} 篇 HF 论文！")
     hf_md = process_hf_with_ai(client_llm, hf_data, mode=args.mode)
 
     # 执行 GitHub Trending 流程

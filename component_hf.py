@@ -79,7 +79,8 @@ def process_hf_with_ai(client_llm, hf_papers, mode="daily"):
                 messages=[{"role": "user", "content": prompt}]
             )
             all_chunks_md.append(completion.choices[0].message.content)
-        except:
+        except Exception as e:
+            print(f"第 {global_counter} 批论文大模型调用失败: {e}")
             continue
 
         global_counter += len(chunk)
