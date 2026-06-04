@@ -1,0 +1,298 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AI 技术周报 - 2026-W23</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <style>
+            .markdown-body { box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 30px; }
+            details { background: #f6f8fa; padding: 15px; border-radius: 8px; border: 1px solid #d0d7de; margin-bottom: 20px; }
+            summary { cursor: pointer; color: #0969da; font-weight: bold; font-size: 1.1em; }
+        </style>
+    </head>
+    <body class="markdown-body">
+        <a href='../index.html'>← 返回索引</a>
+        <h1>AI 技术周报 - 2026-W23</h1>
+        <div id="content"></div>
+        <script type="text/markdown" id="raw-md"><details>
+<summary><b>🤗 Hugging Face 每周论文 (点击展开)</b></summary>
+
+### 1. Crafter: A Multi-Agent Harness for Editable Scientific Figure Generation from Diverse Inputs (Crafter: 可编辑科学图表生成的多智能体框架)
+- **社区热度**: `👍 175 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.30611)
+- **研究任务**: 科学图表生成与编辑
+- **核心亮点**: 用多智能体协作实现图表的可编辑生成，而非一次性黑盒输出。
+- **深度解析**: 传统方法生成图表后很难修改局部。这篇论文把任务拆给多个 Agent，分别负责布局、绘图、样式和逻辑检查。改动在于引入了编辑接口，用户修改指令后，系统只更新受影响的模块，不用重绘整图。效果上大幅降低了修改成本，生成的图表结构更清晰，符合科学出版规范。
+- **领域归类**: [Multimodal] [Agent] [Scientific Computing]
+---
+
+### 2. On the Scaling of PEFT: Towards Million Personal Models of Trillion Parameters (PEFT 的扩展性：面向百万个人模型的万亿参数研究)
+- **社区热度**: `👍 146 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.02437)
+- **研究任务**: 参数高效微调（PEFT）与模型个性化
+- **核心亮点**: 解决了在万亿参数基座上维护百万个个性化模型的资源瓶颈。
+- **深度解析**: 主要问题是存不下那么多 Adapter。方案是共享基座参数，只存储极小的个性化增量参数，并优化了加载机制。改动在于设计了一种分层索引结构，让推理时能动态切换不同用户的 Adapter。效果是在显存占用几乎不变的情况下，支持了大规模个性化部署。
+- **领域归类**: [Efficiency] [PEFT] [LLM]
+---
+
+### 3. Domino: Decoupling Causal Modeling from Autoregressive Drafting in Speculative Decoding (Domino: 推测解码中因果建模与自回归草稿的解耦)
+- **社区热度**: `👍 134 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.29707)
+- **研究任务**: 推理加速（推测解码）
+- **核心亮点**: 把草稿模型的生成逻辑和目标模型的因果约束分开，提高接受率。
+- **深度解析**: 传统推测解码中，草稿模型受限于目标模型的结构。这篇论文把两者解耦，草稿模型可以更自由地生成候选 token，再由目标模型验证。改动在于引入了一个中间校验层，减少了无效计算。效果是提升了推测解码的接受率，端到端推理速度有明显增益。
+- **领域归类**: [Inference] [Acceleration] [LLM]
+---
+
+### 4. COLLEAGUE.SKILL: Automated AI Skill Generation via Expert Knowledge Distillation (COLLEAGUE.SKILL: 基于专家知识蒸馏的自动化技能生成)
+- **社区热度**: `👍 103 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.31264)
+- **研究任务**: 智能体技能学习
+- **核心亮点**: 自动从专家数据中蒸馏出可复用的技能模块，无需手动定义。
+- **深度解析**: 以前技能需要人工写规则或大量 RL 训练。这篇论文用蒸馏方法，把专家轨迹拆解成原子技能。改动在于设计了一个技能发现算法，能自动识别轨迹中的关键步骤并封装。效果是 Agent 学新任务更快，泛化能力更强，减少了重复训练。
+- **领域归类**: [Agent] [RL] [Distillation]
+---
+
+### 5. GrepSeek: Training Search Agents for Direct Corpus Interaction (GrepSeek: 面向语料库直接交互的搜索代理训练)
+- **社区热度**: `👍 97 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.29307)
+- **研究任务**: 检索增强与代理交互
+- **核心亮点**: 训练 Agent 直接用 grep 类工具搜索文本，而不是只靠向量检索。
+- **深度解析**: 向量检索容易丢失精确匹配信息。这篇论文让 Agent 学会使用命令行风格的搜索工具直接查语料。改动在于构建了包含精确搜索动作的训练环境，并奖励精准定位。效果是在需要精确引用或查找特定字符串的任务上，准确率比纯 RAG 高。
+- **领域归类**: [RAG] [Agent] [Search]
+---
+
+### 6. OCC-RAG: Optimal Cognitive Core for Faithful Question Answering (OCC-RAG: 面向忠实问答的最优认知核心)
+- **社区热度**: `👍 73 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.00683)
+- **研究任务**: 检索增强生成（RAG）与事实一致性
+- **核心亮点**: 在 RAG 流程中加入认知核心模块，专门负责验证答案的忠实度。
+- **深度解析**: 解决 RAG  hallucination 问题。方案是在生成前加一个验证步骤，检查 retrieved context 和生成内容是否逻辑一致。改动在于引入了一个轻量级的判别模型作为“认知核心”。效果是显著减少了胡编乱造，尤其在复杂问答场景下。
+- **领域归类**: [RAG] [QA] [Hallucination]
+---
+
+### 7. Trust-Region Behavior Blending for On-Policy Distillation (面向 On-Policy 蒸馏的信任域行为混合)
+- **社区热度**: `👍 63 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.31159)
+- **研究任务**: 策略蒸馏与强化学习
+- **核心亮点**: 用信任域约束来混合多个策略，防止蒸馏过程中性能崩塌。
+- **深度解析**: 多策略蒸馏时容易互相干扰。这篇论文引入信任域（Trust-Region）限制，确保新策略不会偏离原策略太远。改动在于优化了损失函数，加入了行为混合的约束项。效果是蒸馏后的模型更稳定，保留了多个专家策略的优点。
+- **领域归类**: [RL] [Distillation] [Policy Optimization]
+---
+
+### 8. A Matter of TASTE: Improving Coverage and Difficulty of Agent Benchmarks (TASTE 问题：提升 Agent 基准的覆盖度与难度)
+- **社区热度**: `👍 61 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.28556)
+- **研究任务**: 智能体基准测试与评估
+- **核心亮点**: 提出了覆盖更广、难度更高的 Agent 评测集，暴露现有模型缺陷。
+- **深度解析**: 现有基准太简单，测不出真实能力。这篇论文构建了包含长程规划、错误恢复等难点任务的新评测集。改动在于增加了边缘案例和复杂依赖关系的任务比例。效果是现有 SOTA 模型在该基准上分数下降，更能反映真实性能差距。
+- **领域归类**: [Evaluation] [Agent] [Benchmark]
+---
+
+### 9. SwanVoice: Expressive Long-Form Zero-Shot Speech Synthesis for Both Monologue and Dialogue (SwanVoice: 面向长程独白与对话的表达性零样本语音合成)
+- **社区热度**: `👍 54 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.30993)
+- **研究任务**: 语音合成（TTS）
+- **核心亮点**: 实现了长文本下的零样本语音合成，且保持情感和音色一致。
+- **深度解析**: 长文本合成容易前后音色不一致或情感平淡。这篇论文改进了韵律建模模块，引入了全局情感控制器。改动在于使用了分层结构，先规划整段情感，再生成局部语音。效果是在长对话和独白中，声音自然度更高，不需要针对特定说话人微调。
+- **领域归类**: [Audio] [TTS] [Zero-Shot]
+---
+
+### 10. Representation Forcing for Bottleneck-Free Unified Multimodal Models (表示强制：面向无瓶颈统一多模态模型的表示强制)
+- **社区热度**: `👍 54 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.31604)
+- **研究任务**: 多模态统一建模
+- **核心亮点**: 通过强制表示学习，消除多模态融合中的信息瓶颈。
+- **深度解析**: 统一模型常因模态差异导致信息丢失。这篇论文在融合层加入表示强制约束，迫使模型保留各模态的关键特征。改动在于设计了一种对比损失，对齐不同模态的中间表示。效果是提升了跨模态理解任务的表现，尤其是细粒度识别任务。
+- **领域归类**: [Multimodal] [Representation Learning] [Architecture]
+---
+
+### 11. Masking Stale Observations Helps Search Agents -- Until It Doesn't: A Regime Map and Its Mechanism (掩蔽过时观测有助于搜索智能体——直到失效：机制与 regime 地图)
+- **社区热度**: `👍 54 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.00408)
+- **研究任务**: 搜索智能体的上下文窗口优化
+- **核心亮点**: 明确了掩蔽过时观测信息对智能体性能提升的有效边界与失效条件。
+- **深度解析**: 针对长任务中上下文冗余问题，提出动态掩蔽机制。研究绘制了性能随掩蔽比例变化的 regime 地图，发现适度掩蔽可减少干扰，但超过阈值会导致关键状态丢失。方案重点在于识别何时保留历史观测，何时丢弃，以平衡上下文长度与信息密度。
+- **领域归类**: [Agent, RL, Context Management]
+---
+
+### 12. K-BrowseComp: A Web Browsing Agent Benchmark Grounded in Korean Contexts (K-BrowseComp：基于韩语情境的网页浏览智能体基准)
+- **社区热度**: `👍 51 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.02404)
+- **研究任务**: 网页浏览智能体评测基准
+- **核心亮点**: 填补了非英语语境下，特别是韩语网页环境的智能体评测空白。
+- **深度解析**: 构建了包含韩语特定网页结构、本地化服务任务的数据集。基准涵盖导航、信息提取、事务处理等任务，重点评估模型对韩语 DOM 结构理解及本地化 API 调用的能力，解决了现有基准多为英语环境导致的评估偏差问题。
+- **领域归类**: [Benchmark, Agent, NLP]
+---
+
+### 13. Mellum2 Technical Report (Mellum2 技术报告)
+- **社区热度**: `👍 50 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.31268)
+- **研究任务**: 基础模型迭代与性能评估
+- **核心亮点**: 发布了 Mellum 系列第二代模型的技术细节与全维度性能数据。
+- **深度解析**: 报告详述了模型架构升级、训练数据配比及对齐策略。相比前代，重点优化了推理效率与多任务泛化能力。包含详细的消融实验与下游任务评测结果，为后续应用提供基线参考。
+- **领域归类**: [LLM, Model Report]
+---
+
+### 14. From Activation to Causality: Discovery of Causal Visual Representations in the Human Brain (从激活到因果：人脑中因果视觉表征的发现)
+- **社区热度**: `👍 43 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.23895)
+- **研究任务**: 神经科学与 AI 可解释性交叉研究
+- **核心亮点**: 利用 AI 方法从脑激活数据中反推出视觉处理的因果表征结构。
+- **深度解析**: 结合 fMRI 数据与因果发现算法， mapping 大脑视觉皮层活动到具体的因果变量。不同于传统相关性分析，该方法旨在识别大脑处理视觉信息时的因果机制，为构建更符合生物机制的视觉模型提供理论依据。
+- **领域归类**: [Neuroscience, Interpretability, CV]
+---
+
+### 15. GGT-100K: Generative Ground Truth for Generalizable Real-World Image Restoration (GGT-100K：用于通用真实世界图像修复的生成式真值)
+- **社区热度**: `👍 40 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.31039)
+- **研究任务**: 图像修复数据合成
+- **核心亮点**: 利用生成模型构建大规模配对数据，解决真实世界修复任务缺乏真值的问题。
+- **深度解析**: 针对真实退化图像缺乏干净参考图（Ground Truth）的痛点，提出生成式真值构建流程。通过合成 100K 高质量配对数据，训练修复模型获得更好的泛化性。方案重点在于确保生成的真值在分布上与真实场景一致，避免合成偏差。
+- **领域归类**: [CV, Image Restoration, Data Synthesis]
+---
+
+### 16. LongTraceRL: Learning Long-Context Reasoning from Search Agent Trajectories with Rubric Rewards (LongTraceRL：基于规则奖励从搜索智能体轨迹中学习长上下文推理)
+- **社区热度**: `👍 40 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.31584)
+- **研究任务**: 长上下文推理与智能体强化学习
+- **核心亮点**: 引入规则化奖励（Rubric Rewards）优化长轨迹搜索智能体的推理能力。
+- **深度解析**: 传统稀疏奖励难以指导长步骤任务，该方法将评估规则转化为密集奖励信号。利用智能体历史搜索轨迹进行 RL 训练，强化模型在长上下文中的逻辑连贯性与步骤规划能力，显著减少长任务中的漂移错误。
+- **领域归类**: [Agent, RL, Long Context]
+---
+
+### 17. Function2Scene: 3D Indoor Scene Layout from Functional Specifications (Function2Scene：从功能规格生成 3D 室内场景布局)
+- **社区热度**: `👍 38 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.30819)
+- **研究任务**: 3D 场景生成
+- **核心亮点**: 实现了从功能性文本描述直接生成合理的 3D 室内布局。
+- **深度解析**: 输入为功能需求（如“需要办公区和休息区”），而非几何描述。模型学习功能语义到空间布局的映射，生成符合人体工学和逻辑的 3D 场景。解决了传统文本生成 3D 中语义与空间结构不对齐的问题。
+- **领域归类**: [3D, Generation, Multimodal]
+---
+
+### 18. Harness-1: Reinforcement Learning for Search Agents with State-Externalizing Harnesses (Harness-1：利用状态外化 harness 的搜索智能体强化学习)
+- **社区热度**: `👍 37 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.02373)
+- **研究任务**: 搜索智能体强化学习优化
+- **核心亮点**: 通过外化状态结构（Harness）降低强化学习训练难度。
+- **深度解析**: 将智能体内部隐状态部分外化为显式结构，作为 RL 的辅助输入。这种“ harness"机制使策略网络更容易捕捉关键状态变化，提升了搜索任务中的训练稳定性和收敛速度，特别适用于复杂环境交互。
+- **领域归类**: [Agent, RL, Architecture]
+---
+
+### 19. SANA-Streaming: Real-time Streaming Video Editing with Hybrid Diffusion Transformer (SANA-Streaming：基于混合扩散 Transformer 的实时流式视频编辑)
+- **社区热度**: `👍 36 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.30409)
+- **研究任务**: 视频编辑
+- **核心亮点**: 实现了低延迟的流式视频编辑，支持实时交互。
+- **深度解析**: 采用混合扩散 Transformer 架构，结合自回归与扩散模型优势。通过流式处理机制，无需等待完整视频生成即可输出编辑结果。重点优化了帧间一致性与推理速度，满足实时编辑场景需求。
+- **领域归类**: [Video, Diffusion, Real-time]
+---
+
+### 20. Towards Streaming Synchronized Spatial Audio Generation via Autoregressive Diffusion Transformer (迈向通过自回归扩散 Transformer 实现流式同步空间音频生成)
+- **社区热度**: `👍 34 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.30940)
+- **研究任务**: 空间音频生成
+- **核心亮点**: 解决了流式生成中音频与空间位置的同步问题。
+- **深度解析**: 使用自回归扩散 Transformer 生成空间音频。重点在于设计同步机制，确保音频流生成时，声源位置信息随时间准确变化。方案支持低延迟输出，适用于 VR/AR 等需要实时空间音效的场景。
+- **领域归类**: [Audio, Generation, Streaming]
+---
+
+### 21. dMoE: dLLMs with Learnable Block Experts (dMoE：具有可学习块专家的动态大语言模型)
+- **社区热度**: `👍 34 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.30876)
+- **研究任务**: LLM 架构优化 / 稀疏混合专家
+- **核心亮点**: 将 MoE 中的专家模块改为可学习的块，动态调整计算路径。
+- **深度解析**: 传统 MoE 的路由机制和专家结构相对固定。这篇工作提出让专家块本身的参数具备可学习性，配合动态路由，模型能根据输入难度自动分配计算量。改了路由逻辑和专家内部结构，目的是在保证效果的同时降低平均推理成本。
+- **领域归类**: [LLM 架构], [模型效率]
+---
+
+### 22. Humanoid-GPT: Scaling Data and Structure for Zero-Shot Motion Tracking (Humanoid-GPT：通过 scaling 数据和结构实现零样本动作跟踪)
+- **社区热度**: `👍 33 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.03985)
+- **研究任务**: 机器人动作生成 / 运动跟踪
+- **核心亮点**: 不依赖微调，靠扩大数据量和模型结构实现新动作的零样本泛化。
+- **深度解析**: 针对人形机器人动作跟踪任务，构建了大规模运动数据集。模型结构上做了适配，使其能理解通用运动规律。改了训练数据规模和模型容量，效果是在未见过的动作场景下也能直接跟踪，无需针对新任务重新训练。
+- **领域归类**: [机器人], [运动控制]
+---
+
+### 23. Trust Region On-Policy Distillation (信任域在线策略蒸馏)
+- **社区热度**: `👍 32 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.01249)
+- **研究任务**: 强化学习 / 模型蒸馏
+- **核心亮点**: 在在线策略蒸馏中引入信任域约束，防止学生模型策略漂移。
+- **深度解析**: 在线蒸馏时，学生模型容易偏离教师模型太远导致训练崩溃。这篇在损失函数里加了信任域限制，限制每一步更新的幅度。改了优化目标，结果是训练过程更稳定，最终策略性能波动减小。
+- **领域归类**: [强化学习], [模型蒸馏]
+---
+
+### 24. X-Stream: Exploring MLLMs as Multiplexers for Multi-Stream Understanding (X-Stream：探索 MLLM 作为多流理解的复用器)
+- **社区热度**: `👍 31 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.02482)
+- **研究任务**: 多模态理解 / 视频分析
+- **核心亮点**: 把 MLLM 当作复用器，同时处理多路输入流（如多视角、多传感器）。
+- **深度解析**: 现有 MLLM 多处理单一流数据。这篇让模型同时接收多个数据流，利用注意力机制进行融合和分发。改了输入层和注意力交互方式，效果是在复杂多源数据场景下，信息整合能力更强，漏检率降低。
+- **领域归类**: [多模态], [视频理解]
+---
+
+### 25. Task-Focused Memorization for Multimodal Agents (面向任务的多模态智能体记忆机制)
+- **社区热度**: `👍 31 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.31075)
+- **研究任务**: AI Agent / 记忆管理
+- **核心亮点**: 记忆模块只存储与当前任务相关的状态，过滤无关噪音。
+- **深度解析**: 通用记忆机制容易存太多无用信息，干扰决策。这篇设计了一个任务筛选器，决定哪些多模态信息值得存入记忆。改了记忆写入策略，结果是 Agent 在长程任务中执行准确率提升，检索速度变快。
+- **领域归类**: [AI Agent], [记忆机制]
+---
+
+### 26. NITP: Next Implicit Token Prediction for LLM Pre-training (NITP：用于 LLM 预训练的下一个隐式 token 预测)
+- **社区热度**: `👍 31 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.24956)
+- **研究任务**: 预训练目标 / 表示学习
+- **核心亮点**: 不预测表面 token，改为预测潜在空间的隐式 token。
+- **深度解析**: 传统 Next Token Prediction 只关注表面词符。这篇提出在 latent space 预测隐式 token，捕捉更深层语义。改了预训练损失函数，效果是模型学到的表示更紧凑，下游任务微调收敛更快。
+- **领域归类**: [预训练], [表示学习]
+---
+
+### 27. Cosmos 3: Omnimodal World Models for Physical AI (Cosmos 3：面向物理 AI 的全模态世界模型)
+- **社区热度**: `👍 30 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.02800)
+- **研究任务**: 世界模型 / 物理仿真
+- **核心亮点**: 统一处理所有模态数据，预测物理世界的状态变化。
+- **深度解析**: 针对物理交互场景，整合了视频、文本、传感器数据。模型能预测动作执行后的物理状态变化。改了多模态对齐方式和预测头，效果是在机器人规划和仿真环境中，状态预测准确度更高。
+- **领域归类**: [世界模型], [物理 AI]
+---
+
+### 28. Comprehensive Benchmarking of Long-Form Speech Generation in Diverse Scenarios (多场景下长表单语音生成的综合评测)
+- **社区热度**: `👍 30 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.28618)
+- **研究任务**: 语音生成 / 基准评测
+- **核心亮点**: 填补了长表单、多场景语音生成的评测空白。
+- **深度解析**: 现有评测多针对短句。这篇构建了包含不同噪音、时长、情感要求的测试集。改了评测维度和数据集构成，结果是能更真实地反映模型在实际长对话中的稳定性和自然度。
+- **领域归类**: [语音合成], [基准评测]
+---
+
+### 29. Draft-OPD: On-Policy Distillation for Speculative Draft Models (Draft-OPD：用于投机草稿模型的在线策略蒸馏)
+- **社区热度**: `👍 29 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.29343)
+- **研究任务**: 投机采样 / 推理加速
+- **核心亮点**: 用在线策略蒸馏训练草稿模型，使其分布更匹配目标模型。
+- **深度解析**: 投机采样的草稿模型通常离线训练，分布不一致导致接受率低。这篇在生成过程中实时蒸馏目标模型策略到草稿模型。改了草稿模型的训练方式，效果是 token 接受率提升，整体推理延迟降低。
+- **领域归类**: [推理加速], [投机采样]
+---
+
+### 30. KVarN: Variance-Normalized KV-Cache Quantization Mitigates Error Accumulation in Reasoning Tasks (KVarN：方差归一化 KV-Cache 量化减轻推理任务误差累积)
+- **社区热度**: `👍 27 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.03458)
+- **研究任务**: 模型量化 / 显存优化
+- **核心亮点**: 量化 KV Cache 时引入方差归一化，防止长文本推理误差累积。
+- **深度解析**: 普通量化在长序列推理时，误差会逐步累积导致逻辑错误。这篇在量化前对 KV Cache 做方差归一化处理。改了量化校准流程，效果是在长上下文推理任务中，精度损失显著减少，显存占用降低。
+- **领域归类**: [模型量化], [推理优化]
+---
+</details>
+
+</script>
+        <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
+    </body>
+    </html>
+    
