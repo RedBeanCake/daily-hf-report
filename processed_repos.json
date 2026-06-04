@@ -25,7 +25,7 @@
   "yt-dlp /yt-dlp": "2026-05-22",
   "axolotl-ai-cloud /axolotl": "2026-04-13",
   "microsoft /agent-lightning": "2026-04-13",
-  "AIDC-AI /Pixelle-Video": "2026-05-01",
+  "AIDC-AI /Pixelle-Video": "2026-06-04",
   "vllm-project /vllm": "2026-05-27",
   "paperswithbacktest /awesome-systematic-trading": "2026-04-14",
   "Tracer-Cloud /opensre": "2026-05-22",
@@ -41,7 +41,7 @@
   "iam-veeramalla /aws-devops-zero-to-hero": "2026-04-15",
   "topoteretes /cognee": "2026-04-16",
   "openai /openai-agents-python": "2026-04-16",
-  "jundot /omlx": "2026-05-11",
+  "jundot /omlx": "2026-06-04",
   "google-research /timesfm": "2026-05-01",
   "datawhalechina /hello-agents": "2026-06-03",
   "oobabooga /textgen": "2026-04-16",
@@ -65,7 +65,7 @@
   "Z4nzu /hackingtool": "2026-06-01",
   "Alishahryar1 /free-claude-code": "2026-05-19",
   "davila7 /claude-code-templates": "2026-04-22",
-  "mvanhorn /last30days-skill": "2026-04-22",
+  "mvanhorn /last30days-skill": "2026-06-04",
   "EbookFoundation /free-programming-books": "2026-06-03",
   "huggingface /ml-intern": "2026-04-23",
   "crewAIInc /crewAI": "2026-04-23",
@@ -123,7 +123,7 @@
   "VectifyAI /PageIndex": "2026-05-07",
   "freemocap /freemocap": "2026-05-07",
   "Open-LLM-VTuber /Open-LLM-VTuber": "2026-06-02",
-  "github /spec-kit": "2026-05-14",
+  "github /spec-kit": "2026-06-04",
   "openai /plugins": "2026-05-07",
   "Blaizzy /mlx-vlm": "2026-05-07",
   "awslabs /aidlc-workflows": "2026-06-02",
@@ -222,5 +222,6 @@
   "HKUDS /Vibe-Trading": "2026-06-03",
   "0x4m4 /hexstrike-ai": "2026-06-03",
   "interviewstreet /hiring-agent": "2026-06-03",
-  "NVIDIA-NeMo /Gym": "2026-06-03"
+  "NVIDIA-NeMo /Gym": "2026-06-03",
+  "unilabsim /UniLab": "2026-06-04"
 }
