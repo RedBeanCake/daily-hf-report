@@ -17,17 +17,215 @@
         <a href='../index.html'>← 返回索引</a>
         <h1>前沿科研情报 - 2026-06-04</h1>
         <div id="content"></div>
-        <script type="text/markdown" id="raw-md">
+        <script type="text/markdown" id="raw-md"><details>
+<summary><b>🤗 Hugging Face 今日论文 (点击展开)</b></summary>
 
-<details>
-<summary><b>🚀 GitHub 今日热门项目 (点击展开)</b></summary>
-
-### [microsoft /markitdown](https://github.com/microsoft/markitdown)
-- **今日趋势**: 1,984 stars today (Python)
-- **项目简介**: 微软推出的 Python 工具，旨在将各类文件及办公文档高效转换为 Markdown 格式。
-- **核心价值**: 解决了大模型应用开发中非结构化数据预处理的痛点。在 RAG（检索增强生成）和 LLM 场景中，将 PDF、Word、图片等异构数据统一转换为模型友好的 Markdown 格式是关键步骤。该工具集成了 OCR、语音识别等多种解析能力，显著降低了开发者构建 AI 知识库和数据清洗流水线的复杂度。**（判定：与 AI/大模型强相关）**
+### 1. Cosmos 3: Omnimodal World Models for Physical AI (Cosmos 3：面向物理 AI 的全模态世界模型)
+- **社区热度**: `👍 13 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.02800)
+- **研究任务**: 物理世界仿真与机器人策略学习
+- **核心亮点**: 提出统一的全模态架构，直接建模物理世界中的多感官交互。
+- **深度解析**: 在 Cosmos 系列基础上，扩展了模型对文本、视频、传感器数据及动作指令的联合处理能力。不再单一依赖视频预测，而是将物理状态作为隐变量，支持机器人策略在仿真环境中直接训练，减少 sim-to-real 差距。
+- **领域归类**: [World Model], [Robotics], [Multi-modal]
 ---
-</details></script>
+### 2. ThoughtFold: Folding Reasoning Chains via Introspective Preference Learning (ThoughtFold：通过内省偏好学习折叠推理链)
+- **社区热度**: `👍 10 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.03503)
+- **研究任务**: 长思维链压缩与优化
+- **核心亮点**: 让模型自己评估推理步骤的重要性，压缩冗长思维链而不损失准确率。
+- **深度解析**: 引入内省机制，模型对生成的 CoT 步骤进行打分偏好训练。保留关键推理节点，合并或删除冗余步骤，显著降低推理 token 消耗，同时维持复杂任务的求解能力。
+- **领域归类**: [Reasoning], [RLHF], [Efficiency]
+---
+### 3. Where Do Deep-Research Agents Go Wrong? Span-Level Error Localization in Agent Trajectories (深度研究 Agent 错在哪？Agent 轨迹中的 Span 级错误定位)
+- **社区热度**: `👍 10 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.02060)
+- **研究任务**: Agent 错误分析与调试
+- **核心亮点**: 将 Agent 长任务失败原因定位到具体的文本片段级别，而非整个轨迹。
+- **深度解析**: 针对深度研究类 Agent 长流程易出错的问题，提出细粒度评估方法。通过比对预期状态与实际执行日志，自动标记出导致偏离的关键步骤片段，便于针对性优化策略模型。
+- **领域归类**: [Agent], [Evaluation], [Debugging]
+---
+### 4. Echo-Infinity: Learning Evolving Memory for Real-Time Infinite Video Generation (Echo-Infinity：学习演化记忆以实现实时无限视频生成)
+- **社区热度**: `👍 9 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.04527)
+- **研究任务**: 长视频生成与一致性保持
+- **核心亮点**: 利用动态演化的记忆机制，解决长视频生成中的内容漂移问题。
+- **深度解析**: 传统视频生成模型在长序列中容易丢失上下文。该方法设计了一个随时间更新的状态记忆模块，每一帧生成都基于前一帧的记忆状态进行演化，确保无限生成下的主体和场景一致性。
+- **领域归类**: [Video Generation], [Memory Mechanism]
+---
+### 5. M^3Eval: Multi-Modal Memory Evaluation through Cognitively-Grounded Video Tasks (M^3Eval：通过认知 grounded 视频任务进行多模态记忆评估)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.05008)
+- **研究任务**: 多模态模型记忆能力评测
+- **核心亮点**: 基于一套符合人类认知规律的视频任务，专门测试模型的多模态记忆能力。
+- **深度解析**: 现有评测多关注感知忽略记忆。该工作构建了新基准，要求模型观看视频后回答涉及长时间跨度、多物体关系的问题，量化模型在不同模态下的信息存储与检索效果。
+- **领域归类**: [Evaluation], [Multi-modal], [Memory]
+---
+### 6. MapAgent: An Industrial-Grade Agentic Framework for City-scale Lane-level Map Generation (MapAgent：面向城市尺度车道级地图生成的工业级 Agent 框架)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.04513)
+- **研究任务**: 自动化地图构建
+- **核心亮点**: 利用 Agent 框架自动化生成满足工业精度的城市级车道地图。
+- **深度解析**: 针对高精地图制作成本高问题，设计多 Agent 协作流程。分别处理卫星图识别、道路拓扑构建和车道线细化，通过校验 Agent 确保输出符合导航工业标准，大幅降低人工干预。
+- **领域归类**: [Agent], [Autonomous Driving], [Map Generation]
+---
+### 7. Eliciting Complex Spatial Reasoning in MLLMs through Wide-Baseline Matching (通过宽基线匹配激发 MLLM 中的复杂空间推理能力)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.03577)
+- **研究任务**: 多模态模型空间推理增强
+- **核心亮点**: 通过训练模型匹配大视角差异的图像，提升其 3D 空间理解能力。
+- **深度解析**: MLLM 通常缺乏几何常识。该方法引入宽基线图像匹配任务作为辅助训练，强迫模型理解同一场景在不同视角下的对应关系，从而在不增加额外 3D 标注的情况下提升空间推理性能。
+- **领域归类**: [MLLM], [Spatial Reasoning], [Computer Vision]
+---
+### 8. MMG2Skill: Can Agents Distill In-the-Wild Guides into Self-Evolving Skills? (MMG2Skill：Agent 能否将野外指南蒸馏为自进化技能？)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.01993)
+- **研究任务**: 技能学习与自我进化
+- **核心亮点**: Agent 直接从互联网非结构化教程中学习技能，并自我迭代优化。
+- **深度解析**: 探索 Agent 利用现有网络教程（图文、视频）的能力。模型提取教程中的操作步骤转化为可执行代码或策略，并通过自我试错反馈修正技能库，实现无需人工标注的技能积累。
+- **领域归类**: [Agent], [Skill Learning], [Self-Improvement]
+---
+### 9. Self-Distilled Policy Gradient (自蒸馏策略梯度)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.04036)
+- **研究任务**: 强化学习策略优化
+- **核心亮点**: 在策略梯度更新中引入自蒸馏机制，稳定训练过程。
+- **深度解析**: 针对传统策略梯度算法方差大、训练不稳的问题，在每一步更新时，让当前策略向上一轮策略的平滑版本学习。这种方法减少了策略突变，提高了采样效率和最终收敛性能。
+- **领域归类**: [Reinforcement Learning], [Optimization]
+---
+### 10. WebRISE: Requirement-Induced State Evaluation for MLLM-Generated Web Artifacts (WebRISE：面向 MLLM 生成 Web 工件的需求诱导状态评估)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.03220)
+- **研究任务**: 代码生成与功能评估
+- **核心亮点**: 不仅评估生成网页的外观，更检查其是否满足功能需求状态。
+- **深度解析**: 针对前端代码生成任务，提出基于状态的评估方法。通过自动化测试脚本验证生成的网页是否响应了特定用户需求（如点击按钮后的状态变化），比单纯的代码相似度匹配更可靠。
+- **领域归类**: [Code Generation], [Evaluation], [Web Development]
+---
+
+### 11. AUDITFLOW: Executable Symbolic Environments for Structured Financial Reporting Verification (AUDITFLOW：用于结构化财务报告验证的可执行符号环境)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.03031)
+- **研究任务**: 财务报告的自动化逻辑验证与错误检测。
+- **核心亮点**: 构建可执行符号环境，让模型通过运行代码逻辑而非纯文本生成来验证财务数据。
+- **深度解析**: 传统方法依赖 LLM 直接判断文本一致性，容易 hallucination。这篇论文把财务规则转化成可执行的符号环境，模型生成的验证步骤能在环境里跑通才算数，强制模型遵循会计逻辑，提高了验证的可靠性。
+- **领域归类**: [NLP, 金融 AI, 形式化验证]
+---
+
+### 12. MemTrain: Self-Supervised Context Memory Training (MemTrain：自监督上下文记忆训练)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.03197)
+- **研究任务**: 优化大模型长上下文中的关键信息记忆与检索能力。
+- **核心亮点**: 提出一种自监督训练方案，无需人工标注即可增强模型对上下文记忆的利用率。
+- **深度解析**: 针对长上下文窗口中信息利用率低的问题，设计了一种自监督任务，让模型在训练阶段学习哪些上下文片段对当前预测最重要，从而隐式地优化了注意力机制对记忆内容的分配，减少无关信息干扰。
+- **领域归类**: [LLM 架构, 记忆机制, 自监督学习]
+---
+
+### 13. Access Sets Matter: Budgeting Expert Reads for Scalable Weight-Space Model Merging (Access Sets Matter：为可扩展权重空间模型合并预算化专家读取)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.29489)
+- **研究任务**: 降低大规模模型合并过程中的计算与读取开销。
+- **核心亮点**: 通过预算化专家网络读取次数，实现高效且可扩展的模型权重合并。
+- **深度解析**: 模型合并通常需要访问所有参数，成本高昂。这篇工作分析了哪些权重子集对合并效果贡献最大，提出只读取关键“专家”权重的策略，在保证合并后性能的同时，显著降低了 I/O 和计算预算。
+- **领域归类**: [模型合并, 效率优化, MoE]
+---
+
+### 14. Streaming Communication in Multi-Agent Reasoning (多 Agent 推理中的流式通信)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.05158)
+- **研究任务**: 提升多智能体协作推理的实时性与效率。
+- **核心亮点**: 将传统的回合制通信改为流式通信，加速多 Agent 推理收敛。
+- **深度解析**: 现有工作多为等待一个 Agent 说完另一个再说。这篇论文允许 Agent 在生成过程中实时交换中间状态（流式），减少了等待延迟，使多 Agent 系统能更快对齐思路，适合复杂推理任务。
+- **领域归类**: [多 Agent 系统, 推理优化, 通信协议]
+---
+
+### 15. GRAIL: Generating Humanoid Loco-Manipulation from 3D Assets and Video Priors (GRAIL：基于 3D 资产与视频先验生成人形机器人 locomotion-manipulation 技能)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.05160)
+- **研究任务**: 人形机器人的移动与操作技能生成。
+- **核心亮点**: 结合 3D 资产数据和视频先验知识，自动生成机器人控制策略。
+- **深度解析**: 解决机器人数据稀缺问题，利用现有的 3D 模型资产和互联网视频作为先验，通过模仿学习或强化学习生成既能动又能操作的控制策略，降低了真机训练成本。
+- **领域归类**: [机器人学, 具身智能, 运动控制]
+---
+
+### 16. Qwen-Image-Flash: Beyond Objective Design (Qwen-Image-Flash：超越目标设计)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.03746)
+- **研究任务**: 加速图像生成模型的推理过程。
+- **核心亮点**: 通过优化设计目标之外的结构，实现 Qwen 图像模型的快速推理版本。
+- **深度解析**: 针对 Qwen-Image 模型，不仅优化损失函数，还调整了底层架构设计（如注意力块或采样步骤），旨在不牺牲生成质量的前提下大幅减少推理步数或显存占用，类似 Flash Attention 的思路应用于生成模型。
+- **领域归类**: [计算机视觉, 图像生成, 模型加速]
+---
+
+### 17. BenchEvolver: Frontier Task Synthesis via Solution-Centric Evolution (BenchEvolver：通过以解决方案为中心的进化合成前沿任务)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.01286)
+- **研究任务**: 自动化生成高难度的基准测试任务。
+- **核心亮点**: 以现有解决方案为中心进行进化，自动合成能区分模型能力边界的新任务。
+- **深度解析**: 传统基准容易饱和。该方法先让模型解题，然后根据解法反向进化出更难的任务变体，确保新任务能真正测试出模型的能力上限，用于持续评估前沿模型。
+- **领域归类**: [基准测试, 自动评估, 任务合成]
+---
+
+### 18. STRIDE: Training Data Attribution via Sparse Recovery from Subset Perturbations (STRIDE：通过子集扰动的稀疏恢复进行训练数据归属)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.05165)
+- **研究任务**: 追溯模型输出具体源于哪些训练数据。
+- **核心亮点**: 利用子集扰动后的稀疏恢复技术，高效定位影响模型输出的训练样本。
+- **深度解析**: 数据归属通常计算量大。这篇论文通过扰动训练数据子集并观察输出变化，利用稀疏恢复算法反推哪些样本对特定预测贡献最大，比传统影响函数方法更高效。
+- **领域归类**: [数据安全, 可解释性, 数据归属]
+---
+
+### 19. AutoLab: Can Frontier Models Solve Long-Horizon Auto Research and Engineering Tasks? (AutoLab：前沿模型能否解决长周期自动研究与工程任务？)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.05080)
+- **研究任务**: 评估大模型在长周期科研与工程任务中的自主能力。
+- **核心亮点**: 构建长 horizon 任务基准，测试模型自主完成研究闭环的能力。
+- **深度解析**: 不仅测试单步代码或写作，而是让模型自主完成从文献调研、实验设计到结果分析的全流程。结果显示当前前沿模型在长周期任务规划上仍有明显短板，需进一步改进。
+- **领域归类**: [AI Agent, 自动化科研, 能力评估]
+---
+
+### 20. Audio Interaction Model (音频交互模型)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.05121)
+- **研究任务**: 实现基于音频的多模态交互理解与生成。
+- **核心亮点**: 提出专门针对音频交互场景的建模方法，增强语音对话的自然性。
+- **深度解析**: 针对纯文本交互的局限，该模型强化了音频信号的处理能力，支持语气、停顿等 prosody 信息的理解与生成，旨在实现更接近真人的语音交互体验。
+- **领域归类**: [音频处理, 多模态交互, 语音 AI]
+---
+
+### 21. BraveGuard: From Open-World Threats to Safer Computer-Use Agents (BraveGuard：从开放世界威胁到更安全的电脑使用智能体)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.01166)
+- **研究任务**: 智能体安全 / 计算机操作
+- **核心亮点**: 为电脑操作智能体提供针对开放世界威胁的安全防护。
+- **深度解析**: 针对智能体在开放环境操作电脑时的不可控风险，设计了专门的防护机制。通过监控智能体与操作系统的交互行为，识别并阻断潜在恶意指令，提升智能体在实际任务中的安全性。
+- **领域归类**: [Agent Safety, Computer Use]
+---
+### 22. AAD-1: Asymmetric Adversarial Distillation for One-Step Autoregressive Video Generation (AAD-1：用于一步式自回归视频生成的不对称对抗蒸馏)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.03972)
+- **研究任务**: 视频生成 / 模型蒸馏
+- **核心亮点**: 利用不对称对抗蒸馏技术，实现自回归视频模型的一步生成。
+- **深度解析**: 改进了现有蒸馏方法，采用非对称的对抗损失函数。将原本需要多步推理的自回归视频生成过程压缩为单步，在保证视频质量的同时大幅降低推理耗时。
+- **领域归类**: [Video Generation, Distillation]
+---
+### 23. MeshWeaver: Sparse-Voxel-Guided Surface Weaving for Autoregressive Mesh Generation (MeshWeaver：稀疏体素引导表面编织的自回归网格生成)
+- **社区热度**: `👍 0 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.04688)
+- **研究任务**: 3D 网格生成
+- **核心亮点**: 通过稀疏体素引导表面编织，优化自回归网格生成的结构一致性。
+- **深度解析**: 引入稀疏体素作为中间引导表示。在自回归生成网格表面前先确定体素结构，解决直接生成网格导致的拓扑错误和几何不连续问题，提升模型生成质量。
+- **领域归类**: [3D Generation, Computer Graphics]
+---
+### 24. Score-Control for Hallucination Reduction in Diffusion Models (Score-Control：用于减少扩散模型幻觉的分数控制)
+- **社区热度**: `👍 0 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.00377)
+- **研究任务**: 扩散模型 / 幻觉抑制
+- **核心亮点**: 通过控制分数函数，有效降低扩散模型生成内容中的幻觉现象。
+- **深度解析**: 在扩散采样过程中干预分数估计。通过约束 score function 的更新方向，抑制模型生成不符合语义或物理规律的虚假内容，改善生成结果的可靠性。
+- **领域归类**: [Diffusion Models, Image Quality]
+---
+</details>
+
+> 今日无新增趋势项目（已在近期总结过）。</script>
         <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
     </body>
     </html>
