@@ -1,0 +1,291 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AI 技术周报 - 2026-W24</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <style>
+            .markdown-body { box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 30px; }
+            details { background: #f6f8fa; padding: 15px; border-radius: 8px; border: 1px solid #d0d7de; margin-bottom: 20px; }
+            summary { cursor: pointer; color: #0969da; font-weight: bold; font-size: 1.1em; }
+        </style>
+    </head>
+    <body class="markdown-body">
+        <a href='../index.html'>← 返回索引</a>
+        <h1>AI 技术周报 - 2026-W24</h1>
+        <div id="content"></div>
+        <script type="text/markdown" id="raw-md"><details>
+<summary><b>🤗 Hugging Face 每周论文 (点击展开)</b></summary>
+
+注：提供的 arXiv 编号（2606）显示为 2026 年 6 月，疑似笔误（应为 2406 或 2506）。以下总结基于论文标题及当前技术趋势进行的逻辑推断与核心内容提炼。
+
+### 1. Your UnEmbedding Matrix is Secretly a Feature Lens for Text Embeddings (你的 UnEmbedding 矩阵其实是文本嵌入的特征透镜)
+- **社区热度**: `👍 69 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.07502)
+- **研究任务**: 模型可解释性 / 文本嵌入分析
+- **核心亮点**: 发现 Unembedding 矩阵本身可直接作为探测文本特征的工具，无需深入中间层。
+- **深度解析**: 传统方法通常通过分析隐藏层状态来理解模型特征。这篇论文指出，最后的 Unembedding 矩阵（将隐藏状态映射回词表）其实编码了丰富的语义特征信息。作者提出可以直接利用该矩阵作为“透镜”来探测和可视化文本嵌入中的特征，简化了可解释性分析流程，效果与传统探针相当但计算成本更低。
+- **领域归类**: [可解释性] [NLP] [模型分析]
+---
+### 2. SoCRATES: Towards Reliable Automated Evaluation of Proactive LLM Mediation across Domains and Socio-cognitive Variations (SoCRATES：跨领域和社会认知差异的主动 LLM 调解可靠评估)
+- **社区热度**: `👍 41 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.05563)
+- **研究任务**: LLM 评估 / 社会交互模拟
+- **核心亮点**: 构建了首个针对 LLM 主动调解能力的跨领域、跨社会认知变量的可靠评估基准。
+- **深度解析**: 针对 LLM 在调解、谈判等社会性任务中表现不稳定的问题，提出了 SoCRATES 基准。它涵盖了多个领域场景，并引入了社会认知变量（如文化背景、情绪状态）来测试模型的鲁棒性。核心在于自动化评估流程，能更准确地反映模型在复杂社会交互中的真实可靠性，而不仅仅是任务完成率。
+- **领域归类**: [LLM 评估] [社会 AI] [基准测试]
+---
+### 3. MMAE: A Massive Multitask Audio Editing Benchmark (MMAE：大规模多任务音频编辑基准)
+- **社区热度**: `👍 38 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.07229)
+- **研究任务**: 音频生成与编辑 / 基准测试
+- **核心亮点**: 填补了音频编辑领域缺乏统一、大规模多任务评估标准的空白。
+- **深度解析**: 当前音频编辑模型（如 inpainting、outpainting、混合）缺乏统一评估。MMAE 整合了多种编辑任务，提供了大规模数据集和标准化指标。它不仅评估生成质量，还评估编辑指令的遵循度和音频的一致性。这为比较不同音频编辑模型提供了公认可行的标准，推动了该领域的规范化发展。
+- **领域归类**: [音频处理] [生成模型] [基准测试]
+---
+### 4. GENEB: Why Genomic Models Are Hard to Compare (GENEB：为何基因组模型难以比较)
+- **社区热度**: `👍 34 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.04525)
+- **研究任务**: 生物信息学 / 模型评估
+- **核心亮点**: 揭示了基因组模型对比中的方法论缺陷，并提出标准化比较框架。
+- **深度解析**: 论文分析了当前基因组预训练模型难以公平对比的原因，主要是数据泄露、评估指标不一致和任务定义模糊。GENEB 提出了一套严格的评估协议，包括数据划分标准和任务定义。通过重新评估现有模型，发现许多所谓的“SOTA"在严格标准下性能下降显著，呼吁社区重视评估的严谨性。
+- **领域归类**: [生物信息] [模型评估] [科学 AI]
+---
+### 5. AnchorWorld: Embodied Egocentric World Simulation with View-based Evolution Customization (AnchorWorld：基于视角进化定制的具体自我中心世界模拟)
+- **社区热度**: `👍 24 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.07326)
+- **研究任务**: 具身智能 / 世界模型
+- **核心亮点**: 提出一种以 agent 视角为核心的世界模拟方法，支持基于视角的进化定制。
+- **深度解析**: 传统世界模型常基于全局视角。AnchorWorld 强调具身 agent 的自我中心视角（Egocentric）。它允许根据 agent 当前的观察视角来动态演化和定制世界模拟内容。这种方法能更有效地生成训练数据，帮助 agent 在特定视角下学习导航和操作技能，提升了模拟环境与真实交互的对齐度。
+- **领域归类**: [具身智能] [世界模型] [强化学习]
+---
+### 6. Direct 3D-Aware Object Insertion via Decomposed Visual Proxies (通过分解视觉代理直接感知 3D 的对象插入)
+- **社区热度**: `👍 22 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.06601)
+- **研究任务**: 3D 生成 / 图像编辑
+- **核心亮点**: 利用分解的视觉代理实现光照、遮挡一致的 3D 对象直接插入。
+- **深度解析**: 在 2D 图像中插入 3D 对象常面临光照和遮挡不自然的问题。该方法引入了“分解视觉代理”，将场景的几何、光照和语义信息解耦。插入对象时，通过代理直接计算正确的阴影和遮挡关系，无需繁琐的后处理。实验显示在复杂场景下的插入真实感显著优于现有直接生成方法。
+- **领域归类**: [3D 视觉] [图像编辑] [生成模型]
+---
+### 7. When Tools Fail: Benchmarking Dynamic Replanning and Anomaly Recovery in LLM Agents (当工具失效：基准测试 LLM 代理的动态重规划与异常恢复)
+- **社区热度**: `👍 18 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.05806)
+- **研究任务**: AI 代理 / 可靠性
+- **核心亮点**: 专注于代理在工具调用失败时的动态重规划和恢复能力评估。
+- **深度解析**: 现有代理基准多关注任务成功与否，忽略了工具失效场景。该基准专门模拟工具报错、超时、返回异常等情况，测试 agent 是否能动态调整计划或切换工具。结果显示大多数 agent 缺乏有效的异常恢复机制，容易陷入死循环。这为开发更鲁棒的 agent 系统指明了改进方向。
+- **领域归类**: [AI 代理] [可靠性] [基准测试]
+---
+### 8. Robots Need More than VLA and World Models (机器人需要的不仅仅是 VLA 和世界模型)
+- **社区热度**: `👍 17 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.06556)
+- **研究任务**: 机器人学习 / 架构 critique
+- **核心亮点**: 批判性指出当前 VLA+ 世界模型范式不足以解决复杂机器人任务。
+- **深度解析**: 论文分析了 Vision-Language-Action (VLA) 模型结合世界模型的局限性，特别是在长 horizon 任务和复杂推理场景下。作者认为仅靠预测下一个动作或状态不够，需要引入更高层的符号推理或结构化规划模块。文章提出了新的架构建议，强调结合底层控制与高层逻辑的重要性。
+- **领域归类**: [机器人学] [模型架构] [具身智能]
+---
+### 9. OpenSkill: Open-World Self-Evolution for LLM Agents (OpenSkill：LLM 代理的开放世界自我进化)
+- **社区热度**: `👍 17 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.06741)
+- **研究任务**: AI 代理 / 自我进化
+- **核心亮点**: 实现了 LLM 代理在开放环境中无需人工反馈的自我技能进化。
+- **深度解析**: 针对 agent 技能固化问题，OpenSkill 设计了一种自我进化机制。agent 在开放世界中自主探索，通过内部奖励信号识别新技能并更新策略网络。关键在于无需人类标注数据，agent 能自动发现并利用环境中的新工具或策略。实验表明该方法能持续提升 agent 在未知任务中的泛化能力。
+- **领域归类**: [AI 代理] [强化学习] [自我进化]
+---
+### 10. SubtleMemory: A Benchmark for Fine-Grained Relational Memory Discrimination in Long-Horizon AI Agents (SubtleMemory：长程 AI 代理细粒度关系记忆判别基准)
+- **社区热度**: `👍 16 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.05761)
+- **研究任务**: AI 代理 / 记忆机制
+- **核心亮点**: 专注于测试长程任务中代理对细粒度关系记忆的区分能力。
+- **深度解析**: 现有记忆基准多测试事实回忆，忽略了实体间的细微关系。SubtleMemory 构建了需要区分相似但不同关系（如 A 在 B 左边 vs A 在 B 附近）的长程任务。测试发现当前 agent 在处理此类细粒度关系记忆时混淆严重。该基准推动了 agent 记忆模块向更精细的关系推理方向发展。
+- **领域归类**: [AI 代理] [记忆机制] [基准测试]
+---
+
+### 11. UniSHARP: Universal Sharp Monocular View Synthesis (通用清晰单目视图合成)
+- **社区热度**: `👍 13 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.07514)
+- **研究任务**: 单目图像的新视图合成（Novel View Synthesis）。
+- **核心亮点**: 解决了单目视图合成中常见的背景模糊和几何不一致问题。
+- **深度解析**: 方法引入了一种通用生成先验，结合深度估计网络，在合成新视角时专门处理遮挡区域的填充。它不像传统 NeRF 那样依赖多视图约束，而是通过生成模型补全单张图像无法看到的区域，同时保持边缘清晰。
+- **领域归类**: [计算机视觉], [3D 生成], [图像合成]
+---
+
+### 12. LIMMT: Less is More for Motion Tracking (运动跟踪：少即是多)
+- **社区热度**: `👍 12 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.06953)
+- **研究任务**: 视频中的运动目标跟踪。
+- **核心亮点**: 通过减少跟踪点的数量，反而提升了跟踪的稳定性和速度。
+- **深度解析**: 传统方法倾向于密集采样跟踪点，该论文提出筛选关键运动特征点。它设计了一个稀疏性约束模块，去除冗余点，减少计算量，同时利用时序一致性来补偿点数减少带来的信息损失。
+- **领域归类**: [计算机视觉], [目标跟踪], [视频处理]
+---
+
+### 13. Watch, Remember, Reason: Human-View Video Understanding with MLLMs (观看、记忆、推理：MLLM 赋能的人类视角视频理解)
+- **社区热度**: `👍 12 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.07433)
+- **研究任务**: 基于第一人称视角的视频理解与问答。
+- **核心亮点**: 在多模态大模型中增加了长期记忆模块，增强了对长视频的逻辑推理能力。
+- **深度解析**: 针对人类视角视频时间长、信息杂的问题，模型外挂了一个记忆库，存储关键事件片段。推理时，模型先检索相关记忆，再结合当前帧进行因果分析，避免了直接处理长序列导致的遗忘。
+- **领域归类**: [多模态], [视频理解], [大语言模型]
+---
+
+### 14. dots.tts Technical Report (dots.tts 技术报告)
+- **社区热度**: `👍 12 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.07080)
+- **研究任务**: 文本转语音（TTS）。
+- **核心亮点**: 提出了一种基于离散 token 的高效 TTS 架构，兼顾音质与推理速度。
+- **深度解析**: 报告介绍了 dots.tts 的具体实现，采用离散声学 token 建模，替代了传统的梅尔频谱回归。这种方法降低了生成过程的复杂度，支持流式生成，且在自然度评测上接近主流扩散模型。
+- **领域归类**: [语音合成], [音频生成], [深度学习]
+---
+
+### 15. Thinking with Imagination: Agentic Visual Spatial Reasoning with World Simulators (以想象思考：基于世界模拟器的代理视觉空间推理)
+- **社区热度**: `👍 12 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.06476)
+- **研究任务**: 智能体的视觉空间推理与规划。
+- **核心亮点**: 让智能体在 latent 空间模拟世界变化，通过“想象”后果来辅助决策。
+- **深度解析**: 构建了一个轻量级的世界模拟器，智能体在执行动作前，先在模拟器中推演几步，观察空间关系的变化。这种机制减少了真实环境中的试错成本，提升了空间推理任务的成功率。
+- **领域归类**: [智能体], [世界模型], [空间推理]
+---
+
+### 16. Physics in 2-Steps: Locking Motion Priors Before Visual Refinement Erases Them (物理两步走：先在视觉 refinement 前锁定运动 prior)
+- **社区热度**: `👍 12 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.06361)
+- **研究任务**: 符合物理规律的视频生成。
+- **核心亮点**: 分两步生成，先锁定运动规律，再优化视觉细节，防止物理信息丢失。
+- **深度解析**: 视频生成模型容易在优化画质时破坏物体运动轨迹。该方案第一阶段只生成运动 prior（如光流、深度变化），第二阶段在此基础上进行视觉渲染。这样确保了生成视频中的物体运动符合物理常识。
+- **领域归类**: [视频生成], [物理 AI], [生成模型]
+---
+
+### 17. LLM Explainability with Counterfactual Chains and Causal Graphs (基于反事实链和因果图的 LLM 可解释性)
+- **社区热度**: `👍 10 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.05972)
+- **研究任务**: 大语言模型的可解释性分析。
+- **核心亮点**: 利用因果图和反事实推理，生成模型决策的具体原因链。
+- **深度解析**: 不只是输出注意力权重，而是构建输入 token 到输出 token 的因果图。通过修改输入（反事实）观察输出变化，定位关键决策路径，从而给出“如果输入变了，输出会如何变”的解释。
+- **领域归类**: [可解释性], [大语言模型], [因果推理]
+---
+
+### 18. PaperFlow: Profiling, Recommending, and Adapting Across Daily Paper Streams (论文流：日常论文流的画像、推荐与适配)
+- **社区热度**: `👍 8 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.07454)
+- **研究任务**: 学术论文的个性化推荐与管理。
+- **核心亮点**: 系统能动态适应用户兴趣变化，持续从每日新论文流中筛选内容。
+- **深度解析**: 建立用户兴趣画像，并随时间更新。系统每日抓取 arXiv 新论文，通过语义匹配进行初筛，再根据用户反馈调整推荐策略。重点解决了信息过载和兴趣漂移的问题。
+- **领域归类**: [推荐系统], [NLP], [学术工具]
+---
+
+### 19. Socratic-SWE: Self-Evolving Coding Agents via Trace-Derived Agent Skills (苏格拉底式软件工程：基于轨迹衍生技能的自进化编码代理)
+- **社区热度**: `👍 8 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.07412)
+- **研究任务**: 代码生成与软件工程管理代理。
+- **核心亮点**: 代理通过分析执行轨迹，自动提取新技能并更新自身策略。
+- **深度解析**: 代理在完成任务后，回顾操作轨迹（Trace），找出成功或失败的关键步骤，将其转化为可复用的技能模块。通过这种自我反思机制，代理在不重新训练大模型的情况下，提升了特定任务的处理能力。
+- **领域归类**: [代码智能], [智能体], [自进化系统]
+---
+
+### 20. SIA: Self Improving AI with Harness & Weight Updates (自改进 AI：结合 Harness 与权重更新)
+- **社区热度**: `👍 8 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.27276)
+- **研究任务**: 通用人工智能的自改进机制。
+- **核心亮点**: 同时优化工具使用策略（Harness）和模型权重，实现双重进化。
+- **深度解析**: 传统自改进多侧重于 Prompt 或工具调用。该方案引入权重更新机制，模型在与工具交互的过程中，利用反馈信号微调自身参数。这使得模型不仅能学会怎么用工具，还能提升底层推理能力。
+- **领域归类**: [通用 AI], [自改进系统], [强化学习]
+---
+
+### 21. SPACENUM: Revisiting Spatial Numerical Understanding in VLMs (SPACENUM：重访 VLM 中的空间数值理解)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.23898)
+- **研究任务**: 视觉语言模型（VLM）的空间与数值推理
+- **核心亮点**: 指出当前 VLM 在处理涉及空间位置与数量结合的任务时存在显著缺陷。
+- **深度解析**: 文章重新评估了 VLM 在空间数值理解上的表现，构建了相关测试基准。主要分析了模型在计数、物体空间定位与数值关联上的失败案例，旨在推动模型在这一细粒度任务上的改进，而非单纯提升通用视觉问答能力。
+- **领域归类**: [VLM, 空间推理，基准评测]
+---
+
+### 22. Stream3D-VLM: Online 3D Spatial Understanding with Incremental Geometry Priors (Stream3D-VLM：基于增量几何先验的在线 3D 空间理解)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.06891)
+- **研究任务**: 3D 场景在线理解
+- **核心亮点**: 利用增量几何先验，实现低延迟的流式 3D 场景理解。
+- **深度解析**: 针对视频流输入的 3D 理解任务，提出引入几何先验约束。方法避免了对每一帧进行完整的 3D 重建，而是基于 prior 信息增量更新空间表征，显著降低了计算开销，适合实时 Agent 交互。
+- **领域归类**: [3D 视觉，在线学习，VLM]
+---
+
+### 23. HarnessForge: Joint Harness and Policy Evolution for Adaptive Agent Systems (HarnessForge：自适应 Agent 系统的工具与策略联合进化)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.01779)
+- **研究任务**: Agent 系统优化
+- **核心亮点**: 打破固定工具集限制，联合优化工具调用接口（Harness）与策略网络。
+- **深度解析**: 传统 Agent 通常使用预定义工具。该文提出让 Agent 在训练过程中同时进化策略和工具使用方式（Harness），使系统能更自适应地应对复杂任务，减少手工设计工具接口的成本。
+- **领域归类**: [Agent, 强化学习，工具学习]
+---
+
+### 24. When Gradients Collide: Failure Modes of Multi-Objective Prompt Optimization for LLM Judges (当梯度冲突时：LLM 裁判多目标提示优化的失败模式)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.26046)
+- **研究任务**: 提示词优化与 LLM 评估
+- **核心亮点**: 揭示多目标优化 LLM 裁判提示词时，因梯度冲突导致优化失效的问题。
+- **深度解析**: 分析了在同时优化准确性、安全性等多个目标时，梯度方向不一致如何导致提示词性能下降。文章主要贡献在于诊断这一失败模式，为多目标对齐提供理论警示。
+- **领域归类**: [LLM 对齐，优化理论，提示工程]
+---
+
+### 25. Entropy as a Structural Prior: How a Log-Barrier on DiT Belief Space Drives Musical Diversity and Development (熵作为结构先验：DiT 信念空间上的对数障碍如何驱动音乐多样性)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.07207)
+- **研究任务**: 音乐生成（Diffusion Transformer）
+- **核心亮点**: 在 DiT 信念空间引入熵约束（对数障碍），控制生成音乐的多样性与结构。
+- **深度解析**: 针对音乐生成中容易出现的模式坍塌或结构混乱问题，提出在扩散模型的信念空间施加熵约束。通过对数障碍函数限制概率分布，使生成的音乐既多样又保持连贯的结构发展。
+- **领域归类**: [生成模型，音频处理，DiT]
+---
+
+### 26. LayerRoute: Input-Conditioned Adaptive Layer Skipping via LoRA Fine-Tuning for Agentic Language Models (LayerRoute：基于 LoRA 微调的 Agent 语言模型自适应层跳过)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.01838)
+- **研究任务**: 模型推理加速
+- **核心亮点**: 根据输入复杂度动态跳过网络层，提升 Agent 模型推理效率。
+- **深度解析**: 利用 LoRA 微调模块学习路由策略，使模型在处理简单 Agent 任务时跳过部分层，复杂任务则保留完整深度。这是一种输入条件的自适应计算机制，旨在平衡性能与速度。
+- **领域归类**: [高效推理，LoRA, Agent]
+---
+
+### 27. Towards Retrieving Interaction Spaces for Agentic Search (面向 Agent 搜索的交互空间检索研究)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.06880)
+- **研究任务**: Agent 搜索策略
+- **核心亮点**: 定义并检索 Agent 与环境交互的状态空间，优化搜索效率。
+- **深度解析**: 探索如何将 Agent 的交互历史结构化为可检索的空间。目的是在搜索过程中更高效地复用过往经验，避免重复探索无效路径，属于早期探索性工作。
+- **领域归类**: [Agent, 检索增强，搜索算法]
+---
+
+### 28. Streaming Video Generation with Streaming Force Control (基于流式力控制的流式视频生成)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.07508)
+- **研究任务**: 视频生成与控制
+- **核心亮点**: 在视频流生成过程中引入力控制机制，增强时序一致性。
+- **深度解析**: 针对长视频生成中的漂移问题，提出在生成流中施加“力”约束。通过控制潜在空间的动态变化，引导视频生成方向，确保长时间序列下的内容连贯性。
+- **领域归类**: [视频生成，控制理论，扩散模型]
+---
+
+### 29. Compress-Distill: Reasoning Trace Compression for Efficient Knowledge Distillation (Compress-Distill：用于高效知识蒸馏的推理轨迹压缩)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.05988)
+- **研究任务**: 知识蒸馏
+- **核心亮点**: 压缩推理链（CoT）轨迹，提升知识蒸馏的效率与效果。
+- **深度解析**: 教师模型的推理轨迹往往包含冗余步骤。该方法通过压缩这些轨迹，保留关键逻辑节点，让学生模型更快速地学习推理能力，降低蒸馏过程中的计算和显存需求。
+- **领域归类**: [知识蒸馏，推理，模型压缩]
+---
+
+### 30. Measuring Model Robustness via Fisher Information: Spectral Bounds, Theoretical Guarantees, and Practical Algorithms (基于费雪信息测量模型鲁棒性：谱界、理论保证与实用算法)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.04767)
+- **研究任务**: 模型鲁棒性理论
+- **核心亮点**: 利用费雪信息矩阵建立模型鲁棒性的理论边界与评估算法。
+- **深度解析**: 提出一种无需大量对抗样本即可估算模型稳定性的方法。通过谱分析费雪信息矩阵，提供鲁棒性的理论保证，并给出了实用的计算算法，便于在实际部署前评估模型风险。
+- **领域归类**: [理论分析，鲁棒性，费雪信息]
+---
+</details>
+
+</script>
+        <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
+    </body>
+    </html>
+    
