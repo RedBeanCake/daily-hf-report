@@ -1,0 +1,336 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>前沿科研情报 - 2026-06-10</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <style>
+            .markdown-body { box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 30px; }
+            details { background: #f6f8fa; padding: 15px; border-radius: 8px; border: 1px solid #d0d7de; margin-bottom: 20px; }
+            summary { cursor: pointer; color: #0969da; font-weight: bold; font-size: 1.1em; }
+        </style>
+    </head>
+    <body class="markdown-body">
+        <a href='../index.html'>← 返回索引</a>
+        <h1>前沿科研情报 - 2026-06-10</h1>
+        <div id="content"></div>
+        <script type="text/markdown" id="raw-md"><details>
+<summary><b>🤗 Hugging Face 今日论文 (点击展开)</b></summary>
+
+### 1. SWE-Explore: Benchmarking How Coding Agents Explore Repositories (SWE-Explore：基准测试编码 Agent 如何探索代码仓库)
+- **社区热度**: `👍 94 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.07297)
+- **研究任务**: 评估代码 Agent 在大型代码仓库中的导航和文件检索能力。
+- **核心亮点**: 首个专门针对 Agent 代码仓库探索行为的基准测试。
+- **深度解析**: 定义了衡量 Agent 遍历目录、定位关键文件效率的指标，在真实 GitHub 仓库上测试现有 Agent，发现多数 Agent 在深层目录结构中容易迷失，提出了针对性的评估标准。
+- **领域归类**: [Code Agent, Benchmark]
+---
+
+### 2. On the Geometry of On-Policy Distillation (关于在线策略蒸馏的几何特性)
+- **社区热度**: `👍 55 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.07082)
+- **研究任务**: 理论分析强化学习中的在线策略蒸馏收敛行为。
+- **核心亮点**: 从几何视角解释了在线策略蒸馏为何比离线策略更稳定。
+- **深度解析**: 构建了策略空间的几何框架，证明了在线蒸馏在参数更新路径上更平滑，减少了分布偏移，为算法改进提供了理论依据。
+- **领域归类**: [Reinforcement Learning, Theory]
+---
+
+### 3. Latent Spatial Memory for Video World Models (视频世界模型的潜在空间记忆)
+- **社区热度**: `👍 47 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.09828)
+- **研究任务**: 提升视频世界模型生成长序列的一致性。
+- **核心亮点**: 在潜在空间引入独立的空间记忆模块，解决长视频生成中的物体漂移问题。
+- **深度解析**: 将空间结构信息单独编码存入记忆库，在生成新帧时检索参考，避免了传统方法随时间推移丢失空间布局的问题，显著提升了长视频连贯性。
+- **领域归类**: [Video Generation, World Model]
+---
+
+### 4. LatentSkill: From In-Context Textual Skills to In-Weight Latent Skills for LLM Agents (LatentSkill：将 LLM Agent 的上下文文本技能转化为权重 latent 技能)
+- **社区热度**: `👍 46 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.06087)
+- **研究任务**: 优化 LLM Agent 的技能学习与推理效率。
+- **核心亮点**: 把原本需要写在 Prompt 里的技能，训练成模型内部的潜在向量。
+- **深度解析**: 通过蒸馏将 Few-shot 示例中的技能信息压缩到模型权重中，推理时只需调用 latent vector，大幅减少了 Context 长度和计算开销，同时保持了任务执行能力。
+- **领域归类**: [LLM Agent, Parameter Efficient Tuning]
+---
+
+### 5. CoVEBench: Can Video Editing Models Handle Complex Instructions? (CoVEBench：视频编辑模型能处理复杂指令吗？)
+- **社区热度**: `👍 44 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.08415)
+- **研究任务**: 评估视频编辑模型对多步复杂指令的理解与执行能力。
+- **核心亮点**: 构建了包含多步骤编辑需求的基准数据集，暴露了当前模型在复杂逻辑下的短板。
+- **深度解析**: 设计了涉及时间定位、物体替换、风格迁移组合的测试用例，量化了模型在指令遵循上的误差，发现模型在处理超过三步的复合指令时成功率显著下降。
+- **领域归类**: [Video Editing, Benchmark]
+---
+
+### 6. FlashMemory-DeepSeek-V4: Lightning Index Ultra-Long Context via Lookahead Sparse Attention (FlashMemory-DeepSeek-V4：通过前瞻稀疏注意力实现闪电索引超长上下文)
+- **社区热度**: `👍 42 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.09079)
+- **研究任务**: 解决大模型处理超长上下文时的检索速度与显存问题。
+- **核心亮点**: 利用前瞻稀疏注意力机制，跳过无关 token，实现超长上下文快速索引。
+- **深度解析**: 在 Attention 计算前预判 token 重要性，仅对关键区域进行稠密计算，其余部分稀疏处理，在保证精度的前提下显著降低了长文本推理的延迟和显存占用。
+- **领域归类**: [LLM Architecture, Long Context]
+---
+
+### 7. SpatialWorld: Benchmarking Interactive Spatial Reasoning of Multimodal Agents in Real-World Tasks (SpatialWorld：基准测试多模态 Agent 在真实任务中的交互空间推理)
+- **社区热度**: `👍 37 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.09669)
+- **研究任务**: 评估多模态 Agent 在物理环境中的空间理解与交互能力。
+- **核心亮点**: 提供了贴近真实场景的 3D 空间推理测试基准。
+- **深度解析**: 模拟了家庭、办公室等环境，要求 Agent 完成导航、物体抓取等任务，重点考察模型对距离、方位、遮挡关系的理解，填补了纯视觉 benchmark 在交互性上的空白。
+- **领域归类**: [Multimodal, Robotics/Spatial]
+---
+
+### 8. Human Psychometric Questionnaires Mischaracterize LLM Behavior (人类心理测量问卷错误刻画了 LLM 行为)
+- **社区热度**: `👍 31 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2509.10078)
+- **研究任务**: 验证人类心理学量表在评估大模型性格时的有效性。
+- **核心亮点**: 实证研究表明直接用人类问卷测 LLM 性格会得到误导性结果。
+- **深度解析**: 对比了不同 Prompt 设置下模型在同一问卷的回答，发现模型极易受提示词影响而表现出矛盾的人格特质，建议开发专为 AI 设计的评估体系。
+- **领域归类**: [LLM Evaluation, AI Safety]
+---
+
+### 9. Echo-Memory: A Controlled Study of Memory in Action World Models (Echo-Memory：动作世界模型中记忆机制的对照研究)
+- **社区热度**: `👍 27 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.09803)
+- **研究任务**: 分析记忆模块对世界模型动作预测的具体贡献。
+- **核心亮点**: 通过对照实验量化了不同记忆结构对预测精度的影响。
+- **深度解析**: 剥离了世界模型中的记忆组件，单独测试其在长 horizon 任务中的作用，发现特定类型的回声记忆结构对保持状态一致性最关键，为模型设计提供了消融依据。
+- **领域归类**: [World Model, Reinforcement Learning]
+---
+
+### 10. OmniGameArena: A Unified UE5 Benchmark for VLM Game Agents with Improvement Dynamics (OmniGameArena：带有改进动态的 unified UE5 多模态游戏 Agent 基准)
+- **社区热度**: `👍 16 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.09826)
+- **研究任务**: 统一评估 VLM 游戏 Agent 在不同游戏环境中的表现与成长。
+- **核心亮点**: 基于虚幻引擎 5 构建统一基准，支持追踪 Agent 的性能提升动态。
+- **深度解析**: 集成了多种游戏场景，不仅测试最终得分，还记录训练过程中的学习曲线，方便对比不同算法的样本效率和泛化能力，解决了以往游戏 benchmark 环境割裂的问题。
+- **领域归类**: [Game Agent, Benchmark]
+---
+
+### 11. End-to-End Context Compression at Scale (大规模端到端上下文压缩)
+- **社区热度**: `👍 14 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.09659)
+- **研究任务**: 降低长上下文 LLM 的显存占用与推理延迟。
+- **核心亮点**: 提出了一种端到端的上下文压缩方案，无需额外的检索模块即可大幅压缩 KV Cache。
+- **深度解析**: 在 Transformer 层间插入可学习的压缩模块，直接将历史 token 表示压缩为更少的 latent tokens。训练时联合优化压缩器与主模型，在保证 perplexity 基本不变的前提下，显著减少显存占用。
+- **领域归类**: [LLM 效率], [上下文管理], [模型压缩]
+---
+
+### 12. AHA-WAM:Asynchronous Horizon-Adaptive World-Action Modeling with Observation-Guided Context Routing (AHA-WAM：异步视界自适应世界 - 动作建模与观测引导上下文路由)
+- **社区热度**: `👍 12 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.09811)
+- **研究任务**: 提升智能体在复杂动态环境中的长期规划能力。
+- **核心亮点**: 根据观测重要性动态调整世界模型的预测视界，实现异步规划。
+- **深度解析**: 设计了一个路由机制，根据当前观测信息量决定未来预测步长。重要状态走长视界预测，简单状态走短视界，结合世界模型与动作预测头，减少无效计算。
+- **领域归类**: [世界模型], [强化学习], [智能体规划]
+---
+
+### 13. SwiftVR: Real-Time One-Step Generative Video Restoration (SwiftVR：实时单步生成式视频修复)
+- **社区热度**: `👍 12 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.09516)
+- **研究任务**: 视频修复与增强，要求实时性。
+- **核心亮点**: 将多步扩散过程蒸馏为单步生成，实现实时视频修复。
+- **深度解析**: 基于流匹配或蒸馏技术，训练一个单步生成器直接输出修复后的视频帧。引入了时序一致性损失，确保单步生成下视频帧间不闪烁，推理速度提升一个数量级。
+- **领域归类**: [视频生成], [图像修复], [实时推理]
+---
+
+### 14. Bayesian-Agent: Posterior-Guided Skill Evolution for LLM Agent Harnesses (Bayesian-Agent：后验引导的 LLM 智能体技能进化)
+- **社区热度**: `👍 11 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.08348)
+- **研究任务**: 提升 LLM 智能体在复杂任务中的技能泛化与进化能力。
+- **核心亮点**: 利用贝叶斯后验分布指导智能体技能的迭代更新。
+- **深度解析**: 将技能参数化为概率分布，根据任务执行反馈计算后验概率。技能进化过程不再是硬更新，而是基于后验采样，增强了智能体面对未知任务时的鲁棒性。
+- **领域归类**: [LLM 智能体], [贝叶斯方法], [技能学习]
+---
+
+### 15. Skill-RM: Unifying Heterogeneous Evaluation Criteria via Agent Skill (Skill-RM：通过智能体技能统一异构评估标准)
+- **社区热度**: `👍 10 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.03980)
+- **研究任务**: 解决多任务场景下奖励模型评估标准不一致的问题。
+- **核心亮点**: 将不同的评估指标映射到统一的技能空间，实现单一奖励模型通用化。
+- **深度解析**: 定义了一组基础技能集，将异构的任务评估标准分解为技能完成度。奖励模型只评估技能执行情况，避免了为每个任务单独训练奖励模型，简化了 RLHF 流程。
+- **领域归类**: [奖励模型], [智能体评估], [RLHF]
+---
+
+### 16. OmniCap-IF: Benchmarking and Improving Instruction Following Abilities for Omni-Video Captioning (OmniCap-IF：全模态视频字幕指令遵循能力的基准测试与改进)
+- **社区热度**: `👍 9 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.08572)
+- **研究任务**: 视频字幕生成，特别是指令遵循能力。
+- **核心亮点**: 构建了视频字幕指令遵循基准，并提出了针对性的微调方法。
+- **深度解析**: 发布了一个包含多种约束条件（如长度、风格、重点）的视频字幕数据集。通过指令微调（SFT）增强多模态模型对字幕生成指令的敏感度，显著提升了可控生成能力。
+- **领域归类**: [多模态], [视频理解], [指令遵循]
+---
+
+### 17. Whisper Hallucination Detection and Mitigation via Hidden Representation Steering and Sparse AutoEncoders (通过隐藏表示 Steering 和稀疏自编码器检测与缓解 Whisper 幻觉)
+- **社区热度**: `👍 8 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.07473)
+- **研究任务**: 解决 Whisper 模型在语音识别中的幻觉问题。
+- **核心亮点**: 无需重训，利用稀疏自编码器定位并干预隐藏层表示以消除幻觉。
+- **深度解析**: 训练稀疏自编码器（SAE）分解 Whisper 的隐藏状态，识别出与幻觉相关的特征方向。推理时通过 Steering 技术抑制这些特征激活，直接减少重复或无内容输出。
+- **领域归类**: [语音识别], [模型可解释性], [推理干预]
+---
+
+### 18. SlimSearcher: Training Efficiency-Aware Web Agents via Adaptive Reward Gating (SlimSearcher：通过自适应奖励门控训练效率感知的 Web 智能体)
+- **社区热度**: `👍 8 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.07074)
+- **研究任务**: 训练高效且准确的 Web 浏览智能体。
+- **核心亮点**: 在训练过程中引入自适应奖励门控，过滤低效轨迹。
+- **深度解析**: 设计了一个奖励门控机制，根据动作步数和任务完成度动态调整奖励信号。只保留高效路径参与梯度更新，迫使智能体学会用最少的步骤完成任务，降低 Token 消耗。
+- **领域归类**: [Web 智能体], [强化学习], [训练效率]
+---
+
+### 19. DEI: Diversity in Evolutionary Inference for Quality-Diversity Search (DEI：质量 - 多样性搜索中的进化推理多样性)
+- **社区热度**: `👍 8 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.27130)
+- **研究任务**: 优化进化算法在推理阶段的解多样性。
+- **核心亮点**: 在进化推理过程中显式引入多样性机制，避免早熟收敛。
+- **深度解析**: 改进了进化策略的采样过程，在适应度选择之外增加了多样性维护项。确保在搜索高质量解的同时，覆盖更广的解空间，适用于需要多解输出的推理任务。
+- **领域归类**: [进化算法], [优化方法], [推理策略]
+---
+
+### 20. Reasoning Arena: Trace Tournaments When Verifiable Rewards Fall Short (Reasoning Arena：当可验证奖励不足时的轨迹锦标赛)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.09380)
+- **研究任务**: 评估和优化复杂推理任务中的模型表现。
+- **核心亮点**: 在缺乏标准答案时，通过推理轨迹锦标赛来优选模型输出。
+- **深度解析**: 当任务无法用简单指标验证时，让多个模型生成的推理轨迹相互对比投票。构建了一个竞技场机制，基于轨迹的逻辑连贯性和中间步骤质量进行排序，替代传统的标量奖励。
+- **领域归类**: [逻辑推理], [RLHF], [评估方法]
+---
+
+### 21. Answer Presence Drives RAG Rewriting Gains (答案存在性驱动 RAG 查询重写)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.05633)
+- **研究任务**: RAG 系统中的查询重写优化
+- **核心亮点**: 根据检索内容中是否包含潜在答案，动态调整查询重写策略。
+- **深度解析**: 传统方法对所有查询采用统一的重写逻辑。该方案先检测检索片段中是否存在答案迹象：若存在，重写侧重于澄清指代；若不存在，重写侧重于扩展语义。这种条件式处理显著提升了下游生成的准确率，减少了无效重写带来的噪声。
+- **领域归类**: [RAG, NLP, Information Retrieval]
+---
+
+### 22. Why Muon Outperforms Adam: A Curvature Perspective (为何 Muon 胜过 Adam：曲率视角)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.04662)
+- **研究任务**: 优化器理论分析与对比
+- **核心亮点**: 从损失函数曲率角度解释了 Muon 优化器优于 Adam 的原因。
+- **深度解析**: 通过海森矩阵分析优化 landscape，发现 Adam 在病态曲率方向上更新步长不合理，容易导致震荡。Muon 更好地适应了曲率变化，尤其在深层网络中，能更稳定地收敛到平坦极小值，理论推导与实验结果一致。
+- **领域归类**: [Optimizer, Deep Learning Theory]
+---
+
+### 23. Liberating LLM Capabilities in Full-Duplex Speech Models (解放全双工语音模型中的 LLM 能力)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.07547)
+- **研究任务**: 全双工语音交互与 LLM 集成
+- **核心亮点**: 解决了全双工语音流式处理中 LLM 推理能力被削弱的问题。
+- **深度解析**: 现有全双工模型为降低延迟，往往简化后端逻辑，导致 LLM 推理深度不足。该工作通过架构解耦，让语音编码流式传输的同时，保留后端 LLM 的完整推理链路，确保在实时对话中不牺牲复杂任务的处理能力。
+- **领域归类**: [Speech, LLM, Multimodal]
+---
+
+### 24. Light-WAM: Efficient World Action Models with State-Fusion Action Decoding (Light-WAM：基于状态融合动作解码的高效世界动作模型)
+- **社区热度**: `👍 6 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.08242)
+- **研究任务**: 世界模型与强化学习
+- **核心亮点**: 提出状态融合动作解码机制，大幅降低世界模型计算开销。
+- **深度解析**: 针对世界模型推理慢的问题，设计轻量化架构 Light-WAM。核心在于将环境状态信息融合后再进行动作解码，减少了冗余计算路径。在保持预测精度的前提下，显著提升了动作生成的实时性，适合机器人控制等场景。
+- **领域归类**: [RL, World Models, Robotics]
+---
+
+### 25. A Geometric Account of Activation Steering through Angle-Norm Decomposition (通过角度 - 范数分解的激活调控几何解释)
+- **社区热度**: `👍 6 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.06735)
+- **研究任务**: 模型可解释性与激活调控
+- **核心亮点**: 将激活向量分解为角度和范数，几何化解释调控机制。
+- **深度解析**: 传统激活调控直接对向量加减。该研究将隐藏层激活分解为方向（角度）和大小（范数），实验发现行为控制主要依赖方向调整，范数影响较小。这一发现为更精准、低副作用的模型干预提供了理论依据。
+- **领域归类**: [Interpretability, Safety, Mechanism]
+---
+
+### 26. DuMate-DeepResearch: An Auditable Multi-Agent System with Recursive Search and Rubric-Grounded Reasoning (DuMate-DeepResearch：可审计的递归搜索与基于评分标准的推理多智能体系统)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.07299)
+- **研究任务**: 多智能体科研辅助系统
+- **核心亮点**: 构建可审计、基于评分标准约束的递归搜索多智能体框架。
+- **深度解析**: 针对 Agent 幻觉问题，引入评分标准（Rubric）约束每一步推理，并支持递归搜索验证事实。系统记录完整决策链路，支持人工审计。适合需要高可信度的文献调研和深度研究任务。
+- **领域归类**: [Agent, System, Research Tool]
+---
+
+### 27. Text-to-Image Models Need Less from Text Encoders Than You Think (文生图模型对文本编码器的需求低于预期)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.03715)
+- **研究任务**: 文生图模型架构优化
+- **核心亮点**: 发现文生图模型对文本编码器的依赖被高估，可大幅精简。
+- **深度解析**: 通常使用大型 ViT 作为文本编码器。实验表明，缩小文本编码器规模或简化其结构，对最终生成图像的质量影响微乎其微。这一发现允许在不损失效果的前提下，显著降低显存占用和推理延迟。
+- **领域归类**: [Diffusion, CV, Model Compression]
+---
+
+### 28. Trajectory-Refined Distillation (轨迹优化蒸馏)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.08432)
+- **研究任务**: 知识蒸馏
+- **核心亮点**: 利用生成轨迹信息优化蒸馏过程，不仅对齐最终结果。
+- **深度解析**: 传统蒸馏仅关注输出分布匹配。该方法让学生模型模仿老师模型的中间推理轨迹或生成路径。通过约束中间步骤，小模型在复杂推理任务上的表现更好，泛化能力更强。
+- **领域归类**: [Distillation, LLM, Training]
+---
+
+### 29. Optical Reasoning: Rethinking Images as an Expressive Reasoning Medium Beyond Text (视觉推理：重新思考图像作为超越文本的表达性推理媒介)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.09585)
+- **研究任务**: 多模态推理范式
+- **核心亮点**: 主张直接用图像空间进行逻辑推演，而非仅转为文本。
+- **深度解析**: 现有 VLM 习惯将视觉信息转化为文本再推理。该工作探索直接在图像特征空间进行逻辑操作，处理空间关系、几何逻辑等任务更直接，减少了模态转换带来的信息丢失。
+- **领域归类**: [Multimodal, Reasoning, CV]
+---
+
+### 30. Evaluation Cards: An Interpretive Layer for AI Evaluation Reporting (评估卡片：AI 评估报告的解释层)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.09809)
+- **研究任务**: 模型评估与报告标准化
+- **核心亮点**: 提出标准化评估卡片，增加 AI 评估报告的可读性和解释性。
+- **深度解析**: 类似 Model Cards，但专注于评估结果。定义了一套结构化模板，规范评测指标、数据集、局限性及环境条件的展示方式。旨在解决评估报告格式混乱问题，方便不同模型间的横向对比和审计。
+- **领域归类**: [Evaluation, Governance, Standardization]
+---
+</details>
+
+<details>
+<summary><b>🚀 GitHub 今日热门项目 (点击展开)</b></summary>
+
+### [openmed](https://github.com/maziyarpanahi/openmed)
+- **今日趋势**: 165 stars today
+- **项目简介**: [AI 相关] 一个开源的医疗保健人工智能项目，旨在构建透明的医疗 AI 解决方案。
+- **核心价值**: 解决医疗领域 AI 模型黑盒化与数据隐私痛点，面向医疗开发者及研究人员，提供可审计、可协作的开源医疗 AI 基础设施，促进医疗技术的民主化。
+---
+### [espectre](https://github.com/francescopace/espectre)
+- **今日趋势**: 112 stars today
+- **项目简介**: [非 AI/大模型] 基于 Wi-Fi 信道状态信息 (CSI) 谱分析的运动检测系统，支持 Home Assistant 集成。
+- **核心价值**: 解决智能家居中摄像头监控侵犯隐私的痛点，面向隐私敏感型用户，利用信号处理技术实现无设备、无镜头的隐蔽运动检测，保障家庭安全的同时维护隐私。
+---
+### [claude-code-security-review](https://github.com/anthropics/claude-code-security-review)
+- **今日趋势**: 51 stars today
+- **项目简介**: [AI 相关] 由 Anthropic 官方提供的 GitHub Action，利用 Claude 大模型自动分析代码变更中的安全漏洞。
+- **核心价值**: 解决传统代码审查耗时且易遗漏安全细节的痛点，面向开发团队与安全工程师，将 AI 安全审查融入 CI/CD 流程，显著降低人为疏忽导致的安全风险。
+---
+### [pyvideotrans](https://github.com/jianchang512/pyvideotrans)
+- **今日趋势**: 22 stars today
+- **项目简介**: [AI 相关] 视频翻译工具，利用 AI 技术实现视频语言转换、自动配音及字幕嵌入。
+- **核心价值**: 解决视频内容跨语言传播成本高、流程复杂的痛点，面向视频创作者及本地化团队，一站式自动化处理语音识别、翻译与合成，降低内容出海的门槛。
+---
+### [learn-claude-code](https://github.com/shareAI-lab/learn-claude-code)
+- **今日趋势**: 230 stars today
+- **项目简介**: [AI 相关] 从零构建类 Claude Code 的 Agent Harness 教学项目，仅依赖 Bash 实现 AI 代理核心逻辑。
+- **核心价值**: 解决开发者对 AI Agent 架构理解困难及过度依赖重型框架的痛点，面向希望深入理解 LLM Agent 原理的工程师，通过极简实现揭示 Agent  harness 的核心机制，便于定制开发。
+---
+### [knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins)
+- **今日趋势**: 217 stars today
+- **项目简介**: [AI 相关] Anthropic 官方开源的插件库，专为知识工作者在 Claude Cowork 场景中扩展功能使用。
+- **核心价值**: 解决通用大模型在特定专业工作流中能力不足的问题，面向知识工作者，提供针对性的工具集成（如文档处理、数据查询），大幅提升 Claude 在实际工作场景中的生产力。
+---
+### [Auto-claude-code-research-in-sleep](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep)
+- **今日趋势**: 97 stars today
+- **项目简介**: [AI 相关] ARIS 自主机器学习研究代理，基于 Markdown 驱动跨模型审查、idea 发现及实验自动化。
+- **核心价值**: 解决 ML 研究人员重复性实验与灵感验证耗时过长的痛点，面向 AI 研究员，通过轻量级 Markdown 工作流实现“睡眠中自动研究”，兼容多种 LLM 代理，加速科研迭代循环。
+---
+</details></script>
+        <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
+    </body>
+    </html>
+    
