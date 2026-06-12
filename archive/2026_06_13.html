@@ -1,0 +1,352 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>前沿科研情报 - 2026-06-13</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <style>
+            .markdown-body { box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 30px; }
+            details { background: #f6f8fa; padding: 15px; border-radius: 8px; border: 1px solid #d0d7de; margin-bottom: 20px; }
+            summary { cursor: pointer; color: #0969da; font-weight: bold; font-size: 1.1em; }
+        </style>
+    </head>
+    <body class="markdown-body">
+        <a href='../index.html'>← 返回索引</a>
+        <h1>前沿科研情报 - 2026-06-13</h1>
+        <div id="content"></div>
+        <script type="text/markdown" id="raw-md"><details>
+<summary><b>🤗 Hugging Face 今日论文 (点击展开)</b></summary>
+
+### 1. EvoArena: Tracking Memory Evolution for Robust LLM Agents in Dynamic Environments (EvoArena：追踪动态环境中鲁棒 LLM 智能体的记忆演化)
+- **社区热度**: `👍 97 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.13681)
+- **研究任务**: 动态环境下的 LLM 智能体记忆管理
+- **核心亮点**: 提出了一套追踪智能体记忆随环境变化而演化的评估框架。
+- **深度解析**: 针对现有智能体在环境变动时记忆更新不及时的问题，构建了动态测试环境。方法上记录了智能体在不同时间步的记忆写入、读取和遗忘过程，通过量化记忆一致性来评估鲁棒性。实验表明，具备记忆演化追踪能力的智能体在长周期任务中成功率更高。
+- **领域归类**: [Agent, Memory, Benchmark]
+---
+### 2. SpatialClaw: Rethinking Action Interface for Agentic Spatial Reasoning (SpatialClaw：重构智能体空间推理的动作接口)
+- **社区热度**: `👍 77 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.13673)
+- **研究任务**: 智能体的空间推理与动作交互
+- **核心亮点**: 设计了一种新的动作接口，提升了智能体对三维空间关系的理解与操作能力。
+- **深度解析**: 传统文本或二维坐标接口难以表达复杂空间关系。该工作将空间动作抽象为特定的原语集合，结合了相对位置编码和空间约束检查。模型输出不再仅仅是文本，而是包含空间参数的结构化动作。在导航和物体操纵任务上，比基线模型减少了约 30% 的空间冲突错误。
+- **领域归类**: [Agent, Spatial Reasoning, Interface]
+---
+### 3. MiniMax Sparse Attention (MiniMax 稀疏注意力机制)
+- **社区热度**: `👍 72 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.13392)
+- **研究任务**: 大模型注意力机制优化
+- **核心亮点**: 提出了一种适用于长上下文的高效稀疏注意力算法。
+- **深度解析**: 针对长序列推理中 KV 缓存过大导致显存不足的问题，设计了混合稀疏模式。结合了滑动窗口注意力与全局关键 token 选择，保留了大部分上下文信息的同时显著降低了计算量。在同等显存占用下，支持的上下文长度比标准 Dense Attention 提升了 4 倍， perplexity 损失控制在 1% 以内。
+- **领域归类**: [LLM, Efficiency, Attention]
+---
+### 4. InterleaveThinker: Reinforcing Agentic Interleaved Generation (InterleaveThinker：强化智能体交错生成能力)
+- **社区热度**: `👍 70 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.13679)
+- **研究任务**: 智能体的思考与动作交错生成
+- **核心亮点**: 通过强化学习优化了思考步骤与动作步骤的交错序列。
+- **深度解析**: 现有方法往往先思考完再行动，导致反馈延迟。该模型训练智能体在生成过程中交替输出“思考 token"和“动作 token"。使用 PPO 算法对交错序列进行奖励建模，鼓励模型在关键决策点增加思考密度。在复杂任务规划中，减少了无效动作的执行次数。
+- **领域归类**: [Agent, RL, Generation]
+---
+### 5. FORT-Searcher: Synthesizing Shortcut-Resistant Search Tasks for Training Deep Search Agents (FORT-Searcher：合成抗捷径搜索任务以训练深度搜索智能体)
+- **社区热度**: `👍 70 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.12087)
+- **研究任务**: 搜索智能体的训练数据合成
+- **核心亮点**: 生成无法通过简单 heuristic 捷径解决的搜索任务，强制模型进行深度搜索。
+- **深度解析**: 针对智能体在搜索任务中容易利用数据偏差走捷径的问题，提出了一种任务合成算法。通过动态调整搜索图的结构和奖励分布，屏蔽掉浅层特征线索。用该数据集训练后的搜索代理，在未见过的复杂图谱上的泛化能力显著提升，避免了过拟合特定搜索模式。
+- **领域归类**: [Agent, Search, Data Synthesis]
+---
+### 6. Robust-U1: Can MLLMs Self-Recover Corrupted Visual Content for Robust Understanding? (Robust-U1：多模态大模型能否自恢复受损视觉内容以实现鲁棒理解？)
+- **社区热度**: `👍 69 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.08063)
+- **研究任务**: 多模态模型的视觉鲁棒性
+- **核心亮点**: 验证并增强了 MLLM 对噪声、遮挡等受损图像的自我修复理解能力。
+- **深度解析**: 在视觉编码器前加入了一个轻量级的修复模块，利用语言先验引导图像重建。模型不仅输出答案，还能输出去噪后的视觉特征表示。在图像部分遮挡或压缩失真情况下，VQA 任务的准确率比未修复模型高出 15%，证明了语言信息能辅助视觉恢复。
+- **领域归类**: [MLLM, Robustness, Vision]
+---
+### 7. MaxProof: Scaling Mathematical Proof with Generative-Verifier RL and Population-Level Test-Time Scaling (MaxProof：通过生成 - 验证 RL 与群体级测试时扩展 scaling 数学证明)
+- **社区热度**: `👍 65 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.13473)
+- **研究任务**: 数学证明生成
+- **核心亮点**: 结合生成器 - 验证器 RL 和测试时多采样策略，提升数学证明成功率。
+- **深度解析**: 采用双模型架构，一个生成证明步骤，一个验证逻辑正确性。通过 RL 优化生成器以获得更高的验证通过率。在推理阶段，对同一问题生成多个候选证明序列，利用验证器选出最优解。在正式数学证明基准上，解决了更多需要多步推理的难题。
+- **领域归类**: [Math, RL, Reasoning]
+---
+### 8. WeaveBench: A Long-Horizon, Real-World Benchmark for Computer-Use Agents with Hybrid Interfaces (WeaveBench：面向混合接口电脑使用智能体的长周期真实世界基准)
+- **社区热度**: `👍 54 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.09426)
+- **研究任务**: 电脑操作智能体评估
+- **核心亮点**: 提供了一个包含长周期任务且支持多种交互接口的真实场景基准。
+- **深度解析**: 现有基准多为单步或模拟器环境。WeaveBench 收集了真实的跨应用工作流任务（如整理邮件并生成报表），支持鼠标、键盘及 API 混合操作。评估指标涵盖任务完成率、步骤效率和错误恢复能力。测试显示当前主流模型在超过 10 步的任务中失败率急剧上升。
+- **领域归类**: [Agent, Benchmark, Computer Use]
+---
+### 9. LabVLA: Grounding Vision-Language-Action Models in Scientific Laboratories (LabVLA：将视觉 - 语言 - 动作模型落地于科学实验室)
+- **社区热度**: `👍 47 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.13578)
+- **研究任务**: 实验室环境下的机器人控制
+- **核心亮点**: 训练了专门针对科学实验设备的 VLA 模型，实现精准操作。
+- **深度解析**: 收集了实验室场景下的操作视频与指令数据，微调通用的 VLA 模型。重点解决了实验仪器识别和操作力度控制的问题。模型能够理解如“滴定至变色”等专业指令，并转化为机械臂动作。在移液和混合任务中，操作精度达到了人工实验员的 90% 水平。
+- **领域归类**: [Robotics, VLA, Science]
+---
+### 10. HYDRA-X: Native Unified Multimodal Models with Holistic Visual Tokenizers (HYDRA-X：具有整体视觉 Tokenizer 的原生统一多模态模型)
+- **社区热度**: `👍 23 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.13289)
+- **研究任务**: 多模态模型架构设计
+- **核心亮点**: 提出了一种统一的视觉 Tokenizer，简化了多模态输入的处理流程。
+- **深度解析**: 传统方法通常 separate 处理图像和文本编码。HYDRA-X 设计了一个共享的 Tokenizer，将图像块直接映射为与文本兼容的 token 序列。去除了复杂的投影层，实现了真正的原生多模态输入。在图像理解和生成任务上，减少了端到端延迟，同时保持了竞争力的性能。
+- **领域归类**: [Multimodal, Architecture, Tokenizer]
+---
+
+### 11. EurekAgent: Agent Environment Engineering is All You Need For Autonomous Scientific Discovery (EurekAgent：自主科学发现中代理环境工程才是关键)
+- **社区热度**: `👍 18 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.13662)
+- **研究任务**: 自主科学发现代理。
+- **核心亮点**: 强调环境工程设计比模型本身优化对科学发现代理更重要。
+- **深度解析**: 提出不再单纯依赖提升 LLM 能力，而是通过构建特定的交互环境环境（Environment Engineering）来引导代理行为。设计了标准化的实验接口和反馈机制，让代理在受限但信息丰富的环境中迭代假设，验证了环境结构对科学推理效率的决定性作用。
+- **领域归类**: [`Agent`, `Scientific AI`, `Environment Design`]
+
+---
+
+### 12. N-GRPO: Embedding-Level Neighbor Mixing for Enhanced Policy Optimization (N-GRPO：用于增强策略优化的嵌入层邻居混合)
+- **社区热度**: `👍 18 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.10768)
+- **研究任务**: 强化学习策略优化（RLHF/RLAIF）。
+- **核心亮点**: 在 GRPO 基础上引入嵌入层邻居混合机制，提升策略更新稳定性。
+- **深度解析**: 针对 GRPO 策略梯度方差大的问题，在 Embedding 层对相邻样本的特征进行混合增强。通过引入邻居信息平滑策略分布，减少单批次采样带来的噪声，在不增加额外 critic 模型的情况下提高了训练收敛速度和最终性能。
+- **领域归类**: [`RL`, `LLM Alignment`, `Optimization`]
+
+---
+
+### 13. Demystifying Hidden-State Recurrence: Switchable Latent Reasoning with On-Policy Reinforcement Learning (揭秘隐藏状态循环：基于在线策略 RL 的可切换潜在推理)
+- **社区热度**: `👍 14 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.13106)
+- **研究任务**: 模型推理机制分析与优化。
+- **核心亮点**: 利用在线策略 RL 控制隐藏状态的循环切换，实现可解释的潜在推理。
+- **深度解析**: 分析了 Transformer 隐藏状态中的循环复用现象，设计了一个可切换的 latent 模块。通过 On-Policy RL 训练一个门控机制，决定何时复用历史隐藏状态、何时重置，从而在长上下文任务中平衡记忆保留与干扰抑制。
+- **领域归类**: [`Reasoning`, `RL`, `Model Architecture`]
+
+---
+
+### 14. VideoMDM: Towards 3D Human Motion Generation From 2D Supervision (VideoMDM：面向 2D 监督的 3D 人体运动生成)
+- **社区热度**: `👍 12 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.13364)
+- **研究任务**: 3D 人体运动生成。
+- **核心亮点**: 仅使用 2D 视频监督信号即可生成高质量的 3D 人体运动序列。
+- **深度解析**: 基于 Motion Diffusion Model (MDM) 架构，引入 2D 关键点投影损失。模型在潜在空间中学习 3D 运动先验，通过 2D 视频帧的反投影约束来优化 3D 轨迹，解决了 3D 运动数据稀缺问题，降低了数据采集成本。
+- **领域归类**: [`Video Generation`, `3D Motion`, `Weakly Supervised`]
+
+---
+
+### 15. Where, What, Why, and Importance: Structured Defect Grounding for Text-to-Image Feedback (位置、内容、原因与重要性：用于文生图反馈的结构化缺陷 grounding)
+- **社区热度**: `👍 12 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.06113)
+- **研究任务**: 文生图质量反馈与修正。
+- **核心亮点**: 提出结构化的缺陷定位反馈机制，指导图像生成修正。
+- **深度解析**: 不再仅提供整体评分，而是生成包含缺陷位置（Where）、内容（What）、原因（Why）和重要性（Importance）的四元组反馈。该结构化信号被用于微调奖励模型或直接指导生成模型的注意力层，显著提升了图像修复的针对性。
+- **领域归类**: [`AIGC`, `Feedback Learning`, `Image Editing`]
+
+---
+
+### 16. VIA-SD: Verification via Intra-Model Routing for Speculative Decoding (VIA-SD：通过模型内路由验证进行投机采样)
+- **社区热度**: `👍 11 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.12243)
+- **研究任务**: 推理加速（投机采样）。
+- **核心亮点**: 利用模型内部路由机制进行 token 验证，无需外部草稿模型。
+- **深度解析**: 传统投机采样需要小模型_draft_。该方案在大模型内部设计了一条快速路由路径，专门用于快速验证候选 token 的概率分布。通过内部并行计算减少了内存交换开销，在保持接受率的同时降低了延迟。
+- **领域归类**: [`Inference Acceleration`, `Speculative Decoding`, `System`]
+
+---
+
+### 17. MoVerse: Real-Time Video World Modeling with Panoramic Gaussian Scaffold (MoVerse：基于全景高斯支架的实时视频世界建模)
+- **社区热度**: `👍 10 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.13376)
+- **研究任务**: 视频世界模型。
+- **核心亮点**: 结合全景高斯 splatting 实现实时的视频场景建模与预测。
+- **深度解析**: 使用 3D Gaussian Splatting 作为场景表示基础，构建了全景式的 Scaffold 结构。模型能够实时更新高斯参数以反映视频中的动态变化，支持自由视角的视频预测和场景编辑，解决了神经辐射场在视频动态场景下的渲染速度瓶颈。
+- **领域归类**: [`World Model`, `3DGS`, `Video Understanding`]
+
+---
+
+### 18. From 2D Grids to 1D Tokens: Reforming Shared Representations for Multimodal Image Fusion (从 2D 网格到 1D Token：重构多模态图像融合的共享表示)
+- **社区热度**: `👍 10 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.12303)
+- **研究任务**: 多模态图像融合。
+- **核心亮点**: 将视觉 2D 网格特征转换为 1D Token 序列以优化多模态融合。
+- **深度解析**: 针对传统 CNN 网格特征与 Transformer Token 结构不匹配的问题，提出了一种投影重构模块。将 2D 特征展平并重新编码为 1D 语义 Token，使其能直接与文本 Token 进行交叉注意力计算，提升了图像 - 文本融合任务中的特征对齐效率。
+- **领域归类**: [`Multimodal`, `Representation Learning`, `Image Fusion`]
+
+---
+
+### 19. TreeSeeker: Tree-Structured Trial, Error, and Return in Deep Search (TreeSeeker：深度搜索中的树结构试错与返回)
+- **社区热度**: `👍 9 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.11662)
+- **研究任务**: 复杂任务推理搜索。
+- **核心亮点**: 引入树状结构的试错与回退机制，优化深度搜索策略。
+- **深度解析**: 在 Agent 规划过程中维护一个显式的搜索树。允许代理在遇到错误分支时回退（Return）到父节点并尝试新路径，而不是线性重试。结合价值函数剪枝，有效解决了长链条任务中的错误累积问题。
+- **领域归类**: [`Search`, `Reasoning`, `Agent Planning`]
+
+---
+
+### 20. HarnessBridge: Learnable Bidirectional Controller for LLM Agent Harness (HarnessBridge：用于 LLM 代理 harness 的可学习双向控制器)
+- **社区热度**: `👍 6 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.12882)
+- **研究任务**: LLM 代理控制与工具调用。
+- **核心亮点**: 设计可学习的双向控制器，管理 LLM 与外部环境的交互流。
+- **深度解析**: 在 LLM 和工具集之间插入一个轻量级 Controller 模块。该模块双向调节信息流：既过滤输入给 LLM 的环境观测，也约束 LLM 输出的动作指令。通过端到端训练，减少了代理的无效调用和幻觉操作。
+- **领域归类**: [`Agent`, `Control Theory`, `Tool Use`]
+
+---
+
+### 21. High-Fidelity Two-Step Image Generation via Teacher-Aligned End-to-End Distillation (基于教师对齐端到端蒸馏的高保真两步图像生成)
+- **社区热度**: `👍 6 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.12575)
+- **研究任务**: 图像生成加速
+- **核心亮点**: 通过端到端蒸馏将扩散模型压缩至两步生成，同时保持高保真度。
+- **深度解析**: 针对蒸馏模型步数减少后质量下降的问题，提出了一种教师对齐机制。直接在端到端框架下对齐学生模型与教师模型的中间表示，无需额外微调即可实现两步出图，兼顾了推理速度与生成细节。
+- **领域归类**: [Computer Vision, Diffusion Models, Distillation]
+---
+
+### 22. Visual Para-Thinker++: A Single-Policy Multi-Agent Framework for Visual Reasoning (Visual Para-Thinker++：用于视觉推理的单策略多智能体框架)
+- **社区热度**: `👍 6 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.09290)
+- **研究任务**: 视觉推理
+- **核心亮点**: 用单一策略协调多个智能体，降低多智能体视觉推理的协作复杂度。
+- **深度解析**: 传统多智能体通常需要独立策略或复杂通信机制。该框架通过单策略控制多个角色分工，简化了训练流程，提升了智能体在处理复杂视觉问答任务时的协作效率和一致性。
+- **领域归类**: [Multimodal, Agent Framework, Visual Reasoning]
+---
+
+### 23. Risk Under Pressure: Compute-Aware Evaluation of Adversarial Robustness in Language Models (压力下的风险：语言模型对抗鲁棒性的算力感知评估)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.11409)
+- **研究任务**: 模型安全与评估
+- **核心亮点**: 在评估对抗鲁棒性时引入计算成本约束，更贴近实际部署场景。
+- **深度解析**: 现有鲁棒性评估往往忽略计算开销。该研究提出算力感知指标，衡量模型在有限计算资源下抵御对抗攻击的能力，揭示了高鲁棒性可能伴随的高算力代价，为安全部署提供新视角。
+- **领域归类**: [LLM Safety, Evaluation, Adversarial Attack]
+---
+
+### 24. SG-OPD: Sign-Gated On-Policy Distillation via Sign-Consistency Gating and Phased Teacher Sampling (SG-OPD：基于符号一致性门控和分阶段教师采样的符号门控在线策略蒸馏)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.09304)
+- **研究任务**: 强化学习蒸馏
+- **核心亮点**: 引入符号一致性门控和分阶段采样，稳定在线策略蒸馏过程。
+- **深度解析**: 针对在线策略蒸馏中的不稳定问题，设计了符号门控机制来过滤不一致的梯度信号，并配合分阶段教师采样策略。这种方法减少了噪声干扰，提升了学生策略在复杂环境中的收敛速度。
+- **领域归类**: [Reinforcement Learning, Distillation, Policy Optimization]
+---
+
+### 25. EvoBrowseComp: Benchmarking Search Agents on Evolving Knowledge (EvoBrowseComp：在演化知识上基准测试搜索智能体)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.13120)
+- **研究任务**: 智能体评测基准
+- **核心亮点**: 构建动态演化知识基准，测试搜索智能体应对信息变化的能力。
+- **深度解析**: 现有基准多为静态知识，无法反映真实网络环境。该基准让知识库随时间演变，要求智能体具备持续检索和更新信息的能力，更能检验搜索 agent 的长期有效性。
+- **领域归类**: [Benchmark, Agent, Information Retrieval]
+---
+
+### 26. ArogyaSutra: A Multi-Agent Framework for Multimodal Medical Reasoning in Indic Languages (ArogyaSutra：用于印度语言多模态医疗推理的多智能体框架)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.13572)
+- **研究任务**: 医疗 AI / 低资源语言
+- **核心亮点**: 面向印度语言的多模态医疗多智能体系统，填补低资源语言医疗 AI 空白。
+- **深度解析**: 针对印度语系医疗数据稀缺问题，构建多智能体协作框架处理文本与影像数据。通过分工协作提升诊断推理准确性，专门优化了本地语言的理解与生成能力。
+- **领域归类**: [Healthcare, Multimodal, Low-Resource NLP]
+---
+
+### 27. Surflo: Consistent 3D Surface Flow Model with Global State (Surflo：具有全局状态的一致 3D 表面流模型)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.13644)
+- **研究任务**: 3D 生成与建模
+- **核心亮点**: 引入全局状态变量，确保 3D 表面流生成的时空一致性。
+- **深度解析**: 解决 3D 表面流动建模中常见的闪烁或不连贯问题。通过维护一个全局状态向量来约束局部流动变化，保证了生成序列在几何结构上的连续性和稳定性。
+- **领域归类**: [3D Vision, Generative Models, Flow Models]
+---
+
+### 28. Evoflux: Inference-Time Evolution of Executable Tool Workflows for Compact Agents (Evoflux：紧凑智能体可执行工具工作流的推理时演化)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.12674)
+- **研究任务**: 智能体工具使用
+- **核心亮点**: 允许小型智能体在推理阶段动态优化工具调用工作流，无需重新训练。
+- **深度解析**: 针对小模型工具调用能力弱的问题，提出在推理时进化工作流。智能体根据任务反馈实时调整工具执行顺序和参数，提升了紧凑模型在复杂任务中的灵活性和成功率。
+- **领域归类**: [Agent, Tool Use, Inference Optimization]
+---
+
+### 29. MaskAlign: Token-Subset Representation Alignment for Efficient Diffusion Training (MaskAlign：用于高效扩散训练的 Token 子集表示对齐)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.08788)
+- **研究任务**: 扩散模型训练效率
+- **核心亮点**: 仅对 Token 子集进行表示对齐，大幅降低扩散模型训练成本。
+- **深度解析**: 全量 Token 对齐计算开销大。该方法通过掩码机制选择信息量大的 Token 子集进行对齐训练，在保持生成质量的前提下，显著减少了显存占用和训练时间。
+- **领域归类**: [Computer Vision, Diffusion Models, Training Efficiency]
+---
+
+### 30. MuJoCo-Drones-Gym: A GPU-Accelerated Multi-Drone Simulator for Control and Reinforcement Learning (MuJoCo-Drones-Gym：用于控制和强化学习的 GPU 加速多无人机模拟器)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.08039)
+- **研究任务**: 机器人仿真
+- **核心亮点**: 基于 GPU 加速的多无人机并行仿真环境，支持大规模 RL 训练。
+- **深度解析**: 扩展了 MuJoCo 物理引擎，针对无人机动力学进行了 GPU 并行优化。支持同时仿真大量无人机，解决了多机协同控制训练中仿真速度慢的瓶颈，适合密集 RL 任务。
+- **领域归类**: [Robotics, Simulation, Reinforcement Learning]
+---
+</details>
+
+<details>
+<summary><b>🚀 GitHub 今日热门项目 (点击展开)</b></summary>
+
+### [music-assistant /server](https://github.com/music-assistant/server)
+- **今日趋势**: 今日 +6 | 总 Stars 1,688 | Forks 422
+- **项目简介**: [非 AI] 面向家庭用户和发烧友的开源媒体库管理器，用于连接流媒体服务和各类智能音箱。
+- **核心价值**: 解决了多音乐流媒体平台和硬件设备分散管理的痛点，通过常驻服务器（如 NAS、树莓派）统一调度，实现本地化、无缝的音乐播放体验。
+---
+### [LMCache /LMCache](https://github.com/LMCache/LMCache)
+- **今日趋势**: 今日 +17 | 总 Stars 8,562 | Forks 1,286
+- **项目简介**: [AI 相关] 面向大模型开发者和服务提供商的 KV Cache 优化层，旨在加速 LLM 推理。
+- **核心价值**: 针对大模型推理中 KV Cache 管理的性能瓶颈，提供最快的缓存层技术，显著降低延迟并提升吞吐量，优化显存使用效率。
+---
+### [Free-TV /IPTV](https://github.com/Free-TV/IPTV)
+- **今日趋势**: 今日 +36 | 总 Stars 16,689 | Forks 2,514
+- **项目简介**: [非 AI] 面向全球 IPTV 用户的免费电视频道 M3U 播放列表合集。
+- **核心价值**: 解决了用户寻找和整理免费直播源困难的问题，提供集中维护的频道列表，方便直接在各类播放器中加载观看。
+---
+### [OpenBB-finance /OpenBB](https://github.com/OpenBB-finance/OpenBB)
+- **今日趋势**: 今日 +77 | 总 Stars 69,008 | Forks 6,951
+- **项目简介**: [AI 相关] 面向分析师、量化交易员及 AI Agent 的开源金融数据平台。
+- **核心价值**: 降低了金融数据获取和处理的门槛，支持程序化访问多源数据，不仅服务于人工分析，更为 AI 智能体提供了标准化的金融数据接口。
+---
+### [shuvonsec /claude-bug-bounty](https://github.com/shuvonsec/claude-bug-bounty)
+- **今日趋势**: 今日 +203 | 总 Stars 2,710 | Forks 474
+- **项目简介**: [AI 相关] 面向安全研究人员和黑客的终端 AI 漏洞赏金狩猎工具。
+- **核心价值**: 利用大模型（Claude Code）自动化执行 Recon、漏洞检测和报告生成，解决了传统漏洞狩猎耗时耗力且门槛高的问题，实现自主化安全测试。
+---
+### [vllm-project /vllm](https://github.com/vllm-project/vllm)
+- **今日趋势**: 今日 +138 | 总 Stars 82,693 | Forks 17,987
+- **项目简介**: [AI 相关] 面向大模型部署工程师的高吞吐量、内存高效的 LLM 推理和服务引擎。
+- **核心价值**: 解决了大模型在生产环境中部署难、推理慢和资源消耗大的痛点，通过先进的内存管理和调度算法，实现高并发下的稳定服务。
+---
+### [modelscope /ms-swift](https://github.com/modelscope/ms-swift)
+- **今日趋势**: 今日 +8 | 总 Stars 14,485 | Forks 1,474
+- **项目简介**: [AI 相关] 面向算法工程师的轻量级大模型微调框架，支持数百种 LLM 和 MLLM。
+- **核心价值**: 简化了大模型定制化训练流程（SFT/DPO/GRPO 等），支持 PEFT 及全参数微调，解决了多模型适配复杂和训练成本高的问题。
+---
+### [ml-explore /mlx-lm](https://github.com/ml-explore/mlx-lm)
+- **今日趋势**: 今日 +43 | 总 Stars 5,809 | Forks 762
+- **项目简介**: [AI 相关] 面向 Mac 开发者和大模型爱好者的 Apple Silicon 专用 LLM 运行库。
+- **核心价值**: 基于 MLX 框架优化了苹果芯片上的大模型推理性能，解决了在 macOS 本地高效运行大模型的技术障碍，提升本地部署体验。
+---
+### [anthropics /skills](https://github.com/anthropics/skills)
+- **今日趋势**: 今日 +467 | 总 Stars 149,862 | Forks 17,687
+- **项目简介**: [AI 相关] 面向 Anthropic 生态开发者的 Agent 技能公开仓库。
+- **核心价值**: 为构建基于 Claude 的 AI 智能体提供标准化的技能定义和实现，解决了 Agent 能力复用性和一致性问题，促进 Agent 生态发展。
+---
+### [browser-use /browser-use](https://github.com/browser-use/browser-use)
+- **今日趋势**: 今日 +185 | 总 Stars 98,473 | Forks 10,985
+- **项目简介**: [AI 相关] 面向 AI 开发者的浏览器自动化工具，使 AI Agent 能够操作网页。
+- **核心价值**:  bridging the gap between AI agents and web interfaces（ bridging 意为 bridging），解决了 AI 智能体难以直接与动态网页交互的痛点，实现在线任务的自主自动化。
+---
+</details></script>
+        <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
+    </body>
+    </html>
+    
