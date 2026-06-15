@@ -1,0 +1,369 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>前沿科研情报 - 2026-06-16</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <style>
+            .markdown-body { box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 30px; }
+            details { background: #f6f8fa; padding: 15px; border-radius: 8px; border: 1px solid #d0d7de; margin-bottom: 20px; }
+            summary { cursor: pointer; color: #0969da; font-weight: bold; font-size: 1.1em; }
+        </style>
+    </head>
+    <body class="markdown-body">
+        <a href='../index.html'>← 返回索引</a>
+        <h1>前沿科研情报 - 2026-06-16</h1>
+        <div id="content"></div>
+        <script type="text/markdown" id="raw-md"><details>
+<summary><b>🤗 Hugging Face 今日论文 (点击展开)</b></summary>
+
+### 1. OmniDirector: General Multi-Shot Camera Cloning without Cross-Paired Data (OmniDirector：无需交叉配对数据的通用多镜头相机克隆)
+- **社区热度**: `👍 91 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.13432)
+- **研究任务**: 视频生成中的相机运动控制
+- **核心亮点**: 解决了视频生成中相机控制需要成对训练数据的痛点，实现了无配对数据下的多镜头克隆。
+- **深度解析**: 传统方法依赖大量“内容 - 相机运动”配对数据，该方法通过解耦内容生成与相机轨迹，利用几何约束和自监督信号替代配对数据。模型能直接理解镜头语言（如推拉摇移），在不同场景间迁移相机运动风格，降低了数据收集成本。
+- **领域归类**: [视频生成, 计算机视觉, AIGC]
+---
+
+### 2. APPO: Agentic Procedural Policy Optimization (APPO：代理程序化策略优化)
+- **社区热度**: `👍 61 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.12384)
+- **研究任务**: 智能体强化学习训练
+- **核心亮点**: 将程序化任务生成引入策略优化，提升了智能体在复杂环境下的泛化能力。
+- **深度解析**: 在 PPO 基础上改进，不再使用固定任务集训练，而是动态生成程序化任务序列。智能体在面对未见过的任务组合时，能更快调整策略。这种方法减少了过拟合，让智能体学会“如何学习”新任务，而不仅仅是记住特定任务的解法。
+- **领域归类**: [强化学习, 智能体, 算法优化]
+---
+
+### 3. Memory is Reconstructed, Not Retrieved: Graph Memory for LLM Agents (记忆是重构而非检索：面向 LLM 智能体的图记忆)
+- **社区热度**: `👍 53 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.06036)
+- **研究任务**: 大模型智能体记忆机制
+- **核心亮点**: 提出用图结构动态重构记忆，替代传统的向量检索方式。
+- **深度解析**: 传统 RAG 靠相似度检索片段，容易丢失上下文关联。该方法在交互过程中构建知识图谱，节点代表事实，边代表关系。需要记忆时，通过图遍历重构上下文，而非简单抓取片段。这解决了长程对话中逻辑断裂的问题，让记忆更符合人类联想机制。
+- **领域归类**: [大模型, 智能体, 记忆机制]
+---
+
+### 4. From Chatbot to Digital Colleague: The Paradigm Shift Toward Persistent Autonomous AI (从聊天机器人到数字同事：迈向持久自主 AI 的范式转变)
+- **社区热度**: `👍 41 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.14502)
+- **研究任务**: 自主智能体架构设计
+- **核心亮点**: 定义了从会话式 AI 向具有持久状态和自主目标的数字同事演进的技术路径。
+- **深度解析**: 论文指出当前聊天机器人缺乏“连续性”。 proposed 架构包含长期状态存储、自主目标管理和自我修正模块。智能体不再被动等待指令，而是能维护长期任务进度，在后台自主运行。这是构建真正能干活的 AI 员工的理论基础。
+- **领域归类**: [系统架构, 自主智能体, AI 伦理]
+---
+
+### 5. Orchestra-o1: Omnimodal Agent Orchestration (Orchestra-o1：全模态智能体编排)
+- **社区热度**: `👍 37 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.13707)
+- **研究任务**: 多模态智能体任务调度
+- **核心亮点**: 实现了一个能动态调度文本、视觉、音频等多种模态能力的智能体编排框架。
+- **深度解析**: 针对复杂任务需要多种感官输入的问题，设计了一个路由机制。系统根据子任务需求，自动决定调用哪个模态模型处理（例如先看图再听声音）。相比单模态 agent，它在处理跨模态推理任务时效率更高，减少了不必要的计算开销。
+- **领域归类**: [多模态, 智能体编排, 系统设计]
+---
+
+### 6. HarnessX: A Composable, Adaptive, and Evolvable Agent Harness Foundry (HarnessX：可组合、自适应且可演进的智能体框架工厂)
+- **社区热度**: `👍 33 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.14249)
+- **研究任务**: 智能体评估与开发框架
+- **核心亮点**: 提供了一个模块化框架，方便研究者灵活组合和评估不同的智能体组件。
+- **深度解析**: 现有框架往往耦合度高，改一个模块影响全局。HarnessX 将规划、记忆、工具使用等拆分为独立插件。研究者可以像搭积木一样测试不同组合的效果，支持自动化评估和迭代。这加速了智能体算法的实验验证过程。
+- **领域归类**: [开发工具, 智能体框架, 评估系统]
+---
+
+### 7. Rethinking RAG in Long Videos: What to Retrieve and How to Use It? (重思考长视频中的 RAG：检索什么以及如何使用？)
+- **社区热度**: `👍 32 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.13141)
+- **研究任务**: 长视频理解与检索增强生成
+- **核心亮点**: 针对长视频特性，优化了检索粒度和信息利用方式。
+- **深度解析**: 直接对视频帧做嵌入检索效果差，因为忽略了时间逻辑。该方法主张按“语义片段”检索，并结合时间戳信息。生成答案时，不仅引用检索内容，还利用时间序列关系进行推理。这解决了长视频中“找不到关键情节”和“因果倒置”的问题。
+- **领域归类**: [视频理解, RAG, 多模态]
+---
+
+### 8. From AGI to ASI (从 AGI 到 ASI)
+- **社区热度**: `👍 23 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.12683)
+- **研究任务**: AI 发展路径与理论展望
+- **核心亮点**: 探讨了从通用人工智能迈向超级人工智能的关键技术瓶颈和安全约束。
+- **深度解析**: 这是一篇立场论文。分析了当前 scaling law 的局限性，指出要达到 ASI 需要在架构效率、自我改进能力和对齐安全上取得突破。文中提出了几个可能的演进阶段，并强调了在能力跃升前必须先解决失控风险。
+- **领域归类**: [AI 理论, 安全对齐, 未来展望]
+---
+
+### 9. OmniVideo-100K: A Dataset for Audio-Visual Reasoning through Structured Scripts and Evidence Chains (OmniVideo-100K：基于结构化脚本和证据链的音视频推理数据集)
+- **社区热度**: `👍 22 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.14702)
+- **研究任务**: 多模态数据集构建
+- **核心亮点**: 发布了包含 10 万样本的音视频数据集，带有详细的推理证据链。
+- **深度解析**: 现有数据集多只给答案，不给推理过程。该数据集为每个样本标注了“结构化脚本”和“证据链”，明确指出了模型应依据哪段声音或画面得出结论。这有助于训练模型的可解释性，让它学会“有理有据”地回答音视频问题。
+- **领域归类**: [数据集, 多模态推理, 音视频处理]
+---
+
+### 10. Smaller Models are Natural Explorers for Policy-Level Diversity in GRPO (小模型是 GRPO 中策略多样性自然探索者)
+- **社区热度**: `👍 19 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.30789)
+- **研究任务**: 强化学习优化与模型效率
+- **核心亮点**: 发现小模型在 GRPO 训练中能天然提供策略多样性，降低计算成本。
+- **深度解析**: 在组相对策略优化（GRPO）中，通常用大模型生成样本。论文发现混入小模型生成数据，能增加策略探索的多样性，避免陷入局部最优。这意味着可以用更少的大模型调用次数达到同样的训练效果，提升了 RL 训练的效率。
+- **领域归类**: [强化学习, 模型效率, 训练策略]
+---
+
+### 11. RedAct: Redacting Agent Capability Traces for Procedural Skill Protection (RedAct：编辑 Agent 能力痕迹以保护流程技能)
+- **社区热度**: `👍 15 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.10813)
+- **研究任务**: Agent 安全与技能隐私保护
+- **核心亮点**: 通过抹除训练轨迹中的关键步骤，防止 Agent 的流程化技能被轻易克隆。
+- **深度解析**: 针对 Agent 执行任务留下的日志和轨迹，设计了一种编辑机制。在不影响正常任务完成的前提下，移除或混淆那些体现核心 procedural skill（流程技能）的关键数据点，使得外部无法通过行为克隆复现该技能。
+- **领域归类**: [Agent 安全] [隐私保护]
+---
+
+### 12. Measuring Epistemic Resilience of LLMs Under Misleading Medical Context (测量 LLM 在误导医疗上下文下的认知韧性)
+- **社区热度**: `👍 13 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.12291)
+- **研究任务**: LLM 鲁棒性评估与医疗垂直领域
+- **核心亮点**: 提出了一套评估指标，专门测试 LLM 面对虚假医疗信息时能否坚持正确知识。
+- **深度解析**: 构建包含误导性上下文的医疗问答数据集，量化模型在干扰信息下的表现。重点考察模型是依赖内部知识库还是被上下文带偏，以此衡量其“认知韧性”。
+- **领域归类**: [模型评估] [医疗 AI]
+---
+
+### 13. Skip a Layer or Loop It? Learning Program-of-Layers in LLMs (跳过一层还是循环？学习 LLM 中的层程序)
+- **社区热度**: `👍 13 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.06574)
+- **研究任务**: LLM 架构优化与推理效率
+- **核心亮点**: 让模型动态决定每一层是跳过、正常执行还是重复计算，以优化算力分配。
+- **深度解析**: 引入一个轻量级控制器，根据输入 token 的复杂度实时调整网络结构。简单样本跳过某些层，难样本循环使用某些层，实现计算资源的自适应分配。
+- **领域归类**: [模型架构] [推理加速]
+---
+
+### 14. LLM Agents Can See Code Repositories (LLM Agent 能看懂代码仓库了)
+- **社区热度**: `👍 11 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.14061)
+- **研究任务**: 代码 Agent 与仓库级理解
+- **核心亮点**: 突破了单文件限制，让 Agent 能够理解整个代码仓库的结构和依赖关系。
+- **深度解析**: 结合了代码图谱检索和结构化视觉表示，将仓库的目录结构、调用关系转化为 Agent 可理解的上下文。解决了长上下文窗口下难以把握全局代码逻辑的问题。
+- **领域归类**: [代码智能] [Agent]
+---
+
+### 15. iMaC: Translating Actions into Motion and Contact Images for Embodied World Models (iMaC：将动作译为运动和接触图像以构建具身世界模型)
+- **社区热度**: `👍 9 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.09813)
+- **研究任务**: 具身 AI 与世界模型
+- **核心亮点**: 用视觉化的运动图和接触图来表示动作，提升具身模型对物理交互的理解。
+- **深度解析**: 不直接预测下一步状态，而是先生成表示物体运动趋势和接触关系的中间图像表示。这种视觉化的物理反馈帮助世界模型更准确地预测动作后果。
+- **领域归类**: [具身智能] [世界模型]
+---
+
+### 16. Hy-Embodied-0.5-VLA: From Vision-Language-Action Models to a Real-World Robot Learning Stack (Hy-Embodied-0.5-VLA：从 VLA 模型到真实机器人学习栈)
+- **社区热度**: `👍 8 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.14409)
+- **研究任务**: 机器人部署与 VLA 工程化
+- **核心亮点**: 打通了 VLA 模型到真实机器人硬件控制的工程链路，提供了一套可落地的学习栈。
+- **深度解析**: 重点解决模型输出到电机控制的接口问题。封装了感知、决策到执行的中间件，降低了将 Vision-Language-Action 模型部署到真实机械臂上的门槛。
+- **领域归类**: [机器人学习] [工程部署]
+---
+
+### 17. RepFusion: Leveraging Multimodal Priors for Denoising in Representation Space (RepFusion：利用多模态先验在表示空间进行去噪)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.14700)
+- **研究任务**: 多模态表示学习与去噪
+- **核心亮点**: 在特征 embedding 空间利用多模态先验信息去除噪声，提升表示质量。
+- **深度解析**: 不直接在像素级去噪，而是在潜在表示空间操作。利用文本、图像等多模态信息作为先验约束，通过融合机制清洗受损或不纯净的特征向量。
+- **领域归类**: [多模态] [表示学习]
+---
+
+### 18. The Arbiter Agent: Continually Monitoring Multi-Agent Conversations to Detect Emergent Misalignment (仲裁者 Agent：持续监控多 Agent 对话以检测 emergent 对齐偏差)
+- **社区热度**: `👍 6 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.10747)
+- **研究任务**: 多 Agent 安全与对齐监控
+- **核心亮点**: 部署一个监控 Agent 实时审查多 Agent 对话，防止出现未被预设的对齐风险。
+- **深度解析**: 引入第三方“仲裁者”角色，持续扫描 Agent 间的交互日志。通过分类器或奖励模型识别潜在的有害协作或目标漂移，及时干预。
+- **领域归类**: [AI 安全] [多 Agent 系统]
+---
+
+### 19. MBench: A Comprehensive Benchmark on Memory Capability for Video World Models (MBench：视频世界模型记忆能力的综合基准)
+- **社区热度**: `👍 6 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.00793)
+- **研究任务**: 视频生成基准测试
+- **核心亮点**: 专门针对视频世界模型的长程记忆能力建立了一套评测标准。
+- **深度解析**: 设计了需要依赖早期帧信息才能生成的后续视频任务。量化模型在长序列生成中保持一致性和回忆关键物体状态的能力，填补了该领域评估空白。
+- **领域归类**: [基准测试] [视频生成]
+---
+
+### 20. VISTA: View-Consistent Self-Verified Training for GUI Grounding (VISTA：用于 GUI 接地的视角一致自验证训练)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.14579)
+- **研究任务**: GUI Agent 与视觉接地
+- **核心亮点**: 在训练 GUI 操作模型时，引入自验证机制确保不同视角下的操作一致性。
+- **深度解析**: 针对屏幕截图可能存在的视角变化问题，模型在预测操作坐标后进行自我验证。通过一致性损失函数，确保模型在不同缩放或裁剪视图下都能定位到正确的 UI 元素。
+- **领域归类**: [GUI Agent] [计算机视觉]
+---
+
+### 21. Avatar V: Scaling Video-Reference Avatar Video Generation (Avatar V：缩放视频参考的数字人视频生成)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.13872)
+- **研究任务**: 数字人视频生成
+- **核心亮点**: 确立了基于视频参考的数字人生成任务中的 Scaling Law。
+- **深度解析**: 该文系统研究了模型参数量、训练数据规模对视频参考型数字人生成质量的影响。实验表明，在该特定任务下，增加数据多样性比单纯增加模型大小更能提升生成视频的时序一致性和身份保持能力，为后续模型扩展提供了 empirical 指导。
+- **领域归类**: [Computer Vision, Generative AI, Digital Human]
+---
+### 22. μ_0: A Scalable 3D Interaction-Trace World Model (μ_0：可扩展的 3D 交互轨迹世界模型)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.13769)
+- **研究任务**: 3D 世界模型与交互预测
+- **核心亮点**: 实现了对 3D 空间中物体交互轨迹的可扩展建模。
+- **深度解析**: 提出了一种新的世界模型架构，专注于记录和预测 3D 环境中的交互轨迹（Interaction-Trace）。通过引入分层 latent 表示，模型能够高效处理长序列的 3D 交互数据，支持大规模场景下的物理交互推理，解决了传统世界模型在 3D 细粒度交互上扩展性差的问题。
+- **领域归类**: [World Model, 3D Vision, Robotics]
+---
+### 23. The Hidden Power of Scaling Factor in LoRA Optimization (LoRA 优化中缩放因子的隐藏力量)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.12883)
+- **研究任务**: 参数高效微调 (PEFT)
+- **核心亮点**: 揭示了 LoRA 中缩放因子（alpha）对优化动态的关键影响。
+- **深度解析**: 重新审视了 LoRA 公式中的缩放因子 $alpha/r$。研究发现该因子不仅影响学习率缩放，还直接梯度更新的几何形态。论文提出了一种自适应调整缩放因子的策略，在不增加额外参数的情况下，显著提升了 LoRA 在低秩设置下的收敛速度和最终性能。
+- **领域归类**: [Optimization, PEFT, LLM]
+---
+### 24. Pythagoras-Prover: Advancing Efficient Formal Proving via Augmented Lean Formalisation (Pythagoras-Prover：通过增强 Lean 形式化推进高效形式化证明)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.12594)
+- **研究任务**: 形式化数学证明
+- **核心亮点**: 通过增强 Lean 代码的形式化表示提升证明器效率。
+- **深度解析**: 针对自动定理证明器在 Lean 环境下的效率瓶颈，提出了一种数据增强方法。通过丰富 Lean 形式化语言的上下文表示，改善了证明策略的搜索空间。在标准数学证明基准上，该方法减少了证明搜索步数，提高了复杂定理的自动证明成功率。
+- **领域归类**: [Formal Methods, Math AI, Theorem Proving]
+---
+### 25. RhymeFlow: Training-Free Acceleration for Video Generation with Asynchronous Denoising Flow Scheduling (RhymeFlow：基于异步去噪流调度的免训练视频生成加速)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.06309)
+- **研究任务**: 视频生成加速
+- **核心亮点**: 无需训练，通过异步调度策略加速视频扩散模型推理。
+- **深度解析**: 提出了一种异步去噪流调度机制，允许视频生成过程中的不同时间步或不同区域以非同步方式进行去噪。该方法在不修改模型权重、无需微调的前提下，有效减少了推理步数，显著降低了视频生成的延迟，同时保持了生成质量。
+- **领域归类**: [Video Generation, Diffusion Models, Inference Acceleration]
+---
+### 26. ClinHallu: A Benchmark for Diagnosing Stage-Wise Hallucinations in Medical MLLM Reasoning (ClinHallu：医疗多模模型推理中分阶段幻觉诊断基准)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.14697)
+- **研究任务**: 医疗大模型幻觉评估
+- **核心亮点**: 首个针对医疗推理过程进行分阶段幻觉诊断的基准。
+- **深度解析**: 现有的医疗幻觉评估多关注最终结论，该基准将推理过程拆解为多个阶段（如信息提取、诊断推断、治疗建议），分别评估幻觉出现的位置。这有助于定位模型在医疗决策链中的具体失效环节，为针对性优化提供了评估工具。
+- **领域归类**: [Healthcare AI, MLLM, Benchmark, Hallucination]
+---
+### 27. LoSoNA: A Benchmark for Local Social Norm Adaptation in Group Conversations (LoSoNA：群组对话中局部社交规范适应基准)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.14600)
+- **研究任务**: 社交对话与规范适应
+- **核心亮点**: 评估模型在群组对话中适应局部社交规范的能力。
+- **深度解析**: 构建了包含不同文化背景和群体规则的对话数据集，用于测试 LLM 是否能识别并适应特定群组的隐性社交规范（如称呼、语气、禁忌）。实验显示当前主流模型在跨群体规范迁移上表现不佳，该基准旨在推动更具社交智能的对话模型发展。
+- **领域归类**: [NLP, Social AI, Conversation, Benchmark]
+---
+### 28. When is Your LLM Steerable? (你的大语言模型何时可引导？)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.11599)
+- **研究任务**: 模型可控性与引导
+- **核心亮点**: 界定了 LLM 可通过激活编辑等技术进行有效引导的条件。
+- **深度解析**: 系统性分析了 LLM 的可引导性（Steerability）。研究发现模型的可引导性与特定层的激活分布几何特性密切相关。论文提出了一个可引导性指标，用于预测在哪些层、哪些任务上施加干预（如向量加法）能生效，避免了盲目尝试。
+- **领域归类**: [Interpretability, LLM Control, Mechanistic Interpretability]
+---
+### 29. Dense Supervision, Sparse Updates: On the Sparsity and Geometry of On-Policy Distillation (稠密监督，稀疏更新：论策略蒸馏中的稀疏性与几何结构)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.13657)
+- **研究任务**: 模型蒸馏与强化学习
+- **核心亮点**: 揭示了 On-Policy 蒸馏中稠密监督与稀疏更新的几何关系。
+- **深度解析**: 探讨了在 On-Policy 蒸馏过程中，监督信号的密度与参数更新稀疏性之间的平衡。理论分析表明，保持监督信号稠密但限制参数更新稀疏，能更好地保持学生模型的性能流形。基于此提出了一种新的蒸馏算法，提升了蒸馏效率和稳定性。
+- **领域归类**: [Distillation, Reinforcement Learning, Optimization]
+---
+### 30. P3D-Bench: Benchmarking MLLMs for Parametric 3D Generation and Structural Reasoning (P3D-Bench：多模模型参数化 3D 生成与结构推理基准)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.11152)
+- **研究任务**: 3D 生成与推理评估
+- **核心亮点**: 专注于评估 MLLM 在参数化 3D 生成及结构推理上的能力。
+- **深度解析**: 针对现有 3D 基准多关注 mesh 或点云生成的局限，该基准侧重于参数化建模（如 CAD 指令）和结构逻辑推理。测试了 MLLM 理解 3D 结构关系并生成可编辑参数代码的能力，填补了多模模型在工程级 3D 生成评估上的空白。
+- **领域归类**: [3D Generation, MLLM, Benchmark, Structural Reasoning]
+---
+</details>
+
+<details>
+<summary><b>🚀 GitHub 今日热门项目 (点击展开)</b></summary>
+
+### [Agent-Reach](https://github.com/Panniantong/Agent-Reach)
+- **今日趋势**: 今日新增 1,045 Stars (总 29,875)
+- **项目简介**: 为 AI Agent 提供全网社交媒体搜索与阅读能力的 CLI 工具，支持 Twitter、Reddit、YouTube 等多个平台。
+- **核心价值**: 解决了 AI Agent 难以低成本获取实时互联网数据的痛点，通过单一命令行界面实现零 API 费用的跨平台数据抓取，赋予 Agent“观察”互联网的能力。
+- **AI/大模型相关性**: **是** (专为 AI Agent 设计，用于增强大模型的外部数据感知能力)
+
+---
+
+### [ai-engineering-from-scratch](https://github.com/rohitg00/ai-engineering-from-scratch)
+- **今日趋势**: 今日新增 538 Stars (总 32,947)
+- **项目简介**: 一个旨在指导开发者从零开始学习、构建并交付 AI 工程项目的教育性资源库。
+- **核心价值**: 降低了 AI 工程化的学习门槛，解决了初学者缺乏系统性落地指南的痛点，提供从理论到.shipping 的完整路径。
+- **AI/大模型相关性**: **是** (专注于 AI 工程化教育与构建)
+
+---
+
+### [Kronos](https://github.com/shiyu-coder/Kronos)
+- **今日趋势**: 今日新增 395 Stars (总 30,197)
+- **项目简介**: 专为金融市场语言打造的基础模型（Foundation Model），旨在理解市场动态与金融文本。
+- **核心价值**: 解决了通用大模型在金融垂直领域专业性不足的问题，为量化交易和金融分析提供更深度的语言理解与预测能力。
+- **AI/大模型相关性**: **是** (本身就是针对金融领域的垂直大模型/基础模型)
+
+---
+
+### [pytest](https://github.com/pytest-dev/pytest)
+- **今日趋势**: 今日新增 197 Stars (总 14,132)
+- **项目简介**: Python 生态中最流行的测试框架，支持编写小型测试并扩展至复杂的功能测试。
+- **核心价值**: 解决了 Python 项目测试代码编写繁琐、难以维护的痛点，提供简洁的语法和强大的插件生态，保障软件质量。
+- **AI/大模型相关性**: **否** (通用软件开发测试工具，与 AI 无直接关联)
+
+---
+
+### [tg-ws-proxy](https://github.com/Flowseal/tg-ws-proxy)
+- **今日趋势**: 今日新增 102 Stars (总 7,510)
+- **项目简介**: 用于部分 bypass Telegram 加载问题的本地 MTProto 代理服务器。
+- **核心价值**: 解决了特定网络环境下 Telegram 客户端连接不稳定或加载缓慢的痛点，通过本地代理优化 WebSocket 连接质量。
+- **AI/大模型相关性**: **否** (网络代理工具，与 AI 无直接关联)
+
+---
+
+### [aisuite](https://github.com/andrewyng/aisuite)
+- **今日趋势**: 今日新增 270 Stars (总 14,559)
+- **项目简介**: 提供统一简单接口以接入多个生成式 AI 提供商的 Python 库。
+- **核心价值**: 解决了开发者在不同 AI 供应商 API 之间切换成本高、代码耦合度高的痛点，实现一次集成、多模型灵活调用。
+- **AI/大模型相关性**: **是** (直接服务于生成式 AI 应用的开发与集成)
+
+---
+
+### [Archipelago](https://github.com/ArchipelagoMW/Archipelago)
+- **今日趋势**: 今日新增 10 Stars (总 1,464)
+- **项目简介**: 支持多款游戏的随机化器及服务器，允许玩家跨游戏进度互动。
+- **核心价值**: 解决了单一游戏玩法固化、重复可玩性低的问题，通过随机化物品和进度创造全新的多人协作游戏体验。
+- **AI/大模型相关性**: **否** (游戏辅助工具，与 AI 无直接关联)
+
+---
+
+### [free-llm-api-resources](https://github.com/cheahjs/free-llm-api-resources)
+- **今日趋势**: 今日新增 48 Stars (总 23,528)
+- **项目简介**: 汇总了可通过 API 访问的免费大模型（LLM）推理资源列表。
+- **核心价值**: 解决了开发者和研究者寻找低成本或免费 LLM 推理接口的信息不对称痛点，降低实验和开发成本。
+- **AI/大模型相关性**: **是** (专门收集大模型 API 资源)
+
+---
+
+### [hacs_waste_collection_schedule](https://github.com/mampfes/hacs_waste_collection_schedule)
+- **今日趋势**: 今日新增 4 Stars (总 2,095)
+- **项目简介**: Home Assistant 的集成框架，用于自动化管理和提醒垃圾收集日程。
+- **核心价值**: 解决了智能家居用户需要手动记录垃圾回收时间的痛点，通过自动化通知提升生活便利性。
+- **AI/大模型相关性**: **否** (智能家居自动化脚本，与 AI 无直接关联)
+
+---
+
+### [SurfSense](https://github.com/MODSetter/SurfSense)
+- **今日趋势**: 今日新增 185 Stars (总 14,725)
+- **项目简介**: 专注于隐私保护的 NotebookLM 开源替代方案，支持团队协作且无数据限制。
+- **核心价值**: 解决了团队使用 AI 笔记工具时对数据隐私泄露的顾虑以及商业产品的数据配额限制，提供私有化部署的 AI 知识管理方案。
+- **AI/大模型相关性**: **是** (基于 AI 的笔记与知识管理工具，对标 NotebookLM)
+</details></script>
+        <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
+    </body>
+    </html>
+    

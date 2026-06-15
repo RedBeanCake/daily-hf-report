@@ -1,0 +1,298 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AI 技术周报 - 2026-W25</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <style>
+            .markdown-body { box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 30px; }
+            details { background: #f6f8fa; padding: 15px; border-radius: 8px; border: 1px solid #d0d7de; margin-bottom: 20px; }
+            summary { cursor: pointer; color: #0969da; font-weight: bold; font-size: 1.1em; }
+        </style>
+    </head>
+    <body class="markdown-body">
+        <a href='../index.html'>← 返回索引</a>
+        <h1>AI 技术周报 - 2026-W25</h1>
+        <div id="content"></div>
+        <script type="text/markdown" id="raw-md"><details>
+<summary><b>🤗 Hugging Face 每周论文 (点击展开)</b></summary>
+
+### 1. OmniDirector: General Multi-Shot Camera Cloning without Cross-Paired Data (全能导演：无需跨配对数据的通用多镜头相机克隆)
+- **社区热度**: `👍 91 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.13432)
+- **研究任务**: 视频生成中的相机运动控制
+- **核心亮点**: 解决了多镜头视频生成中缺乏配对训练数据的问题。
+- **深度解析**: 提出了一种解耦方案，将相机运动参数从视频内容 latent 中分离出来。不需要真实的相机 - 视频配对数据，通过自监督方式学习相机轨迹，实现了任意镜头语言的克隆和控制。
+- **领域归类**: `[视频生成，相机控制，无监督学习]`
+---
+
+### 2. APPO: Agentic Procedural Policy Optimization (APPO：代理过程策略优化)
+- **社区热度**: `👍 61 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.12384)
+- **研究任务**: 强化学习与智能体策略优化
+- **核心亮点**: 将过程生成机制引入 PPO 算法，提升智能体泛化能力。
+- **深度解析**: 针对传统 PPO 在复杂代理任务中样本效率低的问题，设计了过程化策略更新步骤。通过在优化循环中动态生成任务变体，使策略能适应更广泛的代理操作场景。
+- **领域归类**: `[强化学习，智能体，策略优化]`
+---
+
+### 3. Memory is Reconstructed, Not Retrieved: Graph Memory for LLM Agents (记忆是重构的，不是检索的：面向 LLM 智能体的图记忆)
+- **社区热度**: `👍 54 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.06036)
+- **研究任务**: 大模型智能体的长期记忆管理
+- **核心亮点**: 主张用图结构重构记忆，替代传统的向量检索方式。
+- **深度解析**: 指出 RAG 式检索在复杂任务中丢失上下文关联的问题。构建动态知识图谱，根据当前任务需求实时重构记忆子图，提高了记忆调用的准确性和逻辑连贯性。
+- **领域归类**: `[LLM 智能体，记忆机制，知识图谱]`
+---
+
+### 4. From Chatbot to Digital Colleague: The Paradigm Shift Toward Persistent Autonomous AI (从聊天机器人到数字同事：迈向持久自主 AI 的范式转变)
+- **社区热度**: `👍 41 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.14502)
+- **研究任务**: AI 系统架构与未来发展展望
+- **核心亮点**: 论述了 AI 从被动问答向持久化自主协作演进的架构需求。
+- **深度解析**: 分析了现有 Chatbot 无状态设计的局限性。提出数字同事需要具备长期状态保持、自主目标拆解和持续学习能力，并给出了相应的系统架构建议。
+- **领域归类**: `[AI 架构，综述，自主智能体]`
+---
+
+### 5. Orchestra-o1: Omnimodal Agent Orchestration (Orchestra-o1：全模态智能体编排)
+- **社区热度**: `👍 37 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.13707)
+- **研究任务**: 多模态智能体的协同调度
+- **核心亮点**: 实现了对文本、图像、音频等多模态智能体的统一编排。
+- **深度解析**: 设计了一个中央控制器，能够根据任务需求动态分配不同模态的代理模型。解决了多模态任务中各模型各自为战、信息不同步的问题，提升了复杂任务的处理效率。
+- **领域归类**: `[智能体编排，多模态，系统框架]`
+---
+
+### 6. HarnessX: A Composable, Adaptive, and Evolvable Agent Harness Foundry (HarnessX：可组合、自适应且可演化的智能体 harness 工厂)
+- **社区热度**: `👍 33 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.14249)
+- **研究任务**: 智能体开发与评估基础设施
+- **核心亮点**: 提供了一个模块化框架，支持智能体的快速组装和迭代演化。
+- **深度解析**: 针对智能体开发流程碎片化问题，构建了标准化接口。支持按需组合不同组件（如记忆、工具、规划），并允许框架随任务复杂度自适应调整，便于大规模部署和测试。
+- **领域归类**: [`智能体基础设施，软件工程，评估框架`]`
+---
+
+### 7. Rethinking RAG in Long Videos: What to Retrieve and How to Use It? (重思长视频 RAG：检索什么以及如何使用？)
+- **社区热度**: `👍 32 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.13141)
+- **研究任务**: 长视频内容的检索增强生成
+- **核心亮点**: 提出了针对长视频时序特性的检索与使用策略。
+- **深度解析**: 传统 RAG 直接切片视频效果不佳。该工作分析了视频语义密度，设计了基于关键事件的分段检索机制，并优化了检索片段在生成阶段的融合方式，减少了幻觉。
+- **领域归类**: `[视频理解，RAG，多模态检索]`
+---
+
+### 8. From AGI to ASI (从 AGI 到 ASI)
+- **社区热度**: `👍 23 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.12683)
+- **研究任务**: 人工智能理论发展与安全
+- **核心亮点**: 探讨了从通用人工智能向超级人工智能演进的路径与风险。
+- **深度解析**: 理论性文章。分析了算力 scaling law 之外的能力跃迁点，讨论了在迈向 ASI 过程中可能出现的对齐失效问题，并提出了初步的安全监控建议。
+- **领域归类**: `[AI 理论，安全对齐，未来展望]`
+---
+
+### 9. OmniVideo-100K: A Dataset for Audio-Visual Reasoning through Structured Scripts and Evidence Chains (OmniVideo-100K：通过结构化脚本和证据链进行音视频推理的数据集)
+- **社区热度**: `👍 22 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.14702)
+- **研究任务**: 多模态推理数据集构建
+- **核心亮点**: 提供了 10 万级带结构化脚本和证据链的音视频推理数据。
+- **深度解析**: 针对现有视频数据缺乏推理标注的问题，构建了包含脚本、时间戳证据链的数据集。支持模型训练跨模态因果推理能力，填补了高质量音视频推理数据的空白。
+- **领域归类**: `[数据集，音视频推理，多模态]`
+---
+
+### 10. Smaller Models are Natural Explorers for Policy-Level Diversity in GRPO (小模型是 GRPO 中策略层面多样性的自然探索者)
+- **社区热度**: `👍 19 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2605.30789)
+- **研究任务**: 强化学习中的策略优化与模型规模
+- **核心亮点**: 发现小模型在 GRPO 算法中能提供更好的策略探索多样性。
+- **深度解析**: 在组相对策略优化（GRPO）过程中，混合使用不同规模的模型。小模型由于泛化约束少，能探索更多策略空间，帮助大模型跳出局部最优，提升了最终策略的鲁棒性。
+- **领域归类**: `[强化学习，GRPO，模型缩放]`
+---
+
+### 11. RedAct: Redacting Agent Capability Traces for Procedural Skill Protection (RedAct：针对过程技能保护的 Agent 能力轨迹编辑)
+- **社区热度**: `👍 15 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.10813)
+- **研究任务**: Agent 安全与技能保护
+- **核心亮点**: 通过修改 Agent 执行轨迹，防止外部复制其过程性技能。
+- **深度解析**: 针对 Agent 操作日志可能被逆向工程的问题，提出一种编辑方法。在不影响任务完成的前提下，对轨迹中的关键步骤添加噪声或掩码，使得外部观察者无法还原具体的技能实现逻辑，保护核心流程不被窃取。
+- **领域归类**: [Agent, 安全]
+---
+
+### 12. Measuring Epistemic Resilience of LLMs Under Misleading Medical Context (测量 LLM 在误导医疗语境下的认知韧性)
+- **社区热度**: `👍 13 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.12291)
+- **研究任务**: 医疗领域 LLM 安全性评估
+- **核心亮点**: 量化评估 LLM 面对错误医疗信息时的抗干扰能力。
+- **深度解析**: 构建了一个包含误导性上下文的医疗问答数据集。测试发现，即便模型本身知道正确答案，当 prompt 中包含看似专业的错误前提时，准确率显著下降。文章提出了一套评分指标，用于衡量模型坚持正确知识的稳定性。
+- **领域归类**: [安全, 医疗, 评估]
+---
+
+### 13. Skip a Layer or Loop It? Learning Program-of-Layers in LLMs (跳过一层还是循环？学习 LLM 中的层程序)
+- **社区热度**: `👍 13 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.06574)
+- **研究任务**: 模型架构与推理效率
+- **核心亮点**: 让模型动态决定每层是跳过、正常执行还是重复执行。
+- **深度解析**: 引入一个轻量级控制器，根据当前 token 的难度动态调整网络路径。简单 token 跳过层，复杂 token 循环使用某层。在保证性能基本不变的情况下，显著降低了平均推理计算量，实现了自适应的计算分配。
+- **领域归类**: [架构, 效率]
+---
+
+### 14. LLM Agents Can See Code Repositories (LLM Agent 可以看见代码仓库了)
+- **社区热度**: `👍 11 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.14061)
+- **研究任务**: 代码 Agent 与多模态输入
+- **核心亮点**: 将代码仓库结构可视化，作为多模态输入给 Agent。
+- **深度解析**: 传统 Code Agent 只能读文本文件，这篇工作把文件目录、依赖关系图转换成图像或结构化图谱，喂给 VLM。实验显示， Agent 在理解大型项目结构和定位文件时的导航能力有明显提升，减少了上下文窗口占用。
+- **领域归类**: [Agent, 代码, 多模态]
+---
+
+### 15. iMaC: Translating Actions into Motion and Contact Images for Embodied World Models (iMaC：将动作转化为运动与接触图像用于具身世界模型)
+- **社区热度**: `👍 9 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.09813)
+- **研究任务**: 具身智能世界模型
+- **核心亮点**: 世界模型不仅预测下一帧图像，还预测运动图和接触图。
+- **深度解析**: 针对机器人操作任务，模型输出除了常规像素预测外，额外生成物体运动矢量和接触面变化图。这让机器人能更清楚地理解物理交互细节，比如哪里发生了碰撞、物体怎么动的，提升了规划的可解释性和准确性。
+- **领域归类**: [机器人, 世界模型]
+---
+
+### 16. Hy-Embodied-0.5-VLA: From Vision-Language-Action Models to a Real-World Robot Learning Stack (Hy-Embodied-0.5-VLA：从 VLA 模型到真实机器人学习栈)
+- **社区热度**: `👍 8 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.14409)
+- **研究任务**: 机器人系统部署
+- **核心亮点**: 提供了一套将 VLA 模型落地到真机的完整工具栈。
+- **深度解析**: 解决了 VLA 模型从仿真到真机部署的工程缺口。整合了感知、推理和控制模块，提供了校准工具和实时接口。重点优化了延迟和稳定性，使得开源 VLA 模型能在普通硬件上跑通真实的抓取和操作任务。
+- **领域归类**: [机器人, 系统]
+---
+
+### 17. RepFusion: Leveraging Multimodal Priors for Denoising in Representation Space (RepFusion：利用多模态先验在表示空间去噪)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.14700)
+- **研究任务**: 表示学习与多模态
+- **核心亮点**: 利用多模态信息清洗向量空间中的噪声表示。
+- **深度解析**: 针对单模态 embedding 容易受噪声干扰的问题，利用图像 - 文本对之间的互补信息，在向量空间中进行校正。通过融合多模态先验，拉近相似语义的距离，推远无关样本。在检索和分类任务上，比单模态基线有更稳定的表现。
+- **领域归类**: [多模态, 表示学习]
+---
+
+### 18. The Arbiter Agent: Continually Monitoring Multi-Agent Conversations to Detect Emergent Misalignment (仲裁者 Agent：持续监控多 Agent 对话以检测 emergent 不对齐)
+- **社区热度**: `👍 6 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.10747)
+- **研究任务**: 多 Agent 安全监控
+- **核心亮点**: 部署一个独立的监控 Agent，实时检测多 Agent 协作中的行为偏移。
+- **深度解析**: 多 Agent 系统在长期对话中可能出现合谋或偏离初始目标的情况。这篇工作设计了一个“仲裁者”角色，不间断扫描对话日志，识别潜在的有害策略或目标漂移，并及时介入干预，防止系统性风险。
+- **领域归类**: [安全, 多 Agent]
+---
+
+### 19. MBench: A Comprehensive Benchmark on Memory Capability for Video World Models (MBench：视频世界模型记忆能力的综合基准)
+- **社区热度**: `👍 6 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.00793)
+- **研究任务**: 视频世界模型评估
+- **核心亮点**: 专门测试视频世界模型对长序列信息的记忆保持能力。
+- **深度解析**: 现有基准多关注生成质量，忽视了记忆时长。MBench 设计了一系列需要回溯长视频上下文才能完成的任务。测试结果表明，当前主流模型在长序列下的记忆衰减严重，为后续改进提供了明确的评估标准。
+- **领域归类**: [基准, 视频, 世界模型]
+---
+
+### 20. VISTA: View-Consistent Self-Verified Training for GUI Grounding (VISTA：用于 GUI 定位的视图一致自验证训练)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.14579)
+- **研究任务**: GUI Agent 训练
+- **核心亮点**: 通过自验证视图一致性，提高 GUI 操作定位的准确率。
+- **深度解析**: 针对 GUI 界面动态变化导致定位不准的问题，训练模型在执行动作前自我检查不同视图下的元素一致性。如果检测到视图变化导致坐标失效，模型会重新规划。这种方法减少了无效点击，提升了自动化任务的成功率。
+- **领域归类**: [GUI, Agent, 训练]
+---
+
+### 21. Avatar V: Scaling Video-Reference Avatar Video Generation (Avatar V：缩放视频参考化身视频生成)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.13872)
+- **研究任务**: 数字人视频生成
+- **核心亮点**: 解决了基于视频参考生成化身视频时的缩放效率问题。
+- **深度解析**: 针对现有数字人生成在长视频参考下一致性差的问题，引入缩放定律优化生成架构。方法利用视频序列作为参考而非单图，通过调整模型容量与数据量的比例，提升了动作连贯性和身份一致性，支持更高分辨率和更长时长的生成。
+- **领域归类**: [AIGC, 视频生成, 数字人]
+---
+
+### 22. μ_0: A Scalable 3D Interaction-Trace World Model (μ_0：可扩展的 3D 交互轨迹世界模型)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.13769)
+- **研究任务**: 3D 世界模型构建
+- **核心亮点**: 基于 3D 交互轨迹构建可扩展的世界模型，预测环境动态。
+- **深度解析**: 传统世界模型多基于 2D 像素，该工作转向 3D 空间。通过记录智能体在 3D 环境中的动作与状态变化轨迹（Interaction-Trace），训练模型预测下一步物理状态。架构支持大规模数据并行，提升了机器人任务规划中的环境模拟准确性。
+- **领域归类**: [世界模型, 3D 视觉, 机器人]
+---
+
+### 23. The Hidden Power of Scaling Factor in LoRA Optimization (LoRA 优化中缩放因子的隐藏力量)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.12883)
+- **研究任务**: 参数高效微调 (PEFT)
+- **核心亮点**: 揭示了 LoRA 中缩放因子（alpha）对优化稳定性的关键影响。
+- **深度解析**: 重新审视了 LoRA 中秩分解后的缩放系数设置。发现固定缩放比例在不同任务下表现不均，提出动态调整缩放因子的策略。实验表明，优化该参数能在不增加推理延迟的情况下，显著提升微调收敛速度和最终性能，尤其是在低秩设置下。
+- **领域归类**: [LLM 优化, PEFT, 深度学习理论]
+---
+
+### 24. Pythagoras-Prover: Advancing Efficient Formal Proving via Augmented Lean Formalisation (Pythagoras-Prover：通过增强 Lean 形式化推进高效形式化证明)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.12594)
+- **研究任务**: 形式化定理证明
+- **核心亮点**: 利用增强的 Lean 形式化数据，提高了自动证明的效率。
+- **深度解析**: 针对 LLM 在数学证明中格式错误多的问题，对 Lean 证明助手的数据进行了增强处理。通过补充中间推理步骤和规范语法结构，降低了模型搜索证明路径的难度。在标准数学数据集上，证明了生成有效代码的通过率有明显提升。
+- **领域归类**: [AI for Science, 形式化推理, 数学]
+---
+
+### 25. RhymeFlow: Training-Free Acceleration for Video Generation with Asynchronous Denoising Flow Scheduling (RhymeFlow：基于异步去噪流调度的免训练视频生成加速)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.06309)
+- **研究任务**: 视频生成加速
+- **核心亮点**: 无需重新训练，通过异步去噪流调度加速视频生成推理。
+- **深度解析**: 基于流匹配（Flow Matching）模型，改进了采样调度策略。允许不同时间步的去噪过程异步进行，减少了串行依赖。该方法直接作用于推理阶段，兼容现有模型权重，在保持视频质量的同时，显著减少了采样步数和显存占用。
+- **领域归类**: [视频生成, 扩散模型, 推理加速]
+---
+
+### 26. ClinHallu: A Benchmark for Diagnosing Stage-Wise Hallucinations in Medical MLLM Reasoning (ClinHallu：诊断医疗 MLLM 推理中阶段性幻觉的基准)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.14697)
+- **研究任务**: 医疗多模态模型评估
+- **核心亮点**: 提供了针对医疗推理各阶段幻觉现象的诊断基准。
+- **深度解析**: 将医疗诊断过程拆解为信息提取、逻辑推理、结论生成等阶段。基准测试专门检测模型在每个环节产生的幻觉类型和频率。结果显示模型多在逻辑推理阶段出错，该工具帮助开发者定位具体错误来源，而非仅看最终准确率。
+- **领域归类**: [医疗 AI, 基准测试, 多模态大模型]
+---
+
+### 27. LoSoNA: A Benchmark for Local Social Norm Adaptation in Group Conversations (LoSoNA：群聊中局部社会规范适应的基准)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.14600)
+- **研究任务**: 社交对话 AI 评估
+- **核心亮点**: 评估模型在群聊场景中适应局部社会规范的能力。
+- **深度解析**: 现有对话评测多关注通用礼貌，该基准聚焦特定群体的隐性社交规则（如玩笑尺度、称呼习惯）。构建了包含不同文化背景和群体动态的对话数据集，测试模型是否能动态调整回复风格以符合当前群组的规范，而非一成不变。
+- **领域归类**: [社交 AI, NLP, 基准测试]
+---
+
+### 28. When is Your LLM Steerable? (你的大语言模型何时可被引导？)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.11599)
+- **研究任务**: LLM 可控性与安全
+- **核心亮点**: 探究了大模型在不同条件下可被外部信号引导的边界。
+- **深度解析**: 系统测试了激活向量干预、提示词引导等 steering 方法在不同模型架构和任务上的有效性。发现模型在特定知识领域和复杂推理任务上难以被简单向量引导。论文给出了可引导性的量化指标，帮助安全团队评估模型被恶意操控的风险。
+- **领域归类**: [LLM 安全, 可解释性, 模型控制]
+---
+
+### 29. Dense Supervision, Sparse Updates: On the Sparsity and Geometry of On-Policy Distillation (密集监督，稀疏更新：关于策略蒸馏的稀疏性与几何结构)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.13657)
+- **研究任务**: 知识蒸馏与强化学习
+- **核心亮点**: 分析了在线策略蒸馏中密集监督信号导致稀疏更新的现象。
+- **深度解析**: 研究了教师模型向学生模型蒸馏过程中的梯度更新模式。发现即使监督信号是密集的，有效参数更新却呈现稀疏性。通过几何分析解释了这一现象，并提出利用该特性优化蒸馏算法，减少不必要的计算开销，提升训练效率。
+- **领域归类**: [知识蒸馏, 强化学习, 优化理论]
+---
+
+### 30. P3D-Bench: Benchmarking MLLMs for Parametric 3D Generation and Structural Reasoning (P3D-Bench：参数化 3D 生成与结构推理的 MLLM 基准)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.11152)
+- **研究任务**: 3D 生成与多模态模型评估
+- **核心亮点**:  benchmark 专注于 MLLM 的参数化 3D 生成能力和结构推理能力。
+- **深度解析**: 区别于传统的 3D 视觉识别评测，该基准要求模型输出 3D 物体的参数化描述（如 CAD 指令或几何参数）。同时包含结构合理性测试，检查生成物体是否符合物理连接逻辑。旨在推动 MLLM 从单纯识别向具备 3D 构造能力的方向发展。
+- **领域归类**: [3D 视觉, 多模态大模型, 基准测试]
+---
+</details>
+
+</script>
+        <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
+    </body>
+    </html>
+    
