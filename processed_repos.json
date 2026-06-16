@@ -1,7 +1,7 @@
 {
   "NousResearch /hermes-agent": "2026-06-03",
   "HKUDS /DeepTutor": "2026-04-09",
-  "OpenBMB /VoxCPM": "2026-05-29",
+  "OpenBMB /VoxCPM": "2026-06-16",
   "TheCraigHewitt /seomachine": "2026-04-09",
   "shiyu-coder /Kronos": "2026-06-15",
   "microsoft /BitNet": "2026-06-05",
@@ -43,7 +43,7 @@
   "openai /openai-agents-python": "2026-04-16",
   "jundot /omlx": "2026-06-04",
   "google-research /timesfm": "2026-05-01",
-  "datawhalechina /hello-agents": "2026-06-03",
+  "datawhalechina /hello-agents": "2026-06-16",
   "oobabooga /textgen": "2026-04-16",
   "github /awesome-copilot": "2026-05-15",
   "Polymarket /agents": "2026-04-16",
@@ -144,7 +144,7 @@
   "FoundationAgents /MetaGPT": "2026-05-12",
   "huggingface /transformers": "2026-05-12",
   "K-Dense-AI /scientific-agent-skills": "2026-05-13",
-  "Asabeneh /30-Days-Of-Python": "2026-06-02",
+  "Asabeneh /30-Days-Of-Python": "2026-06-16",
   "EleutherAI /lm-evaluation-harness": "2026-05-13",
   "graphdeco-inria /gaussian-splatting": "2026-05-13",
   "opendatalab /MinerU": "2026-05-29",
@@ -259,5 +259,9 @@
   "andrewyng /aisuite": "2026-06-15",
   "ArchipelagoMW /Archipelago": "2026-06-15",
   "mampfes /hacs_waste_collection_schedule": "2026-06-15",
-  "MODSetter /SurfSense": "2026-06-15"
+  "MODSetter /SurfSense": "2026-06-15",
+  "mouredev /roadmap-retos-programacion": "2026-06-16",
+  "moorcheh-ai /memanto": "2026-06-16",
+  "python /cpython": "2026-06-16",
+  "microsoft /fara": "2026-06-16"
 }
