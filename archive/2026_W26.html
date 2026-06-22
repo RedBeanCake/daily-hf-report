@@ -1,0 +1,136 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AI 技术周报 - 2026-W26</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <style>
+            .markdown-body { box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 30px; }
+            details { background: #f6f8fa; padding: 15px; border-radius: 8px; border: 1px solid #d0d7de; margin-bottom: 20px; }
+            summary { cursor: pointer; color: #0969da; font-weight: bold; font-size: 1.1em; }
+        </style>
+    </head>
+    <body class="markdown-body">
+        <a href='../index.html'>← 返回索引</a>
+        <h1>AI 技术周报 - 2026-W26</h1>
+        <div id="content"></div>
+        <script type="text/markdown" id="raw-md"><details>
+<summary><b>🤗 Hugging Face 每周论文 (点击展开)</b></summary>
+
+### 1. PerceptionDLM: Parallel Region Perception with Multimodal Diffusion Language Models (基于多模态扩散语言模型的并行区域感知)
+- **社区热度**: `👍 49 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.19534)
+- **研究任务**: 多模态理解与生成
+- **核心亮点**: 在扩散语言模型中实现了并行化的区域感知能力。
+- **深度解析**: 传统多模态模型通常串行处理图像区域，效率较低。该工作将扩散模型与语言模型结合，设计了一种并行机制，允许模型同时处理图像的多个区域特征。技术方案上改进了注意力机制，使模型能直接定位并理解特定区域内容，无需逐步扫描。在视觉问答和区域描述任务上，推理速度有明显提升，且保持了理解精度。
+- **领域归类**: [Multimodal, Diffusion Model, Computer Vision]
+---
+
+### 2. GateMem: Benchmarking Memory Governance in Multi-Principal Shared-Memory Agents (多主体共享内存代理的内存治理基准)
+- **社区热度**: `👍 13 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.18829)
+- **研究任务**: 多智能体系统 / 记忆管理
+- **核心亮点**: 提出了首个针对多主体共享内存治理能力的评测基准。
+- **深度解析**: 针对多个智能体共用同一记忆库时产生的冲突和隐私问题，该论文定义了一套评估标准。技术方案包括设计多种干扰场景，测试智能体在读写共享记忆时的权限控制和冲突解决能力。实验显示，现有代理在复杂共享场景下容易出现记忆污染，该基准能有效量化不同记忆管理策略的可靠性。
+- **领域归类**: [Agents, Memory, Benchmark]
+---
+
+### 3. MemSlides: A Hierarchical Memory Driven Agent Framework for Personalized Slide Generation with Multi-turn Local Revision (基于分层记忆的个性化幻灯片生成与多轮修订代理框架)
+- **社区热度**: `👍 13 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.17162)
+- **研究任务**: 内容生成 / 智能体应用
+- **核心亮点**: 利用分层记忆结构实现幻灯片的一致性生成与局部修改。
+- **深度解析**: 解决生成式代理在做 PPT 时风格不统一、修改困难的问题。方案采用分层记忆：顶层存储整体风格和需求，底层存储单页内容。支持多轮对话中的局部修订，修改某一页时不会破坏整体结构。测试表明，该框架在长文档生成的一致性和用户指令跟随能力上优于基线模型。
+- **领域归类**: [Agents, AIGC, NLP]
+---
+
+### 4. BrainG3N: A Dual-Purpose Tokenizer for Controllable 3D Brain MRI Generation (面向可控 3D 脑 MRI 生成的双用途 Tokenizer)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.19651)
+- **研究任务**: 医疗图像生成
+- **核心亮点**: 设计了一种兼具压缩与控制信号处理能力的 3D 医学图像 Tokenizer。
+- **深度解析**: 针对 3D MRI 数据量大且需要精确控制生成条件的问题，提出双用途 Tokenizer。它不仅能高效压缩 3D 体积数据，还能嵌入病理控制条件。生成模型基于此 Tokenizer 进行扩散采样，实现了对病灶形状和位置的可控生成。在医学数据增强任务中，生成的图像保持了 anatomical 结构的合理性。
+- **领域归类**: [Medical AI, Generation, 3D Vision]
+---
+
+### 5. Multi-Turn Reflective Masking Elicits Reasoning in Mask Diffusion Models (多轮反射掩码激发掩码扩散模型的推理能力)
+- **社区热度**: `👍 6 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.16700)
+- **研究任务**: 推理能力 / 扩散模型
+- **核心亮点**: 通过多轮反射掩码策略，提升了掩码扩散模型的逻辑推理能力。
+- **深度解析**: 掩码扩散模型通常擅长补全，但弱于推理。该工作引入多轮迭代机制，模型在每一步掩码预测后进行自我反思，修正之前的预测错误。技术方案类似思维链，但应用在扩散去噪过程中。实验显示，在需要多步推导的视觉推理任务上，该方法显著降低了逻辑错误率。
+- **领域归类**: [Diffusion Model, Reasoning, Machine Learning]
+---
+
+### 6. WorldLines: Benchmarking and Modeling Long-Horizon Stateful Embodied Agents (长程状态化具身代理的基准与建模)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.18847)
+- **研究任务**: 具身智能 / 基准测试
+- **核心亮点**: 专注于长周期任务中具身代理的状态保持能力评测。
+- **深度解析**: 现有具身基准多为短任务，缺乏对长期状态追踪的考验。该工作构建了一系列需要长时间记忆和状态维护的任务场景。模型方面，提出了状态保持模块，记录环境变化历史。评测结果显示，大多数代理在长程任务中会丢失关键状态信息，该基准揭示了当前技术在时间维度上的局限性。
+- **领域归类**: [Embodied AI, Agents, Benchmark]
+---
+
+### 7. SproutRAG: Attention-Guided Tree Search with Progressive Embeddings for Long-Document RAG (面向长文档 RAG 的注意力引导树搜索与渐进式嵌入)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.18381)
+- **研究任务**: 检索增强生成 (RAG)
+- **核心亮点**: 结合树搜索和渐进式嵌入，优化长文档检索精度。
+- **深度解析**: 针对长文档检索中信息分散的问题，不使用传统的向量相似度检索，而是构建文档树结构。利用注意力机制引导搜索路径，逐步细化嵌入表示，定位到具体段落。相比普通 RAG，该方法在需要跨段落综合信息的问答任务上，召回率和答案准确性均有改善。
+- **领域归类**: [RAG, NLP, Information Retrieval]
+---
+
+### 8. MCompassRAG: Topic Metadata as a Semantic Compass for Paragraph-Level Retrieval (以主题元数据为语义指南针的段落级检索)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.18508)
+- **研究任务**: 检索增强生成 (RAG)
+- **核心亮点**: 利用主题元数据辅助向量检索，提高段落级检索的针对性。
+- **深度解析**: 纯向量检索容易忽略文档的主题结构。该方案在嵌入之前，先提取段落的主题元数据作为“指南针”。检索时结合语义向量 and 主题匹配度，过滤无关段落。在主题性较强的长文档问答中，减少了无关信息的干扰，提升了生成答案的相关性。
+- **领域归类**: [RAG, NLP, Information Retrieval]
+---
+
+### 9. GeneralVLA-2: Geometry-Aware Reconstruction and Governed Memory for Robot Planning (面向机器人规划的几何感知重建与受控记忆)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.17480)
+- **研究任务**: 机器人规划 / VLA 模型
+- **核心亮点**: 在 VLA 模型中引入几何重建和受控记忆机制。
+- **深度解析**: 通用 VLA 模型往往缺乏对 3D 几何结构的精确理解。该工作增加了几何重建分支，使模型能感知物体空间关系。同时设计受控记忆模块，管理历史动作和状态，防止规划冲突。在复杂操作任务中，机器人的空间定位准确性和任务成功率有所提升。
+- **领域归类**: [Robotics, VLA, Planning]
+---
+
+### 10. StylisticBias: A Few Human Visual Cues Drive Most Social Biases in MLLMs (少数视觉线索驱动 MLLM 中的主要社会偏见)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.20527)
+- **研究任务**: 模型安全性 / 偏见分析
+- **核心亮点**: 发现少量特定视觉特征是导致多模模型社会偏见的主要原因。
+- **深度解析**: 通过干预实验分析 MLLM 的偏见来源。研究发现，并非所有视觉信息都导致偏见，而是少数特定风格线索（如肤色、服饰风格等）触发了模型中的刻板印象。方案提出了识别这些关键线索的方法，为后续去偏见训练提供了具体的靶向目标。
+- **领域归类**: [Safety, MLLM, Ethics]
+---
+
+### 11. SpatialAvatar-0: High-Quality 4D Head Avatar with Multi-Stage Reconstruction (SpatialAvatar-0：基于多阶段重建的高质量 4D 头部数字人)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.15659)
+- **研究任务**: 4D 头部数字人重建与生成
+- **核心亮点**: 通过多阶段重建流程，解决了单步生成导致的几何与纹理细节丢失问题。
+- **深度解析**: 传统 4D 头部生成往往试图一步到位，容易造成画面模糊或几何变形。这篇工作把重建过程拆开，分阶段处理。通常是先保证几何结构的准确性，再细化动态纹理，或者先做静态高质重建再扩展到时序维度。这种分步走的策略，重点是为了在保证时序一致性的前提下，把单个帧的画质提上去，适合对细节要求高的数字人场景。
+- **领域归类**: [计算机视觉，3D/4D 生成，数字人]
+---
+
+### 12. Distilling Examples into Task Instructions: Enhanced In-Context Learning for Real-World B2B Conversations (将示例蒸馏为任务指令：增强现实世界 B2B 对话的上下文学习)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.15641)
+- **研究任务**: 大模型上下文学习（ICL）优化
+- **核心亮点**: 把 Few-shot 示例里的逻辑压缩进指令，既省 Token 又提升了 B2B 对话任务的表现。
+- **深度解析**: 在 B2B 对话这种复杂场景里，传统 ICL 需要塞很多示例才能让模型懂规矩，成本高且容易干扰注意力。这篇论文的做法是把示例里的核心规则提炼出来，直接写成系统指令（Instruction）。这样推理时不用带大量示例文本，减少了 Context 窗口占用，同时让模型更聚焦于任务逻辑本身，算是用指令微调的思路优化了上下文学习。
+- **领域归类**: [自然语言处理，大模型应用，指令优化]
+---
+</details>
+
+</script>
+        <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
+    </body>
+    </html>
+    

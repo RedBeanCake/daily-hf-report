@@ -1,0 +1,222 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>前沿科研情报 - 2026-06-23</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <style>
+            .markdown-body { box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 30px; }
+            details { background: #f6f8fa; padding: 15px; border-radius: 8px; border: 1px solid #d0d7de; margin-bottom: 20px; }
+            summary { cursor: pointer; color: #0969da; font-weight: bold; font-size: 1.1em; }
+        </style>
+    </head>
+    <body class="markdown-body">
+        <a href='../index.html'>← 返回索引</a>
+        <h1>前沿科研情报 - 2026-06-23</h1>
+        <div id="content"></div>
+        <script type="text/markdown" id="raw-md"><details>
+<summary><b>🤗 Hugging Face 今日论文 (点击展开)</b></summary>
+
+### 1. PerceptionDLM: Parallel Region Perception with Multimodal Diffusion Language Models (多模态扩散语言模型的并行区域感知)
+- **社区热度**: `👍 49 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.19534)
+- **研究任务**: 多模态感知与理解
+- **核心亮点**: 用扩散模型并行处理图像区域，替代传统的串行感知流程。
+- **深度解析**: 传统多模模型通常按顺序处理图像特征，这篇论文把扩散模型用在区域感知上，允许多个区域同时计算。技术方案是把图像切块后输入扩散语言模型，并行输出各区域的语义描述，减少了等待时间，提升了密集场景下的感知效率。
+- **领域归类**: [多模态], [扩散模型], [计算机视觉]
+---
+
+### 2. GateMem: Benchmarking Memory Governance in Multi-Principal Shared-Memory Agents (多主体共享记忆代理的记忆治理基准)
+- **社区热度**: `👍 13 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.18829)
+- **研究任务**: 多智能体记忆管理基准
+- **核心亮点**: 建立了首个针对多主体共享记忆场景的治理与冲突评估基准。
+- **深度解析**: 多智能体共用记忆库时容易出现数据冲突或隐私泄露。这篇论文定义了一套指标，测试不同代理在读写共享记忆时的权限控制和冲突解决能力。方案包含多个测试场景，用来评估记忆访问的安全性和一致性，为后续开发提供标准。
+- **领域归类**: [智能体], [基准测试], [记忆机制]
+---
+
+### 3. MemSlides: A Hierarchical Memory Driven Agent Framework for Personalized Slide Generation with Multi-turn Local Revision (基于分层记忆的个性化幻灯片生成代理框架)
+- **社区热度**: `👍 13 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.17162)
+- **研究任务**: 自动化幻灯片生成
+- **核心亮点**: 利用分层记忆结构，支持多轮对话中对幻灯片进行局部修改。
+- **深度解析**: 针对生成式 PPT 难以微调的问题，设计了一个代理框架。它把用户偏好和幻灯片结构存在分层记忆里，高层记整体风格，底层记具体内容。用户提出修改意见时，代理只调整相关层级，不用重新生成整份文档，提高了编辑的准确性和个性化程度。
+- **领域归类**: [智能体], [AIGC], [办公自动化]
+---
+
+### 4. BrainG3N: A Dual-Purpose Tokenizer for Controllable 3D Brain MRI Generation (用于可控 3D 脑 MRI 生成的双重用途 Tokenizer)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.19651)
+- **研究任务**: 医学影像生成
+- **核心亮点**: 设计了一种既能压缩数据又能控制生成条件的 Tokenizer。
+- **深度解析**: 3D 脑 MRI 数据量大且生成难控制。这篇论文提出一个双重用途的 Tokenizer，一方面把高维 MRI 数据压缩成离散 token，另一方面把病理条件也编码进去。生成模型基于这些 token 重建图像，既能保证画质，又能通过调整条件 token 控制生成的病变类型。
+- **领域归类**: [医疗 AI], [3D 生成], [模型架构]
+---
+
+### 5. Multi-Turn Reflective Masking Elicits Reasoning in Mask Diffusion Models (多轮反射掩码激发掩码扩散模型的推理能力)
+- **社区热度**: `👍 6 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.16700)
+- **研究任务**: 扩散模型推理能力增强
+- **核心亮点**: 通过多轮掩码和反思机制，让扩散模型具备逻辑推理能力。
+- **深度解析**: 扩散模型通常擅长生成但不擅长推理。这篇论文在掩码扩散过程中加入多轮反思步骤，模型每次生成后检查逻辑漏洞，重新掩码错误区域再生成。这种迭代修正的过程，让模型在处理需要逻辑步骤的任务时表现更好。
+- **领域归类**: [扩散模型], [逻辑推理], [生成算法]
+---
+
+### 6. WorldLines: Benchmarking and Modeling Long-Horizon Stateful Embodied Agents (长程状态化具身代理的基准与建模)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.18847)
+- **研究任务**: 具身智能长程任务
+- **核心亮点**: 提供了长周期任务基准，并提出了保持状态一致性的建模方法。
+- **深度解析**: 具身代理在做长任务时容易忘记之前的状态。这篇论文建立了一个长程任务基准，测试代理在长时间交互中的状态保持能力。技术方案上，引入状态追踪模块，记录环境变化和代理动作历史，确保代理在长序列操作中不迷失方向。
+- **领域归类**: [具身智能], [基准测试], [长程规划]
+---
+
+### 7. GeneralVLA-2: Geometry-Aware Reconstruction and Governed Memory for Robot Planning (用于机器人规划的几何感知重建与受控记忆)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.17480)
+- **研究任务**: 机器人视觉语言动作规划
+- **核心亮点**: 在 VLA 模型中加入几何感知和记忆管理，提升规划成功率。
+- **深度解析**: 通用 VLA 模型往往忽略空间几何细节。这篇论文在 GeneralVLA 基础上，增加了几何重建模块，让机器人更懂物体形状和位置。同时加入受控记忆，存储之前的操作经验。两者结合，让机器人在复杂空间规划任务中更准确，减少碰撞和操作失误。
+- **领域归类**: [机器人], [VLA], [规划控制]
+---
+
+### 8. SproutRAG: Attention-Guided Tree Search with Progressive Embeddings for Long-Document RAG (基于注意力引导树搜索与渐进嵌入的长文档 RAG)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.18381)
+- **研究任务**: 长文档检索增强生成
+- **核心亮点**: 用注意力引导树搜索和渐进式嵌入，解决长文档检索不准的问题。
+- **深度解析**: 长文档检索容易丢失关键信息。这篇论文不用传统的向量检索，而是构建搜索树。利用注意力机制引导搜索路径，逐步细化嵌入表示。这样能从长文中更精准地定位到相关段落，减少无关信息干扰，提升回答质量。
+- **领域归类**: [RAG], [NLP], [检索算法]
+---
+
+### 9. MCompassRAG: Topic Metadata as a Semantic Compass for Paragraph-Level Retrieval (以主题元数据为语义指南针的段落级检索)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.18508)
+- **研究任务**: 段落级检索增强
+- **核心亮点**: 利用主题元数据作为指引，提高段落检索的语义匹配度。
+- **深度解析**: 单纯靠向量相似度检索段落容易偏题。这篇论文给文档段落加上主题元数据标签，检索时把这些标签当作指南针。先匹配主题，再在主题内找具体段落。这种方法缩小了搜索范围，让检索结果在语义上更贴合问题。
+- **领域归类**: [RAG], [信息检索], [元数据]
+---
+
+### 10. SpatialAvatar-0: High-Quality 4D Head Avatar with Multi-Stage Reconstruction (基于多阶段重建的高质量 4D 头部头像)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.15659)
+- **研究任务**: 4D 数字人生成
+- **核心亮点**: 采用多阶段重建流程，生成高质量且时间一致的 4D 头部头像。
+- **深度解析**: 生成 4D 头像难在时间上的连贯性。这篇论文把重建过程分成几个阶段，先做静态几何重建，再优化时序动态。每个阶段专注解决一个问题，最后组合起来。这样生成的头像细节清晰，且动作流畅，没有闪烁或变形。
+- **领域归类**: [3D 生成], [数字人], [计算机视觉]
+---
+
+### 11. Distilling Examples into Task Instructions: Enhanced In-Context Learning for Real-World B2B Conversations (将示例蒸馏为任务指令：增强现实世界 B2B 对话的上下文学习)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.15641)
+- **研究任务**: B2B 对话场景下的指令跟随与上下文学习（ICL）优化
+- **核心亮点**: 把 few-shot 示例里的关键信息提炼成指令，省窗口还能提效果。
+- **深度解析**: 传统 ICL 靠堆示例，占上下文窗口且推理成本高。这篇用蒸馏技术，把示例里的任务模式提取出来，写进 system instruction 里。这样推理时不用带那么多示例，节省 token 消耗，响应更快，且在真实 B2B 业务数据上准确率有提升。
+- **领域归类**: [NLP, LLM 应用，上下文学习]
+---
+### 12. StylisticBias: A Few Human Visual Cues Drive Most Social Biases in MLLMs (StylisticBias：少数人类视觉线索驱动了 MLLM 中大部分社会偏见)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.20527)
+- **研究任务**: 多模态大模型（MLLM）的社会偏见评估与归因
+- **核心亮点**: 确认了 MLLM 的偏见主要由图像中极少量的视觉特征决定。
+- **深度解析**: 做了个基准测试，专门测 MLLM 看图说话时的偏见。发现模型不是整体理解有问题，而是对某些特定视觉线索（如肤色、性别特征、穿着）过度敏感。改这几个点，偏见输出变化最大。这给后续做去偏见提供了具体方向，不用全量微调。
+- **领域归类**: [多模态，AI 安全，偏见分析]
+---
+</details>
+
+<details>
+<summary><b>🚀 GitHub 今日热门项目 (点击展开)</b></summary>
+
+### [Anthropic-Cybersecurity-Skills](https://github.com/mukul975/Anthropic-Cybersecurity-Skills)
+- **今日趋势**: 今日新增 957 Stars | 总 Stars 18,454
+- **项目简介**: [✅ AI 相关] 为 AI 编程助手（如 Claude Code、Copilot）提供 817 项结构化网络安全技能映射，面向安全工程师与 AI 开发者。
+- **核心价值**: 解决了 AI 代理在安全领域缺乏标准化技能框架的痛点，通过将技能映射到 MITRE ATT&CK 等 6 大主流框架，使 AI 能更专业地执行安全任务。
+- **AI 相关性**: 是
+
+---
+### [deer-flow](https://github.com/bytedance/deer-flow)
+- **今日趋势**: 今日新增 736 Stars | 总 Stars 73,104
+- **项目简介**: [✅ AI 相关] 字节开源的长 horizon SuperAgent 框架，支持研究、编码和创作，面向需要复杂任务自动化的开发者。
+- **核心价值**: 解决了单一 Agent 无法处理耗时数分钟至数小时的复杂长程任务痛点，通过沙箱、记忆、子代理协同机制实现任务闭环。
+- **AI 相关性**: 是
+
+---
+### [daily_stock_analysis](https://github.com/ZhuLinsen/daily_stock_analysis)
+- **今日趋势**: 今日新增 1,560 Stars | 总 Stars 45,679
+- **项目简介**: [✅ AI 相关] 基于 LLM 驱动的多市场股票智能分析系统，面向个人投资者与量化交易者，支持实时新闻与自动推送。
+- **核心价值**: 降低了普通用户获取专业级股票分析的门槛，利用大模型整合多源行情与新闻，解决了信息过载与决策滞后的痛点。
+- **AI 相关性**: 是
+
+---
+### [skills](https://github.com/NVIDIA/skills)
+- **今日趋势**: 今日新增 199 Stars | 总 Stars 1,664
+- **项目简介**: [✅ AI 相关] NVIDIA 官方发布的 AI Agent 技能库，面向 NVIDIA 生态开发者，提供标准化的 Agent 能力定义。
+- **核心价值**: 解决了 AI Agent 开发中技能复用性差的问题，通过官方背书的标准技能集，加速了基于 NVIDIA 平台的 Agent 应用构建。
+- **AI 相关性**: 是
+
+---
+### [ai-hedge-fund](https://github.com/virattt/ai-hedge-fund)
+- **今日趋势**: 今日新增 44 Stars | 总 Stars 60,435
+- **项目简介**: [✅ AI 相关] 模拟 AI 对冲基金团队的开源项目，面向金融科技爱好者，利用多 Agent 协作进行投资决策。
+- **核心价值**: 探索了多 Agent 系统在金融交易领域的协作模式，解决了单一模型在复杂市场策略中视角局限的痛点。
+- **AI 相关性**: 是
+
+---
+### [hindsight](https://github.com/vectorize-io/hindsight)
+- **今日趋势**: 今日新增 143 Stars | 总 Stars 16,920
+- **项目简介**: [✅ AI 相关] 具备学习能力的 Agent 记忆系统，面向 Agent 开发者，提供跨会话的持久化记忆支持。
+- **核心价值**: 解决了 AI Agent 遗忘上下文无法长期进化的痛点，通过可学习的记忆机制，让 Agent 能随交互次数增加而变得更聪明。
+- **AI 相关性**: 是
+
+---
+### [winpodx](https://github.com/kernalix7/winpodx)
+- **今日趋势**: 今日新增 120 Stars | 总 Stars 1,251
+- **项目简介**: [❌ 非 AI] 面向 Linux 环境的 Windows 容器 Pod 系统，主要服务于 DevOps 工程师与跨平台开发者。
+- **核心价值**: 解决了在 Linux 基础设施上运行 Windows 工作负载的兼容性痛点，提供了轻量级的容器化解决方案，无需完整虚拟机。
+- **AI 相关性**: 否
+
+---
+### [cognee](https://github.com/topoteretes/cognee)
+- **今日趋势**: 今日新增 603 Stars | 总 Stars 19,268
+- **项目简介**: [✅ AI 相关] 开源 AI 记忆平台，利用自托管知识图谱引擎为 Agent 提供跨会话的长期记忆，面向 Agent 架构师。
+- **核心价值**: 解决了向量数据库在复杂关系记忆上的不足，通过知识图谱技术赋予 Agent 结构化长期记忆能力，提升推理准确性。
+- **AI 相关性**: 是
+
+---
+### [ouroboros](https://github.com/Q00/ouroboros)
+- **今日趋势**: 今日新增 18 Stars | 总 Stars 4,658
+- **项目简介**: [✅ AI 相关] Agent 操作系统，倡导“停止提示词，开始规范”，面向希望精确控制 Agent 行为的开发者。
+- **核心价值**: 解决了 Prompt Engineering 不稳定的痛点，通过 OS 级的规范指定（Specification）替代模糊提示，实现 Agent 行为的可控与可预测。
+- **AI 相关性**: 是
+
+---
+### [spiderfoot](https://github.com/smicallef/spiderfoot)
+- **今日趋势**: 今日新增 375 Stars | 总 Stars 18,961
+- **项目简介**: [❌ 非 AI] 自动化 OSINT（开源情报）收集工具，面向网络安全专业人员，用于威胁情报与攻击面映射。
+- **核心价值**: 解决了人工收集情报效率低下的痛点，通过自动化模块化插件整合数百数据源，快速构建目标画像，虽可结合 AI 但核心为传统自动化。
+- **AI 相关性**: 否
+
+---
+### [crawl4ai](https://github.com/unclecode/crawl4ai)
+- **今日趋势**: 今日新增 157 Stars | 总 Stars 69,267
+- **项目简介**: [✅ AI 相关] 专为 LLM 优化的开源网页爬虫与 scraper，面向 AI 数据工程师，提供对大模型友好的数据清洗格式。
+- **核心价值**: 解决了传统爬虫数据难以直接被 LLM 理解的痛点，通过预处理优化网页结构，大幅降低了 RAG 应用中的数据清洗成本。
+- **AI 相关性**: 是
+
+---
+### [DeepTutor](https://github.com/HKUDS/DeepTutor)
+- **今日趋势**: 今日新增 38 Stars | 总 Stars 24,912
+- **项目简介**: [✅ AI 相关] 原生 Agent 化的个性化辅导系统，面向教育科技开发者与学生，提供自适应学习体验。
+- **核心价值**: 解决了传统在线教育缺乏个性化互动的痛点，利用 Agent 技术模拟真实导师行为，根据学生进度动态调整教学策略。
+- **AI 相关性**: 是
+
+---
+</details></script>
+        <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
+    </body>
+    </html>
+    
