@@ -1,0 +1,346 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>前沿科研情报 - 2026-06-24</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <style>
+            .markdown-body { box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 30px; }
+            details { background: #f6f8fa; padding: 15px; border-radius: 8px; border: 1px solid #d0d7de; margin-bottom: 20px; }
+            summary { cursor: pointer; color: #0969da; font-weight: bold; font-size: 1.1em; }
+        </style>
+    </head>
+    <body class="markdown-body">
+        <a href='../index.html'>← 返回索引</a>
+        <h1>前沿科研情报 - 2026-06-24</h1>
+        <div id="content"></div>
+        <script type="text/markdown" id="raw-md"><details>
+<summary><b>🤗 Hugging Face 今日论文 (点击展开)</b></summary>
+
+### 1. PlanBench-XL: Evaluating Long-Horizon Planning of LLM Tool-Use Agents in Large-Scale Tool Ecosystems (PlanBench-XL：评估大规模工具生态中 LLM 工具代理的长程规划)
+- **社区热度**: `👍 76 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.22388)
+- **研究任务**: Agent 长程规划能力评测
+- **核心亮点**: 提出面向大规模工具生态的长程规划评测基准。
+- **深度解析**: 针对现有基准工具数量有限、任务链条短的问题，构建了包含大量工具的真实生态场景。重点评估 Agent 在长步骤任务中的规划稳定性、工具选择准确率及错误恢复能力，填补了复杂工具环境下长程规划评测的空白。
+- **领域归类**: [Agent, Benchmark, Planning]
+---
+
+### 2. OpenRath: Session-Centered Runtime State for Agent Systems (OpenRath：面向 Agent 系统的以会话为中心的运行时状态)
+- **社区热度**: `👍 67 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.19409)
+- **研究任务**: Agent 系统架构与状态管理
+- **核心亮点**: 设计以会话为中心的运行时状态管理框架。
+- **深度解析**: 解决多轮交互中 Agent 状态丢失或上下文混乱的问题。通过 OpenRath 维护会话级的运行时状态，支持状态快照、恢复和迁移，提升 Agent 系统在长时间运行中的连贯性和可维护性。
+- **领域归类**: [Agent, System Architecture, Runtime]
+---
+
+### 3. DataClaw0: Agentic Tailoring Multimodal Data from Raw Streams (DataClaw0：从原始流中代理定制多模态数据)
+- **社区热度**: `👍 61 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.21337)
+- **研究任务**: 多模态数据预处理与清洗
+- **核心亮点**: 利用 Agent 自动从原始数据流中定制多模态数据。
+- **深度解析**: 改变传统人工预处理模式，让 Agent 直接介入原始数据流。根据下游任务需求，自动进行清洗、标注和结构化处理，降低多模态数据准备成本，实现数据 pipeline 的自动化。
+- **领域归类**: [Multimodal, Data Engineering, Agent]
+---
+
+### 4. EnterpriseClawBench: Benchmarking Agents from Real Workplace Sessions (EnterpriseClawBench：基于真实工作会话的 Agent 基准测试)
+- **社区热度**: `👍 56 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.23654)
+- **研究任务**: 企业场景 Agent 评测
+- **核心亮点**: 基于真实职场会话数据构建 Agent 评测基准。
+- **深度解析**: 区别于合成任务，采集真实企业工作流中的操作日志构建评测集。更准确地反映 Agent 在实际办公场景中的可用性、效率及安全性，为企业级 Agent 部署提供可靠参考。
+- **领域归类**: [Agent, Benchmark, Enterprise]
+---
+
+### 5. Grouped Query Experts: Mixture-of-Experts on GQA Self-Attention (分组查询专家：GQA 自注意力上的混合专家机制)
+- **社区热度**: `👍 42 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.20945)
+- **研究任务**: LLM 注意力机制架构优化
+- **核心亮点**: 在分组查询注意力（GQA）层引入混合专家（MoE）结构。
+- **深度解析**: 结合 GQA 的推理速度优势和 MoE 的模型容量优势。通过修改自注意力层结构，在不过度增加计算延迟的前提下，提升模型对复杂信息的表达能力和参数效率。
+- **领域归类**: [Architecture, Efficiency, LLM]
+---
+
+### 6. KaLM-Reranker-V1: Fast but Not Late Interaction for Compressed Document Reranking (KaLM-Reranker-V1：用于压缩文档重排序的快速非晚期交互模型)
+- **社区热度**: `👍 39 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.22807)
+- **研究任务**: 检索增强生成（RAG）重排序
+- **核心亮点**: 针对压缩文档的快速重排序，采用非晚期交互策略。
+- **深度解析**: 通过文档压缩技术减少 Token 计算量，避开计算昂贵的晚期交互（Late Interaction）。在保持重排序精度的同时，显著降低 RAG 链路中的延迟，适合高并发检索场景。
+- **领域归类**: [RAG, Retrieval, Efficiency]
+---
+
+### 7. World Action Models: A Survey (世界动作模型：综述)
+- **社区热度**: `👍 36 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.20781)
+- **研究任务**: 世界模型与动作模型综述
+- **核心亮点**: 系统梳理世界模型与动作模型的研究进展。
+- **深度解析**: 汇总了 Agent 如何理解环境动态（世界模型）以及如何执行操作（动作模型）的现有方法。分析了两者结合的趋势、主要技术路线及在具身智能中的应用挑战。
+- **领域归类**: [Survey, World Model, Agent]
+---
+
+### 8. CLI-Universe: Towards Verifiable Task Synthesis Engine for Terminal Agents (CLI-Universe：面向终端代理的可验证任务合成引擎)
+- **社区热度**: `👍 27 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.22883)
+- **研究任务**: 命令行 Agent 任务生成与评测
+- **核心亮点**: 构建可自动验证结果的命令行任务生成引擎。
+- **深度解析**: 针对 CLI 场景生成大量测试任务，并设计自动验证机制，确保任务执行结果可检查。解决了终端 Agent 评测中结果难以量化和自动化的问题，支持大规模迭代测试。
+- **领域归类**: [Agent, CLI, Task Synthesis]
+---
+
+### 9. EvoEmbedding: Evolvable Representations for Long-Context Retrieval and Agentic Memory (EvoEmbedding：用于长上下文检索与代理记忆的可进化表示)
+- **社区热度**: `👍 23 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.21649)
+- **研究任务**: 嵌入表示与记忆管理
+- **核心亮点**: 提出可随上下文动态进化的嵌入表示方法。
+- **深度解析**: 传统静态 Embedding 难以适应长上下文变化。该方法让表示随交互过程动态演化，提升长上下文检索的准确率和 Agent 记忆管理的灵活性，减少信息遗忘。
+- **领域归类**: [Embedding, Memory, Long-Context]
+---
+
+### 10. BioMatrix: Towards a Comprehensive Biological Foundation Model Spanning the Modality Matrix of Sequences, Structures, and Language (BioMatrix：面向序列、结构和语言模态矩阵的综合生物基础模型)
+- **社区热度**: `👍 19 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.22138)
+- **研究任务**: 生物多模态基础模型
+- **核心亮点**: 统一基因序列、蛋白质结构和生物文本三种模态。
+- **深度解析**: BioMatrix 试图打通生物领域三种核心模态，构建全面的基础模型。支持跨模态推理，如从序列预测结构或生成相关文献描述，提升生物 AI 模型的通用性和泛化能力。
+- **领域归类**: [BioAI, Multimodal, Foundation Model]
+---
+
+### 11. HydraHead: From Head-Level Functional Heterogeneity to Specialized Attention Hybridization (HydraHead：从头级功能异质性到专用注意力混合)
+- **社区热度**: `👍 17 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.20097)
+- **研究任务**: 注意力机制优化
+- **核心亮点**: 提出根据注意力头的功能差异进行专用化混合的架构。
+- **深度解析**: 传统 Transformer 注意力头通常同质化处理，该工作识别不同头的功能异质性，设计混合专用头结构，在不显著增加参数量前提下提升模型表达能力。
+- **领域归类**: ['模型架构', '注意力机制']
+---
+
+### 12. Learning from Your Own Mistakes: Constructing Learnable Micro-Reflective Trajectories for Self-Distillation (从自身错误中学习：构建可学习的微反思轨迹用于自蒸馏)
+- **社区热度**: `👍 14 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.18844)
+- **研究任务**: 自蒸馏 / 模型自我改进
+- **核心亮点**: 利用模型自身产生的错误轨迹构建反思数据用于蒸馏。
+- **深度解析**: 收集模型推理出错的路径，构建微反思轨迹数据集，通过自蒸馏让模型学习修正错误，减少对外部标注数据的依赖。
+- **领域归类**: ['模型对齐', '自监督学习']
+---
+
+### 13. SkillHarness: Harnessing Safe Skills for Computer-Use Agents (SkillHarness：利用安全技能赋能计算机操作代理)
+- **社区热度**: `👍 14 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.20636)
+- **研究任务**: 代理安全 / 计算机操作
+- **核心亮点**: 为计算机操作代理定义并约束安全技能集。
+- **深度解析**: 针对代理操作系统的风险，建立安全技能库，通过约束代理可调用的技能范围，防止有害操作执行，提升落地安全性。
+- **领域归类**: ['AI 代理', '安全性']
+---
+
+### 14. Deep Research in Physical Sciences: A Multi-Agent Framework and Comprehensive Benchmark (物理科学中的深度研究：多代理框架与综合基准)
+- **社区热度**: `👍 12 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.18648)
+- **研究任务**: 科学 research / 多代理系统
+- **核心亮点**: 提出面向物理科学研究的多代理协作框架及配套基准。
+- **深度解析**: 设计多代理分工流程覆盖文献检索、假设生成及实验模拟，发布物理领域基准测试集，评估代理在科研任务中的协作能力。
+- **领域归类**: ['科学 AI', '多代理系统']
+---
+
+### 15. Unlimited OCR Works (无限 OCR 工作方案)
+- **社区热度**: `👍 11 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.23050)
+- **研究任务**: 光学字符识别 (OCR)
+- **核心亮点**: 突破传统 OCR 模型对文本长度和图像分辨率的限制。
+- **深度解析**: 采用动态分块或滑动窗口机制，支持任意长度文本行的识别，解决长文档和高密度文本场景下的识别失效问题。
+- **领域归类**: ['计算机视觉', 'OCR']
+---
+
+### 16. Deeper is Not Always Better: Mitigating the Alignment Tax via Confident Layer Decoding (更深并不总是更好：通过自信层解码缓解对齐税)
+- **社区热度**: `👍 11 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.21906)
+- **研究任务**: 推理优化 / 对齐
+- **核心亮点**: 通过中间层自信解码减少对齐带来的性能损失和计算开销。
+- **深度解析**: 监测各层输出置信度，在达到阈值时提前退出解码，避免深层网络带来的对齐税（性能下降）并降低推理延迟。
+- **领域归类**: ['推理优化', '模型对齐']
+---
+
+### 17. Self-Compacting Language Model Agents (自压缩语言模型代理)
+- **社区热度**: `👍 10 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.23525)
+- **研究任务**: 代理上下文管理
+- **核心亮点**: 代理具备自主压缩上下文历史的能力。
+- **深度解析**: 在长程任务中，代理动态总结或修剪对话历史，维持上下文窗口在限制范围内，保证长期任务的信息完整性。
+- **领域归类**: ['AI 代理', '上下文管理']
+---
+
+### 18. Notes2Skills: From Lab Notebooks to Certainty-Aware Scientific Agent Skills (Notes2Skills：从实验笔记到感知确定性的科学代理技能)
+- **社区热度**: `👍 9 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.11897)
+- **研究任务**: 技能提取 / 科学代理
+- **核心亮点**: 从非结构化实验笔记中提取技能并附带确定性评估。
+- **深度解析**: 解析实验室笔记生成可执行技能代码，同时为每个技能生成置信度分数，帮助代理判断技能调用的可靠性。
+- **领域归类**: ['科学 AI', '技能学习']
+---
+
+### 19. Foresight: Failure Detection for Long-Horizon Robotic Manipulation with Action-Conditioned World Model Latents (Foresight：基于动作条件世界模型潜变量的长程机器人操作失败检测)
+- **社区热度**: `👍 8 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.23085)
+- **研究任务**: 机器人 / 失败检测
+- **核心亮点**: 利用世界模型潜空间提前检测长程操作中的失败。
+- **深度解析**: 构建动作条件的世界模型，监测潜变量分布变化，在机器人执行长任务过程中提前识别异常状态，避免任务彻底失败。
+- **领域归类**: ['机器人学', '世界模型']
+---
+
+### 20. DailyReport: An Open-ended Benchmark for Evaluating Search Agents on Daily Search Tasks (DailyReport：评估日常搜索任务搜索代理的开放式基准)
+- **社区热度**: `👍 8 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.12871)
+- **研究任务**: 基准测试 / 搜索代理
+- **核心亮点**: 发布面向日常搜索任务的开放式评估基准。
+- **深度解析**: 构建涵盖日常生活信息查询的任务集，评估搜索代理的信息检索准确性、来源验证能力及回答完整性。
+- **领域归类**: ['基准测试', '搜索代理']
+---
+
+### 21. Training Open Models for Agentic Phone Use (训练用于代理手机操作的开放模型)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.23049)
+- **研究任务**: 移动端智能代理（Mobile Agent）
+- **核心亮点**: 基于开源模型实现复杂的手机 UI 交互控制，降低部署门槛。
+- **深度解析**: 针对手机操作场景构建指令微调数据，优化开源 VLM 对屏幕元素的理解和点击预测能力。主要解决了闭源模型在端侧部署成本高、隐私风险大的问题，在标准手机操作基准上达到了可用水平。
+- **领域归类**: [Agent, Mobile AI, Open Weights]
+---
+
+### 22. Safe Few-Step Generation via Velocity Editing (通过速度编辑实现安全的少步生成)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.23267)
+- **研究任务**: 生成模型安全对齐（Safety Alignment）
+- **核心亮点**: 在不增加采样步数的前提下，通过编辑速度场抑制有害内容生成。
+- **深度解析**: 针对 Flow Matching 或扩散模型，在推理阶段干预潜在空间的速度向量。方法无需重新训练模型，即可在少步采样过程中引导生成轨迹避开不安全区域，兼顾了生成效率与内容安全。
+- **领域归类**: [Diffusion, Safety, Generative Model]
+---
+
+### 23. PoLAR: Factorizing Extent and Mode in Latent Actions for Robot Policy Learning (PoLAR：在机器人策略学习的潜在动作中分解范围与模式)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.21139)
+- **研究任务**: 机器人策略学习（Robot Policy Learning）
+- **核心亮点**: 将潜在动作解耦为“幅度”与“模式”，提升策略泛化性。
+- **深度解析**: 提出了一种潜在动作表示方法，将动作分解为执行模式（Mode）和执行程度（Extent）。这种解耦使得机器人策略更容易适应未见过的任务强度或物体属性，减少了模仿学习中的分布偏移问题。
+- **领域归类**: [Robotics, Representation Learning, Imitation Learning]
+---
+
+### 24. Connect the Dots: Training LLMs for Long-Lifecycle Agents with Cross-Domain Generalization Via Reinforcement Learning (连接 dots：通过强化学习训练具有跨域泛化能力的长生命周期代理 LLM)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.20002)
+- **研究任务**: 长周期智能代理（Long-Lifecycle Agent）
+- **核心亮点**: 利用强化学习解决代理在跨域长任务中的遗忘与适应问题。
+- **深度解析**: 针对代理需要长期记忆和跨任务泛化的需求，设计了一种 RL 训练流程。通过奖励信号优化 LLM 的决策链路，使其在不同领域任务切换时保持上下文一致性，提升了长周期任务的成功率。
+- **领域归类**: [Agent, RL, LLM]
+---
+
+### 25. Exploring the Design Space of Reward Backpropagation for Flow Matching (探索 Flow Matching 中奖励反向传播的设计空间)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.11075)
+- **研究任务**: 生成模型优化（Flow Matching Optimization）
+- **核心亮点**: 系统分析了奖励信号反向传播至 Flow Matching 模型的不同策略。
+- **深度解析**: 研究了如何将人类反馈或任务奖励有效地通过梯度回传至 Flow Matching 模型。对比了多种反向传播路径和损失函数设计，找到了能显著提升生成质量和对齐效果的最优配置。
+- **领域归类**: [Generative Model, Optimization, RLHF]
+---
+
+### 26. Tmax: A simple recipe for terminal agents (Tmax：终端代理的简单方案)
+- **社区热度**: `👍 6 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.23321)
+- **研究任务**: 命令行智能代理（Terminal Agent）
+- **核心亮点**: 提出了一套轻量级流程，实现高效的终端交互代理。
+- **深度解析**: 摒弃了复杂的工具调用架构，通过简单的提示工程配合少量微调，使模型能够准确理解并执行 Shell 命令。重点解决了命令执行的安全性和错误恢复问题，适合本地部署。
+- **领域归类**: [Agent, System, CLI]
+---
+
+### 27. Tapered Language Models (锥形语言模型)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.23670)
+- **研究任务**: 模型架构设计（Model Architecture）
+- **核心亮点**: 采用锥形结构分布优化模型计算效率与性能平衡。
+- **深度解析**: 改变了传统 Transformer 各层宽度一致的设定，采用中间宽两头窄（或反之）的锥形结构。这种设计在不显著损失 perplexity 的情况下，减少了参数量或推理时的显存占用，提升了吞吐率。
+- **领域归类**: [Architecture, LLM, Efficiency]
+---
+
+### 28. Causal Discovery in the Era of Agents (代理时代的因果发现)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.23608)
+- **研究任务**: 因果推断（Causal Inference）
+- **核心亮点**: 利用代理的主动干预能力提升因果结构发现准确率。
+- **深度解析**: 结合 Agent 与环境交互的能力，主动设计干预实验来获取因果数据。相比传统被动观测数据，这种方法能更有效地识别混淆变量，构建更准确的因果图，适用于复杂动态系统。
+- **领域归类**: [Causal Inference, Agent, Science AI]
+---
+
+### 29. Toward Open Weight Models Without Risks: Separating Public and Private Capabilities in LLMs (迈向无风险的开放权重模型：分离 LLM 的公共与私有能力)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.21638)
+- **研究任务**: 模型安全与开源（Safety & Open Weights）
+- **核心亮点**: 通过能力分离技术，实现开放权重而不泄露高风险能力。
+- **深度解析**: 提出了一种架构或训练范式，将通用能力保留在公开权重中，而将危险能力（如生物武器合成、漏洞利用）隔离在私有模块或需要通过 API 调用的部分。旨在平衡开源社区的创新需求与安全风险。
+- **领域归类**: [Safety, Policy, Open Weights]
+---
+
+### 30. Dense Reward for Multi-View 3D Reasoning with Global Maps and Local Views (基于全局地图与局部视图的多视图 3D 推理密集奖励)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.23557)
+- **研究任务**: 3D 视觉推理（3D Vision Reasoning）
+- **核心亮点**: 结合全局地图与局部视角信息，构建密集奖励信号优化 3D 推理。
+- **深度解析**: 针对 3D 导航或操作任务，利用全局地图提供上下文，局部视图提供细节，生成每一步的密集奖励。解决了稀疏奖励导致的训练困难问题，显著提升了模型在复杂 3D 环境中的空间理解能力。
+- **领域归类**: [3D Vision, RL, Robotics]
+---
+</details>
+
+<details>
+<summary><b>🚀 GitHub 今日热门项目 (点击展开)</b></summary>
+
+### [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official)
+- **今日趋势**: 今日 +66 | 总 30,747 ⭐ | 3,357 🍴
+- **项目简介**: **[AI/大模型相关]** 由 Anthropic 官方管理的 Claude Code 高质量插件目录，面向希望扩展 Claude 代码能力的开发者。
+- **核心价值**: 解决了 AI 编程助手生态中插件质量参差不齐的痛点，通过官方认证确保插件的安全性与兼容性，核心技术在于标准化的插件接口规范，降低了用户筛选成本。
+---
+### [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)
+- **今日趋势**: 今日 +933 | 总 20,068 ⭐ | 1,357 🍴
+- **项目简介**: **[AI/大模型相关]** 一个能够随用户交互不断“成长”的个性化 AI Agent 框架，面向需要长期记忆与自适应能力的 Agent 开发者。
+- **核心价值**: 解决了传统 AI Agent 缺乏持续学习与个性化演进的痛点，技术核心在于动态更新的用户偏好建模与记忆机制，使 Agent 能适应用户习惯而非仅提供静态响应。
+---
+### [paperless-ngx/paperless-ngx](https://github.com/paperless-ngx/paperless-ngx)
+- **今日趋势**: 今日 +46 | 总 42,395 ⭐ | 2,826 🍴
+- **项目简介**: **[非 AI 核心]** 社区支持的超级文档管理系统，面向需要数字化扫描、索引和归档大量纸质文档的个人或企业用户。
+- **核心价值**: 解决了物理文档难以检索和管理的痛点，虽集成 OCR 技术，但核心在于高效的文档工作流自动化与元数据管理，实现无纸化办公的高效归档。
+---
+### [aws/agent-toolkit-for-aws](https://github.com/aws/agent-toolkit-for-aws)
+- **今日趋势**: 今日 +13 | 总 967 ⭐ | 98 🍴
+- **项目简介**: **[AI/大模型相关]** AWS 官方支持的 AI Agent 工具包，提供 MCP 服务器和技能插件，面向希望在 AWS 基础设施上构建 AI 应用的开发者。
+- **核心价值**: 解决了 AI Agent 与云基础设施对接复杂的痛点，技术核心基于 Model Context Protocol (MCP)，标准化了 Agent 调用 AWS 服务的权限与接口，加速云原生 AI 应用落地。
+---
+### [LLMQuant/quant-mind](https://github.com/LLMQuant/quant-mind)
+- **今日趋势**: 今日 +13 | 总 1,552 ⭐ | 245 🍴
+- **项目简介**: **[AI/大模型相关]** 专为量化金融设计的智能知识提取与检索框架，面向量化交易员和金融数据分析师。
+- **核心价值**: 解决了金融非结构化数据难以被传统量化模型利用的痛点，技术核心结合 LLM 语义理解与金融知识图谱，实现从新闻/报告中自动提取交易信号。
+---
+### [anthropics/skills](https://github.com/anthropics/skills)
+- **今日趋势**: 今日 +433 | 总 15,427 ⭐ | 2,179 🍴
+- **项目简介**: **[AI/大模型相关]** Anthropic 公开的 Agent 技能定义仓库，面向希望自定义 Claude Agent 行为模式的开发者。
+- **核心价值**: 解决了 Agent 能力定义分散且难以复用的痛点，技术核心在于模块化的技能描述语言，允许开发者通过组合既定技能快速构建特定任务的专用 Agent。
+---
+### [langbot-app/LangBot](https://github.com/langbot-app/LangBot)
+- **今日趋势**: 今日 +26 | 总 16,426 ⭐ | 1,458 🍴
+- **项目简介**: **[AI/大模型相关]** 生产级多平台智能机器人开发平台，面向需要在 Discord/微信/Telegram 等 IM 渠道部署 AI 机器人的运营者或开发者。
+- **核心价值**: 解决了多渠道 AI 机器人重复开发与维护成本高的痛点，技术核心在于统一的适配器架构，支持接入主流大模型（GPT/Claude/DeepSeek 等）并实现插件化功能扩展。
+---
+### [scrapy/scrapy](https://github.com/scrapy/scrapy)
+- **今日趋势**: 今日 +52 | 总 62,497 ⭐ | 11,689 🍴
+- **项目简介**: **[非 AI]** Python 生态中快速且高层级的网络爬虫框架，面向需要大规模采集网页数据的数据工程师。
+- **核心价值**: 解决了手写爬虫代码冗余且难以维护的痛点，技术核心在于异步 networking 与强大的选择器引擎，虽常为 AI 提供数据源，但其本身是传统数据采集工具。
+---
+### [karpathy/autoresearch](https://github.com/karpathy/autoresearch)
+- **今日趋势**: 今日 +192 | 总 8,827 ⭐ | 1,273 🍴
+- **项目简介**: **[AI/大模型相关]** 由 AI Agent 自动运行单 GPU 纳米聊天训练研究的实验项目，面向 AI 研究人员与深度学习爱好者。
+- **核心价值**: 解决了机器学习实验流程繁琐且硬件门槛高的痛点，技术核心在于自动化科研 Agent 闭环，能在有限资源下自动探索模型训练策略，降低科研试错成本。
+---
+</details></script>
+        <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
+    </body>
+    </html>
+    
