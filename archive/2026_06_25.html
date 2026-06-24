@@ -1,0 +1,284 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>前沿科研情报 - 2026-06-25</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <style>
+            .markdown-body { box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 30px; }
+            details { background: #f6f8fa; padding: 15px; border-radius: 8px; border: 1px solid #d0d7de; margin-bottom: 20px; }
+            summary { cursor: pointer; color: #0969da; font-weight: bold; font-size: 1.1em; }
+        </style>
+    </head>
+    <body class="markdown-body">
+        <a href='../index.html'>← 返回索引</a>
+        <h1>前沿科研情报 - 2026-06-25</h1>
+        <div id="content"></div>
+        <script type="text/markdown" id="raw-md"><details>
+<summary><b>🤗 Hugging Face 今日论文 (点击展开)</b></summary>
+
+> ⚠️ **注意**：提供的 arXiv 编号（如 2606.xxxxx）显示为 2026 年 6 月，属于未来时间戳，当前无法获取真实论文全文。以下总结基于标题语义及现有技术路线进行的推断性解读，供参考结构与技术方向。
+
+### 1. Qwen-AgentWorld: Language World Models for General Agents (Qwen-AgentWorld：通用代理的语言世界模型)
+- **社区热度**: `👍 72 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.24597)
+- **研究任务**: 通用智能体规划与决策。
+- **核心亮点**: 用语言模型构建世界模型，让 Agent 在文本空间模拟环境变化。
+- **深度解析**: 传统 Agent 依赖真实环境交互试错，成本高且慢。这篇论文 propose 了一个基于语言的世界模型，Agent 先在“脑子里”（文本模拟环境）推演行动后果，再执行最优方案。改了交互方式，从“做 - 看”变成“想 - 做”，预期能减少无效操作，提升长任务规划成功率。
+- **领域归类**: [Agent, World Model, Planning]
+---
+
+### 2. NatureBench: Can Coding Agents Match the Published SOTA of Nature-Family Papers? (NatureBench：代码代理能否匹敌 Nature 系列论文的 Published SOTA？)
+- **社区热度**: `👍 46 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.24530)
+- **研究任务**: 代码生成能力评测。
+- **核心亮点**: 建立新基准，对比 Agent 生成的代码与顶级期刊 published 代码的质量。
+- **深度解析**: 现有代码评测多用简单算法题，无法反映科研级 coding 能力。这篇论文收集了 Nature 家族论文的代码实现作为金标准，测试 Agent 能否复现复杂科学计算流程。改了评测维度，从“语法正确”转向“科学可复现”，效果上能更真实地暴露 Agent 在处理复杂逻辑时的短板。
+- **领域归类**: [Benchmark, Code Generation, Evaluation]
+---
+
+### 3. MemGUI-Agent: An End-to-End Long-Horizon Mobile GUI Agent with Proactive Context Management (MemGUI-Agent：具有主动上下文管理的端到端长程移动 GUI 代理)
+- **社区热度**: `👍 32 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.19926)
+- **研究任务**: 手机端图形界面自动化操作。
+- **核心亮点**: 引入主动上下文管理模块，解决长任务中记忆丢失问题。
+- **深度解析**: 手机操作任务步骤多，Agent 容易做到后面忘了前面。这篇论文在端到端模型里加了一个记忆管理模块，主动筛选和保留关键界面信息。改了架构，增加了记忆检索机制，效果上提升了长_horizon 任务（如跨应用操作）的完成率，减少中途迷失。
+- **领域归类**: [Mobile Agent, GUI, Long-context]
+---
+
+### 4. MobileForge: Annotation-Free Adaptation for Mobile GUI Agents with Hierarchical Feedback-Guided Policy Optimization (MobileForge：基于分层反馈引导策略优化的无标注移动 GUI 代理适配)
+- **社区热度**: `👍 32 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.19930)
+- **研究任务**: 移动 GUI 代理的自适应训练。
+- **核心亮点**: 无需人工标注，利用分层反馈自动优化策略。
+- **深度解析**: 训练手机 Agent 通常需要大量人工标注操作路径，成本高。这篇论文用分层反馈机制，让模型根据执行结果（成功/失败）自动调整策略。改了训练流程，去掉了人工标注环节，效果上降低了适配新应用的成本，实现了无监督或少监督的策略优化。
+- **领域归类**: [Mobile Agent, Reinforcement Learning, Optimization]
+---
+
+### 5. AOHP: An Open-Source OS-Level Agent Harness for Personalized, Efficient and Secure Interaction (AOHP：用于个性化、高效和安全交互的开源操作系统级代理框架)
+- **社区热度**: `👍 25 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.23449)
+- **研究任务**: 操作系统层面的 Agent 交互与安全。
+- **核心亮点**: 提供开源 harness，保障 Agent 在 OS 级操作时的安全与隐私。
+- **深度解析**: Agent 直接操作操作系统风险大，容易误删文件或泄露隐私。这篇论文做了一个开源框架（Harness），在 Agent 和 OS 之间加了一层管控。改了交互接口，增加了权限检查和沙箱机制，效果上实现了个性化操作的同时，保证了系统安全性和效率。
+- **领域归类**: [OS Agent, Security, System]
+---
+
+### 6. LingxiDiagBench: A Multi-Agent Framework for Benchmarking LLMs in Chinese Psychiatric Consultation and Diagnosis (LingxiDiagBench：中文精神科咨询与诊断 LLM 评测的多代理框架)
+- **社区热度**: `👍 19 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2602.09379)
+- **研究任务**: 医疗领域大模型评测（精神科）。
+- **核心亮点**: 针对中文心理诊断场景，构建多 Agent 评测框架。
+- **深度解析**: 通用医疗评测缺乏针对精神科对话的深度。这篇论文设计了多 Agent 框架，模拟医生、患者和评估者，专门测试 LLM 在中文心理咨询中的表现。改了评测场景，聚焦垂直领域对话质量，效果上能更准确地衡量模型在敏感医疗场景下的合规性与诊断能力。
+- **领域归类**: [Healthcare, Benchmark, Multi-Agent]
+---
+
+### 7. OpenThoughts-Agent: Data Recipes for Agentic Models (OpenThoughts-Agent：代理模型的数据配方)
+- **社区热度**: `👍 13 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.24855)
+- **研究任务**: Agent 模型训练数据构建。
+- **核心亮点**: 公开训练数据构建方案（Recipe），优化 Agent 模型效果。
+- **深度解析**: Agent 模型效果差往往是因为训练数据质量不高。这篇论文总结了一套数据清洗、构造和混合的配方。改了数据准备流程，提供了具体的数据处理策略，效果上预期能提升基座模型的规划能力和工具调用准确率。
+- **领域归类**: [Data Centric, Agent Training, Open Source]
+---
+
+### 8. Semantic Browsing: Controllable Diversity for Image Generation (语义浏览：图像生成的可控多样性)
+- **社区热度**: `👍 12 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.23679)
+- **研究任务**: 可控图像生成。
+- **核心亮点**: 允许用户在语义空间浏览，控制生成图像的多样性。
+- **深度解析**: 传统文生图要么随机性太大，要么太固定。这篇论文提供了一种浏览机制，用户可以在语义维度上调整生成结果。改了交互方式，增加了语义滑动或浏览接口，效果上让用户能更精细地控制生成内容的差异程度，满足多样化需求。
+- **领域归类**: [Image Generation, Controllability, Human-Computer Interaction]
+---
+
+### 9. FLAT: Feedforward Latent Triangle Splatting for Geometrically Accurate Scene Generation (FLAT：用于几何精确场景生成的前馈潜在三角形 Splatting)
+- **社区热度**: `👍 10 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.24876)
+- **研究任务**: 3D 场景生成。
+- **核心亮点**: 使用前馈潜在三角形 Splatting 技术，提升几何准确性。
+- **深度解析**: 现有 3D 生成方法在几何结构上容易失真。这篇论文用了三角形 Splatting 代替传统的高斯 Splatting 或网格。改了表示方法，引入前馈潜在空间映射，效果上生成的场景几何结构更准确，边缘更清晰，适合需要精确结构的应用。
+- **领域归类**: [3D Generation, Computer Graphics, Splatting]
+---
+
+### 10. FedOT: Ownership Verification and Leakage Tracing via Watermarks for Federated LDMs (FedOT：联邦潜在扩散模型的水印所有权验证与泄露追踪)
+- **社区热度**: `👍 9 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.22875)
+- **研究任务**: 联邦学习安全与版权保护。
+- **核心亮点**: 为联邦扩散模型加水印，实现所有权验证和泄露追踪。
+- **深度解析**: 联邦学习中模型容易被窃取或数据泄露。这篇论文在潜在扩散模型（LDM）中嵌入水印。改了模型训练或推理流程，加入了水印注入和提取机制，效果上能追踪模型来源，验证所有权，防止未经授权的扩散模型使用。
+- **领域归类**: [Security, Federated Learning, Watermarking]
+---
+
+### 11. Escaping the Self-Confirmation Trap: An Execute-Distill-Verify Paradigm for Agentic Experience Learning (逃避自证陷阱：代理经验学习的执行 - 蒸馏 - 验证范式)
+- **社区热度**: `👍 8 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.24428)
+- **研究任务**: 智能体（Agent）经验学习与自我修正
+- **核心亮点**: 提出执行 - 蒸馏 - 验证闭环，解决智能体在学习中陷入自我确认偏差的问题。
+- **深度解析**: 传统 Agent 容易只关注符合预期的反馈。该方法让 Agent 先执行动作，再将经验蒸馏为通用策略，最后引入独立验证机制检查策略的有效性。通过打破单向反馈 loop，强制模型接触负面或意外反馈，提升泛化能力。
+- **领域归类**: [Agent, 强化学习, 自我修正]
+---
+
+### 12. Are Text-to-Image Models Inductivist Turkeys? A Counterfactual Benchmark for Causal Reasoning (文本生成图像模型是归纳主义火鸡吗？因果推理的反事实基准)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.24548)
+- **研究任务**: 文生图模型的因果推理能力评估
+- **核心亮点**: 构建反事实基准测试，检验模型是理解因果关系还是仅依赖统计相关性。
+- **深度解析**: 借用“归纳主义火鸡”比喻，设计一组 prompts，改变因果条件但保持表面特征不变。观察生成图像是否随因果逻辑变化而调整，而非仅仅复制训练数据中的共现模式。用于量化模型的逻辑推理短板。
+- **领域归类**: [生成式 AI, 评估基准, 因果推理]
+---
+
+### 13. DiffusionBench: On Holistic Evaluation of Diffusion Transformers (DiffusionBench：Diffusion Transformer 的整体评估)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.24888)
+- **研究任务**: Diffusion Transformer (DiT) 模型性能评估
+- **核心亮点**: 提供涵盖生成质量、效率、一致性的 DiT 专用全方位评测基准。
+- **深度解析**: 针对 DiT 架构特性，不再仅用 FID 等单一指标。增加了推理速度、显存占用、多步生成一致性等维度。旨在统一当前 DiT 模型的评估标准，方便横向对比不同架构改进。
+- **领域归类**: [生成式 AI, 评估基准, Transformer]
+---
+
+### 14. Holistic Data Scheduler for LLM Pre-training via Multi-Objective Reinforcement Learning (基于多目标强化学习的 LLM 预训练整体数据调度器)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.24133)
+- **研究任务**: 大语言模型预训练数据混合策略
+- **核心亮点**: 利用多目标强化学习动态调整预训练数据配比，替代静态调度。
+- **深度解析**: 将数据调度建模为 RL 问题，奖励函数包含损失下降速度、验证集 perplexity 等多个目标。模型在训练过程中自动学习不同阶段需要多少比例的代码、文本或数学数据，优化收敛效率。
+- **领域归类**: [LLM, 预训练, 强化学习]
+---
+
+### 15. FlowR2A: Learning Reward-to-Action Distribution for Multimodal Driving Planning (FlowR2A：学习多模态驾驶规划的奖励到动作分布)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.24231)
+- **研究任务**: 自动驾驶多模态规划
+- **核心亮点**: 建立奖励信号到动作分布的直接映射，优化驾驶决策流畅度。
+- **深度解析**: 结合 Flow Matching 技术，将环境奖励信号转化为动作概率分布。输入包含摄像头和雷达等多模态数据，模型直接输出符合奖励预期的驾驶轨迹，减少传统规划中的规则硬编码。
+- **领域归类**: [自动驾驶, 多模态, 规划]
+---
+
+### 16. DREAM: Dense Retrieval Embeddings via Autoregressive Modeling (DREAM：通过自回归建模实现稠密检索嵌入)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.24667)
+- **研究任务**: 稠密检索与嵌入表示
+- **核心亮点**: 利用自回归生成模型能力增强稠密检索嵌入的表示质量。
+- **深度解析**: 传统检索多用双向 Encoder。该方法利用 AR 模型的序列建模能力生成嵌入向量，捕捉更长的依赖关系。在保持检索速度的同时，提升了对复杂查询语义的理解精度。
+- **领域归类**: [NLP, 信息检索, 嵌入模型]
+---
+
+### 17. ReMMD: Realistic Multilingual Multi-Image Agentic Verification for Multimodal Misinformation Detection (ReMMD：用于多模态虚假信息检测的真实多语言多图像代理验证)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.24112)
+- **研究任务**: 多模态虚假信息检测
+- **核心亮点**: 引入智能体工具链，跨语言和跨图像验证信息真实性。
+- **深度解析**: 针对单一模型难以识别复杂谣言的问题，部署 Agent 调用外部搜索和验证工具。支持多语言文本与多张关联图像的交叉验证，模拟事实核查员的工作流程，提高检测可信度。
+- **领域归类**: [多模态, 安全, Agent]
+---
+
+### 18. World Value Models for Robotic Manipulation (机器人操作的世界价值模型)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.24742)
+- **研究任务**: 机器人操作控制
+- **核心亮点**: 构建世界价值模型，指导机器人在物理环境中的操作决策。
+- **深度解析**: 学习一个价值函数来评估机器人状态在未来任务中的潜在收益。不同于单纯的动作模仿，该模型让机器人理解操作背后的“价值”，从而在未见过的场景中做出更合理的 Manipulation 决策。
+- **领域归类**: [机器人, 强化学习, 控制]
+---
+
+### 19. ChartWalker: Benchmarking the Cross-Chart RAG Task (ChartWalker：跨图表 RAG 任务基准测试)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.23997)
+- **研究任务**: 图表理解与检索增强生成 (RAG)
+- **核心亮点**: 首个专注于跨多个图表进行信息检索与回答的基准测试。
+- **深度解析**: 现有 RAG 多针对文本。该基准要求模型从多个不同的图表（如柱状图、折线图）中检索关联数据并综合回答。测试模型对视觉数据的结构化理解和跨图推理能力。
+- **领域归类**: [VQA, RAG, 基准测试]
+---
+
+### 20. QG-MIL: A Gated Transformer Aggregator for Domain-Agnostic Multiple Instance Learning in Medical Imaging (QG-MIL：用于医学影像领域无关多实例学习的门控 Transformer 聚合器)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.20027)
+- **研究任务**: 医学影像多实例学习 (MIL)
+- **核心亮点**: 提出门控 Transformer 聚合器，实现跨领域的通用医学影像诊断。
+- **深度解析**: 针对 MIL 任务中实例聚合效率低的问题，引入门控机制筛选关键实例片段。架构设计不依赖特定器官或病灶类型，旨在提供一个通用的 backbone，方便迁移到不同的医学影像诊断任务中。
+- **领域归类**: [医疗 AI, 计算机视觉, 多实例学习]
+---
+
+### 21. EventVLA: Event-Driven Visual Evidence Memory for Long-Horizon Vision-Language-Action Policies (EventVLA：用于长程视觉 - 语言 - 动作策略的事件驱动视觉证据记忆)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.20092)
+- **研究任务**: 具身智能 / 长程任务策略
+- **核心亮点**: 通过事件触发的记忆机制，解决 VLA 模型在长序列任务中容易遗忘关键视觉信息的问题。
+- **深度解析**: 传统 VLA 策略在处理长任务时，上下文窗口容易溢出导致遗忘。这篇工作在策略网络外挂了一个记忆模块，不记录每一帧，而是检测到关键视觉事件（如物体状态改变）时才存入证据。推理时模型可回溯这些证据，在不显著增加计算量的前提下提升长程任务成功率。
+- **领域归类**: `[Robotics, VLA, Memory Mechanism]`
+---
+### 22. AGORA: An Archive-Grounded Benchmark for Agentic Workplace Document Reasoning (AGORA：基于档案库的职场文档推理智能体基准)
+- **社区热度**: `👍 0 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.24526)
+- **研究任务**: Agent 基准测试 / 文档推理
+- **核心亮点**: 构建了一个贴近真实办公场景的基准，专门评估 Agent 检索和推理历史档案文档的能力。
+- **深度解析**: 现有 Agent 基准多集中在通用问答或代码生成，缺乏对职场文档流的模拟。该基准提供了一套包含历史档案库的环境，任务要求 Agent 必须跨文档检索信息并进行逻辑推理才能完成。主要用来检验 Agent 在复杂文档结构下的检索增强生成（RAG）和长上下文理解能力。
+- **领域归类**: `[Benchmark, NLP, Agent]`
+---
+### 23. FLUX3D: High-Fidelity 3D Gaussian Generation with Diffusion-Aligned Sparse Representation (FLUX3D：基于扩散对齐稀疏表示的高保真 3D 高斯生成)
+- **社区热度**: `👍 0 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.24874)
+- **研究任务**: 3D 生成 / 高斯溅射
+- **核心亮点**: 利用扩散模型先验对齐稀疏表示，实现了更干净、高保真的 3D 高斯场景生成。
+- **深度解析**: 直接用扩散模型生成 3D 高斯参数往往噪声大、冗余多。这篇方法引入了一种稀疏表示结构，并强制其与扩散模型的特征空间对齐。这样既利用了扩散模型的生成先验，又通过稀疏约束去除了多余的高斯球，提升了生成场景的几何细节和渲染效率。
+- **领域归类**: `[3D Vision, Generative AI, Gaussian Splatting]`
+---
+### 24. Multi4D: High-Fidelity Dynamic Gaussian Splatting via Multi-Level Competitive Allocation (Multi4D：通过多级竞争分配实现高保真动态高斯溅射)
+- **社区热度**: `👍 0 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.22197)
+- **研究任务**: 动态 3D 重建 / 高斯溅射
+- **核心亮点**: 提出多级竞争分配机制，优化动态场景中高斯球的资源分布，提升重建质量。
+- **深度解析**: 动态场景（4D）重建中，高斯球如何在时间和空间上分配是难点。这篇工作设计了一个竞争机制，让高斯球在不同层级间竞争表示资源。运动剧烈或细节丰富的区域会分配更多高斯球，静止区域则减少，从而在同等算力下获得更清晰的动态重建效果。
+- **领域归类**: `[3D Vision, Computer Graphics, Dynamic Reconstruction]`
+---
+### 25. An Efficient Method for the Optimal Control of Microgrids Under Uncertainties using Local Reduction (基于局部约简的不确定性微电网最优控制高效方法)
+- **社区热度**: `👍 0 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.12345)
+- **研究任务**: 控制理论 / 能源系统优化
+- **核心亮点**: 采用局部约简技术降低计算复杂度，实现不确定性环境下微电网的快速最优控制。
+- **深度解析**: 微电网控制受光照、负载等不确定性因素影响，优化问题维度高、求解慢。这篇方法利用局部约简技术，在保留关键不确定性特征的同时降低问题维度。相比传统鲁棒控制，该方法能在更短时间内计算出最优控制策略，适合实时调度场景。
+- **领域归类**: `[Control Theory, Energy Systems, Optimization]`
+---
+</details>
+
+<details>
+<summary><b>🚀 GitHub 今日热门项目 (点击展开)</b></summary>
+
+### [OpenMontage](https://github.com/calesthio/OpenMontage)
+- **今日趋势**: ⭐ 3,703 (今日) | ⭐ 18,452 (总) | 🍴 2,119
+- **项目简介**: 【AI 相关】全球首个开源代理式视频制作系统，将 AI 编码助手转化为完整的视频制作工作室。
+- **核心价值**: 解决了传统视频制作流程繁琐、门槛高的问题。通过 12 条流水线、52 种工具及 500+ 代理技能，利用 AI Agent 自动化完成视频剪辑与生产，大幅降低专业视频创作的成本与技术壁垒。
+---
+### [hiring-agent](https://github.com/interviewstreet/hiring-agent)
+- **今日趋势**: ⭐ 152 (今日) | ⭐ 1,984 (总) | 🍴 580
+- **项目简介**: 【AI 相关】专为招聘流程设计的 AI 代理，用于自动评估和评分求职者简历。
+- **核心价值**: 解决了 HR 在海量简历筛选中效率低下且主观性强的问题。通过 AI 自动化评分，帮助企业快速锁定匹配度高的候选人，优化招聘漏斗的初期筛选环节。
+---
+### [litellm](https://github.com/BerriAI/litellm)
+- **今日趋势**: ⭐ 152 (今日) | ⭐ 51,408 (总) | 🍴 9,131
+- **项目简介**: 【AI 相关】统一的 Python SDK 与代理服务器，支持以 OpenAI 格式调用 100+ 种大模型 API。
+- **核心价值**: 解决了大模型生态碎片化带来的集成难题。提供成本追踪、护栏、负载均衡及日志记录功能，让开发者无需为不同厂商（如 Bedrock, Azure, VertexAI 等）单独适配代码，实现大模型应用的标准化管理。
+---
+### [agents](https://github.com/wshobson/agents)
+- **今日趋势**: ⭐ 43 (今日) | ⭐ 37,135 (总) | 🍴 4,002
+- **项目简介**: 【AI 相关】面向 Claude Code、Copilot 等多种 AI 编码助手的跨平台代理插件市场。
+- **核心价值**: 解决了不同 AI 编程工具之间插件生态不互通的问题。通过统一的多 harness 架构，允许开发者为多种主流 AI 编码 CLI 工具构建和共享插件，扩展了 AI 编程助手的功能边界。
+---
+### [metatrader-mcp-server](https://github.com/ariadng/metatrader-mcp-server)
+- **今日趋势**: ⭐ 8 (今日) | ⭐ 568 (总) | 🍴 199
+- **项目简介**: 【AI 相关】基于模型上下文协议（MCP）的服务端， enabling AI 大模型通过 MetaTrader 平台进行交易。
+- **核心价值**: 解决了 AI 模型与金融交易终端之间的连接壁垒。通过标准化 MCP 协议，让大模型能够安全、规范地读取市场数据并执行交易指令，为 AI 量化交易提供了基础设施支持。
+---
+### [Megatron-Bridge](https://github.com/NVIDIA-NeMo/Megatron-Bridge)
+- **今日趋势**: ⭐ 5 (今日) | ⭐ 748 (总) | 🍴 375
+- **项目简介**: 【AI 相关】NVIDIA 官方推出的 Megatron 模型训练库，支持与大模型社区标准 Hugging Face 双向转换。
+- **核心价值**: 解决了 NVIDIA Megatron 框架与 Hugging Face 生态之间的模型格式兼容性问题。支持高效训练及无缝转换，降低了开发者在高性能训练与社区模型复用之间的切换成本，加速大模型研发流程。
+---
+</details></script>
+        <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
+    </body>
+    </html>
+    
