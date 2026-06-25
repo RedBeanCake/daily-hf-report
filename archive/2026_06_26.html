@@ -1,0 +1,368 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>前沿科研情报 - 2026-06-26</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <style>
+            .markdown-body { box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 30px; }
+            details { background: #f6f8fa; padding: 15px; border-radius: 8px; border: 1px solid #d0d7de; margin-bottom: 20px; }
+            summary { cursor: pointer; color: #0969da; font-weight: bold; font-size: 1.1em; }
+        </style>
+    </head>
+    <body class="markdown-body">
+        <a href='../index.html'>← 返回索引</a>
+        <h1>前沿科研情报 - 2026-06-26</h1>
+        <div id="content"></div>
+        <script type="text/markdown" id="raw-md"><details>
+<summary><b>🤗 Hugging Face 今日论文 (点击展开)</b></summary>
+
+### 1. Are We Ready For An Agent-Native Memory System? (我们准备好面向 Agent 的原生记忆系统了吗？)
+- **社区热度**: `👍 84 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.24775)
+- **研究任务**: Agent 长期记忆管理与架构设计
+- **核心亮点**: 质疑现有向量数据库方案，提出专为 Agent 交互设计的原生记忆架构。
+- **深度解析**: 文章指出传统 RAG 和向量检索在 Agent 长程任务中存在上下文断裂问题。方案主张将记忆模块深度集成到 Agent 推理循环中，支持动态读写与遗忘，而非外挂式存储。
+- **领域归类**: [Agent, Memory Management, System Architecture]
+---
+
+### 2. DomainShuttle: Freeform Open Domain Subject-driven Text-to-video Generation (DomainShuttle：自由开放域的主题驱动文本生成视频)
+- **社区热度**: `👍 55 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.26058)
+- **研究任务**: 主题驱动的视频生成 (Subject-driven T2V)
+- **核心亮点**: 实现了无需微调即可在开放域中保持主体一致性的视频生成。
+- **深度解析**: 提出"Shuttle"机制，在潜在空间中将主体特征与背景域解耦。通过跨域特征映射，让同一主体能适应不同风格场景，解决了传统 DreamBooth 类方法泛化性差的问题。
+- **领域归类**: [Video Generation, AIGC, Subject Consistency]
+---
+
+### 3. Wan-Streamer v0.1: End-to-end Real-time Interactive Foundation Models (Wan-Streamer v0.1：端到端实时交互式基础模型)
+- **社区热度**: `👍 38 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.25041)
+- **研究任务**: 低延迟交互式视频/多模模型
+- **核心亮点**: 打造了端到端的流式推理 pipeline，显著降低交互延迟。
+- **深度解析**: 针对 Wan 系列模型优化了解码策略，采用因果注意力机制配合分块传输。支持用户输入中途介入生成，适用于直播辅助或实时游戏场景。
+- **领域归类**: [Video Generation, Real-time AI, Interactive Systems]
+---
+
+### 4. ShutterMuse: Capture-Time Photography Guidance with MLLMs (ShutterMuse：基于多模态大模型的拍摄时摄影指导)
+- **社区热度**: `👍 36 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.25763)
+- **研究任务**: 摄影辅助与多模态理解
+- **核心亮点**: 将 MLLM 嵌入拍摄流程，在按下快门前提供构图与光线建议。
+- **深度解析**: 利用轻量级 MLLM 实时分析取景框内容，结合美学评分模型输出调整指令。重点解决了移动端推理速度问题，实现了毫秒级反馈。
+- **领域归类**: [MLLM, Computer Vision, Application]
+---
+
+### 5. Improved Large Language Diffusion Models (改进的大型语言扩散模型)
+- **社区热度**: `👍 27 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.25331)
+- **研究任务**: 基于扩散模型的语言生成 (LDM)
+- **核心亮点**: 解决了语言扩散模型在采样效率和收敛稳定性上的短板。
+- **深度解析**: 改进了离散扩散过程中的噪声调度策略，引入变分下界优化。相比自回归模型，在并行生成速度上有提升，同时保持了 perplexity 竞争力。
+- **领域归类**: [LLM, Diffusion Models, NLP]
+---
+
+### 6. Beyond NL2Code: A Structured Survey of Multimodal Code Intelligence (超越 NL2Code：多模态代码智能结构化综述)
+- **社区热度**: `👍 27 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.15932)
+- **研究任务**: 代码智能综述 (Survey)
+- **核心亮点**: 系统梳理了涉及 UI、图表与代码混合理解的多模态任务。
+- **深度解析**: 不再局限于自然语言转代码，分类总结了截图生成代码、UI 布局理解等任务。指出了当前数据集缺乏多模态对齐标注的痛点。
+- **领域归类**: [Survey, Code AI, Multimodal]
+---
+
+### 7. MVTrack4Gen: Multi-View Point Tracking as Geometric Supervision for 4D Video Generation (MVTrack4Gen：多视点跟踪作为 4D 视频生成的几何监督)
+- **社区热度**: `👍 24 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.26087)
+- **研究任务**: 4D 视频生成 (3D+ 时间)
+- **核心亮点**: 引入多视点跟踪信号作为几何约束，提升 4D 生成的一致性。
+- **深度解析**: 在生成过程中加入跟踪损失，强制不同视角下的物体运动轨迹符合几何投影关系。有效减少了 4D 生成中常见的闪烁和形变伪影。
+- **领域归类**: [Video Generation, 3D/4D, Geometry]
+---
+
+### 8. V-Zero: Answer-Label-Free On-Policy Distillation with Contrastive Evidence Gating for Fine-Grained Visual Reasoning (V-Zero：无答案标签的细粒度视觉推理策略蒸馏)
+- **社区热度**: `👍 19 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.25319)
+- **研究任务**: 视觉推理与模型蒸馏
+- **核心亮点**: 无需最终答案标签，仅凭对比证据门控即可完成策略蒸馏。
+- **深度解析**: 设计了证据门控机制，筛选出高置信度的推理路径作为伪标签。降低了对昂贵推理标注数据的依赖，适合细粒度视觉问答任务。
+- **领域归类**: [VLM, Reasoning, Distillation]
+---
+
+### 9. UnityShots: Memory-Driven Multi-Shot Audio-Video Generation with Boundary-Aware Gating (UnityShots：记忆驱动的多镜头音视频生成)
+- **社区热度**: `👍 19 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.21661)
+- **研究任务**: 长视频与多镜头生成
+- **核心亮点**: 利用记忆模块维持多镜头间的角色与场景一致性。
+- **深度解析**: 引入边界感知门控控制镜头切换处的平滑度，并通过记忆库存储关键帧特征。解决了生成长视频时角色服装、外貌在不同镜头间不一致的问题。
+- **领域归类**: [Video Generation, Audio-Video, Consistency]
+---
+
+### 10. IV-CoT: Implicit Visual Chain-of-Thought for Structure-Aware Text-to-Image Generation (IV-CoT：用于结构感知文本生成图像的隐式视觉思维链)
+- **社区热度**: `👍 13 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.24849)
+- **研究任务**: 文本生成图像 (T2I)
+- **核心亮点**: 在生成过程中植入隐式视觉思维链，提升复杂结构还原度。
+- **深度解析**: 不直接输出思维链文本，而是在潜在空间中引导模型先构建结构草图再生成细节。改善了多物体空间关系混乱的问题，无需额外推理步骤。
+- **领域归类**: [Image Generation, Reasoning, Structure Awareness]
+---
+
+### 11. EBench: Elemental Diagnosis of Generalist Mobile Manipulation Policies (EBench：通用移动操作策略的元素级诊断)
+- **社区热度**: `👍 13 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.18239)
+- **研究任务**: 机器人移动操作策略评估
+- **核心亮点**: 提出了一套细粒度基准，能将机器人操作失败的原因定位到具体技能元素。
+- **深度解析**: 传统评估只看整体成功率，这篇论文把操作任务拆解成抓取、移动、避障等基础元素。通过 EBench 基准测试，能明确告诉开发者策略到底是在哪个环节出了问题，方便针对性优化。
+- **领域归类**: [机器人学习] [评估基准]
+---
+
+### 12. Causal-rCM: A Unified Teacher-Forcing and Self-Forcing Open Recipe for Autoregressive Diffusion Distillation in Streaming Video Generation and Interactive World Models (Causal-rCM：流式视频生成与交互世界模型中自回归扩散蒸馏的统一教师强制与自强制开放方案)
+- **社区热度**: `👍 12 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.25473)
+- **研究任务**: 视频生成模型蒸馏加速
+- **核心亮点**: 统一了教师强制和自强制策略，实现了自回归扩散模型的高效蒸馏，支持流式生成。
+- **深度解析**: 针对视频生成慢的问题，提出了一种通用的蒸馏配方。通过结合 Teacher-Forcing 和 Self-Forcing 两种训练信号，让模型在保持生成质量的同时大幅减少采样步数，适用于需要低延迟的交互场景。
+- **领域归类**: [视频生成] [扩散模型] [模型蒸馏]
+---
+
+### 13. The Hitchhiker's Guide to Agentic AI: From Foundations to Systems (Agentic AI 指南：从基础到系统)
+- **社区热度**: `👍 9 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.24937)
+- **研究任务**: AI Agent 综述与系统架构
+- **核心亮点**: 系统性梳理了 AI Agent 从理论基础到系统落地的全链路知识。
+- **深度解析**: 这是一篇综述性工作。它没有提出新模型，而是把当前 Agent 领域的规划、记忆、工具使用等模块进行了结构化整理，适合想快速搭建 Agent 系统的团队参考架构设计。
+- **领域归类**: [AI Agent] [综述] [系统架构]
+---
+
+### 14. Autodata: An agentic data scientist to create high quality synthetic data (Autodata：用于创建高质量合成数据的代理数据科学家)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.25996)
+- **研究任务**: 合成数据生成
+- **核心亮点**: 用 AI Agent 自动化执行数据科学流程，生成高质量合成数据。
+- **深度解析**: 让 Agent 扮演数据科学家，自动完成数据清洗、特征工程和合成数据生成。目的是解决特定任务数据不足的问题，通过自动化流程保证合成数据的质量，用于下游模型训练。
+- **领域归类**: [数据工程] [AI Agent] [合成数据]
+---
+
+### 15. Look Light, Think Heavy: What Multimodal Chain-of-Thought Reasoning Can and Cannot Do (轻看重型：多模态思维链推理的能力与局限)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.22565)
+- **研究任务**: 多模态推理能力分析
+- **核心亮点**: 实证分析了多模态 CoT 的有效边界，提出视觉编码宜轻、推理权重宜重。
+- **深度解析**: 研究了多模态模型在使用思维链（CoT）时的表现。发现并非所有任务都需要复杂的视觉推理，有时轻量级的视觉感知配合深度的语言推理效果更好，明确了 CoT 在多模态场景下的适用边界。
+- **领域归类**: [多模态] [推理能力] [模型分析]
+---
+
+### 16. TryOnCrafter: Unleashing Camera Trajectories for Realistic Video Virtual Try-on via a Renderable 4D Try-on Proxy (TryOnCrafter：通过可渲染 4D 试穿代理释放相机轨迹以实现真实视频虚拟试穿)
+- **社区热度**: `👍 6 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.26092)
+- **研究任务**: 视频虚拟试穿
+- **核心亮点**: 引入可渲染的 4D 代理，实现了支持相机运动的高质量视频试穿。
+- **深度解析**: 传统视频试穿视角固定。这篇论文构建了一个 4D 的试穿代理模型，允许在生成试穿视频时自由改变相机视角，解决了动态视角下的衣物贴合和光影一致性问题。
+- **领域归类**: [计算机视觉] [虚拟试穿] [4D 生成]
+---
+
+### 17. Advancing WordArt-Oriented Scene Text Recognition: Datasets and Methods (推进面向艺术字的场景文本识别：数据集与方法)
+- **社区热度**: `👍 6 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.24484)
+- **研究任务**: 场景文本识别（OCR）
+- **核心亮点**: 针对艺术字场景发布了新数据集，并提出了专门的识别方法。
+- **深度解析**: 普通 OCR 对变形、 stylized 的艺术字识别效果差。作者构建了针对性的数据集，并改进了识别网络结构，重点解决字体变形和装饰干扰问题，提升了艺术字场景下的识别率。
+- **领域归类**: [OCR] [计算机视觉] [数据集]
+---
+
+### 18. ReNIO: Reweighting Negative Trajectory Importance for LLM On-Policy Distillation (ReNIO：大模型_on-policy_蒸馏中的负轨迹重要性重加权)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.23104)
+- **研究任务**: 大模型蒸馏
+- **核心亮点**: 通过重新加权负样本轨迹，稳定了 LLM 的 On-Policy 蒸馏训练。
+- **深度解析**: 在模型蒸馏过程中，负样本（错误轨迹）往往被忽视或处理不当。ReNIO 方法调整了这些负轨迹的损失权重，防止模型过度拟合错误模式，提升了蒸馏后模型的稳定性和性能。
+- **领域归类**: [大语言模型] [模型蒸馏] [强化学习]
+---
+
+### 19. RL-Index: Reinforcement Learning for Retrieval Index Reasoning (RL-Index：用于检索索引推理的强化学习)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.16316)
+- **研究任务**: 检索增强生成（RAG）
+- **核心亮点**: 用强化学习优化检索索引的构建和推理过程。
+- **深度解析**: 传统检索索引是静态的。这篇论文把索引的构建和查询推理看作一个序列决策问题，用 RL 动态调整索引结构或检索路径，以提高检索的相关性和最终回答的准确率。
+- **领域归类**: [信息检索] [强化学习] [RAG]
+---
+
+### 20. CAVEWOMAN: How Large Language Models Behave Under Linguistic Input and Output Compression (CAVEWOMAN：大语言模型在语言输入输出压缩下的行为表现)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.24083)
+- **研究任务**: 大模型效率与压缩
+- **核心亮点**: 系统评估了文本压缩对大模型输入输出能力及行为的影响。
+- **深度解析**: 为了节省 Token 成本，常对文本进行压缩。这篇论文测试了不同压缩率下模型的理解和生成能力变化，分析了模型在信息缺失时的行为模式，为高效推理提供依据。
+- **领域归类**: [大语言模型] [模型效率] [文本压缩]
+---
+
+### 21. RoPE-Aware Bit Allocation for KV-Cache Quantization (感知 RoPE 的 KV 缓存量化比特分配)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.24033)
+- **研究任务**: 大模型推理优化 / KV Cache 量化
+- **核心亮点**: 根据旋转位置编码（RoPE）的敏感度动态分配量化比特，而非统一分配。
+- **深度解析**: 传统 KV Cache 量化对所有头使用相同比特数。本文发现不同头对 RoPE 的敏感度不同，敏感头需要更高精度。方案通过识别这些敏感头，给它们分配更多比特，不敏感的分配更少。在显存占用不变的情况下，比均匀量化精度更高，或在同等精度下更省显存。
+- **领域归类**: [大模型效率] [量化压缩]
+
+---
+
+### 22. When Lower Privileges Suffice: Investigating Over-Privileged Tool Selection in LLM Agents (低权限 suffice 时：调查 LLM 智能体中的过度授权工具选择)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.20023)
+- **研究任务**: 智能体安全 / 工具调用权限管理
+- **核心亮点**: 发现智能体倾向于请求高于实际需求的操作权限，存在安全隐患。
+- **深度解析**: 研究了 Agent 调用工具时的权限申请行为。数据显示，即使是简单任务，模型也常请求 admin 或 root 级别权限。论文提出了“最小权限原则”在 Agent 中的应用方案，通过约束提示词或微调，让模型只申请完成任务所需的最低权限，降低误操作风险。
+- **领域归类**: [AI 安全] [智能体]
+
+---
+
+### 23. What Intermediate Layers Know: Detecting Jailbreaks from Entropy Dynamics (中间层知道什么：从熵动态检测越狱攻击)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.25182)
+- **研究任务**: 越狱检测 / 模型可解释性
+- **核心亮点**: 利用中间层隐藏状态的熵值变化规律，在输出前识别越狱 prompt。
+- **深度解析**: 不依赖最终输出内容，而是监控模型中间层的激活熵。实验发现，越狱攻击会导致中间层熵值出现特定的波动模式，与正常 prompt 显著不同。该方法可以作为前置过滤器，在不影响推理流程的情况下提前拦截攻击。
+- **领域归类**: [AI 安全] [可解释性]
+
+---
+
+### 24. PrivacyAlign: Contextual Privacy Alignment for LLM Agents (PrivacyAlign：LLM 智能体的上下文隐私对齐)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.21710)
+- **研究任务**: 隐私保护 / 智能体对齐
+- **核心亮点**: 让智能体根据对话上下文自动识别敏感信息并进行隐私对齐。
+- **深度解析**: 针对 Agent 容易泄露用户隐私的问题，提出了一种上下文感知的对齐方法。通过构建包含隐私场景的数据集进行微调，使模型能识别医疗、金融等敏感上下文，并自动拒绝透露隐私或进行脱敏处理，比通用安全对齐更针对性。
+- **领域归类**: [AI 安全] [隐私保护]
+
+---
+
+### 25. Lite Any Stereo V2: Faster and Stronger Efficient Zero-Shot Stereo Matching (Lite Any Stereo V2：更快更强的高效零样本立体匹配)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.24457)
+- **研究任务**: 计算机视觉 / 立体匹配
+- **核心亮点**: 升级版立体匹配模型，在零样本设定下实现了速度与精度的双重提升。
+- **深度解析**: 针对双目深度估计任务，优化了原有架构的计算瓶颈。V2 版本引入了更轻量化的特征提取模块，支持跨数据集零样本泛化。适合部署在算力受限的边缘设备上，用于实时深度感知。
+- **领域归类**: [计算机视觉] [3D 视觉]
+
+---
+
+### 26. Distill Once, Adapt Life-Long: Exploring Dataset Distillation for Continual Test-Time Adaptation (蒸馏一次，终身适应：探索数据集蒸馏用于持续测试时适应)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.20196)
+- **研究任务**: 持续学习 / 测试时适应 (TTA)
+- **核心亮点**: 利用数据集蒸馏技术，让模型在测试阶段能持续适应新数据且不遗忘旧知识。
+- **深度解析**: 传统 TTA 在面对分布连续变化时容易灾难性遗忘。该方法先将旧知识蒸馏为一个小型合成数据集。在适应新数据时，混合使用该合成数据集进行回放。只需蒸馏一次，即可支持长期的持续适应，平衡了稳定性与可塑性。
+- **领域归类**: [持续学习] [模型适应]
+
+---
+
+### 27. Constraint Tax in Open-Weight LLMs: An Empirical Study of Tool Calling Suppression Under Structured Output Constraints (开源 LLM 中的约束税：结构化输出约束下工具调用抑制的实证研究)
+- **社区热度**: `👍 0 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.25605)
+- **研究任务**: 模型评估 / 工具调用
+- **核心亮点**: 实证发现强制结构化输出（如 JSON）会显著降低开源模型的工具调用能力。
+- **深度解析**: 研究了强制输出格式对模型性能的影响。数据显示，当要求模型输出严格 JSON 或特定格式时，开源模型选择正确工具的概率下降，这种现象被称为“约束税”。建议开发者在追求格式规范时，需权衡工具调用准确率的损失。
+- **领域归类**: [大模型评估] [工具使用]
+
+---
+</details>
+
+<details>
+<summary><b>🚀 GitHub 今日热门项目 (点击展开)</b></summary>
+
+### [ai-berkshire](https://github.com/xbtlin/ai-berkshire)
+- **今日趋势**: ⭐ 今日 +201 | 总 Stars 1,700 | Forks 282
+- **项目简介**: 一个基于 Claude Code 构建的 AI 价值投资研究框架，融合多位投资大师方法论。
+- **核心价值**: 解决了个人投资者在面对复杂金融市场时缺乏系统化分析工具痛点，通过多 Agent 并行对抗分析，模拟专业投研团队视角，降低决策偏差，提升投资研究效率。
+- **AI/大模型相关性**: **是** (基于 Claude Code 及多 Agent 架构)
+
+---
+
+### [MinerU](https://github.com/opendatalab/MinerU)
+- **今日趋势**: ⭐ 今日 +524 | 总 Stars 69,296 | Forks 5,858
+- **项目简介**: 将 PDF 和 Office 等复杂文档高效转换为适合大模型处理的 Markdown/JSON 格式的工具。
+- **核心价值**: 解决了大模型训练及 RAG 应用中非结构化文档（尤其是含公式、表格的 PDF）解析难度大、质量差的痛点，为 Agentic 工作流提供高质量的数据预处理能力。
+- **AI/大模型相关性**: **是** (专为 LLM -ready 数据准备及 Agent 工作流设计)
+
+---
+
+### [IPTV](https://github.com/Free-TV/IPTV)
+- **今日趋势**: ⭐ 今日 +141 | 总 Stars 18,131 | Forks 2,668
+- **项目简介**: 一个收集并提供免费电视频道 M3U 播放列表的开源项目。
+- **核心价值**: 解决了用户寻找稳定、免费电视直播源困难痛点，整合全球公开直播流，降低观看门槛，便于媒体播放器直接调用。
+- **AI/大模型相关性**: **否** (属于媒体资源聚合，不涉及 AI 技术)
+
+---
+
+### [MediaCrawler](https://github.com/NanmiCoder/MediaCrawler)
+- **今日趋势**: ⭐ 今日 +347 | 总 Stars 52,684 | Forks 10,912
+- **项目简介**: 支持小红书、抖音、快手、B 站等多个主流社交平台的笔记、视频及评论爬虫工具。
+- **核心价值**: 解决了舆情监控、数据分析人员从封闭社交平台获取公开数据难的痛点，提供统一的接口获取多平台内容数据，便于后续分析。
+- **AI/大模型相关性**: **否** (核心为网络爬虫技术，虽数据可用于 AI 训练，但工具本身非 AI)
+
+---
+
+### [free-llm-api-resources](https://github.com/cheahjs/free-llm-api-resources)
+- **今日趋势**: ⭐ 今日 +100 | 总 Stars 24,166 | Forks 2,461
+- **项目简介**: 一份汇总了可通过 API 访问的免费大模型推理资源的清单。
+- **核心价值**: 解决了开发者和个人用户在使用大模型时面临的高成本痛点，通过整理免费额度或开源模型 API 资源，降低 AI 应用开发与测试门槛。
+- **AI/大模型相关性**: **是** (直接关联 LLM 推理资源)
+
+---
+
+### [scikit-learn](https://github.com/scikit-learn/scikit-learn)
+- **今日趋势**: ⭐ 今日 +27 | 总 Stars 66,461 | Forks 27,109
+- **项目简介**: Python 生态中最经典的传统机器学习算法库。
+- **核心价值**: 解决了机器学习算法实现标准化和易用性痛点，提供简洁一致的 API 接口涵盖分类、回归、聚类等算法，是数据科学领域的基石工具。
+- **AI/大模型相关性**: **是** (属于传统机器学习核心库，AI 基础框架)
+
+---
+
+### [NeMo](https://github.com/NVIDIA-NeMo/NeMo)
+- **今日趋势**: ⭐ 今日 +16 | 总 Stars 17,558 | Forks 3,461
+- **项目简介**: NVIDIA 推出的可扩展生成式 AI 框架，专注于大语言模型、多模态及语音 AI。
+- **核心价值**: 解决了研究人员和开发者在构建大规模生成式 AI 模型时面临的扩展性和性能痛点，提供端到端的训练、微调及部署工具链，优化 GPU 利用率。
+- **AI/大模型相关性**: **是** (专为生成式 AI 和 LLM 设计的框架)
+
+---
+
+### [SkillSpector](https://github.com/NVIDIA/SkillSpector)
+- **今日趋势**: ⭐ 今日 +410 | 总 Stars 10,608 | Forks 849
+- **项目简介**: 专为 AI Agent 技能设计的安全扫描器，用于检测漏洞和恶意模式。
+- **核心价值**: 解决了 AI Agent 日益普及带来的新型安全风险痛点，通过静态和动态分析识别 Agent 技能中的潜在威胁，保障 AI 应用的安全性。
+- **AI/大模型相关性**: **是** (专注于 AI Agent 的安全防护)
+
+---
+
+### [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings)
+- **今日趋势**: ⭐ 今日 +44 | 总 Stars 78,669 | Forks 17,121
+- **项目简介**: 一个汇总了 Web 应用安全和渗透测试所需的各种 Payload 及 bypass 技术的知识库。
+- **核心价值**: 解决了安全研究人员和渗透测试者在寻找特定漏洞利用代码时效率低的痛点，提供分类清晰的攻击载荷清单，加速安全审计过程。
+- **AI/大模型相关性**: **否** (属于网络安全渗透测试领域)
+
+---
+
+### [llama_index](https://github.com/run-llama/llama_index)
+- **今日趋势**: ⭐ 今日 +29 | 总 Stars 50,386 | Forks 7,633
+- **项目简介**: 领先的文档 Agent 和 OCR 平台，用于构建大模型数据应用。
+- **核心价值**: 解决了私有数据与大模型连接难的痛点（RAG 场景），提供高效的数据索引、检索及 Agent 编排能力，让开发者能轻松基于自有数据构建 AI 应用。
+- **AI/大模型相关性**: **是** (核心为 LLM 应用开发框架)
+
+---
+
+### [pytorch](https://github.com/pytorch/pytorch)
+- **今日趋势**: ⭐ 今日 +124 | 总 Stars 101,024 | Forks 28,121
+- **项目简介**: 支持 GPU 加速的 Python 张量库及动态神经网络框架。
+- **核心价值**: 解决了深度学习模型研发中计算效率与灵活性的痛点，提供动态图机制便于调试，是目前学术界和工业界训练大模型及深度学习算法的事实标准。
+- **AI/大模型相关性**: **是** (深度学习与大模型训练的基础设施)
+
+---
+</details></script>
+        <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
+    </body>
+    </html>
+    
