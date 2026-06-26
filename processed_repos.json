@@ -26,7 +26,7 @@
   "axolotl-ai-cloud /axolotl": "2026-04-13",
   "microsoft /agent-lightning": "2026-04-13",
   "AIDC-AI /Pixelle-Video": "2026-06-04",
-  "vllm-project /vllm": "2026-06-12",
+  "vllm-project /vllm": "2026-06-26",
   "paperswithbacktest /awesome-systematic-trading": "2026-04-14",
   "Tracer-Cloud /opensre": "2026-05-22",
   "ultralytics /ultralytics": "2026-05-28",
@@ -224,7 +224,7 @@
   "interviewstreet /hiring-agent": "2026-06-24",
   "NVIDIA-NeMo /Gym": "2026-06-03",
   "unilabsim /UniLab": "2026-06-04",
-  "Panniantong /Agent-Reach": "2026-06-15",
+  "Panniantong /Agent-Reach": "2026-06-26",
   "MemPalace /mempalace": "2026-06-05",
   "microsoft /agent-framework": "2026-06-05",
   "vllm-project /vllm-omni": "2026-06-05",
@@ -290,5 +290,10 @@
   "xbtlin /ai-berkshire": "2026-06-25",
   "NanmiCoder /MediaCrawler": "2026-06-25",
   "scikit-learn /scikit-learn": "2026-06-25",
-  "run-llama /llama_index": "2026-06-25"
+  "run-llama /llama_index": "2026-06-25",
+  "commaai /openpilot": "2026-06-26",
+  "SimplifyJobs /Summer2026-Internships": "2026-06-26",
+  "Project-MONAI /MONAI": "2026-06-26",
+  "didilili /ai-agents-from-zero": "2026-06-26",
+  "safishamsi /graphify": "2026-06-26"
 }
