@@ -1,0 +1,218 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AI 技术周报 - 2026-W27</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <style>
+            .markdown-body { box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 30px; }
+            details { background: #f6f8fa; padding: 15px; border-radius: 8px; border: 1px solid #d0d7de; margin-bottom: 20px; }
+            summary { cursor: pointer; color: #0969da; font-weight: bold; font-size: 1.1em; }
+        </style>
+    </head>
+    <body class="markdown-body">
+        <a href='../index.html'>← 返回索引</a>
+        <h1>AI 技术周报 - 2026-W27</h1>
+        <div id="content"></div>
+        <script type="text/markdown" id="raw-md"><details>
+<summary><b>🤗 Hugging Face 每周论文 (点击展开)</b></summary>
+
+### 1. PhysisForcing: Physics Reinforced World Simulator for Robotic Manipulation (物理强化：机器人操作的物理增强世界模拟器)
+- **社区热度**: `👍 33 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.28128)
+- **研究任务**: 机器人操作任务中的世界模型仿真。
+- **核心亮点**: 在世界模型中引入物理引擎约束，减少仿真与现实的差距。
+- **深度解析**: 传统世界模型纯靠数据驱动，容易产生违反物理规律的画面。这篇论文把物理引擎的计算结果作为约束项加入损失函数，强制模型学习符合物理规律的状态转移。这样做能让机器人策略在仿真里训练好后，更容易迁移到真机上。
+- **领域归类**: [机器人，世界模型，仿真]
+---
+
+### 2. Translation as a Bridging Action: Transferring Manipulation Skills from Humans to Robots (翻译作为桥梁动作：人机操作技能迁移)
+- **社区热度**: `👍 28 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.28133)
+- **研究任务**: 模仿学习中的 sim-to-real 或 human-to-robot 技能迁移。
+- **核心亮点**: 把人类动作到机器人动作的映射过程，建模为一个“翻译”任务。
+- **深度解析**: 不再直接回归机器人关节角度，而是用类似机器翻译的架构，把人类演示轨迹“翻译”成机器人可执行的动作序列。这种方法能更好地处理人体和机器人形态差异带来的分布偏移，提高迁移成功率。
+- **领域归类**: [机器人，模仿学习，技能迁移]
+---
+
+### 3. Qwen-Image-2.0-RL Technical Report (Qwen-Image-2.0-RL 技术报告)
+- **社区热度**: `👍 23 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.27608)
+- **研究任务**: 文生图模型的对齐与优化。
+- **核心亮点**: 使用强化学习技术对 Qwen 图像生成模型进行后训练优化。
+- **深度解析**: 在 supervised fine-tuning 之后，引入强化学习（可能是 DPO 或 PPO 变体），利用人类偏好数据调整生成策略。主要解决生成图像不符合文本指令或美学质量不稳定的问题，提升模型在实际应用中的可用性。
+- **领域归类**: [多模态，AIGC，强化学习]
+---
+
+### 4. Formalizing Latent Thoughts: Four Axioms of Thought Representation in LLMs (形式化潜在思维：大模型思维表示的四个公理)
+- **社区热度**: `👍 17 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.27378)
+- **研究任务**: 大语言模型的可解释性与推理机制分析。
+- **核心亮点**: 提出了四个公理来定义和约束 LLM 内部潜在思维空间的表示。
+- **深度解析**: 针对黑盒推理问题，这篇论文尝试从理论层面规范“思维”在向量空间中的存在形式。通过这四个公理，可以更安全地干预或提取模型的推理过程，为后续的思维链编辑或调试提供理论依据。
+- **领域归类**: [大模型理论，可解释性，推理]
+---
+
+### 5. MultiHashFormer: Hash-based Generative Language Models (基于哈希的生成式语言模型)
+- **社区热度**: `👍 16 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.28057)
+- **研究任务**: 高效语言模型架构设计。
+- **核心亮点**: 用哈希机制替代传统的注意力或嵌入层，降低计算复杂度。
+- **深度解析**: 传统 Transformer 计算开销大。这篇论文利用哈希函数将 token 映射到固定桶中，减少序列交互的计算量。目的是在保持生成质量的前提下，显著降低显存占用和推理延迟，适合长文本场景。
+- **领域归类**: [高效 LLM，模型架构，自然语言处理]
+---
+
+### 6. SingGuard: A Policy-Adaptive Multimodal LLM Guardrail with Dynamic Reasoning (动态推理的策略自适应多模态大模型护栏)
+- **社区热度**: `👍 11 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.22873)
+- **研究任务**: 多模态大模型的内容安全与防御。
+- **核心亮点**: 护栏策略能根据输入内容动态调整，而不是固定规则。
+- **深度解析**: 现有的安全护栏往往是静态的，容易误杀或漏杀。这篇论文让护栏模型具备推理能力，先理解输入意图，再动态选择对应的安全策略。特别是在处理图文混合输入时，能更准确地识别隐蔽的攻击。
+- **领域归类**: [大模型安全，多模态，对齐]
+---
+
+### 7. The Tatoxa System for Text Detoxification in Low-Resource Languages: The Case of Tatar (低资源语言文本解毒系统：以鞑靼语为例)
+- **社区热度**: `👍 8 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.26015)
+- **研究任务**: 低资源语言的文本内容净化。
+- **核心亮点**: 专门针对鞑靼语等低资源语言构建了文本解毒系统。
+- **深度解析**: 大多数解毒模型只支持英语或主流语言。这篇论文利用跨语言迁移学习和少量标注数据，训练了针对鞑靼语的解毒模型。解决了小语种社区缺乏内容过滤工具的问题，方法可推广到其他低资源语言。
+- **领域归类**: [自然语言处理，低资源语言，内容安全]
+---
+
+### 8. ProMSA: Progressive Multimodal Search Agents for Knowledge-Based Visual Question Answering (知识型 VQA 的渐进式多模态搜索智能体)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.27974)
+- **研究任务**: 需要外部知识库支持的视觉问答。
+- **核心亮点**: 使用多个智能体渐进式搜索知识库，而不是单次检索。
+- **深度解析**: 复杂 VQA 问题往往需要多步推理。这篇论文设计了多个代理，分工负责图像理解、关键词提取、知识库查询和答案合成。通过多轮渐进式搜索，比单次检索能找到更准确的证据，提高回答准确率。
+- **领域归类**: [多模态，智能体，视觉问答]
+---
+
+### 9. SimFoundry: Modular and Automated Scene Generation for Policy Learning and Evaluation (策略学习与评估的模块化自动场景生成)
+- **社区热度**: `👍 6 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.28276)
+- **研究任务**: 机器人强化学习训练环境的自动化构建。
+- **核心亮点**: 模块化生成 diverse 的仿真场景，用于策略训练和测试。
+- **深度解析**: 手动设计仿真场景效率低且覆盖不全。这篇论文提供了一个自动化工具，能组合不同的物体、光照、物理参数生成大量场景。主要用于增强机器人策略的泛化能力，避免过拟合到特定训练环境。
+- **领域归类**: [机器人，仿真环境，强化学习]
+---
+
+### 10. Parallel Rollout Approximation for Pixel-Space Autoregressive Image Generation (像素空间自回归图像生成的并行 Rollout 近似)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.27978)
+- **研究任务**: 加速自回归图像生成模型的推理。
+- **核心亮点**: 通过近似算法实现像素生成的并行化，突破串行限制。
+- **深度解析**: 自回归模型生成图像是一个像素接一个像素，速度很慢。这篇论文提出一种近似方法，允许同时预测多个像素块，再通过修正机制保证一致性。在不大幅牺牲画质的情况下，显著提升了生成速度。
+- **领域归类**: [AIGC，图像生成，高效推理]
+---
+
+### 11. GBC: Gradient-Based Connections for Optimizing Multi-Agent Systems (GBC：基于梯度的连接用于优化多智能体系统)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.28187)
+- **研究任务**: 多智能体系统协同优化
+- **核心亮点**: 通过建立基于梯度的连接机制，实现了智能体间的端到端协同训练。
+- **深度解析**: 传统多智能体通信往往不可导，这篇在智能体之间引入了可微的连接层，让梯度能直接在智能体间传递。这样不用依赖复杂的强化学习奖励设计，直接用梯度下降就能优化整体策略，解决了协作效率低的问题。
+- **领域归类**: [Multi-Agent RL], [Optimization]
+---
+### 12. Learning to Fold: prizewinning solution at LeHome Challenge 2026 (1st place online, 2nd offline) (学会折叠：LeHome 挑战赛 2026 获奖方案)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.27163)
+- **研究任务**: 机器人衣物折叠操作
+- **核心亮点**: 拿到了 LeHome 挑战赛 2026 线上第一、线下第二的成绩，验证了方案的有效性。
+- **深度解析**: 主要针对柔性物体操纵难点，方案结合了视觉感知和动作规划。重点在于如何处理衣物的形变状态，通过特定的策略网络在仿真和真机之间做了适配，保证了折叠动作的准确性和鲁棒性。
+- **领域归类**: [Robotics], [Manipulation]
+---
+### 13. Ko-WideSearch: A Korean Breadth-Search Benchmark for Exhaustive Set Enumeration by Web Agents (Ko-WideSearch：韩语网页代理 exhaustive 集合枚举广度搜索基准)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.27595)
+- **研究任务**: 韩语环境下的 Web Agent 评测
+- **核心亮点**: 填补了韩语环境下需要 exhaustive 搜索场景的基准测试空白。
+- **深度解析**: 现有的 Web Agent  benchmark 多是英语且任务简单。这篇构建了一个需要代理在韩语网页上进行广度优先搜索、收集完整信息集的任务集。主要用来评估代理在处理非英语、多页面跳转和信息整合时的能力。
+- **领域归类**: [Agents], [Benchmark], [NLP]
+---
+### 14. Thinking While Speaking: Inference-Time Knowledge Transfer for Responsive and Intelligent Conversational Voice Agents (边说边想：推理时知识转移用于响应式智能语音代理)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2511.07397)
+- **研究任务**: 语音代理的延迟与智能平衡
+- **核心亮点**: 在推理阶段进行知识转移，既保证了回复速度又不失智能水平。
+- **深度解析**: 针对语音交互延迟高的问题，设计了一种双模型协作机制。小模型负责快速生成语音流，大模型在后台并行思考并修正内容，通过知识蒸馏或中间层转移，让用户感觉响应快且内容质量高。
+- **领域归类**: [Voice AI], [Inference Optimization]
+---
+### 15. NormGuard: Reward-Preserving Norm Constraints in Flow-Matching Reinforcement Learning (NormGuard：流匹配强化学习中保持奖励的范数约束)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.28277)
+- **研究任务**: 强化学习训练稳定性
+- **核心亮点**: 在流匹配 RL 中加入范数约束，稳定了训练且没牺牲奖励得分。
+- **深度解析**: 流匹配生成策略容易出现输出爆炸或不稳定。这篇引入了一个约束项，限制策略网络的参数范数或输出范数。关键在于设计了这个约束的梯度投影方式，确保在不干扰主要奖励信号的前提下，防止模型发散。
+- **领域归类**: [Reinforcement Learning], [Flow Matching]
+---
+### 16. Towards Automating Scientific Review with Google's Paper Assistant Tool (利用谷歌论文助手工具实现科学审稿自动化)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.27771)
+- **研究任务**: 辅助学术审稿
+- **核心亮点**: 评估了谷歌论文助手工具在自动化审稿流程中的实际表现和局限。
+- **深度解析**: 这是一篇工具评估报告。测试了 LLM 在总结论文、检查实验一致性、提出修改意见等方面的能力。结论是目前工具能大幅减少初审工作量，但在深度逻辑判断上仍需人工介入，提出了人机协作的具体流程建议。
+- **领域归类**: [LLM Application], [Science Tooling]
+---
+### 17. Object-Centric Residual RL for Zero-Shot Sim-to-Real VLA Enhancement (面向零样本仿真到真机 VLA 增强的物体中心残差 RL)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.18953)
+- **研究任务**: VLA 模型的仿真到真机迁移
+- **核心亮点**: 用物体中心的残差强化学习，实现了 VLA 模型零样本的 sim-to-real 迁移。
+- **深度解析**: 针对 VLA 模型在真机上效果下降的问题，将策略分解为基础策略和残差策略。基础策略学通用动作，残差策略专注于物体间的相对关系和物理差异。这样不用在真机上微调，就能适应新的物理环境。
+- **领域归类**: [Robotics], [VLA], [Sim-to-Real]
+---
+### 18. Cluster, Route, Escalate: Cascaded Framework for Cost-Aware LLM Serving (聚类、路由、升级：成本感知的 LLM 服务级联框架)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.27457)
+- **研究任务**: LLM 推理服务成本优化
+- **核心亮点**: 通过级联路由框架，根据问题难度分配模型，有效降低了服务成本。
+- **深度解析**: 搭建了一个三层系统：先聚类请求，简单路由给小模型，搞不定再升级给大模型。核心在于路由器的判断逻辑，能准确识别何时需要更大算力的模型，避免了所有请求都走大模型的浪费。
+- **领域归类**: [System], [LLM Serving]
+---
+### 19. MemoBench: Benchmarking World Modeling in Dynamically Changing Environments (MemoBench：动态变化环境中的世界模型基准测试)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.27537)
+- **研究任务**: 世界模型记忆能力评测
+- **核心亮点**: 提出了专门评测动态环境下世界模型记忆和预测能力的基准。
+- **深度解析**: 现有基准多是静态的。这篇构建了一系列环境状态会随时间变化的任务，测试模型是否能记住历史状态并预测未来变化。重点考察模型对长期依赖和状态转移的理解能力。
+- **领域归类**: [Benchmark], [World Models]
+---
+### 20. To Run or Not to Run: Analyzing the Cost-Effectiveness of Code Execution in LLM-Based Program Repair (跑还是不跑：分析基于 LLM 程序修复中代码执行的成本效益)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.26978)
+- **研究任务**: LLM 自动代码修复
+- **核心亮点**: 分析了在代码修复流程中引入代码执行反馈的成本与收益平衡点。
+- **深度解析**: 很多修复方案会运行代码看报错，但这很耗时。这篇通过实验量化了执行反馈带来的修复成功率提升 vs 时间成本。结论给出了一个阈值，指导在什么复杂度的任务下值得开启代码执行环节。
+- **领域归类**: [Code LLM], [Program Repair]
+---
+
+### 21. How Much Static Structure Do Code Agents Need? A Study of Deterministic Anchoring (代码智能体需要多少静态结构？确定性锚定研究)
+- **社区热度**: `👍 0 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.26979)
+- **研究任务**: 代码生成智能体架构优化
+- **核心亮点**: 量化了静态结构对代码 Agent 的影响，并通过确定性锚定平衡了灵活性与稳定性。
+- **深度解析**: 针对代码 Agent 生成结果不稳定的问题，研究了预设静态结构（如固定模板、约束）的必要性。提出“确定性锚定”方案，在关键步骤锁定部分结构，减少搜索空间。实验主要对比了不同静态比例下的代码通过率及执行效率，旨在找到结构约束的最佳平衡点。
+- **领域归类**: [Code LLM, Agent Architecture]
+---
+### 22. Boundary-Aware Context Grounding for A Low-Channel EEG Agent (面向低通道 EEG 智能体的边界感知上下文接地)
+- **社区热度**: `👍 0 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.26519)
+- **研究任务**: 脑电信号解析与多模态对齐
+- **核心亮点**: 提出边界感知机制，解决了低通道 EEG 信号上下文对齐难的问题。
+- **深度解析**: 低通道 EEG 数据信息稀疏且噪声大，传统方法难以准确接地上下文。该工作引入边界感知模块，显式建模信号或语义边界，增强特征提取。方案侧重于在少通道条件下提升 Agent 对神经信号的理解精度，优化了上下文匹配效果。
+- **领域归类**: [BCI, Multimodal Learning, Signal Processing]
+---
+
+> **注**：提供的 arxiv ID（2606）显示为未来时间，以上总结基于标题语义推断，供参考。
+</details>
+
+</script>
+        <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
+    </body>
+    </html>
+    
