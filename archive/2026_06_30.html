@@ -1,0 +1,280 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>前沿科研情报 - 2026-06-30</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <style>
+            .markdown-body { box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 30px; }
+            details { background: #f6f8fa; padding: 15px; border-radius: 8px; border: 1px solid #d0d7de; margin-bottom: 20px; }
+            summary { cursor: pointer; color: #0969da; font-weight: bold; font-size: 1.1em; }
+        </style>
+    </head>
+    <body class="markdown-body">
+        <a href='../index.html'>← 返回索引</a>
+        <h1>前沿科研情报 - 2026-06-30</h1>
+        <div id="content"></div>
+        <script type="text/markdown" id="raw-md"><details>
+<summary><b>🤗 Hugging Face 今日论文 (点击展开)</b></summary>
+
+### 1. PhysisForcing: Physics Reinforced World Simulator for Robotic Manipulation (物理增强的机器人操作世界模拟器)
+- **社区热度**: `👍 33 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.28128)
+- **研究任务**: 机器人操作任务的仿真环境构建。
+- **核心亮点**: 把物理规则硬约束进神经网络模拟器，减少仿真到现实的差距。
+- **深度解析**: 传统世界模型容易忽略物理一致性，导致策略迁移失败。该方案在模拟器的损失函数中加入物理约束项（如碰撞、摩擦力），让生成的视频帧不仅看起来真，物理逻辑也真，直接用仿真数据训出来的策略能更好落地。
+- **领域归类**: [机器人学习] [世界模型] [仿真]
+---
+### 2. Translation as a Bridging Action: Transferring Manipulation Skills from Humans to Robots (作为桥梁动作的翻译：从人类到机器人的操作技能迁移)
+- **社区热度**: `👍 28 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.28133)
+- **研究任务**: 人机操作技能迁移（Imitation Learning）。
+- **核心亮点**: 不把翻译当预处理，而是当成一个可学习的“桥梁动作”嵌入到策略网络里。
+- **深度解析**: 解决人体骨骼和机器人机械臂结构不一致的问题。方法是在策略网络中间层显式加入一个“翻译模块”，将人类动作映射为机器人可达的运动原语，端到端训练，比先做数据对齐再训练策略的效果更稳。
+- **领域归类**: [机器人学习] [模仿学习] [人机交互]
+---
+### 3. Qwen-Image-2.0-RL Technical Report (Qwen-Image-2.0 强化学习技术报告)
+- **社区热度**: `👍 23 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.27608)
+- **研究任务**: 多模态生成模型的对齐与优化。
+- **核心亮点**: 用强化学习微调 Qwen-Image，解决生成内容不可控的问题。
+- **深度解析**: 在 Qwen-Image-2.0 基座模型基础上，引入 RL 流程（类似 PPO 或 DPO）。通过人类偏好数据或自动奖励模型，优化图像生成的语义一致性和美学质量，重点解决复杂指令下的遵循能力。
+- **领域归类**: [多模态] [强化学习] [图像生成]
+---
+### 4. Formalizing Latent Thoughts: Four Axioms of Thought Representation in LLMs (形式化潜在思维：大语言模型思维表示的四个公理)
+- **社区热度**: `👍 17 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.27378)
+- **研究任务**: 大模型内部推理机制的理论分析。
+- **核心亮点**: 提出四个公理来定义大模型潜在空间里的“思维”长什么样。
+- **深度解析**: 纯理论工作。试图数学化描述 LLM 隐藏层状态如何编码推理步骤。四个公理涵盖了思维的连续性、组合性、可逆性等特征，为后续可解释性研究和思维链优化提供理论地基。
+- **领域归类**: [大模型理论] [可解释性] [推理]
+---
+### 5. MultiHashFormer: Hash-based Generative Language Models (基于哈希的生成式语言模型)
+- **社区热度**: `👍 16 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.28057)
+- **研究任务**: 语言模型架构效率优化。
+- **核心亮点**: 用哈希查找替代部分注意力计算，大幅降低推理显存占用。
+- **深度解析**: 针对 Transformer 计算量大的问题，设计了一种哈希机制来索引 Key-Value 对。在生成过程中，模型通过哈希快速定位相关上下文，避免全量 Attention 计算，适合长文本生成场景。
+- **领域归类**: [模型架构] [效率优化] [自然语言处理]
+---
+### 6. SingGuard: A Policy-Adaptive Multimodal LLM Guardrail with Dynamic Reasoning (具有动态推理的策略自适应多模态大模型护栏)
+- **社区热度**: `👍 11 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.22873)
+- **研究任务**: 多模态大模型的安全防护。
+- **核心亮点**: 护栏策略不是写死的，而是根据输入内容动态推理调整敏感度。
+- **深度解析**: 传统安全过滤容易误杀或漏杀。SingGuard 引入一个轻量级推理模块，先分析输入意图和风险等级，再动态选择对应的过滤策略。比如对医疗建议从严，对创意写作从宽，实现安全与可用性的平衡。
+- **领域归类**: [模型安全] [多模态] [对齐]
+---
+### 7. The Tatoxa System for Text Detoxification in Low-Resource Languages: The Case of Tatar (低资源语言文本去毒系统：以鞑靼语为例)
+- **社区热度**: `👍 8 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.26015)
+- **研究任务**: 低资源语言的文本去毒（Detoxification）。
+- **核心亮点**: 专门针对鞑靼语这种数据少的语言，搭建了一套去毒流水线。
+- **深度解析**: 低资源语言缺乏安全数据。该系统利用跨语言迁移学习，先从高资源语言学去毒规则，再通过少量鞑靼语数据微调。包含数据增强和规则过滤模块，解决了小语种模型容易输出有害内容的问题。
+- **领域归类**: [自然语言处理] [低资源语言] [内容安全]
+---
+### 8. ProMSA: Progressive Multimodal Search Agents for Knowledge-Based Visual Question Answering (基于知识的视觉问答渐进式多模态搜索代理)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.27974)
+- **研究任务**: 需要外部知识的视觉问答（VQA）。
+- **核心亮点**: 代理不是一次性回答，而是分步骤搜索知识库来逐步推理。
+- **深度解析**: 针对需要外部常识的 VQA 任务，设计了一个多智能体框架。代理先识别图中物体，再逐步生成搜索查询，从知识库获取信息，最后综合回答。相比端到端模型，这种搜索式推理在复杂知识问题上准确率更高。
+- **领域归类**: [视觉问答] [智能体] [检索增强]
+---
+### 9. SimFoundry: Modular and Automated Scene Generation for Policy Learning and Evaluation (用于策略学习与评估的模块化自动场景生成)
+- **社区热度**: `👍 6 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.28276)
+- **研究任务**: 机器人训练场景的自动化生成。
+- **核心亮点**: 像搭积木一样模块化生成训练场景，自动化覆盖边缘情况。
+- **深度解析**: 机器人策略训练需要大量多样化场景。SimFoundry 提供了一套工具链，允许用户定义物体、光照、物理参数的模块，自动组合生成大量训练环境。重点在于能自动发现策略失败的边缘场景并针对性生成数据。
+- **领域归类**: [机器人学习] [仿真环境] [数据增强]
+---
+### 10. Parallel Rollout Approximation for Pixel-Space Autoregressive Image Generation (像素空间自回归图像生成的并行 rollout 近似)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.27978)
+- **研究任务**: 加速自回归图像生成。
+- **核心亮点**: 用并行近似算法加速像素级自回归生成，解决生成慢的问题。
+- **深度解析**: 自回归图像模型（如 MAR）是一个像素一个像素生成的，速度太慢。该论文提出一种并行 Rollout 近似方法，允许模型在一次前向传播中预测多个像素块，通过迭代修正保证质量，显著提升了推理吞吐。
+- **领域归类**: [图像生成] [推理加速] [自回归模型]
+---
+
+### 11. GBC: Gradient-Based Connections for Optimizing Multi-Agent Systems (GBC：用于优化多智能体系统的基于梯度连接)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.28187)
+- **研究任务**: 多智能体系统协作优化
+- **核心亮点**: 用可学习的梯度连接替代固定通信规则，实现智能体间端到端优化。
+- **深度解析**: 传统多智能体协作常依赖预设通信协议。该方法在智能体间引入基于梯度的连接机制，允许网络反向传播更新交互策略。解决了固定规则无法适应动态环境的问题，提升了系统整体收敛速度和任务完成率。
+- **领域归类**: [Multi-Agent RL], [Optimization]
+---
+
+### 12. Learning to Fold: prizewinning solution at LeHome Challenge 2026 (1st place online, 2nd offline) (Learning to Fold: LeHome 挑战 2026 获奖方案)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.27163)
+- **研究任务**: 机器人柔性物体 manipulation（折叠）
+- **核心亮点**: 获 LeHome 挑战线上冠军的方案，解决了布料折叠中的感知与控制难点。
+- **深度解析**: 针对 deformable object（可变形物体）操作，结合了视觉感知与强化学习。方案重点在于处理布料状态的高维不确定性，通过模仿学习初始化策略，再用 RL 微调，实现了 sim-to-real 的有效迁移，线下实测稳定性高。
+- **领域归类**: [Robotics], [Manipulation]
+---
+
+### 13. Ko-WideSearch: A Korean Breadth-Search Benchmark for Exhaustive Set Enumeration by Web Agents (Ko-WideSearch：Web 智能体韩语广度搜索基准)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.27595)
+- **研究任务**: Web Agent 基准测试
+- **核心亮点**: 首个针对韩语环境下的 Web 智能体穷举搜索能力基准。
+- **深度解析**: 现有基准多关注单步问答，该工作构建了需要广度优先搜索（BFS）的任务集，要求智能体遍历网页集合。重点评估 agent 在韩语语境下的状态追踪和 exhaustive enumeration（穷举枚举）能力，填补了非英语环境评估空白。
+- **领域归类**: [NLP], [Agents], [Benchmark]
+---
+
+### 14. Thinking While Speaking: Inference-Time Knowledge Transfer for Responsive and Intelligent Conversational Voice Agents (边说边想：推理时知识迁移用于语音对话智能体)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2511.07397)
+- **研究任务**: 语音对话智能体延迟优化
+- **核心亮点**: 推理时并行处理思考与语音生成，显著降低对话延迟。
+- **深度解析**: 传统 Voice Agent 需等待文本生成完毕才转语音。该方法在 inference 阶段引入知识迁移机制，让模型在输出语音的同时继续完善后续逻辑。实现了流式生成与思维链的并行，提升了响应速度和对话自然度。
+- **领域归类**: [Voice AI], [LLM Inference]
+---
+
+### 15. NormGuard: Reward-Preserving Norm Constraints in Flow-Matching Reinforcement Learning (NormGuard：流匹配强化学习中的保奖励范数约束)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.27771)
+- **研究任务**: 强化学习训练稳定性
+- **核心亮点**: 在流匹配 RL 中引入范数约束，防止策略更新导致奖励崩溃。
+- **深度解析**: 针对 Flow-Matching 在 RL 应用中容易出现的分布漂移问题，提出 NormGuard 约束项。限制策略更新的步长范数，确保每次迭代后奖励函数值保持单调或稳定。解决了训练后期性能波动大的问题。
+- **领域归类**: [Reinforcement Learning], [Flow Matching]
+---
+
+### 16. Towards Automating Scientific Review with Google's Paper Assistant Tool (利用谷歌论文助手工具迈向科学评审自动化)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.28277)
+- **研究任务**: 学术评审自动化
+- **核心亮点**: 评估 Google 论文助手工具在自动化学术评审中的可行性与局限。
+- **深度解析**: 测试 LLM 在总结论文、检查创新性、验证实验声明等方面的表现。结果显示工具能辅助完成基础筛选和格式检查，但在深度逻辑验证上仍需人工介入。为 AI 辅助科研流程提供了实测数据。
+- **领域归类**: [AI for Science], [LLM Application]
+---
+
+### 17. Object-Centric Residual RL for Zero-Shot Sim-to-Real VLA Enhancement (用于零样本 Sim-to-Real VLA 增强的物体中心残差 RL)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.18953)
+- **研究任务**: 机器人视觉语言动作模型（VLA）Sim-to-Real
+- **核心亮点**: 利用物体中心表示和残差学习，实现 VLA 零样本真机迁移。
+- **深度解析**: 针对 VLA 模型在真机上泛化差的问题，不更新整个模型，而是学习一个针对物体特征的残差策略。聚焦物体中心表示而非全局场景，减少了域差距影响。无需真机数据微调即可提升操作成功率。
+- **领域归类**: [Robotics], [VLA], [Sim-to-Real]
+---
+
+### 18. Cluster, Route, Escalate: Cascaded Framework for Cost-Aware LLM Serving (Cluster, Route, Escalate：成本感知 LLM 服务级联框架)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.27457)
+- **研究任务**: LLM 推理服务优化
+- **核心亮点**: 通过级联路由策略，在保证效果的前提下降低 LLM 服务成本。
+- **深度解析**: 设计了三阶段框架：先聚类请求，再路由到合适大小的模型，失败则升级（Escalate）到大模型。简单 query 用小模型处理，复杂 query 才调用大模型。实测在维持准确率的同时显著降低了 Token 消耗和延迟。
+- **领域归类**: [System], [LLM Serving]
+---
+
+### 19. MemoBench: Benchmarking World Modeling in Dynamically Changing Environments (MemoBench：动态环境中的世界建模基准)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.27537)
+- **研究任务**: 智能体世界建模能力评估
+- **核心亮点**: 专门评估智能体在环境规则动态变化时的记忆与建模更新能力。
+- **深度解析**: 现有基准多为静态环境。MemoBench 引入环境状态和规则的动态变更，测试 agent 是否能及时更新内部世界模型。重点考察长期记忆 retention 和对突发变化的适应速度。
+- **领域归类**: [Benchmark], [Agent Memory]
+---
+
+### 20. Boundary-Aware Context Grounding for A Low-Channel EEG Agent (面向低通道 EEG 智能体的边界感知上下文接地)
+- **社区热度**: `👍 0 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.26519)
+- **研究任务**: 脑电信号（EEG）处理与 BCI
+- **核心亮点**: 在低通道 EEG 数据下，利用边界感知机制提升信号解码精度。
+- **深度解析**: 针对低成本 EEG 设备通道少、噪声大的问题，提出边界感知上下文接地方法。通过注意力机制聚焦信号变化的关键边界区域，增强特征提取能力。在少通道配置下仍保持了较高的分类准确率。
+- **领域归类**: [BCI], [Healthcare AI]
+---
+</details>
+
+<details>
+<summary><b>🚀 GitHub 今日热门项目 (点击展开)</b></summary>
+
+### [cupy/cupy](https://github.com/cupy/cupy)
+- **今日趋势**: ⭐ 11,757 | 🍴 1,080 | 📈 今日 +352
+- **项目简介**: 一个旨在实现 NumPy & SciPy 接口兼容的 GPU 加速计算库。
+- **核心价值**: 解决了 Python 科学计算在 CPU 上的性能瓶颈，允许开发者无需大幅修改代码即可利用 CUDA 加速。**目标人群**为数据科学家和高性能计算开发者；**技术核心**在于 CUDA 内核优化与 NumPy API 映射。
+- **AI 相关性**: 是（AI 基础设施，为深度学习训练提供底层 GPU 算力支持）
+---
+### [soxoj/maigret](https://github.com/soxoj/maigret)
+- **今日趋势**: ⭐ 34,227 | 🍴 2,589 | 📈 今日 +191
+- **项目简介**: 通过用户名在 3000+ 网站上收集个人信息的情报收集工具。
+- **核心价值**: 解决了开源情报（OSINT）调查中手动跨平台搜索效率低下的痛点。**目标人群**为安全研究人员、调查记者及渗透测试人员；**技术核心**基于多站点并发查询与身份关联分析。
+- **AI 相关性**: 否（传统脚本工具，不依赖大模型）
+---
+### [browser-use/video-use](https://github.com/browser-use/video-use)
+- **今日趋势**: ⭐ 11,745 | 🍴 1,556 | 📈 今日 +976
+- **项目简介**: 允许用户通过代码代理（Coding Agents）自动化编辑视频的项目。
+- **核心价值**: 降低了视频编辑的技术门槛，将复杂的剪辑流程转化为自然语言或代码指令。**目标人群**为内容创作者及开发者；**技术核心**结合浏览器自动化与 AI Agent 工作流。
+- **AI 相关性**: 是（基于 Coding Agents 实现自动化）
+---
+### [Unclecheng-li/VulnClaw](https://github.com/Unclecheng-li/VulnClaw)
+- **今日趋势**: ⭐ 1,067 | 🍴 164 | 📈 今日 +105
+- **项目简介**: 基于 AI Agent 和 MCP 工具链，实现从信息收集到报告生成的全自动渗透测试工具。
+- **核心价值**: 解决了传统渗透测试依赖人工经验、流程繁琐的痛点，实现自然语言输入即可驱动全流程攻击模拟。**目标人群**为安全工程师及红队人员；**技术核心**为 LLM Agent + 渗透技能编排。
+- **AI 相关性**: 是（明确基于 AI Agent + 大语言模型）
+---
+### [HKUDS/Vibe-Trading](https://github.com/HKUDS/Vibe-Trading)
+- **今日趋势**: ⭐ 14,940 | 🍴 2,678 | 📈 今日 +840
+- **项目简介**: 一个个性化的个人交易代理（Trading Agent）系统。
+- **核心价值**: 旨在辅助个人投资者进行决策，通过自动化代理减少情绪化交易带来的损失。**目标人群**为金融交易者及量化爱好者；**技术核心**为 Agent 决策框架与市场数据接入。
+- **AI 相关性**: 是（基于 Trading Agent 架构）
+---
+### [google-research/timesfm](https://github.com/google-research/timesfm)
+- **今日趋势**: ⭐ 26,158 | 🍴 2,523 | 📈 今日 +223
+- **项目简介**: 谷歌研究院开发的预训练时间序列基础模型（Foundation Model）。
+- **核心价值**: 解决了传统时间序列预测模型泛化能力差、需针对特定任务重新训练的问题。**目标人群**为数据分析师及 AI 研究人员；**技术核心**为 Transformer 架构在时间序列领域的预训练与微调。
+- **AI 相关性**: 是（时间序列基础模型）
+---
+### [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents)
+- **今日趋势**: ⭐ 89,713 | 🍴 17,315 | 📈 今日 +373
+- **项目简介**: 一个多智能体（Multi-Agents）LLM 金融交易框架。
+- **核心价值**: 通过模拟多个专业角色（如分析师、风控员）的 LLM 代理协作，提高交易决策的全面性与鲁棒性。**目标人群**为量化开发者及金融科技公司；**技术核心**为多 Agent 协作与大模型推理。
+- **AI 相关性**: 是（多 Agents LLM 框架）
+---
+### [unclecode/crawl4ai](https://github.com/unclecode/crawl4ai)
+- **今日趋势**: ⭐ 70,254 | 🍴 7,197 | 📈 今日 +279
+- **项目简介**: 专为大模型友好的开源网络爬虫与数据抓取工具。
+- **核心价值**: 解决了传统爬虫抓取内容杂乱、不适合直接喂给 LLM 的痛点，提供清洗后的 Markdown 格式数据。**目标人群**为 RAG 应用开发者及数据工程师；**技术核心**为智能网页解析与内容清洗。
+- **AI 相关性**: 是（LLM Friendly 设计，服务于 AI 数据链路）
+---
+### [hugohe3/ppt-master](https://github.com/hugohe3/ppt-master)
+- **今日趋势**: ⭐ 34,311 | 🍴 2,903 | 📈 今日 +700
+- **项目简介**: 利用 AI 从任意文档生成可编辑、带动画和配音的真实 PowerPoint 文件。
+- **核心价值**: 极大缩短了从文档到演示文稿的制作时间，且生成的不是图片而是可编辑形状。**目标人群**为职场人士及教育者；**技术核心**为文档理解 + PPT 自动化生成 + TTS。
+- **AI 相关性**: 是（AI 生成内容）
+---
+### [Robbyant/lingbot-map](https://github.com/Robbyant/lingbot-map)
+- **今日趋势**: ⭐ 8,547 | 🍴 828 | 📈 今日 +521
+- **项目简介**: 一个用于从流式数据重建场景的前馈 3D 基础模型。
+- **核心价值**: 解决了机器人或自动驾驶中实时 3D 场景重建的计算效率与精度问题。**目标人群**为机器人开发者及计算机视觉研究员；**技术核心**为 3D 深度学习与场景重建算法。
+- **AI 相关性**: 是（3D 基础模型）
+---
+### [topoteretes/cognee](https://github.com/topoteretes/cognee)
+- **今日趋势**: ⭐ 25,512 | 🍴 2,351 | 📈 今日 +924
+- **项目简介**: 为 AI 代理提供持久化长期记忆的开源记忆平台。
+- **核心价值**: 解决了 AI Agent 在不同会话间遗忘上下文、缺乏长期知识积累的痛点。**目标人群**为 AI 应用开发者；**技术核心**为自托管知识图谱引擎与记忆管理。
+- **AI 相关性**: 是（AI 代理记忆基础设施）
+---
+### [ladaapp/lada](https://github.com/ladaapp/lada)
+- **今日趋势**: ⭐ 5,146 | 🍴 566 | 📈 今日 +26
+- **项目简介**: 用于恢复视频中像素化或马赛克区域的工具。
+- **核心价值**: 利用深度学习技术尝试还原被遮挡的视频内容，适用于 forensic 或视频修复场景。**目标人群**为视频编辑及取证人员；**技术核心**为视频 inpainting 与超分辨率重建。
+- **AI 相关性**: 是（基于计算机视觉深度学习）
+---
+### [Mebus/cupp](https://github.com/Mebus/cupp)
+- **今日趋势**: ⭐ 5,990 | 🍴 2,022 | 📈 今日 +11
+- **项目简介**: 交互式用户密码配置文件生成器（Common User Passwords Profiler）。
+- **核心价值**: 通过收集目标人物的个人信息（生日、宠物名等）生成定制化密码字典，提高爆破效率。**目标人群**为渗透测试人员；**技术核心**为基于规则的密码组合生成。
+- **AI 相关性**: 否（传统安全工具，基于规则而非模型）
+---
+</details></script>
+        <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
+    </body>
+    </html>
+    
