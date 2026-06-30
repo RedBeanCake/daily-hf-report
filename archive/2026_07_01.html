@@ -1,0 +1,346 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>前沿科研情报 - 2026-07-01</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <style>
+            .markdown-body { box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 30px; }
+            details { background: #f6f8fa; padding: 15px; border-radius: 8px; border: 1px solid #d0d7de; margin-bottom: 20px; }
+            summary { cursor: pointer; color: #0969da; font-weight: bold; font-size: 1.1em; }
+        </style>
+    </head>
+    <body class="markdown-body">
+        <a href='../index.html'>← 返回索引</a>
+        <h1>前沿科研情报 - 2026-07-01</h1>
+        <div id="content"></div>
+        <script type="text/markdown" id="raw-md"><details>
+<summary><b>🤗 Hugging Face 今日论文 (点击展开)</b></summary>
+
+### 1. Agentic Abstention: Do Agents Know When to Stop Instead of Act? (智能体弃权：Agent 是否知道何时该停手？)
+- **社区热度**: `👍 111 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.28733)
+- **研究任务**: Agent 决策安全与控制
+- **核心亮点**: 给 Agent 增加“弃权”机制，让它学会在不确定时停止行动。
+- **深度解析**: 传统 Agent 倾向于强制执行动作，这篇论文引入了一种置信度评估模块。当模型对动作把握不足时，主动选择“弃权”（Abstention），而不是强行输出。这能显著减少无效操作和潜在风险，尤其在复杂交互环境中。
+- **领域归类**: ['Agent', 'RL', 'Safety']
+---
+
+### 2. LiveEdit: Towards Real-Time Diffusion-Based Streaming Video Editing (LiveEdit：面向实时扩散流式视频编辑)
+- **社区热度**: `👍 65 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.26740)
+- **研究任务**: 视频编辑与生成
+- **核心亮点**: 实现了基于扩散模型的实时流式视频编辑，大幅降低延迟。
+- **深度解析**: 针对扩散模型推理慢的问题，优化了流水线架构。支持流式输入输出，边传视频边编辑，无需等待完整视频生成。主要通过缓存复用和轻量级推理策略来实现实时性。
+- **领域归类**: ['AIGC', 'Video', 'Diffusion']
+---
+
+### 3. Scaling the Horizon, Not the Parameters: Reaching Trillion-Parameter Performance with a 35B Agent (扩展视野而非参数：35B Agent 达成万亿参数级性能)
+- **社区热度**: `👍 62 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.30616)
+- **研究任务**: Agent 效能与模型 scaling
+- **核心亮点**: 不堆参数，靠延长规划视野（Horizon）让小模型达到大模型效果。
+- **深度解析**: 证明了在 Agent 任务中，增加推理时的规划步长或上下文视野，比单纯增加参数量更有效。35B 模型通过优化长程规划能力，性能对标万亿参数模型，侧重推理策略而非模型规模。
+- **领域归类**: ['Agent', 'LLM', 'Scaling Law']
+---
+
+### 4. ReFreeKV: Towards Threshold-Free KV Cache Compression (ReFreeKV：迈向无阈值 KV Cache 压缩)
+- **社区热度**: `👍 42 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2502.16886)
+- **研究任务**: LLM 推理优化
+- **核心亮点**: 去掉 KV Cache 压缩中的人工阈值设定，实现自适应压缩。
+- **深度解析**: 现有 KV Cache 压缩方法通常需要手动调阈值，泛化性差。这篇论文提出一种动态机制，根据每层注意力分布自动决定保留哪些 KV 对，无需人工干预，显存占用更低且稳定。
+- **领域归类**: ['LLM', 'Inference', 'Efficiency']
+---
+
+### 5. TUA-Bench: A Benchmark for General-Purpose Terminal-Use Agents (TUA-Bench：通用终端操作 Agent 基准)
+- **社区热度**: `👍 41 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.28480)
+- **研究任务**: Agent 基准测试
+- **核心亮点**: 发布了专门评估 Agent 在终端命令行操作能力的基准测试。
+- **深度解析**: 填补了终端使用场景的评估空白。包含多种操作系统命令和任务场景，重点考察 Agent 对命令行的理解、执行安全性以及错误恢复能力，用于衡量通用终端 Agent 的水平。
+- **领域归类**: ['Agent', 'Benchmark', 'System']
+---
+
+### 6. Beyond IID: How General Are Tabular Foundation Models, Really? (超越独立同分布：表格基础模型的泛化性究竟如何)
+- **社区热度**: `👍 35 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.30410)
+- **研究任务**: 表格数据基础模型
+- **核心亮点**: 在非独立同分布（Non-IID）数据上验证表格基础模型的泛化能力。
+- **深度解析**: 大多数表格模型只在 IID 数据上测试。这篇论文引入了分布偏移测试集，发现现有基础模型在数据分布变化时性能下降明显，指出了当前模型在鲁棒性上的不足。
+- **领域归类**: ['Tabular', 'Foundation Model', 'Robustness']
+---
+
+### 7. Trimming the Long-Tail of Visual World Modeling Evaluation (修剪视觉世界模型评估的长尾问题)
+- **社区热度**: `👍 31 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.24256)
+- **研究任务**: 视觉世界模型评估
+- **核心亮点**: 改进了视觉世界模型评估方法，重点关注罕见长尾场景。
+- **深度解析**: 现有评估多集中在常见场景，掩盖了模型在边缘情况下的缺陷。论文提出新的评估协议，增加长尾样本权重，迫使模型优化对少见视觉现象的建模能力。
+- **领域归类**: ['Computer Vision', 'Evaluation', 'World Model']
+---
+
+### 8. Video-MME-Logical: A Controlled Diagnostic Benchmark for Video Temporal-Logical Reasoning (Video-MME-Logical：视频时序逻辑推理诊断基准)
+- **社区热度**: `👍 23 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.27828)
+- **研究任务**: 视频理解与推理
+- **核心亮点**: 专门测试模型对视频时间顺序和逻辑因果的理解能力。
+- **深度解析**: 构建了一个控制变量数据集，排除视觉干扰，专门诊断模型是否真的懂视频里的先后顺序和逻辑关系。现有模型往往靠视觉特征猜答案，在这个基准上表现一般。
+- **领域归类**: ['Video Understanding', 'Benchmark', 'Reasoning']
+---
+
+### 9. AsyncOPD: How Stale Can On-Policy Distillation Be? (AsyncOPD：在线策略蒸馏能容忍多大的数据延迟)
+- **社区热度**: `👍 23 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.24143)
+- **研究任务**: 强化学习与蒸馏
+- **核心亮点**: 探索了在线策略蒸馏中，数据延迟（Stale）对性能的影响边界。
+- **深度解析**: 提出异步在线策略蒸馏框架。研究发现策略更新不需要严格同步，允许一定程度的数据延迟。这能大幅提升训练吞吐量，同时保持性能不下降，适合分布式训练场景。
+- **领域归类**: ['RL', 'Distillation', 'Training']
+---
+
+### 10. Bridging VideoQA and Video-Guided Agentic Tasks via Generalized Keyframe Extraction (通过通用关键帧提取打通 VideoQA 与视频 Agent 任务)
+- **社区热度**: `👍 21 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.29445)
+- **研究任务**: 视频问答与 Agent
+- **核心亮点**: 用统一的关键帧提取方法，同时优化视频问答和 Agent 任务。
+- **深度解析**: 视频 QA 和 Agent 任务通常分开处理。这篇论文提出一种通用关键帧提取策略，精简视频信息冗余。同一套提取特征既用于回答问题，也用于指导 Agent 操作，简化了多任务架构。
+- **领域归类**: ['Video', 'Agent', 'Multi-task']
+---
+
+### 11. One-Step Gradient Delay is Not a Barrier for Large-Scale Asynchronous Pipeline Parallel LLM Pretraining (单步梯度延迟并非大规模异步流水线并行 LLM 预训练的障碍)
+- **社区热度**: `👍 16 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.30634)
+- **研究任务**: LLM 分布式训练加速
+- **核心亮点**: 证明了在异步流水线并行中，单步梯度延迟不会影响大规模预训练的收敛性和稳定性。
+- **深度解析**: 传统异步流水线并行为了稳定性，往往需要复杂的同步机制或容忍度很低。这篇论文通过理论推导和实验验证，发现允许单步梯度延迟（即不使用最新梯度更新）并不会导致模型发散。这意味着可以去掉部分同步等待开销，显著提升 GPU 利用率和训练吞吐，适合超大规模集群。
+- **领域归类**: [LLM 训练，分布式系统，并行计算]
+---
+
+### 12. Monte Carlo Energy Aggregation for Mobile 3D Gaussian Splatting (面向移动端 3D 高斯泼溅的蒙特卡洛能量聚合)
+- **社区热度**: `👍 16 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.30017)
+- **研究任务**: 3D 重建与移动端渲染优化
+- **核心亮点**: 提出一种蒙特卡洛能量聚合方法，显著降低 3D 高斯泼溅在移动设备上的显存占用和计算开销。
+- **深度解析**: 3D Gaussian Splatting 效果虽好，但在手机端显存和算力不够。这篇工作没有改网络结构，而是优化了渲染时的积分过程。用蒙特卡洛采样近似替代全量像素贡献计算，减少了冗余操作和中间显存占用，使得高帧率运行在移动芯片上成为可能。
+- **领域归类**: [3D 视觉，图形渲染，移动端部署]
+---
+
+### 13. One Model, Many Latencies: Universal Speech Enhancement for Diverse Real-Time Applications (一模型多延迟：面向多样实时应用的通用语音增强)
+- **社区热度**: `👍 15 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.25621)
+- **研究任务**: 语音增强与实时处理
+- **核心亮点**: 训练单个模型即可支持多种延迟约束，无需为不同场景单独训练模型。
+- **深度解析**: 以前做语音增强，低延迟和高音质往往要训不同的模型，部署麻烦。这篇论文设计了一种灵活架构，可以通过调整内部配置（如因果性掩码或计算块大小）在同一模型权重下切换延迟模式。方便同一套模型部署在不同硬件或网络条件下，维护成本低。
+- **领域归类**: [语音处理，实时系统，模型部署]
+---
+
+### 14. TACO: Tool-Augmented Credit Optimization for Agentic Tool Use (TACO：基于工具增强的智能体工具使用信用优化)
+- **社区热度**: `👍 14 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.30251)
+- **研究任务**: Agent 工具调用与强化学习
+- **核心亮点**: 优化了 Agent 使用工具时的奖励分配机制，解决了长序列工具调用中的信用分配问题。
+- **深度解析**: Agent 调工具失败往往不知道是哪一步错了，导致策略更新不准。TACO 引入了一种信用优化算法，结合工具执行反馈来调整策略梯度，让模型更清楚哪个工具调用导致了最终成功或失败。这提升了复杂多步任务的成功率，减少无效尝试。
+- **领域归类**: [AI Agent, 强化学习，工具学习]
+---
+
+### 15. OSWorld2.0: Benchmarking Computer Use Agents on Long-Horizon Real-World Tasks (OSWorld2.0：长周期真实世界任务下的电脑操作智能体基准测试)
+- **社区热度**: `👍 13 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.29537)
+- **研究任务**: Agent 评测基准
+- **核心亮点**: 更新了评测集，聚焦更长周期、更真实的电脑操作任务，填补了现有基准测试的短板。
+- **深度解析**: 之前的基准测试任务太短或太假，测不出 Agent 真实水平。OSWorld2.0 增加了任务步骤的长度和复杂度，覆盖更多真实软件环境（如办公套件、浏览器）。能更准确评估 Agent 在实际办公场景中的长程规划能力和稳定性。
+- **领域归类**: [AI Agent, 评测基准，人机交互]
+---
+
+### 16. GUICrafter: Weakly-Supervised GUI Agent Leveraging Massive Unannotated Screenshots (GUICrafter：利用海量未标注截图的弱监督 GUI 智能体)
+- **社区热度**: `👍 9 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.29705)
+- **研究任务**: GUI 操作与多模态学习
+- **核心亮点**: 利用大量未标注的界面截图进行弱监督训练，降低了对昂贵人工标注数据的依赖。
+- **深度解析**: 训练 GUI Agent 通常需要大量标注好的操作轨迹，成本极高。这篇论文提出利用网络上现有的海量截图，通过弱监督信号（如元素检测、文本匹配）来预训练模型，再用少量标注数据微调。大幅降低了数据成本，同时保持了较好的操作准确率。
+- **领域归类**: [多模态，AI Agent, 弱监督学习]
+---
+
+### 17. Interleaved Speech Language Models Latently Work In Text (交错语音语言模型在潜空间实则作用于文本)
+- **社区热度**: `👍 9 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.22473)
+- **研究任务**: 语音语言模型分析
+- **核心亮点**: 发现交错训练的语音语言模型，其内部机制主要还是在处理文本信息，语音模态贡献有限。
+- **深度解析**: 很多人以为语音 + 文本混合训练能让模型更好理解语音。这篇论文通过探针实验和消融研究，发现模型在很多任务上其实还是靠文本通路在跑，语音编码器提供的信息冗余度高。这提示后续研究需要更有效的模态融合方式，而不是简单堆叠。
+- **领域归类**: [语音处理，模型分析，多模态]
+---
+
+### 18. DreamForge-World 0.1 Preview: A Low-Compute Real-Time Controllable World Model (DreamForge-World 0.1 预览：低算力实时可控世界模型)
+- **社区热度**: `👍 8 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.30292)
+- **研究任务**: 世界模型与视频生成
+- **核心亮点**: 实现了低计算成本下的实时世界模型生成，支持用户交互控制。
+- **深度解析**: 世界模型通常算力消耗巨大，很难实时交互。这篇工作优化了架构，使其能在消费级显卡上实时运行，并且允许用户通过简单指令控制生成内容的走向。偏向于游戏或仿真场景的应用预览，降低了世界模型的使用门槛。
+- **领域归类**: [视频生成，世界模型，实时渲染]
+---
+
+### 19. Nemotron-Labs-Diffusion-Image: Advancing Masked Discrete Diffusion for High-Resolution Image Synthesis (Nemotron-Labs-Diffusion-Image：推进掩码离散扩散用于高分辨率图像合成)
+- **社区热度**: `👍 6 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.29814)
+- **研究任务**: 图像生成与扩散模型
+- **核心亮点**: 改进了掩码离散扩散模型，显著提升了高分辨率图像生成的质量和细节。
+- **深度解析**: 针对离散扩散模型在高分辨率下细节丢失的问题，引入了新的掩码策略和损失函数优化。NVIDIA 实验室出品，主要解决了生成大图时的结构一致性和纹理清晰度问题，比传统连续扩散模型在某些离散任务上更有优势。
+- **领域归类**: [图像生成，扩散模型，计算机视觉]
+---
+
+### 20. SAM2Matting: Generalized Image and Video Matting (SAM2Matting：通用图像与视频抠图)
+- **社区热度**: `👍 6 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.27339)
+- **研究任务**: 图像与视频抠图
+- **核心亮点**: 基于 SAM2 架构扩展，实现了无需额外训练的通用图像和视频抠图能力。
+- **深度解析**: 抠图通常要专门训模型，泛化性差。这篇利用 SAM2 强大的分割先验，直接适配到抠图任务。不需要像传统抠图模型那样针对特定场景训练，泛化性更好，既能处理图片也能处理视频序列，边缘处理更细腻，部署更简单。
+- **领域归类**: [图像分割，视频处理，抠图技术]
+---
+
+### 21. How Good Can Linear Models Be for Time-Series Forecasting? (线性模型在时间序列预测中能有多好？)
+- **社区热度**: `👍 6 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.27282)
+- **研究任务**: 时间序列预测
+- **核心亮点**: 重新评估简单线性模型，发现其在特定场景下性能不输复杂 Transformer。
+- **深度解析**: 作者对比了纯线性层与当前主流的 Transformer 架构，调整了输入窗口和归一化策略。结果显示，去除复杂的注意力机制后，线性模型在长序列预测上依然保持竞争力，且推理速度更快。
+- **领域归类**: [时间序列, 机器学习]
+---
+
+### 22. MIMFlow: Integrating Masked Image Modeling with Normalizing Flows for End-to-End Image Generation (MIMFlow：整合掩码图像建模与归一化流用于端到端图像生成)
+- **社区热度**: `👍 6 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.26016)
+- **研究任务**: 图像生成
+- **核心亮点**: 将掩码建模的表征能力与归一化流的生成能力结合，实现端到端训练。
+- **深度解析**: 方案先用掩码图像建模（MIM）学习潜在表示，再接入归一化流（Normalizing Flows）进行概率密度建模。避免了传统 VAE 或 GAN 的训练不稳定，生成的图像细节更清晰。
+- **领域归类**: [计算机视觉, 生成模型]
+---
+
+### 23. PolicyGuard: A Dialogue-Grounded Sub-Agent Verifier for Policy Adherence in LLM Agents (PolicyGuard：基于对话的子代理验证器用于 LLM 代理策略遵守)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.29225)
+- **研究任务**: LLM 代理安全与对齐
+- **核心亮点**: 引入一个专门的子代理，实时监控主代理的对话内容以确保符合策略。
+- **深度解析**: 在主代理执行任务时，并行运行一个验证子代理。该子代理 grounded 于当前对话上下文，专门检查是否违反安全或业务策略，发现违规即介入修正，降低了幻觉和越狱风险。
+- **领域归类**: [LLM 代理, 安全性]
+---
+
+### 24. Walking in the Implicit: Interactive World Exploration via Neural Scene Representation (行于隐式之中： via 神经场景表示的交互式世界探索)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.30045)
+- **研究任务**: 世界模型与导航
+- **核心亮点**: 利用神经场景表示技术，让代理能在隐式构建的世界中进行交互式探索。
+- **深度解析**: 使用类似 NeRF 或 3D Gaussian Splatting 的技术构建场景的神经表示。代理不需要显式的地图，而是通过查询神经表示来获取环境信息，支持更灵活的交互和路径规划。
+- **领域归类**: [机器人, 世界模型]
+---
+
+### 25. Cognitive Episodes in LLM Reasoning Traces Enable Interpretable Human Item Difficulty Prediction (LLM 推理痕迹中的认知片段可实现可解释的人类题目难度预测)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.28186)
+- **研究任务**: LLM 推理与教育技术
+- **核心亮点**: 通过分析 LLM 的推理步骤，预测人类面对该题目时的难度，且具有可解释性。
+- **深度解析**: 提取 LLM 思维链（CoT）中的关键“认知片段”，将其与人类解题行为数据对齐。模型不仅能输出难度分数，还能指出是哪一步推理导致了难度增加，辅助教育评估。
+- **领域归类**: [LLM 推理, 教育科技]
+---
+
+### 26. RocketSmith: Agentic Additive Manufacturing of High-Powered Rockets (RocketSmith：高功率火箭的代理化增材制造)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.00097)
+- **研究任务**: 机器人制造与自动化
+- **核心亮点**: 使用代理系统自动化完成高功率火箭的 3D 打印制造流程。
+- **深度解析**: 构建了一个多代理系统，分别负责设计验证、路径规划和打印控制。系统能自动处理增材制造中的异常，实现了从设计到火箭成品的高自动化闭环。
+- **领域归类**: [机器人, 智能制造]
+---
+
+### 27. ZooClaw-FashionSigLIP2: Distilled Fine-tuning for Robust Fashion Retrieval (ZooClaw-FashionSigLIP2：用于鲁棒时尚检索的蒸馏微调)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.27708)
+- **研究任务**: 图像检索（时尚领域）
+- **核心亮点**: 对 SigLIP2 模型进行蒸馏和微调，显著提升了时尚单品检索的鲁棒性。
+- **深度解析**: 以 SigLIP2 为教师模型，通过知识蒸馏让学生模型学习时尚领域的细粒度特征。针对光照、角度变化做了专门的数据增强和微调，解决了时尚检索中背景干扰大的问题。
+- **领域归类**: [计算机视觉, 图像检索]
+---
+
+### 28. Focusing on What Matters: Saliency-Harnessing Accurate Routing for Diffusion MoE (关注重点：利用显著性进行扩散 MoE 的准确路由)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.26938)
+- **研究任务**: 扩散模型效率优化
+- **核心亮点**: 在扩散模型的混合专家（MoE）架构中，利用图像显著性图进行专家路由。
+- **深度解析**: 传统 MoE 路由可能忽略细节区域。该方案计算输入特征的显著性，将重要区域的计算任务分配给更专业的专家网络。在保证生成质量的同时，减少了无效计算，提升了推理效率。
+- **领域归类**: [生成式 AI, 模型效率]
+---
+
+### 29. TheoremGraph: Bridging Formal and Informal Mathematics (TheoremGraph： bridging 形式化与非形式化数学)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.25363)
+- **研究任务**: 数学 AI
+- **核心亮点**: 构建图结构连接自然语言数学描述与形式化证明，降低使用门槛。
+- **深度解析**: 建立了一个图谱，节点分别是 informal 的数学文本和 formal 的证明代码。通过图神经网络学习两者间的映射关系，帮助研究者更容易地将直觉转化为形式化证明，辅助定理证明器。
+- **领域归类**: [数学 AI, 自然语言处理]
+---
+
+### 30. Beyond Drug Discovery: The Nanotechnology Molecular Optimization (NMO) Benchmark (超越药物发现：纳米技术分子优化基准)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.30170)
+- **研究任务**: 分子优化与基准测试
+- **核心亮点**: 提出了针对纳米技术领域的分子优化基准，填补了药物发现之外的空白。
+- **深度解析**: 现有的分子生成基准多集中在药物属性。该工作定义了纳米材料特有的优化目标（如导电性、机械强度），并提供了标准数据集和评估指标，用于测试 AI 模型在纳米科技领域的泛化能力。
+- **领域归类**: [AI for Science, 基准测试]
+---
+</details>
+
+<details>
+<summary><b>🚀 GitHub 今日热门项目 (点击展开)</b></summary>
+
+### [usestrix/strix](https://github.com/usestrix/strix)
+- **今日趋势**: ⭐ 27,846 | 🍴 3,109 | 📈 +395 today
+- **项目简介**: 一款开源的 AI 渗透测试工具，旨在自动发现并修复应用程序的安全漏洞。
+- **核心价值**: 解决了传统安全测试成本高、耗时长的痛点，主要面向安全工程师和开发人员。其技术核心在于利用 AI 自动化扫描漏洞并提供修复建议，大幅降低了安全门槛。
+- **AI/大模型相关性**: 是 (明确标注为 AI 渗透测试工具)
+
+---
+
+### [google/agents-cli](https://github.com/google/agents-cli)
+- **今日趋势**: ⭐ 3,967 | 🍴 441 | 📈 +433 today
+- **项目简介**: 谷歌推出的命令行工具，能将 coding assistant 转化为在 Google Cloud 上创建、评估和部署 AI 代理的专家。
+- **核心价值**: 针对云开发者和 AI 工程师，解决了 AI Agent 在云端部署和管理流程复杂的问题。技术核心在于提供标准化的 CLI 接口和技能集，简化了 Agent 的生命周期管理。
+- **AI/大模型相关性**: 是 (专注于 AI Agents 的部署与管理)
+
+---
+
+### [roboflow/supervision](https://github.com/roboflow/supervision)
+- **今日趋势**: ⭐ 45,806 | 🍴 4,066 | 📈 +336 today
+- **项目简介**: 一套可复用的计算机视觉工具库，旨在简化 CV 模型的开发流程。
+- **核心价值**: 面向计算机视觉工程师和数据科学家，解决了 CV 项目中数据处理、模型评估和推理代码重复造轮子的痛点。技术核心在于提供模块化、高质量的 CV utility 函数。
+- **AI/大模型相关性**: 是 (计算机视觉属于人工智能的核心子领域)
+
+---
+
+### [shuvonsec/claude-bug-bounty](https://github.com/shuvonsec/claude-bug-bounty)
+- **今日趋势**: ⭐ 3,777 | 🍴 661 | 📈 +94 today
+- **项目简介**: 基于终端的 AI 驱动漏洞赏金狩猎工具，集成在 Claude Code 中实现自主侦察和报告生成。
+- **核心价值**: 服务于安全研究人员和白帽子，解决了手动漏洞挖掘效率低的问题。技术核心在于利用大模型（Claude）进行自主化的 Recon 和漏洞分类，实现自动化安全测试。
+- **AI/大模型相关性**: 是 (基于 Claude 大模型驱动的自动化安全工具)
+
+---
+
+### [D4Vinci/Scrapling](https://github.com/D4Vinci/Scrapling)
+- **今日趋势**: ⭐ 67,353 | 🍴 6,651 | 📈 +312 today
+- **项目简介**: 一个自适应的 Web  scraping 框架，能够处理从单次请求到大规模爬取的各种任务。
+- **核心价值**: 面向数据采集工程师和后端开发，解决了传统爬虫难以应对反爬机制和动态网页的痛点。技术核心在于其自适应能力，能智能处理请求和解析内容，但未明确提及使用 AI 模型。
+- **AI/大模型相关性**: 否 (属于传统自动化爬虫框架，描述中未涉及 AI 技术)
+
+---
+
+### [psf/black](https://github.com/psf/black)
+- **今日趋势**: ⭐ 41,648 | 🍴 2,785 | 📈 +25 today
+- **项目简介**: Python 社区标准的“不妥协”代码格式化工具。
+- **核心价值**: 面向所有 Python 开发者，解决了团队代码风格不统一、Code Review 专注于格式而非逻辑的痛点。技术核心在于基于规则的确定性代码格式化，确保任何代码库风格一致。
+- **AI/大模型相关性**: 否 (基于规则的传统代码格式化工具)
+</details></script>
+        <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
+    </body>
+    </html>
+    
