@@ -14,7 +14,7 @@
   "apache /airflow": "2026-04-09",
   "microsoft /markitdown": "2026-06-04",
   "FloatingPragma /observer-patch-holography": "2026-04-10",
-  "D4Vinci /Scrapling": "2026-06-01",
+  "D4Vinci /Scrapling": "2026-06-30",
   "PrefectHQ /prefect": "2026-04-10",
   "jingyaogong /minimind": "2026-04-10",
   "unslothai /unsloth": "2026-06-05",
@@ -152,7 +152,7 @@
   "odoo /odoo": "2026-06-03",
   "MustardChef /WSABuilds": "2026-05-13",
   "ansible /ansible": "2026-05-13",
-  "roboflow /supervision": "2026-06-08",
+  "roboflow /supervision": "2026-06-30",
   "NVIDIA-AI-Blueprints /video-search-and-summarization": "2026-05-14",
   "Imbad0202 /academic-research-skills": "2026-05-21",
   "zubair-trabzada /geo-seo-claude": "2026-05-14",
@@ -251,7 +251,7 @@
   "music-assistant /server": "2026-06-12",
   "LMCache /LMCache": "2026-06-12",
   "Free-TV /IPTV": "2026-06-25",
-  "shuvonsec /claude-bug-bounty": "2026-06-12",
+  "shuvonsec /claude-bug-bounty": "2026-06-30",
   "modelscope /ms-swift": "2026-06-12",
   "ml-explore /mlx-lm": "2026-06-12",
   "browser-use /browser-use": "2026-06-12",
@@ -301,5 +301,8 @@
   "Unclecheng-li /VulnClaw": "2026-06-29",
   "Robbyant /lingbot-map": "2026-06-29",
   "ladaapp /lada": "2026-06-29",
-  "Mebus /cupp": "2026-06-29"
+  "Mebus /cupp": "2026-06-29",
+  "usestrix /strix": "2026-06-30",
+  "google /agents-cli": "2026-06-30",
+  "psf /black": "2026-06-30"
 }
