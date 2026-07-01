@@ -1,0 +1,358 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>前沿科研情报 - 2026-07-02</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <style>
+            .markdown-body { box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 30px; }
+            details { background: #f6f8fa; padding: 15px; border-radius: 8px; border: 1px solid #d0d7de; margin-bottom: 20px; }
+            summary { cursor: pointer; color: #0969da; font-weight: bold; font-size: 1.1em; }
+        </style>
+    </head>
+    <body class="markdown-body">
+        <a href='../index.html'>← 返回索引</a>
+        <h1>前沿科研情报 - 2026-07-02</h1>
+        <div id="content"></div>
+        <script type="text/markdown" id="raw-md"><details>
+<summary><b>🤗 Hugging Face 今日论文 (点击展开)</b></summary>
+
+### 1. Orca: The World is in Your Mind (Orca：世界存于脑海)
+- **社区热度**: `👍 174 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.30534)
+- **研究任务**: 世界模型与推理能力内化
+- **核心亮点**: 主张将外部世界知识完全内化到模型参数或隐空间中，而非依赖外部检索。
+- **深度解析**: 针对 RAG 依赖外部数据库的延迟和不稳定性，该方法训练模型直接记忆世界状态转移规律。通过构建大规模模拟环境数据，让模型在不调用外部工具的情况下完成复杂推理链条，重点优化了长程依赖下的状态预测准确性。
+- **领域归类**: [世界模型] [推理] [基础模型]
+---
+
+### 2. Dockerless: Environment-Free Program Verifier for Coding Agents (Dockerless：代码智能体无环境验证器)
+- **社区热度**: `👍 81 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.28436)
+- **研究任务**: 代码生成与验证
+- **核心亮点**: 去除了代码验证环节对重型 Docker 容器的依赖，大幅降低智能体运行开销。
+- **深度解析**: 传统代码智能体需用 Docker 沙箱运行代码来验证 correctness，成本高且慢。该方案采用静态分析结合轻量级语义模拟，直接在模型内部或极轻环境中预判代码执行结果，实现了毫秒级的反馈循环，适合本地部署的编程助手。
+- **领域归类**: [代码智能体] [系统工程] [验证技术]
+---
+
+### 3. DOPD: Dual On-policy Distillation (DOPD：双重在线策略蒸馏)
+- **社区热度**: `👍 73 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.30626)
+- **研究任务**: 强化学习与模型蒸馏
+- **核心亮点**: 通过双路在线策略蒸馏，解决了传统离线蒸馏在动态环境下的策略退化问题。
+- **深度解析**: 在 RLHF 或策略优化场景中，同时利用教师模型和学生模型的在线交互数据进行蒸馏。引入了双重损失函数，既约束学生模型模仿教师行为，又鼓励学生模型探索高回报区域，平衡了模仿学习与探索效率，提升了小模型在复杂任务中的收敛速度。
+- **领域归类**: [强化学习] [模型蒸馏] [对齐]
+---
+
+### 4. BlockPilot: Instance-Adaptive Policy Learning for Diffusion-based Speculative Decoding (BlockPilot：基于扩散的推测解码自适应策略)
+- **社区热度**: `👍 67 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.31315)
+- **研究任务**: LLM 推理加速
+- **核心亮点**: 利用扩散模型生成 token 块进行推测解码，并根据实例动态调整策略。
+- **深度解析**: 针对自回归模型生成慢的问题，使用小型扩散模型作为 Draft Model 一次性生成多个 token 块。核心改进在于“实例自适应策略”，根据当前生成内容的复杂度动态调整扩散步数和块大小，避免了固定策略在简单任务上的浪费和复杂任务上的拒绝率过高，显著提升了端到端吞吐。
+- **领域归类**: [推理加速] [推测解码] [扩散模型]
+---
+
+### 5. Scenes as Objects, Not Primitives: Instance-Structured 3D Tokenization from Unposed Views (场景即对象：无姿态视图的实例结构化 3D Token 化)
+- **社区热度**: `👍 31 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.29513)
+- **研究任务**: 3D 视觉与重建
+- **核心亮点**: 摒弃体素等基元，直接将 3D 场景建模为对象实例 Token，且无需相机姿态信息。
+- **深度解析**: 传统 3D 重建依赖相机姿态和密集点云。该方法将场景中的物体实例化为离散 Token，通过多视图一致性约束直接学习 3D 结构。去除了对 SfM 等姿态估计流程的依赖，简化了 pipeline，特别是在弱纹理或重复纹理场景下，对象级的表示带来了更好的泛化性和编辑能力。
+- **领域归类**: [3D 视觉] [表示学习] [重建]
+---
+
+### 6. GEAR: Guided End-to-End AutoRegression for Image Synthesis (GEAR：图像合成的引导式端到端自回归)
+- **社区热度**: `👍 26 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.32039)
+- **研究任务**: 图像生成
+- **核心亮点**: 在自回归图像生成框架中引入引导机制，兼顾了生成速度与质量。
+- **深度解析**: 自回归模型生成图像通常速度慢且全局一致性差。GEAR 在 Token 预测过程中加入了全局语义引导信号，类似扩散模型的 Classifier-Free Guidance，但应用于 AR 架构。这使得模型能在保持逐 Token 生成优势的同时，更好地控制整体构图和细节清晰度，减少了重复纹理问题。
+- **领域归类**: [图像生成] [自回归模型] [多模态]
+---
+
+### 7. Multi-Block Diffusion Language Models (多块扩散语言模型)
+- **社区热度**: `👍 21 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.29215)
+- **研究任务**: 语言模型架构
+- **核心亮点**: 将扩散过程应用于语言建模，采用多块结构实现非自回归文本生成。
+- **深度解析**: 突破自回归生成的串行限制，将文本序列分块，利用扩散模型并行去噪生成每个块的内容。多块结构设计了块间依赖机制，确保语义连贯性。这种方法在长文本生成任务中显著降低了延迟，同时保持了较好的语法正确性和逻辑连贯性。
+- **领域归类**: [语言模型] [扩散模型] [非自回归生成]
+---
+
+### 8. Evolution Fine-Tuning: Learning to Discover Across 371 Optimization Tasks (进化微调：跨 371 个优化任务的学习发现)
+- **社区热度**: `👍 21 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.29082)
+- **研究任务**: 优化算法与元学习
+- **核心亮点**: 利用进化算法在大量优化任务中寻找通用的微调策略，而非依赖梯度下降。
+- **深度解析**: 针对梯度下降易陷入局部最优的问题，该方法在 371 个不同优化任务上训练进化策略。模型学习如何调整权重更新规则本身，而不是直接更新权重。结果显示在少样本和非凸优化场景下，这种 learned optimizer 比传统 Adam 优化器具有更强的鲁棒性和收敛能力。
+- **领域归类**: [优化算法] [元学习] [微调]
+---
+
+### 9. SkillHone: A Harness for Continual Agent Skill Evolution Through Persistent Decision History (SkillHone：基于持久决策历史的智能体技能持续进化框架)
+- **社区热度**: `👍 21 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.08671)
+- **研究任务**: 智能体持续学习
+- **核心亮点**: 通过保存和利用长期决策历史，实现智能体技能的持续迭代而不遗忘。
+- **深度解析**: 解决智能体 continual learning 中的灾难性遗忘问题。框架维护一个持久的决策历史库，每次新技能学习时，不仅更新当前策略，还回溯历史决策进行重放和修正。这种机制让智能体能在长周期任务中不断积累经验，技能树随时间自动演化和完善。
+- **领域归类**: [智能体] [持续学习] [记忆机制]
+---
+
+### 10. MemLearner: Learning to Query Context memory for Video World Models (MemLearner：视频世界模型的上下文记忆查询学习)
+- **社区热度**: `👍 18 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.31734)
+- **研究任务**: 视频理解与世界模型
+- **核心亮点**: 在世界模型中引入可学习的记忆查询机制，增强视频长程预测的一致性。
+- **深度解析**: 视频生成常出现长程内容不一致。MemLearner 在外存中维护上下文记忆，模型学习如何生成 Query 来检索关键历史帧信息。这种显式的记忆查询替代了隐式的 RNN 状态传递，显著提升了长视频预测中物体存在性和运动轨迹的稳定性，降低了画面闪烁。
+- **领域归类**: [视频生成] [世界模型] [记忆网络]
+---
+
+### 11. Managing Procedural Memory in LLM Agents: Control, Adaptation, and Evaluation (管理 LLM 智能体中的程序性记忆：控制、适应与评估)
+- **社区热度**: `👍 17 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.23127)
+- **研究任务**: 智能体记忆管理
+- **核心亮点**: 提出了一套针对智能体程序性记忆的管理框架，解决记忆冗余和更新滞后问题。
+- **深度解析**: 区分了声明性记忆和程序性记忆，设计了控制机制来筛选何时写入记忆，适应机制来更新过时技能，并建立了评估基准测试记忆调用的有效性。
+- **领域归类**: [LLM Agent, Memory Management]
+---
+
+### 12. DataEvolver: Self-Evolving Multi-Agent Data Construction for Text-Rich Image Generation (DataEvolver：用于富文本图像生成的自进化多智能体数据构建)
+- **社区热度**: `👍 16 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.31537)
+- **研究任务**: 图文数据合成
+- **核心亮点**: 利用多智能体协作自动迭代生成高质量图文对数据，减少人工标注成本。
+- **深度解析**: 多个智能体分别负责生成、批判、修正文本描述和图像提示，通过反馈循环自我进化数据质量，专门针对包含大量文字内容的图像生成任务。
+- **领域归类**: [Multimodal, Data Synthesis, Multi-Agent]
+---
+
+### 13. Reinforcement Learning with Metacognitive Feedback Elicits Faithful Uncertainty Expression in LLMs (基于元认知反馈的强化学习激发 LLM 忠实的不确定性表达)
+- **社区热度**: `👍 12 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.32032)
+- **研究任务**: 模型不确定性校准
+- **核心亮点**: 通过引入元认知反馈信号，让模型更准确地表达自己是否“确定”答案。
+- **深度解析**: 在强化学习阶段加入元认知奖励，不仅奖励答案正确，还奖励模型对自身置信度的诚实表达，减少胡乱自信的情况。
+- **领域归类**: [RLHF, Model Alignment, Uncertainty]
+---
+
+### 14. RedVox: Safety and Fairness Gaps in Speech Models Across Languages (RedVox：语音模型跨语言的安全性与公平性差距)
+- **社区热度**: `👍 12 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.26968)
+- **研究任务**: 语音模型安全评估
+- **核心亮点**: 揭示了主流语音模型在不同语言间存在显著的安全和公平性性能差异。
+- **深度解析**: 构建了多语言评测集 RedVox，测试了语音识别和生成模型在非英语环境下的有害内容过滤能力和偏见表现，发现小语种表现明显较差。
+- **领域归类**: [Speech Processing, AI Safety, Evaluation]
+---
+
+### 15. Little Brains, Big Feats: Exploring Compact Language Models (小模型大作为：探索紧凑语言模型)
+- **社区热度**: `👍 10 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.30062)
+- **研究任务**: 小模型性能优化
+- **核心亮点**: 系统研究了小参数模型在特定任务上达到大模型效果的可能性和方法。
+- **深度解析**: 通过架构优化、数据筛选和蒸馏技术，在参数量极小的情况下提升推理和特定领域任务能力，探讨端侧部署的可行性。
+- **领域归类**: [Model Compression, SLM, Efficiency]
+---
+
+### 16. QVal: Cheaply Evaluating Dense Supervision Signals for Long-Horizon LLM Agents (QVal：低成本评估长程 LLM 智能体的密集监督信号)
+- **社区热度**: `👍 8 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.32034)
+- **研究任务**: 智能体训练信号评估
+- **核心亮点**: 提出了一种低成本方法，用于评估长任务序列中每一步的监督信号质量。
+- **深度解析**: 针对长程任务奖励稀疏问题，利用 QVal 算法近似每一步的价值，无需大量人工标注即可验证密集监督信号的有效性，加速智能体训练。
+- **领域归类**: [LLM Agent, Reinforcement Learning, Evaluation]
+---
+
+### 17. Are We Measuring Strategy or Phrasing? The Gap Between Surface- and Approach-Level Diversity in LLM Math Reasoning (我们在测策略还是措辞？LLM 数学推理中表面与方法多样性的差距)
+- **社区热度**: `👍 8 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.29985)
+- **研究任务**: 推理能力评估
+- **核心亮点**: 指出当前多样性评测混淆了“解题思路”和“文字表达”，提出了更本质的策略多样性指标。
+- **深度解析**: 分析发现模型生成的多种解法往往只是措辞不同，核心逻辑一致。提出了区分表面多样性和方法多样性的评估框架，用于真实衡量推理能力。
+- **领域归类**: [Reasoning, Evaluation, Math]
+---
+
+### 18. PolyFlow: Continuous Topology Embedding Flow Matching for Artist-style Mesh Generation (PolyFlow：用于艺术家风格网格生成的连续拓扑嵌入流匹配)
+- **社区热度**: `👍 8 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.30673)
+- **研究任务**: 3D 网格生成
+- **核心亮点**: 利用流匹配技术生成具有特定艺术风格的 3D 网格模型，支持拓扑结构变化。
+- **深度解析**: 将网格拓扑结构嵌入连续空间，结合流匹配模型生成几何形状，能够模仿特定艺术家的建模风格，解决传统方法拓扑固定的限制。
+- **领域归类**: [3D Generation, Computer Graphics, Generative AI]
+---
+
+### 19. Xiaomi-GUI-0 Technical Report (Xiaomi-GUI-0 技术报告)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.31410)
+- **研究任务**: 手机界面智能体
+- **核心亮点**: 小米发布的端侧 GUI 智能体模型，专注于手机界面操作任务。
+- **深度解析**: 基于视觉语言模型，针对移动设备界面进行优化，支持理解 UI 元素并执行点击、滑动等操作，强调低延迟和隐私保护。
+- **领域归类**: [GUI Agent, Multimodal, Mobile AI]
+---
+
+### 20. Unlocking the Visual Record of Materials Science: A Large-Scale Multimodal Dataset from Scientific Literature (解锁材料科学的视觉记录：来自科学文献的大规模多模态数据集)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.29667)
+- **研究任务**: 科学数据集构建
+- **核心亮点**: 从科学文献中提取构建了大规模材料科学多模态数据集，包含图表和文本。
+- **深度解析**: 自动化挖掘论文中的图表、公式和对应文本，建立关联，用于训练科学领域的多模态模型，辅助材料发现和知识检索。
+- **领域归类**: [Scientific AI, Dataset, Multimodal]
+---
+
+### 21. BrainJanus: A Unified Model for Understanding and Generation across Brain, Vision, and Language (BrainJanus：脑、视觉与语言理解生成的统一模型)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.30319)
+- **研究任务**: 脑机接口与多模态大模型结合
+- **核心亮点**: 构建了一个统一模型，既能解码脑信号生成图文，也能通过图文理解反推脑活动模式。
+- **深度解析**: 将脑电信号或 fMRI 数据编码为嵌入向量，与视觉和语言 token 在同一 Transformer 架构中对齐。通过双向训练任务，实现脑信号到文本/图像的生成，以及外部刺激到脑信号模式的预测，解决了以往模型只能单向解码的问题。
+- **领域归类**: [ Multimodal ] [ BCI ] [ Neuroscience ]
+
+---
+
+### 22. MOPD: Multi-Teacher On-Policy Distillation for Capability Integration in LLM Post-Training (MOPD：大模型后训练能力整合的多教师在线策略蒸馏)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.30406)
+- **研究任务**: 大语言模型后训练与知识蒸馏
+- **核心亮点**: 提出多教师在线蒸馏方法，在後训练阶段将多个专家模型的能力整合到一个学生模型中。
+- **深度解析**: 针对模型合并导致的能力遗忘问题，在生成过程中（On-Policy）让多个教师模型同时指导学生模型。通过加权损失函数，使学生模型在不同任务上保留各教师的优势，无需额外微调即可整合多种能力。
+- **领域归类**: [ LLM ] [ Distillation ] [ Post-Training ]
+
+---
+
+### 23. PhotoQuilt: Training-Free Arbitrary-Resolution Photomosaics via Bootstrapped Tiled Denoising (PhotoQuilt：基于自举平铺去噪的免训练任意分辨率照片马赛克生成)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.30968)
+- **研究任务**: 高分辨率图像生成与照片马赛克
+- **核心亮点**: 无需训练即可生成任意分辨率的照片马赛克，解决了显存限制和块间不一致问题。
+- **深度解析**: 基于扩散模型，采用分块去噪策略处理高分辨率图像。引入自举机制，在生成过程中迭代优化块与块之间的边界一致性，确保整体图像语义连贯，避免了传统方法需要微调模型或受限于固定分辨率的缺陷。
+- **领域归类**: [ Computer Vision ] [ Diffusion Models ] [ Image Generation ]
+
+---
+
+### 24. Does VLA Even Know the Basics? Measuring Commonsense and World Knowledge Retention in Vision-Language-Action Models (VLA 模型真的懂基础吗？测量视觉 - 语言 - 动作模型中的常识与世界知识保留)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.19297)
+- **研究任务**: 机器人 VLA 模型评估与基准测试
+- **核心亮点**: 评测发现 VLA 模型在进行动作训练后，通用常识和世界知识保留率显著下降。
+- **深度解析**: 构建了一套基准测试集，专门检测 VLA 模型的非动作类知识。实验表明，强化学习或动作微调过程会侵蚀模型预训练阶段获得的通用知识，提示未来训练需兼顾动作能力与知识保留。
+- **领域归类**: [ Robotics ] [ VLA ] [ Evaluation ]
+
+---
+
+### 25. AVTok: 1D Unified Tokenization for Holistic Audio-Video Generation (AVTok：用于整体音视频生成的 1D 统一分词)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.30811)
+- **研究任务**: 音视频联合生成
+- **核心亮点**: 将音频和视频数据统一编码为 1D token 序列，简化了多模态生成架构。
+- **深度解析**: 摒弃了传统的双编码器结构，设计了一种量化器将音视频信号映射到同一离散空间。生成模型只需处理单一的 1D token 流，降低了音视频同步的难度，提升了生成效率和质量。
+- **领域归类**: [ Multimodal ] [ Audio-Video ] [ Tokenization ]
+
+---
+
+### 26. MuSViT: A Foundation Vision Model for Sheet Music Representation (MuSViT：乐谱表示的基础视觉模型)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.31811)
+- **研究任务**: 光学乐谱识别 (OMR)
+- **核心亮点**: 首个针对乐谱符号优化的基础视觉模型，提升了复杂乐谱的理解能力。
+- **深度解析**: 基于 ViT 架构，针对乐谱中的音符、休止符及五线谱结构进行预训练。相比通用 OCR 模型，能更准确地识别密集符号和复杂排版，为音乐生成和分析任务提供更好的视觉编码基础。
+- **领域归类**: [ Computer Vision ] [ Music AI ] [ OMR ]
+
+---
+
+### 27. TerraDiT-Ω: Unified Spatial Control for Satellite Image Synthesis with Any Geospatial Primitive (TerraDiT-Ω：支持任意地理空间原型的卫星图像合成统一空间控制)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.31029)
+- **研究任务**: 遥感图像生成与编辑
+- **核心亮点**: 支持使用地图、掩码等多种地理空间数据统一控制卫星图像生成。
+- **深度解析**: 基于 Diffusion Transformer 架构，设计了统一的条件注入模块。允许用户输入不同类型的地理空间原型（如道路网、土地利用图）作为控制条件，实现灵活的卫星图像合成与编辑，适配多种遥感应用场景。
+- **领域归类**: [ Remote Sensing ] [ Generative AI ] [ ControlNet ]
+
+---
+
+### 28. LUMOS: A Semantic Operating-System Layer for Accessibility-Grounded AI Agents (LUMOS：面向无障碍 AI 代理的语义操作系统层)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.30697)
+- **研究任务**: AI 代理与人机交互无障碍
+- **核心亮点**: 在操作系统层提供语义接口，帮助 AI 代理更好地辅助残障人士操作设备。
+- **深度解析**: 定义了一层语义抽象，将 UI 元素和操作意图标准化。AI 代理通过该层理解屏幕内容并执行操作，降低了代理适配不同应用的成本，重点优化了视障或行动不便用户的交互体验。
+- **领域归类**: [ AI Agents ] [ HCI ] [ Accessibility ]
+
+---
+
+### 29. Goku: A Million-Scale Universal Dataset and Benchmark for Instruction-Based Video Editing (Goku：基于指令的视频编辑百万级通用数据集与基准)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.30599)
+- **研究任务**: 视频编辑数据集与基准
+- **核心亮点**: 提供了百万级的指令视频编辑数据集，填补了该任务大规模训练数据的空白。
+- **深度解析**: 收集并标注了大量视频编辑操作对及其对应的自然语言指令。覆盖裁剪、滤镜、物体移除等多种操作，建立了统一的评测基准，用于训练和评估基于文本指令的视频编辑模型。
+- **领域归类**: [ Video Understanding ] [ Dataset ] [ Video Editing ]
+
+---
+
+### 30. Lexical Consensus: Grounded Word Learning and Shared Meaning in Artificial Agents (Lexical Consensus：人工代理中的接地词汇学习与共享意义)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.22207)
+- **研究任务**: 多代理通信与语言接地
+- **核心亮点**: 研究了多代理环境中，智能体如何通过交互达成词汇意义的共识。
+- **深度解析**: 在强化学习框架下，让多个代理在协作任务中通信。观察它们如何自发地定义和使用词汇，发现代理能通过环境反馈 grounding 词汇含义，最终形成共享的语义系统，为 emergent communication 研究提供新视角。
+- **领域归类**: [ NLP ] [ Multi-agent Systems ] [ Linguistics ]
+</details>
+
+<details>
+<summary><b>🚀 GitHub 今日热门项目 (点击展开)</b></summary>
+
+### [allenai / olmocr](https://github.com/allenai/olmocr)
+- **今日趋势**: 今日 +295 ⭐ | 总 18,158 ⭐ | 1,494 🍴
+- **项目简介**: 专为大模型数据集训练设计的 PDF 线性化处理工具包，旨在将非结构化 PDF 转换为 LLM 可理解的文本。
+- **核心价值**: 解决了 PDF 文档结构复杂、OCR 识别错误率高导致难以用于大模型训练的痛点；主要面向 AI 研究人员和数据工程师，技术核心在于高精度的文档布局分析与文本线性化算法。
+- **AI/大模型相关**: 是
+
+---
+### [open-webui / open-webui](https://github.com/open-webui/open-webui)
+- **今日趋势**: 今日 +171 ⭐ | 总 143,696 ⭐ | 20,733 🍴
+- **项目简介**: 支持 Ollama、OpenAI API 等多种后端的用户友好型 AI 交互界面，提供本地化大模型管理方案。
+- **核心价值**: 降低了普通用户和开发者部署及使用本地大模型的门槛，解决了命令行操作复杂的问题；面向个人开发者及企业用户，技术核心在于统一的 API 适配层与现代化的 Web 前端架构。
+- **AI/大模型相关**: 是
+
+---
+### [virgiliojr94 / book-to-skill](https://github.com/virgiliojr94/book-to-skill)
+- **今日趋势**: 今日 +205 ⭐ | 总 7,364 ⭐ | 906 🍴
+- **项目简介**: 能够将任意技术书籍 PDF 转换为 Claude Code 技能的工具，使书籍内容可作为 AI 助手的参考知识库。
+- **核心价值**: 解决了静态技术书籍知识难以被 AI 编程助手实时调用和参考的痛点；面向开发者和技术学习者，技术核心在于 PDF 解析与大模型 Prompt 工程化的结合。
+- **AI/大模型相关**: 是
+
+---
+### [langchain-ai / deepagents](https://github.com/langchain-ai/deepagents)
+- **今日趋势**: 今日 +103 ⭐ | 总 25,513 ⭐ | 3,595 🍴
+- **项目简介**: LangChain 推出的“电池 included"式智能体（Agent）框架，用于构建复杂的 AI 代理应用。
+- **核心价值**: 解决了开发者构建 AI Agent 时重复造轮子及架构混乱的痛点；面向 AI 应用开发者，技术核心在于标准化的 Agent 编排 harness 与 LangChain 生态的深度集成。
+- **AI/大模型相关**: 是
+
+---
+### [omkarcloud / botasaurus](https://github.com/omkarcloud/botasaurus)
+- **今日趋势**: 今日 +270 ⭐ | 总 5,428 ⭐ | 476 🍴
+- **项目简介**: 一个全能型网络爬虫框架，专注于构建具有抗检测能力的自动化 scraping 脚本。
+- **核心价值**: 解决了现代网页反爬虫机制导致数据采集困难且不稳定的痛点；面向数据工程师和爬虫开发者，技术核心在于浏览器指纹伪装与自动化反检测策略。
+- **AI/大模型相关**: 否
+
+---
+### [ultralytics / yolov5](https://github.com/ultralytics/yolov5)
+- **今日趋势**: 今日 +9 ⭐ | 总 57,591 ⭐ | 17,477 🍴
+- **项目简介**: Ultralytics 维护的经典 YOLOv5 目标检测模型实现，支持 PyTorch 到多种端的部署转换。
+- **核心价值**: 提供了高效、易部署的计算机视觉目标检测基准方案，解决了实时检测任务中速度与精度的平衡问题；面向 CV 工程师及嵌入式开发者，技术核心在于深度学习模型训练与 ONNX/CoreML 等多格式导出。
+- **AI/大模型相关**: 是 (AI/计算机视觉)
+
+---
+### [HKUDS / VideoAgent](https://github.com/HKUDS/VideoAgent)
+- **今日趋势**: 今日 +150 ⭐ | 总 1,099 ⭐ | 150 🍴
+- **项目简介**: 一个集视频理解、编辑和重制于一体的多功能 Agent 框架，专注于长视频内容的多模态处理。
+- **核心价值**: 解决了长视频内容难以被 AI 全面理解及自动化编辑的痛点；面向视频处理研究者及多模态 AI 开发者，技术核心在于视频语义理解与 Agent 决策流程的结合。
+- **AI/大模型相关**: 是
+
+---
+</details></script>
+        <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
+    </body>
+    </html>
+    
