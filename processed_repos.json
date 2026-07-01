@@ -10,7 +10,7 @@
   "z-lab /dflash": "2026-05-07",
   "521xueweihan /HelloGitHub": "2026-06-17",
   "huggingface /skills": "2026-05-11",
-  "open-webui /open-webui": "2026-04-22",
+  "open-webui /open-webui": "2026-07-01",
   "apache /airflow": "2026-04-09",
   "microsoft /markitdown": "2026-06-04",
   "FloatingPragma /observer-patch-holography": "2026-04-10",
@@ -304,5 +304,11 @@
   "Mebus /cupp": "2026-06-29",
   "usestrix /strix": "2026-06-30",
   "google /agents-cli": "2026-06-30",
-  "psf /black": "2026-06-30"
+  "psf /black": "2026-06-30",
+  "allenai /olmocr": "2026-07-01",
+  "virgiliojr94 /book-to-skill": "2026-07-01",
+  "langchain-ai /deepagents": "2026-07-01",
+  "omkarcloud /botasaurus": "2026-07-01",
+  "ultralytics /yolov5": "2026-07-01",
+  "HKUDS /VideoAgent": "2026-07-01"
 }
