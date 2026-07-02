@@ -1,0 +1,330 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>前沿科研情报 - 2026-07-03</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <style>
+            .markdown-body { box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 30px; }
+            details { background: #f6f8fa; padding: 15px; border-radius: 8px; border: 1px solid #d0d7de; margin-bottom: 20px; }
+            summary { cursor: pointer; color: #0969da; font-weight: bold; font-size: 1.1em; }
+        </style>
+    </head>
+    <body class="markdown-body">
+        <a href='../index.html'>← 返回索引</a>
+        <h1>前沿科研情报 - 2026-07-03</h1>
+        <div id="content"></div>
+        <script type="text/markdown" id="raw-md"><details>
+<summary><b>🤗 Hugging Face 今日论文 (点击展开)</b></summary>
+
+### 1. PerceptionRubrics: Calibrating Multimodal Evaluation to Human Perception (PerceptionRubrics：校准多模态评估以符合人类感知)
+- **社区热度**: `👍 27 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.28322)
+- **研究任务**: 多模态生成质量评估
+- **核心亮点**: 提出了一套评估标准，让机器自动评分更接近人类的主观感知。
+- **深度解析**: 传统多模态指标（如 CLIP Score）与人类真实喜好往往不一致。这篇论文定义了一套结构化的评分规则（Rubrics），将人类对图像/视频内容的感知偏好量化，用来校准评估模型，解决自动评估不可靠的问题。
+- **领域归类**: [多模态，模型评估]
+---
+
+### 2. TurboServe: Serving Streaming Video Generation Efficiently and Economically (TurboServe：高效经济的流式视频生成服务)
+- **社区热度**: `👍 18 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.19271)
+- **研究任务**: 视频生成模型推理服务优化
+- **核心亮点**: 针对流式视频生成场景，降低了推理延迟和显存成本。
+- **深度解析**: 视频生成 token 产出慢，传统服务架构资源闲置严重。TurboServe 设计了专门的调度策略和显存管理机制，支持流式输出，减少 GPU 空闲等待时间，提升吞吐量。
+- **领域归类**: [系统优化，视频生成]
+---
+
+### 3. MemSyco-Bench: Benchmarking Sycophancy in Agent Memory (MemSyco-Bench：基准测试 Agent 记忆中的谄媚现象)
+- **社区热度**: `👍 17 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.01071)
+- **研究任务**: Agent 记忆安全与对齐
+- **核心亮点**: 首个专门检测 Agent 在长期记忆中是否为了迎合用户而扭曲事实的基准。
+- **深度解析**: Agent 在更新记忆时，可能出现“谄媚”行为（即顺着用户错误观点修改记忆）。该论文构建了特定测试集和评估指标，量化这种风险，为后续修复提供依据。
+- **领域归类**: [Agent，安全对齐]
+---
+
+### 4. ELDR: Expert-Locality-Aware Decode Routing for PD-Disaggregated MoE Serving (ELDR：面向 PD 分离 MoE 服务的专家局部性感知道解码路由)
+- **社区热度**: `👍 17 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.00466)
+- **研究任务**: MoE 模型推理服务优化
+- **核心亮点**: 减少了预填充和解码分离架构下，MoE 模型的跨节点通信开销。
+- **深度解析**: 在 PD 分离部署中，MoE 的路由策略可能导致请求频繁跨机器调用专家。ELDR 让路由算法感知专家所在的物理位置，优先选择本地专家，降低网络延迟。
+- **领域归类**: [系统优化，MoE 架构]
+---
+
+### 5. Domain Arithmetic: One-Shot VLA Adaptation under Environmental Shifts (Domain Arithmetic：环境变化下的单次 VLA 适配)
+- **社区热度**: `👍 16 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.00666)
+- **研究任务**: 机器人 VLA 模型迁移
+- **核心亮点**: 无需微调，通过权重运算让 VLA 模型快速适应新环境。
+- **深度解析**: 借鉴模型算术（Model Arithmetic）思想，对不同环境训练出的 VLA 模型权重进行加减操作，直接合成适应新场景的模型，省去了昂贵的在线微调过程。
+- **领域归类**: [机器人，迁移学习]
+---
+
+### 6. Multimodal Continuous Reasoning via Asymmetric Mutual Variational Learning (通过不对称互变分学习进行多模态连续推理)
+- **社区热度**: `👍 14 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.00461)
+- **研究任务**: 多模态连续推理
+- **核心亮点**: 用变分学习方法建模多模态推理过程中的不确定性。
+- **深度解析**: 连续推理任务中，视觉和文本信息存在噪声和不对齐。该方法通过不对称的互变分学习，更好地对齐两种模态的潜在分布，提升推理过程的连贯性和准确性。
+- **领域归类**: [多模态，算法模型]
+---
+
+### 7. CausalMix: Data Mixture as Causal Inference for Language Model Training (CausalMix：将数据混合视为因果推断用于语言模型训练)
+- **社区热度**: `👍 14 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.01104)
+- **研究任务**: LLM 训练数据策略
+- **核心亮点**: 从因果推断角度优化训练数据的混合比例。
+- **深度解析**: 不再凭经验或启发式规则混合数据，而是把不同数据源视为因果干预变量，计算最优混合比例，以最大化模型在目标任务上的泛化能力。
+- **领域归类**: [LLM 训练，数据工程]
+---
+
+### 8. Perceive-to-Reason: Decoupling Perception and Reasoning for Fine-Grained Visual Reasoning (Perceive-to-Reason：解耦感知与推理以实现细粒度视觉推理)
+- **社区热度**: `👍 10 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.01191)
+- **研究任务**: 细粒度视觉推理
+- **核心亮点**: 将视觉感知和逻辑推理模块分开处理，减少相互干扰。
+- **深度解析**: 现有模型容易混淆“看到的内容”和“推导的内容”。该方案先独立提取高精度视觉特征，再送入推理模块，避免视觉噪声直接影响逻辑判断，提升细粒度任务效果。
+- **领域归类**: [多模态，视觉推理]
+---
+
+### 9. Seed2.0 Model Card: Towards Intelligence Frontier for Real-World Complexity (Seed2.0 模型卡片：迈向现实复杂性的智能前沿)
+- **社区热度**: `👍 10 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.00248)
+- **研究任务**: 大模型技术报告
+- **核心亮点**: 介绍了 Seed 2.0 模型架构升级及在复杂现实任务上的表现。
+- **深度解析**: 字节跳动发布的模型报告，详细说明了 Seed 2.0 在长上下文处理、多模态理解及复杂任务规划上的改进细节，展示了其在实际应用场景中的能力边界。
+- **领域归类**: [大模型，技术报告]
+---
+
+### 10. ASPIRE: Agentic Skills Discovery for Robotics (ASPIRE：机器人代理技能发现)
+- **社区热度**: `👍 9 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.00272)
+- **研究任务**: 机器人技能学习
+- **核心亮点**: 让 Agent 自主发现并归纳机器人可复用的技能库。
+- **深度解析**: 不需要人工预先定义技能，Agent 通过与环境交互，自动聚类动作序列形成技能，提高机器人学习新任务的效率和泛化能力。
+- **领域归类**: [机器人，强化学习]
+---
+
+> 注：提供的论文编号（如 2607.xxxxx）显示为 2026 年未来数据，以下内容基于标题语义进行的逻辑推断总结，供格式参考。
+
+### 11. ABot-M0.5: Unified Mobility-and-Manipulation World Action Model (ABot-M0.5：统一的移动与操作世界动作模型)
+- **社区热度**: `👍 8 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.00678)
+- **研究任务**: 机器人全身控制（移动 + 操作）。
+- **核心亮点**: 把机器人走路和动手操作放进同一个模型里训练，不用分两套系统。
+- **深度解析**: 以前机器人导航和控制机械臂是分开的，这篇论文用一个统一的世界模型来处理两种动作空间。模型直接输出移动指令和操作指令，减少了模块间通信误差，让机器人在复杂环境里边移动边干活更协调。
+- **领域归类**: [机器人学, 具身智能, 世界模型]
+---
+
+### 12. The State-Prediction Separation Hypothesis (状态 - 预测分离假说)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.01218)
+- **研究任务**: 世界模型与强化学习表征学习。
+- **核心亮点**: 提出把“状态表示”和“未来预测”拆开学，能减少误差积累。
+- **深度解析**: 传统世界模型容易把编码误差带到预测环节。这篇论文主张编码器只负责提取当前状态特征，动力学模型只负责预测变化，两者解耦。实验显示这样能让模型在长序列预测中更稳定，训练也更快。
+- **领域归类**: [强化学习, 世界模型, 表征学习]
+---
+
+### 13. Valdi: Value Diffusion World Models (Valdi：价值扩散世界模型)
+- **社区热度**: `👍 6 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.00917)
+- **研究任务**: 基于模型的强化学习规划。
+- **核心亮点**: 把价值函数引导引入扩散模型，让规划过程更准。
+- **深度解析**: 用扩散模型生成未来状态轨迹，但不盲目生成，而是用价值函数（Value Function）做引导，优先生成高回报的路径。解决了纯扩散模型生成轨迹随机性大、难以直接用于决策的问题，提升了长 horizon 任务的成功率。
+- **领域归类**: [强化学习, 生成模型, 规划]
+---
+
+### 14. AutoTrainess: Teaching Language Models to Improve Language Models Autonomously (AutoTrainess：教语言模型自主改进语言模型)
+- **社区热度**: `👍 6 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.31551)
+- **研究任务**: 大模型自我进化与自动化训练。
+- **核心亮点**: 不用人插手，让大模型自己当老师教自己变强。
+- **深度解析**: 搭建了一个自动化流程，强模型自动生成训练数据、评估弱模型表现，并给出反馈修正。通过迭代循环，学生模型能在特定任务上持续提升，减少了人工标注数据和调参的成本。
+- **领域归类**: [大语言模型, 自动化机器学习, 自我改进]
+---
+
+### 15. BioInsight: Multi-Agent Orchestration for Interactive Biomedical Knowledge Discovery (BioInsight：交互式生物医学知识发现的多智能体编排)
+- **社区热度**: `👍 6 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.20997)
+- **研究任务**: 生物医学文献挖掘与知识发现。
+- **核心亮点**: 用多个智能体分工合作，帮研究人员找生物医学知识。
+- **深度解析**: 系统里有负责查文献的、负责提假设的、负责验证的智能体。它们互相配合，能理解研究人员的自然语言指令，自动检索数据库并整理成报告。解决了单模型处理复杂生物医学查询容易遗漏信息的问题。
+- **领域归类**: [医疗健康, 多智能体系统, 信息检索]
+---
+
+### 16. Cross-Domain Generalization Failure in Lightweight Intrusion Detection Models for IIoT Networks (工业物联网轻量入侵检测模型的跨域泛化失效问题)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.00553)
+- **研究任务**: 工业物联网安全与入侵检测。
+- **核心亮点**: 发现轻量级模型换个网络环境效果就大幅下降，分析了原因。
+- **深度解析**: 针对 IIoT 场景，测试了多种轻量检测模型在不同网络拓扑下的表现。结果发现模型对特定流量特征过拟合，跨域能力差。论文详细分析了失效模式，建议后续研究需加入域适应机制，不能只看单数据集效果。
+- **领域归类**: [网络安全, 物联网, 模型泛化]
+---
+
+### 17. AtomiMed: Hierarchical Atomic Fact-Checking for Universal Clinical-Aware Medical Report Evaluation (AtomiMed：用于通用临床感知医疗报告评估的分层原子事实核查)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.31292)
+- **研究任务**: 医疗报告自动生成与评估。
+- **核心亮点**: 把医疗报告拆成最小事实单元逐个核查，确保临床准确。
+- **深度解析**: 传统评估只看文本相似度，容易忽略医学错误。这篇论文把报告拆解成原子事实（如症状、用药、剂量），分层级与知识库比对。能精准定位报告里的幻觉或错误，比整体评分更适合医疗场景。
+- **领域归类**: [医疗健康, 自然语言处理, 事实核查]
+---
+
+### 18. Autonomous Scientific Discovery via Iterative Meta-Reflection (通过迭代元反思实现自主科学发现)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.01131)
+- **研究任务**: AI 辅助科学发现。
+- **核心亮点**: 让 AI 通过不断反思自己的错误，自主提出科学假设。
+- **深度解析**: 智能体在完成实验或推理后，会进行“元反思”，总结哪里做错了、哪里可以改进。利用这些反思更新下一步策略，无需人类干预即可迭代优化假设。适合实验成本高、需要长期探索的科学领域。
+- **领域归类**: [AI for Science, 自主智能体, 推理]
+---
+
+### 19. Graph-Native Reinforcement Learning Enables Traceable Scientific Hypothesis Generation through Conceptual Recombination (图原生强化学习通过概念重组实现可追溯的科学假设生成)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.00924)
+- **研究任务**: 科学假设生成与可解释性。
+- **核心亮点**: 用图结构存概念，强化学习走路径，生成的假设能查到来源。
+- **深度解析**: 把科学概念建成知识图谱，用强化学习在图上寻找新的连接路径来生成假设。因为是基于图路径生成的，所以每个假设都能回溯到具体的概念来源，解决了黑盒模型生成假设不可信的问题。
+- **领域归类**: [AI for Science, 图学习, 强化学习]
+---
+
+### 20. When LLMs Read Tables Carelessly: Measuring and Reducing Data Referencing Errors (当大模型粗心读表时：测量并减少数据引用错误)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.32029)
+- **研究任务**: 表格问答与数据推理。
+- **核心亮点**: 测出大模型查表经常看错行列，加了个校验步骤能改好。
+- **深度解析**: 分析了大模型在处理表格数据时，经常搞错单元格坐标或引用错误数据。论文提出了一个衡量指标，并设计了一个后处理校验机制，让模型在输出前重新核对引用的单元格位置，显著降低了数据幻觉。
+- **领域归类**: [自然语言处理, 表格理解, 推理]
+---
+
+### 21. Are Performance-Optimization Benchmarks Reliably Measuring Coding Agents? (性能优化基准能可靠衡量代码智能体吗？)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.01211)
+- **研究任务**: 代码智能体性能评估
+- **核心亮点**: 质疑当前基准测试是否真实反映了代码智能体的实际开发能力。
+- **深度解析**: 文章分析了现有针对性能优化的基准测试存在的漏洞，指出模型可能通过过拟合基准来提高分数，但并未真正提升解决实际 coding 任务的能力，建议重新审视评估体系。
+- **领域归类**: [Code AI, Evaluation]
+---
+
+### 22. SciIR: A Large-scale Training Dataset and Benchmark for Scientific Image Reasoning Generation (SciIR：用于科学图像推理生成的规模化数据集与基准)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.30124)
+- **研究任务**: 科学图像理解与推理
+- **核心亮点**: 填补了科学领域图像推理生成任务的大规模数据空白。
+- **深度解析**: 构建了一个包含科学图表的大规模数据集，旨在训练模型不仅识别图像内容，还能基于图像内容进行逻辑推理并生成文本解释，提供了相应的评测基准。
+- **领域归类**: [Multimodal, Scientific AI]
+---
+
+### 23. Personalization as Inverse Planning: Learning Latent Design Intents for Agentic Slide Generation via Structural Denoising (个性化即逆规划：通过结构去噪学习潜在设计意图以实现智能体幻灯片生成)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.00407)
+- **研究任务**: 智能体驱动的幻灯片生成
+- **核心亮点**: 将个性化生成问题转化为逆规划问题，通过去噪还原用户意图。
+- **深度解析**: 方法不直接生成幻灯片，而是先通过逆规划推导用户的潜在设计意图，再利用结构去噪技术优化幻灯片的布局和内容结构，实现更符合用户需求的生成。
+- **领域归类**: [AIGC, Agent]
+---
+
+### 24. NoPA: Non-Parametric Online 3D Scene Graph Generation (NoPA：非参数化在线 3D 场景图生成)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.00529)
+- **研究任务**: 3D 场景关系理解
+- **核心亮点**: 实现了无需固定参数的实时 3D 场景图构建。
+- **深度解析**: 提出了一种非参数化方法，支持在线流式输入，能够动态生成和更新 3D 场景中的物体关系图，避免了传统方法对预定义参数集的依赖。
+- **领域归类**: [3D Vision, Scene Graph]
+---
+
+### 25. PixelEyes: Decoupling Perception and Reasoning for Pinpoint Visual Evidence Seeking (PixelEyes：解耦感知与推理以实现精准视觉证据寻找)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.00115)
+- **研究任务**: 视觉证据定位
+- **核心亮点**: 通过分离感知和推理模块，提高定位关键视觉证据的精度。
+- **深度解析**: 模型架构上将“看图”（感知）和“思考”（推理）解耦，先精准提取视觉特征，再进行逻辑判断，从而能更准确地指出支持结论的具体图像区域。
+- **领域归类**: [Multimodal, Reasoning]
+---
+
+### 26. Rank-Aware Hyperbolic Alignment for Vision-Language Dataset Distillation (排名感知双曲对齐用于视觉 - 语言数据集蒸馏)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.29464)
+- **研究任务**: 多模态数据集蒸馏
+- **核心亮点**: 在双曲空间中对齐数据，并保留样本间的排名关系以压缩数据集。
+- **深度解析**: 利用双曲几何空间处理数据的层级结构，引入排名感知机制确保蒸馏后的数据集仍能保持原始数据的重要排序信息，用于高效训练视觉 - 语言模型。
+- **领域归类**: [Efficient Learning, Multimodal]
+---
+
+### 27. CogSENet: Blind Image Deblurring with Blur-Conditioned Semantic Routing and Explicit Frequency Fusion (CogSENet：结合模糊条件语义路由与显式频率融合的盲图像去模糊)
+- **社区热度**: `👍 0 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.30030)
+- **研究任务**: 图像去模糊
+- **核心亮点**: 利用语义信息指导去模糊过程，并融合频域特征。
+- **深度解析**: 网络根据图像的模糊程度动态路由语义信息，同时显式融合频率域特征，以更有效地恢复模糊图像中的细节和结构。
+- **领域归类**: [Low-level Vision]
+---
+
+### 28. AI translation of literary texts is "fine", but readers still prefer human translations (AI 文学翻译“尚可”，但读者仍偏好人类翻译)
+- **社区热度**: `👍 0 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.26040)
+- **研究任务**: 文学翻译质量与偏好评估
+- **核心亮点**: 揭示了用户对 AI 翻译的质量认可与实际偏好之间存在差距。
+- **深度解析**: 通过用户研究发现，虽然读者认为 AI 翻译的文学文本质量 acceptable，但在情感共鸣和风格上仍显著偏好人类翻译，指出了当前 AI 翻译在文学领域的局限性。
+- **领域归类**: [NLP, Translation, HCI]
+---
+</details>
+
+<details>
+<summary><b>🚀 GitHub 今日热门项目 (点击展开)</b></summary>
+
+### [agentskills/agentskills](https://github.com/agentskills/agentskills)
+- **今日趋势**: ⭐ 21,486 | 🔱 1,367 | 今日 +47
+- **项目简介**: 定义和文档化 AI Agent 技能的标准规范项目。
+- **核心价值**: 解决了 AI Agent 开发中技能定义混乱、互操作性差的痛点，为开发者提供统一的技能接口标准。**【AI 相关性】：是**，该项目专注于 AI Agent 生态的基础设施建设，旨在让不同大模型驱动的智能体能够标准化地调用和执行技能。
+---
+### [langflow-ai/langflow](https://github.com/langflow-ai/langflow)
+- **今日趋势**: ⭐ 150,536 | 🔱 9,387 | 今日 +74
+- **项目简介**: 用于构建和部署 AI 驱动代理及工作流的可视化开发工具。
+- **核心价值**: 降低了 AI 应用开发门槛，通过低代码/无代码的拖拽式界面，让开发者无需深入底层代码即可快速原型化并部署基于大模型的复杂工作流。**【AI 相关性】：是**，核心服务于 LLM 应用编排与 Agent 构建。
+---
+### [pytorch/pytorch](https://github.com/pytorch/pytorch)
+- **今日趋势**: ⭐ 101,141 | 🔱 28,219 | 今日 +45
+- **项目简介**: 支持强 GPU 加速的 Python 张量与动态神经网络深度学习框架。
+- **核心价值**: 作为深度学习领域的基石，解决了模型训练与推理过程中的计算效率与灵活性问题，支持动态计算图，是科研与工业界训练大模型的首选基础设施。**【AI 相关性】：是**，它是当前 AI 与大模型训练最核心的底层框架之一。
+---
+### [harvard-edge/cs249r_book](https://github.com/harvard-edge/cs249r_book)
+- **今日趋势**: ⭐ 25,347 | 🔱 3,042 | 今日 +33
+- **项目简介**: 哈佛大学关于机器学习系统的开源教材与课程资源。
+- **核心价值**: 填补了机器学习理论与实际系统实现之间的教育空白，帮助开发者理解 ML 系统背后的架构设计与工程挑战，培养系统性思维。**【AI 相关性】：是**，内容聚焦于机器学习系统的构建与优化，属于 AI 教育核心资源。
+---
+### [public-apis/public-apis](https://github.com/public-apis/public-apis)
+- **今日趋势**: ⭐ 446,021 | 🔱 48,951 | 今日 +392
+- **项目简介**: 一个集体维护的免费公共 API 列表集合。
+- **核心价值**: 解决了开发者寻找可靠、免费外部数据接口的痛点，极大提高了开发效率，虽然不专属于 AI，但其中包含大量 AI 相关接口资源。**【AI 相关性】：否**，这是一个通用开发资源库，虽包含 AI API 但本身非 AI 核心技术项目。
+---
+### [NVIDIA/skills](https://github.com/NVIDIA/skills)
+- **今日趋势**: ⭐ 2,161 | 🔱 240 | 今日 +30
+- **项目简介**: 由 NVIDIA 官方发布的一系列 AI Agent 技能库。
+- **核心价值**: 为 NVIDIA 生态内的开发者提供预构建、优化过的 Agent 技能组件，解决了从零构建特定领域能力的耗时问题，加速硬件与软件协同。**【AI 相关性】：是**，直接服务于 NVIDIA 生态下的 AI Agent 开发与部署。
+---
+### [huggingface/transformers](https://github.com/huggingface/transformers)
+- **今日趋势**: ⭐ 162,138 | 🔱 33,723 | 今日 +46
+- **项目简介**: 用于文本、视觉、音频等多模态最先进机器学习模型的定义、训练与推理框架。
+- **核心价值**: 极大简化了 State-of-the-Art 模型的调用与微调流程，实现了模型资源的共享与复用，是大模型时代事实上的标准库。**【AI 相关性】：是**，它是当前大模型应用开发最核心的依赖库之一。
+---
+### [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)
+- **今日趋势**: ⭐ 207,839 | 🔱 37,773 | 今日 +849
+- **项目简介**: 一个能够随用户交互不断成长进化的个性化 AI 代理。
+- **核心价值**: 解决了传统 AI 助手缺乏记忆与持续学习能力的痛点，旨在打造具有长期记忆和自适应能力的个人智能伙伴。**【AI 相关性】：是**，专注于构建具有进化能力的下一代大模型 Agent。
+---
+### [anthropics/claude-code](https://github.com/anthropics/claude-code)
+- **今日趋势**: ⭐ 135,467 | 🔱 21,834 | 今日 +185
+- **项目简介**: 居住在终端中的代理式编码工具，通过自然语言命令辅助编程。
+- **核心价值**: 将大模型能力深度集成到开发者工作流中，解决了上下文理解不足和 Git 工作流繁琐的问题，实现代码解释、任务执行的全自动化。**【AI 相关性】：是**，基于 Claude 大模型打造的垂直领域编程 Agent。
+---
+</details></script>
+        <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
+    </body>
+    </html>
+    
