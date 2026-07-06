@@ -1,0 +1,233 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>前沿科研情报 - 2026-07-07</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <style>
+            .markdown-body { box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 30px; }
+            details { background: #f6f8fa; padding: 15px; border-radius: 8px; border: 1px solid #d0d7de; margin-bottom: 20px; }
+            summary { cursor: pointer; color: #0969da; font-weight: bold; font-size: 1.1em; }
+        </style>
+    </head>
+    <body class="markdown-body">
+        <a href='../index.html'>← 返回索引</a>
+        <h1>前沿科研情报 - 2026-07-07</h1>
+        <div id="content"></div>
+        <script type="text/markdown" id="raw-md"><details>
+<summary><b>🤗 Hugging Face 今日论文 (点击展开)</b></summary>
+
+### 1. The Mirage of Optimizing Training Policies: Monotonic Inference Policies as the Real Objective for LLM Reinforcement Learning (优化训练策略的幻象：单调推理策略作为 LLM 强化学习的真实目标)
+- **社区热度**: `👍 99 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.29526)
+- **研究任务**: 大语言模型强化学习 (LLM RL)
+- **核心亮点**: 指出训练策略优化并不等同于效果提升，主张将推理策略的单调性作为核心优化目标。
+- **深度解析**: 论文分析了传统 RLHF 中训练损失下降但推理效果不稳定的现象。提出不再单纯优化训练策略，而是施加约束确保推理阶段的策略输出呈单调改进趋势，从而保证模型性能在实际使用中稳步提升。
+- **领域归类**: [LLM, 强化学习, 训练策略]
+---
+
+### 2. Embodied.cpp: A Portable Inference Runtime of Embodied AI Models on Heterogeneous Robots (Embodied.cpp：异构机器人上具身 AI 模型的可移植推理运行时)
+- **社区热度**: `👍 34 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.02501)
+- **研究任务**: 具身 AI 模型部署
+- **核心亮点**: 提供了一套 C++ 编写的通用推理运行时，解决不同机器人硬件间的部署兼容性问题。
+- **深度解析**: 针对机器人硬件异构导致的模型部署难痛点，封装了统一的推理接口。屏蔽底层硬件差异，使得同一具身 AI 模型无需修改代码即可在不同品牌的机器人上运行，降低部署成本。
+- **领域归类**: [具身智能, 系统部署, 推理引擎]
+---
+
+### 3. VLA-Corrector: Lightweight Detect-and-Correct Inference for Adaptive Action Horizon (VLA-Corrector：用于自适应动作规划范围的轻量级检测 - 修正推理)
+- **社区热度**: `👍 22 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.01804)
+- **研究任务**: 视觉 - 语言 - 动作模型 (VLA) 推理优化
+- **核心亮点**: 通过轻量级外挂模块，在推理阶段动态检测并修正动作误差，自适应调整规划范围。
+- **深度解析**: 在不重新训练主 VLA 模型的前提下，增加一个检测 - 修正模块。该模块实时监控动作序列，发现偏差即刻纠正，并根据任务难度动态调整动作预测的时间 horizon，提升执行成功率。
+- **领域归类**: [具身智能, VLA, 推理优化]
+---
+
+### 4. OrbitQuant: Data-Agnostic Quantization for Image and Video Diffusion Transformers (OrbitQuant：面向图像和视频扩散 Transformer 的数据无关量化)
+- **社区热度**: `👍 19 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.02461)
+- **研究任务**: 扩散模型压缩 (量化)
+- **核心亮点**: 实现了针对 Diffusion Transformer 架构的量化，且不需要依赖特定校准数据集。
+- **深度解析**: 针对 DiT 结构特点设计量化方案，解决了传统量化需要大量校准数据的问题。通过数据无关的权重处理算法，在显著降低显存占用的同时，保持图像和视频生成的质量不受明显影响。
+- **领域归类**: [扩散模型, 模型压缩, 量化]
+---
+
+### 5. DataComp-VLM: Improved Open Datasets for Vision-Language Models (DataComp-VLM：改进的视觉 - 语言模型开放数据集)
+- **社区热度**: `👍 11 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.28551)
+- **研究任务**: 多模态数据集构建
+- **核心亮点**: 发布了一套经过优化筛选的开放数据集，旨在提升 VLM 的训练效率与性能。
+- **深度解析**: 沿用 DataComp 基准方法论，对海量图文数据进行更严格的清洗和过滤。重点优化数据多样性和质量平衡，为社区提供可直接用于训练高性能视觉 - 语言模型的基础数据资源。
+- **领域归类**: [多模态, 数据集, VLM]
+---
+
+### 6. Securing the AI Agent: A Unified Framework for Multi-Layer Agent Red Teaming (保护 AI 智能体：多层智能体红队测试统一框架)
+- **社区热度**: `👍 8 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.02471)
+- **研究任务**: AI 智能体安全 (红队测试)
+- **核心亮点**: 建立了一套统一框架，支持对 AI 智能体进行模型、工具、环境多层面的安全测试。
+- **深度解析**: 针对 Agent 自主交互带来的新安全风险，突破了仅测试模型输出的局限。框架涵盖了对工具调用权限、环境交互逻辑的多层漏洞扫描，系统化评估智能体在复杂工作流中的安全性。
+- **领域归类**: [AI 安全, 智能体, 红队测试]
+---
+
+### 7. Interpretation-Oriented Cloud Removal via Observation-Anchored Residual Flow with Geo-Contextual Alignment (面向解释性的去云：基于观测锚定残差流与地理上下文对齐)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.01420)
+- **研究任务**: 遥感图像去云
+- **核心亮点**: 在去除云层的同时，确保地表特征不失真，满足后续地理分析的解释性需求。
+- **深度解析**: 采用观测锚定的残差流网络去除云遮挡。引入地理上下文对齐机制，约束生成内容符合实际地物分布，避免去云后产生伪影，保证图像可用于科学的地理信息解释。
+- **领域归类**: [计算机视觉, 遥感, 图像 restoration]
+---
+
+### 8. MultAttnAttrib: Training-Free Multimodal Attribution in Long Document Question Answering (MultAttnAttrib：长文档问答中无需训练的多模态归因)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.00052)
+- **研究任务**: 长文档多模态问答 (归因)
+- **核心亮点**: 无需额外训练，利用注意力机制直接定位长文档中答案来源的多模态片段。
+- **深度解析**: 针对长文档 QA 难以追溯答案来源的问题，通过分析模型内部的注意力权重分布。直接映射答案 token 到输入文档的特定文本或图像区域，实现高效、无需训练的可解释性归因。
+- **领域归类**: [NLP, 多模态, 可解释性]
+---
+
+### 9. AGE: Adaptive-masking for Graph Embedding in Graph Retrieval-Augmented Generation (AGE：图检索增强生成中图嵌入的自适应掩码)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.31959)
+- **研究任务**: 图检索增强生成 (Graph RAG)
+- **核心亮点**: 通过自适应掩码策略优化图嵌入表示，提升检索阶段的相关性匹配精度。
+- **深度解析**: 针对 Graph RAG 中节点 embedding 表达不够精准的问题，提出自适应掩码方法。在嵌入学习过程中动态调整节点信息的掩码比例，使生成的向量更适配检索任务，提高召回质量。
+- **领域归类**: [图神经网络, RAG, 检索]
+---
+
+### 10. AnyBokeh: Physics-Guided Any-to-Any Bokeh Editing with Optical Fingerprint Transfer (AnyBokeh：基于光学指纹迁移的物理引导任意散景编辑)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.31959)
+- **研究任务**: 图像编辑 (散景效果)
+- **核心亮点**: 基于物理光学原理，实现任意图像间逼真的散景效果合成与移除。
+- **深度解析**: 通过提取和迁移镜头的“光学指纹”，模拟真实物理光路产生的散景。支持在不同图像内容间任意转换散景效果，解决了传统方法效果虚假或条件受限的问题。
+- **领域归类**: [计算机视觉, 图像编辑, 生成模型]
+---
+
+### 11. Generated Contents Enrichment (生成内容增强)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2405.03650)
+- **研究任务**: 解决大模型生成内容信息量不足、细节缺失的问题。
+- **核心亮点**: 提出了一种无需微调的即插即用方案，利用检索外部知识来充实模型生成内容，提升信息密度。
+- **深度解析**: 推理阶段先生成初稿，基于初稿检索相关文档，再将检索结果作为补充上下文喂回模型进行修正或扩充。重点解决生成内容细节空洞的问题，直接能用，不用训模型。
+- **领域归类**: [大语言模型，检索增强生成 (RAG)，文本生成]
+---
+</details>
+
+<details>
+<summary><b>🚀 GitHub 今日热门项目 (点击展开)</b></summary>
+
+### [alirezarezvani /claude-skills](https://github.com/alirezarezvani/claude-skills)
+- **今日趋势**: 总 Star: 21,022 | Forks: 2,829 | 今日新增: 611
+- **项目简介**: 为 Claude Code、Codex、Cursor 等编程 Agent 提供 337+ 种技能、插件及自定义命令的集合库。
+- **核心价值**: 面向开发者及企业用户，通过预置工程、营销、合规等多领域技能，解决了 AI Agent 初始化配置繁琐及通用能力不足的痛点，大幅扩展了编码助手的应用边界。
+- **AI 相关性**: 是 (基于 Claude 等大模型 Agent 的技能扩展)
+
+---
+
+### [mvanhorn /last30days-skill](https://github.com/mvanhorn/last30days-skill)
+- **今日趋势**: 总 Star: 49,602 | Forks: 4,128 | 今日新增: 511
+- **项目简介**: 一款 AI Agent 技能，可跨 Reddit、X、YouTube 等多平台研究话题并生成 grounded 总结。
+- **核心价值**: 面向研究人员及内容创作者，解决了信息碎片化及跨平台调研耗时的问题，利用 AI 聚合多源数据并提供可信摘要，提升信息获取效率。
+- **AI 相关性**: 是 (AI Agent 研究与总结合成)
+
+---
+
+### [bradautomates /claude-video](https://github.com/bradautomates/claude-video)
+- **今日趋势**: 总 Star: 4,012 | Forks: 582 | 今日新增: 539
+- **项目简介**: 赋予 Claude 观看视频的能力，通过下载、提取帧、转录后将内容交给模型处理。
+- **核心价值**: 面向需要分析视频内容的用户，解决了文本型 LLM 无法直接理解视频数据的痛点，实现了多模态信息的无缝转换与分析。
+- **AI 相关性**: 是 (Claude 多模态视频处理)
+
+---
+
+### [TauricResearch /TradingAgents](https://github.com/TauricResearch/TradingAgents)
+- **今日趋势**: 总 Star: 91,334 | Forks: 17,655 | 今日新增: 321
+- **项目简介**: 一个基于多 Agent 大模型框架的金融交易系统的实现。
+- **核心价值**: 面向量化交易员及金融开发者，解决了单一模型在复杂交易决策中局限性大的问题，通过多 Agent 协作模拟市场动态，自动化交易策略研发。
+- **AI 相关性**: 是 (Multi-Agents LLM 金融框架)
+
+---
+
+### [cheahjs /free-llm-api-resources](https://github.com/cheahjs/free-llm-api-resources)
+- **今日趋势**: 总 Star: 25,770 | Forks: 2,666 | 今日新增: 422
+- **项目简介**: 整理了可通过 API 访问的免费 LLM 推理资源列表。
+- **核心价值**: 面向学生及独立开发者，降低了使用大模型技术的门槛和成本，解决了付费 API 昂贵导致的实验受阻痛点，促进 AI 技术普及。
+- **AI 相关性**: 是 (LLM 推理资源列表)
+
+---
+
+### [karpathy /nanoGPT](https://github.com/karpathy/nanoGPT)
+- **今日趋势**: 总 Star: 60,834 | Forks: 10,464 | 今日新增: 88
+- **项目简介**: 一个用于训练和微调中等规模 GPT 模型的最简单、最快的仓库。
+- **核心价值**: 面向 AI 学习者及研究人员，解决了 GPT 训练代码复杂难懂的痛点，提供了极简的教育级代码实现，便于理解 Transformer 核心原理。
+- **AI 相关性**: 是 (GPT 训练与微调)
+
+---
+
+### [hesreallyhim /awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code)
+- **今日趋势**: 总 Star: 48,692 | Forks: 4,255 | 今日新增: 562
+- **项目简介**: 精选的 Claude Code 代理资源集合，包含技能、工具及插件 showcase。
+- **核心价值**: 面向 Claude 生态开发者，解决了优质资源分散难以查找的痛点，提供了一站式的高质量工具索引，加速开发工作流构建。
+- **AI 相关性**: 是 (Claude Code 生态资源)
+
+---
+
+### [Z4nzu /hackingtool](https://github.com/Z4nzu/hackingtool)
+- **今日趋势**: 总 Star: 78,053 | Forks: 8,864 | 今日新增: 54
+- **项目简介**: 为黑客提供的一体化 hacking 工具集合。
+- **核心价值**: 面向网络安全从业者及爱好者，解决了安全测试工具分散、切换成本高的问题，整合了多种攻击与测试脚本，提升渗透测试效率。
+- **AI 相关性**: 否 (传统网络安全工具集合)
+
+---
+
+### [google-antigravity /antigravity-sdk-python](https://github.com/google-antigravity/antigravity-sdk-python)
+- **今日趋势**: 总 Star: 2,264 | Forks: 816 | 今日新增: 32
+- **项目简介**: 用于构建利用 Google Antigravity 全能力的 AI Agent 的 Python 库。
+- **核心价值**: 面向 Python 开发者，旨在简化 AI Agent 的构建流程，提供了与特定后端（名称疑似致敬 Python 彩蛋或新项目）交互的标准化接口。
+- **AI 相关性**: 是 (描述明确为构建 AI Agents)
+
+---
+
+### [anthropics /financial-services](https://github.com/anthropics/financial-services)
+- **今日趋势**: 总 Star: 33,165 | Forks: 4,848 | 今日新增: 104
+- **项目简介**: Anthropic 官方关于金融服务的仓库（暂无具体描述）。
+- **核心价值**: 面向金融行业客户，推测旨在提供 AI 在金融服务领域的合规指南或应用案例，解决行业落地 AI 时的信任与规范痛点。
+- **AI 相关性**: 是 (Anthropic 为 AI 公司，推测为 AI 金融应用)
+
+---
+
+### [ComposioHQ /awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)
+- **今日趋势**: 总 Star: 66,980 | Forks: 7,483 | 今日新增: 104
+- **项目简介**:  curated 列表，包含优秀的 Claude Skills、资源及自定义工作流工具。
+- **核心价值**: 面向希望增强 Claude 能力的用户，解决了技能发现难及工作流定制复杂的问题，提供了经过验证的工具链以优化 AI 交互体验。
+- **AI 相关性**: 是 (Claude AI 工作流定制)
+
+---
+
+### [microsoft /qlib](https://github.com/microsoft/qlib)
+- **今日趋势**: 总 Star: 45,811 | Forks: 7,296 | 今日新增: 127
+- **项目简介**: 微软推出的 AI 导向量化投资平台，支持多种 ML 建模范式。
+- **核心价值**: 面向量化研究员，解决了传统量化研发流程繁琐的问题，通过 AI 技术赋能从 idea 探索到生产实现的全流程，支持自动化 R&D。
+- **AI 相关性**: 是 (AI 导向量化投资平台)
+
+---
+
+### [EbookFoundation /free-programming-books](https://github.com/EbookFoundation/free-programming-books)
+- **今日趋势**: 总 Star: 391,360 | Forks: 66,484 | 今日新增: 72
+- **项目简介**: 免费提供各类编程书籍的资源集合。
+- **核心价值**: 面向全球编程学习者，解决了技术教育资源昂贵及获取渠道分散的痛点，促进了知识的自由传播与平等获取。
+- **AI 相关性**: 否 (通用编程教育资源)
+
+---
+</details></script>
+        <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
+    </body>
+    </html>
+    
