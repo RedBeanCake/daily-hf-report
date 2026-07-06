@@ -1,0 +1,127 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AI 技术周报 - 2026-W28</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <style>
+            .markdown-body { box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 30px; }
+            details { background: #f6f8fa; padding: 15px; border-radius: 8px; border: 1px solid #d0d7de; margin-bottom: 20px; }
+            summary { cursor: pointer; color: #0969da; font-weight: bold; font-size: 1.1em; }
+        </style>
+    </head>
+    <body class="markdown-body">
+        <a href='../index.html'>← 返回索引</a>
+        <h1>AI 技术周报 - 2026-W28</h1>
+        <div id="content"></div>
+        <script type="text/markdown" id="raw-md"><details>
+<summary><b>🤗 Hugging Face 每周论文 (点击展开)</b></summary>
+
+### 1. The Mirage of Optimizing Training Policies: Monotonic Inference Policies as the Real Objective for LLM Reinforcement Learning (大模型强化学习中的训练策略优化误区：单调推理策略才是真目标)
+- **社区热度**: `👍 100 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.29526)
+- **研究任务**: LLM 强化学习策略优化
+- **核心亮点**: 指出传统训练策略优化存在误区，主张将单调性作为推理阶段的实际优化目标。
+- **深度解析**: 传统 RL 方法往往过度优化训练损失而忽视推理表现。本文证明在推理阶段约束策略更新的单调性，比单纯优化训练策略更能提升泛化能力。方案涉及在推理时动态调整策略分布，确保性能指标单调递增，避免过拟合训练环境。
+- **领域归类**: [LLM, Reinforcement Learning]
+---
+
+### 2. Embodied.cpp: A Portable Inference Runtime of Embodied AI Models on Heterogeneous Robots (Embodied.cpp：面向异构机器人的具身 AI 模型便携式推理运行时)
+- **社区热度**: `👍 34 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.02501)
+- **研究任务**: 具身 AI 模型部署与运行时
+- **核心亮点**: 提供一套 C++ 运行时，实现具身模型在不同机器人硬件上的便携式运行。
+- **深度解析**: 针对具身 AI 部署碎片化问题，构建统一中间表示或优化后端。屏蔽底层硬件差异，实现模型“一次编译，多处运行”，降低在不同机器人平台上部署模型的开发和维护成本。
+- **领域归类**: [Embodied AI, System/Deployment]
+---
+
+### 3. VLA-Corrector: Lightweight Detect-and-Correct Inference for Adaptive Action Horizon (VLA-Corrector：自适应动作视野的轻量级检测 - 修正推理)
+- **社区热度**: `👍 22 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.01804)
+- **研究任务**: VLA 模型推理优化
+- **核心亮点**: 不用重训大模型，外挂轻量模块检测并修正动作，自适应调整动作视野。
+- **深度解析**: 针对 VLA 模型动作预测误差，设计轻量级检测器在线识别错误动作。发现异常后立即修正，并动态调整动作预测的时间 horizon（视野），在不改变主模型权重的情况下提升控制鲁棒性。
+- **领域归类**: [Embodied AI, VLA]
+---
+
+### 4. OrbitQuant: Data-Agnostic Quantization for Image and Video Diffusion Transformers (OrbitQuant：面向图像视频 Diffusion Transformer 的数据无关量化)
+- **社区热度**: `👍 19 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.02461)
+- **研究任务**: 扩散模型量化压缩
+- **核心亮点**: 不需要校准数据，直接对 DiT 模型进行量化。
+- **深度解析**: 针对 DiT 结构特点，设计数据无关的量化方案。利用权重统计特性或合成数据分布替代真实校准集，解决视频生成模型量化难、依赖特定数据集的问题，显著降低显存占用且保持生成质量。
+- **领域归类**: [Diffusion Model, Quantization]
+---
+
+### 5. DataComp-VLM: Improved Open Datasets for Vision-Language Models (DataComp-VLM：改进的视觉 - 语言模型开放数据集)
+- **社区热度**: `👍 11 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.28551)
+- **研究任务**: VLM 训练数据集构建
+- **核心亮点**: 基于 DataComp 框架，专门为 VLM 训练清洗和构建的高质量开放数据集。
+- **深度解析**: 延续 DataComp 思路，针对图文对数据进行更严格的过滤、去重和质量评分。旨在提供比现有 LAION 等更干净、多样性更好的数据，解决 VLM 预训练数据噪声大问题，提升模型基座能力。
+- **领域归类**: [Dataset, VLM]
+---
+
+### 6. Securing the AI Agent: A Unified Framework for Multi-Layer Agent Red Teaming (保护 AI 智能体：多层智能体红队测试统一框架)
+- **社区热度**: `👍 8 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.31227)
+- **研究任务**: AI 智能体安全测试
+- **核心亮点**: 搞了一套统一框架，对智能体进行多层级的红队测试。
+- **深度解析**: 针对 Agent 容易受提示词注入、工具滥用等攻击的问题，从提示层、规划层、工具层等多个层面设计测试用例。提供标准化流程，帮助开发者系统性发现安全漏洞，而非单点测试。
+- **领域归类**: [AI Safety, Agent]
+---
+
+### 7. Interpretation-Oriented Cloud Removal via Observation-Anchored Residual Flow with Geo-Contextual Alignment (面向解译的云端去除：基于观测锚定残差流与地理上下文对齐)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.02471)
+- **研究任务**: 遥感图像去云 restoration
+- **核心亮点**: 去云的同时保证地理特征不失真，方便后续解译分析。
+- **深度解析**: 传统去云容易破坏地物特征。本文引入地理上下文对齐约束，利用残差流锚定观测信息，确保去除云层后底层地理信息准确，服务于专业遥感分析而非仅视觉美观。
+- **领域归类**: [Computer Vision, Remote Sensing]
+---
+
+### 8. MultAttnAttrib: Training-Free Multimodal Attribution in Long Document Question Answering (MultAttnAttrib：长文档问答中无需训练的多模态归因)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.01420)
+- **研究任务**: 长文档 RAG 归因
+- **核心亮点**: 不用训练，直接利用注意力机制实现多模态长文档的答案归因。
+- **深度解析**: 解决长文档 QA 找不到答案出处的问题。通过分析 Multi-modal Attention 权重，直接定位答案对应的文本段落或图片区域，无需额外微调模型即可实现高可信度的来源追溯。
+- **领域归类**: [RAG, Multimodal]
+---
+
+### 9. AGE: Adaptive-masking for Graph Embedding in Graph Retrieval-Augmented Generation (AGE：图检索增强生成中图嵌入的自适应掩码)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.31959)
+- **研究任务**: Graph RAG 嵌入优化
+- **核心亮点**: 用自适应掩码技术优化图嵌入，提升检索效果。
+- **深度解析**: 针对 Graph RAG 中节点嵌入质量不高的问题，在训练嵌入时动态调整掩码策略。让嵌入表示更聚焦于对检索任务关键的结构信息，抑制噪声节点影响，提升召回率和生成准确性。
+- **领域归类**: [Graph Learning, RAG]
+---
+
+### 10. AnyBokeh: Physics-Guided Any-to-Any Bokeh Editing with Optical Fingerprint Transfer (AnyBokeh：基于光学指纹迁移的物理引导任意博克编辑)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.29559)
+- **研究任务**: 图像编辑/计算摄影
+- **核心亮点**: 基于物理光学特性，实现任意相机间的博克效果迁移编辑。
+- **深度解析**: 不止是神经风格迁移，而是提取镜头的光学指纹（物理参数）。引导模型生成符合物理规律的散景效果，实现不同设备间的效果互通，比纯深度学习方法更真实可控。
+- **领域归类**: [Computer Vision, Image Editing]
+---
+
+### 11. Generated Contents Enrichment (生成内容增强)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2405.03650)
+- **研究任务**: 提升大模型合成数据（Synthetic Data）的质量与可用性，用于下游任务训练。
+- **核心亮点**: 提出一种后处理增强框架，通过给初始生成内容补充逻辑链或背景信息，显著提高了合成数据训练下游模型的效果。
+- **深度解析**: 针对直接生成的数据往往信息密度低、缺乏推理步骤的问题，该方法在生成后引入一个“增强模块”。该模块不重新生成，而是对已有内容进行扩充（如添加 reasoning steps、验证事实、增加多样性变体）。实验显示，使用增强后的数据微调模型，比直接用原始生成数据在多个基准任务上效果更好，且成本低于重新采集真实数据。
+- **领域归类**: [数据增强，大模型训练，合成数据]
+---
+</details>
+
+</script>
+        <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
+    </body>
+    </html>
+    
