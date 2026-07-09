@@ -1,0 +1,176 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>前沿科研情报 - 2026-07-10</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <style>
+            .markdown-body { box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 30px; }
+            details { background: #f6f8fa; padding: 15px; border-radius: 8px; border: 1px solid #d0d7de; margin-bottom: 20px; }
+            summary { cursor: pointer; color: #0969da; font-weight: bold; font-size: 1.1em; }
+        </style>
+    </head>
+    <body class="markdown-body">
+        <a href='../index.html'>← 返回索引</a>
+        <h1>前沿科研情报 - 2026-07-10</h1>
+        <div id="content"></div>
+        <script type="text/markdown" id="raw-md"><details>
+<summary><b>🤗 Hugging Face 今日论文 (点击展开)</b></summary>
+
+### 1. Accurate, Interdisciplinary and Transparent Structure-property Understanding with Deep Native Structural Reasoning (基于深度原生结构推理的准确、跨学科且透明的结构 - 性质理解)
+- **社区热度**: `👍 69 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.07708)
+- **研究任务**: 材料科学与化学领域的结构 - 性质预测。
+- **核心亮点**: 提出一种深度原生结构推理方法，在保持预测准确性的同时实现模型透明化。
+- **深度解析**: 传统方法多用黑盒 embedding，这篇工作改为直接建模原子或分子间的结构关系。通过显式的结构推理路径，让模型不仅能预测性质，还能解释结构如何影响性质，方便跨学科专家验证。
+- **领域归类**: [AI for Science, 可解释性, 图神经网络]
+---
+
+### 2. Dual Latent Memory in Vision-Language-Action Models for Robotic Manipulation (机器人操作中视觉 - 语言 - 行动模型的双潜在记忆机制)
+- **社区热度**: `👍 44 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.07608)
+- **研究任务**: 复杂场景下的机器人机械臂操作。
+- **核心亮点**: 在 VLA 模型中引入双潜在记忆模块，显著提升长序列任务的处理能力。
+- **深度解析**: 针对现有 VLA 模型上下文窗口有限的问题，设计了两种潜在记忆（可能是短期交互记忆与长期任务记忆）。这让机器人在执行多步骤操作时，能更好地记住之前的状态和目标，减少遗忘导致的错误。
+- **领域归类**: [具身智能, 机器人学, 模型架构]
+---
+
+### 3. Scaling Mixture-of-Experts Video Pretraining for Embodied Intelligence (面向具身智能的混合专家视频预训练扩展)
+- **社区热度**: `👍 37 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.07675)
+- **研究任务**: 利用视频数据预训练具身智能模型。
+- **核心亮点**: 将 MoE 架构应用于视频预训练，解决了计算资源与数据规模扩展的矛盾。
+- **深度解析**: 视频数据量大，稠密模型训练成本高。这篇工作采用混合专家（MoE）策略，激活部分参数处理视频帧，在不显著增加推理成本的前提下，扩大了预训练数据的规模和模型容量，提升了对物理世界的理解。
+- **领域归类**: [具身智能, 视频理解, 模型扩展]
+---
+
+### 4. Infinite Worlds with Versatile Interactions (具有多样交互的无限世界)
+- **社区热度**: `👍 20 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.07534)
+- **研究任务**: 仿真环境生成与代理训练。
+- **核心亮点**: 生成具有无限可能性和多样交互机制的仿真世界，用于强化学习训练。
+- **深度解析**: 解决了固定仿真环境导致代理过拟合的问题。通过程序化生成或生成式模型，构建动态变化的环境和交互规则，迫使智能体学习泛化能力更强的策略，而非死记硬背特定场景。
+- **领域归类**: [世界模型, 仿真环境, 强化学习]
+---
+
+### 5. RoboDojo: A Unified Sim-and-Real Benchmark for Comprehensive Evaluation of Generalist Robot Manipulation Policies (RoboDojo：通用机器人操作策略的统一仿真 - 现实基准)
+- **社区热度**: `👍 6 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.04434)
+- **研究任务**: 机器人通用操作策略的评估。
+- **核心亮点**: 建立了一套统一的标准，同时涵盖仿真和真机环境，用于评估通用机器人策略。
+- **深度解析**: 目前机器人评估标准分散，仿真与现实差距大。该基准提供了一致的任务定义和评估指标，支持直接在仿真测试后迁移到真机验证，方便横向对比不同算法的实际泛化性能。
+- **领域归类**: [机器人学, 基准测试, 仿真迁移]
+---
+
+### 6. WildCity: A Real-World City-Scale Testbed for Rendering, Simulation, and Spatial Intelligence (WildCity：面向渲染、仿真与空间智能的真实城市尺度测试床)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.06838)
+- **研究任务**: 城市级空间智能与自动驾驶仿真。
+- **核心亮点**: 构建了真实城市尺度的高保真测试床，支持复杂空间智能任务验证。
+- **深度解析**: 针对现有仿真场景过小或过于简化的问题，利用真实地理数据构建大规模城市环境。支持高精度渲染和物理仿真，适合测试导航、避障等需要大范围空间理解的任务。
+- **领域归类**: [仿真环境, 自动驾驶, 空间智能]
+---
+
+### 7. Automating the Design of Embodied Agent Architectures (具身代理架构设计的自动化)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.30111)
+- **研究任务**: 具身智能体的模型架构搜索。
+- **核心亮点**: 实现了具身代理架构的自动化设计，减少人工试错成本。
+- **深度解析**: 借鉴神经架构搜索（NAS）思路，针对具身任务特性自动搜索最优的网络结构和模块组合。避免了人工设计架构的局限性，能更快找到适合特定机器人硬件和任务的高效模型。
+- **领域归类**: [AutoML, 具身智能, 架构搜索]
+---
+
+### 8. Single-Rollout Asynchronous Optimization for Agentic Reinforcement Learning (代理强化学习的单次 rollout 异步优化)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.07508)
+- **研究任务**: 强化学习算法优化，针对 Agent 训练。
+- **核心亮点**: 提出单次 rollout 异步优化方法，大幅降低训练时的样本消耗和等待时间。
+- **深度解析**: 传统 RL 需要同步收集大量数据才能更新。该方法允许异步更新，且仅需单次轨迹 rollout 即可进行优化步骤，提高了训练效率，特别适合耗时较长的真实环境交互任务。
+- **领域归类**: [强化学习, 算法优化, 智能体]
+---
+
+### 9. Sparse Delta Memory: Scaling the State of Linear RNNs through Sparsity (稀疏 Delta 记忆：通过稀疏性扩展线性 RNN 的状态)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.07386)
+- **研究任务**: 线性 RNN 模型架构改进。
+- **核心亮点**: 利用稀疏 Delta 记忆机制，突破了线性 RNN 的状态容量限制。
+- **深度解析**: 线性 RNN 推理快但长上下文记忆能力弱。这篇工作在状态更新中引入稀疏性，只记录变化的关键信息（Delta），从而在不增加计算复杂度的情况下，显著扩展了模型能有效记忆的长度。
+- **领域归类**: [模型架构, 效率优化, 序列模型]
+---
+
+### 10. AgentLens: Production-Assessed Trajectory Reviews for Coding Agent Evaluation (AgentLens：基于生产评估轨迹的代码代理评审)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.06624)
+- **研究任务**: 代码生成智能体的效果评估。
+- **核心亮点**: 引入生产环境级的轨迹评审机制，替代传统的做题式评估。
+- **深度解析**: 现有代码评估多基于 LeetCode 等题库，无法反映实际工程能力。该工作通过审查 Agent 在实际开发轨迹中的表现（如调试、重构、多文件协作），更真实地衡量代码 Agent 的可用性和健壮性。
+- **领域归类**: [代码生成, 模型评估, 智能体]
+---
+
+### 11. Teaching LLMs a Low-Resource Language: Enhancing Code Completion in Pharo (教大模型学低资源语言：增强 Pharo 代码补全)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.04939)
+- **研究任务**: 低资源编程语言的代码补全
+- **核心亮点**: 通过构建专用数据集和微调策略，解决了大模型在 Pharo 语言上因数据稀缺导致的补全效果差问题。
+- **深度解析**: 针对 Pharo 社区小、公开语料少的问题，论文提出了一套数据增强方案，可能结合了语法结构适配和继续预训练。重点在于如何让通用代码模型理解 Pharo 的动态类型特性，实验显示该方法显著提升了补全准确率，为小众语言适配大模型提供了可行路径。
+- **领域归类**: [Code LLM, Low-resource Learning]
+---
+### 12. Imagined Rollouts are Kinematic, Not Dynamic: A Diagnosis of Long-Horizon World-Model Failure (想象 rollout 是运动学的而非动力学的：长 horizon 世界模型失败诊断)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.05966)
+- **研究任务**: 世界模型长序列预测失效分析
+- **核心亮点**: 发现现有世界模型在长程推演中只拟合了运动学约束，缺乏动力学物理规律，导致累积误差大。
+- **深度解析**: 论文通过诊断实验指出，模型在进行长 horizon 想象 rollout 时，虽然能预测物体位置变化（运动学），但无法正确预测力与运动的因果关系（动力学）。这意味着单纯依赖视觉序列预测不足以支撑复杂决策，后续研究需引入物理动态约束或混合建模来纠正长程偏差。
+- **领域归类**: [World Model, Reinforcement Learning, Robotics]
+---
+### 13. Wake up for Touch! Mask-isolated Tactile Alignment Learning in MLLMs (唤醒触觉！多模态大模型中的掩码隔离触觉对齐学习)
+- **社区热度**: `👍 0 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.00302)
+- **研究任务**: 多模态大模型触觉信号对齐
+- **核心亮点**: 提出掩码隔离学习机制，有效解决了 MLLM 中触觉信号噪声大、难以与文本视觉对齐的问题。
+- **深度解析**: 在 MLLM 架构中引入触觉编码器，利用 Mask 机制屏蔽无关触觉噪声，强制模型关注关键触觉特征并与语言描述对齐。该方法让大模型能更好地理解物理接触信息，提升了机器人在操作任务中对触觉信号的响应能力，是多模态感知向触觉领域扩展的尝试。
+- **领域归类**: [Multimodal LLM, Tactile Learning, Robotics]
+---
+</details>
+
+<details>
+<summary><b>🚀 GitHub 今日热门项目 (点击展开)</b></summary>
+
+### [unclecode /crawl4ai](https://github.com/unclecode/crawl4ai)
+- **今日趋势**: Stars: 71,702 | Forks: 7,371 | 今日新增：195
+- **项目简介**: 开源的 LLM 友好型网络爬虫与抓取工具，专为大模型数据消费设计。（AI 相关：是）
+- **核心价值**: 解决了传统爬虫获取的 HTML 数据杂乱、难以直接被大模型理解的问题。它将网页内容清洗为结构化的 Markdown 格式，显著降低了 AI 应用构建时的数据预处理成本，是 RAG 系统和 Agent 获取实时网络知识的理想基础设施。
+---
+### [sherlock-project /sherlock](https://github.com/sherlock-project/sherlock)
+- **今日趋势**: Stars: 86,273 | Forks: 10,093 | 今日新增：54
+- **项目简介**: 跨社交网络的用户名账号追踪与枚举工具。（AI 相关：否）
+- **核心价值**: 解决了 OSINT（开源情报）调查中手动逐个平台搜索用户名效率低下的痛点。通过自动化脚本同时查询数百个社交网站，帮助安全研究人员或调查员快速确认某个用户名在不同平台的注册情况，属于传统自动化脚本工具。
+---
+### [roboflow /supervision](https://github.com/roboflow/supervision)
+- **今日趋势**: Stars: 47,529 | Forks: 4,270 | 今日新增：209
+- **项目简介**: 可复用的计算机视觉工具库，简化 CV 模型推理后的数据处理。（AI 相关：是）
+- **核心价值**: 解决了计算机视觉项目中数据处理流程碎片化的痛点。它提供了一套统一的 API 来处理检测、跟踪、数据集转换等任务，让开发者无需重复造轮子，能更专注于模型训练与应用逻辑，是 CV 领域的重要基础设施。
+---
+### [tirth8205 /code-review-graph](https://github.com/tirth8205/code-review-graph)
+- **今日趋势**: Stars: 19,353 | Forks: 2,070 | 今日新增：28
+- **项目简介**: 面向 MCP 和 CLI 的本地优先代码智能图谱，优化 AI 编程工具的上下文。（AI 相关：是）
+- **核心价值**: 解决了 AI 编程助手在处理大型代码仓库时上下文窗口不足且成本高昂的痛点。通过构建持久的代码库映射图谱，让 AI 工具仅读取相关代码片段，显著减少 Token 消耗并提高代码审查与大型仓库工作流的准确性。
+---
+### [bytedance /deer-flow](https://github.com/bytedance/deer-flow)
+- **今日趋势**: Stars: 76,617 | Forks: 10,402 | 今日新增：148
+- **项目简介**: 字节开源的长周期 SuperAgent 编排框架，支持研究、编码与创作任务。（AI 相关：是）
+- **核心价值**: 解决了单一 Agent 无法处理耗时较长、步骤复杂任务的痛点。通过沙箱环境、记忆机制、工具调用及多子代理协作，它能够自主规划并执行分钟级甚至小时级的复杂工作流，是 Agent 自动化领域的高级 harness。
+---
+### [stanfordnlp /dspy](https://github.com/stanfordnlp/dspy)
+- **今日趋势**: Stars: 35,993 | Forks: 3,079 | 今日新增：60
+- **项目简介**: 斯坦福推出的语言模型编程框架，主张用编程而非提示词来优化模型。（AI 相关：是）
+- **核心价值**: 解决了 Prompt Engineering 难以系统化优化且不稳定的痛点。DSPy 将 LM 调用模块化，允许开发者通过编译器和优化器自动调整 Prompt 和权重，使大模型应用开发更像传统软件工程，具备可测试性和可迭代性。
+---
+</details></script>
+        <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
+    </body>
+    </html>
+    
