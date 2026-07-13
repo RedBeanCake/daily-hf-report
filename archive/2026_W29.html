@@ -1,0 +1,156 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AI 技术周报 - 2026-W29</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <style>
+            .markdown-body { box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 30px; }
+            details { background: #f6f8fa; padding: 15px; border-radius: 8px; border: 1px solid #d0d7de; margin-bottom: 20px; }
+            summary { cursor: pointer; color: #0969da; font-weight: bold; font-size: 1.1em; }
+        </style>
+    </head>
+    <body class="markdown-body">
+        <a href='../index.html'>← 返回索引</a>
+        <h1>AI 技术周报 - 2026-W29</h1>
+        <div id="content"></div>
+        <script type="text/markdown" id="raw-md"><details>
+<summary><b>🤗 Hugging Face 每周论文 (点击展开)</b></summary>
+
+### 1. Long-Horizon-Terminal-Bench: Testing the Limits of Agents on Long-Horizon Terminal Tasks with Dense Reward-Based Grading (长 horizon 终端基准：基于密集奖励评分测试智能体在长程终端任务上的极限)
+- **社区热度**: `👍 41 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.08964)
+- **研究任务**: 智能体（Agent）长程任务评估
+- **核心亮点**: 提出了一个针对长程终端任务的基准，改用密集奖励评分代替传统的稀疏成功信号。
+- **深度解析**: 现有 Agent 基准多为短任务或仅看最终成败。这篇论文构建了一个长程任务测试集，核心改进在于评分机制：不再只判断任务是否完成，而是基于密集奖励（Dense Reward）对每一步操作进行 grading。这样能更细粒度地评估智能体在长序列决策中的能力衰减和错误定位。
+- **领域归类**: [Agent, Benchmark, RL]
+---
+
+### 2. Scalable Visual Pretraining for Language Intelligence (面向语言智能的可扩展视觉预训练)
+- **社区热度**: `👍 39 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.09657)
+- **研究任务**: 多模态预训练
+- **核心亮点**: 证明了大规模视觉预训练能直接提升模型的语言推理 intelligence。
+- **深度解析**: 传统观点认为视觉数据主要提升视觉任务。这篇工作探索了视觉预训练对纯语言能力的溢出效应。通过可扩展的预训练策略，将视觉特征对齐到语言空间，发现随着视觉数据规模增加，模型在纯语言推理任务上的表现也随之提升，强调了多模态数据对语言智能的促进作用。
+- **领域归类**: [Multimodal, Pretraining, LLM]
+---
+
+### 3. Video Generation Models are General-Purpose Vision Learners (视频生成模型是通用视觉学习者)
+- **社区热度**: `👍 34 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.09024)
+- **研究任务**: 视觉表示学习
+- **核心亮点**: 视频生成模型的权重可以直接迁移作为通用视觉编码器，效果优异。
+- **深度解析**: 目前视频生成模型（如 Sora 类）主要用于生成。这篇论文发现，这些模型学到的时空表示具有很强的通用性。直接取其骨干网络用于分类、分割等判别式任务，无需大量微调即可达到 SOTA 水平。这意味着视频生成模型可以作为强大的通用视觉底座。
+- **领域归类**: [Video, Representation Learning, Computer Vision]
+---
+
+### 4. Trust Region Policy Distillation (信任域策略蒸馏)
+- **社区热度**: `👍 17 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.04751)
+- **研究任务**: 强化学习策略蒸馏
+- **核心亮点**: 在策略蒸馏中引入信任域约束，解决了蒸馏过程中的稳定性问题。
+- **深度解析**: 策略蒸馏常面临学生模型崩溃或性能下降的问题。这篇论文借鉴 TRPO/PPO 的思路，在蒸馏损失函数中加入信任域（Trust Region）约束，限制学生策略与教师策略的更新步长。这种方法防止了分布偏移过大，显著提升了蒸馏过程的稳定性和最终策略性能。
+- **领域归类**: [RL, Distillation, Optimization]
+---
+
+### 5. KronQ: LLM Quantization via Kronecker-Factored Hessian (KronQ：基于 Kronecker 分解海森矩阵的 LLM 量化)
+- **社区热度**: `👍 12 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.07964)
+- **研究任务**: 大模型量化
+- **核心亮点**: 利用 Kronecker 分解近似海森矩阵，实现了更低误差的权重量化。
+- **深度解析**: 针对 LLM 量化中的权重敏感性问题，传统方法计算海森矩阵逆代价太高。这篇论文提出 KronQ 方法，使用 Kronecker 因子分解来高效近似海森矩阵。这使得二阶优化信息能用于指导量化参数选择，在低比特下保留了更多模型精度，计算开销可控。
+- **领域归类**: [LLM, Quantization, Efficiency]
+---
+
+### 6. From RGB Generation to Dense Field Readout: Pixel-Space Dense Prediction with Text-to-Image Models (从 RGB 生成到密集场读取：基于文本到图像模型的像素级密集预测)
+- **社区热度**: `👍 9 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.06553)
+- **研究任务**: 密集预测（深度/法线估计）
+- **核心亮点**: 改造文本生成图像模型，使其能直接输出深度、法线等密集几何场。
+- **深度解析**: 文生图模型通常只输出 RGB 像素。这篇工作挖掘了生成模型内部的几何先验，通过修改输出头和在潜在空间进行监督，让 T2I 模型不仅能画图，还能同时读出像素级的深度图和表面法线图。无需额外深度模型，实现了生成与几何预测的统一。
+- **领域归类**: [Computer Vision, Generation, Dense Prediction]
+---
+
+### 7. PanoWorld: Real-World Panoramic Generation (PanoWorld：真实世界全景生成)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.09661)
+- **研究任务**: 全景图像生成
+- **核心亮点**: 专为真实世界场景设计的全景图像生成模型。
+- **深度解析**: 现有生成模型多为普通视角，全景生成易出现拼接痕迹或失真。PanoWorld 针对 360 度全景特性优化了架构和训练数据，重点解决极坐标变形和无缝连接问题。生成的全景图在真实感一致性上优于通用模型，适用于 VR 和场景重建。
+- **领域归类**: [Image Generation, 360 Panorama, Diffusion]
+---
+
+### 8. Self-Guided Test-Time Training for Long-Context LLMs (面向长上下文 LLM 的自引导测试时训练)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.09415)
+- **研究任务**: 长上下文推理优化
+- **核心亮点**: 在推理阶段通过自引导目标进行测试时训练，适应长上下文输入。
+- **深度解析**: 长上下文容易导致模型注意力分散或遗忘。这篇论文提出在 Test-Time 阶段，利用输入数据本身构造自监督信号（Self-Guided），对模型参数进行微调更新。这种方法让模型在不依赖外部标签的情况下，动态适应当前的长文本分布，提升长窗口下的理解能力。
+- **领域归类**: [LLM, Long-Context, Test-Time Training]
+---
+
+### 9. Towards Mechanistically Understanding Why Memorized Knowledge Fails to Generalize in Large Language Model Finetuning (机制理解：为何大模型微调中记忆的知识无法泛化)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.08393)
+- **研究任务**: 可解释性/微调机制
+- **核心亮点**: 从机制可解释性角度分析了微调中记忆与泛化失败的原因。
+- **深度解析**: 微调常出现模型记住了训练数据但在新数据上失效。这篇论文通过分析模型内部电路和注意力模式，发现记忆任务主要激活特定的存储神经元，而泛化需要更广泛的回路协同。研究指出了导致泛化失败的具体结构原因，为改进微调策略提供了理论依据。
+- **领域归类**: [Interpretability, Finetuning, LLM]
+---
+
+### 10. Flow-ERD: Agent-type Aware Flow Matching with Entropy-Regularized Distillation for Diverse Traffic Simulation (Flow-ERD：结合熵正则蒸馏的 Agent 类型感知流匹配用于多样化交通仿真)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.06957)
+- **研究任务**: 交通流仿真
+- **核心亮点**: 结合流匹配和熵正则，实现了多样化且符合 Agent 类型的交通行为仿真。
+- **深度解析**: 交通仿真难点在于行为多样性和类型差异。这篇论文使用 Flow Matching 生成轨迹，并引入熵正则化蒸馏（Entropy-Regularized Distillation）来保证生成行为的多样性，防止模式坍塌。同时模型感知不同类型的 Agent（如轿车、卡车），生成的交通流更符合真实世界分布。
+- **领域归类**: [Simulation, Flow Matching, Autonomous Driving]
+---
+
+> ⚠️ 注：提供的 arXiv 编号（2607）显示为 2026 年未来日期，以下内容基于标题信息进行的逻辑推断与总结，供参考。
+
+### 11. Phone Segmentation and Recognition through Phonological Activation Mapping (基于音韵激活映射的音素分割与识别)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.09020)
+- **研究任务**: 语音信号中的音素边界检测与识别。
+- **核心亮点**: 不用传统强制对齐，直接通过音韵特征在模型内部的激活模式变化来定边界。
+- **深度解析**: 传统方法依赖声学模型加强制对齐工具，流程繁琐。这篇工作把音韵学特征直接映射到神经网络的激活图上，通过监测激活状态的跳变点来确定音素分割位置。方案简化了 pipeline，在噪声环境下对边界的判定更鲁棒。
+- **领域归类**: [语音处理, 深度学习]
+---
+
+### 12. MedPMC: A Systematic Framework for Scaling High-Fidelity Medical Multimodal Data for Foundation Models (MedPMC：面向基座模型的高保真医疗多模态数据扩展框架)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.07673)
+- **研究任务**: 医疗领域多模态（文本 + 影像）数据的清洗与规模化构建。
+- **核心亮点**: 搞了一套标准化流水线，专门解决医疗数据脏、异构问题，用来训医疗基座模型。
+- **深度解析**: 医疗数据隐私高、格式乱，很难直接喂给大模型。这篇提出了 MedPMC 框架，统一处理电子病历文本和医学影像，包含去噪、对齐和质量过滤模块。目的是让数据质量达到训练通用医疗基座模型的标准，支持大规模扩展。
+- **领域归类**: [医疗 AI, 多模态, 数据工程]
+---
+
+### 13. A Sovereign, Open-Source Foundation Model for German and English (一款德语与英语的主权开源基座模型)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.09424)
+- **研究任务**: 双语大语言模型预训练。
+- **核心亮点**: 开源的双语模型，重点强调数据主权和欧洲本地化合规。
+- **深度解析**: 针对欧洲对数据隐私和主权的要求，这篇工作训练了一个德语和英语双语的基座模型。重点在于语料筛选符合当地法规，减少对美国大模型的依赖。架构上可能基于主流开源模型优化，主要贡献在语料构建和合规性评估。
+- **领域归类**: [大语言模型, NLP]
+---
+
+### 14. VaseMuseum: Digital Intelligent Museum for Ancient Greek Pottery (VaseMuseum：古希腊陶器数字智能博物馆)
+- **社区热度**: `👍 0 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.06374)
+- **研究任务**: 文物数字化展示与智能识别。
+- **核心亮点**: 做了个系统，能自动识别古希腊陶器纹样并提供智能讲解。
+- **深度解析**: 结合计算机视觉和知识图谱，系统能自动提取陶器图像中的纹样特征，匹配年代和风格信息。主要用于博物馆的数字化展示，让观众能通过交互获取专业背景知识，降低了文物解读的门槛。
+- **领域归类**: [计算机视觉, 数字人文]
+---
+</details>
+
+</script>
+        <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
+    </body>
+    </html>
+    
