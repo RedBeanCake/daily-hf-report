@@ -20,205 +20,169 @@
         <script type="text/markdown" id="raw-md"><details>
 <summary><b>🤗 Hugging Face 今日论文 (点击展开)</b></summary>
 
-### 1. Long-Horizon-Terminal-Bench: Testing the Limits of Agents on Long-Horizon Terminal Tasks with Dense Reward-Based Grading (长周期终端任务基准：基于密集奖励评分的 Agent 极限测试)
-- **社区热度**: `👍 41 Upvotes`
-- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.08964)
-- **研究任务**: Agent 长周期任务评估
-- **核心亮点**: 提出了一个使用密集奖励信号而非二元成功/失败评分的 Agent 基准测试。
-- **深度解析**: 针对终端任务构建了一套长周期测试集，传统评估只看最终成败，这篇工作引入了密集奖励 grading，能更细粒度地区分 Agent 在长序列任务中的表现差异，便于定位中间步骤的错误。
-- **领域归类**: `[Agent, Evaluation]`
+### 1. Weak-to-Strong Generalization via Direct On-Policy Distillation (基于直接在线策略蒸馏的弱到强泛化)
+- **社区热度**: `👍 87 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.05394)
+- **研究任务**: 模型对齐与泛化能力提升
+- **核心亮点**: 提出一种用弱模型策略直接蒸馏强模型的方法，逆转传统强到弱蒸馏范式。
+- **深度解析**: 传统蒸馏多用强模型教弱模型，该工作反其道而行，利用弱模型在在线策略数据上的分布来正则化强模型。通过在 on-policy 数据上进行蒸馏，减少强模型在微调过程中的分布偏移，旨在解决强模型过拟合问题，提升泛化边界。
+- **领域归类**: [强化学习, 模型蒸馏, 对齐]
 ---
 
-### 2. Scalable Visual Pretraining for Language Intelligence (面向语言智能的可扩展视觉预训练)
-- **社区热度**: `👍 39 Upvotes`
-- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.09657)
-- **研究任务**: 多模态预训练
-- **核心亮点**: 验证了大规模视觉预训练能直接提升模型的语言智能任务表现。
-- **深度解析**: 不在语言数据上死磕，而是通过扩大视觉预训练数据的规模，将视觉中学到的结构和推理能力迁移到语言任务上，证明了跨模态 scaling 的有效性。
-- **领域归类**: `[Multimodal, LLM]`
+### 2. ABot-N1: Toward a General Visual Language Navigation Foundation Model (ABot-N1：迈向通用视觉语言导航基座模型)
+- **社区热度**: `👍 76 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.10383)
+- **研究任务**: 机器人视觉语言导航 (VLN)
+- **核心亮点**: 构建了一个通用的视觉语言导航基座模型，统一处理多种导航任务。
+- **深度解析**: 将视觉语言模型 (VLM) 与导航策略网络深度融合，不再针对特定场景单独训练。模型支持多模态输入理解，能够泛化到未见过的室内环境，旨在解决现有 VLN 模型场景适应性差、泛化能力弱的问题。
+- **领域归类**: [机器人学, 视觉语言模型, 导航]
 ---
 
-### 3. Video Generation Models are General-Purpose Vision Learners (视频生成模型是通用视觉学习者)
-- **社区热度**: `👍 34 Upvotes`
-- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.09024)
-- **研究任务**: 视觉表示学习
-- **核心亮点**: 发现视频生成模型无需重度微调即可作为有效的通用视觉编码器。
-- **深度解析**: 把训练好的视频生成模型拿来直接做下游视觉任务，发现其内部特征包含了鲁棒的时空信息，省去了专门训练视觉编码器的成本，实现了生成模型的多用途复用。
-- **领域归类**: `[Video, Representation Learning]`
+### 3. ABot-AgentOS: A General Robotic Agent OS with Lifelong Multi-modal Memory (ABot-AgentOS：具备终身多模态记忆的通用机器人 Agent 操作系统)
+- **社区热度**: `👍 66 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.10350)
+- **研究任务**: 机器人操作系统与记忆管理
+- **核心亮点**: 设计了一个支持终身多模态记忆的机器人 Agent 操作系统架构。
+- **深度解析**: 在 OS 层面抽象了记忆管理模块，支持视觉、语言、动作等多模态数据的长期存储与检索。系统允许机器人在长期任务中累积经验，并通过记忆模块调用历史知识，解决单一任务模型无法持续学习的问题。
+- **领域归类**: [机器人系统, 人工智能操作系统, 记忆机制]
 ---
 
-### 4. Trust Region Policy Distillation (信任域策略蒸馏)
-- **社区热度**: `👍 17 Upvotes`
-- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.04751)
-- **研究任务**: 强化学习策略蒸馏
-- **核心亮点**: 在策略蒸馏过程中引入信任域约束以防止性能崩塌。
-- **深度解析**: 针对蒸馏过程中学生策略偏离教师策略过大的问题，限制了更新步长，确保蒸馏过程中的稳定性，特别适合强化学习场景下的策略迁移。
-- **领域归类**: `[RL, Distillation]`
+### 4. 4D Human-Scene Reconstruction from Low-Overlap Captures (基于低重叠度采集的 4D 人机场景重建)
+- **社区热度**: `👍 40 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.09125)
+- **研究任务**: 3D/4D 视觉重建
+- **核心亮点**: 实现了在相机视角重叠度较低情况下的 4D 人与场景重建。
+- **深度解析**: 针对稀疏视角采集导致的几何信息缺失问题，引入时序一致性约束和人体先验知识。通过优化算法补全帧间缺失的几何细节，生成包含时间维度的动态场景模型，降低了对多视角同步采集设备的依赖。
+- **领域归类**: [计算机视觉, 3D 重建, 动态场景]
 ---
 
-### 5. KronQ: LLM Quantization via Kronecker-Factored Hessian (KronQ：基于克罗内克因子化海森矩阵的 LLM 量化)
+### 5. LightMem-Ego: Your AI Memory for Everyday Life (LightMem-Ego：你的日常生活 AI 记忆)
+- **社区热度**: `👍 32 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.11487)
+- **研究任务**: 个人助理与记忆系统
+- **核心亮点**: 提出一种轻量级的、基于第一人称视角的日常生活记忆系统。
+- **深度解析**: 专注于移动端或日常穿戴设备场景，优化了记忆存储和检索的计算开销。系统通过第一人称视频或音频流自动记录关键事件，支持自然语言查询，旨在让 AI 记忆能够低成本地融入日常生活辅助。
+- **领域归类**: [个人助理, 记忆系统, 第一人称视觉]
+---
+
+### 6. AdvancedMathBench: A Benchmark Suite for Advanced Mathematical Proof Generation and Verification (AdvancedMathBench：高级数学证明生成与验证评测集)
+- **社区热度**: `👍 18 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.11849)
+- **研究任务**: 数学推理评测基准
+- **核心亮点**: 构建了一套涵盖高级数学证明生成及自动验证的评测 suite。
+- **深度解析**: 不仅评估模型生成证明的能力，还包含独立的验证模块来检查证明步骤的逻辑正确性。数据集覆盖高等数学领域，旨在解决现有基准仅评估最终答案、忽略推理过程严谨性的问题。
+- **领域归类**: [评测基准, 数学推理, 形式化验证]
+---
+
+### 7. Metacognition in LLMs: Foundations, Progress, and Opportunities (LLM 中的元认知：基础、进展与机会)
 - **社区热度**: `👍 12 Upvotes`
-- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.07964)
-- **研究任务**: 大模型量化
-- **核心亮点**: 利用克罗内克因子化近似海森矩阵来实现高精度的低比特量化。
-- **深度解析**: 量化通常会损失精度，这篇工作用二阶信息（海森矩阵）来识别敏感权重，但为了计算效率用了克罗内克因子分解近似，在保持低显存占用的同时减少了量化误差。
-- **领域归类**: `[Efficiency, Quantization]`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.11881)
+- **研究任务**: 大模型理论综述
+- **核心亮点**: 系统梳理了大语言模型元认知能力的研究现状与未来方向。
+- **深度解析**: 定义了 LLM 元认知的范畴，包括自我评估、置信度校准及推理过程监控。文章分类总结了现有实现方法，分析了当前局限性，并为如何让模型具备“思考自己的思考”能力提供了路线图。
+- **领域归类**: [综述, 大模型理论, 元认知]
 ---
 
-### 6. From RGB Generation to Dense Field Readout: Pixel-Space Dense Prediction with Text-to-Image Models (从 RGB 生成到密集场读取：基于文生图模型的像素空间密集预测)
-- **社区热度**: `👍 9 Upvotes`
-- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.06553)
-- **研究任务**: 密集预测任务
-- **核心亮点**: 复用文生图模型进行深度、法线等像素级密集预测任务。
-- **深度解析**: 不训练专门的编码器，而是从扩散模型的生成过程中提取中间特征图，直接读取像素空间的密集信息，证明了生成模型内部蕴含了几何结构知识。
-- **领域归类**: `[Computer Vision, Generation]`
+### 8. EgoSteer: A Full-Stack System Towards Steerable Dexterous Manipulation from Egocentric Videos (EgoSteer：面向第一人称视频的可控灵巧操作全栈系统)
+- **社区热度**: `👍 8 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.09701)
+- **研究任务**: 机器人灵巧操作
+- **核心亮点**: 实现了一个从第一人称视频输入到灵巧手控制的全栈可控系统。
+- **深度解析**: 系统集成了视觉感知、姿态估计和动作控制模块，支持人工介入调整操作策略。通过第一人称视角理解操作意图，直接映射到灵巧手动作，解决了远程操作或模仿学习中控制精度不足的问题。
+- **领域归类**: [机器人学, 灵巧操作, 第一人称视觉]
 ---
 
-### 7. PanoWorld: Real-World Panoramic Generation (PanoWorld：真实世界全景生成)
+### 9. Proxy Exploration and Reusable Guidance: A Modular LLM Post-Training Paradigm via Proxy-Guided Update Signals (代理探索与可复用指导：一种基于代理引导更新信号的模块化 LLM 后训练范式)
 - **社区热度**: `👍 7 Upvotes`
-- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.09661)
-- **研究任务**: 全景图像生成
-- **核心亮点**: 实现了高保真度的真实世界 360 度全景图像生成。
-- **深度解析**: 解决了全景图生成中常见的投影失真和全局不一致问题，通过特定的生成架构优化，确保生成的全景图在拼接处无缝且符合真实世界物理规律。
-- **领域归类**: `[Image Generation, 360 Vision]`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.11505)
+- **研究任务**: 大模型后训练/强化学习
+- **核心亮点**: 提出一种模块化的后训练方法，利用代理信号指导模型更新。
+- **深度解析**: 将探索过程与策略更新解耦，引入代理模型生成引导信号。这种模块化设计使得探索策略可以复用，降低了后训练过程中的不稳定性和计算成本，旨在提高 RLHF 或类似过程的效率。
+- **领域归类**: [强化学习, 后训练, 模型优化]
 ---
 
-### 8. Self-Guided Test-Time Training for Long-Context LLMs (长上下文 LLM 的自引导测试时训练)
-- **社区热度**: `👍 7 Upvotes`
-- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.09415)
-- **研究任务**: 测试时训练 / 长上下文
-- **核心亮点**: 在推理阶段通过自引导机制自适应调整模型以应对长上下文。
-- **深度解析**: 针对长上下文导致的性能下降，在测试时利用输入数据本身对模型状态或参数进行微调，不需要额外标注，缓解了长序列下的遗忘或注意力分散问题。
-- **领域归类**: `[LLM, Inference]`
----
-
-### 9. Towards Mechanistically Understanding Why Memorized Knowledge Fails to Generalize in Large Language Model Finetuning (迈向机理理解：为何大模型微调中记忆知识无法泛化)
+### 10. NeuroCogMap Reveals Cognitive Organization of Large Language Models (NeuroCogMap 揭示大语言模型的认知组织)
 - **社区热度**: `👍 5 Upvotes`
-- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.08393)
-- **研究任务**: 可解释性 / 微调
-- **核心亮点**: 从机理层面分析了微调过程中记忆知识为何难以泛化到新数据。
-- **深度解析**: 使用可解释性工具追踪模型内部的知识存储路径，发现微调时模型倾向于死记硬背特定样本而非学习通用规律，指出了导致过拟合的具体神经元激活模式。
-- **领域归类**: `[Interpretability, LLM Training]`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.00397)
+- **研究任务**: 模型可解释性与神经科学交叉
+- **核心亮点**: 通过神经认知图谱映射，揭示了 LLM 内部的认知功能组织结构。
+- **深度解析**: 借鉴脑科学方法，分析模型内部神经元激活模式与特定认知任务（如语言、逻辑、记忆）的对应关系。构建了认知功能图谱，旨在为理解大模型内部工作机制提供可解释的生物学类比视角。
+- **领域归类**: [可解释性, 神经科学, 大模型分析]
 ---
 
-### 10. Flow-ERD: Agent-type Aware Flow Matching with Entropy-Regularized Distillation for Diverse Traffic Simulation (Flow-ERD：基于熵正则蒸馏的代理类型感知流匹配用于多样交通仿真)
-- **社区热度**: `👍 4 Upvotes`
-- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.06957)
-- **研究任务**: 交通仿真 / 流匹配
-- **核心亮点**: 结合流匹配和熵正则化，实现了多样化的交通代理行为仿真。
-- **深度解析**: 在生成交通流时，不仅考虑匹配真实分布，还通过熵正则化鼓励生成结果的多样性，同时区分不同类型的代理（如轿车、卡车），使仿真场景更丰富真实。
-- **领域归类**: `[Simulation, Generative Models]`
+### 11. Motion4Motion: Motion Transfer Across Subjects at Inference (Motion4Motion：推理阶段跨主体运动迁移)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.11644)
+- **研究任务**: 视频生成中的运动迁移
+- **核心亮点**: 无需微调模型，直接在推理阶段将源主体的动作迁移到目标主体上。
+- **深度解析**: 传统运动迁移通常需要针对新主体微调或重新训练。该方法通过在推理时解耦运动特征与外观特征，利用注意力机制替换潜在空间中的运动向量，实现跨主体的动作复用。重点解决了不同体型或结构主体间的动作适配问题。
+- **领域归类**: [视频生成], [运动迁移], [推理优化]
 ---
 
-### 11. Phone Segmentation and Recognition through Phonological Activation Mapping (通过音系激活映射进行音素分割与识别)
+### 12. CtrlVTON: Controllable Virtual Try-On via Visual-Instance-Prompt Segmentation (CtrlVTON：基于视觉实例提示分割的可控虚拟试穿)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.09362)
+- **研究任务**: 虚拟试穿（Virtual Try-On）
+- **核心亮点**: 引入视觉实例提示词进行分割，显著提升复杂姿态下的衣物贴合度。
+- **深度解析**: 针对现有试穿模型在遮挡或复杂姿态下生成失真问题，该方案将视觉实例分割作为条件输入。通过提示词引导分割网络精确识别衣物与人体区域，再结合生成模型进行纹理融合。相比传统掩码方法，对边缘和褶皱的处理更精细。
+- **领域归类**: [计算机视觉], [图像编辑], [电子商务]
+---
+
+### 13. Latent-Identity Tuning in Text-to-Image Personalization Models (文本生成图像个性化模型中的潜在身份微调)
 - **社区热度**: `👍 2 Upvotes`
-- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.09020)
-- **研究任务**: 语音音素分割与识别
-- **核心亮点**: 把音系学规则映射到模型激活值上，辅助切分音素边界。
-- **深度解析**: 传统方法主要靠声学特征硬切，这篇引入语言学知识，通过监控网络内部的音系激活状态来判断边界。目的是解决连读和模糊发音导致的分割不准问题，让模型懂点语言学规则。
-- **领域归类**: [语音识别，计算语言学]
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.11885)
+- **研究任务**: 文生图个性化（Personalization）
+- **核心亮点**: 仅调整潜在空间的身份向量，而非全量微调模型权重，兼顾效率与保真度。
+- **深度解析**: 现有个性化方法（如 DreamBooth）通常需要更新大量模型参数。该工作提出在 Latent Space 中定位并微调代表身份信息的特定向量。这种方法减少了计算开销，同时避免了过度拟合背景或风格，使主体身份在不同 prompt 下保持一致。
+- **领域归类**: [AIGC], [模型微调], [身份保持]
 ---
 
-### 12. MedPMC: A Systematic Framework for Scaling High-Fidelity Medical Multimodal Data for Foundation Models (MedPMC：面向基础模型的高保真医疗多模态数据扩展系统框架)
+### 14. LATO.2: Factorized 3D Mesh Generation with Vertex and Topology Flow (LATO.2：基于顶点与拓扑流的因子化 3D 网格生成)
 - **社区热度**: `👍 2 Upvotes`
-- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.07673)
-- **研究任务**: 医疗多模态数据构建
-- **核心亮点**: 弄了一套标准化流程，专门清洗和扩展高质量的医疗图文数据。
-- **深度解析**: 针对医疗数据脏、隐私敏感、难对齐的问题，设计了从采集到清洗再到对齐的流水线。重点在于规模化管理，能让医疗基础模型吃到更多靠谱的多模态训练料。
-- **领域归类**: [医疗 AI，数据工程]
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.10623)
+- **研究任务**: 3D 网格生成
+- **核心亮点**: 将网格生成分解为顶点坐标流和拓扑结构流，提高生成网格的几何合理性。
+- **深度解析**: 直接生成 3D 网格常面临拓扑错误或非流形结构问题。该模型采用因子化策略，分别处理顶点位置（几何形状）和连接关系（拓扑结构）。通过双流架构协同优化，确保生成的网格既符合几何特征又具备合法的拓扑连接，便于后续渲染或物理仿真。
+- **领域归类**: [3D 生成], [计算机图形学], [几何深度学习]
 ---
 
-### 13. A Sovereign, Open-Source Foundation Model for German and English (面向德语和英语的主权开源基础模型)
+### 15. Xiaomi-Robotics-U0: Unified Embodied Synthesis with World Foundation Model (Xiaomi-Robotics-U0：基于世界基础模型的统一具身合成)
 - **社区热度**: `👍 1 Upvotes`
-- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.09424)
-- **研究任务**: 双语大语言模型预训练
-- **核心亮点**: 发了个德英双语的开源基座模型，主打数据主权和本地化。
-- **深度解析**: 针对德语区高质量语料相对少的问题，专门构建语料进行训练。强调数据合规和区域化能力，目的是让德语区用户不用完全依赖美国大厂模型，有自己的开源基座可用。
-- **领域归类**: [大语言模型，开源社区]
----
-
-### 14. VaseMuseum: Digital Intelligent Museum for Ancient Greek Pottery (VaseMuseum：古希腊陶器数字智能博物馆)
-- **社区热度**: `👍 0 Upvotes`
-- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.06374)
-- **研究任务**: 文化遗产数字化与展示
-- **核心亮点**: 用 AI 做了个古希腊陶器的数字博物馆，支持智能交互和查询。
-- **深度解析**: 结合图像识别和知识图谱，把陶器进行数字化重建和分类。不只是存图片，还能提供智能检索和展示功能，算是计算机视觉在数字人文领域的一个具体落地应用。
-- **领域归类**: [计算机视觉，数字人文]
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.11643)
+- **研究任务**: 具身智能 / 机器人控制
+- **核心亮点**: 利用世界基础模型统一处理感知与动作合成，增强机器人对物理环境的理解。
+- **深度解析**: 针对机器人任务中感知与决策割裂的问题，该模型构建了一个世界基础模型（World Foundation Model）。通过预测环境状态变化来指导动作生成，实现了从视觉输入到 motor 控制的端到端合成。旨在提升机器人在未见场景下的泛化能力和操作准确性。
+- **领域归类**: [机器人学], [具身 AI], [世界模型]
 ---
 </details>
 
 <details>
 <summary><b>🚀 GitHub 今日热门项目 (点击展开)</b></summary>
 
-### [HKUDS /Vibe-Trading](https://github.com/HKUDS/Vibe-Trading)
-- **今日趋势**: ⭐ 1,148 (今日) | Total: 21,451 | Forks: 3,716
-- **项目简介**: [AI/LLM 相关] 一个基于 AI 代理的个人交易助手，旨在自动化执行交易策略。
-- **核心价值**: 解决了个人投资者在复杂市场中难以实时决策的痛点，通过 AI Agent 降低量化交易门槛，提供智能化的投资辅助。
+### [needle](https://github.com/cactus-compute/needle)
+- **今日趋势**: ⭐ 今日 +113 | 总星 3,080 | Forks 229
+- **项目简介**: 一个仅 2600 万参数的函数调用模型，专为在资源极受限的边缘设备上本地运行设计。
+- **核心价值**: 解决了大型语言模型无法在手机、IoT 设备等边缘端高效执行函数调用任务的痛点。**【AI/大模型相关】**，其技术核心在于极致的模型压缩与量化，使得轻量级 AI 交互成为可能，目标人群为边缘计算开发者及移动端 AI 应用构建者。
 ---
-### [Shubhamsaboo /awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps)
-- **今日趋势**: ⭐ 1,006 (今日) | Total: 119,362 | Forks: 17,729
-- **项目简介**: [AI/LLM 相关] 收录了 100+ 个可实际运行、克隆和定制的 AI Agent 及 RAG 应用清单。
-- **核心价值**: 解决了开发者寻找高质量 LLM 应用开源参考的痛点，提供了从克隆到部署的完整路径，加速 AI 应用落地。
+### [verifiers](https://github.com/PrimeIntellect-ai/verifiers)
+- **今日趋势**: ⭐ 今日 +15 | 总星 4,345 | Forks 591
+- **项目简介**: 一个用于构建强化学习（RL）环境及进行评估的开源库。
+- **核心价值**: 降低了 AI 代理训练与验证的技术门槛，为强化学习及大模型对齐（Alignment）提供了标准化的评估框架。**【AI/大模型相关】**，主要服务于 AI 研究人员及算法工程师，解决了 RL 环境搭建复杂、评估标准不统一的痛点。
 ---
-### [github /spec-kit](https://github.com/github/spec-kit)
-- **今日趋势**: ⭐ 508 (今日) | Total: 120,409 | Forks: 10,675
-- **项目简介**: [AI 辅助开发] GitHub 官方推出的规范驱动开发（Spec-Driven Development）工具包。
-- **核心价值**: 解决了开发过程中需求不明确导致返工的问题，通过标准化规范流程，结合 AI  coding 能力提升代码质量与开发效率。
+### [awesome-ai-apps](https://github.com/Arindam200/awesome-ai-apps)
+- **今日趋势**: ⭐ 今日 +18 | 总星 13,132 | Forks 1,694
+- **项目简介**: 汇集了展示 RAG、智能体、工作流等各类 AI 实际应用案例的项目清单。
+- **核心价值**: 解决了开发者寻找高质量 AI 应用参考案例难的问题，提供了丰富的落地实践灵感。**【AI/大模型相关】**，目标人群为希望快速上手 AI 应用开发的工程师，技术核心在于对现有 AI 生态项目的 curated 整理与分类。
 ---
-### [PrefectHQ /prefect](https://github.com/PrefectHQ/prefect)
-- **今日趋势**: ⭐ 298 (今日) | Total: 23,309 | Forks: 2,404
-- **项目简介**: [非 AI 核心] 用于构建弹性数据流水线的 Python 工作流编排框架。
-- **核心价值**: 解决了数据工程中任务调度复杂、错误处理困难的痛点，为包括 AI 训练在内的数据 pipeline 提供可观测性和 resilience。
+### [free-programming-books](https://github.com/EbookFoundation/free-programming-books)
+- **今日趋势**: ⭐ 今日 +145 | 总星 392,087 | Forks 66,526
+- **项目简介**: 一个收录了大量免费可编程书籍资源的仓库，涵盖多种编程语言与技术领域。
+- **核心价值**: 打破了编程学习资源的付费壁垒，为全球开发者提供了便捷、合法的知识获取渠道。**【非 AI 核心项目】**，属于教育资源类，目标人群为所有编程学习者，技术核心在于社区维护的资源索引与分类管理。
 ---
-### [FoundationAgents /OpenManus](https://github.com/FoundationAgents/OpenManus)
-- **今日趋势**: ⭐ 126 (今日) | Total: 57,350 | Forks: 9,969
-- **项目简介**: [AI/LLM 相关] 开源的自主 AI 代理框架，旨在提供类似 Manus 的高级别 agent 能力。
-- **核心价值**: 解决了高级自主 AI 代理技术封闭的问题， democratize 访问权，让开发者能在开放地面上构建和实验强力的 AI Agent。
----
-### [virattt /ai-hedge-fund](https://github.com/virattt/ai-hedge-fund)
-- **今日趋势**: ⭐ 364 (今日) | Total: 61,593 | Forks: 10,878
-- **项目简介**: [AI/LLM 相关] 模拟对冲基金团队的 AI 代理系统，用于金融分析与交易。
-- **核心价值**: 展示了多 AI 代理协作在金融领域的潜力，为研究者提供了 AI 驱动投资策略的实证框架和参考。
----
-### [smicallef /spiderfoot](https://github.com/smicallef/spiderfoot)
-- **今日趋势**: ⭐ 86 (今日) | Total: 19,556 | Forks: 3,199
-- **项目简介**: [非 AI 核心] 自动化 OSINT（开源情报）收集工具，用于威胁情报和攻击面映射。
-- **核心价值**: 解决了安全专业人员手动收集情报效率低下的痛点，自动化侦察流程，提升网络安全防御的主动性和覆盖面。
----
-### [TauricResearch /TradingAgents](https://github.com/TauricResearch/TradingAgents)
-- **今日趋势**: ⭐ 265 (今日) | Total: 92,790 | Forks: 17,932
-- **项目简介**: [AI/LLM 相关] 基于多代理 LLM 的金融交易框架，模拟不同角色的交易员。
-- **核心价值**: 解决了单一模型在金融决策中视角局限的问题，通过多 Agent 辩论与协作机制，增强交易决策的鲁棒性和多样性。
----
-### [p-e-w /heretic](https://github.com/p-e-w/heretic)
-- **今日趋势**: ⭐ 68 (今日) | Total: 26,206 | Forks: 2,845
-- **项目简介**: [AI/LLM 相关] 用于自动移除语言模型 censorship（审查/限制）的工具。
-- **核心价值**: 解决了模型对齐过度导致实用性受限的痛点，允许用户恢复对模型输出的完全控制，适用于特定研究或本地部署需求。
----
-### [3b1b /manim](https://github.com/3b1b/manim)
-- **今日趋势**: ⭐ 145 (今日) | Total: 88,467 | Forks: 7,379
-- **项目简介**: [非 AI 项目] 由 3Blue1Brown 开发的用于制作解释性数学视频的动画引擎。
-- **核心价值**: 解决了数学可视化制作难度高的问题，通过代码驱动动画，让教育者和创作者能高效生成高质量的数学演示内容。
----
-### [make-all /tuya-local](https://github.com/make-all/tuya-local)
-- **今日趋势**: ⭐ 8 (今日) | Total: 3,168 | Forks: 1,355
-- **项目简介**: [非 AI 项目] 为 Home Assistant 提供涂鸦（Tuya）设备的本地控制支持。
-- **核心价值**: 解决了智能家居设备依赖云端导致的隐私泄露和延迟痛点，实现本地化控制，提升 IoT 设备的响应速度和安全性。
----
-### [Vexa-ai /vexa](https://github.com/Vexa-ai/vexa)
-- **今日趋势**: ⭐ 72 (今日) | Total: 2,504 | Forks: 375
-- **项目简介**: [AI/LLM 相关] 开源会议转录 API，支持主流会议软件并提供 MCP 服务器供 AI 代理使用。
-- **核心价值**: 解决了会议数据难以被 AI 工作流利用的痛点，提供可自托管的实时转录，并通过 MCP 协议无缝连接 AI Agent 生态。
----
-### [practical-tutorials /project-based-learning](https://github.com/practical-tutorials/project-based-learning)
-- **今日趋势**: ⭐ 169 (今日) | Total: 273,147 | Forks: 35,235
-- **项目简介**: [非 AI 项目]  curated 的项目式编程学习教程列表。
-- **核心价值**: 解决了初学者理论与实践脱节的问题，通过结构化的项目路线图，帮助开发者通过实战掌握编程技能。
----
-### [public-apis /public-apis](https://github.com/public-apis/public-apis)
-- **今日趋势**: ⭐ 355 (今日) | Total: 449,643 | Forks: 49,407
-- **项目简介**: [非 AI 项目] 集体维护的免费公共 API 列表。
-- **核心价值**: 解决了开发者寻找可靠外部服务接口耗时的问题，提供了丰富的集成资源库，加速应用开发进程。
+### [markitdown](https://github.com/microsoft/markitdown)
+- **今日趋势**: ⭐ 今日 +495 | 总星 165,849 | Forks 11,867
+- **项目简介**: 微软推出的 Python 工具，用于将各类文件及办公文档高效转换为 Markdown 格式。
+- **核心价值**: 简化了非结构化数据到结构化文本的转换流程，极大便利了大模型训练数据清洗及 RAG 知识库构建。**【AI 基础设施相关】**，目标人群为数据工程师及 AI 开发者，解决了多格式文档解析难、不利于 LLM 处理的痛点。
 ---
 </details></script>
         <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
