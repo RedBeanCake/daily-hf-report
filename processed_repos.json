@@ -12,7 +12,7 @@
   "huggingface /skills": "2026-05-11",
   "open-webui /open-webui": "2026-07-01",
   "apache /airflow": "2026-04-09",
-  "microsoft /markitdown": "2026-06-04",
+  "microsoft /markitdown": "2026-07-14",
   "FloatingPragma /observer-patch-holography": "2026-04-10",
   "D4Vinci /Scrapling": "2026-06-30",
   "PrefectHQ /prefect": "2026-07-13",
@@ -66,7 +66,7 @@
   "Alishahryar1 /free-claude-code": "2026-07-03",
   "davila7 /claude-code-templates": "2026-07-10",
   "mvanhorn /last30days-skill": "2026-07-06",
-  "EbookFoundation /free-programming-books": "2026-07-06",
+  "EbookFoundation /free-programming-books": "2026-07-14",
   "huggingface /ml-intern": "2026-04-23",
   "crewAIInc /crewAI": "2026-06-18",
   "onyx-dot-app /onyx": "2026-06-11",
@@ -113,7 +113,7 @@
   "alexgreensh /token-optimizer": "2026-05-04",
   "ag2ai /ag2": "2026-05-04",
   "LearningCircuit /local-deep-research": "2026-05-04",
-  "Arindam200 /awesome-ai-apps": "2026-05-05",
+  "Arindam200 /awesome-ai-apps": "2026-07-14",
   "PriorLabs /TabPFN": "2026-05-05",
   "ccxt /ccxt": "2026-05-05",
   "bytedance /deer-flow": "2026-07-09",
@@ -338,5 +338,7 @@
   "3b1b /manim": "2026-07-13",
   "make-all /tuya-local": "2026-07-13",
   "Vexa-ai /vexa": "2026-07-13",
-  "practical-tutorials /project-based-learning": "2026-07-13"
+  "practical-tutorials /project-based-learning": "2026-07-13",
+  "cactus-compute /needle": "2026-07-14",
+  "PrimeIntellect-ai /verifiers": "2026-07-14"
 }
