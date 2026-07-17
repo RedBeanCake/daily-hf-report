@@ -1,0 +1,292 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>前沿科研情报 - 2026-07-17</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <style>
+            .markdown-body { box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 30px; }
+            details { background: #f6f8fa; padding: 15px; border-radius: 8px; border: 1px solid #d0d7de; margin-bottom: 20px; }
+            summary { cursor: pointer; color: #0969da; font-weight: bold; font-size: 1.1em; }
+        </style>
+    </head>
+    <body class="markdown-body">
+        <a href='../index.html'>← 返回索引</a>
+        <h1>前沿科研情报 - 2026-07-17</h1>
+        <div id="content"></div>
+        <script type="text/markdown" id="raw-md"><details>
+<summary><b>🤗 Hugging Face 今日论文 (点击展开)</b></summary>
+
+### 1. VideoChat3: Fully Open Video MLLM for Efficient and Generalist Video Understanding (VideoChat3：面向高效通用视频理解的全开放视频多模态大模型)
+- **社区热度**: `👍 104 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.14935)
+- **研究任务**: 视频多模态大模型（Video MLLM）
+- **核心亮点**: 在保持通用理解能力的同时，显著降低了计算开销并完全开源。
+- **深度解析**: 提出了一种轻量级的视觉编码器与语言模型对齐方案，通过动态 Token 压缩减少冗余视频帧信息。架构设计上优化了注意力机制，使得长视频推理显存占用更低，支持多种视频理解任务而不需特定微调。
+- **领域归类**: [Multimodal], [Video Understanding], [Open Source]
+---
+
+### 2. SEED: Self-Evolving On-Policy Distillation for Agentic Reinforcement Learning (SEED：面向代理强化学习的自演化在线策略蒸馏)
+- **社区热度**: `👍 61 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.14777)
+- **研究任务**: 代理强化学习（Agentic RL）
+- **核心亮点**: 利用自蒸馏机制让代理在在线策略学习中自我进化，减少对外部奖励信号的依赖。
+- **深度解析**: 设计了一个自演化框架，代理通过蒸馏自身历史策略中的高质量行为来更新当前策略。该方法降低了采样成本，解决了传统 RL 在复杂代理任务中奖励稀疏导致训练不稳定的问题。
+- **领域归类**: [Reinforcement Learning], [Agent], [Distillation]
+---
+
+### 3. SearchOS-V1: Towards Robust Open-Domain Information-Seeking Agent Collaboration (SearchOS-V1：迈向鲁棒的开放域信息寻求代理协作)
+- **社区热度**: `👍 46 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.15257)
+- **研究任务**: 信息搜索代理协作
+- **核心亮点**: 构建了一个多代理协作系统，提升了开放域搜索任务的鲁棒性和成功率。
+- **深度解析**: 引入了分工明确的代理角色（如规划者、检索者、验证者），通过共享上下文和错误恢复机制协调工作。系统能处理复杂查询，当单个代理失效时，其他代理可介入修正，避免任务中断。
+- **领域归类**: [Agent], [Information Retrieval], [Multi-Agent System]
+---
+
+### 4. BadWAM: When World-Action Models Dream Right but Act Wrong (BadWAM：当世界 - 动作模型预测正确但行动错误时)
+- **社区热度**: `👍 36 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.15207)
+- **研究任务**: 世界模型与动作控制分析
+- **核心亮点**: 揭示了世界模型预测准确但下游控制失效的现象及其成因。
+- **深度解析**: 分析了潜在空间表示与动作空间之间的对齐偏差。指出即使世界模型能准确预测未来状态，若潜在特征未包含控制所需的关键信息，策略网络仍无法生成正确动作，提出了改进表示学习的建议。
+- **领域归类**: [World Model], [Control Theory], [Analysis]
+---
+
+### 5. LongStraw: Long-Context RL Beyond 2M Tokens under a Fixed GPU Budget (LongStraw：固定 GPU 预算下超越 2M Token 的长上下文强化学习)
+- **社区热度**: `👍 33 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.14952)
+- **研究任务**: 长上下文强化学习
+- **核心亮点**: 在固定显存限制下，实现了超过 2M Token 上下文的 RL 训练。
+- **深度解析**: 结合了分块注意力机制与梯度检查点技术，优化了长序列训练时的内存管理。通过稀疏化奖励信号处理流程，使得在消费级或单卡高性能 GPU 上训练超长上下文策略成为可能。
+- **领域归类**: [Reinforcement Learning], [Long Context], [System Optimization]
+---
+
+### 6. KeyFrame-Compass: Towards Comprehensive Evaluation of Keyframe-Conditioned Video Generation (KeyFrame-Compass：面向关键帧条件视频生成的综合评估)
+- **社区热度**: `👍 30 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.14202)
+- **研究任务**: 视频生成评估
+- **核心亮点**: 提供了针对关键帧条件视频生成质量的标准化评估基准。
+- **深度解析**: 构建了一套包含一致性、流畅度和关键帧遵循度的多维指标。数据集涵盖不同运动幅度和场景，用于量化模型是否准确保留了输入关键帧的视觉特征及时间连贯性。
+- **领域归类**: [Evaluation], [Video Generation], [Benchmark]
+---
+
+### 7. MultiRef-Compass: Towards Comprehensive Evaluation of Multi-Reference-to-Audio-Video Generation (MultiRef-Compass：面向多参考音视生成的综合评估)
+- **社区热度**: `👍 28 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.14189)
+- **研究任务**: 音视生成评估
+- **核心亮点**: 专注于评估模型同时参考多个输入源生成音视频的能力。
+- **深度解析**: 设计了针对多参考源（如多张图像、多段音频）融合质量的测试集。指标重点考察生成内容与各参考源的相关性，以及音画同步效果，填补了该细分领域的评估空白。
+- **领域归类**: [Evaluation], [Audio-Video Generation], [Benchmark]
+---
+
+### 8. From Pixels to States: Rethinking Interactive World Models as Game Engines (从像素到状态：重新思考交互式世界模型作为游戏引擎)
+- **社区热度**: `👍 22 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.14076)
+- **研究任务**: 交互式世界模型
+- **核心亮点**: 主张将世界模型构建为类似游戏引擎的状态机，而非纯像素预测。
+- **深度解析**: 提出从像素输入中提取离散状态表示，利用游戏引擎的逻辑规则进行状态转移预测。这种方法比端到端像素预测更高效，且更容易进行规划和干预，适合交互式应用场景。
+- **领域归类**: [World Model], [Simulation], [Representation Learning]
+---
+
+### 9. Concurrent Image Understanding and Generation: Self-Correcting Coupled Markov Jump Processes (并发图像理解与生成：自校正耦合马尔可夫跳跃过程)
+- **社区热度**: `👍 21 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.13188)
+- **研究任务**: 图像理解与生成统一模型
+- **核心亮点**: 使用耦合马尔可夫过程实现理解与生成的并发处理及自校正。
+- **深度解析**: 将理解和生成建模为两个耦合的随机过程，允许模型在生成过程中根据理解反馈实时调整。通过自校正机制减少累积误差，实现了单一模型同时处理判别式和生成式任务。
+- **领域归类**: [Computer Vision], [Generative Model], [Unified Model]
+---
+
+### 10. UniVR: Thinking in Visual Space for Unified Visual Reasoning (UniVR：在视觉空间中思考以实现统一视觉推理)
+- **社区热度**: `👍 20 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.12800)
+- **研究任务**: 视觉推理
+- **核心亮点**: 直接在视觉嵌入空间进行推理，避免文本中间层的信息损耗。
+- **深度解析**: 摒弃了传统的“视觉转文本再推理”路径，设计了视觉空间内的推理算子。模型直接在图像特征上进行逻辑操作，提升了需要细粒度视觉感知的推理任务准确率。
+- **领域归类**: [Visual Reasoning], [Multimodal], [Representation Learning]
+---
+
+### 11. Spectral Rewiring for Exploration, Purification, and Model Merging (谱重连用于探索、净化与模型合并)
+- **社区热度**: `👍 18 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.03065)
+- **研究任务**: 模型合并与参数探索
+- **核心亮点**: 利用谱分析技术调整模型权重连接，实现无需微调的模型合并。
+- **深度解析**: 传统模型合并常因参数冲突导致性能下降。该文提出对权重矩阵进行谱分解，通过重连特征值显著的特征子空间来对齐不同模型的参数分布。该方法同时用于净化预训练权重中的噪声，并在多模型合并任务中减少了灾难性遗忘，无需额外训练数据。
+- **领域归类**: [Model Merging] [Optimization]
+---
+
+### 12. Demystifying On-Policy Distillation: Roles, Pathologies, and Regulations (揭秘在线策略蒸馏：角色、病理与调节)
+- **社区热度**: `👍 13 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.13399)
+- **研究任务**: 知识蒸馏
+- **核心亮点**: 系统分析了在线策略蒸馏失效的具体原因并提出正则化修复方案。
+- **深度解析**: 论文指出了在线策略蒸馏中常见的“模式坍塌”和“梯度消失”病理现象。作者通过理论推导界定了教师模型与学生策略的交互边界，并引入了动态调节因子来稳定训练过程。实验表明，修复后的蒸馏方法在强化学习策略迁移中收敛速度更快。
+- **领域归类**: [Distillation] [Reinforcement Learning]
+---
+
+### 13. Video = World + Event Stream (视频 = 世界模型 + 事件流)
+- **社区热度**: `👍 12 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.15038)
+- **研究任务**: 视频生成
+- **核心亮点**: 将视频生成解耦为静态世界建模与动态事件流生成两部分。
+- **深度解析**: 针对视频生成中背景一致性差的问题，该方法将场景背景视为“世界模型”，将物体运动视为“事件流”。两者分别建模后通过注意力机制融合。这种解耦显著提升了长视频生成中的背景稳定性，同时降低了计算开销。
+- **领域归类**: [Video Generation] [World Models]
+---
+
+### 14. RoboTTT: Context Scaling for Robot Policies (RoboTTT：机器人策略的上下文缩放)
+- **社区热度**: `👍 11 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.15275)
+- **研究任务**: 机器人控制
+- **核心亮点**: 将测试时训练（TTT）思想引入机器人策略，实现上下文自适应。
+- **深度解析**: 传统机器人策略泛化能力受限于训练环境。RoboTTT 允许策略在推理阶段根据当前上下文窗口动态更新内部状态。通过缩放上下文长度，模型能快速适应未见过的物体或地形，无需重新训练即可提升零样本泛化能力。
+- **领域归类**: [Robotics] [Test-Time Training]
+---
+
+### 15. WanSong v1.0 Technical Report (WanSong v1.0 技术报告)
+- **社区热度**: `👍 8 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.14749)
+- **研究任务**: 多模态大模型
+- **核心亮点**: 发布了 WanSong v1.0 模型的架构细节与训练数据配置。
+- **深度解析**: 报告详细描述了模型的双塔结构及跨模态对齐策略。重点介绍了其在长上下文视频理解上的优化，包括分块注意力机制和高质数据筛选流程。基准测试显示其在视频问答任务上达到了当前开源模型的主流水平。
+- **领域归类**: [Multimodal] [Technical Report]
+---
+
+### 16. MeanFlowNFT: Bringing Forward-Process RL to Average-Velocity Generators (MeanFlowNFT：将前向过程强化学习引入平均速度生成器)
+- **社区热度**: `👍 8 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.15273)
+- **研究任务**: 生成模型优化
+- **核心亮点**: 利用强化学习优化流匹配生成器的平均速度场。
+- **深度解析**: 针对流匹配模型采样步数多的问题，该方法将生成过程建模为前向强化学习问题。通过奖励函数约束平均速度场的平滑性，减少了采样所需的步数。在保证生成质量的前提下，推理速度相比传统 Flow Matching 有明显提升。
+- **领域归类**: [Generative Models] [Flow Matching]
+---
+
+### 17. VIABench: A Comprehensive Video Benchmark Collected from Blind Individuals for Visual Impairment Assistance (VIABench：面向视障辅助的盲人采集视频基准)
+- **社区热度**: `👍 6 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.14660)
+- **研究任务**: 基准测试与无障碍技术
+- **核心亮点**: 首个由视障人士亲自采集并标注的视频理解基准。
+- **深度解析**: 现有视频基准多基于健全人视角，无法反映视障群体需求。VIABench 收集了盲人在日常生活中的真实视频数据及对应的辅助需求标注。该基准用于评估模型在物体识别、场景描述及导航辅助任务上的实际可用性，填补了领域空白。
+- **领域归类**: [Benchmark] [Accessibility]
+---
+
+### 18. Partition, Prompt, Aggregate: Statistical Self-Consistency in Language Models (划分、提示、聚合：语言模型的统计自一致性)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.15277)
+- **研究任务**: 推理优化
+- **核心亮点**: 通过输入划分与结果聚合提升模型输出的统计一致性。
+- **深度解析**: 为解决大模型输出不稳定的问题，该方法将复杂输入划分为多个子片段，分别生成提示并独立推理，最后聚合结果。这种策略降低了单次推理的方差，在数学推理和代码生成任务上提高了答案的可靠性，无需额外训练。
+- **领域归类**: [Inference] [LLM]
+---
+
+### 19. DeepLoop: Depth Scaling for Looped Transformers (DeepLoop：循环 Transformer 的深度缩放)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.13491)
+- **研究任务**: 模型架构
+- **核心亮点**: 研究了循环 Transformer 中增加循环深度对性能的影响。
+- **深度解析**: 循环 Transformer 通过复用层参数减少显存占用。本文探讨了增加循环次数（深度）而非增加层数（宽度）的缩放规律。研究发现适当的深度缩放能在参数量不变的情况下提升模型表达能力，为轻量级模型设计提供了新方向。
+- **领域归类**: [Architecture] [Transformer]
+---
+
+### 20. Smarter and Cheaper at Once: Byte-Exact KV-Cache Grafting Turns a Frozen Small Model into a Verified-Knowledge Flywheel (字节级精确 KV 缓存嫁接：将冻结小模型变为验证知识飞轮)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.14431)
+- **研究任务**: 推理加速与知识复用
+- **核心亮点**: 通过精确匹配 KV 缓存，让小模型协助大模型推理以降低成本。
+- **深度解析**: 提出了一种 KV 缓存嫁接技术，能在字节级别精确匹配小模型与大模型的缓存状态。在推理时，直接复用小模型已计算的部分缓存，避免重复计算。这使得冻结的小模型能作为知识过滤器，在不微调的情况下加速大模型生成并降低显存占用。
+- **领域归类**: [Efficiency] [KV Cache]
+---
+
+### 21. AsySplat: Efficient Asymmetric 3D Gaussian Splatting for Long-Sequence Scene Modeling (高效非对称 3D 高斯溅射用于长序列场景建模)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.10995)
+- **研究任务**: 长视频序列的 3D 场景重建与新视角合成
+- **核心亮点**: 通过非对称高斯分布约束，显著降低长序列建模时的显存占用与计算开销。
+- **深度解析**: 传统 3DGS 在处理长序列场景时，高斯球数量会随帧数增加而膨胀，导致显存爆炸。该工作引入非对称机制，允许高斯球在不同空间轴向上采用不同的缩放策略，从而用更少的高斯球拟合复杂几何结构。方案重点优化了时序一致性，适合大范围场景漫游任务，在保证渲染质量的同时提升了训练与推理效率。
+- **领域归类**: [3D 视觉，神经渲染，计算机图形学]
+---
+
+### 22. GRASP: GRanularity-Aware Search Policy for Agentic RAG (代理式 RAG 的粒度感知搜索策略)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.10463)
+- **研究任务**: 检索增强生成（RAG）中的 Agent 检索规划
+- **核心亮点**: 让 Agent 根据推理阶段动态决定检索内容的粗细粒度，避免无效搜索。
+- **深度解析**: 现有 Agentic RAG 系统通常使用固定的检索策略，容易在需要宏观背景时搜到琐碎细节，或在需要证据时搜到泛泛内容。GRASP 设计了一个策略模块，实时判断当前推理步骤需要何种粒度的信息（如文档级、段落级或实体级）。通过动态调整搜索范围，减少了不必要的检索调用次数，提升了最终回答的准确率和系统响应速度。
+- **领域归类**: [大模型应用，RAG，智能体]
+---
+
+### 23. SUFLECA: Scaling Up Feature Learning for CAD-to-image Alignment (规模化特征学习用于 CAD 到图像对齐)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.15058)
+- **研究任务**: CAD 模型与自然图像的跨模态特征对齐
+- **核心亮点**: 通过扩大特征学习规模，缩小工程设计图与真实图像之间的领域差异。
+- **深度解析**: CAD 几何特征与自然图像特征存在较大分布差异，导致跨模态检索或生成效果不佳。该工作通过扩大特征提取器的容量及训练数据规模，增强了对几何结构和纹理信息的联合建模能力。方案重点优化了对齐损失函数，使得 CAD 模型能更准确地匹配对应的真实场景图像，支持以图搜 CAD 或设计稿验证等应用。
+- **领域归类**: [多模态学习，计算机视觉，工业设计]
+---
+</details>
+
+<details>
+<summary><b>🚀 GitHub 今日热门项目 (点击展开)</b></summary>
+
+### [code-review-graph](https://github.com/tirth8205/code-review-graph)
+- **今日趋势**: 今日 +57 Stars
+- **项目简介**: 一个本地优先的代码智能图谱工具，专为 MCP 和 CLI 设计，用于优化 AI 编程工具的上下文读取。
+- **核心价值**: 解决了大型代码库中 AI 工具上下文窗口受限及读取无关代码的痛点。通过构建持久的代码库映射，让 AI 仅关注关键内容，显著降低 Review 和大 repo 工作流中的上下文冗余，提升 AI  coding 效率与准确性。
+- **AI 相关性**: **是** (专为 AI 编程工具优化上下文)
+---
+### [turbovec](https://github.com/RyanCodrai/turbovec)
+- **今日趋势**: 今日 +280 Stars
+- **项目简介**: 基于 TurboQuant 构建的高性能向量索引库，采用 Rust 编写并提供 Python 绑定。
+- **核心价值**: 针对 AI 大模型 Retrieval (RAG) 场景中的向量检索性能瓶颈。利用 Rust 的高并发与内存安全特性，结合量化技术，为海量 Embedding 数据提供更快速、更低资源的索引解决方案，适合高性能 AI 应用部署。
+- **AI 相关性**: **是** (向量索引是 RAG 与大模型记忆的核心组件)
+---
+### [agent-toolkit-for-aws](https://github.com/aws/agent-toolkit-for-aws)
+- **今日趋势**: 今日 +39 Stars
+- **项目简介**: AWS 官方支持的 toolkit，包含 MCP 服务器、技能和插件，旨在帮助 AI  Agents 在 AWS 云上构建应用。
+- **核心价值**: 降低了 AI  Agents 调用 AWS 云服务的门槛与复杂度。通过标准化的 MCP 协议和预置技能，让开发者能更安全、便捷地让 AI 代理操作 AWS 资源，解决了 Agent 与云基础设施集成的碎片化问题。
+- **AI 相关性**: **是** (专为 AI Agents 设计的基础设施)
+---
+### [skills](https://github.com/android/skills)
+- **今日趋势**: 今日 +17 Stars
+- **项目简介**: Android 官方仓库（描述缺失），基于名称推测为 Android 平台上的 AI 技能或 Agent 能力框架。
+- **核心价值**: 鉴于当前移动端 AI 趋势，该项目 likely 旨在标准化或提供 Android 设备上 AI 模型调用、Agent 技能扩展的能力，解决移动端 AI 功能集成的统一性问题。（注：官方未提供描述，基于行业趋势推断）。
+- **AI 相关性**: **是** (基于名称及行业趋势推断为 AI 技能框架)
+---
+### [ai-engineering-from-scratch](https://github.com/rohitg00/ai-engineering-from-scratch)
+- **今日趋势**: 今日 +218 Stars
+- **项目简介**: 一个从零开始学习、构建并部署 AI 工程项目的教育型资源库。
+- **核心价值**: 解决了 AI 学习者理论与实践脱节的痛点。不仅提供理论知识，更强调“构建”与“交付”，帮助开发者掌握从模型选择到生产部署的全链路 AI 工程化能力，适合希望转型 AI 工程师的人群。
+- **AI 相关性**: **是** (AI 工程化教育与实战)
+---
+### [TheRock](https://github.com/ROCm/TheRock)
+- **今日趋势**: 今日 +6 Stars
+- **项目简介**: HIP 环境与 ROCm 套件，一个用于 HIP 和 ROCm 的轻量级开源构建系统。
+- **核心价值**: 简化了 AMD GPU 计算生态的开发环境配置。为需要在 AMD 硬件上运行高性能计算或 AI 训练的开发者提供统一的构建工具链，解决了 ROCm 环境依赖复杂、编译困难的痛点，是 AI 算力基础设施的重要补充。
+- **AI 相关性**: **间接相关** (AI 算力基础设施/ GPU 编译工具链)
+---
+### [HelloGitHub](https://github.com/521xueweihan/HelloGitHub)
+- **今日趋势**: 今日 +168 Stars
+- **项目简介**: 分享 GitHub 上有趣、入门级的开源项目，旨在降低开源参与门槛。
+- **核心价值**: 解决了开发者发现优质开源项目难、参与开源无从下手的痛点。通过定期 curated 列表，连接项目维护者与潜在贡献者，促进开源社区生态的活跃与成长，适合所有阶段的开发者。
+- **AI 相关性**: **否** (通用开源项目 curated 列表)
+---
+### [semantic-conventions-genai](https://github.com/open-telemetry/semantic-conventions-genai)
+- **今日趋势**: 今日 +7 Stars
+- **项目简介**: OpenTelemetry 下的生成式 AI 语义 convention 仓库（描述缺失），用于标准化 GenAI 可观测性数据。
+- **核心价值**: 解决了生成式 AI 应用缺乏统一监控与追踪标准的痛点。通过定义标准的语义规范，让开发者能跨平台、跨工具一致地追踪 LLM 调用、Token 消耗及延迟，是构建可靠 AI 生产系统的关键基础设施。（注：基于仓库名推断）。
+- **AI 相关性**: **是** (GenAI 可观测性标准)
+---
+### [ccxt](https://github.com/ccxt/ccxt)
+- **今日趋势**: 今日 +8 Stars
+- **项目简介**: 支持超过 100 个加密货币交易所的交易 API 库，涵盖多种编程语言。
+- **核心价值**: 解决了加密货币量化交易中交易所接口不统一的痛点。提供标准化的 API 抽象层，让开发者只需编写一次代码即可对接多家交易所，极大降低了量化交易 bots 的开发与维护成本。
+- **AI 相关性**: **否** (加密货币交易基础设施)
+---
+</details></script>
+        <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
+    </body>
+    </html>
+    
