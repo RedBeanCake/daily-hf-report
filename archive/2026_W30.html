@@ -1,0 +1,208 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AI 技术周报 - 2026-W30</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <style>
+            .markdown-body { box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 30px; }
+            details { background: #f6f8fa; padding: 15px; border-radius: 8px; border: 1px solid #d0d7de; margin-bottom: 20px; }
+            summary { cursor: pointer; color: #0969da; font-weight: bold; font-size: 1.1em; }
+        </style>
+    </head>
+    <body class="markdown-body">
+        <a href='../index.html'>← 返回索引</a>
+        <h1>AI 技术周报 - 2026-W30</h1>
+        <div id="content"></div>
+        <script type="text/markdown" id="raw-md"><details>
+<summary><b>🤗 Hugging Face 每周论文 (点击展开)</b></summary>
+
+### 1. RAGU: A Multi-Step GraphRAG Engine with a Compact Domain-Adapted LLM (RAGU：基于紧凑领域适配 LLM 的多步 GraphRAG 引擎)
+- **社区热度**: `👍 97 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.11683)
+- **研究任务**: 检索增强生成（RAG）、领域知识问答
+- **核心亮点**: 把图谱检索和多步推理结合，还用了一个小尺寸的领域模型来降低成本。
+- **深度解析**: 传统 GraphRAG 往往依赖大模型且推理步骤单一。这篇论文设计了一个多步检索引擎，先在知识图谱里找路径，再用一个经过领域适配的小模型（Compact LLM）生成答案。这样既保留了图谱的结构化优势，又通过小模型降低了推理开销，适合垂直领域部署。
+- **领域归类**: [NLP, RAG, 模型效率]
+---
+
+### 2. RESOURCE2SKILL: Distilling Executable Agent Skills from Human-Created Multimodal Resources (RESOURCE2SKILL：从人类多模态资源中蒸馏可执行 Agent 技能)
+- **社区热度**: `👍 85 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2606.29538)
+- **研究任务**: Agent 技能学习、多模态蒸馏
+- **核心亮点**: 能让 Agent 直接看懂人类的教程视频或文档，并转化成可执行的代码技能。
+- **深度解析**: 解决了 Agent 获取新技能成本高的问题。方法是从人类制作的多模态资源（如操作视频、图文教程）中提取关键步骤，蒸馏成 Agent 可执行的策略模型。不需要大量人工标注，利用现有资源就能让 Agent 学会新任务。
+- **领域归类**: [Agents, 多模态, 技能学习]
+---
+
+### 3. Loop the Loopies! (循环迭代优化方法)
+- **社区热度**: `👍 50 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.16051)
+- **研究任务**: 生成质量优化、迭代推理
+- **核心亮点**: 通过引入循环反馈机制，解决生成长文本或代码时的重复和错误累积问题。
+- **深度解析**: 针对模型生成过程中容易陷入死循环或错误传导的问题，设计了一种循环检查机制。模型在生成过程中会多次回溯当前结果，自我修正后再继续下一步。这种方法在不大幅改变模型结构的情况下，提升了长序列生成的稳定性。
+- **领域归类**: [LLM, 生成控制, 推理优化]
+---
+
+### 4. Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories (Xiaomi-Robotics-1：基于超 10 万小时真实轨迹 Scaling 视觉 - 语言 - 动作模型)
+- **社区热度**: `👍 49 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.15330)
+- **研究任务**: 机器人学习、VLA 模型
+- **核心亮点**: 用了 10 万小时真实机器人操作数据训练 VLA 模型，验证了数据规模对机器人能力的提升。
+- **深度解析**: 小米发布的机器人基础模型。核心工作是收集并清洗了大规模的真实世界机器人操作轨迹（10 万小时+），在此基础上训练视觉 - 语言 - 动作（VLA）模型。结果显示，随着真实数据规模增加，机器人的泛化能力和任务成功率有明显提升。
+- **领域归类**: [Robotics, 多模态, 大模型 Scaling]
+---
+
+### 5. xHC: Expanded Hyper-Connections (xHC：扩展超连接架构)
+- **社区热度**: `👍 45 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.14530)
+- **研究任务**: 模型架构设计、信息流动优化
+- **核心亮点**: 改进了模型层间的连接方式，让信息传递更顺畅，提升训练效率。
+- **深度解析**: 在现有 Transformer 或 CNN 架构基础上，扩展了超连接（Hyper-Connections）机制。简单说就是增加了层与层之间的旁路连接，让梯度传播和特征复用更高效。实验表明在相同参数量下，收敛速度更快，效果更稳。
+- **领域归类**: [模型架构, 深度学习基础]
+---
+
+### 6. Cura 1T: Specialized Model for Agentic Healthcare (Cura 1T：医疗 Agent 专用模型)
+- **社区热度**: `👍 38 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.15314)
+- **研究任务**: 医疗垂直模型、Agent 应用
+- **核心亮点**: 专门针对医疗场景训练的 Agent 模型，能处理诊断辅助和病患管理流程。
+- **深度解析**: 通用模型在医疗领域容易出错。Cura 1T 使用了大量医疗文献和临床对话数据进行微调，并针对 Agent 工作流（如问诊、开单、随访）做了优化。重点解决了医疗场景下的准确性和合规性问题。
+- **领域归类**: [Healthcare, Agents, 垂直模型]
+---
+
+### 7. RecGPT-V3 Technical Report (RecGPT-V3 技术报告)
+- **社区热度**: `👍 23 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.15591)
+- **研究任务**: 推荐系统、LLM 应用
+- **核心亮点**: GPT 架构在推荐系统上的第三代迭代，进一步提升了用户意图理解能力。
+- **深度解析**: 介绍了 RecGPT 系列的最新进展。V3 版本主要在用户行为序列建模和物品特征融合上做了改进，利用 LLM 的语义理解能力来处理推荐排序问题。报告展示了在线上 A/B 测试中的点击率和转化率提升数据。
+- **领域归类**: [RecSys, LLM 应用]
+---
+
+### 8. On-Policy Delta Distillation (在线策略 Delta 蒸馏)
+- **社区热度**: `👍 23 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.15161)
+- **研究任务**: 强化学习、模型蒸馏
+- **核心亮点**: 只蒸馏策略的变化量（Delta），而不是整个策略，提高了蒸馏效率。
+- **深度解析**: 传统策略蒸馏需要学生模型模仿老师模型的全部输出。这篇论文提出只让学生模型学习老师模型相对于旧策略的“变化量”。这样在在线学习场景下，更新更快，计算量更小，适合需要频繁迭代的强化学习任务。
+- **领域归类**: [RL, 模型蒸馏, 算法优化]
+---
+
+### 9. From Human-Centric to Agentic Code Review: The Impact of Different Generations of Generative AI Technology on Review Quality (从以人为本到 Agent 代码审查：生成式 AI 代际技术对审查质量的影响)
+- **社区热度**: `👍 21 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.13196)
+- **研究任务**: 代码审查、AI 影响评估
+- **核心亮点**: 对比了不同代际 AI 工具介入后，代码审查质量和流程的变化。
+- **深度解析**: 这是一篇实证研究论文。作者分析了从人工审查到使用早期 AI 辅助，再到使用 Agent 自动审查的过程中，代码缺陷检出率和审查效率的变化。结论指出 Agent 能处理更多琐碎问题，但复杂逻辑仍需人工介入。
+- **领域归类**: [Code, AI 安全与评估, 软件工程]
+---
+
+### 10. Understanding Reasoning from Pretraining to Post-Training (理解从预训练到后训练的推理能力演变)
+- **社区热度**: `👍 15 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.16097)
+- **研究任务**: 模型可解释性、推理能力分析
+- **核心亮点**: 分析了推理能力到底是在预训练阶段学到的，还是后训练阶段激发的。
+- **深度解析**: 通过控制变量实验，拆解了预训练数据量、SFT 和 RLHF 对模型推理能力的贡献。研究发现基础推理逻辑主要在预训练阶段形成，后训练主要是优化表达和遵循指令。这对制定训练策略有指导意义。
+- **领域归类**: [LLM 理论, 推理, 训练动力学]
+---
+
+### 11. Qwen-Music Technical Report (Qwen-Music 技术报告)
+- **社区热度**: `👍 15 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.11699)
+- **研究任务**: 音乐生成与理解
+- **核心亮点**: 通义团队发布了专门针对音乐生成任务的大模型技术报告。
+- **深度解析**: 基于 Qwen 架构进行适配，将音频 token 化后纳入 Transformer 训练，支持多种音乐风格生成及基础音乐理解任务，优化了长序列音频建模的稳定性。
+- **领域归类**: [多模态], [音频生成], [大模型]
+---
+
+### 12. When Does Muon Help Agentic Reinforcement Learning? (Muon 何时有助于代理强化学习？)
+- **社区热度**: `👍 11 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.16169)
+- **研究任务**: 代理强化学习优化
+- **核心亮点**: 探究了 Muon 优化器在智能体强化学习训练中的具体适用场景。
+- **深度解析**: 对比了 Muon 与 Adam 等常用优化器在 Agent 任务中的表现，分析了优化器选择对策略收敛速度和最终性能的影响，给出了适用建议。
+- **领域归类**: [强化学习], [优化算法], [智能体]
+---
+
+### 13. Recursive Harness Self-Improvement (递归 harness 自我改进)
+- **社区热度**: `👍 10 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.15524)
+- **研究任务**: 模型自我改进
+- **核心亮点**: 提出了一种递归式的自我改进框架，利用模型自身输出优化训练数据。
+- **深度解析**: 通过多轮迭代，让模型生成数据并自我筛选高质量样本，再用于微调下一轮模型，形成闭环提升，减少了对外部标注数据的依赖。
+- **领域归类**: [大模型], [自我改进], [数据合成]
+---
+
+### 14. Beyond Entropy: Correctness-Aware Advantage Shaping via Contrastive Policy Optimization (超越熵：通过对比策略优化实现正确性感知的优势塑造)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.14614)
+- **研究任务**: 策略优化与对齐
+- **核心亮点**: 在策略优化中引入正确性感知机制，改进了传统的熵正则化方法。
+- **深度解析**: 利用对比损失函数重塑优势函数，确保策略更新不仅关注概率分布熵，更关注生成内容的正确性，提升了对齐效果。
+- **领域归类**: [强化学习], [RLHF], [策略优化]
+---
+
+### 15. VideoRAE: Taming Video Foundation Models for Generative Modeling via Representation Autoencoders (VideoRAE：通过表示自编码器驯化视频基础模型用于生成建模)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.14088)
+- **研究任务**: 视频生成
+- **核心亮点**: 使用表示自编码器压缩视频特征，提升了视频基础模型的生成效率。
+- **深度解析**: 先通过自编码器学习紧凑的视频表示空间，再在该空间上进行生成建模，降低了计算成本并改善了生成长视频的一致性。
+- **领域归类**: [视频生成], [自编码器], [基础模型]
+---
+
+### 16. Audio-Visual Flamingo: Open Audio-Visual Intelligence for Long and Complex Videos (Audio-Visual Flamingo：面向长复杂视频的开放音视频智能)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.16107)
+- **研究任务**: 音视频理解
+- **核心亮点**: 扩展了 Flamingo 架构，实现了对长视频内容的音视频联合理解。
+- **深度解析**: 融合了音频编码器与视觉编码器，利用交叉注意力机制处理长序列视频帧和音频流，支持复杂场景下的问答与内容分析。
+- **领域归类**: [多模态], [视频理解], [开源模型]
+---
+
+### 17. S1-Omni: A Unified Multimodal Reasoning Model for Scientific Understanding, Prediction, and Generation (S1-Omni：用于科学理解、预测和生成的统一多模态推理模型)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.15686)
+- **研究任务**: 科学领域多模态推理
+- **核心亮点**: 构建了一个统一模型，同时处理科学领域的理解、预测和生成任务。
+- **深度解析**: 整合了图表、公式和文本数据，通过多任务学习框架，使模型能在科学推理场景下完成从数据分析到结论生成的全流程。
+- **领域归类**: [科学 AI], [多模态推理], [统一模型]
+---
+
+### 18. DSWorld: A Data Science World Model for Efficient Autonomous Agents (DSWorld：用于高效自主代理的数据科学生世界模型)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.15901)
+- **研究任务**: 数据科学智能体
+- **核心亮点**: 构建了数据科学领域的环境世界模型，用于训练自主分析代理。
+- **深度解析**: 模拟数据清洗、分析和可视化的操作环境，让 Agent 在仿真环境中练习技能，提高了在实际数据科学任务中的执行效率。
+- **领域归类**: [智能体], [世界模型], [数据科学]
+---
+
+### 19. See like a Robot: Robot-Centric Pointmaps for Vision-Language-Action Models (像机器人一样看：用于视觉 - 语言 - 动作模型的以机器人为中心的点图)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.11498)
+- **研究任务**: 机器人视觉动作模型
+- **核心亮点**: 提出了以机器人为中心的点图表示法，优化了 VLA 模型的视觉输入。
+- **深度解析**: 将传统图像特征转换为适合机器人操作空间的点图表示，增强了模型对空间关系和动作指令的理解，提升了操作成功率。
+- **领域归类**: [机器人学习], [VLA], [视觉表示]
+---
+
+### 20. Agon: Competitive Cross-Model RL with Implicit Rival Grading of Reasoning (Agon：具有隐式对手评分推理的竞争性跨模型强化学习)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.07690)
+- **研究任务**: 推理能力强化学习
+- **核心亮点**: 通过模型间的竞争机制和隐式评分，提升推理能力的强化学习效果。
+- **深度解析**: 让多个模型相互评估推理过程，利用竞争压力驱动策略更新，无需外部标注即可优化推理链的质量。
+- **领域归类**: [强化学习], [推理], [模型竞争]
+---
+</details>
+
+</script>
+        <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
+    </body>
+    </html>
+    
