@@ -128,7 +128,7 @@
   "Blaizzy /mlx-vlm": "2026-05-07",
   "awslabs /aidlc-workflows": "2026-06-02",
   "xming521 /WeClone": "2026-05-07",
-  "CloakHQ /CloakBrowser": "2026-05-15",
+  "CloakHQ /CloakBrowser": "2026-07-21",
   "HKUDS /AI-Trader": "2026-07-07",
   "PaddlePaddle /PaddleOCR": "2026-06-17",
   "vllm-project /vllm-ascend": "2026-05-08",
@@ -338,7 +338,7 @@
   "3b1b /manim": "2026-07-13",
   "make-all /tuya-local": "2026-07-13",
   "Vexa-ai /vexa": "2026-07-13",
-  "practical-tutorials /project-based-learning": "2026-07-13",
+  "practical-tutorials /project-based-learning": "2026-07-21",
   "cactus-compute /needle": "2026-07-14",
   "PrimeIntellect-ai /verifiers": "2026-07-14",
   "HKUDS /nanobot": "2026-07-15",
@@ -357,5 +357,11 @@
   "Canner /WrenAI": "2026-07-20",
   "megadose /holehe": "2026-07-20",
   "lingfengQAQ /webnovel-writer": "2026-07-20",
-  "langchain-ai /open-swe": "2026-07-20"
+  "langchain-ai /open-swe": "2026-07-20",
+  "bojieli /ai-agent-book": "2026-07-21",
+  "langchain-ai /open_deep_research": "2026-07-21",
+  "dottxt-ai /outlines": "2026-07-21",
+  "owainlewis /awesome-artificial-intelligence": "2026-07-21",
+  "datalab-to /chandra": "2026-07-21",
+  "NVIDIA /cosmos-framework": "2026-07-21"
 }
