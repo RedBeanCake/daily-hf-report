@@ -107,7 +107,7 @@
   "microsoft /TRELLIS": "2026-05-01",
   "cocoindex-io /cocoindex": "2026-05-04",
   "OWASP /Nettacker": "2026-05-04",
-  "raullenchai /Rapid-MLX": "2026-05-04",
+  "raullenchai /Rapid-MLX": "2026-07-23",
   "Q00 /ouroboros": "2026-06-22",
   "MervinPraison /PraisonAI": "2026-05-13",
   "alexgreensh /token-optimizer": "2026-05-04",
@@ -365,5 +365,9 @@
   "datalab-to /chandra": "2026-07-21",
   "NVIDIA /cosmos-framework": "2026-07-21",
   "HKUDS /LightRAG": "2026-07-22",
-  "NVIDIA /Model-Optimizer": "2026-07-22"
+  "NVIDIA /Model-Optimizer": "2026-07-22",
+  "slavakurilyak /awesome-ai-agents": "2026-07-23",
+  "oraios /serena": "2026-07-23",
+  "skypilot-org /skypilot": "2026-07-23",
+  "vnpy /vnpy": "2026-07-23"
 }
