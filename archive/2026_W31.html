@@ -1,0 +1,154 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AI 技术周报 - 2026-W31</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <style>
+            .markdown-body { box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 30px; }
+            details { background: #f6f8fa; padding: 15px; border-radius: 8px; border: 1px solid #d0d7de; margin-bottom: 20px; }
+            summary { cursor: pointer; color: #0969da; font-weight: bold; font-size: 1.1em; }
+        </style>
+    </head>
+    <body class="markdown-body">
+        <a href='../index.html'>← 返回索引</a>
+        <h1>AI 技术周报 - 2026-W31</h1>
+        <div id="content"></div>
+        <script type="text/markdown" id="raw-md"><details>
+<summary><b>🤗 Hugging Face 每周论文 (点击展开)</b></summary>
+
+### 1. DataPrep-Bench: Benchmarking LLMs as Training Data Preparators (DataPrep-Bench：评测大模型作为训练数据准备器)
+- **社区热度**: `👍 34 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.20465)
+- **研究任务**: 评估大语言模型在数据清洗、格式化等预处理任务上的能力。
+- **核心亮点**: 建立了首个专门用于评测 LLM 数据准备工作的基准测试集。
+- **深度解析**: 定义了去重、过滤、格式转换等具体任务，测试了不同规模模型的表现。结果显示 LLM 能自动化部分数据工程流程，但不同模型在准确性和成本上差异明显，为选型提供了依据。
+- **领域归类**: [数据工程，基准评测]
+---
+
+### 2. Skill Self-Play: Pushing the Frontier of LLM Capability with Co-Evolving Skills (技能自博弈：通过协同进化技能 pushing 大模型能力边界)
+- **社区热度**: `👍 26 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.22529)
+- **研究任务**: 在不依赖外部数据的情况下提升大模型的推理或代码能力。
+- **核心亮点**: 利用技能自博弈机制，实现模型能力的协同进化。
+- **深度解析**: 模型自己生成技能任务，然后在环境中自我对弈练习。通过不断生成更难的技能并更新策略，实现能力迭代。这种方法减少了对高质量标注数据的依赖。
+- **领域归类**: [强化学习，自我改进]
+---
+
+### 3. Molt: A Scalable PyTorch-Native Training Framework for Agentic Reinforcement Learning (Molt：面向智能体强化学习的可扩展 PyTorch 原生训练框架)
+- **社区热度**: `👍 18 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.21653)
+- **研究任务**: 解决智能体强化学习训练框架的扩展性和兼容性问题。
+- **核心亮点**: 提供了原生支持 PyTorch 的计算图，降低了训练开销。
+- **深度解析**: 将 RL 算法直接整合进 PyTorch 流程，支持分布式训练。相比现有框架，减少了数据拷贝和上下文切换 overhead，更适合大规模智能体策略训练。
+- **领域归类**: [训练框架，强化学习]
+---
+
+### 4. Agentic Context Management: Solving Agent Memory and Cost by Treating Them as Lifecycle and Architecture Problems (智能体上下文管理：将记忆和成本视为生命周期与架构问题)
+- **社区热度**: `👍 15 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.21503)
+- **研究任务**: 优化智能体运行时的记忆管理和 Token 成本。
+- **核心亮点**: 从架构设计和生命周期管理角度解决记忆膨胀和成本过高问题。
+- **深度解析**: 不再仅依赖 Prompt 工程，而是设计上下文的存储、检索和淘汰机制。通过管理 Token 的生命周期，在保证任务效果的同时显著降低推理成本。
+- **领域归类**: [智能体架构，效率优化]
+---
+
+### 5. Scaling Native Multimodal Pre-Training From Scratch (从零开始扩展原生多模态预训练)
+- **社区热度**: `👍 13 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.22043)
+- **研究任务**: 研究原生多模态模型的预训练 scaling 规律。
+- **核心亮点**: 验证了不依赖 pretrained LLM 权重，从头训练多模态模型依然符合 scaling law。
+- **深度解析**: 联合训练视觉和语言编码器，不使用现成的语言模型底座。实验表明随着数据量和参数量增加，模型性能稳定提升，为原生多模态路线提供了可行性证明。
+- **领域归类**: [多模态，预训练]
+---
+
+### 6. Three-Body Scattering for Generative Modeling (用于生成模型的三体散射机制)
+- **社区热度**: `👍 9 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.18198)
+- **研究任务**: 改进生成模型的数据分布建模能力。
+- **核心亮点**: 引入物理学中的三体散射概念来优化生成过程。
+- **深度解析**: 模拟三个组件之间的相互作用来建模数据分布，可能应用于扩散模型或流匹配。这种方法旨在提升生成样本的多样性和质量，解决模式坍塌问题。
+- **领域归类**: [生成式 AI，理论方法]
+---
+
+### 7. LAMAR: An Open Language-Aware Multilingual Alignment Reranker (LAMAR：开源的语言感知多语言对齐重排序模型)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.22042)
+- **研究任务**: 提升多语言场景下的检索重排序效果。
+- **核心亮点**: 开源了一个针对多语言对齐优化的重排序模型。
+- **深度解析**: 基于多语言偏好数据训练，解决了现有模型偏向英语的问题。在不同语言的检索任务中，能更准确地识别相关文档，提升跨语言信息检索效果。
+- **领域归类**: [NLP，多语言，重排序]
+---
+
+### 8. IDEAgent: Agentic Quality-Diversity Search for Research Idea Generation (IDEAgent：用于研究 idea 生成的智能体质量 - 多样性搜索)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.22375)
+- **研究任务**: 利用 AI 智能体辅助科研人员生成研究点子。
+- **核心亮点**: 通过智能体搜索兼顾高质量和多样性的研究 idea。
+- **深度解析**: 智能体阅读现有文献，生成候选 idea 并自动评估其新颖性和可行性。通过迭代搜索，避免 idea 同质化，辅助研究人员进行创新 brainstorm。
+- **领域归类**: [智能体，科研辅助]
+---
+
+### 9. Closing the Loop: Training-Free Revisit Consistency for Autoregressive Generative Rendering (闭环：自回归生成渲染的免训练重访一致性)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.21848)
+- **研究任务**: 解决自回归生成图像/视频时的一致性问题。
+- **核心亮点**: 提出了一种无需训练即可保证生成一致性的方法。
+- **深度解析**: 在生成过程中回头检查之前的步骤，确保前后内容连贯。不需要微调模型，就能改善渲染结果的视觉一致性，适用于视频生成或长图生成任务。
+- **领域归类**: [计算机视觉，生成式 AI]
+---
+
+### 10. Multi-Head Latent Control: A Unified Interface for LLM Agent Decision Making (多头潜在控制：大模型智能体决策的统一接口)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.14277)
+- **研究任务**: 优化大模型智能体的决策控制机制。
+- **核心亮点**: 设计了基于多头潜在空间的统一控制接口。
+- **深度解析**: 将决策的不同维度拆分到潜在空间的不同头中进行控制。这种解耦设计提高了对智能体动作控制的精度，使决策过程更稳定、可解释。
+- **领域归类**: [智能体，控制理论]
+---
+
+### 11. Spectral Prior for Reducing Exposure Bias in Diffusion Models (谱先验用于减少扩散模型中的暴露偏差)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.22091)
+- **研究任务**: 扩散模型生成质量优化
+- **核心亮点**: 在频域引入先验约束，解决扩散模型训练与推理分布不一致的问题。
+- **深度解析**: 扩散模型存在暴露偏差，导致生成图像高频细节丢失或模糊。该方法不改模型架构，只在训练目标中加入谱先验（Spectral Prior），强制模型在频域上保持一致。实测生成图像的纹理更清晰，伪影减少，训练稳定性有所提升。
+- **领域归类**: [计算机视觉，生成模型]
+---
+
+### 12. SceneActBench: Can Agents Act on the 3D Scenes They See? (SceneActBench：智能体能对他们看到的 3D 场景采取行动吗？)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.22393)
+- **研究任务**: 3D 具身智能评测
+- **核心亮点**: 提出新基准，专门评估智能体在 3D 场景中的理解与操作对齐能力。
+- **深度解析**: 现有评测要么侧重 3D 感知，要么侧重语言指令，缺乏两者结合。该基准构建了包含具体交互任务的 3D 环境数据集，要求 Agent 不仅看懂场景，还要能执行对应动作。用来检验当前模型是否真具备在 3D 空间里“看懂并动手”的能力。
+- **领域归类**: [具身智能，3D 视觉]
+---
+
+### 13. Multimodal Speaker Verification as a Threat to Speaker Anonymization (多模态说话人验证对说话人匿名化的威胁)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.19636)
+- **研究任务**: 音频安全与隐私保护
+- **核心亮点**: 发现结合多模态信息可破解现有的说话人匿名化技术。
+- **深度解析**: 传统匿名化只处理音频特征，认为变声后就安全了。这篇论文指出，攻击者若结合文本内容、面部信息等多模态数据进行验证，仍能重新识别出说话人身份。实验证明了单一模态匿名化在多模态攻击下的脆弱性，隐私泄露风险被低估。
+- **领域归类**: [音频处理，安全隐私]
+---
+
+### 14. VisCo: Leveraging Large Language Models as Intrinsic Encoders for Visual Token Compression (VisCo：利用大语言模型作为内在编码器进行视觉 Token 压缩)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.12756)
+- **研究任务**: 多模态模型效率优化
+- **核心亮点**: 直接用 LLM 压缩视觉 Token，减少序列长度，提升推理速度。
+- **深度解析**: 多模态模型中视觉 Token 数量多，导致推理慢、显存占用高。该方法不再依赖额外的视觉编码器，而是让 LLM 自身充当编码器来压缩视觉 Token。序列长度显著缩短，推理速度变快，且因为是大模型内部压缩，语义信息保留较好，精度下降不明显。
+- **领域归类**: [多模态，模型压缩]
+---
+</details>
+
+</script>
+        <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
+    </body>
+    </html>
+    
