@@ -1,0 +1,337 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>前沿科研情报 - 2026-07-29</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <style>
+            .markdown-body { box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 30px; }
+            details { background: #f6f8fa; padding: 15px; border-radius: 8px; border: 1px solid #d0d7de; margin-bottom: 20px; }
+            summary { cursor: pointer; color: #0969da; font-weight: bold; font-size: 1.1em; }
+        </style>
+    </head>
+    <body class="markdown-body">
+        <a href='../index.html'>← 返回索引</a>
+        <h1>前沿科研情报 - 2026-07-29</h1>
+        <div id="content"></div>
+        <script type="text/markdown" id="raw-md"><details>
+<summary><b>🤗 Hugging Face 今日论文 (点击展开)</b></summary>
+
+### 1. Kimi K3: Open Frontier Intelligence (Kimi K3：开放前沿智能)
+- **社区热度**: `👍 234 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.24653)
+- **研究任务**: 大语言模型能力开放与评估
+- **核心亮点**: 月面智能发布了新一代开源前沿模型，旨在缩小闭源与开源模型的性能差距。
+- **深度解析**: 论文介绍了 Kimi K3 的架构细节和训练策略，重点在于如何在开放权重的情况下保持前沿推理能力。主要涉及大规模语料清洗、长上下文优化以及推理时的计算效率平衡，提供了完整的模型权重和评测基准。
+- **领域归类**: [Large Language Models] [Open Source]
+---
+
+### 2. JarvisHub: An Open Harness for Canvas-Native Multimodal Creative Agents (JarvisHub：面向画布原生多模态创意智能体的开放框架)
+- **社区热度**: `👍 99 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.23588)
+- **研究任务**: 多模态智能体交互框架
+- **核心亮点**: 提出了一种让智能体直接在“画布”上操作的多模态创作框架，而非传统的对话式交互。
+- **深度解析**: 传统智能体多基于文本对话，该框架允许智能体直接理解并操作图形化画布元素。技术核心在于多模态感知与画布 API 的对齐，支持图像、文本混合输入，适用于设计、绘图等创意场景的工具调用。
+- **领域归类**: [AI Agents] [Multimodal] [Human-Computer Interaction]
+---
+
+### 3. From Proprietary to Open-Source: Bridging the Distribution Gap via Multi-Agent Protocol Distillation in Agentic Search (从专有到开源：通过多智能体协议蒸馏弥合智能体搜索中的分布差距)
+- **社区热度**: `👍 63 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.24280)
+- **研究任务**: 模型蒸馏与智能体搜索
+- **核心亮点**: 利用多智能体协议蒸馏技术，将专有模型的搜索能力迁移到开源模型上。
+- **深度解析**: 针对开源模型在复杂搜索任务中表现不佳的问题，提出了一种蒸馏方法。通过多个教师智能体生成搜索轨迹和协议，让学生模型学习这种搜索策略，从而弥合分布差距，提升开源模型在 Agentic Search 任务上的表现。
+- **领域归类**: [Model Distillation] [AI Agents] [Search]
+---
+
+### 4. Rethinking Classifier-Free Guidance in On-Policy Diffusion Distillation (重思策略内扩散蒸馏中的无分类器引导)
+- **社区热度**: `👍 60 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.24731)
+- **研究任务**: 扩散模型蒸馏与采样优化
+- **核心亮点**: 改进了扩散模型蒸馏过程中的无分类器引导（CFG）策略，提升生成质量。
+- **深度解析**: 在 On-Policy 蒸馏框架下，重新分析了 CFG 的作用机制。论文指出原有 CFG 设置在蒸馏阶段存在偏差，提出了一种调整方案，使得学生模型在少步数采样下仍能保持高分辨率和高保真度，加速了推理过程。
+- **领域归类**: [Diffusion Models] [Generative AI] [Model Compression]
+---
+
+### 5. Progress Reward Modeling for Robotic Learning: A Comprehensive Survey (机器人学习中的进度奖励建模：综合综述)
+- **社区热度**: `👍 55 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.21655)
+- **研究任务**: 机器人强化学习奖励函数设计
+- **核心亮点**: 系统综述了基于任务进度的奖励建模方法在机器人学习中的应用。
+- **深度解析**: 传统的稀疏奖励导致机器人学习效率低。这篇综述整理了如何通过定义“进度奖励”（Progress Reward）来 dense 奖励信号。涵盖了从手动设计到自动学习进度函数的各类方法，分析了其在长序列操作任务中的优缺点。
+- **领域归类**: [Robotics] [Reinforcement Learning] [Survey]
+---
+
+### 6. StateAct: Program State, before Pixels, for Long-Horizon Computer-Use Agents (StateAct：面向长程电脑使用智能体的程序状态优先于像素)
+- **社区热度**: `👍 51 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.22798)
+- **研究任务**: 电脑操作智能体感知机制
+- **核心亮点**: 主张智能体应优先理解程序状态而非像素图像，以解决长程任务中的误差累积。
+- **深度解析**: 针对基于视觉的电脑操作智能体在长任务中容易迷失的问题，提出直接接入程序状态（如 DOM 树、API 状态）。这种方法减少了视觉识别的不确定性，提高了规划的稳定性和可解释性，特别适合复杂的软件操作流程。
+- **领域归类**: [AI Agents] [Computer Use] [Software Engineering]
+---
+
+### 7. Data Pyramid for Embodied Manipulation (具身操作的数据金字塔)
+- **社区热度**: `👍 29 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.24744)
+- **研究任务**: 机器人操作数据策略
+- **核心亮点**: 提出了一种分层的数据组织结构，用于优化具身操作技能的学习。
+- **深度解析**: 为解决机器人操作数据杂乱的问题，构建了“数据金字塔”。底层为大量基础动作数据，顶层为少量复杂任务数据。通过这种层级结构进行课程学习，使模型能更高效地从基础技能迁移到复杂操作任务。
+- **领域归类**: [Robotics] [Embodied AI] [Data Strategy]
+---
+
+### 8. Sol-Attn: Accelerating Video Generation Inference via On-the-Fly Attention Sparsification (Sol-Attn：通过即时注意力稀疏化加速视频生成推理)
+- **社区热度**: `👍 23 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.24027)
+- **研究任务**: 视频生成推理加速
+- **核心亮点**: 在推理阶段动态稀疏化注意力矩阵，显著降低视频生成计算量。
+- **深度解析**: 视频生成模型计算开销大。该方法在推理时实时计算注意力权重，忽略贡献小的部分（Sparsification）。无需重新训练模型，即可在保持生成质量的前提下，减少显存占用并提升生成速度。
+- **领域归类**: [Video Generation] [Inference Acceleration] [Attention Mechanism]
+---
+
+### 9. OmniVAE: An Audio-Video VAE with Cross-Modal Alignment for Joint Generation (OmniVAE：用于联合生成的跨模态对齐音视频 VAE)
+- **社区热度**: `👍 20 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.23855)
+- **研究任务**: 音视频联合生成
+- **核心亮点**: 设计了一种跨模态对齐的 VAE，实现音视频潜空间的一致性。
+- **深度解析**: 针对音视频生成不同步的问题，提出了 OmniVAE 架构。通过在潜空间强制对齐音频和视频特征，确保生成的视频画面与声音在时间和语义上匹配。适用于需要高质量音画同步的多模态生成任务。
+- **领域归类**: [Multimodal] [Generative AI] [VAE]
+---
+
+### 10. The Physics of Multi-Turn Long-Horizon Planning: From Pre-training to Post-training via Single- and Multi-Teacher On-Policy Agentic Distillation (多轮长程规划的物理学：通过单/多教师策略内智能体蒸馏从预训练到后训练)
+- **社区热度**: `👍 19 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.24720)
+- **研究任务**: 长程规划与模型训练策略
+- **核心亮点**: 将长程规划视为物理过程，通过全阶段的蒸馏策略提升智能体规划能力。
+- **深度解析**: 论文提出了一套贯穿预训练和后训练的统一蒸馏框架。利用单教师和多教师策略，在不同训练阶段优化智能体的多轮规划能力。核心在于保持策略的一致性，减少阶段切换带来的性能损失，提升长任务成功率。
+- **领域归类**: [AI Agents] [Planning] [Model Training]
+---
+
+### 11. Oxygen-TryOn: Fashion-Native Foundation Model for Any-item Virtual Try-On (Oxygen-TryOn：面向任意_item_虚拟试穿的时尚原生基础模型)
+- **社区热度**: `👍 19 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.21694)
+- **研究任务**: 虚拟试穿（Virtual Try-On）
+- **核心亮点**: 提出时尚原生基础模型，无需针对每件衣服单独微调即可实现任意物品试穿。
+- **深度解析**: 摒弃了传统针对特定 garment 微调的模式，构建了一个统一的基础模型。通过理解服装语义和人体结构，直接泛化到未见过的衣物类别，解决了泛化性差的问题。
+- **领域归类**: [计算机视觉，生成式 AI，虚拟试穿]
+---
+
+### 12. Chamaileon: Cross-Context Binder Design with Contextualized Modeling and Mixed Sampling (Chamaileon：基于上下文建模与混合采样的跨上下文绑定设计)
+- **社区热度**: `👍 6 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.23518)
+- **研究任务**: 长上下文建模与信息绑定
+- **核心亮点**: 设计了跨上下文绑定机制，结合混合采样策略提升模型对分散信息的捕捉能力。
+- **深度解析**: 针对长文本或多轮对话中信息分散的问题，引入绑定模块将相关上下文显式关联。混合采样策略用于训练阶段，增强模型对不同长度和密度上下文的适应性。
+- **领域归类**: [自然语言处理，模型架构，长上下文]
+---
+
+### 13. dRAE: Representation Autoencoder with Hyper-Spherical Codes (dRAE：基于超球面码的表示自编码器)
+- **社区热度**: `👍 6 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.22148)
+- **研究任务**: 表示学习与编码
+- **核心亮点**: 在自编码器中引入超球面码约束，优化潜在空间的几何结构。
+- **深度解析**: 传统自编码器 latent space 分布松散，该方法强制编码向量落在超球面上。利用超球面码本进行量化，提升了表示的紧凑性和检索效率。
+- **领域归类**: [表示学习，深度学习，编码理论]
+---
+
+### 14. DecoupleMix: Decoupled Ratio Search and Convex Allocation for Scalable VLM Data Recipes (DecoupleMix：面向可扩展 VLM 数据配方的解耦比例搜索与凸分配)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.24516)
+- **研究任务**: 多模态大模型（VLM）数据混合策略
+- **核心亮点**: 将数据比例搜索与分配解耦，通过凸优化方法找到 scalable 的数据配方。
+- **深度解析**: 针对 VLM 训练数据混合比例难调的问题，提出两阶段方案。先搜索最优模态比例，再通过凸分配确定具体数据源权重，降低了大规模数据调优的成本。
+- **领域归类**: [多模态学习，数据策略，大模型训练]
+---
+
+### 15. ClinFusion: A Vision-Centric Multimodal LLM System for Holistic Medical Understanding (ClinFusion：面向整体医疗理解的视觉中心多模态大模型系统)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.24743)
+- **研究任务**: 医疗多模态理解
+- **核心亮点**: 构建以视觉为核心的多模态系统，整合影像与文本进行整体医疗诊断。
+- **深度解析**: 改变以往文本主导的医疗 LLM 架构，提升医学影像（CT、X 光等）的权重。通过融合患者记录与视觉特征，实现更全面的病情理解和分析。
+- **领域归类**: [医疗健康，多模态大模型，计算机视觉]
+---
+
+### 16. Reasoning Denoiser: Denoising Reasoning Traces for Hallucination Detection in Large Reasoning Models (Reasoning Denoiser：用于大推理模型幻觉检测的推理迹去噪)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.22098)
+- **研究任务**: 推理模型幻觉检测
+- **核心亮点**: 通过去噪推理中间痕迹，识别并剔除大推理模型中的幻觉内容。
+- **深度解析**: 针对推理模型思维链（CoT）中混杂的错误步骤，训练一个去噪模块。该模块筛选关键推理路径，阻断错误传播，从而提高最终答案的可靠性。
+- **领域归类**: [推理能力，模型可靠性，幻觉检测]
+---
+
+### 17. Codifying the Judge: Scalable Evaluation via Program Distillation (Codifying the Judge：通过程序蒸馏实现可扩展评估)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.22561)
+- **研究任务**: 模型自动评估
+- **核心亮点**: 将评估标准蒸馏为可执行程序，实现大规模、一致的自动化评测。
+- **深度解析**: 传统 LLM 作为 Judge 成本高且不稳定。该方法将评估逻辑转化为代码程序，保留了复杂判断能力的同时，大幅降低了推理成本并保证了结果的可复现性。
+- **领域归类**: [模型评估，对齐，程序合成]
+---
+
+### 18. FilmBench: A Film-Grade Benchmark for Cinematic Video Generation (FilmBench：面向电影级视频生成的基准测试)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.24241)
+- **研究任务**: 视频生成评测
+- **核心亮点**: 建立电影级质量的视频生成基准，强调 cinematic 维度的评估指标。
+- **深度解析**: 现有视频基准多关注短片段或动作一致性。FilmBench 引入镜头语言、光影、叙事连贯性等电影专业指标，推动视频生成向高质量内容创作发展。
+- **领域归类**: [视频生成，基准测试，多媒体]
+---
+
+### 19. A Frozen 12B Beats Frontier Models on Verified Work: 100% Accuracy, 0 Tokens, Bit-Exact, Forever (冻结 12B 模型在验证任务上超越前沿模型：100% 准确率，0 Token，位精确，永久有效)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.23806)
+- **研究任务**: 高效验证与推理
+- **核心亮点**: 在特定验证任务上实现 100% 准确率且无需生成 Token，结果位精确且可永久复现。
+- **深度解析**: 针对可验证任务，不使用生成式解码。利用冻结权重的 12B 模型进行判别或检索，避免了生成式模型的不确定性，实现了零 Token 消耗的精确匹配。
+- **领域归类**: [高效推理，模型验证，符号 AI]
+---
+
+### 20. GNM Head: A Generative aNthropometric Model of the human head (GNM Head：人类头部生成人体测量模型)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.23687)
+- **研究任务**: 3D 人头生成与建模
+- **核心亮点**: 提出生成式人体测量模型，参数化控制人类头部的几何与外观。
+- **深度解析**: 结合人体测量学数据与生成模型，构建可编辑的 3D 头部表示。支持通过生理参数调整头部形状和纹理，适用于数字人创建和医学建模。
+- **领域归类**: [3D 生成，计算机视觉，数字人]
+---
+
+### 21. Leveraging External Knowledge for Historical Document Restoration via Retrieval-Augmented Large Language Models (利用检索增强大模型的外部知识进行历史文档修复)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.21936)
+- **研究任务**: 历史文档修复与文本重建
+- **核心亮点**: 把 RAG 技术用到文档修复上，利用外部知识库减少模型幻觉。
+- **深度解析**: 传统方法修复古籍或受损文档时，大模型容易瞎编内容。这篇论文引入检索增强生成（RAG），让模型在修复前先检索外部知识库中的相似历史资料。方法是把检索到的可靠信息作为上下文输入给 LLM，约束生成过程。效果上能显著降低修复内容的错误率，保证历史信息的准确性。
+- **领域归类**: [NLP, OCR, Digital Humanities]
+---
+
+### 22. A Vocabulary for Multi-Agent Automated Research Systems (多智能体自动化研究系统的词汇表)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.22682)
+- **研究任务**: 多智能体协作与通信标准化
+- **核心亮点**: 定义了一套标准词汇，让不同研究智能体之间沟通更顺畅。
+- **深度解析**: 现在自动化研究智能体各自为战，沟通成本高。这篇论文提出了一套通用词汇表，规定了智能体之间交换信息、任务状态和动作的标准术语。技术方案是构建一个共享的动作空间和语义协议。这样做能让不同架构的智能体更容易协作，提升自动化科研系统的整体效率。
+- **领域归类**: [Multi-Agent Systems, Automation]
+---
+
+### 23. TRACE: Business Rule-Grounded Reasoning Curriculum for Knowledge-Preserving Parametric Tool Retrieval in Enterprise LLMs (TRACE：企业大模型中基于业务规则推理的课程学习以保留知识的参数化工具检索)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.22639)
+- **研究任务**: 企业级大模型工具检索
+- **核心亮点**: 用业务规则做课程学习，防止模型在学工具检索时忘记原有知识。
+- **深度解析**: 企业里微调 LLM 去调用工具，容易导致模型忘记原本的业务知识（灾难性遗忘）。这篇提出了 TRACE 方法，设计了一套基于业务规则的推理训练课程。让模型循序渐进地学习如何检索工具，同时在训练中加入知识保留约束。效果是在提升工具调用准确率的同时，保住了模型原有的业务理解能力。
+- **领域归类**: [Enterprise AI, Tool Use, Fine-tuning]
+---
+
+### 24. Evidence Attribution in Visual Document Understanding without Coordinates or Region Labels (无需坐标或区域标签的视觉文档理解证据归因)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.24651)
+- **研究任务**: 视觉文档理解 (VDU)
+- **核心亮点**: 不用标坐标框也能让模型知道答案出自文档的哪个部分。
+- **深度解析**: 通常做文档理解需要人工标注答案对应的坐标框，成本很高。这篇论文提出了一种新方法，不需要区域标签（Region Labels）。模型通过注意力机制或内部特征对齐，自动定位证据来源。技术方案省去了繁琐的标注环节，降低了数据准备成本，同时保持了证据归因的可解释性。
+- **领域归类**: [Multimodal, Document AI]
+---
+
+### 25. Characterizing Warp Divergence from Pascal to Blackwell (从 Pascal 到 Blackwell 的 Warp 发散特征分析)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.23402)
+- **研究任务**: GPU 架构性能分析
+- **核心亮点**: 分析了历代 NVIDIA GPU 的 Warp 发散情况，给底层优化提供参考。
+- **深度解析**: 这是一篇系统层面的论文。主要测试了从 Pascal 架构到最新 Blackwell 架构的 GPU 在线程束（Warp）发散上的表现。方法是运行一系列基准测试，统计不同架构下的指令执行效率。结果揭示了新架构在处理分支发散时的改进，对写 CUDA  kernel 和优化高性能计算任务有直接指导意义。
+- **领域归类**: [Systems, GPU Architecture, HPC]
+---
+
+### 26. UltraViT: Latency-Optimized On-device Vision Encoder for Large Vision-Language Models (UltraViT：大型视觉语言模型的低延迟端侧视觉编码器)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.23373)
+- **研究任务**: 端侧大型视觉语言模型 (LVLM)
+- **核心亮点**: 专门优化了延迟，让视觉编码器能跑在手机等边缘设备上。
+- **深度解析**: 大模型的视觉编码器通常太大，端侧跑不动。这篇提出了 UltraViT，通过剪枝、量化或结构重设计，大幅降低了计算延迟。技术方案是在保持特征提取能力的前提下，减少参数量和计算复杂度。效果是能在不显著损失精度的情况下，实现实时的端侧视觉处理。
+- **领域归类**: [Computer Vision, Edge AI, Model Optimization]
+---
+
+### 27. IndicTalk: A Large-Scale Persona-Based Multilingual Conversational Corpus for Indic Languages (IndicTalk：基于角色的印度语言大规模多语种对话语料)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.23242)
+- **研究任务**: 低资源语言对话数据构建
+- **核心亮点**: 造了一个带角色信息的大规模印度语言对话数据集。
+- **深度解析**: 印度语种的高质量对话数据很少。这篇论文发布了一个新数据集 IndicTalk，包含多种印度语言。特点是每条数据都带了人物角色设定（Persona），比如年龄、职业等。方法是众包结合合成数据。这能帮助下游任务训练出更有个性、更符合当地文化习惯的对话模型。
+- **领域归类**: [NLP, Low-resource Languages, Dataset]
+---
+
+### 28. WorldDiT: A Unified Diffusion Architecture for World and Action Modeling (WorldDiT：用于世界和动作建模的统一扩散架构)
+- **社区热度**: `👍 0 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.23909)
+- **研究任务**: 世界模型与视频生成
+- **核心亮点**: 用一个扩散模型同时搞定世界状态预测和动作建模。
+- **深度解析**: 通常世界模型和动作模型是分开训练的。这篇提出了 WorldDiT，用统一的 Diffusion Transformer 架构来处理。方法是把世界状态变化和智能体动作都作为序列输入给扩散模型。这样做简化了系统架构，让模型能更好地理解和预测环境动态与行为之间的因果关系。
+- **领域归类**: [Generative AI, World Model, Reinforcement Learning]
+---
+
+### 29. DriveDNA: A Large-Scale Multimodal Naturalistic Driving Dataset and Benchmark for Driving Style Identification (DriveDNA：用于驾驶风格识别的大规模多模态自然驾驶数据集)
+- **社区热度**: `👍 0 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.23822)
+- **研究任务**: 自动驾驶与驾驶风格分析
+- **核心亮点**: 多模态真实驾驶数据，专门用来识别司机是激进还是保守。
+- **深度解析**: 自动驾驶需要理解人类驾驶风格。这篇发布了 DriveDNA 数据集，收集了大量自然驾驶场景的多模态数据（视频、传感器等）。基准测试任务是根据数据识别驾驶风格。方法是提供了一套标注标准和评估指标。这有助于训练更拟人化的自动驾驶策略，或者用于驾驶行为分析。
+- **领域归类**: [Autonomous Driving, Dataset, Behavior Analysis]
+---
+</details>
+
+<details>
+<summary><b>🚀 GitHub 今日热门项目 (点击展开)</b></summary>
+
+### [huggingface /speech-to-speech](https://github.com/huggingface/speech-to-speech)
+- **今日趋势**: ⭐ 6,965 | 🍴 937 | 🔥 177 今日
+- **项目简介**: 基于开源模型构建本地化语音智能体，实现离线语音交互。
+- **核心价值**: 解决了云端语音 API 成本高、数据隐私泄露及网络延迟高的痛点。**目标人群**为注重隐私的开发者及企业。**技术核心**为本地语音合成（TTS）与识别（STT）模型集成。**🤖 AI 相关：是**。
+---
+### [virgiliojr94 /book-to-skill](https://github.com/virgiliojr94/book-to-skill)
+- **今日趋势**: ⭐ 10,981 | 🍴 1,313 | 🔥 366 今日
+- **项目简介**: 将技术书籍 PDF 自动转化为 Claude Code 技能，便于编程时参考引用。
+- **核心价值**: 解决了专业知识难以融入实际 coding 工作流的痛点。**目标人群**为开发者和技术学习者。**技术核心**为 PDF 解析与大模型技能（Skill）封装。**🤖 AI 相关：是**。
+---
+### [paperswithbacktest /awesome-systematic-trading](https://github.com/paperswithbacktest/awesome-systematic-trading)
+- **今日趋势**: ⭐ 9,351 | 🍴 1,286 | 🔥 402 今日
+- **项目简介**: 系统化交易领域的精选资源列表，涵盖库、策略、教程等。
+- **核心价值**: 解决了量化交易资源分散、查找困难及学习曲线陡峭的痛点。**目标人群**为量化交易员及金融工程师。**技术核心**为资源 curated 整理与分类。**🤖 AI 相关：否**（主要为量化资源列表）。
+---
+### [microsoft /agent-governance-toolkit](https://github.com/microsoft/agent-governance-toolkit)
+- **今日趋势**: ⭐ 5,063 | 🍴 831 | 🔥 17 今日
+- **项目简介**: 面向自主 AI 智能体的治理工具包，涵盖策略执行与安全沙箱。
+- **核心价值**: 解决了企业级 AI Agent 部署中的安全合规、身份认证及可靠性痛点。**目标人群**为企业安全工程师与 AI 架构师。**技术核心**为零信任身份与执行沙箱技术。**🤖 AI 相关：是**。
+---
+### [HKUDS /OpenSpace](https://github.com/HKUDS/OpenSpace)
+- **今日趋势**: ⭐ 7,136 | 🍴 865 | 🔥 91 今日
+- **项目简介**: 专为 AI 智能体设计的技能管理层，统一管理 Agent 能力。
+- **核心价值**: 解决了复杂 Agent 系统中技能杂乱、难以调度与复用的痛点。**目标人群**为 AI Agent 开发者。**技术核心**为技能注册、发现与管理层架构。**🤖 AI 相关：是**。
+---
+### [volcengine /OpenViking](https://github.com/volcengine/OpenViking)
+- **今日趋势**: ⭐ 27,564 | 🍴 2,160 | 🔥 180 今日
+- **项目简介**: 面向 AI 智能体的自进化上下文数据库，统一记忆、知识与技能。
+- **核心价值**: 解决了 Agent 长期记忆缺失、知识检索（RAG）效率低及上下文限制的痛点。**目标人群**为 AI 基础设施工程师。**技术核心**为上下文数据库与 RAG 融合技术。**🤖 AI 相关：是**。
+---
+### [xbtlin /ai-berkshire](https://github.com/xbtlin/ai-berkshire)
+- **今日趋势**: ⭐ 14,578 | 🍴 2,047 | 🔥 183 今日
+- **项目简介**: 基于多 Agent 并行研究的价值投资框架，融合大师方法论。
+- **核心价值**: 解决了个人投资者缺乏专业分析框架及研究效率低的痛点。**目标人群**为价值投资者与金融分析师。**技术核心**为多 Agent 对抗分析与金融知识库。**🤖 AI 相关：是**。
+---
+### [lightseekorg /tokenspeed](https://github.com/lightseekorg/tokenspeed)
+- **今日趋势**: ⭐ 1,717 | 🍴 204 | 🔥 50 今日
+- **项目简介**: 追求极致速度的大语言模型（LLM）推理引擎。
+- **核心价值**: 解决了大模型推理延迟高、吞吐量低及资源消耗大的痛点。**目标人群**为模型部署工程师与基础设施团队。**技术核心**为底层推理优化与加速算法。**🤖 AI 相关：是**。
+---
+### [agentscope-ai /QwenPaw](https://github.com/agentscope-ai/QwenPaw)
+- **今日趋势**: ⭐ 29,659 | 🍴 2,880 | 🔥 818 今日
+- **项目简介**: 易于安装部署的个人 AI 助手，支持多聊天应用与扩展。
+- **核心价值**: 解决了个人 AI 助手部署门槛高、功能扩展性差及数据隐私痛点。**目标人群**为普通用户及隐私敏感型开发者。**技术核心**为模块化助手架构与本地化部署。**🤖 AI 相关：是**。
+---
+</details></script>
+        <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
+    </body>
+    </html>
+    
