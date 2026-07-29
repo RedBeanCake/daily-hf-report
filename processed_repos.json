@@ -37,7 +37,7 @@
   "agentscope-ai /agentscope": "2026-07-10",
   "zhayujie /CowAgent": "2026-04-15",
   "donnemartin /system-design-primer": "2026-05-25",
-  "sgl-project /sglang": "2026-04-15",
+  "sgl-project /sglang": "2026-07-29",
   "iam-veeramalla /aws-devops-zero-to-hero": "2026-04-15",
   "topoteretes /cognee": "2026-07-20",
   "openai /openai-agents-python": "2026-04-16",
@@ -82,7 +82,7 @@
   "ZhuLinsen /daily_stock_analysis": "2026-06-22",
   "Azure /Azure-Sentinel": "2026-04-24",
   "ComposioHQ /awesome-codex-skills": "2026-04-27",
-  "microsoft /VibeVoice": "2026-06-08",
+  "microsoft /VibeVoice": "2026-07-29",
   "TauricResearch /TradingAgents": "2026-07-13",
   "deepseek-ai /DeepSeek-V3": "2026-04-27",
   "sherlock-project /sherlock": "2026-07-09",
@@ -211,7 +211,7 @@
   "zakirkun /deep-eye": "2026-05-29",
   "GH05TCREW /pentestagent": "2026-05-29",
   "apurvsinghgautam /robin": "2026-05-29",
-  "fastapi /fastapi": "2026-07-08",
+  "fastapi /fastapi": "2026-07-29",
   "nesquena /hermes-webui": "2026-07-27",
   "elder-plinius /OBLITERATUS": "2026-06-01",
   "freqtrade /freqtrade": "2026-07-08",
@@ -377,5 +377,9 @@
   "sirkirby /unifi-mcp": "2026-07-27",
   "HKUDS /OpenSpace": "2026-07-28",
   "lightseekorg /tokenspeed": "2026-07-28",
-  "agentscope-ai /QwenPaw": "2026-07-28"
+  "agentscope-ai /QwenPaw": "2026-07-28",
+  "deepfakes /faceswap": "2026-07-29",
+  "kangarooking /cangjie-skill": "2026-07-29",
+  "polarsource /polar": "2026-07-29",
+  "microsoft /TRELLIS.2": "2026-07-29"
 }
