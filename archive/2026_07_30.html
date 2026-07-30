@@ -1,0 +1,237 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>前沿科研情报 - 2026-07-30</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <style>
+            .markdown-body { box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 30px; }
+            details { background: #f6f8fa; padding: 15px; border-radius: 8px; border: 1px solid #d0d7de; margin-bottom: 20px; }
+            summary { cursor: pointer; color: #0969da; font-weight: bold; font-size: 1.1em; }
+        </style>
+    </head>
+    <body class="markdown-body">
+        <a href='../index.html'>← 返回索引</a>
+        <h1>前沿科研情报 - 2026-07-30</h1>
+        <div id="content"></div>
+        <script type="text/markdown" id="raw-md"><details>
+<summary><b>🤗 Hugging Face 今日论文 (点击展开)</b></summary>
+
+### 1. TurboVLA: Real-Time Vision-Language-Action Model at 32 Hz on an RTX 4090 with <1 GB VRAM (TurboVLA：基于 RTX 4090 显存小于 1GB 的 32Hz 实时视觉 - 语言 - 动作模型)
+- **社区热度**: `👍 114 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.27205)
+- **研究任务**: 具身智能模型部署与加速
+- **核心亮点**: 在消费级显卡上实现了低显占用的实时 VLA 推理。
+- **深度解析**: 针对视觉 - 语言 - 动作（VLA）模型显存大、延迟高的问题，提出了架构压缩与推理优化方案。通过在 RTX 4090 上将显存占用控制在 1GB 以内，同时保持 32Hz 的控制频率，解决了具身模型在边缘设备部署的硬件门槛。
+- **领域归类**: [具身智能] [模型压缩] [实时推理]
+---
+
+### 2. CoRT: Counterfactual Replay for Token-Level Rubric-Guided Policy Optimization (CoRT：用于 Token 级规则引导策略优化的反事实回放)
+- **社区热度**: `👍 70 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.25659)
+- **研究任务**: 大模型策略优化与对齐
+- **核心亮点**: 利用反事实回放机制在 Token 粒度上优化策略。
+- **深度解析**: 传统 RLHF 多在序列级别打分，该方法引入“反事实回放”，即模拟“如果当时选了另一个 Token 会怎样”，结合规则（Rubric）指导，在 Token 级别进行更细粒度的策略更新，提升模型对复杂指令的遵循能力。
+- **领域归类**: [强化学习] [大模型对齐] [策略优化]
+---
+
+### 3. HumanCLAW: Can Vision-Language Models Act Through a Body? (HumanCLAW：视觉语言模型能否通过身体执行动作？)
+- **社区热度**: `👍 64 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.27180)
+- **研究任务**: 具身智能能力评估
+- **核心亮点**: 系统性评估 VLM 控制物理身体的实际能力边界。
+- **深度解析**: 探讨了视觉语言模型（VLM）直接作为机器人控制器的可行性。通过构建特定测试环境，分析 VLM 在感知 - 动作闭环中的表现，指出当前模型在物理交互层面的不足，为具身模型架构设计提供基准参考。
+- **领域归类**: [具身智能] [模型评估] [机器人学]
+---
+
+### 4. DecoEvo: Score-Decoupled Co-Evolution of Solver and Rubric-Generator Skills in Text Space (DecoEvo：文本空间中求解器与规则生成器技能的分数解耦协同进化)
+- **社区热度**: `👍 53 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.25675)
+- **研究任务**: 模型自我进化与提示优化
+- **核心亮点**: 解耦求解者与规则生成器，实现文本空间内的协同进化。
+- **深度解析**: 针对自我进化过程中奖励模型偏差问题，将“解题者”与“评分规则生成者”分开训练。两者在文本空间内协同进化，避免单一模型既当裁判又当运动员，提升复杂任务下的自我改进稳定性。
+- **领域归类**: [大模型自我进化] [提示工程] [进化算法]
+---
+
+### 5. CLBench-V: Evaluating Multimodal Context Learning from Grounding to Knowledge Acquisition (CLBench-V：评估从视觉定位到知识获取的多模态上下文学习)
+- **社区热度**: `👍 39 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.25294)
+- **研究任务**: 多模态学习能力评估
+- **核心亮点**: 覆盖从基础定位到复杂知识获取的多模态评估基准。
+- **深度解析**: 提出了一个新的基准测试套件，分层评估多模态模型的能力：底层是视觉对象定位（Grounding），上层是基于视觉上下文的知识获取。旨在量化模型利用多模态上下文进行推理和学习的真实水平。
+- **领域归类**: [多模态学习] [模型评估] [基准测试]
+---
+
+### 6. CAST: Game Solvers as Turn-Level Teachers for LLM Agents (CAST：游戏求解器作为 LLM 智能体的回合级教师)
+- **社区热度**: `👍 27 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.25308)
+- **研究任务**: 智能体策略蒸馏
+- **核心亮点**: 利用传统游戏求解器对 LLM 智能体进行回合级教学。
+- **深度解析**: 结合符号求解器的精确性与 LLM 的泛性。使用传统游戏求解器生成最优步骤作为“教师信号”，在每一个回合级别监督 LLM 智能体的决策，提升智能体在策略游戏中的规划能力。
+- **领域归类**: [智能体学习] [知识蒸馏] [游戏 AI]
+---
+
+### 7. SkillRise: Agentic Reinforcement Learning for Cross-Task Skill Evolution (SkillRise：用于跨任务技能演化的智能体强化学习)
+- **社区热度**: `👍 18 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.26784)
+- **研究任务**: 跨任务技能迁移
+- **核心亮点**: 通过智能体强化学习实现技能在不同任务间的积累与演化。
+- **深度解析**: 关注智能体如何在多个任务间复用技能。利用强化学习机制，将已学技能模块化，使其能在新任务中被调用和改良，解决智能体每遇新任务需从头训练的问题，促进能力累积。
+- **领域归类**: [强化学习] [技能迁移] [智能体系统]
+---
+
+### 8. StatePlay: State-Aware Game World Models for Mechanics-Consistent Generation (StatePlay：用于机制一致生成的状态感知游戏世界模型)
+- **社区热度**: `👍 12 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.26754)
+- **研究任务**: 游戏世界模型生成
+- **核心亮点**: 确保生成的游戏世界在底层机制逻辑上保持一致。
+- **深度解析**: 针对生成式世界模型容易出现逻辑矛盾的问题，引入状态感知机制。模型不仅生成视觉内容，还维护 underlying state（底层状态），确保游戏机制（如物理规则、交互逻辑）在生成过程中不崩坏。
+- **领域归类**: [世界模型] [内容生成] [游戏开发]
+---
+
+### 9. Can AI agents conduct open-ended AI research? Early evidence from two case studies (AI 智能体能否进行开放式 AI 研究？两项案例研究的早期证据)
+- **社区热度**: `👍 9 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.27191)
+- **研究任务**: 自主科研智能体能力探索
+- **核心亮点**: 通过案例研究初步验证智能体进行开放式科研的可行性。
+- **深度解析**: 实证研究 AI 智能体独立完成科研闭环（提出假设、实验、分析）的能力。通过两个具体案例，分析当前智能体在开放-ended 科研任务中的表现、瓶颈及潜在风险，为 AI4Science 提供早期数据支持。
+- **领域归类**: [AI for Science] [智能体能力] [实证研究]
+---
+
+### 10. OmegaUse-OfficeVal: Benchmarking LLM Agents on Long-Horizon Office-Suite Tasks with Economic Grounding (OmegaUse-OfficeVal：基于成本约束的长程办公套件任务 LLM 智能体基准测试)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.27155)
+- **研究任务**: 办公自动化智能体评估
+- **核心亮点**: 引入经济成本约束，评估长程办公任务中的智能体表现。
+- **深度解析**: 针对办公场景（Word、Excel 等）的长序列任务构建基准。不仅评估任务成功率，还引入“经济 grounding"，即计算调用模型的成本与效率，更贴合实际企业部署需求，评估智能体的性价比。
+- **领域归类**: [智能体基准] [办公自动化] [长程任务]
+---
+
+### 11. Explicit Layer Modeling for Video Object Insertion and Layer Decomposition (视频对象插入与显式层建模)
+- **社区热度**: `👍 5 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.25802)
+- **研究任务**: 视频编辑中的对象插入与场景层分解。
+- **核心亮点**: 提出显式层建模方法，解决了视频对象插入时的遮挡和光照一致性问题。
+- **深度解析**: 传统方法多用隐式神经表示，该方法将视频显式分解为多个层（如背景、前景、阴影），在插入对象时单独调整各层属性。通过层分解模型，能更精确地处理对象与场景的交互，避免插入物体看起来“浮”在表面上。
+- **领域归类**: [计算机视觉], [视频编辑], [生成模型]
+---
+
+### 12. Memory for Large Language Models (大语言模型的记忆机制)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.25380)
+- **研究任务**: 增强大语言模型的长上下文与记忆保持能力。
+- **核心亮点**: 系统性地梳理并提出了大模型记忆机制的统一框架。
+- **深度解析**: 针对 LLM 上下文窗口限制，分析了外部记忆库、内部状态扩展等不同技术路线。方案侧重于如何高效存取历史交互信息，使模型在多轮对话或长任务中不丢失关键信息，同时降低检索开销。
+- **领域归类**: [大语言模型], [架构设计], [记忆增强]
+---
+
+### 13. GPT-Red: Automated Red Teaming via Self-Play at Scale (GPT-Red：大规模自博弈自动化红队测试)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.26115)
+- **研究任务**: 自动化安全红队测试，挖掘模型漏洞。
+- **核心亮点**: 利用大规模自博弈机制，让攻击代理与防御代理自动对抗以提升安全性。
+- **深度解析**: 摒弃人工编写攻击提示的传统流程，构建两个 agent 分别扮演攻击者和防御者。通过强化学习让双方在不断对抗中进化，自动发现模型潜在的安全漏洞和越狱路径，显著扩大了测试覆盖范围。
+- **领域归类**: [AI 安全], [红队测试], [强化学习]
+---
+
+### 14. CADENCE: Closing the Reasoning Gap via Coverage-Adaptive On-Policy Distillation (CADENCE：通过覆盖自适应_on-policy_蒸馏缩小推理差距)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.16955)
+- **研究任务**: 提升小模型在复杂推理任务上的表现。
+- **核心亮点**: 采用覆盖自适应策略，针对学生模型薄弱环节进行_on-policy_蒸馏。
+- **深度解析**: 传统蒸馏多用静态数据，该方法根据学生模型当前的策略覆盖情况，动态选择教师模型的输出进行蒸馏。重点强化学生模型未掌握或置信度低的推理路径，有效缩小了与教师模型的推理能力差距。
+- **领域归类**: [模型蒸馏], [逻辑推理], [自然语言处理]
+---
+
+### 15. StealthBench: Measuring Operational Stealth in Autonomous Offensive-Security Agents (StealthBench：自主进攻安全代理的操作隐蔽性测量)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.26314)
+- **研究任务**: 评估安全攻击代理的隐蔽性和抗检测能力。
+- **核心亮点**: 首个专注于测量自主安全代理操作隐蔽性的基准测试。
+- **深度解析**: 定义了隐蔽性量化指标，模拟真实网络环境中的检测机制。测试代理在执行进攻任务时是否会被安全系统识别，旨在推动开发更难被检测的自动化安全工具，同时辅助防御方理解攻击特征。
+- **领域归类**: [AI 安全], [基准测试], [网络攻防]
+---
+
+### 16. Grading the Narrators: An Isnad-Rijal Framework for Claim-Level Provenance in Multi-Agent Knowledge Systems (评估叙述者：多代理知识系统中 claim 级来源的 Isnad-Rijal 框架)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.24117)
+- **研究任务**: 多智能体系统中的信息溯源与可信度验证。
+- **核心亮点**: 引入 Isnad-Rijal（传述链）框架，实现 claim 级别的信息来源追踪。
+- **深度解析**: 借鉴历史学中考据信息传播链的方法，记录多 agent 系统中每条知识的传递路径。通过评估每个“叙述者”agent 的可信度，来判断最终生成 claim 的可靠性，解决多 agent 协作中的幻觉和责任归属问题。
+- **领域归类**: [多智能体系统], [知识溯源], [可信 AI]
+---
+
+### 17. SecRespond: Benchmarking AI Agents for Real-World Post-Compromise Incident Response (SecRespond：基准测试 AI 代理在现实世界受损后事件响应中的表现)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.26791)
+- **研究任务**: 评估 AI 代理在安全事件发生后的响应与处置能力。
+- **核心亮点**: 构建现实世界受损后场景，基准测试 AI 代理的事件响应效率。
+- **深度解析**: 模拟系统被攻破后的真实环境，要求 agent 执行日志分析、漏洞修补、攻击阻断等任务。通过标准化流程评估 agent 的决策准确性和操作速度，为安全运营自动化提供选型依据。
+- **领域归类**: [AI 安全], [事件响应], [基准测试]
+---
+</details>
+
+<details>
+<summary><b>🚀 GitHub 今日热门项目 (点击展开)</b></summary>
+
+### [ansible/ansible](https://github.com/ansible/ansible)
+- **今日趋势**: Stars: 69,803 | Forks: 24,248 | 今日 +20
+- **项目简介**: 一个极简的 IT 自动化平台，用于简化应用和系统的部署与维护。
+- **核心价值**: 解决了传统 IT 运维中配置管理复杂、需安装代理的痛点，通过 SSH 实现无代理自动化，使用接近纯英语的语言降低脚本编写门槛。
+- **AI 相关性**: 否 (传统 IT 自动化运维工具)
+
+---
+
+### [harry0703/MoneyPrinterTurbo](https://github.com/harry0703/MoneyPrinterTurbo)
+- **今日趋势**: Stars: 100,602 | Forks: 14,976 | 今日 +438
+- **项目简介**: 利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。
+- **核心价值**: 解决了短视频创作成本高、流程繁琐的痛点，将脚本撰写、素材匹配、配音合成等环节自动化，极大降低了内容生产门槛。
+- **AI 相关性**: 是 (核心依赖 AI 大模型生成内容)
+
+---
+
+### [ScrapeGraphAI/Scrapegraph-ai](https://github.com/ScrapeGraphAI/Scrapegraph-ai)
+- **今日趋势**: Stars: 28,793 | Forks: 2,810 | 今日 +44
+- **项目简介**: 一个基于 AI 技术的 Python 网络爬虫库。
+- **核心价值**: 解决了传统爬虫需要手动解析 DOM 结构、维护成本高的痛点，利用 LLM 智能理解网页结构并提取数据，适应性强且开发效率高。
+- **AI 相关性**: 是 (基于 AI 模型进行网页解析)
+
+---
+
+### [lllyasviel/Fooocus](https://github.com/lllyasviel/Fooocus)
+- **今日趋势**: Stars: 51,603 | Forks: 8,392 | 今日 +84
+- **项目简介**: 一款专注于提示词工程和图像生成的 AI 软件。
+- **核心价值**: 解决了 Stable Diffusion 原生界面复杂、参数调节困难的痛点，提供类似 Midjourney 的简洁体验，同时保留本地部署的控制力和隐私性。
+- **AI 相关性**: 是 (AI 图像生成工具)
+
+---
+
+### [odoo/odoo](https://github.com/odoo/odoo)
+- **今日趋势**: Stars: 53,369 | Forks: 33,296 | 今日 +34
+- **项目简介**: 一套开源业务增长应用套件，涵盖 ERP、CRM、网站构建等功能。
+- **核心价值**: 解决了企业软件昂贵且模块割裂的痛点，提供一体化、模块化的开源管理解决方案，支持高度定制化以适应不同业务需求。
+- **AI 相关性**: 否 (核心为传统企业资源管理软件)
+
+---
+
+### [github/awesome-copilot](https://github.com/github/awesome-copilot)
+- **今日趋势**: Stars: 37,242 | Forks: 4,671 | 今日 +56
+- **项目简介**: 社区贡献的 GitHub Copilot 指令、代理、技能和配置资源集合。
+- **核心价值**: 解决了开发者难以充分发挥 AI 编程助手潜力的痛点，通过共享最佳实践和配置，帮助用户更高效地利用 Copilot 提升编码效率。
+- **AI 相关性**: 是 (围绕 AI 编程助手 Copilot 的生态资源)
+
+---
+
+### [bojieli/ai-agent-book](https://github.com/bojieli/ai-agent-book)
+- **今日趋势**: Stars: 27,244 | Forks: 2,865 | 今日 +1,257
+- **项目简介**: 《深入理解 AI Agent：设计原理与工程实践》开源书籍，含正文、PDF 及配套代码。
+- **核心价值**: 解决了 AI Agent 领域知识碎片化、缺乏系统工程指南的痛点，为开发者提供从理论设计到落地实践的结构化学习路径。
+- **AI 相关性**: 是 (专注于 AI Agent 技术的书籍与代码)
+</details></script>
+        <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
+    </body>
+    </html>
+    
