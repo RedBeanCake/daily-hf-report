@@ -1,5 +1,5 @@
 {
-  "NousResearch /hermes-agent": "2026-07-16",
+  "NousResearch /hermes-agent": "2026-07-31",
   "HKUDS /DeepTutor": "2026-07-15",
   "OpenBMB /VoxCPM": "2026-06-16",
   "TheCraigHewitt /seomachine": "2026-04-09",
@@ -31,7 +31,7 @@
   "Tracer-Cloud /opensre": "2026-05-22",
   "ultralytics /ultralytics": "2026-05-28",
   "alirezarezvani /claude-skills": "2026-07-06",
-  "public-apis /public-apis": "2026-07-13",
+  "public-apis /public-apis": "2026-07-31",
   "lsdefine /GenericAgent": "2026-04-15",
   "google /magika": "2026-04-15",
   "agentscope-ai /agentscope": "2026-07-10",
@@ -139,7 +139,7 @@
   "ylytdeng /wechat-decrypt": "2026-05-11",
   "wanshuiyin /Auto-claude-code-research-in-sleep": "2026-06-09",
   "romainsimon /paperasse": "2026-05-11",
-  "fishaudio /fish-speech": "2026-05-12",
+  "fishaudio /fish-speech": "2026-07-31",
   "openinterpreter /open-interpreter": "2026-05-12",
   "FoundationAgents /MetaGPT": "2026-05-12",
   "huggingface /transformers": "2026-07-02",
@@ -220,7 +220,7 @@
   "jamwithai /production-agentic-rag-course": "2026-06-02",
   "datalab-to /surya": "2026-06-02",
   "HKUDS /Vibe-Trading": "2026-07-13",
-  "0x4m4 /hexstrike-ai": "2026-06-03",
+  "0x4m4 /hexstrike-ai": "2026-07-31",
   "interviewstreet /hiring-agent": "2026-06-24",
   "NVIDIA-NeMo /Gym": "2026-06-03",
   "unilabsim /UniLab": "2026-06-04",
@@ -382,5 +382,7 @@
   "kangarooking /cangjie-skill": "2026-07-29",
   "polarsource /polar": "2026-07-29",
   "microsoft /TRELLIS.2": "2026-07-29",
-  "ScrapeGraphAI /Scrapegraph-ai": "2026-07-30"
+  "ScrapeGraphAI /Scrapegraph-ai": "2026-07-30",
+  "trailofbits /skills": "2026-07-31",
+  "figma /mcp-server-guide": "2026-07-31"
 }
