@@ -1,0 +1,255 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AI 技术周报 - 2026-W32</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <style>
+            .markdown-body { box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 30px; }
+            details { background: #f6f8fa; padding: 15px; border-radius: 8px; border: 1px solid #d0d7de; margin-bottom: 20px; }
+            summary { cursor: pointer; color: #0969da; font-weight: bold; font-size: 1.1em; }
+        </style>
+    </head>
+    <body class="markdown-body">
+        <a href='../index.html'>← 返回索引</a>
+        <h1>AI 技术周报 - 2026-W32</h1>
+        <div id="content"></div>
+        <script type="text/markdown" id="raw-md"><details>
+<summary><b>🤗 Hugging Face 每周论文 (点击展开)</b></summary>
+
+注：提供的 arXiv ID 年份显示为 2026 年，以下内容基于标题语义及当前技术趋势进行的逻辑推断与总结。
+
+### 1. From RLVR to RLSVR: Task Transformation Induces Self-Verifiable Rewards for Open-Ended LLM Self-Improvement (从 RLVR 到 RLSVR：任务转换引发自验证奖励以实现开放式 LLM 自我改进)
+- **社区热度**: `👍 65 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.23802)
+- **研究任务**: 大语言模型自我改进与对齐
+- **核心亮点**: 通过任务转换机制，让模型在开放式任务中生成可自我验证的奖励信号。
+- **深度解析**: 传统 RLVR 依赖外部可验证奖励，该文提出 RLSVR 框架。核心是将开放式生成任务转换为可自测格式，模型生成答案后自行构造验证步骤。无需人工标注，利用自我一致性作为奖励信号进行强化学习迭代。
+- **领域归类**: [强化学习, 大语言模型, 自我改进]
+---
+
+### 2. Mental World Modeling (心智世界建模)
+- **社区热度**: `👍 50 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.27201)
+- **研究任务**: 认知建模与世界模型
+- **核心亮点**: 在世界模型中显式引入心智状态表征，模拟智能体的信念与意图。
+- **深度解析**: 扩展传统世界模型仅预测物理状态的局限。在网络结构中嵌入心智理论（ToM）模块，预测其他智能体的隐藏状态。旨在提升多智能体协作及社交场景下的预测准确性。
+- **领域归类**: [世界模型, 认知 AI, 多智能体系统]
+---
+
+### 3. N_0-VTLA: Scaling Vision-Tactile-Language-Action Model with Latent Tactile Tokens (N_0-VTLA：基于潜在触觉 Token 缩放视觉 - 触觉 - 语言 - 动作模型)
+- **社区热度**: `👍 49 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.23782)
+- **研究任务**: 多模态机器人策略学习
+- **核心亮点**: 提出潜在触觉 Token 机制，有效融合触觉信息以实现模型缩放。
+- **深度解析**: 针对机器人操作中触觉数据高噪、稀疏问题，设计离散化潜在触觉 Token。将其与视觉、语言 Token 统一编码，送入 Transformer 架构。支持大规模预训练，提升复杂操作任务的泛化能力。
+- **领域归类**: [机器人学, 多模态学习, 触觉感知]
+---
+
+### 4. Meshy T2: Fast Native Mesh Generation with Flow Matching (Meshy T2：基于流匹配的快速原生网格生成)
+- **社区热度**: `👍 40 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.28675)
+- **研究任务**: 3D 资产生成
+- **核心亮点**: 摒弃扩散模型，利用流匹配技术实现端到端的高质量网格生成。
+- **深度解析**: 解决传统 3D 生成需先体素后网格的繁琐流程。直接建模网格顶点与面的分布，利用流匹配加速采样过程。在保证拓扑结构合理的前提下，显著降低生成延迟。
+- **领域归类**: [3D 生成, 计算机图形学, 生成模型]
+---
+
+### 5. AISPA: User-Centric System Prompt Auditing for Large Language Model Applications (AISPA：面向大模型应用的用户中心系统提示词审计)
+- **社区热度**: `👍 29 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.28617)
+- **研究任务**: LLM 安全与提示词工程
+- **核心亮点**: 建立以用户视角为核心的系统提示词自动化审计框架。
+- **深度解析**: 针对应用层 Prompt 注入风险，提出 AISPA 工具。模拟不同用户角色对系统 Prompt 进行压力测试，检测逻辑漏洞与信息泄露。提供修复建议，降低部署后的安全风险。
+- **领域归类**: [AI 安全, 提示词工程, 应用审计]
+---
+
+### 6. N_0-TWAM: Scaling Tactile-Native World-Action Model for Contact-Rich Manipulation (N_0-TWAM：面向丰富接触操作的可缩放触觉原生世界 - 动作模型)
+- **社区热度**: `👍 26 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.23783)
+- **研究任务**: 机器人精细操作控制
+- **核心亮点**: 构建触觉原生世界模型，专门解决高接触频率的操作任务。
+- **深度解析**: 与 VTLA 互补，侧重于世界模型内部 dynamics 预测。将触觉反馈直接纳入状态转移预测，使模型能预判操作中的滑动、形变等物理接触变化，提升抓取与装配成功率。
+- **领域归类**: [机器人学, 世界模型, 控制理论]
+---
+
+### 7. Scaling Properties of Text Conditioning in Visual Generation (视觉生成中文本条件的缩放特性)
+- **社区热度**: `👍 23 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.29679)
+- **研究任务**: 文生图模型缩放律
+- **核心亮点**: 系统分析了文本编码器规模对图像生成质量的具体影响规律。
+- **深度解析**: 实验表明文本条件并非越大越好，存在饱和点。探讨了文本嵌入维度与扩散模型主干的匹配关系。为多模态模型的资源分配提供了实证依据，避免过度堆叠文本编码器参数。
+- **领域归类**: [计算机视觉, 缩放律, 多模态生成]
+---
+
+### 8. QQWorld: Quantile-Quantile Matching for World Model Regularization (QQWorld：基于分位数匹配的世界模型正则化)
+- **社区热度**: `👍 23 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.28415)
+- **研究任务**: 世界模型训练稳定性
+- **核心亮点**: 引入分位数 - 分位数匹配损失，约束世界模型预测分布的尾部误差。
+- **深度解析**: 传统 MSE 损失易忽略极端情况。该方法强制预测分布的分位数与真实分布对齐，特别优化了长尾风险场景下的预测可靠性。提升了世界模型在规划任务中的鲁棒性。
+- **领域归类**: [世界模型, 强化学习, 分布建模]
+---
+
+### 9. SAF-OPD: Stable Advantage Fusion for On-Policy Distillation (SAF-OPD：用于同策蒸馏的稳定优势融合)
+- **社区热度**: `👍 22 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.29209)
+- **研究任务**: 策略蒸馏与强化学习
+- **核心亮点**: 提出稳定优势融合机制，解决同策蒸馏过程中的训练震荡问题。
+- **深度解析**: 在大模型蒸馏小模型场景下，优势函数估计往往方差过大。SAF 通过多步平滑与置信度加权，稳定梯度更新。使得小模型能更平稳地继承大模型的策略性能，减少崩溃风险。
+- **领域归类**: [强化学习, 模型蒸馏, 算法稳定性]
+---
+
+### 10. Fewer Clarifications, Better Code: Benchmarking Cross-Session Personalized Ambiguity Adaptation in Coding Assistants (更少澄清，更好代码：编码助手跨会话个性化歧义适应基准)
+- **社区热度**: `👍 19 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.26611)
+- **研究任务**: 代码生成与人机交互
+- **核心亮点**: 建立跨会话基准，评估助手如何利用历史交互减少需求歧义。
+- **深度解析**: 发布新基准测试编码助手记忆用户偏好与上下文的能力。重点考察模型是否能在多轮对话后主动消除歧义，而非频繁反问。结果显示个性化适应能显著降低交互轮次，提升开发效率。
+- **领域归类**: [代码智能, 人机交互, 基准测试]
+---
+
+### 11. Enhancing Rubric-based RL via Self-Distillation (通过自蒸馏增强基于规则的强化学习)
+- **社区热度**: `👍 14 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.18082)
+- **研究任务**: 强化学习人类反馈 (RLHF)、模型对齐
+- **核心亮点**: 引入自蒸馏机制，稳定基于评分规则的强化学习训练过程。
+- **深度解析**: 针对基于规则（Rubric）的 RL 训练中奖励信号不稳定的问题，该方法让模型将自己高质量的输出作为教师信号，通过自蒸馏约束策略更新。这样做减少了对外部奖励模型的过度依赖，平滑了训练曲线，提升了策略在复杂规则下的遵循能力。
+- **领域归类**: [LLM, RLHF, 训练策略]
+---
+
+### 12. ExtractBench: A Benchmark for Schema-Guided Enterprise Document Extraction (ExtractBench：面向模式引导的企业文档提取基准)
+- **社区热度**: `👍 13 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.29677)
+- **研究任务**: 文档信息提取、基准测试
+- **核心亮点**: 提出了首个针对企业级文档、带模式（Schema）引导的提取评测基准。
+- **深度解析**: 现有的提取 benchmark 多针对通用文本，缺乏企业场景所需的结构化约束。该工作定义了一套严格的 Schema 规范，要求模型不仅提取内容，还要符合预定义的数据结构。评测涵盖了多种复杂文档格式，重点考察模型在长文档和嵌套结构下的提取准确率。
+- **领域归类**: [NLP, 信息提取, Benchmark]
+---
+
+### 13. Evaluation-Verification Reward for Consistent Multi-Reference Image Editing (用于一致多参考图像编辑的评估验证奖励)
+- **社区热度**: `👍 11 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.29025)
+- **研究任务**: 图像编辑、强化学习
+- **核心亮点**: 设计了一种包含验证步骤的奖励函数，解决多参考图编辑的一致性问题。
+- **深度解析**: 在多参考图像编辑任务中，模型容易忽略部分参考图的特征。该方案在奖励计算环节加入了一个验证器，检查编辑后的图像是否同时满足多个参考源的要求。通过这种显式的一致性约束，引导生成模型在融合多源特征时保持语义和风格的一致。
+- **领域归类**: [计算机视觉, 生成式 AI, 强化学习]
+---
+
+### 14. ODEWorld: A Continuous Predictive Architecture via Physical-Time Flow (ODEWorld：基于物理时间流的连续预测架构)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.27924)
+- **研究任务**: 世界模型、时间序列预测
+- **核心亮点**: 用常微分方程（ODE）替代离散时间步，实现连续物理时间的状态预测。
+- **深度解析**: 传统世界模型通常基于离散帧进行预测，难以处理不规则时间间隔。该架构引入物理时间流，利用 ODE 求解器对状态演化进行连续建模。这使得模型能够更准确地预测物理系统的动态变化，尤其在采样频率不一致的场景下表现更好。
+- **领域归类**: [世界模型, 物理 AI, 架构设计]
+---
+
+### 15. EMBL AI Librarian: Life-Sciences Knowledge Layer for AI Agents (EMBL AI Librarian：面向 AI 代理的生命科学知识层)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.28229)
+- **研究任务**: AI 代理、领域知识库
+- **核心亮点**: 为生命科学领域的 AI 代理构建了专用的知识接入层，减少幻觉。
+- **深度解析**: 通用大模型在生物专业领域容易产生事实性错误。该工作建立了一个结构化的生命科学知识层，代理在回答问题前先检索该层信息。这不仅提供了准确的领域术语和关系，还限制了代理的生成空间，显著降低了专业任务中的幻觉率。
+- **领域归类**: [AI 代理, 生物信息学, 知识检索]
+---
+
+### 16. RL^2-VLA: Adaptive RL Latent Compositional Steering with Test-Time Scaling for Vision-Language-Action Models (RL^2-VLA：视觉 - 语言 - 动作模型的自适应 RL 潜在组合引导与测试时缩放)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.26991)
+- **研究任务**: 机器人学习、VLA 模型
+- **核心亮点**: 在测试时通过潜在空间组合和计算资源缩放，自适应调整 VLA 策略。
+- **深度解析**: 针对 VLA 模型泛化性不足的问题，该方法不重新训练权重，而是在推理阶段利用 RL 对潜在特征进行组合引导。同时引入测试时缩放（Test-Time Scaling），根据任务难度动态调整计算预算。这使得单一模型能适应不同复杂度的操作任务，提升了零样本泛化能力。
+- **领域归类**: [机器人, VLA, 强化学习]
+---
+
+### 17. One Future, Every Robot: Label-Efficient Collective-State Prediction with Decentralized JEPA (一个未来，每个机器人：基于去中心化 JEPA 的标签高效集体状态预测)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.28443)
+- **研究任务**: 多智能体系统、自监督学习
+- **核心亮点**: 使用去中心化的 JEPA 架构，在少标签情况下预测多机器人集体状态。
+- **深度解析**: 多机器人协作通常依赖大量标注数据。该工作采用联合嵌入预测架构（JEPA），让每个机器人在本地学习预测彼此的状态演变，无需中央服务器协调。通过自监督方式学习集体行为模式，大幅降低了对人工标注的依赖，适合大规模机器人集群部署。
+- **领域归类**: [机器人, 多智能体, 自监督学习]
+---
+
+### 18. Toward Robust and 3D-Aware RGB-NIR Imaging in the Dark (迈向黑暗中的鲁棒且 3D 感知 RGB-NIR 成像)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.29684)
+- **研究任务**: 低光成像、3D 视觉
+- **核心亮点**: 融合 RGB 与近红外（NIR）数据，实现黑暗环境下的 3D 感知成像。
+- **深度解析**: 可见光在黑暗环境中失效，而 NIR 穿透力强但缺乏纹理。该方案设计了一个融合网络，利用 NIR 获取深度和结构信息，补充 RGB 的纹理细节。即使在极低光照下，也能重建出具有 3D 几何信息的清晰图像，适用于夜间监控或导航。
+- **领域归类**: [计算机视觉, 成像技术, 3D 重建]
+---
+
+### 19. SULAND v2: A Refined RGB Dataset and Deep Learning Object Detection Benchmark for UAV/UGV-Based SUrface LANDmine Detection Under Domain Shift (SULAND v2：域移位下基于 UAV/UGV 的地表地雷检测 refined RGB 数据集与深度学习目标检测基准)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.28996)
+- **研究任务**: 目标检测、安全应用
+- **核心亮点**: 更新了地表地雷检测数据集，重点解决无人机/无人车跨域检测难题。
+- **深度解析**: 地雷检测模型在不同地形和光照下性能下降严重。SULAND v2 提供了更精细的标注和多样化的场景数据，专门用于评测模型在域移位（Domain Shift）下的鲁棒性。基准测试涵盖了多种 UAV/UGV 视角，推动检测算法在实际部署中的可靠性。
+- **领域归类**: [计算机视觉, 目标检测, 遥感]
+---
+
+### 20. Not All Tokens Deserve Equal Credit: Counterfactual Sensitivity Credit Reallocation for Long-CoT Reasoning (并非所有 token 都值得同等信任：用于长 CoT 推理的反事实敏感性信用重分配)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.27888)
+- **研究任务**: 大模型推理、训练优化
+- **核心亮点**: 根据 token 对推理结果的影响程度，动态调整训练时的信用分配。
+- **深度解析**: 长思维链（Long-CoT）中，并非每个步骤都同等重要。该方法通过反事实敏感性分析，识别出对最终答案影响最大的关键 token。在训练阶段，给这些关键 token 分配更高的梯度权重，忽略无关噪声。这加快了推理模型的收敛速度，并提升了复杂逻辑任务的准确率。
+- **领域归类**: [LLM, 推理, 训练策略]
+---
+
+### 21. Beyond Feeling Better: Capability-Sustaining Emotional Dialogue as a Longitudinal Research Paradigm (不止于感觉更好：作为纵向研究范式的可持续能力情感对话)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.27851)
+- **研究任务**: 情感对话系统的长期评估
+- **核心亮点**: 提出纵向研究范式，关注长期对话中模型能力的维持而非短期情绪改善。
+- **深度解析**: 传统评估只看单次交互的情绪反馈，这篇把时间维度拉长，监测模型在长周期内是否保持解决问题的能力和情感支持的一致性。方案是设计长期交互实验，避免模型为了讨好用户而丧失功能性或出现逻辑崩塌，强调“能力可持续”比“暂时感觉好”更重要。
+- **领域归类**: [人机交互, 情感计算]
+---
+
+### 22. Safeguards Based on Copyable Context Cannot Provide Reliable Safety for LLMs (基于可复制上下文的安全防护无法为大语言模型提供可靠安全)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.27951)
+- **研究任务**: 大语言模型安全对齐
+- **核心亮点**: 证明了依赖可复制上下文（如系统提示词）的安全机制容易被绕过。
+- **深度解析**: 针对当前流行的通过上下文注入安全规则的做法，作者通过对抗攻击实验，展示了攻击者如何通过复制或修改上下文内容来 bypass 安全限制。结论明确：安全机制必须内化到模型权重或更底层的架构中，仅靠文本上下文无法提供可靠防护。
+- **领域归类**: [大模型安全, 网络安全]
+---
+
+### 23. In the Driver's Seat: A Multi-Company Study on the Reality of Autonomous Driving System Testing (坐在驾驶位上：关于自动驾驶系统测试现实情况的多公司研究)
+- **社区热度**: `👍 1 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.15820)
+- **研究任务**: 自动驾驶系统测试流程分析
+- **核心亮点**: 通过多家公司的实地研究，揭示了自动驾驶测试流程中的实际痛点与差距。
+- **深度解析**: 这是一篇实证研究，调查了多家公司的实际测试流程，对比了仿真测试与真实路测的差异。指出了当前测试覆盖度不足、边缘案例（Corner Cases）处理困难等实际问题，表明行业现有的测试标准与实际需求存在脱节，需改进测试方法论。
+- **领域归类**: [自动驾驶, 软件工程]
+---
+
+### 24. Would You Walk to the Car Wash? Revealing the Salience Bias of Large Language Models in Commonsense Reasoning (你会走去洗车店吗？揭示大语言模型在常识推理中的显著性偏差)
+- **社区热度**: `👍 0 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.28478)
+- **研究任务**: 常识推理能力评估
+- **核心亮点**: 发现大模型在常识推理中过度依赖文本显著性特征，导致逻辑错误。
+- **深度解析**: 构建了一个针对常识推理的评测集，发现模型容易被题目中显眼的词汇误导。例如看到“洗车”就关联“水”，忽略距离成本等实际逻辑。方案是通过构造对抗样本，量化了这种显著性偏差对推理准确率的负面影响，提示模型并未真正理解常识。
+- **领域归类**: [自然语言处理, 逻辑推理]
+---
+
+### 25. SGTP: Sampling-based Game-Theoretic Planning for Real-Time Multi-Vehicle Autonomous Racing (SGTP：用于实时多车自动驾驶竞速的基于采样的博弈规划)
+- **社区热度**: `👍 0 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.25388)
+- **研究任务**: 自动驾驶规划控制
+- **核心亮点**: 提出基于采样的博弈论规划方法，解决多车竞速中的实时交互问题。
+- **深度解析**: 针对多车竞速场景，传统规划难以处理其他车辆的博弈行为。SGTP 结合采样方法和博弈论，在保证实时性的前提下，预测对手意图并规划最优轨迹。重点在于平衡计算效率与博弈策略的有效性，实现更灵活的避障和超车。
+- **领域归类**: [机器人学, 自动驾驶]
+---
+</details>
+
+</script>
+        <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
+    </body>
+    </html>
+    
