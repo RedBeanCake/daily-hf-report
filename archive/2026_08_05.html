@@ -1,0 +1,353 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>前沿科研情报 - 2026-08-05</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <style>
+            .markdown-body { box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 30px; }
+            details { background: #f6f8fa; padding: 15px; border-radius: 8px; border: 1px solid #d0d7de; margin-bottom: 20px; }
+            summary { cursor: pointer; color: #0969da; font-weight: bold; font-size: 1.1em; }
+        </style>
+    </head>
+    <body class="markdown-body">
+        <a href='../index.html'>← 返回索引</a>
+        <h1>前沿科研情报 - 2026-08-05</h1>
+        <div id="content"></div>
+        <script type="text/markdown" id="raw-md"><details>
+<summary><b>🤗 Hugging Face 今日论文 (点击展开)</b></summary>
+
+### 1. LongHorizon-Harness: Advancing Long-Horizon Agents for Real-World Tasks (LongHorizon-Harness：推进现实世界长程任务智能体)
+- **社区热度**: `👍 113 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2608.01964)
+- **研究任务**: 长程任务规划与智能体控制
+- **核心亮点**: 提出一种约束机制，解决智能体在长序列任务中容易迷失或失败的问题。
+- **深度解析**: 针对现实世界任务步骤多、耗时长的特点，设计了一个"Harness"（约束/引导）模块。该模块不直接生成动作，而是对智能体的规划过程进行监控和修正，防止误差累积导致任务中途失败，提升了长程任务的成功率。
+- **领域归类**: [Agent, Planning, RL]
+---
+### 2. SwanTale: Unified Multi-Speaker Speech and Audio Generation for Instruct and Zero-Shot Tasks (SwanTale：面向指令与零-shot 任务的统一多说话人语音及音频生成)
+- **社区热度**: `👍 111 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2608.02023)
+- **研究任务**: 语音与音频生成
+- **核心亮点**: 单个模型同时搞定多说话人语音生成和通用音频生成，支持指令控制。
+- **深度解析**: 打破了语音生成和音效生成模型分离的现状。通过统一架构，模型既能根据文本生成特定人的语音，也能根据指令生成环境音效，且支持零样本克隆说话人音色，简化了部署流程。
+- **领域归类**: [Audio, Speech, Multimodal]
+---
+### 3. DAPD: Dual-Anchored Policy Distillation (DAPD：双锚点策略蒸馏)
+- **社区热度**: `👍 45 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2608.01735)
+- **研究任务**: 强化学习策略蒸馏
+- **核心亮点**: 引入两个参考锚点，稳定学生策略的学习过程。
+- **深度解析**: 传统策略蒸馏容易因教师策略噪声导致学生模型学偏。该方法设定两个“锚点”（可能是不同阶段或不同视角的策略分布），让学生模型在两者之间进行平衡学习，减少了蒸馏过程中的性能波动。
+- **领域归类**: [RL, Distillation]
+---
+### 4. Progressive Agent Skill Generation via Reinforcement Learning (基于强化学习的渐进式智能体技能生成)
+- **社区热度**: `👍 43 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2608.01678)
+- **研究任务**: 技能学习与生成
+- **核心亮点**: 用强化学习逐步生成技能，而不是一次性训练所有能力。
+- **深度解析**: 采用课程学习思想，利用 RL 让智能体先掌握基础技能，再在此基础上生成更复杂的技能。这种渐进式方式降低了搜索空间难度，提高了复杂技能生成的成功率。
+- **领域归类**: [RL, Skill Learning]
+---
+### 5. VAD: Attributing Visual Evidence for Target Reconstruction in Multimodal On-Policy Distillation (VAD：多模端在线策略蒸馏中目标重建的视觉证据归因)
+- **社区热度**: `👍 43 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.28590)
+- **研究任务**: 多模态策略蒸馏
+- **核心亮点**: 明确视觉信息中哪些部分对重建目标真正起作用。
+- **深度解析**: 在多模态蒸馏过程中，模型往往无法区分哪些视觉特征是关键。该方案引入归因机制，量化视觉证据对目标重建的贡献，让模型只关注有效的视觉区域，提升蒸馏效率。
+- **领域归类**: [Multimodal, Distillation, CV]
+---
+### 6. WorldExam: Benchmarking World Models from Apparent Appearance to Inherent Reactivity (WorldExam：从表面外观到内在反应性的世界模型基准测试)
+- **社区热度**: `👍 30 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2608.02603)
+- **研究任务**: 世界模型评估
+- **核心亮点**: 新基准不仅测视频像不像，还测物理反应对不对。
+- **深度解析**: 现有基准多关注生成视频的外观真实性。WorldExam 增加了对“内在反应性”的测试，即物体交互是否符合物理规律。这能更好地区分模型是单纯 memorize 画面还是真正理解了世界规律。
+- **领域归类**: [World Model, Benchmark]
+---
+### 7. UEmbed: Unified Sparse and Dense Multimodal Embeddings (UEmbed：统一稀疏与稠密多模态嵌入)
+- **社区热度**: `👍 29 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2608.02583)
+- **研究任务**: 多模态检索与嵌入
+- **核心亮点**: 把稀疏向量（关键词）和稠密向量（语义）合到一个模型里。
+- **深度解析**: 传统检索要么用稀疏表示（擅长精确匹配），要么用稠密表示（擅长语义匹配）。UEmbed 统一了这两种表示方法，在一个向量空间内同时保留 lexical 和 semantic 信息，提升了检索的召回率和精度。
+- **领域归类**: [Embedding, Retrieval, Multimodal]
+---
+### 8. CADENA: Stepwise CAD Reverse Engineering (CADENA：逐步式 CAD 逆向工程)
+- **社区热度**: `👍 27 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2608.00799)
+- **研究任务**: CAD 模型重建
+- **核心亮点**: 把 CAD 重建拆解成步骤来做，而不是直接生成最终形状。
+- **深度解析**: 针对从点云或图像恢复 CAD 模型的任务，该方法不直接输出几何体，而是预测构建该模型的操作步骤（如拉伸、切割）。这种逐步逆向的方式更符合 CAD 设计逻辑，生成的模型可编辑性更强。
+- **领域归类**: [CAD, 3D Vision, Engineering]
+---
+### 9. Deferred Exposure of Future Trajectories for Verifiable Reasoning in Autonomous Driving VLMs (自动驾驶 VLM 中用于可验证推理的未来轨迹延迟暴露)
+- **社区热度**: `👍 26 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2608.01755)
+- **研究任务**: 自动驾驶视觉语言模型
+- **核心亮点**: 推理时不让模型偷看未来轨迹，确保评估真实可靠。
+- **深度解析**: 训练或评估自动驾驶模型时，若提前暴露未来轨迹，模型会产生数据泄露。该方案在推理阶段屏蔽未来信息，仅在验证阶段暴露，确保模型的决策是基于当前观测而非“作弊”，提升了推理的可信度。
+- **领域归类**: [Autonomous Driving, VLM]
+---
+### 10. SKT: Skill-Use Training at Scale via Verified Synthetic Data Generation (SKT：通过验证合成数据生成进行大规模技能使用训练)
+- **社区热度**: `👍 25 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2608.02287)
+- **研究任务**: 技能训练与数据合成
+- **核心亮点**: 用经过验证的合成数据，大规模训练技能使用能力。
+- **深度解析**: 解决真实技能训练数据不足的问题。先生成合成数据，再经过一道验证流程确保数据质量，然后用这些数据进行大规模训练。这使得模型能在不依赖大量人工标注的情况下，学会如何正确调用各种技能。
+- **领域归类**: [Synthetic Data, Agent, Training]
+---
+
+### 11. SWE-Touch: Benchmarking Coding Agents When Users Touch the Code (SWE-Touch： benchmarking 用户干预代码时的编程智能体)
+- **社区热度**: `👍 22 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2608.02499)
+- **研究任务**: 代码智能体评测基准
+- **核心亮点**: 首次将用户中途修改代码的行为纳入智能体评测体系。
+- **深度解析**: 现有基准通常假设智能体全自动运行。这篇论文构建了一个新基准，模拟用户在开发过程中手动修改部分代码的场景，测试智能体能否识别这些外部变更并继续完成任务，更贴近实际协作开发流程。
+- **领域归类**: [Code LLM, Benchmark, Human-AI Interaction]
+---
+
+### 12. WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning (WCM：面向视觉 - 语言 - 动作强化学习的世界批评模型)
+- **社区热度**: `👍 22 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.29613)
+- **研究任务**: 具身智能强化学习
+- **核心亮点**: 引入独立的世界批评模型来优化强化学习的奖励信号。
+- **深度解析**: 针对 VLA 模型训练不稳定的问题，该方法训练一个专门的批评模型，用于评估视觉状态与动作执行的一致性。相比传统稀疏奖励，它能提供更连续的反馈，帮助策略模型更快收敛。
+- **领域归类**: [Robotics, Reinforcement Learning, Multimodal]
+---
+
+### 13. GradCuit: Credit-Assigned Gradient Flow Enables Robust and Interpretable Test-Time Latent Reasoning (GradCuit：信用分配梯度流实现鲁棒且可解释的测试时潜在推理)
+- **社区热度**: `👍 20 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2608.02585)
+- **研究任务**: 测试时计算与推理优化
+- **核心亮点**: 在不重新训练的情况下，通过调整梯度流提升推理过程的鲁棒性。
+- **深度解析**: 该方法在推理阶段对 latent 状态进行梯度信用分配，明确哪些推理步骤对结果贡献大。这不仅提高了模型应对复杂问题的成功率，还能输出可解释的推理路径，方便排查错误。
+- **领域归类**: [Reasoning, Optimization, Interpretability]
+---
+
+### 14. Motion Beyond Morphology: Bootstrapping Cross-Category Motion Transfer from Abstract Motion Representations (超越形态的动作：基于抽象表示引导跨类别动作迁移)
+- **社区热度**: `👍 20 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2608.01628)
+- **研究任务**: 动作迁移与动画生成
+- **核心亮点**: 解耦动作与身体形态，实现不同类别对象间的动作迁移。
+- **深度解析**: 传统方法难以将人类动作迁移到形态差异大的物体（如机器人）上。这篇论文提取抽象的动作表示，忽略具体几何形状差异，使得动作数据可以在不同类别的模型间通用，降低了数据收集成本。
+- **领域归类**: [Computer Vision, Graphics, Animation]
+---
+
+### 15. DiffusionGemma Technical Report (DiffusionGemma 技术报告)
+- **社区热度**: `👍 19 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2608.00146)
+- **研究任务**: 多模态生成模型
+- **核心亮点**: 将 Gemma 语言模型能力直接融入扩散模型架构。
+- **深度解析**: 报告介绍了如何将 Gemma 的文本理解能力与扩散生成过程结合。不同于简单的文本编码器，该架构让语言模型更深入参与去噪过程，显著提升了复杂提示词下的图像生成对齐度和控制能力。
+- **领域归类**: [Generative AI, Multimodal, Image Generation]
+---
+
+### 16. GPTQ-2D: Cubic-Time Two-Sided Adaptive Rounding (GPTQ-2D：立方时间复杂度的双向自适应舍入)
+- **社区热度**: `👍 17 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.27042)
+- **研究任务**: 大模型量化
+- **核心亮点**: 改进 GPTQ 量化算法，通过双向自适应舍入减少精度损失。
+- **深度解析**: 针对 GPTQ 量化后精度下降的问题，该方法在量化过程中同时考虑权重矩阵的行和列误差（2D），采用自适应舍入策略。虽然校准时间有所增加，但在低比特下能保持更高的模型精度。
+- **领域归类**: [Model Compression, Efficiency, Quantization]
+---
+
+### 17. Roomer: Reflective Object-Grounded Model Editing and Repair for 3D Indoor Layout Synthesis (Roomer：用于 3D 室内布局合成的反射式物体 grounding 模型编辑与修复)
+- **社区热度**: `👍 16 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2608.01973)
+- **研究任务**: 3D 场景布局生成
+- **核心亮点**: 利用反射机制自动检测并修复 3D 布局中的物体关系错误。
+- **深度解析**: 生成 3D 室内布局时容易出现物体穿模或位置不合理。Roomer 在生成后引入一个反射步骤，检查物体间的语义和空间关系（grounding），发现错误则自动编辑修复，提高了生成场景的可用性。
+- **领域归类**: [3D Vision, Generation, Scene Understanding]
+---
+
+### 18. DeepVoyager-VL: Incentivizing Vision-in-the-Loop Search for Long-Horizon Multimodal Agents (DeepVoyager-VL：激励长周期多模态智能体进行视觉闭环搜索)
+- **社区热度**: `👍 14 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2608.01827)
+- **研究任务**: 多模态智能体规划
+- **核心亮点**: 在长任务规划中，鼓励智能体频繁调用视觉反馈修正路径。
+- **深度解析**: 长周期任务中智能体容易偏离目标。该方法在搜索算法中加入激励项，促使智能体在执行步骤间主动观察视觉环境变化，利用实时视觉信息修正规划轨迹，提升了长任务的成功率。
+- **领域归类**: [Agent, Planning, Multimodal]
+---
+
+### 19. 3DZip: Spatial-Aware Feature Diversity-Guided Token Compression for 3D Question Answering (3DZip：空间感知特征多样性引导的 3D 问答 Token 压缩)
+- **社区热度**: `👍 14 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2608.01185)
+- **研究任务**: 3D 视觉问答
+- **核心亮点**: 基于空间位置和特征多样性压缩 3D Token，降低计算负载。
+- **深度解析**: 3D 点云数据 token 数量巨大，影响推理速度。3DZip 将空间相邻且特征相似的 token 合并，在保留关键几何信息的前提下大幅减少输入长度，加快了 3D 问答模型的响应速度。
+- **领域归类**: [3D Vision, NLP, Efficiency]
+---
+
+### 20. LeapTalk: Breaking the Latency-Quality Trade-off in Talking Head Generation (LeapTalk：打破数字人生成中延迟与质量的权衡)
+- **社区热度**: `👍 13 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2608.00079)
+- **研究任务**: 说话人头视频生成
+- **核心亮点**: 优化生成架构，同时实现低延迟和高画质。
+- **深度解析**: 传统方法为了保证画质往往牺牲速度，导致直播等场景无法使用。LeapTalk 通过改进流式生成架构，减少了中间处理环节，在保证口型同步和清晰度的前提下，显著降低了生成延迟。
+- **领域归类**: [Generative AI, Video, Real-time Rendering]
+---
+
+### 21. StyleForge: Indoor Furniture Styling by Counterfactual Reasoning in a Hypergraph Field (StyleForge：基于超图场反事实推理的室内家具风格化)
+- **社区热度**: `👍 12 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2608.01954)
+- **研究任务**: 室内场景家具风格生成与编辑
+- **核心亮点**: 引入超图建模家具关系，利用反事实推理实现无需重训的风格调整。
+- **深度解析**: 传统方法改风格往往需要重新生成整个场景。这篇把家具之间的语义和空间关系建成超图，通过反事实推理（比如“如果把这个沙发换成复古风会怎样”）在图场中推导风格变化，直接映射到生成模型，解决了风格一致性难控制的问题。
+- **领域归类**: [Computer Vision, Generative AI, 3D Scene Understanding]
+---
+
+### 22. DreamTraj: Generating 6-DoF Object Trajectories by Reading Unrendered Video Diffusion Latents (DreamTraj：通过读取未渲染视频扩散潜变量生成 6 自由度物体轨迹)
+- **社区热度**: `👍 12 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2608.00486)
+- **研究任务**: 3D 物体运动轨迹生成
+- **核心亮点**: 直接从视频扩散模型的 Latent 空间提取 3D 运动信息，无需渲染中间过程。
+- **深度解析**: 以往生成 3D 轨迹得先渲染视频再反推，损耗大。这篇直接挖掘视频扩散模型未渲染的潜变量（Latents），从中解码出物体的 6 自由度（位置 + 旋转）轨迹，速度快且几何一致性更好，适合机器人抓取等需要精确路径的场景。
+- **领域归类**: [Computer Vision, Robotics, Video Generation]
+---
+
+### 23. Poplar: A Scalable Pipeline for Human-Centric Image Dataset Synthesis (Poplar：面向人以中心的图像数据集合成可扩展流水线)
+- **社区热度**: `👍 10 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2608.00440)
+- **研究任务**: 合成数据生成（人体图像）
+- **核心亮点**: 提供了一套自动化流水线，能大规模生成多样化的人体训练数据。
+- **深度解析**: 针对人体数据隐私和采集难的问题，设计了一套包含姿态控制、背景融合、光照调整的完整流水线。重点是可扩展性，能按需生成特定场景下的人体图像，用来微调检测或重识别模型，效果接近真实数据。
+- **领域归类**: [Computer Vision, Dataset Synthesis, Human Analysis]
+---
+
+### 24. ScrambleToolBench: Agents Search Exhaustively Even When Their Own Map Points to the Next Step (ScrambleToolBench：即使地图已指引下一步，Agent 仍会 exhaustive 搜索)
+- **社区热度**: `👍 9 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2608.02358)
+- **研究任务**: Agent 工具使用能力评估
+- **核心亮点**: 揭示了 Agent 在已知路径下仍会无效搜索的低效行为，并提供基准测试。
+- **深度解析**: 发现现有 Agent 即使内部规划已经知道下一步该调哪个工具，还是会习惯性地遍历搜索。这个 Benchmark 专门构造这种“有地图”的场景，量化 Agent 的冗余操作，用来评估和优化 Agent 的规划效率，避免算力浪费。
+- **领域归类**: [LLM Agents, Evaluation, Tool Use]
+---
+
+### 25. Model or Harness? An Interaction-Centric Taxonomy for Localizing Agent Failures (Model or Harness？一种以交互为中心的定位 Agent 失败的分类法)
+- **社区热度**: `👍 7 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.28802)
+- **研究任务**: Agent 失败原因分析
+- **核心亮点**: 建立了分类体系，明确区分失败是源于模型本身还是调度框架。
+- **深度解析**: Agent 跑不通时，很难说是基座模型笨还是外围代码（Harness）写得烂。这篇提出以交互为中心的分类法，通过日志和状态回溯，把锅分清楚。有助于开发者针对性修复，是模型微调还是改接口逻辑，减少调试成本。
+- **领域归类**: [LLM Agents, Debugging, System Design]
+---
+
+### 26. Relax Within, Balance Across: Geometry-Guided Load Balancing for Vision-Language Mixture-of-Experts (Relax Within, Balance Across：几何引导的视觉语言混合专家负载均衡)
+- **社区热度**: `👍 6 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2608.00574)
+- **研究任务**: 多模态大模型 MoE 负载均衡
+- **核心亮点**: 利用几何信息指导 MoE 专家网络负载，解决视觉语言任务中的负载不均。
+- **深度解析**: VLM 里的 MoE 结构容易出现某些专家过载、某些闲置。这篇利用视觉特征的几何分布特性，在专家内部放松约束，在专家之间强制平衡。不用额外的辅助损失，就能让训练更稳定，推理吞吐量更高。
+- **领域归类**: [Multimodal, Model Architecture, MoE]
+---
+
+### 27. RecHarness: A Bandit-Routed Agentic Harness for Self-Evolving Recommender Systems (RecHarness：基于 Bandit 路由的自进化推荐系统 Agent 框架)
+- **社区热度**: `👍 6 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.29241)
+- **研究任务**: 推荐系统优化
+- **核心亮点**: 用多臂老虎机路由 Agent 策略，实现推荐系统的自我进化。
+- **深度解析**: 传统推荐系统策略更新慢。这篇把不同的推荐策略封装成 Agent，用 Bandit 算法根据用户反馈动态路由流量给表现好的 Agent。系统能在线自我调整策略权重，适应分布变化，提升长期回报率。
+- **领域归类**: [Recommender Systems, Reinforcement Learning, Agents]
+---
+
+### 28. ICDAR 2026 Competition on Information Extraction from Atomic Layer Deposition/Etching (ALD/E) Scientific Figures (ICDAR 2026：原子层沉积/蚀刻科学图表信息提取竞赛)
+- **社区热度**: `👍 4 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.26848)
+- **研究任务**: 科学图表信息提取（竞赛说明）
+- **核心亮点**: 针对特定科学领域（ALD/E）的图表提取建立了标准数据集和评估基准。
+- **深度解析**: 通用 OCR 在处理专业科学图表时效果不好。这篇是竞赛说明文档，定义了从原子层沉积工艺图中提取参数和流程的任务标准。提供了标注数据集，推动领域专用的文档分析模型发展。
+- **领域归类**: [Document Analysis, OCR, Scientific AI]
+---
+
+### 29. Compute Globally, Materialize Locally: The Memory Contract of Sparse Event-KV (Compute Globally, Materialize Locally：稀疏 Event-KV 的内存契约)
+- **社区热度**: `👍 3 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.23693)
+- **研究任务**: LLM 推理显存优化
+- **核心亮点**: 提出稀疏 Event-KV 缓存机制，优化长上下文下的内存占用。
+- **深度解析**: 长序列推理时 KV Cache 显存占用太大。这篇设计了一种新的内存契约，全局计算重要性，局部才 материализация（实例化）KV 数据。通过稀疏化事件触发，大幅减少显存需求，同时保持推理精度不明显下降。
+- **领域归类**: [LLM Inference, System Optimization, Memory Management]
+---
+
+### 30. Zero-Mem: Zero-Token Memory Operations for LLM Agents (Zero-Mem：面向 LLM Agent 的零 Token 内存操作)
+- **社区热度**: `👍 2 Upvotes`
+- **论文链接**: [点击跳转](https://arxiv.org/abs/2607.29377)
+- **研究任务**: Agent 内存管理优化
+- **核心亮点**: 消除基于 Token 的内存读写操作，降低 Agent 运行开销。
+- **深度解析**: 现有 Agent 记东西都得转成 Token 塞进上下文，成本高。这篇提出 Zero-Token 操作，直接在向量空间或外部数据库进行内存读写，不占用 LLM 的上下文窗口。显著降低了长程任务中的 Token 消耗和延迟。
+- **领域归类**: [LLM Agents, Memory Optimization, Efficiency]
+---
+</details>
+
+<details>
+<summary><b>🚀 GitHub 今日热门项目 (点击展开)</b></summary>
+
+### [uber /ADR](https://github.com/uber/ADR)
+- **今日趋势**: Stars: 58,866 | 今日 +140
+- **项目简介**: [AI 相关] 专为保护企业级 AI Agent 设计的安全框架，提供可观测性、安全基准测试及威胁检测能力。
+- **核心价值**: 解决了企业在部署 AI 代理时面临的安全黑盒与合规痛点，通过在 Uber 生产环境验证的机制，确保 AI 行为可控、可审计且能抵御潜在威胁。
+- **AI 相关性**: 是
+
+---
+### [browser-use /video-use](https://github.com/browser-use/video-use)
+- **今日趋势**: Stars: 19,110 | Forks: 2,394 | 今日 +306
+- **项目简介**: [AI 相关] 利用编码 Agent 实现视频编辑自动化的工具，将自然语言指令转化为视频处理代码。
+- **核心价值**: 降低了视频编辑的技术门槛，解决了传统视频软件操作复杂的问题，通过 AI 代理自动编写和执行编辑脚本，大幅提升内容创作效率。
+- **AI 相关性**: 是
+
+---
+### [huangruiteng /loopx](https://github.com/huangruiteng/loopx)
+- **今日趋势**: Stars: 1,503 | Forks: 104 | 今日 +618
+- **项目简介**: [AI 相关] 面向长运行 AI Agent 团队的轻量级循环工程状态内核，支持跨模型代理的状态管理与任务交接。
+- **核心价值**: 解决了 AI Agent 在长时间运行任务中状态丢失、上下文断裂及资源配额管理难题，提供 durable goals 和可验证交接机制，确保复杂任务流的稳定性。
+- **AI 相关性**: 是
+
+---
+### [Coldcard /firmware](https://github.com/Coldcard/firmware)
+- **今日趋势**: Stars: 750 | Forks: 206 | 今日 +11
+- **项目简介**: [非 AI 相关] Coldcard 硬件钱包的固件源码及模拟器，专注于比特币安全存储。
+- **核心价值**: 为加密货币用户提供透明可审计的安全底层，解决了硬件钱包信任问题，允许社区验证私钥管理逻辑是否存在后门或漏洞。
+- **AI 相关性**: 否
+
+---
+### [usestrix /strix](https://github.com/usestrix/strix)
+- **今日趋势**: Stars: 47,964 | Forks: 5,071 | 今日 +942
+- **项目简介**: [AI 相关] 开源 AI 渗透测试工具，利用人工智能自动发现并修复应用程序漏洞。
+- **核心价值**: 解决了传统安全测试成本高、覆盖率低的问题，通过 AI 自动化扫描与修复建议，让开发团队能更快速地进行安全左移，降低应用上线风险。
+- **AI 相关性**: 是
+
+---
+### [python /cpython](https://github.com/python/cpython)
+- **今日趋势**: Stars: 74,133 | Forks: 35,134 | 今日 +19
+- **项目简介**: [非 AI 相关] Python 编程语言的官方源代码仓库，是所有 Python 项目的基石。
+- **核心价值**: 作为全球最流行编程语言之一的核心实现，解决了跨平台脚本执行、动态类型系统及生态兼容性问题，支撑了包括 AI 在内的无数软件开发场景。
+- **AI 相关性**: 否
+
+---
+### [Shubhamsaboo /awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps)
+- **今日趋势**: Stars: 130,454 | Forks: 19,252 | 今日 +365
+- **项目简介**: [AI 相关] 收录了 100+ 个 AI Agent、Agent 技能及 RAG 应用的开源项目清单。
+- **核心价值**: 解决了开发者寻找高质量大模型应用案例难的问题，提供了从入门到生产级的参考架构，加速了 LLM 应用落地的探索过程。
+- **AI 相关性**: 是
+
+---
+### [django /django](https://github.com/django/django)
+- **今日趋势**: Stars: 88,326 | Forks: 34,101 | 今日 +19
+- **项目简介**: [非 AI 相关] 面向完美主义者的 Python Web 框架，强调快速开发与简洁设计。
+- **核心价值**: 解决了 Web 开发中重复造轮子的问题，提供ORM、认证、后台管理等开箱即用组件，极大提升了后端开发效率与代码可维护性。
+- **AI 相关性**: 否
+
+---
+### [K-Dense-AI /scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills)
+- **今日趋势**: Stars: 32,621 | Forks: 3,222 | 今日 +107
+- **项目简介**: [AI 相关] 将 AI Agent 转化为 AI 科学家的技能库，涵盖生物、化学、医学等领域的数据库与工具技能。
+- **核心价值**: 解决了通用大模型在垂直科学领域专业知识不足的问题，通过预置 158+ 技能和 100+ 科学数据库，赋能 AI 代理进行专业的科研辅助与药物发现。
+- **AI 相关性**: 是
+</details></script>
+        <script>document.getElementById('content').innerHTML = marked.parse(document.getElementById('raw-md').textContent);</script>
+    </body>
+    </html>
+    
