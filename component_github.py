@@ -48,7 +48,7 @@ def process_github_with_ai(client_llm, repos):
     
     try:
         completion = client_llm.chat.completions.create(
-            model="qwen3.5-plus", 
+            model="qwen3.7-plus", 
             messages=[{"role": "user", "content": prompt}]
         )
         content = completion.choices[0].message.content
