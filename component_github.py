@@ -1,57 +1,82 @@
-import requests
-from bs4 import BeautifulSoup
+from __future__ import annotations
+
 import json
+import logging
+from typing import Any, Dict, List
 
-def scrape_github_trending(language="python"):
-    """抓取 GitHub Trending 榜单"""
+from http_utils import RequestError, request_with_retry, retry_call
+
+
+LOGGER = logging.getLogger(__name__)
+GITHUB_HEADERS = {"User-Agent": "daily-hf-report/1.0"}
+
+
+class AIProcessingError(RuntimeError):
+    """Raised when GitHub project summarization fails."""
+
+
+def scrape_github_trending(language: str = "python", *, session: Any = None) -> List[Dict[str, str]]:
+    from bs4 import BeautifulSoup
+
     url = f"https://github.com/trending/{language}?since=daily"
-    headers = {'User-Agent': 'Mozilla/5.0'}
-    
-    try:
-        res = requests.get(url, headers=headers, timeout=15)
-        soup = BeautifulSoup(res.text, 'html.parser')
-        repos = []
-        
-        for row in soup.select('article.Box-row'):
-            title_tag = row.select_one('h2 a')
-            name = title_tag.get_text(strip=True).replace(' / ', '/')
-            link = "https://github.com" + title_tag['href']
-            desc = row.select_one('p')
-            desc_text = desc.get_text(strip=True) if desc else "No description"
-            stars = row.select_one('div.f6').get_text(strip=True)
-            
-            repos.append({
-                "name": name,
-                "link": link,
-                "description": desc_text,
-                "stars_info": stars
-            })
-        return repos[:15]  # 取前 15 个
-    except Exception as e:
-        print(f"GitHub Scrape Error: {e}")
-        return []
+    response = request_with_retry(
+        "GET", url, session=session, headers=GITHUB_HEADERS, timeout=15
+    )
+    soup = BeautifulSoup(response.text, "html.parser")
+    rows = soup.select("article.Box-row")
+    if not rows:
+        raise RequestError("GitHub Trending returned no repository rows")
 
-def process_github_with_ai(client_llm, repos):
-    """使用 AI 处理 GitHub 项目"""
-    if not repos: return ""
-    
+    repos: List[Dict[str, str]] = []
+    for row in rows:
+        title_tag = row.select_one("h2 a")
+        if not title_tag or not title_tag.get("href"):
+            LOGGER.warning("Skipping malformed GitHub Trending row")
+            continue
+        name = " ".join(title_tag.get_text(" ", strip=True).split()).replace(" / ", "/")
+        desc = row.select_one("p")
+        stats = row.select_one("div.f6")
+        repos.append(
+            {
+                "name": name,
+                "link": "https://github.com" + title_tag["href"],
+                "description": desc.get_text(" ", strip=True) if desc else "No description",
+                "stars_info": stats.get_text(" ", strip=True) if stats else "Unknown",
+            }
+        )
+    if not repos:
+        raise RequestError("GitHub Trending rows could not be parsed")
+    return repos[:15]
+
+
+def process_github_with_ai(client_llm: Any, repos: List[Dict[str, str]]) -> str:
+    if not repos:
+        return ""
     prompt = f"""你是一个开源项目专家。请解析以下 GitHub 今日趋势项目。
-    要求：用中文总结项目的用途、目标人群及技术核心，并根据描述判断其是否与 AI/大模型相关。
-    格式：
-    ### [项目名](链接)
-    - **今日趋势**: [stars/forks信息]
-    - **项目简介**: [一句话总结项目做什么]
-    - **核心价值**: [深入解析该项目解决了什么痛点]
-    ---
-    待处理数据：{json.dumps(repos)}
-    """
-    
-    try:
+只能依据输入中的名称、链接、描述和统计信息作答；描述不足时请明确写“仓库描述未提供”，不要根据项目名猜测功能。
+要求：用中文总结项目用途、目标人群、技术核心，并判断是否与 AI/大模型相关。
+格式：
+### [项目名](链接)
+- **今日趋势**: [stars/forks信息]
+- **项目简介**: [一句话总结]
+- **核心价值**: [基于描述的解析]
+---
+待处理数据：{json.dumps(repos, ensure_ascii=False)}
+"""
+
+    def call() -> str:
         completion = client_llm.chat.completions.create(
-            model="qwen3.7-plus", 
-            messages=[{"role": "user", "content": prompt}]
+            model="qwen3.7-plus",
+            messages=[{"role": "user", "content": prompt}],
         )
         content = completion.choices[0].message.content
-        return f"<details>\n<summary><b>🚀 GitHub 今日热门项目 (点击展开)</b></summary>\n\n{content}\n</details>"
-    except:
-        return ""
+        if not content:
+            raise ValueError("LLM returned empty content")
+        return content
+
+    try:
+        content = retry_call(call, attempts=3, base_delay=1.0)
+    except Exception as exc:
+        LOGGER.exception("GitHub summary failed: %s", exc)
+        raise AIProcessingError("GitHub project summary failed") from exc
+    return f"<details>\n<summary><b>🚀 GitHub 今日热门项目 (点击展开)</b></summary>\n\n{content}\n</details>"
