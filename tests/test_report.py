@@ -94,13 +94,20 @@ class PaperInputTests(unittest.TestCase):
 
     def test_summary_prompt_contains_abstract(self):
         client = Mock()
-        client.chat.completions.create.return_value.choices = [
-            Mock(message=Mock(content="### 1. Test"))
+        client.chat.completions.create.side_effect = [
+            Mock(choices=[Mock(message=Mock(content="### 1. Test"))]),
+            Mock(choices=[Mock(message=Mock(content="### 11. Test"))]),
+            Mock(choices=[Mock(message=Mock(content="### 21. Test"))]),
+            Mock(choices=[Mock(message=Mock(content="### 31. Test"))]),
         ]
-        papers = [{"id": "1234.5678", "title": "Test", "upvotes": 2, "abstract": "A real abstract."}]
+        papers = [
+            {"id": f"1234.{index:04d}", "title": f"Test {index}", "upvotes": index, "abstract": "A real abstract."}
+            for index in range(1, 32)
+        ]
         process_hf_with_ai(client, papers)
-        prompt = client.chat.completions.create.call_args.kwargs["messages"][0]["content"]
+        prompt = client.chat.completions.create.call_args_list[0].kwargs["messages"][0]["content"]
         self.assertIn("A real abstract.", prompt)
+        self.assertEqual(client.chat.completions.create.call_count, 4)
 
 
 class RetryTests(unittest.TestCase):
