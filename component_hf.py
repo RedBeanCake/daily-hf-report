@@ -145,7 +145,8 @@ def process_hf_with_ai(
         return ""
 
     papers.sort(key=lambda item: item.get("upvotes", 0) or 0, reverse=True)
-    selected = papers[:30]
+    # Process every paper returned by the HF endpoint. Chunking keeps each prompt bounded.
+    selected = papers
     chunk_size = 10
     report_type = "每周" if mode == "weekly" else "今日"
     chunks: List[str] = []
