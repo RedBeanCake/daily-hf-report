@@ -17,7 +17,7 @@
   "D4Vinci/Scrapling": "2026-06-30",
   "PrefectHQ/prefect": "2026-07-13",
   "jingyaogong/minimind": "2026-07-08",
-  "unslothai/unsloth": "2026-06-05",
+  "unslothai/unsloth": "2026-08-13",
   "feast-dev/feast": "2026-04-10",
   "666ghj/MiroFish": "2026-08-07",
   "ahujasid/blender-mcp": "2026-04-13",
@@ -93,7 +93,7 @@
   "hsliuping/TradingAgents-CN": "2026-05-06",
   "keephq/keep": "2026-04-28",
   "NVIDIA/personaplex": "2026-04-28",
-  "soxoj/maigret": "2026-06-29",
+  "soxoj/maigret": "2026-08-13",
   "neuphonic/neutts": "2026-04-29",
   "KellerJordan/modded-nanogpt": "2026-04-29",
   "shaxiu/XianyuAutoAgent": "2026-04-29",
@@ -355,7 +355,7 @@
   "kvcache-ai/ktransformers": "2026-07-20",
   "AstrBotDevs/AstrBot": "2026-07-20",
   "Canner/WrenAI": "2026-07-20",
-  "megadose/holehe": "2026-07-20",
+  "megadose/holehe": "2026-08-13",
   "lingfengQAQ/webnovel-writer": "2026-07-20",
   "langchain-ai/open-swe": "2026-07-20",
   "bojieli/ai-agent-book": "2026-07-30",
@@ -368,7 +368,7 @@
   "NVIDIA/Model-Optimizer": "2026-07-22",
   "slavakurilyak/awesome-ai-agents": "2026-07-23",
   "oraios/serena": "2026-07-23",
-  "skypilot-org/skypilot": "2026-07-23",
+  "skypilot-org/skypilot": "2026-08-13",
   "vnpy/vnpy": "2026-07-23",
   "flashinfer-ai/flashinfer": "2026-07-24",
   "pyg-team/pytorch_geometric": "2026-07-24",
@@ -410,5 +410,6 @@
   "harveyai/harvey-labs": "2026-08-11",
   "AWeirdDev/flights": "2026-08-11",
   "omnigent-ai/omnigent": "2026-08-12",
-  "index-tts/index-tts": "2026-08-12"
+  "index-tts/index-tts": "2026-08-12",
+  "NVIDIA-NeMo/Automodel": "2026-08-13"
 }
