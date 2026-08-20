@@ -226,7 +226,7 @@
   "unilabsim/UniLab": "2026-06-04",
   "Panniantong/Agent-Reach": "2026-08-03",
   "MemPalace/mempalace": "2026-06-05",
-  "microsoft/agent-framework": "2026-06-05",
+  "microsoft/agent-framework": "2026-08-20",
   "vllm-project/vllm-omni": "2026-06-05",
   "RyanCodrai/turbovec": "2026-07-17",
   "google/skills": "2026-08-07",
@@ -254,7 +254,7 @@
   "shuvonsec/claude-bug-bounty": "2026-06-30",
   "modelscope/ms-swift": "2026-06-12",
   "ml-explore/mlx-lm": "2026-06-12",
-  "browser-use/browser-use": "2026-07-24",
+  "browser-use/browser-use": "2026-08-20",
   "pytest-dev/pytest": "2026-06-15",
   "andrewyng/aisuite": "2026-07-27",
   "ArchipelagoMW/Archipelago": "2026-06-15",
@@ -400,7 +400,7 @@
   "NovaSky-AI/SkyRL": "2026-08-05",
   "NVIDIA-NeMo/Speech": "2026-08-05",
   "anandprtp/Antra": "2026-08-05",
-  "goauthentik/authentik": "2026-08-07",
+  "goauthentik/authentik": "2026-08-20",
   "semantica-agi/semantica": "2026-08-14",
   "Significant-Gravitas/AutoGPT": "2026-08-07",
   "Comfy-Org/ComfyUI": "2026-08-07",
@@ -423,5 +423,8 @@
   "marceloprates/prettymaps": "2026-08-19",
   "youssofal/MTPLX": "2026-08-19",
   "DrewThomasson/ebook2audiobook": "2026-08-19",
-  "AgriciDaniel/claude-ads": "2026-08-19"
+  "AgriciDaniel/claude-ads": "2026-08-19",
+  "Tencent/AI-Infra-Guard": "2026-08-20",
+  "Osmantic/ODS": "2026-08-20",
+  "ATH-MaaS/Pixelle-Video": "2026-08-20"
 }
