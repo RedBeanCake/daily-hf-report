@@ -16,6 +16,10 @@ BEIJING_TZ = ZoneInfo("Asia/Shanghai")
 HF_HEADERS = {
     "User-Agent": "daily-hf-report/1.0 (+https://github.com/RedBeanCake/daily-hf-report)",
 }
+# How many days to walk back when Hugging Face rejects the requested date as
+# being in the future. Guards against the scheduler firing after Beijing
+# midnight while Hugging Face still settles the "latest" date in UTC.
+MAX_DATE_FALLBACK_DAYS = 3
 
 
 class AIProcessingError(RuntimeError):
@@ -64,6 +68,70 @@ def fetch_arxiv_abstracts(paper_ids: Iterable[str], *, session: Any = None) -> D
     return abstracts
 
 
+def _hf_daily_papers_url(mode: str, current: dt.datetime) -> str:
+    if mode == "weekly":
+        year, week, _ = current.isocalendar()
+        return f"https://huggingface.co/api/daily_papers?week={year}-W{week:02d}&limit=50"
+    date_string = current.strftime("%Y-%m-%d")
+    return f"https://huggingface.co/api/daily_papers?date={date_string}&limit=50"
+
+
+def _fetch_hf_payload(mode: str, current: dt.datetime, *, session: Any) -> Any:
+    """Fetch the HF daily/weekly payload, tolerating a future-dated request.
+
+    Hugging Face settles its "latest" date in UTC, so a job that fires after
+    Beijing midnight (but before UTC midnight) asks for a date HF still regards
+    as the future and receives HTTP 400. In that case we walk the date back a
+    day at a time. A *successful but empty* response is returned as-is: an
+    empty day is a real answer, not an error, and must not be papered over with
+    a different date's results.
+    """
+
+    attempt_time = current
+    for offset in range(MAX_DATE_FALLBACK_DAYS + 1):
+        url = _hf_daily_papers_url(mode, attempt_time)
+        try:
+            return request_json(url, session=session, headers=HF_HEADERS, timeout=15)
+        except RequestError as exc:
+            # Only a 400 (invalid/future date) is recoverable by stepping back;
+            # anything else propagates unchanged.
+            if exc.status_code != 400 or offset == MAX_DATE_FALLBACK_DAYS:
+                raise
+            attempt_time = attempt_time - dt.timedelta(days=1)
+            LOGGER.warning(
+                "HF rejected %s as future-dated; retrying with %s",
+                url,
+                attempt_time.strftime("%Y-%m-%d"),
+            )
+    # Unreachable: the loop either returns or raises.
+    raise RequestError("Hugging Face date fallback exhausted")
+
+
+def scrape_hf(
+    mode: str = "daily",
+    *,
+    now: Optional[dt.datetime] = None,
+    session: Any = None,
+) -> List[Dict[str, Any]]:
+    """Fetch HF Daily Papers without substituting another date's results."""
+
+    current = now or get_beijing_time()
+
+    payload = _fetch_hf_payload(mode, current, session=session)
+    if not isinstance(payload, list):
+        raise RequestError("Hugging Face API returned an unexpected payload")
+
+    items = [item for item in payload if isinstance(item, dict)]
+    missing_ids = [
+        str((item.get("paper") or {}).get("id", ""))
+        for item in items
+        if not ((item.get("summary") or item.get("abstract")) or (item.get("paper") or {}).get("summary") or (item.get("paper") or {}).get("abstract"))
+    ]
+    abstracts = fetch_arxiv_abstracts(missing_ids, session=session)
+    # Enrichment is best-effort: a missing arXiv abstract must not discard the HF item.
+    return [_enrich_paper(item, abstracts) for item in items]
+
+
 def _enrich_paper(item: Dict[str, Any], abstracts: Dict[str, str]) -> Dict[str, Any]:
     paper = item.get("paper") or {}
     paper_id = str(_value_from_paper(paper, "id", default=""))
@@ -86,37 +154,6 @@ def _enrich_paper(item: Dict[str, Any], abstracts: Dict[str, str]) -> Dict[str, 
         "published": _value_from_paper(paper, "publishedAt", "published", default=""),
         "paper_url": f"https://arxiv.org/abs/{paper_id}" if paper_id else "",
     }
-
-
-def scrape_hf(
-    mode: str = "daily",
-    *,
-    now: Optional[dt.datetime] = None,
-    session: Any = None,
-) -> List[Dict[str, Any]]:
-    """Fetch HF Daily Papers without substituting another date's results."""
-
-    current = now or get_beijing_time()
-    if mode == "weekly":
-        year, week, _ = current.isocalendar()
-        url = f"https://huggingface.co/api/daily_papers?week={year}-W{week:02d}&limit=50"
-    else:
-        date_string = current.strftime("%Y-%m-%d")
-        url = f"https://huggingface.co/api/daily_papers?date={date_string}&limit=50"
-
-    payload = request_json(url, session=session, headers=HF_HEADERS, timeout=15)
-    if not isinstance(payload, list):
-        raise RequestError("Hugging Face API returned an unexpected payload")
-
-    items = [item for item in payload if isinstance(item, dict)]
-    missing_ids = [
-        str((item.get("paper") or {}).get("id", ""))
-        for item in items
-        if not ((item.get("summary") or item.get("abstract")) or (item.get("paper") or {}).get("summary") or (item.get("paper") or {}).get("abstract"))
-    ]
-    abstracts = fetch_arxiv_abstracts(missing_ids, session=session)
-    # Enrichment is best-effort: a missing arXiv abstract must not discard the HF item.
-    return [_enrich_paper(item, abstracts) for item in items]
 
 
 def _llm_call_with_retry(client_llm: Any, prompt: str) -> str:
