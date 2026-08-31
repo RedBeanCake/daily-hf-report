@@ -14,6 +14,10 @@ RETRYABLE_STATUS_CODES = {408, 425, 429, 500, 502, 503, 504}
 class RequestError(RuntimeError):
     """Raised when an external request cannot be completed."""
 
+    def __init__(self, message: str, *, status_code: Optional[int] = None) -> None:
+        super().__init__(message)
+        self.status_code = status_code
+
 
 def retry_call(
     operation: Callable[[], Any],
@@ -45,7 +49,14 @@ def request_with_retry(
     timeout: float = 15,
     **kwargs: Any,
 ) -> requests.Response:
-    """Request a URL and retry transient network/server failures."""
+    """Request a URL and retry transient network/server failures.
+
+    Non-retryable client errors (4xx other than the transient 408/425/429) fail
+    fast instead of burning the full retry budget, and the HTTP status code is
+    preserved on the raised ``RequestError`` so callers can react to them -- for
+    example, Hugging Face returns 400 for a date that is still in the future from
+    its UTC perspective, and the caller can then fall back to an earlier date.
+    """
 
     client = session or requests.Session()
     last_error: Optional[BaseException] = None
@@ -53,14 +64,6 @@ def request_with_retry(
     for attempt in range(attempts):
         try:
             response = client.request(method, url, timeout=timeout, **kwargs)
-            if response.status_code in RETRYABLE_STATUS_CODES:
-                last_error = RequestError(f"HTTP {response.status_code} from {url}")
-                if attempt < attempts - 1:
-                    time.sleep(1.0 * (2**attempt))
-                    continue
-                break
-            response.raise_for_status()
-            return response
         except requests.RequestException as exc:
             last_error = exc
             if attempt < attempts - 1:
@@ -68,7 +71,31 @@ def request_with_retry(
                 continue
             break
 
-    raise RequestError(f"request failed after {attempts} attempts: {url}") from last_error
+        if response.status_code in RETRYABLE_STATUS_CODES:
+            last_error = RequestError(
+                f"HTTP {response.status_code} from {url}",
+                status_code=response.status_code,
+            )
+            if attempt < attempts - 1:
+                time.sleep(1.0 * (2**attempt))
+                continue
+            break
+
+        # Permanent client errors are not worth retrying; surface them immediately
+        # with the status code attached so callers can branch on it.
+        if 400 <= response.status_code < 500:
+            raise RequestError(
+                f"HTTP {response.status_code} from {url}: {response.text[:200]}",
+                status_code=response.status_code,
+            )
+
+        response.raise_for_status()
+        return response
+
+    raise RequestError(
+        f"request failed after {attempts} attempts: {url}",
+        status_code=getattr(last_error, "status_code", None),
+    ) from last_error
 
 
 def request_json(url: str, **kwargs: Any) -> Any:
