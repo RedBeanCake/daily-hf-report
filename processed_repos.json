@@ -148,7 +148,7 @@
   "EleutherAI/lm-evaluation-harness": "2026-05-13",
   "graphdeco-inria/gaussian-splatting": "2026-05-13",
   "opendatalab/MinerU": "2026-06-25",
-  "anthropics/skills": "2026-08-11",
+  "anthropics/skills": "2026-09-04",
   "odoo/odoo": "2026-07-30",
   "MustardChef/WSABuilds": "2026-05-13",
   "ansible/ansible": "2026-07-30",
@@ -328,7 +328,7 @@
   "tinygrad/tinygrad": "2026-07-07",
   "microsoft/SkillOpt": "2026-07-22",
   "googleanalytics/google-analytics-mcp": "2026-07-08",
-  "Graphify-Labs/graphify": "2026-08-19",
+  "Graphify-Labs/graphify": "2026-09-04",
   "stanfordnlp/dspy": "2026-08-10",
   "huggingface/speech-to-speech": "2026-07-28",
   "openai/openai-python": "2026-07-10",
@@ -442,5 +442,7 @@
   "mujocolab/mjlab": "2026-09-02",
   "sngyai/Sequoia-X": "2026-09-03",
   "superlinked/sie": "2026-09-03",
-  "PDFMathTranslate/PDFMathTranslate": "2026-09-03"
+  "PDFMathTranslate/PDFMathTranslate": "2026-09-03",
+  "netalertx/NetAlertX": "2026-09-04",
+  "datacurve-ai/deep-swe": "2026-09-04"
 }
