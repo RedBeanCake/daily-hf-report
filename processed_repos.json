@@ -241,9 +241,9 @@
   "anthropics/claude-code-security-review": "2026-06-09",
   "jianchang512/pyvideotrans": "2026-06-09",
   "FareedKhan-dev/train-llm-from-scratch": "2026-06-10",
-  "Sumanth077/Hands-On-AI-Engineering": "2026-06-10",
+  "Sumanth077/Hands-On-AI-Engineering": "2026-09-05",
   "ml-explore/mlx-examples": "2026-06-10",
-  "NVIDIA/SkillSpector": "2026-06-25",
+  "NVIDIA/SkillSpector": "2026-09-05",
   "hexo-ai/sia": "2026-06-11",
   "LLMQuant/quant-mind": "2026-08-11",
   "modelscope/FunASR": "2026-06-11",
@@ -404,7 +404,7 @@
   "semantica-agi/semantica": "2026-08-14",
   "Significant-Gravitas/AutoGPT": "2026-08-07",
   "Comfy-Org/ComfyUI": "2026-08-24",
-  "google-deepmind/weathernext": "2026-08-10",
+  "google-deepmind/weathernext": "2026-09-05",
   "confident-ai/deepteam": "2026-08-10",
   "neuml/txtai": "2026-08-10",
   "harveyai/harvey-labs": "2026-08-11",
@@ -444,5 +444,7 @@
   "superlinked/sie": "2026-09-03",
   "PDFMathTranslate/PDFMathTranslate": "2026-09-03",
   "netalertx/NetAlertX": "2026-09-04",
-  "datacurve-ai/deep-swe": "2026-09-04"
+  "datacurve-ai/deep-swe": "2026-09-04",
+  "bikini/exploitarium": "2026-09-05",
+  "radixark/miles": "2026-09-05"
 }
