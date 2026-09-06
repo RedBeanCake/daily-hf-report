@@ -20,6 +20,8 @@ HF_HEADERS = {
 # being in the future. Guards against the scheduler firing after Beijing
 # midnight while Hugging Face still settles the "latest" date in UTC.
 MAX_DATE_FALLBACK_DAYS = 3
+HF_PAGE_SIZE = 100
+MAX_HF_PAGES = 20
 
 
 class AIProcessingError(RuntimeError):
@@ -28,6 +30,18 @@ class AIProcessingError(RuntimeError):
 
 def get_beijing_time() -> dt.datetime:
     return dt.datetime.now(dt.timezone.utc).astimezone(BEIJING_TZ)
+
+
+def get_report_period_time(mode: str, current: dt.datetime) -> dt.datetime:
+    """Return a date inside the period represented by a report.
+
+    Weekly reports run on Monday and summarize the last completed ISO week,
+    rather than the new week that has only just started.
+    """
+
+    if mode == "weekly":
+        return current - dt.timedelta(days=current.isoweekday())
+    return current
 
 
 def _value_from_paper(paper: Dict[str, Any], *keys: str, default: Any = "") -> Any:
@@ -68,12 +82,46 @@ def fetch_arxiv_abstracts(paper_ids: Iterable[str], *, session: Any = None) -> D
     return abstracts
 
 
-def _hf_daily_papers_url(mode: str, current: dt.datetime) -> str:
+def _hf_daily_papers_url(mode: str, current: dt.datetime, *, page: int = 0) -> str:
     if mode == "weekly":
         year, week, _ = current.isocalendar()
-        return f"https://huggingface.co/api/daily_papers?week={year}-W{week:02d}&limit=50"
-    date_string = current.strftime("%Y-%m-%d")
-    return f"https://huggingface.co/api/daily_papers?date={date_string}&limit=50"
+        period = f"week={year}-W{week:02d}"
+    else:
+        period = f"date={current.strftime('%Y-%m-%d')}"
+    return (
+        "https://huggingface.co/api/daily_papers"
+        f"?{period}&limit={HF_PAGE_SIZE}&p={page}"
+    )
+
+
+def _fetch_hf_pages(mode: str, current: dt.datetime, *, session: Any) -> List[Any]:
+    items: List[Any] = []
+    seen_paper_ids: set[str] = set()
+
+    for page in range(MAX_HF_PAGES):
+        url = _hf_daily_papers_url(mode, current, page=page)
+        payload = request_json(url, session=session, headers=HF_HEADERS, timeout=15)
+        if not isinstance(payload, list):
+            raise RequestError("Hugging Face API returned an unexpected payload")
+        if not payload:
+            return items
+
+        new_items = 0
+        for item in payload:
+            paper_id = ""
+            if isinstance(item, dict):
+                paper_id = str((item.get("paper") or {}).get("id", ""))
+            if paper_id and paper_id in seen_paper_ids:
+                continue
+            if paper_id:
+                seen_paper_ids.add(paper_id)
+            items.append(item)
+            new_items += 1
+
+        if new_items == 0:
+            return items
+
+    raise RequestError(f"Hugging Face pagination exceeded {MAX_HF_PAGES} pages")
 
 
 def _fetch_hf_payload(mode: str, current: dt.datetime, *, session: Any) -> Any:
@@ -87,20 +135,20 @@ def _fetch_hf_payload(mode: str, current: dt.datetime, *, session: Any) -> Any:
     a different date's results.
     """
 
-    attempt_time = current
+    attempt_time = get_report_period_time(mode, current)
     for offset in range(MAX_DATE_FALLBACK_DAYS + 1):
-        url = _hf_daily_papers_url(mode, attempt_time)
         try:
-            return request_json(url, session=session, headers=HF_HEADERS, timeout=15)
+            return _fetch_hf_pages(mode, attempt_time, session=session)
         except RequestError as exc:
             # Only a 400 (invalid/future date) is recoverable by stepping back;
             # anything else propagates unchanged.
-            if exc.status_code != 400 or offset == MAX_DATE_FALLBACK_DAYS:
+            if mode == "weekly" or exc.status_code != 400 or offset == MAX_DATE_FALLBACK_DAYS:
                 raise
+            rejected_url = _hf_daily_papers_url(mode, attempt_time)
             attempt_time = attempt_time - dt.timedelta(days=1)
             LOGGER.warning(
                 "HF rejected %s as future-dated; retrying with %s",
-                url,
+                rejected_url,
                 attempt_time.strftime("%Y-%m-%d"),
             )
     # Unreachable: the loop either returns or raises.

@@ -32,6 +32,16 @@ class ReportPipelineTests(unittest.TestCase):
         generate.assert_not_called()
         self.assertEqual(result["github_count"], 0)
 
+    def test_weekly_page_is_named_for_previous_completed_week(self):
+        with tempfile.TemporaryDirectory() as directory:
+            page = main.generate_page(
+                "Weekly content",
+                mode="weekly",
+                now=datetime(2026, 9, 1),
+                output_dir=directory,
+            )
+        self.assertTrue(page.endswith("archive/2026_W35.html"))
+
     def test_failed_github_ai_does_not_update_history(self):
         with tempfile.TemporaryDirectory() as directory:
             history_path = Path(directory) / "history.json"
@@ -74,6 +84,33 @@ class ReportPipelineTests(unittest.TestCase):
 
 
 class PaperInputTests(unittest.TestCase):
+    def test_weekly_fetches_previous_completed_week(self):
+        with patch("component_hf.request_json", return_value=[]) as fetch, patch(
+            "component_hf.fetch_arxiv_abstracts"
+        ):
+            papers = scrape_hf("weekly", now=datetime(2026, 9, 1))
+        self.assertEqual(papers, [])
+        self.assertIn("week=2026-W35", fetch.call_args.args[0])
+
+    def test_weekly_fetches_all_pages_and_deduplicates_papers(self):
+        first = {"paper": {"id": "1234.0001", "title": "First", "abstract": "One"}}
+        second = {"paper": {"id": "1234.0002", "title": "Second", "abstract": "Two"}}
+        with patch(
+            "component_hf.request_json",
+            side_effect=[[first], [first, second], []],
+        ) as fetch, patch("component_hf.fetch_arxiv_abstracts"):
+            papers = scrape_hf("weekly", now=datetime(2026, 8, 31))
+        self.assertEqual([paper["id"] for paper in papers], ["1234.0001", "1234.0002"])
+        self.assertEqual(fetch.call_count, 3)
+        self.assertIn("p=2", fetch.call_args.args[0])
+
+    def test_weekly_period_handles_year_boundary(self):
+        with patch("component_hf.request_json", return_value=[]) as fetch, patch(
+            "component_hf.fetch_arxiv_abstracts"
+        ):
+            scrape_hf("weekly", now=datetime(2027, 1, 4))
+        self.assertIn("week=2026-W53", fetch.call_args.args[0])
+
     def test_hf_scraper_keeps_empty_today_result_without_fetching_yesterday(self):
         with patch("component_hf.request_json", return_value=[]) as fetch, patch(
             "component_hf.fetch_arxiv_abstracts"

@@ -12,7 +12,7 @@ from typing import Any, Dict, Optional
 import requests
 
 from component_github import process_github_with_ai, scrape_github_trending
-from component_hf import get_beijing_time, process_hf_with_ai, scrape_hf
+from component_hf import get_beijing_time, get_report_period_time, process_hf_with_ai, scrape_hf
 
 
 LOGGER = logging.getLogger(__name__)
@@ -85,7 +85,7 @@ def generate_page(
 ) -> str:
     current = now or get_beijing_time()
     if mode == "weekly":
-        year, week, _ = current.isocalendar()
+        year, week, _ = get_report_period_time(mode, current).isocalendar()
         date_label = f"{year}-W{week:02d}"
         page_title = f"AI 技术周报 - {date_label}"
     else:
