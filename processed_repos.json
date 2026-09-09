@@ -63,7 +63,7 @@
   "swisskyrepo/PayloadsAllTheThings": "2026-06-25",
   "PrefectHQ/fastmcp": "2026-07-20",
   "Z4nzu/hackingtool": "2026-08-03",
-  "Alishahryar1/free-claude-code": "2026-08-24",
+  "Alishahryar1/free-claude-code": "2026-09-10",
   "davila7/claude-code-templates": "2026-07-10",
   "mvanhorn/last30days-skill": "2026-09-01",
   "EbookFoundation/free-programming-books": "2026-07-14",
@@ -123,7 +123,7 @@
   "VectifyAI/PageIndex": "2026-05-07",
   "freemocap/freemocap": "2026-05-07",
   "Open-LLM-VTuber/Open-LLM-VTuber": "2026-06-02",
-  "github/spec-kit": "2026-09-03",
+  "github/spec-kit": "2026-09-10",
   "openai/plugins": "2026-05-07",
   "Blaizzy/mlx-vlm": "2026-05-07",
   "awslabs/aidlc-workflows": "2026-06-02",
@@ -282,7 +282,7 @@
   "NVIDIA/skills": "2026-07-10",
   "vectorize-io/hindsight": "2026-06-22",
   "kernalix7/winpodx": "2026-06-22",
-  "smicallef/spiderfoot": "2026-09-01",
+  "smicallef/spiderfoot": "2026-09-10",
   "aws/agent-toolkit-for-aws": "2026-07-17",
   "langbot-app/LangBot": "2026-07-07",
   "scrapy/scrapy": "2026-08-18",
@@ -453,5 +453,8 @@
   "ayghri/i-have-adhd": "2026-09-09",
   "hpcaitech/Open-Sora": "2026-09-09",
   "neka-nat/freecad-mcp": "2026-09-09",
-  "k2-fsa/OmniVoice": "2026-09-09"
+  "k2-fsa/OmniVoice": "2026-09-09",
+  "experientiallabs/experiential": "2026-09-10",
+  "OpenDCAI/GameFactory-3A": "2026-09-10",
+  "anbeime/skill": "2026-09-10"
 }
