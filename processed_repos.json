@@ -1,7 +1,7 @@
 {
   "NousResearch/hermes-agent": "2026-09-03",
   "HKUDS/DeepTutor": "2026-09-02",
-  "OpenBMB/VoxCPM": "2026-09-15",
+  "OpenBMB/VoxCPM": "2026-10-24",
   "TheCraigHewitt/seomachine": "2026-04-09",
   "shiyu-coder/Kronos": "2026-10-21",
   "microsoft/BitNet": "2026-06-05",
@@ -83,7 +83,7 @@
   "Azure/Azure-Sentinel": "2026-04-24",
   "ComposioHQ/awesome-codex-skills": "2026-04-27",
   "microsoft/VibeVoice": "2026-07-29",
-  "TauricResearch/TradingAgents": "2026-09-16",
+  "TauricResearch/TradingAgents": "2026-10-24",
   "deepseek-ai/DeepSeek-V3": "2026-04-27",
   "sherlock-project/sherlock": "2026-08-12",
   "HunxByts/GhostTrack": "2026-10-01",
@@ -306,7 +306,7 @@
   "google/agents-cli": "2026-06-30",
   "psf/black": "2026-10-09",
   "allenai/olmocr": "2026-10-08",
-  "virgiliojr94/book-to-skill": "2026-08-25",
+  "virgiliojr94/book-to-skill": "2026-10-24",
   "langchain-ai/deepagents": "2026-08-24",
   "omkarcloud/botasaurus": "2026-07-01",
   "ultralytics/yolov5": "2026-07-01",
@@ -467,7 +467,7 @@
   "NVIDIA/garak": "2026-09-12",
   "multimodal-art-projection/YuE": "2026-09-15",
   "rlaope/oh-my-hermes": "2026-09-15",
-  "SnailSploit/Claude-Red": "2026-09-15",
+  "SnailSploit/Claude-Red": "2026-10-24",
   "petergyang/no-ai-slop": "2026-09-15",
   "searxng/searxng": "2026-09-15",
   "dgtlmoon/changedetection.io": "2026-09-15",
@@ -506,7 +506,7 @@
   "CursorTouch/Windows-MCP": "2026-10-09",
   "Tencent-Hunyuan/Hy-MT2": "2026-10-10",
   "headroomlabs-ai/headroom": "2026-10-21",
-  "baidu/Unlimited-OCR": "2026-10-14",
+  "baidu/Unlimited-OCR": "2026-10-24",
   "sgl-project/sglang-omni": "2026-10-14",
   "isair/jarvis": "2026-10-15",
   "jamiepine/voicebox": "2026-10-15",
@@ -517,5 +517,6 @@
   "google/artemis": "2026-10-17",
   "Kruk2/jasna": "2026-10-21",
   "AgriciDaniel/claude-seo": "2026-10-21",
-  "Emily2040/seedance-2.0": "2026-10-22"
+  "Emily2040/seedance-2.0": "2026-10-22",
+  "Mailu/Mailu": "2026-10-24"
 }
