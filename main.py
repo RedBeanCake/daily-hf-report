@@ -6,13 +6,16 @@ import json
 import logging
 import os
 import re
+import time
 from datetime import datetime, timedelta
+from pathlib import Path
 from typing import Any, Dict, Optional
 
 import requests
 
 from component_github import process_github_with_ai, scrape_github_trending
 from component_hf import get_beijing_time, get_report_period_time, process_hf_with_ai, scrape_hf
+from llm_utils import MODEL
 
 
 LOGGER = logging.getLogger(__name__)
@@ -212,7 +215,8 @@ def create_llm_client() -> Any:
     api_key = os.getenv("DASHSCOPE_API_KEY")
     if not api_key:
         raise RuntimeError("DASHSCOPE_API_KEY is not configured")
-    return OpenAI(api_key=api_key, base_url="https://dashscope.aliyuncs.com/compatible-mode/v1")
+    return OpenAI(api_key=api_key, base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
+                  timeout=180, max_retries=0)
 
 
 def run_report(
@@ -224,8 +228,11 @@ def run_report(
     output_dir: str = ".",
 ) -> Dict[str, Any]:
     current = now or get_beijing_time()
+    started = time.monotonic()
     hf_data = scrape_hf(mode=mode, now=current)
-    hf_md = process_hf_with_ai(client_llm, hf_data, mode=mode)
+    hf_md = process_hf_with_ai(client_llm, hf_data, mode=mode,
+                               cache_dir=str(Path(output_dir) / ".cache" / "hf-summaries"))
+    LOGGER.info("HF fetch and summary completed in %.1fs", time.monotonic() - started)
 
     # Initialize this for both modes; weekly reports intentionally have no GitHub section.
     gh_data: list[Dict[str, Any]] = []
@@ -240,10 +247,13 @@ def run_report(
         else:
             gh_md = "> 今日无新增趋势项目（已在近期总结过）。"
 
-    full_md = f"{hf_md}\n\n{gh_md}"
-    page_path = ""
-    if hf_data or gh_md:
-        page_path = generate_page(full_md, mode=mode, now=current, output_dir=output_dir)
+    full_md = f"{hf_md or '> 本期 Hugging Face 返回的论文列表为空。'}\n\n{gh_md}"
+    page_path = generate_page(full_md, mode=mode, now=current, output_dir=output_dir)
+    snapshot = Path(page_path).with_suffix(".json")
+    snapshot.write_text(json.dumps({
+        "mode": mode, "generated_at": current.isoformat(), "model": MODEL,
+        "papers": hf_data, "hf_rendered_content": hf_md,
+    }, ensure_ascii=False, indent=2), encoding="utf-8")
 
     # State is committed only after all AI work and page generation succeed.
     if processed_repos:
@@ -253,28 +263,23 @@ def run_report(
             history[normalize_repo_name(str(repo["name"]))] = today
         save_history(history, history_path)
 
-    return {"hf_count": len(hf_data), "github_count": len(gh_data), "page_path": page_path}
+    return {"hf_count": len(hf_data), "github_count": len(gh_data), "page_path": page_path,
+            "mode": mode, "generated_at": current.isoformat()}
 
 
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--mode", choices=["daily", "weekly"], default="daily")
+    parser.add_argument("--result-file", default=".run/report.json")
     args = parser.parse_args()
-    webhook = os.getenv("FEISHU_WEBHOOK")
     try:
         result = run_report(args.mode, create_llm_client())
-        send_feishu(
-            webhook,
-            f"🚀 {'AI 技术周报' if args.mode == 'weekly' else '前沿科研情报'}已更新",
-            f"已整理 {result['hf_count']} 篇 HF 论文。",
-            url=_pages_url(),
-        )
-    except Exception as exc:
-        LOGGER.exception("Report generation failed: %s", exc)
-        try:
-            send_feishu(webhook, "❌ AI 论文报告生成失败", f"报告任务失败：{exc}")
-        except Exception:
-            LOGGER.exception("Failure notification also failed")
+        result_file = Path(args.result_file)
+        result_file.parent.mkdir(parents=True, exist_ok=True)
+        result_file.write_text(json.dumps(result, ensure_ascii=False), encoding="utf-8")
+        LOGGER.info("Report generated at %s; publication is not yet confirmed", result["page_path"])
+    except Exception:
+        LOGGER.exception("Report generation failed")
         raise
 
 

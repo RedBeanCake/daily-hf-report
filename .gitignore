@@ -1,2 +1,6 @@
 __pycache__/
 *.pyc
+.cache/
+.run/
+_site/
+.venv/

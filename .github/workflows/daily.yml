@@ -2,7 +2,15 @@ name: Daily/Weekly HF Report
 
 on:
   schedule:
-    - cron: '0 14 * * 1-5' # Beijing time 22:00
+    - cron: '17 14 * * 1-5' # Daily: Beijing weekdays 22:17
+    - cron: '37 15 * * 1'   # Weekly: Beijing Monday 23:37
+  push:
+    branches: [main]
+    paths:
+      - '*.py'
+      - 'requirements.txt'
+      - 'tests/**'
+      - '.github/workflows/daily.yml'
   workflow_dispatch:
     inputs:
       mode:
@@ -10,9 +18,7 @@ on:
         required: true
         default: 'daily'
         type: choice
-        options:
-          - daily
-          - weekly
+        options: [daily, weekly]
 
 concurrency:
   group: daily-hf-report-main
@@ -22,57 +28,131 @@ permissions:
   contents: write
   pages: write
 
+env:
+  PYTHONUNBUFFERED: '1'
+
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 90
     steps:
-      - name: Checkout code
+      - name: Checkout latest main
         uses: actions/checkout@v4
         with:
+          ref: main
           fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+          cache: pip
 
       - name: Install dependencies
-        run: python -m pip install --upgrade pip && python -m pip install -r requirements.txt
+        run: python -m pip install -r requirements.txt
 
       - name: Run tests
         run: python -m unittest discover -s tests -v
 
-      - name: Run scraper
+      - name: Restore successful paper summaries
+        uses: actions/cache/restore@v4
+        with:
+          path: .cache/hf-summaries
+          key: hf-summary-v1-${{ runner.os }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: hf-summary-v1-${{ runner.os }}-
+
+      - name: Select report mode
+        id: mode
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          MANUAL_MODE: ${{ inputs.mode }}
+          SCHEDULE: ${{ github.event.schedule }}
+        run: |
+          if [ "$EVENT_NAME" = 'workflow_dispatch' ]; then
+            mode="$MANUAL_MODE"
+          elif [ "$SCHEDULE" = '37 15 * * 1' ]; then
+            mode=weekly
+          else
+            mode=daily
+          fi
+          case "$mode" in daily|weekly) ;; *) exit 1 ;; esac
+          echo "mode=$mode" >> "$GITHUB_OUTPUT"
+
+      - name: Generate report
+        timeout-minutes: 70
         env:
           DASHSCOPE_API_KEY: ${{ secrets.DASHSCOPE_API_KEY }}
-          FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
-          GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
-          GITHUB_REPOSITORY: ${{ github.repository }}
-        run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            python main.py --mode "${{ inputs.mode }}"
-          else
-            python main.py --mode daily
-            if [ "$(date +%u)" = "1" ]; then
-              python main.py --mode weekly
-            fi
-          fi
+          REPORT_MODE: ${{ steps.mode.outputs.mode }}
+        run: python main.py --mode "$REPORT_MODE"
 
-      - name: Commit and push changes
+      - name: Save successful batches even after a generation failure
+        if: ${{ always() && hashFiles('.cache/hf-summaries/*.json') != '' }}
+        continue-on-error: true
+        uses: actions/cache/save@v4
+        with:
+          path: .cache/hf-summaries
+          key: hf-summary-v1-${{ runner.os }}-${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: Commit report and source snapshot
         run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add .
+          git config --local user.email 'github-actions[bot]@users.noreply.github.com'
+          git config --local user.name 'github-actions[bot]'
+          git add -- archive index.html processed_repos.json
           if ! git diff --cached --quiet; then
-            git commit -m "Auto-update: $(date +'%Y-%m-%d')"
+            git commit -m "Auto-update report: run $GITHUB_RUN_ID"
           fi
           git pull --rebase origin main
           git push origin main
 
-      - name: Deploy to Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Validate and stage public files
+        run: python publication.py prepare
+
+      - name: Publish to Pages branch
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
+          publish_dir: ./_site
           publish_branch: gh-pages
+
+      - name: Verify live Pages content
+        timeout-minutes: 15
+        env:
+          GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: python publication.py verify
+
+      - name: Record publication result
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          result = json.loads(Path('.run/report.json').read_text())
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as summary:
+              summary.write(f"Verified {result['mode']} publication: {result['page_path']}\n\n")
+              summary.write(f"HF papers: {result['hf_count']}; source snapshot saved alongside HTML.\n")
+          PY
+
+      - name: Notify after verified publication
+        if: ${{ success() && github.event_name != 'push' }}
+        continue-on-error: true
+        env:
+          FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
+          GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: python publication.py notify --status success
+
+      - name: Notify on generation or publication failure
+        if: ${{ failure() && github.event_name != 'push' }}
+        continue-on-error: true
+        env:
+          FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
+        run: python publication.py notify --status failure
+
+      - name: Preserve run metadata for diagnosis
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: report-run-${{ github.run_id }}-${{ github.run_attempt }}
+          path: .run/
+          include-hidden-files: true
+          if-no-files-found: ignore

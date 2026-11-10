@@ -4,7 +4,8 @@ import json
 import logging
 from typing import Any, Dict, List
 
-from http_utils import RequestError, request_with_retry, retry_call
+from http_utils import RequestError, request_with_retry
+from llm_utils import complete
 
 
 LOGGER = logging.getLogger(__name__)
@@ -64,18 +65,8 @@ def process_github_with_ai(client_llm: Any, repos: List[Dict[str, str]]) -> str:
 待处理数据：{json.dumps(repos, ensure_ascii=False)}
 """
 
-    def call() -> str:
-        completion = client_llm.chat.completions.create(
-            model="qwen3.7-plus",
-            messages=[{"role": "user", "content": prompt}],
-        )
-        content = completion.choices[0].message.content
-        if not content:
-            raise ValueError("LLM returned empty content")
-        return content
-
     try:
-        content = retry_call(call, attempts=3, base_delay=1.0)
+        content = complete(client_llm, prompt)
     except Exception as exc:
         LOGGER.exception("GitHub summary failed: %s", exc)
         raise AIProcessingError("GitHub project summary failed") from exc

@@ -19,8 +19,7 @@ class ReportPipelineTests(unittest.TestCase):
             with patch("main.scrape_hf", return_value=[]), patch(
                 "main.process_hf_with_ai", return_value=""
             ), patch("main.scrape_github_trending") as github_scrape, patch(
-                "main.generate_page"
-            ) as generate:
+                "main.generate_page", return_value=str(Path(directory) / "empty.html")) as generate:
                 result = main.run_report(
                     "weekly",
                     Mock(),
@@ -29,7 +28,7 @@ class ReportPipelineTests(unittest.TestCase):
                     history_path=str(Path(directory) / "history.json"),
                 )
         github_scrape.assert_not_called()
-        generate.assert_not_called()
+        generate.assert_called_once()
         self.assertEqual(result["github_count"], 0)
 
     def test_weekly_page_is_named_for_previous_completed_week(self):
@@ -131,20 +130,23 @@ class PaperInputTests(unittest.TestCase):
 
     def test_summary_prompt_contains_abstract(self):
         client = Mock()
-        client.chat.completions.create.side_effect = [
-            Mock(choices=[Mock(message=Mock(content="### 1. Test"))]),
-            Mock(choices=[Mock(message=Mock(content="### 11. Test"))]),
-            Mock(choices=[Mock(message=Mock(content="### 21. Test"))]),
-            Mock(choices=[Mock(message=Mock(content="### 31. Test"))]),
-        ]
+        def respond(**kwargs):
+            prompt = kwargs["messages"][0]["content"]
+            data = json.loads(prompt.split("待处理数据：\n")[1])
+            rows = [{"id": p["id"], "title_zh": "中文标题", "translation": "真实摘要。",
+                     "task": "任务", "highlights": "亮点", "analysis": "摘要未提供", "category": "AI"}
+                    for p in data]
+            return Mock(choices=[Mock(message=Mock(content=json.dumps({"papers": rows})), finish_reason="stop")])
+        client.chat.completions.create.side_effect = respond
         papers = [
             {"id": f"1234.{index:04d}", "title": f"Test {index}", "upvotes": index, "abstract": "A real abstract."}
             for index in range(1, 32)
         ]
-        process_hf_with_ai(client, papers)
+        content = process_hf_with_ai(client, papers)
         prompt = client.chat.completions.create.call_args_list[0].kwargs["messages"][0]["content"]
         self.assertIn("A real abstract.", prompt)
-        self.assertEqual(client.chat.completions.create.call_count, 4)
+        self.assertEqual(client.chat.completions.create.call_count, 7)
+        self.assertEqual(content.count("中文摘要翻译"), 31)
 
 
 class RetryTests(unittest.TestCase):
