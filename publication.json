@@ -1,0 +1,17 @@
+{
+  "run_id": "42835733805",
+  "run_attempt": "1",
+  "commit": "bd6856fad17c921443be138f4caa8c864008037c",
+  "report": {
+    "hf_count": 29,
+    "github_count": 14,
+    "page_path": "./archive/2026_11_10.html",
+    "mode": "daily",
+    "generated_at": "2026-11-10T22:36:18.223644+08:00"
+  },
+  "files": {
+    "index.html": "34d4bf5afc08d368b6dbbb512245634b1839c5fea08be8ca92b602c363ea300b",
+    "archive/2026_11_10.html": "291ac548503b933c58f23c53c0bb0e893b039f068c6ad242c006ae7516e6fad5",
+    "archive/2026_11_10.json": "e1fae3e4616269174824dd55ea1883d52914c8109a260b72a799a1f66584a81a"
+  }
+}
