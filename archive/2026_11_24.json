@@ -1,0 +1,1359 @@
+{
+  "mode": "daily",
+  "generated_at": "2026-11-24T09:40:41.608752+08:00",
+  "model": "qwen3.7-plus",
+  "papers": [
+    {
+      "id": "2611.27193",
+      "title": "cmHC: Balancing Stream Mixing in Hyper-Connections via Geometric Contraction",
+      "upvotes": 92,
+      "abstract": "Manifold-constrained Hyper-Connections (mHC) extends residual connections to multiple streams and stabilizes residual propagation by constraining stream-mixing residual matrices to the Birkhoff polytope, the set of doubly stochastic matrices. In this work, we investigate how to effectively mix residual streams within the Birkhoff polytope. We reveal a mixing trade-off: when under-mixed residual matrices stay close to the vertices of the Birkhoff polytope, hyper-connections will degenerate into a set of nearly independent streams; when over-mixed residual matrices are concentrated around the uniform barycenter of the polytope, streams will become less distinguishable from each other. We theoretically validate our findings by bounding the cumulative residual mixing, stream difference and gradient difference of mixing coefficients across layers. Motivated by these findings, we propose Contraction for Manifold-Constrained Hyper-Connections (cmHC), an exact doubly stochastic method which geometrically contracts the Birkhoff polytope toward its interior. This contraction mitigates under-mixing by forcing the residual matrices to explore deeper into the polytope, with a provable stream mixing bound and no new parameterization. Moreover, we apply a moderate contraction at the shallow layers to prevent over-mixing, enabling stable gradient propagation on extremely large-scale model pretraining. Extensive experiments across dense and mixture-of-experts models at various parameter scales demonstrate the effectiveness and scalability of cmHC. We also develop fused operators for cmHC on Ascend NPUs, reducing hyper-connection execution latency by up to 44.8%.",
+      "abstract_source": "huggingface",
+      "authors": [
+        {
+          "_id": "6b03c41fecb204ffe44e7499",
+          "name": "Haowei He",
+          "hidden": false
+        },
+        {
+          "_id": "6b03c41fecb204ffe44e749a",
+          "user": {
+            "_id": "67a969fa4e7d0d97777ab1a7",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/67a969fa4e7d0d97777ab1a7/L1eITg7R3z-Fb2EOZGmT-.png",
+            "isPro": false,
+            "fullname": "Ziwen Zhao",
+            "user": "Newiz430",
+            "type": "user",
+            "name": "Newiz430"
+          },
+          "name": "Ziwen Zhao",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-11-23T08:45:04.688Z",
+          "hidden": false
+        },
+        {
+          "_id": "6b03c41fecb204ffe44e749b",
+          "name": "Chenshuo Pan",
+          "hidden": false
+        },
+        {
+          "_id": "6b03c41fecb204ffe44e749c",
+          "name": "Gang Lin",
+          "hidden": false
+        },
+        {
+          "_id": "6b03c41fecb204ffe44e749d",
+          "name": "Zhihao Yang",
+          "hidden": false
+        },
+        {
+          "_id": "6b03c41fecb204ffe44e749e",
+          "name": "Chao Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6b03c41fecb204ffe44e749f",
+          "name": "Xinzhang Liu",
+          "hidden": false
+        },
+        {
+          "_id": "6b03c41fecb204ffe44e74a0",
+          "name": "Kaidong Yu",
+          "hidden": false
+        },
+        {
+          "_id": "6b03c41fecb204ffe44e74a1",
+          "name": "Han Gao",
+          "hidden": false
+        },
+        {
+          "_id": "6b03c41fecb204ffe44e74a2",
+          "name": "Dongfang Li",
+          "hidden": false
+        },
+        {
+          "_id": "6b03c41fecb204ffe44e74a3",
+          "name": "Menglin Yang",
+          "hidden": false
+        },
+        {
+          "_id": "6b03c41fecb204ffe44e74a4",
+          "name": "Shuangyong Song",
+          "hidden": false
+        },
+        {
+          "_id": "6b03c41fecb204ffe44e74a5",
+          "name": "Yongxiang Li",
+          "hidden": false
+        }
+      ],
+      "published": "2026-11-20T00:00:00.000Z",
+      "paper_url": "https://arxiv.org/abs/2611.27193"
+    },
+    {
+      "id": "2611.27963",
+      "title": "Non-penetrating World Models",
+      "upvotes": 54,
+      "abstract": "We study a new problem of preventing object penetration in interactive video world models. To understand how existing models handle this, we introduce NoPeBench, a benchmark that evaluates how world models respond to physical obstacles. Our evaluation reveals that none of the open-source models can reliably prevent such failures. Surprisingly, however, these models already encode the information needed to predict such violations. We find that the hidden states of diffusion transformers (DiTs) can predict whether a candidate action will penetrate an obstacle. Building on this, we introduce NoPeWorld, a lightweight framework that detects and prevents penetration. Specifically, we train a small prediction head on top of a frozen DiT's hidden states to read out if a candidate action is safe or not. Unsafe actions are then replaced with safe ones that best preserve the original intent. Despite its simplicity, NoPeWorld substantially reduces the physical violation rate, averaged over six video world models, from 74% to 16%. Remarkably, our method shows zero-shot generalization to open-domain imagery, third-person viewpoints, and moving obstacles. We publicly release our code, the NoPeBench benchmark, and model weights. Project Page: https://nopeworld.github.io .",
+      "abstract_source": "huggingface",
+      "authors": [
+        {
+          "_id": "6b03bb26ecb204ffe44e744e",
+          "name": "Yuhang Dai",
+          "hidden": false
+        },
+        {
+          "_id": "6b03bb26ecb204ffe44e744f",
+          "name": "Yinwei Wu",
+          "hidden": false
+        },
+        {
+          "_id": "6b03bb26ecb204ffe44e7450",
+          "name": "Ziyue Lin",
+          "hidden": false
+        },
+        {
+          "_id": "6b03bb26ecb204ffe44e7451",
+          "name": "Han Ji",
+          "hidden": false
+        },
+        {
+          "_id": "6b03bb26ecb204ffe44e7452",
+          "name": "Xingyi Yang",
+          "hidden": false
+        }
+      ],
+      "published": "2026-11-20T00:00:00.000Z",
+      "paper_url": "https://arxiv.org/abs/2611.27963"
+    },
+    {
+      "id": "2611.24636",
+      "title": "Clover-35B-A3B-Preview Technical Report",
+      "upvotes": 36,
+      "abstract": "We introduce Clover-35B-A3B-Preview (Clover), a mixture-of-experts diffusion language model with 35 billion total parameters and 3 billion activated parameters, supporting thinking-mode generation. Clover adapts Gated Delta Networks to block diffusion by combining recurrent memory of previously generated context with bidirectional softmax attention inside the current block. Historical memory readout competes with current-block tokens in a shared softmax, with learnable block-size calibration and a separate, zero-initialized right-context convolution branch. Clover leads the seven evaluated agent metrics, including 73.6 on SWE-bench Verified and 51.7 on Terminal-Bench 2.1. On internal agent workloads, it reaches a reported generation speed of 680 tokens/s using one NVIDIA GB300 GPU at BF16 precision and batch size one. We organize the evaluation around model quality, drafting and verification costs, and deployment under constrained memory. We also describe a decision-model variant that generates answers to related questions in one denoising pass. On an internal set of 500 groups, joint prediction raises question accuracy from 90.37% to 93.88% and all-correct group accuracy from 65.4% to 77.0%.",
+      "abstract_source": "huggingface",
+      "authors": [
+        {
+          "_id": "6b03b3aeecb204ffe44e7401",
+          "name": "DiffuSpace Technical Team",
+          "hidden": false
+        }
+      ],
+      "published": "2026-11-18T00:00:00.000Z",
+      "paper_url": "https://arxiv.org/abs/2611.24636"
+    },
+    {
+      "id": "2611.26954",
+      "title": "Learning Video Foresight Reasoning from Unlabeled Videos via On-Policy Self-Distillation",
+      "upvotes": 28,
+      "abstract": "Video foresight reasoning requires vision-language models to anticipate future events or next actions from currently observed videos. Existing methods fit future captions, rationales, or full visual states, but face two limitations. First, they rely on annotations or external large models for supervision, limiting scalability. We address this with an on-policy self-distillation framework that turns past-future video pairs into a natural self-supervised signal without extra annotations or LLM supervision. Second, they treat the whole future clip as equally valuable, although most of it is irrelevant context information. We address this by defining a foresight score, from which we obtain a contrastive privilege advantage that drives the model to learn the most valuable future information. Since the score is intractable, we optimize a tractable lower-bound surrogate that interpolates this advantage, computed between the true and a random reference future, with a teacher-student distillation advantage; together, they amplify decision-relevant content information and suppress irrelevant context information. We call the resulting framework Future-OPSD. On open-ended prediction and closed-ended planning, Future-OPSD improves base models by up to 14.2 and 15.9 points without compromising general video understanding. Code will be available at https://jingchensun.github.io/future-opsd/",
+      "abstract_source": "huggingface",
+      "authors": [
+        {
+          "_id": "6b03c37decb204ffe44e748c",
+          "name": "Jingchen Sun",
+          "hidden": false
+        },
+        {
+          "_id": "6b03c37decb204ffe44e748d",
+          "name": "Jiaxing Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6b03c37decb204ffe44e748e",
+          "name": "Qingqiao Hu",
+          "hidden": false
+        },
+        {
+          "_id": "6b03c37decb204ffe44e748f",
+          "name": "Dingqiang Ye",
+          "hidden": false
+        },
+        {
+          "_id": "6b03c37decb204ffe44e7490",
+          "name": "Yuqi Jia",
+          "hidden": false
+        },
+        {
+          "_id": "6b03c37decb204ffe44e7491",
+          "name": "Yijun Liang",
+          "hidden": false
+        },
+        {
+          "_id": "6b03c37decb204ffe44e7492",
+          "name": "Di Fu",
+          "hidden": false
+        },
+        {
+          "_id": "6b03c37decb204ffe44e7493",
+          "name": "Yunjie Tian",
+          "hidden": false
+        },
+        {
+          "_id": "6b03c37decb204ffe44e7494",
+          "name": "Dongdi Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "6b03c37decb204ffe44e7495",
+          "name": "Changyou Chen",
+          "hidden": false
+        }
+      ],
+      "published": "2026-11-20T00:00:00.000Z",
+      "paper_url": "https://arxiv.org/abs/2611.26954"
+    },
+    {
+      "id": "2611.15449",
+      "title": "Reading the Unreadable: Text-Aware Image Super-Resolution Needs Reasoning",
+      "upvotes": 21,
+      "abstract": "Text-aware image super-resolution (TAISR) aims to recover high-resolution images from low-resolution inputs while preserving textual content. Existing methods treat this as a visual restoration problem, yet severely degraded text often cannot be read from local visual evidence alone. Humans instead read it by reasoning over image context, logical patterns, and prior knowledge. This raises a fundamental question: Does TAISR need reasoning? To answer this, we introduce two diagnostic tools. The first, ReasonText, is a human-curated benchmark that separates reasoning-required text from locally recoverable text. The second, Ground-Truth Text-Crop Accuracy (GTTCA), is a recognition-based metric that measures text restoration quality without text detection errors. Evaluating twelve recent super-resolution (SR) models, we find a consistent and substantial performance drop on reasoning-required text, revealing a systematic blind spot. Two observations point to a remedy. One is that text-conditioned SR models restore text substantially better when given ground-truth text. The other is that multimodal large language models (MLLMs) can read degraded text in low-resolution images through reasoning. We therefore propose Reasoning Transfer via Captioning (RTC), a training-free plug-in that uses an external MLLM to infer the degraded text and feeds the resulting caption to a text-conditioned SR model. RTC consistently improves all six text-conditioned SR models we evaluate, especially on reasoning-required text. Surprisingly, a real-world SR model with RTC can even outperform the TAISR model with RTC, suggesting that reasoning should be a core design axis for future TAISR.",
+      "abstract_source": "huggingface",
+      "authors": [
+        {
+          "_id": "6b0163d7ecb204ffe44e6cd5",
+          "user": {
+            "_id": "6a0042287d99c066f85b203d",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/no-auth/lphm8o2eQSatbYlsFgX1k.png",
+            "isPro": false,
+            "fullname": "Jason Lee",
+            "user": "Jasonleex1995",
+            "type": "user",
+            "name": "Jasonleex1995"
+          },
+          "name": "Jaeseong Lee",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-11-23T18:03:48.699Z",
+          "hidden": false
+        },
+        {
+          "_id": "6b0163d7ecb204ffe44e6cd6",
+          "name": "Jinwoo Kim",
+          "hidden": false
+        },
+        {
+          "_id": "6b0163d7ecb204ffe44e6cd7",
+          "name": "Jinho Jeong",
+          "hidden": false
+        },
+        {
+          "_id": "6b0163d7ecb204ffe44e6cd8",
+          "name": "Seon Joo Kim",
+          "hidden": false
+        }
+      ],
+      "published": "2026-11-11T00:00:00.000Z",
+      "paper_url": "https://arxiv.org/abs/2611.15449"
+    },
+    {
+      "id": "2611.27973",
+      "title": "MemOnce: A Scalable Memory Architecture for Large Language Models",
+      "upvotes": 18,
+      "abstract": "Deploying large language models (LLMs) in long-horizon and continual interactions requires maintaining reusable memory states for future inference, posing challenges for existing architectures. Standard Transformers accumulate layer-wise, token-level KV caches, incurring linear GPU memory growth and quadratic computational complexity as the context expands. In contrast, linear-time architectures compress history into fixed-size states, but struggle to retain fine-grained details. We introduce MemOnce, a foundation architecture that learns scalable memory states for language models. MemOnce is based on two core designs: (a) Memory encoder-decoder: it caches only a small subset of final-layer hidden states as compact memory representations and dynamically decodes them back into KV caches for attention layers; (b) Memory sparse attention: for each continual input, MemOnce adaptively retrieves relevant memory representations, with the sparse indices computed only once across layers. Coupling these two designs enables efficient on-the-fly memory loading and KV cache decoding, drastically reducing the GPU memory footprint and achieving linear-time complexity. We conduct extensive experiments to show that MemOnce outperforms Transformers and other architectures across varying model sizes, context lengths, and training paradigms (pretraining and post-training adaptation). In particular, adapting Qwen3.5-4B with MemOnce reduces memory state cache by 1313times and prefill latency by 6.9times at 1M context, and improves throughput by 3.5times and overall memory performance by +5.77%. Finally, MemOnce generalizes zero-shot to downstream representation tasks, achieving competitive results against specialized models.",
+      "abstract_source": "huggingface",
+      "authors": [
+        {
+          "_id": "6b03cfb6ecb204ffe44e74cf",
+          "name": "Chang Nie",
+          "hidden": false
+        },
+        {
+          "_id": "6b03cfb6ecb204ffe44e74d0",
+          "name": "Chaoyou Fu",
+          "hidden": false
+        },
+        {
+          "_id": "6b03cfb6ecb204ffe44e74d1",
+          "name": "Songlin Liu",
+          "hidden": false
+        },
+        {
+          "_id": "6b03cfb6ecb204ffe44e74d2",
+          "name": "Yiqing Hu",
+          "hidden": false
+        },
+        {
+          "_id": "6b03cfb6ecb204ffe44e74d3",
+          "name": "Caifeng Shan",
+          "hidden": false
+        }
+      ],
+      "published": "2026-11-20T00:00:00.000Z",
+      "paper_url": "https://arxiv.org/abs/2611.27973"
+    },
+    {
+      "id": "2611.25773",
+      "title": "Duopra: From Full-Duplex Conversation to Full-Duplex Agency",
+      "upvotes": 15,
+      "abstract": "Full-duplex interaction models exhibit strong conversational agency, enabling natural, low-latency turn-taking, backchannels, and interruptions. However, completing tasks further requires task agency: timely tool invocation and argument revision following user corrections. Frontend-backend agents separate initiation from execution: the frontend decides whether and what to request, while the backend determines how. Execution can be offloaded, but unsent requests cannot be executed, and incomplete ones can misdirect the backend. On Full-Duplex-Bench v3 (FDB v3), most failures of Realtime-Venus-Audio + Harness in our streaming pipeline occur before a domain tool executes. We introduce Duopra, a full-duplex interaction model that learns task execution alongside conversational control. Duopra treats the backend as a tool, accepting a self-contained natural-language request. Direct calls and backend delegation share an action interface and requirements for faithful initiation and correct execution. Its three-stage training combines protocol SFT, full-duplex RL rewarding timely and complete execution, and projector-only repair of talker conditioning after thinker updates. With the same backend, Pass@1 rises from 4.7% to 44.7%; Duopra achieves 47.7% calling tools directly (26.0% after SFT) and 49.3% with a DeepSeek backend. It improves three FDB v1.0 takeover rates over the base model. These results show that task agency can coexist with key conversational agency.",
+      "abstract_source": "huggingface",
+      "authors": [
+        {
+          "_id": "6affb92c8c0c69ddd0a94cff",
+          "user": {
+            "_id": "6a229ac6bf0e800fea93b710",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6a229ac6bf0e800fea93b710/4M2HBwtdZHfucIjx0ggVK.jpeg",
+            "isPro": false,
+            "fullname": "chiyu",
+            "user": "Chechen123",
+            "type": "user",
+            "name": "Chechen123"
+          },
+          "name": "Chiyu Chen",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-11-20T17:08:11.951Z",
+          "hidden": false
+        },
+        {
+          "_id": "6affb92c8c0c69ddd0a94d00",
+          "name": "Pengzhou Cheng",
+          "hidden": false
+        },
+        {
+          "_id": "6affb92c8c0c69ddd0a94d01",
+          "name": "Yuezhao Ma",
+          "hidden": false
+        },
+        {
+          "_id": "6affb92c8c0c69ddd0a94d02",
+          "name": "Xiaocheng Li",
+          "hidden": false
+        },
+        {
+          "_id": "6affb92c8c0c69ddd0a94d03",
+          "name": "Can Liu",
+          "hidden": false
+        },
+        {
+          "_id": "6affb92c8c0c69ddd0a94d04",
+          "name": "Haonan Hu",
+          "hidden": false
+        },
+        {
+          "_id": "6affb92c8c0c69ddd0a94d05",
+          "name": "Yao Yao",
+          "hidden": false
+        },
+        {
+          "_id": "6affb92c8c0c69ddd0a94d06",
+          "name": "Yifei Yang",
+          "hidden": false
+        },
+        {
+          "_id": "6affb92c8c0c69ddd0a94d07",
+          "name": "Yijie Lu",
+          "hidden": false
+        },
+        {
+          "_id": "6affb92c8c0c69ddd0a94d08",
+          "name": "Taolei Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6affb92c8c0c69ddd0a94d09",
+          "name": "Yansi Li",
+          "hidden": false
+        },
+        {
+          "_id": "6affb92c8c0c69ddd0a94d0a",
+          "name": "Muhuan Wu",
+          "hidden": false
+        },
+        {
+          "_id": "6affb92c8c0c69ddd0a94d0b",
+          "name": "Chenglu Sun",
+          "hidden": false
+        },
+        {
+          "_id": "6affb92c8c0c69ddd0a94d0c",
+          "name": "Gongshen Liu",
+          "hidden": false
+        },
+        {
+          "_id": "6affb92c8c0c69ddd0a94d0d",
+          "name": "Zhuosheng Zhang",
+          "hidden": false
+        }
+      ],
+      "published": "2026-11-19T00:00:00.000Z",
+      "paper_url": "https://arxiv.org/abs/2611.25773"
+    },
+    {
+      "id": "2611.21485",
+      "title": "Lost in the Hallway: Benchmarking Persistent Spatial Memory Across Revisits",
+      "upvotes": 10,
+      "abstract": "Persistent spatial understanding is essential for embodied agents to operate reliably in environments they repeatedly encounter. It requires recognizing revisited places despite viewpoint changes, distinguishing them from similar-looking rooms, and updating memories as environments change. Yet existing evaluations often leave physical place identity across separated visits implicit. We introduce ReSpaceBench, a benchmark comprising 3,244 questions across 590 synthetic and real-home scenes, organized into 9 tasks spanning room association, persistent state tracking, and downstream reasoning. Controlled walkthroughs define visits by physical room entry and deliberately include same-type room distractors and cross-session object changes. Our evaluation of 32 models and 3 agentic video-understanding frameworks reveals substantial limitations: the strongest evaluated zero-shot model achieves 50.5% overall accuracy and 52.2% on a 450-question subset, compared with 90.1% for human annotators. The evaluated agentic frameworks offer no overall improvement over direct inference with the same base model. Analysis of agent execution traces reveals evidence omissions and incorrect cross-visit room associations as major failure modes, suggesting that iterative evidence seeking alone does not ensure consistent spatial memory. Further analyses expose a gap between recognizing familiar rooms and identifying the correct visited room, while annotation-guided sampling highlights the importance of preserving intervening visits and transitions. We also provide RS-30K, a separate training dataset from synthetic sources with no template, scene, route, or video overlap with the benchmark. Fine-tuning Qwen3-VL-8B raises overall accuracy from 35.5% to 60.4%, with the largest gains in association and improvements extending to real-life scenes.",
+      "abstract_source": "huggingface",
+      "authors": [
+        {
+          "_id": "6b03aafcecb204ffe44e73a8",
+          "name": "Henry Zheng",
+          "hidden": false
+        },
+        {
+          "_id": "6b03aafcecb204ffe44e73a9",
+          "name": "Weibo Gong",
+          "hidden": false
+        },
+        {
+          "_id": "6b03aafcecb204ffe44e73aa",
+          "name": "Yang Yue",
+          "hidden": false
+        },
+        {
+          "_id": "6b03aafcecb204ffe44e73ab",
+          "name": "Rui Huang",
+          "hidden": false
+        },
+        {
+          "_id": "6b03aafcecb204ffe44e73ac",
+          "name": "Yang Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6b03aafcecb204ffe44e73ad",
+          "name": "Gao Huang",
+          "hidden": false
+        }
+      ],
+      "published": "2026-11-16T00:00:00.000Z",
+      "paper_url": "https://arxiv.org/abs/2611.21485"
+    },
+    {
+      "id": "2611.27915",
+      "title": "StereoVLM: Binocular Vision-Language Models for Metric 3D Spatial Reasoning",
+      "upvotes": 7,
+      "abstract": "Vision-language models (VLMs) exhibit strong semantic understanding but remain limited in their ability to reason about metric 3D space in the physical world. Existing VLMs typically infer 3D scene structure from one or more images without known camera calibration or cross-view geometric constraints. This makes metric 3D inference inherently ambiguous and leaves it unclear whether their spatial predictions are grounded in visual evidence or driven primarily by semantic priors. In contrast, calibrated stereo provides explicit cross-view geometry that resolves this ambiguity and offers a more reliable foundation for metric 3D perception and geometric generalization. We investigate how VLMs can learn transferable 3D representations directly from calibrated binocular observations. To this end, we introduce StereoVLM, the first geometry-aware binocular VLM for metric 3D spatial reasoning. StereoVLM follows a hierarchical learning paradigm spanning from cross-view correspondence and disparity estimation to calibration-conditioned metric depth perception and semantic spatial reasoning. We further find that disparity supervision generalizes substantially better than direct binocular depth supervision on unseen environments. To evaluate these capabilities, we introduce Stereo3D-Bench, a comprehensive benchmark across three levels, from point-level geometry to object-level spatial reasoning. StereoVLM-8B achieves 95.17% depth accuracy (δ_1) and a 66.98 average object-level score on Stereo3D-Bench. Intervention results further indicate that the model's performance on Stereo3D-Bench benefits from valid cross-view geometry and cannot be explained solely by additional visual tokens or semantic priors. Hierarchical geometric supervision also yields average gains of 3.54 points across five spatial benchmarks and 4.3 percentage points in RoboCasa manipulation success.",
+      "abstract_source": "huggingface",
+      "authors": [
+        {
+          "_id": "6b03da64ecb204ffe44e7506",
+          "user": {
+            "_id": "68de2ad5e795997c50a409eb",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/68de2ad5e795997c50a409eb/VdVD6njmMlMbZIqe23cxT.jpeg",
+            "isPro": false,
+            "fullname": "YAN, Chi",
+            "user": "yanchi3dv",
+            "type": "user",
+            "name": "yanchi3dv"
+          },
+          "name": "Chi Yan",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-11-23T08:45:04.744Z",
+          "hidden": false
+        },
+        {
+          "_id": "6b03da64ecb204ffe44e7507",
+          "name": "Guoyang Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "6b03da64ecb204ffe44e7508",
+          "name": "Wentao Yuan",
+          "hidden": false
+        },
+        {
+          "_id": "6b03da64ecb204ffe44e7509",
+          "name": "Yixiao Ge",
+          "hidden": false
+        },
+        {
+          "_id": "6b03da64ecb204ffe44e750a",
+          "name": "Yanning Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "6b03da64ecb204ffe44e750b",
+          "user": {
+            "_id": "66feab48651e00e22f33222e",
+            "avatarUrl": "/avatars/480ee88c1fdd4be6c86ebd3a076b1d37.svg",
+            "isPro": false,
+            "fullname": "Dan Xu",
+            "user": "danxuhk",
+            "type": "user",
+            "name": "danxuhk"
+          },
+          "name": "Dan Xu",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-11-23T16:45:04.940Z",
+          "hidden": false
+        }
+      ],
+      "published": "2026-11-20T17:52:02.000Z",
+      "paper_url": "https://arxiv.org/abs/2611.27915"
+    },
+    {
+      "id": "2611.26613",
+      "title": "AgentRoboCritic: Understanding the Capability of Frontier Agents on Direct Robot Control",
+      "upvotes": 7,
+      "abstract": "Frontier multimodal language agents such as GPT-6 Astra have demonstrated strong capabilities in controlling robots directly via low-level numerical actions without high-level primitives. However, existing benchmarks report only episode-level success rates, which show neither how these agents succeed nor where they fail. In this paper, we present a systematic action-level analysis of frontier agents on direct robot control across 12 manipulation benchmarks. We introduce AgentRoboCritic, an intent-grounded critique framework in which the policy agent states a local intent alongside each action, and a critic evaluates the action's outcome and failure mode against this intent. Our action-level analysis demonstrates the promising capabilities of frontier agents on direct robot control, including closed-loop recovery from local execution failures, reliable semantic grounding across diverse scenes, and strong zero-shot manipulation without task-specific adaptation. It also identifies their current limitations, including task-relevant physical execution bottlenecks such as grasping and alignment, and uneven recovery across failure modes. Finally, we validate our critic on a 400-action human-annotated benchmark and release a dataset of 12,844 annotated actions alongside a fine-tuned open-source critic, Muse-Glimmer-30B, whose failure-mode accuracy rises from 32.58% to 74.24%, enabling low-cost action-level analysis.",
+      "abstract_source": "huggingface",
+      "authors": [
+        {
+          "_id": "6affcea28c0c69ddd0a94e05",
+          "name": "Yiyang Du",
+          "hidden": false
+        },
+        {
+          "_id": "6affcea28c0c69ddd0a94e06",
+          "name": "Yuxuan Kuang",
+          "hidden": false
+        },
+        {
+          "_id": "6affcea28c0c69ddd0a94e07",
+          "name": "Qitao Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "6affcea28c0c69ddd0a94e08",
+          "name": "Yixuan Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6affcea28c0c69ddd0a94e09",
+          "name": "Zhanqiu Guo",
+          "hidden": false
+        },
+        {
+          "_id": "6affcea28c0c69ddd0a94e0a",
+          "name": "Yi Xu",
+          "hidden": false
+        },
+        {
+          "_id": "6affcea28c0c69ddd0a94e0b",
+          "name": "Xin Li",
+          "hidden": false
+        },
+        {
+          "_id": "6affcea28c0c69ddd0a94e0c",
+          "name": "Wenbin He",
+          "hidden": false
+        },
+        {
+          "_id": "6affcea28c0c69ddd0a94e0d",
+          "name": "Liu Ren",
+          "hidden": false
+        },
+        {
+          "_id": "6affcea28c0c69ddd0a94e0e",
+          "name": "Chenyan Xiong",
+          "hidden": false
+        }
+      ],
+      "published": "2026-11-19T00:00:00.000Z",
+      "paper_url": "https://arxiv.org/abs/2611.26613"
+    },
+    {
+      "id": "2611.24077",
+      "title": "AeroRSI: Recursive Self-Improvement for Aerial Vision-Language Navigation",
+      "upvotes": 7,
+      "abstract": "Vision-language-action (VLA) models enable unmanned aerial vehicles (UAVs) to follow natural-language instructions, yet still fail frequently in closed-loop flight. Correcting these failures requires repairs, i.e., actions that avoid them at the states the policy itself reaches, which human pilots cannot label at scale and rule-based planners cannot supply reliably. In this paper, we present AeroRSI, a recursive self-improvement framework in which an aerial navigation policy iteratively learns from its own failures. Our key insight is that a failing policy should judge its own repairs by flying on from them. Judged in this way, its sampled actions and even rule-based proposals that hurt it when imitated directly become reliable supervision. Moreover, an episode terminates at its first failure, concealing subsequent failures until the earlier ones are repaired. AeroRSI thus renews its supervision in every round, anchoring the failures of the current policy, verifying repairs by its continuation, and distilling them while keeping its behavior elsewhere. On TravelUAV, three rounds raise the success rate of a supervised 2B-parameter policy from 46.4% to 67.5% and reduce collisions by half, surpassing the previous state of the art by 10.6 points from the same initialization without extra human labels or inference cost. Code and models are available at https://github.com/starsholic/AeroRSI.",
+      "abstract_source": "huggingface",
+      "authors": [
+        {
+          "_id": "6afeae0e36ccf7e1781f4d59",
+          "user": {
+            "_id": "64b7463bf72c6cd946cf970f",
+            "avatarUrl": "/avatars/8511e4d1027d58ecdd34a87239400165.svg",
+            "isPro": false,
+            "fullname": "David Shiwei Wu",
+            "user": "DavidWu1116",
+            "type": "user",
+            "name": "DavidWu1116"
+          },
+          "name": "Shiwei Wu",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-11-19T08:45:04.960Z",
+          "hidden": false
+        },
+        {
+          "_id": "6afeae0e36ccf7e1781f4d5a",
+          "name": "Yuwen Pan",
+          "hidden": false
+        },
+        {
+          "_id": "6afeae0e36ccf7e1781f4d5b",
+          "name": "Zhi Li",
+          "hidden": false
+        },
+        {
+          "_id": "6afeae0e36ccf7e1781f4d5c",
+          "name": "Yaowen Li",
+          "hidden": false
+        },
+        {
+          "_id": "6afeae0e36ccf7e1781f4d5d",
+          "name": "Yan Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "6afeae0e36ccf7e1781f4d5e",
+          "name": "Xuemiao Xu",
+          "hidden": false
+        },
+        {
+          "_id": "6afeae0e36ccf7e1781f4d5f",
+          "name": "Yu Liu",
+          "hidden": false
+        }
+      ],
+      "published": "2026-11-18T00:00:00.000Z",
+      "paper_url": "https://arxiv.org/abs/2611.24077"
+    },
+    {
+      "id": "2611.27398",
+      "title": "Taking Apart and Putting Together: Tracking Objects Through Physical Transformations",
+      "upvotes": 5,
+      "abstract": "We introduce Transformation Tracking and Understanding (TTU), extending video object tracking to environments where objects undergo physical assemblies and disassemblies. TTU requires continuously tracking objects through transformations, identifying new entities, maintaining a state graph of their relationships, and assigning semantic labels to transformations. While foundation models (e.g., SAM 2/3) maintain tracklets through appearance changes, they cannot update semantic identities as objects physically evolve. Prior work addresses only disassemblies, relying on expensive searches triggered only when tracking fails. We propose Tracking Instances via Proposals and Overlaps (TIPO), a training-free framework that continuously infers transformations via a generate-evaluate-judge pipeline. TIPO generates split and merge proposals from disjoint mask components, scores them against mask-decoder priors using inner and external overlap, and queries an MLLM on the top proposal for visual verification and semantic labeling. To benchmark TTU, we curate Video Instances, States, and Transformation Annotations (VISTA), a dataset including state graphs with 124 assembly and 132 disassembly events across 50 sequences and over 26,000 frames. TIPO achieves state-of-the-art tracking and state-graph accuracy on VISTA, while operating 6times to 15times faster than prior methods. Project page: https://davidegardenal.github.io/tipo-tracking",
+      "abstract_source": "huggingface",
+      "authors": [
+        {
+          "_id": "6b03f398ecb204ffe44e76cd",
+          "user": {
+            "_id": "6606057704b9742480d10458",
+            "avatarUrl": "/avatars/02d9308afcbab3c9cc8b2e342b6c36ef.svg",
+            "isPro": false,
+            "fullname": "Davide Gardenal",
+            "user": "davidegarde",
+            "type": "user",
+            "name": "davidegarde"
+          },
+          "name": "Davide Gardenal",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-11-23T08:45:04.770Z",
+          "hidden": false
+        },
+        {
+          "_id": "6b03f398ecb204ffe44e76ce",
+          "name": "Mingxuan Liu",
+          "hidden": false
+        },
+        {
+          "_id": "6b03f398ecb204ffe44e76cf",
+          "name": "Flavio Vella",
+          "hidden": false
+        },
+        {
+          "_id": "6b03f398ecb204ffe44e76d0",
+          "name": "Quentin Guimard",
+          "hidden": false
+        },
+        {
+          "_id": "6b03f398ecb204ffe44e76d1",
+          "name": "Elisa Ricci",
+          "hidden": false
+        }
+      ],
+      "published": "2026-11-20T10:03:29.000Z",
+      "paper_url": "https://arxiv.org/abs/2611.27398"
+    },
+    {
+      "id": "2611.22343",
+      "title": "PURE: A Diagnostic Benchmark for Multi-Granularity Multimodal Identity Matching",
+      "upvotes": 5,
+      "abstract": "Identity matching asks whether two records denote the same identity, yet the answer depends on the target granularity. Two records may match at the base level but not at the variant level: they share an underlying design while differing in attributes such as color or size. Final matching accuracy does not separately characterize the capabilities involved. To study this problem, we use e-commerce as a challenging real-world domain. We introduce PURE, a diagnostic benchmark for multi-granularity multimodal identity matching covering four capability dimensions: Perception, Understanding, Reasoning, and Evidence-grounded Judgment. The benchmark comprises 1,457 multiple-choice questions across 14 tasks, derived from real-world matching pairs and verified by two domain experts. Across ten recent MLLMs, overall scores range from 47.1% to 86.0%. Understanding receives the highest mean score and Judgment the lowest, with weaknesses in visual difference localization and variant-level rule judgment. Modality ablations show that models benefit from multimodal evidence but can incorrectly identify conflicts between matching records. In direct matching, most models recognize matching pairs more reliably than non-matching pairs at the base level, whereas the reverse holds at the variant level. PURE therefore reveals what aggregate matching accuracy hides: not only whether models judge a pair correctly, but where they struggle to interpret evidence and apply matching criteria.",
+      "abstract_source": "huggingface",
+      "authors": [
+        {
+          "_id": "6afd4e0543cedf0e6abcebfb",
+          "name": "Hengyu You",
+          "hidden": false
+        },
+        {
+          "_id": "6afd4e0543cedf0e6abcebfc",
+          "name": "Xintong Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6afd4e0543cedf0e6abcebfd",
+          "name": "Jin Cao",
+          "hidden": false
+        },
+        {
+          "_id": "6afd4e0543cedf0e6abcebfe",
+          "user": {
+            "_id": "641123b4230ce11b1be68fa1",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/641123b4230ce11b1be68fa1/Xm1gZgK4MRq-LN20ZxxHE.jpeg",
+            "isPro": false,
+            "fullname": "Liang Ding (Hiring https://liamding.cc/hiring.htm)",
+            "user": "alphadl",
+            "type": "user",
+            "name": "alphadl"
+          },
+          "name": "Liang Ding",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-11-20T17:08:37.073Z",
+          "hidden": false
+        }
+      ],
+      "published": "2026-11-17T00:00:00.000Z",
+      "paper_url": "https://arxiv.org/abs/2611.22343"
+    },
+    {
+      "id": "2611.25252",
+      "title": "Moving Generality from Model to Modeler: LLM Agents for PHM on a Deployment-Style Benchmark",
+      "upvotes": 4,
+      "abstract": "Coding agents built on large language models (LLMs) now help develop many models published as general solutions. Should generality instead reside in the agent that builds a model for each new task? We examine this question in prognostics and health management (PHM), where every model must work on unseen equipment. Our deployment-style benchmark, NextUnit-Bench, covers 24 public datasets split into 58 folds that hold out units or operating conditions; each agent has two hours to deliver an executable predictor, then run on the hidden units. First, frontier agents outperform AutoML, which reaches less than half the best agent's score, and faithful implementations of published methods on four datasets, of which only 6 of 30 beat the strongest agent's own design; published accuracies, where reproducible, rest on the papers' own conventions, and a single convention, capping the remaining life of test engines, can halve the reported error. Second, the agents' advantage is a design made on each machine's data; once made, a plain-text plan of a few hundred words carries most of the gap between two frontier agents, and given a weaker agent's plan, the strongest agent falls to that agent's level, often to identical predictions. Before touching the data, however, it matters little whose plan an agent carries out, and domain toolkits appear to help neither: what sets the strongest apart is how much it learns from the data. Third, such designs reach only implementers that can execute them: given the strongest agent's designs, a locally deployable open-weight model delivers half as often, even when they are lightened, and scores no higher than without them. Generality, we argue, is not disappearing but moving, from the model to the modeler.",
+      "abstract_source": "huggingface",
+      "authors": [
+        {
+          "_id": "6b017021ecb204ffe44e6cdc",
+          "user": {
+            "_id": "67e97358c59818ffdfa68293",
+            "avatarUrl": "/avatars/9cb179667d17a94ecc6db1b2366bd5ba.svg",
+            "isPro": false,
+            "fullname": "ZhenlingChen",
+            "user": "CC3369",
+            "type": "user",
+            "name": "CC3369"
+          },
+          "name": "Zhenling Chen",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-11-21T16:45:04.771Z",
+          "hidden": false
+        },
+        {
+          "_id": "6b017021ecb204ffe44e6cdd",
+          "name": "Zhiguo Zeng",
+          "hidden": false
+        },
+        {
+          "_id": "6b017021ecb204ffe44e6cde",
+          "name": "Anne Barros",
+          "hidden": false
+        }
+      ],
+      "published": "2026-11-18T00:00:00.000Z",
+      "paper_url": "https://arxiv.org/abs/2611.25252"
+    },
+    {
+      "id": "2611.24025",
+      "title": "Intent Contracts: Taking Tools Away from Agents",
+      "upvotes": 4,
+      "abstract": "Intent contracts are an authorization interface for tool-using LLM agents in which the planning model holds no tools. For each step it submits a short logged contract: a goal, a verbatim quotation of the user, and scope fields. Code validates the contract, and a small trusted model checks it against the user's words and writes the tool call itself. Provided the validation and dispatch code is correct, every executed call is written by the trusted model, the planner's influence on a call is confined to a contract logged before it, and the trusted side decides how much of a request to carry out. We compare contracts with two reviewers of planner-written commands: one sees only the user's words and the command, the information boundary of a reasoning-blind permission classifier, and one also sees the planner's goal and a checked quotation. With gpt-6.1-terra as planner and GLM-5.3-Flash as the trusted model on three AmPermBench task families, every object changed under contracts is named in the goal of the contract that produced the change; under review the planner names objects in its commands and rarely in its goals. When the planner adds work the user never asked for, contracts complete the user's task in 27/30 runs and the intent-visible reviewer in 16/30, because a reviewer can only refuse a whole command. Contracts do not reduce unauthorized actions. They are indistinguishable from blind review, and once the benchmark's environment terms are clarified, every condition that changes state hits a wrong target in 40-49% of those runs. That error is the planner's choice of objects for an ambiguous reference, which no trusted model here can see the environment to check; telling the executor to decline when unsure does not change it. We evaluate benign over-reach with one pair of models, not adversarial planners. We release the plugin and run records.",
+      "abstract_source": "huggingface",
+      "authors": [
+        {
+          "_id": "6afe7f6c36ccf7e1781f4b2f",
+          "user": {
+            "_id": "6af785697e6634231b603c52",
+            "avatarUrl": "/avatars/03adfadc998db4c29c5ff07a96b1c9bf.svg",
+            "isPro": false,
+            "fullname": "zwang",
+            "user": "zwang-devv",
+            "type": "user",
+            "name": "zwang-devv"
+          },
+          "name": "Ziyuan Wang",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-11-19T21:35:37.009Z",
+          "hidden": false
+        },
+        {
+          "_id": "6afe7f6c36ccf7e1781f4b30",
+          "name": "Genliang Zhu",
+          "hidden": false
+        },
+        {
+          "_id": "6afe7f6c36ccf7e1781f4b31",
+          "name": "Xiaobo Chen",
+          "hidden": false
+        },
+        {
+          "_id": "6afe7f6c36ccf7e1781f4b32",
+          "name": "Chu Wang",
+          "hidden": false
+        }
+      ],
+      "published": "2026-11-18T00:00:00.000Z",
+      "paper_url": "https://arxiv.org/abs/2611.24025"
+    },
+    {
+      "id": "2611.27229",
+      "title": "Prune to Expand: Training Prompt Enhancers with Less to Imitate",
+      "upvotes": 4,
+      "abstract": "Prompt enhancement (PE) refines concise user prompts into detailed descriptions to improve the compositional aesthetics of generated images while preserving user intent. A common practice constructs supervised fine-tuning (SFT) pairs by deriving short, user-like prompts from dense captions, implicitly assuming that captions that improve image generation also provide effective supervision. In this paper, however, we uncover a counterintuitive finding: PE models trained on caption pairs with substantial generation gains perform comparably to those trained on pairs with only marginal gains. We argue that dense captions can impose redundant supervision by requiring PE models to reproduce image-specific details weakly related to user intent. Motivated by this discrepancy, we introduce Prune to Expand (P2E), a simple text-only method that refines dense-caption supervision by selectively removing redundant sentences under a per-example deletion bound while preserving explicit user requirements and informative visual structure. Extensive experiments under identical training configurations demonstrate that P2E improves alignment with human preferences and visual quality over conventional dense-caption SFT across diverse image categories and visual generators.",
+      "abstract_source": "huggingface",
+      "authors": [
+        {
+          "_id": "6b03ace8ecb204ffe44e73bb",
+          "user": {
+            "_id": "655de51982afda0fc479fb91",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/655de51982afda0fc479fb91/-t9RLNEBAESO0niQGHoss.png",
+            "isPro": false,
+            "fullname": "Tianhe Wu",
+            "user": "TianheWu",
+            "type": "user",
+            "name": "TianheWu"
+          },
+          "name": "Tianhe Wu",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-11-23T08:45:04.664Z",
+          "hidden": false
+        },
+        {
+          "_id": "6b03ace8ecb204ffe44e73bc",
+          "name": "Qilin Sun",
+          "hidden": false
+        },
+        {
+          "_id": "6b03ace8ecb204ffe44e73bd",
+          "name": "Kede Ma",
+          "hidden": false
+        }
+      ],
+      "published": "2026-11-20T00:00:00.000Z",
+      "paper_url": "https://arxiv.org/abs/2611.27229"
+    },
+    {
+      "id": "2611.25534",
+      "title": "How Feedback-Free Self-Evolution Reshapes Agent Skills: A Systematic Study",
+      "upvotes": 3,
+      "abstract": "Agent skills are documents in which experts write down procedural knowledge, and models increasingly maintain them by rewriting them without feedback. Such rewriting could adapt a skill to the model that uses it or erode the expert knowledge that makes it useful, yet how skills evolve under this feedback-free self-evolution has not been studied. We let models rewrite expert skills round after round without any task, run or judgment and run agents built on the same models with the rewritten skills. Our experiments show that the skills lose value rather than improve, as every model we test performs worse with them on every benchmark, by 15 points on average on SkillsBench after thirty rounds. Sampling each model's prior with skills it writes from the topic alone, we find that rewriting pulls skills toward this prior and gives up first the knowledge outside it. Putting this knowledge back recovers much of the lost pass rate, so an expert's skill is valuable largely for what the model does not write on its own. Building on this insight, SkillDiff marks this knowledge in place and raises the pass rate on SkillsBench by 4.8 points on average without feedback or any change to the skill's text. Project repository: https://github.com/LitaoGuo/How-Self-Evolution-Reshapes-Skills.",
+      "abstract_source": "huggingface",
+      "authors": [
+        {
+          "_id": "6b03f25eecb204ffe44e76a4",
+          "name": "Litao Guo",
+          "hidden": false
+        },
+        {
+          "_id": "6b03f25eecb204ffe44e76a5",
+          "name": "Man Chen",
+          "hidden": false
+        },
+        {
+          "_id": "6b03f25eecb204ffe44e76a6",
+          "name": "Xinli Xu",
+          "hidden": false
+        },
+        {
+          "_id": "6b03f25eecb204ffe44e76a7",
+          "name": "Jinsong Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "6b03f25eecb204ffe44e76a8",
+          "name": "Zixin Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6b03f25eecb204ffe44e76a9",
+          "name": "Ying-Cong Chen",
+          "hidden": false
+        }
+      ],
+      "published": "2026-11-19T00:00:00.000Z",
+      "paper_url": "https://arxiv.org/abs/2611.25534"
+    },
+    {
+      "id": "2611.22479",
+      "title": "Exploited Before It Was Fixed? Vulnerability Timelines from Open, Machine-Readable Evidence",
+      "upvotes": 3,
+      "abstract": "-05-X-03), Known Exploited Vulnerabilities (KEV) catalogs, and exploitation sightings.\n  We introduce an evidence model implemented in Vulnerability-Lookup that selects the earliest evidence for each lifecycle event, distinguishes vulnerability-specific records, preserves date precision, and ensures traceability to original sources.\n  Among 3,758 vulnerability identifiers with exploitation evidence, 98% have disclosure dates, while only 15.7% have patch evidence. Vendor-side dates required by VTEM are entirely absent. Most exploitation dates originate from catalog listings, including 1,041 entries associated with bulk catalog imports. After excluding these entries and ambiguous same-day observations, 59 vulnerabilities exhibit patch evidence following exploitation evidence, with a median interval of 7.6 days, predominantly between catalog listings and distributor fixes.\n  Evidence traceability also exposes systematic measurement errors: one collector incorrectly classified exploit publications as active exploitation, accounting for 40% of initial exploitation dates, while another catalog assigned vulnerability publication timestamps to 11% of its listings.\n  Our findings demonstrate that exploitation-to-patch intervals are computationally measurable, but their reliability depends on the availability, precision, and provenance of published evidence. We identify the additional disclosure, exploitation observation, and patch availability timestamps needed to improve vulnerability lifecycle measurements.",
+      "abstract_source": "huggingface",
+      "authors": [
+        {
+          "_id": "6b0414643039f182dac23554",
+          "user": {
+            "_id": "65e5bc754230174d547fa1dc",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/noauth/xQ1NGVasxexuR_Hs0dvNl.jpeg",
+            "isPro": false,
+            "fullname": "Cédric",
+            "user": "cedricbonhomme",
+            "type": "user",
+            "name": "cedricbonhomme"
+          },
+          "name": "Cédric Bonhomme",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-11-23T18:03:08.366Z",
+          "hidden": false
+        },
+        {
+          "_id": "6b0414643039f182dac23555",
+          "name": "Alexandre Dulaunoy",
+          "hidden": false
+        }
+      ],
+      "published": "2026-11-17T00:00:00.000Z",
+      "paper_url": "https://arxiv.org/abs/2611.22479"
+    },
+    {
+      "id": "2611.27211",
+      "title": "Explicit Style Extraction for Personalized Long-Form Text Generation",
+      "upvotes": 3,
+      "abstract": "Personalized long-form generation asks a language model to write new text the way a specific user would. The standard recipe, retrieval-augmented generation, places a few of the user's past texts in the prompt but leaves the model to decide what to take from them. We introduce StylePrism, a taxonomy of 28 stylistic aspects in seven categories, and SP-Refine, an inference-time method that makes style extraction an explicit step: the model first fills StylePrism with the user's patterns, quoted evidence, and habits to avoid, then drafts from the user's samples and revises the draft twice against this profile, guided by its own style scores. On the three long-form tasks of LongLaMP with three LLMs, SP-Refine outperforms LongLaMP's retrieval-augmented baseline in 25 of 27 ROUGE and METEOR comparisons, by 10.2% on average and by up to 35.8%. Annotating users' own texts with the extracted profiles shows that StylePrism captures concrete, checkable habits, from the order of rhetorical moves to a reviewer's sign-off. Ablations show that the profile helps as revision guidance, not as a replacement for the samples: writing from the profile alone is worse in all 27 comparisons, while a single implicit-inference call is a cheaper alternative that comes close. Oracle variants that let the reviser see the reference, together with reference-free controls, show that larger refinement gains require information unavailable at inference time.",
+      "abstract_source": "huggingface",
+      "authors": [
+        {
+          "_id": "6b03c2b8ecb204ffe44e7466",
+          "name": "Jenitha Reddy Patel",
+          "hidden": false
+        },
+        {
+          "_id": "6b03c2b8ecb204ffe44e7467",
+          "name": "Sameeksha Kini",
+          "hidden": false
+        },
+        {
+          "_id": "6b03c2b8ecb204ffe44e7468",
+          "name": "Amulya Rayasam",
+          "hidden": false
+        },
+        {
+          "_id": "6b03c2b8ecb204ffe44e7469",
+          "name": "Anisa Dye",
+          "hidden": false
+        },
+        {
+          "_id": "6b03c2b8ecb204ffe44e746a",
+          "name": "Abhinav Sharma",
+          "hidden": false
+        },
+        {
+          "_id": "6b03c2b8ecb204ffe44e746b",
+          "name": "Sai Karthik Navuluru",
+          "hidden": false
+        },
+        {
+          "_id": "6b03c2b8ecb204ffe44e746c",
+          "name": "Bo Ni",
+          "hidden": false
+        },
+        {
+          "_id": "6b03c2b8ecb204ffe44e746d",
+          "name": "Li Li",
+          "hidden": false
+        },
+        {
+          "_id": "6b03c2b8ecb204ffe44e746e",
+          "name": "Junda Wu",
+          "hidden": false
+        },
+        {
+          "_id": "6b03c2b8ecb204ffe44e746f",
+          "name": "Tong Yu",
+          "hidden": false
+        },
+        {
+          "_id": "6b03c2b8ecb204ffe44e7470",
+          "name": "Nedim Lipka",
+          "hidden": false
+        },
+        {
+          "_id": "6b03c2b8ecb204ffe44e7471",
+          "name": "Xiaolei Huang",
+          "hidden": false
+        },
+        {
+          "_id": "6b03c2b8ecb204ffe44e7472",
+          "name": "Tyler Derr",
+          "hidden": false
+        },
+        {
+          "_id": "6b03c2b8ecb204ffe44e7473",
+          "name": "Yue Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "6b03c2b8ecb204ffe44e7474",
+          "name": "Zhengzhong Tu",
+          "hidden": false
+        },
+        {
+          "_id": "6b03c2b8ecb204ffe44e7475",
+          "name": "Yu Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6b03c2b8ecb204ffe44e7476",
+          "name": "Hongjie Chen",
+          "hidden": false
+        },
+        {
+          "_id": "6b03c2b8ecb204ffe44e7477",
+          "name": "Thien Huu Nguyen",
+          "hidden": false
+        },
+        {
+          "_id": "6b03c2b8ecb204ffe44e7478",
+          "name": "Nesreen K. Ahmed",
+          "hidden": false
+        },
+        {
+          "_id": "6b03c2b8ecb204ffe44e7479",
+          "user": {
+            "_id": "62c5947524171688a9feb992",
+            "avatarUrl": "/avatars/0f85b07f9735b21ca45c72d662d68345.svg",
+            "isPro": false,
+            "fullname": "Franck Dernoncourt",
+            "user": "Franck-Dernoncourt",
+            "type": "user",
+            "name": "Franck-Dernoncourt"
+          },
+          "name": "Franck Dernoncourt",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-11-23T08:45:04.672Z",
+          "hidden": false
+        },
+        {
+          "_id": "6b03c2b8ecb204ffe44e747a",
+          "name": "Ryan A. Rossi",
+          "hidden": false
+        }
+      ],
+      "published": "2026-11-20T00:00:00.000Z",
+      "paper_url": "https://arxiv.org/abs/2611.27211"
+    },
+    {
+      "id": "2611.27490",
+      "title": "Which Dwarf Is This? Doppeldwarf-306 and Near-Identical Instance Retrieval",
+      "upvotes": 2,
+      "abstract": "Most established instance-retrieval benchmarks emphasise landmarks; small sculptures from visually similar series offer a complementary challenge. We introduce Doppeldwarf-306: 1,691 openly licensed photographs of 306 bronze dwarf statues in Wrocław, Poland, many made in themed series that share one style, with the photographer of each image recorded. With no training, nearest-neighbour search over frozen DINOv2 features names the right statue first for 93.1% of leave-one-out queries, and the best of thirteen backbones from seven pretraining paradigms reaches 94.7%. Accuracy falls slowly as candidates are added: for DINOv2, by about 0.8 points each time their number doubles. A natural design for a phone guide compares a photograph only with statues near the user. In simulation this helps, but less than an equal number of randomly chosen statues does, so random subsampling overstates its value; a permutation test ties the penalty to the real layout (p = 0.005). Used as a weight instead of a filter, location raises DINOv2 from 93.4% to 98.7% for a simulated user 25 m from the statue. With the query's photographer withheld, learned local-feature matching raises DINOv2 accuracy from 81.8% to 85.5% and also improves DINOv3. Comparing the two best candidates cuts DINOv2's false acceptance of unknown statues from 38.3% to 19.6% at 90% known acceptance.",
+      "abstract_source": "huggingface",
+      "authors": [
+        {
+          "_id": "6b040f0c3039f182dac23544",
+          "name": "Turhan Can Kargin",
+          "hidden": false
+        }
+      ],
+      "published": "2026-11-20T00:00:00.000Z",
+      "paper_url": "https://arxiv.org/abs/2611.27490"
+    },
+    {
+      "id": "2611.26809",
+      "title": "Search From the Start: Search-Native Pretraining for Language Models",
+      "upvotes": 2,
+      "abstract": "Modern language models (LMs) are increasingly deployed with access to search tools at inference. Yet pretraining remains predominantly focused on predicting static text, with search capabilities typically introduced during post-training. We propose Search-Native Pretraining as a practical route to teach search capability during pretraining from ordinary text corpora. Specifically, we augment pretraining corpus at scale with web-search queries and retrieve web response using a local index. Training on this augmented corpus teaches models to generate search calls and incorporate retrieved evidence during language modeling. Across Wikipedia and DCLM-Edu corpora and 360M to 3.3B parameter scales, search-pretrained models (\"QueryLM\") show improved performance on knowledge-intensive tasks and higher steerability toward the retrieved evidence. Crucially, their advantage persists after supervised fine-tuning of both search-pretrained and conventionally pretrained models, indicating that the tested post-training procedures do not fully recover the capabilities developed during pretraining. Throughout our experiments, we find that a 1.4B QueryLM consistently beats or matches the performance of a FLOP-matched 3.3B baseline model across all knowledge intensive tasks. These results establish search-pretraining as a practical way to develop foundational search capabilities during pretraining. We release the training artifacts, including model checkpoints and data.",
+      "abstract_source": "huggingface",
+      "authors": [
+        {
+          "_id": "6b04531064735da7427895b9",
+          "name": "Kaustubh Ponkshe",
+          "hidden": false
+        },
+        {
+          "_id": "6b04531064735da7427895ba",
+          "name": "Gyung Hyun Je",
+          "hidden": false
+        },
+        {
+          "_id": "6b04531064735da7427895bb",
+          "name": "Stefan Taga",
+          "hidden": false
+        },
+        {
+          "_id": "6b04531064735da7427895bc",
+          "name": "Colin Raffel",
+          "hidden": false
+        },
+        {
+          "_id": "6b04531064735da7427895bd",
+          "name": "Martin Jaggi",
+          "hidden": false
+        }
+      ],
+      "published": "2026-11-19T00:00:00.000Z",
+      "paper_url": "https://arxiv.org/abs/2611.26809"
+    },
+    {
+      "id": "2611.19247",
+      "title": "GameWM: Toward Next-Generation Video Games with Interaction-Centric World Models",
+      "upvotes": 2,
+      "abstract": "For more than half a century, video games have pursued better graphics, more natural interaction, and more engaging gameplay. Generative video models (VMs) now bear on all three. Neural networks already draw most of the pixels in shipped games, and recent world models let a lightweight game engine keep the world state while a VM turns the engine's coarse proxy video into final frames. These systems, however, treat the VM as a renderer that only restyles motion the engine has already authored, which leaves most of its generative capacity unused and limits the diversity a game can offer. We present GameWM, a design for next-generation games built on a clear division of labor. The GameWM-engine keeps what must be exact: rules, state, camera, and the layout of the world, which also spares the video model from having to remember it. The GameWM-VM generates what is expensive to author by hand: the look of the world and the detail of the player's interactions. One game mechanic can then be realized in many visually and physically distinct ways, while its outcome stays exactly as the engine computed it. To realize this division of labor, we build GameWM as a complete system: a data engine centered on interactions rather than exploration, an interface through which authored character sheets, scene art, and skill descriptions enter the model, and a model family from 5B to 33B parameters with a real-time causal variant for play. Together they give every player a fresh version of the same game: each player's own character, world, and skills turn the same engine mechanics into a new experience, while every event keeps the timing and outcome the GameWM-engine computed.",
+      "abstract_source": "huggingface",
+      "authors": [
+        {
+          "_id": "6afd682143cedf0e6abcecc1",
+          "name": "Bing He",
+          "hidden": false
+        },
+        {
+          "_id": "6afd682143cedf0e6abcecc2",
+          "name": "Runze Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6afd682143cedf0e6abcecc3",
+          "name": "Fei Zha",
+          "hidden": false
+        },
+        {
+          "_id": "6afd682143cedf0e6abcecc4",
+          "name": "Zhongyuan Wu",
+          "hidden": false
+        },
+        {
+          "_id": "6afd682143cedf0e6abcecc5",
+          "name": "Ke Xu",
+          "hidden": false
+        },
+        {
+          "_id": "6afd682143cedf0e6abcecc6",
+          "name": "Tao Zhuang",
+          "hidden": false
+        },
+        {
+          "_id": "6afd682143cedf0e6abcecc7",
+          "name": "Yuxuan Xie",
+          "hidden": false
+        },
+        {
+          "_id": "6afd682143cedf0e6abcecc8",
+          "name": "Zhongyuan Liu",
+          "hidden": false
+        }
+      ],
+      "published": "2026-11-14T00:00:00.000Z",
+      "paper_url": "https://arxiv.org/abs/2611.19247"
+    },
+    {
+      "id": "2611.22495",
+      "title": "Motion-Aware Reward Modeling for Instruction-Guided Video Editing",
+      "upvotes": 2,
+      "abstract": "Reward models for instruction-guided video editing can favor temporal consistency at the expense of motion. We study this failure, termed motion collapse, using controlled motion-suppression variants of real edits. On VE-Bench, the evaluated composite reward prefers a motion-suppressed candidate in 97% of cases. Learned video rewards and a VLM judge also struggle with mild suppression, while latent optimization and reward-guided fine-tuning exploit this weakness to increase reward as motion declines. A linear probe of our base reward backbone performs near chance on mild suppression, motivating an explicit inter-frame dynamics input. We propose a motion-aware reward model that combines an RGB frame-difference stream with preference training against motion-suppressed and fabricated-motion negatives. A distillation anchor preserves alignment with human quality judgments. On the VE-Bench motion ladder, our model reduces the rate of selecting motion-suppressed candidates to 0% while achieving a Spearman correlation of 0.57 with human quality ratings. It also detects unseen suppression variants and preserves motion during reward-guided fine-tuning on two editing pipelines. These results support explicitly modeling motion in rewards for video editing.",
+      "abstract_source": "huggingface",
+      "authors": [
+        {
+          "_id": "6b03f508ecb204ffe44e76df",
+          "name": "Li Li",
+          "hidden": false
+        },
+        {
+          "_id": "6b03f508ecb204ffe44e76e0",
+          "name": "Xiangbo Gao",
+          "hidden": false
+        },
+        {
+          "_id": "6b03f508ecb204ffe44e76e1",
+          "name": "Bo Ni",
+          "hidden": false
+        },
+        {
+          "_id": "6b03f508ecb204ffe44e76e2",
+          "name": "Samyadeep Basu",
+          "hidden": false
+        },
+        {
+          "_id": "6b03f508ecb204ffe44e76e3",
+          "name": "Viet Dac Lai",
+          "hidden": false
+        },
+        {
+          "_id": "6b03f508ecb204ffe44e76e4",
+          "name": "Jing Shi",
+          "hidden": false
+        },
+        {
+          "_id": "6b03f508ecb204ffe44e76e5",
+          "name": "Seunghyun Yoon",
+          "hidden": false
+        },
+        {
+          "_id": "6b03f508ecb204ffe44e76e6",
+          "name": "Gang Wu",
+          "hidden": false
+        },
+        {
+          "_id": "6b03f508ecb204ffe44e76e7",
+          "name": "Yu Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6b03f508ecb204ffe44e76e8",
+          "name": "Thien Huu Nguyen",
+          "hidden": false
+        },
+        {
+          "_id": "6b03f508ecb204ffe44e76e9",
+          "name": "Tyler Derr",
+          "hidden": false
+        },
+        {
+          "_id": "6b03f508ecb204ffe44e76ea",
+          "user": {
+            "_id": "62c5947524171688a9feb992",
+            "avatarUrl": "/avatars/0f85b07f9735b21ca45c72d662d68345.svg",
+            "isPro": false,
+            "fullname": "Franck Dernoncourt",
+            "user": "Franck-Dernoncourt",
+            "type": "user",
+            "name": "Franck-Dernoncourt"
+          },
+          "name": "Franck Dernoncourt",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-11-23T08:45:04.779Z",
+          "hidden": false
+        },
+        {
+          "_id": "6b03f508ecb204ffe44e76eb",
+          "name": "Zhengzhong Tu",
+          "hidden": false
+        },
+        {
+          "_id": "6b03f508ecb204ffe44e76ec",
+          "name": "Yue Zhao",
+          "hidden": false
+        }
+      ],
+      "published": "2026-11-17T00:00:00.000Z",
+      "paper_url": "https://arxiv.org/abs/2611.22495"
+    },
+    {
+      "id": "2611.28123",
+      "title": "Seeing the Invisible: How Vision-Language Models Read, Predict and Trace Radio Fields",
+      "upvotes": 1,
+      "abstract": "Operating in the physical world requires reasoning beyond what cameras directly capture. In a city, radio signals are invisible to the lens, yet their strength is governed by the buildings and streets an image does show. Given only these visible structures, can vision-language models (VLMs) infer the invisible radio field they shape? Probing true physical reasoning requires exact fields in real cities, alongside controlled interventions where a single physical factor changes. We build a label-free engine that turns any coordinate on Earth into a ray-traceable city, simulates matched single-factor counterfactuals, and computes every answer exactly. This yields RadioVISTA, a benchmark and training dataset for visual reasoning about invisible fields. Physically, a radio field is the sum of its propagation paths, yet across six continents we uncover a striking field-path dissociation: frontier VLMs accurately judge where a field is strong, but fail to tell whether a single direct or one-wall path exists. Open models fail even earlier at reading the field itself, and are systematically wrong, scoring below random guessing even when credited for any of four attempts. On unseen cities, fine-tuning brings a 9B open model close to frontier proprietary models on fields, yet neither supervised nor reinforcement fine-tuning improves path tracing. Supervising only final answers teaches models to approximate the field, yet leaves single-path geometry out of reach.",
+      "abstract_source": "huggingface",
+      "authors": [
+        {
+          "_id": "6b04e9a9e7a4376c42cc8bb7",
+          "name": "Yiyang Zhu",
+          "hidden": false
+        },
+        {
+          "_id": "6b04e9a9e7a4376c42cc8bb8",
+          "name": "Xin Li",
+          "hidden": false
+        },
+        {
+          "_id": "6b04e9a9e7a4376c42cc8bb9",
+          "name": "Guangyuan Liu",
+          "hidden": false
+        },
+        {
+          "_id": "6b04e9a9e7a4376c42cc8bba",
+          "name": "Ziheng Liu",
+          "hidden": false
+        },
+        {
+          "_id": "6b04e9a9e7a4376c42cc8bbb",
+          "name": "Jiayi Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6b04e9a9e7a4376c42cc8bbc",
+          "name": "Chau Yuen",
+          "hidden": false
+        }
+      ],
+      "published": "2026-11-18T00:00:00.000Z",
+      "paper_url": "https://arxiv.org/abs/2611.28123"
+    },
+    {
+      "id": "2611.24249",
+      "title": "From Points to Trajectories: Rethinking Multimodal Alignment for Physical Events",
+      "upvotes": 1,
+      "abstract": "Advancing physical artificial intelligence (Physical AI) requires moving beyond static object recognition to ground how real-world mechanics (e.g., impact, friction, and force transfer) unfold over time. While multimodal aligners seek to capture these interactions by matching multi-sensor streams, prevailing architectures compress each temporal sequence into a single pooled embedding. We show that this paradigm fails on twin events: distinct physical executions recorded under identical task conditions. Collapsing the temporal dimension averages out transient cross-modal dynamics, effectively reducing physical event alignment to static scene recognition. Formally, we prove that as sequence length increases, any temporally pooled representation converges to the stationary recording condition. Consequently, as windows grow, no choice of loss function or embedding geometry can disambiguate twin events from pooled features alone. Instead, we show that physical events are uniquely identified by the event gap, namely the instantaneous, synchronous co-fluctuations across modalities that are erased by pooling and accumulate only along unpooled trajectories. To recover this signal, we introduce CounterPoint, a lightweight plug-in module that strips out each modality's temporal mean to score frame-level cross-modal agreement. Integrated across four state-of-the-art (SOTA) multimodal aligners, CounterPoint shifts representations from coarse condition matching to fine-grained physical event alignment, consistently outperforming existing temporal alignment methods.",
+      "abstract_source": "huggingface",
+      "authors": [
+        {
+          "_id": "6b04e967e7a4376c42cc8baf",
+          "name": "Yiyang Zhu",
+          "hidden": false
+        },
+        {
+          "_id": "6b04e967e7a4376c42cc8bb0",
+          "name": "Guangyuan Liu",
+          "hidden": false
+        },
+        {
+          "_id": "6b04e967e7a4376c42cc8bb1",
+          "name": "Jingdi Lei",
+          "hidden": false
+        },
+        {
+          "_id": "6b04e967e7a4376c42cc8bb2",
+          "name": "Li Wei",
+          "hidden": false
+        },
+        {
+          "_id": "6b04e967e7a4376c42cc8bb3",
+          "name": "Chau Yuen",
+          "hidden": false
+        }
+      ],
+      "published": "2026-11-18T00:00:00.000Z",
+      "paper_url": "https://arxiv.org/abs/2611.24249"
+    },
+    {
+      "id": "2611.23417",
+      "title": "Autoregressive View Model",
+      "upvotes": 1,
+      "abstract": "We present the Autoregressive View Model (AVM), which generates a scene as a stream of views without constructing an explicit 3D representation. Through a unified in-context interface, AVM conditions on images or videos to generate short clips along a requested camera path. Visual context grounds reconstruction and interpolation, while a learned prior enables extrapolation into unseen regions. AVM retrieves relevant views from inputs and generated history to form a bounded active context. We fine-tune a pretrained bidirectional video diffusion transformer with flow matching in an N-in-1-out formulation. We then tune a causal model on its own rollouts to improve photorealism, reduce denoising steps, and limit long-horizon drift. We scale training to approximately 8M scenes and video clips. We evaluate generation capacity and scene persistence across benchmarks for camera control, text control, visual quality, dynamics, sparse and 4D reconstruction, and long-horizon consistency. The results demonstrate that AVM adapts to diverse input and output settings through one in-context interface.",
+      "abstract_source": "huggingface",
+      "authors": [
+        {
+          "_id": "6b00b78aecb204ffe44e6b00",
+          "user": {
+            "_id": "635fc3956f410322ee97bdd8",
+            "avatarUrl": "/avatars/70f45fa4d4fe317a4b12c030f157bd75.svg",
+            "isPro": false,
+            "fullname": "Jensen Zhou",
+            "user": "jensenzhoujh",
+            "type": "user",
+            "name": "jensenzhoujh"
+          },
+          "name": "Jensen",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-11-23T18:03:59.692Z",
+          "hidden": false
+        },
+        {
+          "_id": "6b00b78aecb204ffe44e6b01",
+          "name": "Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "6b00b78aecb204ffe44e6b02",
+          "name": "Samuel Rota Bulo",
+          "hidden": false
+        },
+        {
+          "_id": "6b00b78aecb204ffe44e6b03",
+          "name": "Denis Rozumny",
+          "hidden": false
+        },
+        {
+          "_id": "6b00b78aecb204ffe44e6b04",
+          "name": "Duncan Zauss",
+          "hidden": false
+        },
+        {
+          "_id": "6b00b78aecb204ffe44e6b05",
+          "name": "Peter Hedman",
+          "hidden": false
+        },
+        {
+          "_id": "6b00b78aecb204ffe44e6b06",
+          "name": "Nikhil Keetha",
+          "hidden": false
+        },
+        {
+          "_id": "6b00b78aecb204ffe44e6b07",
+          "name": "Philip Torr",
+          "hidden": false
+        },
+        {
+          "_id": "6b00b78aecb204ffe44e6b08",
+          "name": "Christian Rupprecht",
+          "hidden": false
+        },
+        {
+          "_id": "6b00b78aecb204ffe44e6b09",
+          "name": "Andrea Vedaldi",
+          "hidden": false
+        },
+        {
+          "_id": "6b00b78aecb204ffe44e6b0a",
+          "name": "Peter Kontschieder",
+          "hidden": false
+        }
+      ],
+      "published": "2026-11-17T00:00:00.000Z",
+      "paper_url": "https://arxiv.org/abs/2611.23417"
+    }
+  ],
+  "hf_rendered_content": "<details open>\n<summary><b>🤗 Hugging Face 今日论文</b></summary>\n<h3>1. cmHC: Balancing Stream Mixing in Hyper-Connections via Geometric Contraction（cmHC：通过几何收缩平衡超连接中的流混合）</h3>\n<p><b>社区热度：</b> 👍 92 Upvotes</p>\n<p><b>论文链接：</b> <a href=\"https://arxiv.org/abs/2611.27193\">arXiv 原文</a></p>\n<p><b>摘要来源：</b> <a href=\"https://huggingface.co/papers/2611.27193\">Hugging Face</a></p>\n<details><summary>查看原始摘要</summary><p>Manifold-constrained Hyper-Connections (mHC) extends residual connections to multiple streams and stabilizes residual propagation by constraining stream-mixing residual matrices to the Birkhoff polytope, the set of doubly stochastic matrices. In this work, we investigate how to effectively mix residual streams within the Birkhoff polytope. We reveal a mixing trade-off: when under-mixed residual matrices stay close to the vertices of the Birkhoff polytope, hyper-connections will degenerate into a set of nearly independent streams; when over-mixed residual matrices are concentrated around the uniform barycenter of the polytope, streams will become less distinguishable from each other. We theoretically validate our findings by bounding the cumulative residual mixing, stream difference and gradient difference of mixing coefficients across layers. Motivated by these findings, we propose Contraction for Manifold-Constrained Hyper-Connections (cmHC), an exact doubly stochastic method which geometrically contracts the Birkhoff polytope toward its interior. This contraction mitigates under-mixing by forcing the residual matrices to explore deeper into the polytope, with a provable stream mixing bound and no new parameterization. Moreover, we apply a moderate contraction at the shallow layers to prevent over-mixing, enabling stable gradient propagation on extremely large-scale model pretraining. Extensive experiments across dense and mixture-of-experts models at various parameter scales demonstrate the effectiveness and scalability of cmHC. We also develop fused operators for cmHC on Ascend NPUs, reducing hyper-connection execution latency by up to 44.8%.</p></details>\n<p><b>中文摘要翻译（AI 翻译）：</b></p><p>流形约束超连接（mHC）将残差连接扩展到多个流，并通过将流混合残差矩阵约束到Birkhoff多面体（即双随机矩阵集合）来稳定残差传播。在这项工作中，我们研究了如何在Birkhoff多面体内有效地混合残差流。我们揭示了一种混合权衡：当混合不足的残差矩阵靠近Birkhoff多面体的顶点时，超连接将退化为一组几乎独立的流；当混合过度的残差矩阵集中在多面体的均匀重心周围时，流将变得彼此难以区分。我们通过界定跨层的累积残差混合、流差异和混合系数的梯度差异，在理论上验证了我们的发现。受这些发现的启发，我们提出了流形约束超连接的收缩（cmHC），这是一种精确的双随机方法，它在几何上将Birkhoff多面体向其内部收缩。这种收缩通过迫使残差矩阵更深入地探索多面体来缓解混合不足，具有可证明的流混合界限且没有新的参数化。此外，我们在浅层应用适度收缩以防止混合过度，从而在极大规模模型预训练中实现稳定的梯度传播。在各种参数规模的稠密和混合专家模型上的大量实验证明了cmHC的有效性和可扩展性。我们还在昇腾NPU上为cmHC开发了融合算子，将超连接执行延迟降低了高达44.8%。</p>\n<p><b>基于摘要的解读（AI 生成，未读取全文）：</b></p>\n<p><b>研究任务：</b>研究如何在流形约束超连接（mHC）的Birkhoff多面体内有效地混合残差流，以解决混合不足和混合过度的权衡问题。</p>\n<p><b>核心亮点：</b>揭示了残差流混合的权衡现象；提出了cmHC方法，通过几何收缩Birkhoff多面体缓解混合不足，并在浅层应用适度收缩防止混合过度；在昇腾NPU上开发融合算子，将执行延迟降低高达44.8%。</p>\n<p><b>分析与局限：</b>摘要提出了混合权衡的理论验证和cmHC方法，并在稠密和混合专家模型上进行了实验，证明了有效性和可扩展性，同时提供了昇腾NPU上的延迟降低数据。摘要未提供具体的实验数据集名称、具体的参数规模数字以及除延迟降低外的其他具体性能提升数字。</p>\n<p><b>领域归类：</b>深度学习架构与优化</p>\n<hr>\n\n<h3>2. Non-penetrating World Models（非穿透世界模型）</h3>\n<p><b>社区热度：</b> 👍 54 Upvotes</p>\n<p><b>论文链接：</b> <a href=\"https://arxiv.org/abs/2611.27963\">arXiv 原文</a></p>\n<p><b>摘要来源：</b> <a href=\"https://huggingface.co/papers/2611.27963\">Hugging Face</a></p>\n<details><summary>查看原始摘要</summary><p>We study a new problem of preventing object penetration in interactive video world models. To understand how existing models handle this, we introduce NoPeBench, a benchmark that evaluates how world models respond to physical obstacles. Our evaluation reveals that none of the open-source models can reliably prevent such failures. Surprisingly, however, these models already encode the information needed to predict such violations. We find that the hidden states of diffusion transformers (DiTs) can predict whether a candidate action will penetrate an obstacle. Building on this, we introduce NoPeWorld, a lightweight framework that detects and prevents penetration. Specifically, we train a small prediction head on top of a frozen DiT&#x27;s hidden states to read out if a candidate action is safe or not. Unsafe actions are then replaced with safe ones that best preserve the original intent. Despite its simplicity, NoPeWorld substantially reduces the physical violation rate, averaged over six video world models, from 74% to 16%. Remarkably, our method shows zero-shot generalization to open-domain imagery, third-person viewpoints, and moving obstacles. We publicly release our code, the NoPeBench benchmark, and model weights. Project Page: https://nopeworld.github.io .</p></details>\n<p><b>中文摘要翻译（AI 翻译）：</b></p><p>我们研究了在交互式视频世界模型中防止物体穿透这一新问题。为了了解现有模型如何处理这一问题，我们引入了NoPeBench，这是一个评估世界模型如何响应物理障碍物的基准。我们的评估表明，没有开源模型能够可靠地防止此类失败。然而，令人惊讶的是，这些模型已经编码了预测此类违规所需的信息。我们发现扩散Transformer（DiTs）的隐藏状态可以预测候选动作是否会穿透障碍物。在此基础上，我们引入了NoPeWorld，一个检测并防止穿透的轻量级框架。具体而言，我们在冻结的DiT隐藏状态之上训练了一个小型预测头，以读取候选动作是否安全。然后，不安全的动作被替换为最能保留原始意图的安全动作。尽管很简单，NoPeWorld在六个视频世界模型上的平均物理违规率从74%大幅降低到了16%。值得注意的是，我们的方法在开放域图像、第三人称视角和移动障碍物方面表现出零样本泛化能力。我们公开发布了代码、NoPeBench基准和模型权重。项目主页：https://nopeworld.github.io 。</p>\n<p><b>基于摘要的解读（AI 生成，未读取全文）：</b></p>\n<p><b>研究任务：</b>研究并解决交互式视频世界模型中的物体穿透问题，开发检测和防止穿透的框架。</p>\n<p><b>核心亮点：</b>引入NoPeBench基准评估世界模型对物理障碍的响应；发现DiTs隐藏状态可预测穿透违规；提出NoPeWorld轻量级框架，将六个视频世界模型的平均物理违规率从74%降至16%；在开放域图像、第三人称视角和移动障碍物上展现零样本泛化能力。</p>\n<p><b>分析与局限：</b>摘要提供了NoPeBench基准和NoPeWorld框架，并给出了物理违规率从74%降至16%的具体实验结果，以及零样本泛化能力的定性结论。摘要未提供NoPeBench的具体数据集规模、六个视频世界模型的具体名称、预测头的具体架构细节以及零样本泛化的具体定量指标。</p>\n<p><b>领域归类：</b>计算机视觉与世界模型</p>\n<hr>\n\n<h3>3. Clover-35B-A3B-Preview Technical Report（Clover-35B-A3B-Preview 技术报告）</h3>\n<p><b>社区热度：</b> 👍 36 Upvotes</p>\n<p><b>论文链接：</b> <a href=\"https://arxiv.org/abs/2611.24636\">arXiv 原文</a></p>\n<p><b>摘要来源：</b> <a href=\"https://huggingface.co/papers/2611.24636\">Hugging Face</a></p>\n<details><summary>查看原始摘要</summary><p>We introduce Clover-35B-A3B-Preview (Clover), a mixture-of-experts diffusion language model with 35 billion total parameters and 3 billion activated parameters, supporting thinking-mode generation. Clover adapts Gated Delta Networks to block diffusion by combining recurrent memory of previously generated context with bidirectional softmax attention inside the current block. Historical memory readout competes with current-block tokens in a shared softmax, with learnable block-size calibration and a separate, zero-initialized right-context convolution branch. Clover leads the seven evaluated agent metrics, including 73.6 on SWE-bench Verified and 51.7 on Terminal-Bench 2.1. On internal agent workloads, it reaches a reported generation speed of 680 tokens/s using one NVIDIA GB300 GPU at BF16 precision and batch size one. We organize the evaluation around model quality, drafting and verification costs, and deployment under constrained memory. We also describe a decision-model variant that generates answers to related questions in one denoising pass. On an internal set of 500 groups, joint prediction raises question accuracy from 90.37% to 93.88% and all-correct group accuracy from 65.4% to 77.0%.</p></details>\n<p><b>中文摘要翻译（AI 翻译）：</b></p><p>我们引入了Clover-35B-A3B-Preview（Clover），一个具有350亿总参数和30亿激活参数的混合专家扩散语言模型，支持思考模式生成。Clover将门控Delta网络适配到块扩散中，通过将先前生成上下文的循环记忆与当前块内的双向softmax注意力相结合。历史记忆读取与当前块标记在共享softmax中竞争，具有可学习的块大小校准和单独的零初始化右上下文卷积分支。Clover在评估的七个智能体指标中领先，包括在SWE-bench Verified上达到73.6，在Terminal-Bench 2.1上达到51.7。在内部智能体工作负载上，使用一块NVIDIA GB300 GPU在BF16精度和批量大小为1的情况下，其报告的生成速度达到680 tokens/s。我们围绕模型质量、起草和验证成本以及受限内存下的部署来组织评估。我们还描述了一种决策模型变体，该变体在一次去噪过程中生成相关问题的答案。在一组内部的500个组中，联合预测将问题准确率从90.37%提高到93.88%，全对组准确率从65.4%提高到77.0%。</p>\n<p><b>基于摘要的解读（AI 生成，未读取全文）：</b></p>\n<p><b>研究任务：</b>提出并评估Clover，一种支持思考模式生成的混合专家扩散语言模型，并探索其在智能体任务和决策模型变体中的应用。</p>\n<p><b>核心亮点：</b>提出350亿总参数和30亿激活参数的混合专家扩散语言模型Clover；在SWE-bench Verified（73.6）和Terminal-Bench 2.1（51.7）等七个智能体指标中领先；单块NVIDIA GB300 GPU生成速度达680 tokens/s；决策模型变体通过联合预测将问题准确率从90.37%提升至93.88%，全对组准确率从65.4%提升至77.0%。</p>\n<p><b>分析与局限：</b>摘要详细描述了Clover的架构创新，并提供了丰富的定量实验结果，包括智能体基准分数、生成速度和联合预测准确率提升。摘要未提供七个评估智能体指标的具体名称（除SWE-bench和Terminal-Bench外）、内部智能体工作负载的具体细节、受限内存部署的具体数据，以及500个组内部数据集的具体来源。</p>\n<p><b>领域归类：</b>自然语言处理与大语言模型</p>\n<hr>\n\n<h3>4. Learning Video Foresight Reasoning from Unlabeled Videos via On-Policy Self-Distillation（通过在线策略自蒸馏从无标签视频中学习视频前瞻推理）</h3>\n<p><b>社区热度：</b> 👍 28 Upvotes</p>\n<p><b>论文链接：</b> <a href=\"https://arxiv.org/abs/2611.26954\">arXiv 原文</a></p>\n<p><b>摘要来源：</b> <a href=\"https://huggingface.co/papers/2611.26954\">Hugging Face</a></p>\n<details><summary>查看原始摘要</summary><p>Video foresight reasoning requires vision-language models to anticipate future events or next actions from currently observed videos. Existing methods fit future captions, rationales, or full visual states, but face two limitations. First, they rely on annotations or external large models for supervision, limiting scalability. We address this with an on-policy self-distillation framework that turns past-future video pairs into a natural self-supervised signal without extra annotations or LLM supervision. Second, they treat the whole future clip as equally valuable, although most of it is irrelevant context information. We address this by defining a foresight score, from which we obtain a contrastive privilege advantage that drives the model to learn the most valuable future information. Since the score is intractable, we optimize a tractable lower-bound surrogate that interpolates this advantage, computed between the true and a random reference future, with a teacher-student distillation advantage; together, they amplify decision-relevant content information and suppress irrelevant context information. We call the resulting framework Future-OPSD. On open-ended prediction and closed-ended planning, Future-OPSD improves base models by up to 14.2 and 15.9 points without compromising general video understanding. Code will be available at https://jingchensun.github.io/future-opsd/</p></details>\n<p><b>中文摘要翻译（AI 翻译）：</b></p><p>视频前瞻推理要求视觉语言模型从当前观察到的视频中预测未来事件或下一步动作。现有方法拟合未来字幕、理由或完整的视觉状态，但面临两个局限性。首先，它们依赖注释或外部大型模型进行监督，限制了可扩展性。我们通过一个在线策略自蒸馏框架解决了这个问题，该框架将过去-未来视频对转化为自然的自监督信号，无需额外注释或大语言模型监督。其次，它们将整个未来片段视为同等有价值，尽管其中大部分是不相关的上下文信息。我们通过定义一个前瞻分数来解决这个问题，从中获得对比特权优势，驱动模型学习最有价值的未来信息。由于该分数难以处理，我们优化了一个易于处理的下界代理，该代理将真实未来与随机参考未来之间计算的此优势，与教师-学生蒸馏优势进行插值；两者共同放大了与决策相关的内容信息，并抑制了不相关的上下文信息。我们将所得到的框架称为Future-OPSD。在开放式预测和封闭式规划中，Future-OPSD将基础模型分别提高了高达14.2和15.9分，且没有损害通用的视频理解。代码将在 https://jingchensun.github.io/future-opsd/ 提供。</p>\n<p><b>基于摘要的解读（AI 生成，未读取全文）：</b></p>\n<p><b>研究任务：</b>解决视频前瞻推理中依赖标注和未区分未来信息价值的问题，通过在线策略自蒸馏框架从无标签视频中学习前瞻推理。</p>\n<p><b>核心亮点：</b>提出在线策略自蒸馏框架，利用过去-未来视频对作为自监督信号，无需额外注释或大语言模型监督；定义前瞻分数并优化下界代理，结合对比特权优势和教师-学生蒸馏优势以放大决策相关内容并抑制无关上下文；在开放式预测和封闭式规划中分别将基础模型提升高达14.2分和15.9分。</p>\n<p><b>分析与局限：</b>摘要提出了Future-OPSD框架，解决了现有方法的两个局限性，并提供了开放式预测和封闭式规划的具体提升分数。摘要未提供基础模型的具体名称、开放式预测和封闭式规划所使用的具体数据集名称、前瞻分数的具体计算细节以及提升分数对应的具体实验设置。</p>\n<p><b>领域归类：</b>计算机视觉与视频理解</p>\n<hr>\n\n<h3>5. Reading the Unreadable: Text-Aware Image Super-Resolution Needs Reasoning（阅读不可读内容：文本感知图像超分辨率需要推理）</h3>\n<p><b>社区热度：</b> 👍 21 Upvotes</p>\n<p><b>论文链接：</b> <a href=\"https://arxiv.org/abs/2611.15449\">arXiv 原文</a></p>\n<p><b>摘要来源：</b> <a href=\"https://huggingface.co/papers/2611.15449\">Hugging Face</a></p>\n<details><summary>查看原始摘要</summary><p>Text-aware image super-resolution (TAISR) aims to recover high-resolution images from low-resolution inputs while preserving textual content. Existing methods treat this as a visual restoration problem, yet severely degraded text often cannot be read from local visual evidence alone. Humans instead read it by reasoning over image context, logical patterns, and prior knowledge. This raises a fundamental question: Does TAISR need reasoning? To answer this, we introduce two diagnostic tools. The first, ReasonText, is a human-curated benchmark that separates reasoning-required text from locally recoverable text. The second, Ground-Truth Text-Crop Accuracy (GTTCA), is a recognition-based metric that measures text restoration quality without text detection errors. Evaluating twelve recent super-resolution (SR) models, we find a consistent and substantial performance drop on reasoning-required text, revealing a systematic blind spot. Two observations point to a remedy. One is that text-conditioned SR models restore text substantially better when given ground-truth text. The other is that multimodal large language models (MLLMs) can read degraded text in low-resolution images through reasoning. We therefore propose Reasoning Transfer via Captioning (RTC), a training-free plug-in that uses an external MLLM to infer the degraded text and feeds the resulting caption to a text-conditioned SR model. RTC consistently improves all six text-conditioned SR models we evaluate, especially on reasoning-required text. Surprisingly, a real-world SR model with RTC can even outperform the TAISR model with RTC, suggesting that reasoning should be a core design axis for future TAISR.</p></details>\n<p><b>中文摘要翻译（AI 翻译）：</b></p><p>文本感知图像超分辨率（TAISR）旨在从低分辨率输入中恢复高分辨率图像，同时保留文本内容。现有方法将其视为视觉恢复问题，然而严重退化的文本通常无法仅从局部视觉证据中读取。人类反而通过对图像上下文、逻辑模式和先验知识进行推理来阅读它。这提出了一个基本问题：TAISR需要推理吗？为了回答这个问题，我们引入了两种诊断工具。第一个是ReasonText，这是一个由人工策划的基准，将需要推理的文本与局部可恢复的文本分开。第二个是真实文本裁剪准确率（GTTCA），这是一种基于识别的指标，可在没有文本检测误差的情况下衡量文本恢复质量。通过评估十二个最近的超分辨率（SR）模型，我们发现需要推理的文本性能出现一致且显著的下降，揭示了一个系统性的盲点。两个观察结果指出了一种补救方法。一是文本条件SR模型在获得真实文本时能更好地恢复文本。二是多模态大语言模型（MLLMs）可以通过推理读取低分辨率图像中退化的文本。因此，我们提出了通过字幕进行推理转移（RTC），这是一种无需训练的插件，使用外部MLLM推断退化文本并将生成的字幕馈送给文本条件SR模型。RTC一致地改善了我们评估的所有六个文本条件SR模型，特别是在需要推理的文本上。令人惊讶的是，带有RTC的真实世界SR模型甚至能超越带有RTC的TAISR模型，这表明推理应成为未来TAISR的核心设计轴。</p>\n<p><b>基于摘要的解读（AI 生成，未读取全文）：</b></p>\n<p><b>研究任务：</b>探究文本感知图像超分辨率（TAISR）是否需要推理能力，并提出无需训练的推理转移插件（RTC）以提升文本恢复质量。</p>\n<p><b>核心亮点：</b>引入ReasonText基准和GTTCA指标作为诊断工具；评估12个SR模型发现其在需要推理的文本上存在系统性盲点；提出无需训练的RTC插件，利用外部MLLM推断退化文本并辅助文本条件SR模型，一致提升了6个文本条件SR模型的性能；发现带RTC的真实世界SR模型可超越带RTC的TAISR模型。</p>\n<p><b>分析与局限：</b>摘要提出了TAISR需要推理的论点，引入了ReasonText和GTTCA工具，评估了12个SR模型和6个文本条件SR模型，并提出了RTC插件。摘要未提供ReasonText基准的具体数据规模、12个SR模型和6个文本条件SR模型的具体名称、GTTCA的具体计算公式，以及RTC插件所使用的外部MLLM的具体名称和性能提升的具体定量数值。</p>\n<p><b>领域归类：</b>计算机视觉与图像超分辨率</p>\n<hr>\n\n<h3>6. MemOnce: A Scalable Memory Architecture for Large Language Models（MemOnce：一种面向大语言模型的可扩展内存架构）</h3>\n<p><b>社区热度：</b> 👍 18 Upvotes</p>\n<p><b>论文链接：</b> <a href=\"https://arxiv.org/abs/2611.27973\">arXiv 原文</a></p>\n<p><b>摘要来源：</b> <a href=\"https://huggingface.co/papers/2611.27973\">Hugging Face</a></p>\n<details><summary>查看原始摘要</summary><p>Deploying large language models (LLMs) in long-horizon and continual interactions requires maintaining reusable memory states for future inference, posing challenges for existing architectures. Standard Transformers accumulate layer-wise, token-level KV caches, incurring linear GPU memory growth and quadratic computational complexity as the context expands. In contrast, linear-time architectures compress history into fixed-size states, but struggle to retain fine-grained details. We introduce MemOnce, a foundation architecture that learns scalable memory states for language models. MemOnce is based on two core designs: (a) Memory encoder-decoder: it caches only a small subset of final-layer hidden states as compact memory representations and dynamically decodes them back into KV caches for attention layers; (b) Memory sparse attention: for each continual input, MemOnce adaptively retrieves relevant memory representations, with the sparse indices computed only once across layers. Coupling these two designs enables efficient on-the-fly memory loading and KV cache decoding, drastically reducing the GPU memory footprint and achieving linear-time complexity. We conduct extensive experiments to show that MemOnce outperforms Transformers and other architectures across varying model sizes, context lengths, and training paradigms (pretraining and post-training adaptation). In particular, adapting Qwen3.5-4B with MemOnce reduces memory state cache by 1313times and prefill latency by 6.9times at 1M context, and improves throughput by 3.5times and overall memory performance by +5.77%. Finally, MemOnce generalizes zero-shot to downstream representation tasks, achieving competitive results against specialized models.</p></details>\n<p><b>中文摘要翻译（AI 翻译）：</b></p><p>在长期和持续的交互中部署大语言模型（LLMs）需要维护可重用的内存状态以供未来推理，这对现有架构提出了挑战。标准Transformer累积逐层、逐词的KV缓存，随着上下文扩展，会导致GPU内存线性增长和计算复杂度呈二次方增长。相比之下，线性时间架构将历史压缩为固定大小的状态，但难以保留细粒度细节。我们引入了MemOnce，这是一种为语言模型学习可扩展内存状态的基础架构。MemOnce基于两个核心设计：（a）内存编码器-解码器：它仅缓存最终层隐藏状态的一小部分作为紧凑的内存表示，并动态地将它们解码回注意力层的KV缓存；（b）内存稀疏注意力：对于每个持续输入，MemOnce自适应地检索相关的内存表示，稀疏索引在各层中仅计算一次。结合这两种设计可以实现高效的动态内存加载和KV缓存解码，大幅减少GPU内存占用并实现线性时间复杂度。我们进行了广泛的实验，表明MemOnce在不同的模型大小、上下文长度和训练范式（预训练和训练后适应）中均优于Transformer和其他架构。特别是，使用MemOnce适配Qwen3.5-4B在1M上下文下将内存状态缓存减少了1313倍，预填充延迟减少了6.9倍，并将吞吐量提高了3.5倍，整体内存性能提高了+5.77%。最后，MemOnce零样本泛化到下游表示任务，取得了与专门模型相当的竞争性结果。</p>\n<p><b>基于摘要的解读（AI 生成，未读取全文）：</b></p>\n<p><b>研究任务：</b>设计一种可扩展的内存架构（MemOnce），以解决大语言模型在长期和持续交互中维护可重用内存状态时面临的GPU内存线性增长和计算复杂度二次方增长的挑战。</p>\n<p><b>核心亮点：</b>1. 提出MemOnce基础架构，包含内存编码器-解码器（缓存少量最终层隐藏状态并动态解码为KV缓存）和内存稀疏注意力（自适应检索内存表示，稀疏索引跨层仅计算一次）。2. 实现动态内存加载和KV缓存解码，大幅降低GPU内存占用并达到线性时间复杂度。3. 在多种模型大小、上下文长度和训练范式下优于Transformer等架构。4. 适配Qwen3.5-4B在1M上下文下内存缓存减少1313倍，预填充延迟减少6.9倍，吞吐量提高3.5倍，整体内存性能提升+5.77%。5. 零样本泛化至下游表示任务并取得竞争力结果。</p>\n<p><b>分析与局限：</b>摘要表明MemOnce通过结合内存编码器-解码器和内存稀疏注意力，有效解决了长上下文下KV缓存带来的内存和计算瓶颈，并在Qwen3.5-4B上展示了显著的效率和性能提升。关于具体的硬件测试环境细节、与其他最新线性注意力机制的详细对比消融实验，以及在极长上下文下的具体表现和潜在的精度损失分析，摘要未提供。</p>\n<p><b>领域归类：</b>大语言模型架构与长上下文处理</p>\n<hr>\n\n<h3>7. Duopra: From Full-Duplex Conversation to Full-Duplex Agency（Duopra：从全双工对话到全双工代理）</h3>\n<p><b>社区热度：</b> 👍 15 Upvotes</p>\n<p><b>论文链接：</b> <a href=\"https://arxiv.org/abs/2611.25773\">arXiv 原文</a></p>\n<p><b>摘要来源：</b> <a href=\"https://huggingface.co/papers/2611.25773\">Hugging Face</a></p>\n<details><summary>查看原始摘要</summary><p>Full-duplex interaction models exhibit strong conversational agency, enabling natural, low-latency turn-taking, backchannels, and interruptions. However, completing tasks further requires task agency: timely tool invocation and argument revision following user corrections. Frontend-backend agents separate initiation from execution: the frontend decides whether and what to request, while the backend determines how. Execution can be offloaded, but unsent requests cannot be executed, and incomplete ones can misdirect the backend. On Full-Duplex-Bench v3 (FDB v3), most failures of Realtime-Venus-Audio + Harness in our streaming pipeline occur before a domain tool executes. We introduce Duopra, a full-duplex interaction model that learns task execution alongside conversational control. Duopra treats the backend as a tool, accepting a self-contained natural-language request. Direct calls and backend delegation share an action interface and requirements for faithful initiation and correct execution. Its three-stage training combines protocol SFT, full-duplex RL rewarding timely and complete execution, and projector-only repair of talker conditioning after thinker updates. With the same backend, Pass@1 rises from 4.7% to 44.7%; Duopra achieves 47.7% calling tools directly (26.0% after SFT) and 49.3% with a DeepSeek backend. It improves three FDB v1.0 takeover rates over the base model. These results show that task agency can coexist with key conversational agency.</p></details>\n<p><b>中文摘要翻译（AI 翻译）：</b></p><p>全双工交互模型展现出强大的对话代理能力，能够实现自然、低延迟的轮流发言、反馈和打断。然而，完成任务进一步需要任务代理能力：在用户纠正后及时调用工具和修改参数。前后端代理将发起与执行分离：前端决定是否请求以及请求什么，而后端决定如何执行。执行可以被卸载，但未发送的请求无法执行，不完整的请求可能会误导后端。在Full-Duplex-Bench v3（FDB v3）上，我们的流式管道中Realtime-Venus-Audio + Harness的大多数失败发生在领域工具执行之前。我们引入了Duopra，这是一种在学习对话控制的同时学习任务执行的全双工交互模型。Duopra将后端视为工具，接受自包含的自然语言请求。直接调用和后端委托共享一个动作接口，并满足忠实发起和正确执行的要求。其三阶段训练结合了协议SFT、奖励及时和完整执行的全双工RL，以及在思考者更新后仅修复投影器的说话者条件调节。在相同后端的情况下，Pass@1从4.7%提高到44.7%；Duopra直接调用工具的成功率达到47.7%（SFT后为26.0%），使用DeepSeek后端时达到49.3%。它比基础模型提高了三个FDB v1.0接管率。这些结果表明，任务代理能力可以与关键对话代理能力共存。</p>\n<p><b>基于摘要的解读（AI 生成，未读取全文）：</b></p>\n<p><b>研究任务：</b>开发一种全双工交互模型（Duopra），使其在学习对话控制的同时学习任务执行（任务代理能力），以解决现有前后端代理架构中未发送或不完整请求导致工具执行失败的问题。</p>\n<p><b>核心亮点：</b>1. 提出Duopra模型，将后端视为工具并接受自包含的自然语言请求，统一直接调用和后端委托的动作接口。2. 采用三阶段训练：协议SFT、奖励及时完整执行的全双工RL、以及思考者更新后的投影器修复。3. 在相同后端下，Pass@1从4.7%提升至44.7%；直接调用工具成功率达47.7%（SFT后26.0%），结合DeepSeek后端达49.3%。4. 相比基础模型，提升了三项FDB v1.0接管率。</p>\n<p><b>分析与局限：</b>摘要指出Duopra通过统一动作接口和三阶段训练，成功将任务执行能力与全双工对话能力结合，显著提升了工具调用的成功率。关于模型在不同复杂任务类型下的具体表现差异、RL阶段的具体奖励函数设计细节、以及推理延迟或计算资源开销等评估指标，摘要未提供。</p>\n<p><b>领域归类：</b>具身智能与多模态交互代理</p>\n<hr>\n\n<h3>8. Lost in the Hallway: Benchmarking Persistent Spatial Memory Across Revisits（迷失在走廊：跨重访的持久空间记忆基准测试）</h3>\n<p><b>社区热度：</b> 👍 10 Upvotes</p>\n<p><b>论文链接：</b> <a href=\"https://arxiv.org/abs/2611.21485\">arXiv 原文</a></p>\n<p><b>摘要来源：</b> <a href=\"https://huggingface.co/papers/2611.21485\">Hugging Face</a></p>\n<details><summary>查看原始摘要</summary><p>Persistent spatial understanding is essential for embodied agents to operate reliably in environments they repeatedly encounter. It requires recognizing revisited places despite viewpoint changes, distinguishing them from similar-looking rooms, and updating memories as environments change. Yet existing evaluations often leave physical place identity across separated visits implicit. We introduce ReSpaceBench, a benchmark comprising 3,244 questions across 590 synthetic and real-home scenes, organized into 9 tasks spanning room association, persistent state tracking, and downstream reasoning. Controlled walkthroughs define visits by physical room entry and deliberately include same-type room distractors and cross-session object changes. Our evaluation of 32 models and 3 agentic video-understanding frameworks reveals substantial limitations: the strongest evaluated zero-shot model achieves 50.5% overall accuracy and 52.2% on a 450-question subset, compared with 90.1% for human annotators. The evaluated agentic frameworks offer no overall improvement over direct inference with the same base model. Analysis of agent execution traces reveals evidence omissions and incorrect cross-visit room associations as major failure modes, suggesting that iterative evidence seeking alone does not ensure consistent spatial memory. Further analyses expose a gap between recognizing familiar rooms and identifying the correct visited room, while annotation-guided sampling highlights the importance of preserving intervening visits and transitions. We also provide RS-30K, a separate training dataset from synthetic sources with no template, scene, route, or video overlap with the benchmark. Fine-tuning Qwen3-VL-8B raises overall accuracy from 35.5% to 60.4%, with the largest gains in association and improvements extending to real-life scenes.</p></details>\n<p><b>中文摘要翻译（AI 翻译）：</b></p><p>持久的空间理解对于具身代理在他们反复遇到的环境中可靠运行至关重要。它需要尽管视角发生变化也能识别重访的地点，将它们与外观相似的房间区分开来，并在环境变化时更新记忆。然而，现有的评估通常使跨分离访问的物理地点身份保持隐式。我们引入了ReSpaceBench，这是一个包含3,244个问题的基准，涵盖590个合成和真实家庭场景，组织成9个任务，跨越房间关联、持久状态跟踪和下游推理。受控的漫游通过物理房间进入来定义访问，并故意包含同类房间干扰项和跨会话的对象变化。我们对32个模型和3个代理视频理解框架的评估揭示了实质性的局限性：评估中最强的零样本模型实现了50.5%的总体准确率和450个问题子集上的52.2%准确率，而人类注释者的准确率为90.1%。评估的代理框架相比使用相同基础模型的直接推理没有提供整体改进。对代理执行轨迹的分析表明，证据遗漏和不正确的跨访问房间关联是主要的失败模式，这表明仅靠迭代证据寻求并不能确保一致的空间记忆。进一步的分析揭示了识别熟悉房间和识别正确访问过的房间之间的差距，而注释引导的采样突出了保留中间访问和过渡的重要性。我们还提供了RS-30K，这是一个来自合成来源的独立训练数据集，与基准在模板、场景、路线或视频上没有重叠。微调Qwen3-VL-8B将总体准确率从35.5%提高到60.4%，在关联方面获得了最大收益，并且改进扩展到了真实生活场景。</p>\n<p><b>基于摘要的解读（AI 生成，未读取全文）：</b></p>\n<p><b>研究任务：</b>构建一个评估具身代理在重复访问环境中持久空间理解能力的基准（ReSpaceBench），以解决现有评估中跨次访问物理地点身份隐式化的问题，并提供配套训练数据集（RS-30K）。</p>\n<p><b>核心亮点：</b>1. 提出ReSpaceBench基准，包含590个场景的3,244个问题，涵盖9个任务（房间关联、状态跟踪、下游推理），包含同类房间干扰和跨会话对象变化。2. 评估32个模型和3个代理框架，最强零样本模型准确率仅50.5%（人类90.1%），代理框架未优于直接推理。3. 发现主要失败模式为证据遗漏和错误的跨访问房间关联。4. 提供无重叠的合成训练集RS-30K，微调Qwen3-VL-8B使准确率从35.5%提升至60.4%，且在真实场景中有效。</p>\n<p><b>分析与局限：</b>摘要表明当前模型和代理框架在持久空间记忆方面存在显著缺陷，主要失败于证据遗漏和跨访问关联错误，且迭代证据寻求不足以解决问题。微调证明了数据驱动改进的有效性。关于RS-30K数据集的具体数据规模、9个任务的具体细分指标、以及模型在真实场景中60.4%准确率的具体误差分析或不同任务间的性能差异细节，摘要未提供。</p>\n<p><b>领域归类：</b>具身智能与空间视觉理解</p>\n<hr>\n\n<h3>9. StereoVLM: Binocular Vision-Language Models for Metric 3D Spatial Reasoning（StereoVLM：用于度量3D空间推理的双目视觉语言模型）</h3>\n<p><b>社区热度：</b> 👍 7 Upvotes</p>\n<p><b>论文链接：</b> <a href=\"https://arxiv.org/abs/2611.27915\">arXiv 原文</a></p>\n<p><b>摘要来源：</b> <a href=\"https://huggingface.co/papers/2611.27915\">Hugging Face</a></p>\n<details><summary>查看原始摘要</summary><p>Vision-language models (VLMs) exhibit strong semantic understanding but remain limited in their ability to reason about metric 3D space in the physical world. Existing VLMs typically infer 3D scene structure from one or more images without known camera calibration or cross-view geometric constraints. This makes metric 3D inference inherently ambiguous and leaves it unclear whether their spatial predictions are grounded in visual evidence or driven primarily by semantic priors. In contrast, calibrated stereo provides explicit cross-view geometry that resolves this ambiguity and offers a more reliable foundation for metric 3D perception and geometric generalization. We investigate how VLMs can learn transferable 3D representations directly from calibrated binocular observations. To this end, we introduce StereoVLM, the first geometry-aware binocular VLM for metric 3D spatial reasoning. StereoVLM follows a hierarchical learning paradigm spanning from cross-view correspondence and disparity estimation to calibration-conditioned metric depth perception and semantic spatial reasoning. We further find that disparity supervision generalizes substantially better than direct binocular depth supervision on unseen environments. To evaluate these capabilities, we introduce Stereo3D-Bench, a comprehensive benchmark across three levels, from point-level geometry to object-level spatial reasoning. StereoVLM-8B achieves 95.17% depth accuracy (δ_1) and a 66.98 average object-level score on Stereo3D-Bench. Intervention results further indicate that the model&#x27;s performance on Stereo3D-Bench benefits from valid cross-view geometry and cannot be explained solely by additional visual tokens or semantic priors. Hierarchical geometric supervision also yields average gains of 3.54 points across five spatial benchmarks and 4.3 percentage points in RoboCasa manipulation success.</p></details>\n<p><b>中文摘要翻译（AI 翻译）：</b></p><p>视觉语言模型（VLMs）展现出强大的语义理解能力，但在对物理世界中的度量3D空间进行推理方面仍然受限。现有的VLM通常从一个或多个没有已知相机标定或跨视图几何约束的图像中推断3D场景结构。这使得度量3D推理本质上具有歧义性，并且不清楚它们的空间预测是基于视觉证据还是主要由语义先验驱动。相比之下，标定立体视觉提供了明确的跨视图几何，解决了这种歧义性，并为度量3D感知和几何泛化提供了更可靠的基础。我们研究了VLM如何直接从标定的双目观测中学习可迁移的3D表示。为此，我们引入了StereoVLM，这是第一个用于度量3D空间推理的几何感知双目VLM。StereoVLM遵循分层学习范式，涵盖从跨视图对应和视差估计到标定条件度量的深度感知和语义空间推理。我们进一步发现，在未见过的环境中，视差监督的泛化能力大大优于直接的双目深度监督。为了评估这些能力，我们引入了Stereo3D-Bench，这是一个涵盖从点级几何到对象级空间推理三个层次的全面基准。StereoVLM-8B在Stereo3D-Bench上实现了95.17%的深度准确率（δ_1）和66.98的平均对象级得分。干预结果进一步表明，模型在Stereo3D-Bench上的性能受益于有效的跨视图几何，不能仅用额外的视觉标记或语义先验来解释。分层几何监督还在五个空间基准上带来了平均3.54分的提升，并在RoboCasa操作成功率上提升了4.3个百分点。</p>\n<p><b>基于摘要的解读（AI 生成，未读取全文）：</b></p>\n<p><b>研究任务：</b>开发首个用于度量3D空间推理的几何感知双目视觉语言模型（StereoVLM），利用标定立体视觉提供的明确跨视图几何，解决现有VLM在物理世界度量3D空间推理中的歧义性问题。</p>\n<p><b>核心亮点：</b>1. 提出StereoVLM，采用分层学习范式（跨视图对应、视差估计、标定条件深度感知、语义空间推理）。2. 发现视差监督在未见环境中的泛化能力显著优于直接双目深度监督。3. 提出Stereo3D-Bench基准（点级到对象级）。StereoVLM-8B达到95.17%深度准确率（δ_1）和66.98平均对象级得分。4. 干预实验证明性能提升源于有效的跨视图几何，而非额外视觉token或语义先验。5. 分层几何监督在5个空间基准平均提升3.54分，RoboCasa操作成功率提升4.3个百分点。</p>\n<p><b>分析与局限：</b>摘要表明StereoVLM通过引入标定双目几何和分层学习范式，有效解决了VLM在度量3D推理中的歧义性，且视差监督表现出更好的泛化性。干预实验证实了模型依赖几何证据而非纯语义先验。关于Stereo3D-Bench的具体数据规模、五个空间基准的具体名称及各自提升细节、以及模型在极端光照或纹理缺失等复杂现实条件下的鲁棒性分析，摘要未提供。</p>\n<p><b>领域归类：</b>计算机视觉与3D空间推理</p>\n<hr>\n\n<h3>10. AgentRoboCritic: Understanding the Capability of Frontier Agents on Direct Robot Control（AgentRoboCritic：理解前沿代理在直接机器人控制方面的能力）</h3>\n<p><b>社区热度：</b> 👍 7 Upvotes</p>\n<p><b>论文链接：</b> <a href=\"https://arxiv.org/abs/2611.26613\">arXiv 原文</a></p>\n<p><b>摘要来源：</b> <a href=\"https://huggingface.co/papers/2611.26613\">Hugging Face</a></p>\n<details><summary>查看原始摘要</summary><p>Frontier multimodal language agents such as GPT-6 Astra have demonstrated strong capabilities in controlling robots directly via low-level numerical actions without high-level primitives. However, existing benchmarks report only episode-level success rates, which show neither how these agents succeed nor where they fail. In this paper, we present a systematic action-level analysis of frontier agents on direct robot control across 12 manipulation benchmarks. We introduce AgentRoboCritic, an intent-grounded critique framework in which the policy agent states a local intent alongside each action, and a critic evaluates the action&#x27;s outcome and failure mode against this intent. Our action-level analysis demonstrates the promising capabilities of frontier agents on direct robot control, including closed-loop recovery from local execution failures, reliable semantic grounding across diverse scenes, and strong zero-shot manipulation without task-specific adaptation. It also identifies their current limitations, including task-relevant physical execution bottlenecks such as grasping and alignment, and uneven recovery across failure modes. Finally, we validate our critic on a 400-action human-annotated benchmark and release a dataset of 12,844 annotated actions alongside a fine-tuned open-source critic, Muse-Glimmer-30B, whose failure-mode accuracy rises from 32.58% to 74.24%, enabling low-cost action-level analysis.</p></details>\n<p><b>中文摘要翻译（AI 翻译）：</b></p><p>诸如GPT-6 Astra之类的前沿多模态语言代理已经展示了通过低级数值动作直接控制机器人的强大能力，而无需高级原语。然而，现有的基准仅报告回合级成功率，这既没有显示这些代理如何成功，也没有显示它们在哪里失败。在本文中，我们对前沿代理在12个操作基准上的直接机器人控制进行了系统的动作级分析。我们引入了AgentRoboCritic，这是一个基于意图的批评框架，其中策略代理在每个动作旁边陈述局部意图，批评者根据该意图评估动作的结果和失败模式。我们的动作级分析展示了前沿代理在直接机器人控制方面的良好能力，包括从局部执行失败中闭环恢复、跨不同场景的可靠语义基础，以及无需任务特定适应的强零样本操作能力。它还指出了它们目前的局限性，包括与任务相关的物理执行瓶颈（如抓取和对齐），以及在不同失败模式下恢复能力的不均匀。最后，我们在一个400个动作的人工注释基准上验证了我们的批评者，并发布了一个包含12,844个注释动作的数据集以及一个微调的开源批评者Muse-Glimmer-30B，其失败模式准确率从32.58%提高到74.24%，实现了低成本的动作级分析。</p>\n<p><b>基于摘要的解读（AI 生成，未读取全文）：</b></p>\n<p><b>研究任务：</b>提出AgentRoboCritic框架，对前沿多模态语言代理在直接机器人控制中的表现进行系统的动作级分析，以解决现有基准仅报告回合级成功率而无法揭示成功原因和失败具体位置的问题。</p>\n<p><b>核心亮点：</b>1. 提出AgentRoboCritic基于意图的批评框架，策略代理声明局部意图，批评者评估动作结果和失败模式。2. 动作级分析揭示了前沿代理的闭环恢复、可靠语义基础和强零样本操作能力。3. 识别出当前局限性：抓取和对齐等物理执行瓶颈，以及不同失败模式下恢复能力不均。4. 在400动作人工基准上验证批评者，发布12,844个注释动作数据集。5. 微调开源批评者Muse-Glimmer-30B，失败模式准确率从32.58%提升至74.24%。</p>\n<p><b>分析与局限：</b>摘要表明AgentRoboCritic通过引入动作级分析和意图对齐，深入揭示了前沿代理在机器人控制中的具体优势和物理执行瓶颈。同时发布的微调开源批评者大幅降低了动作级分析的成本。关于12个操作基准的具体名称和类型、Muse-Glimmer-30B在不同失败模式下的细分准确率、以及该框架在实时机器人控制中的推理延迟或计算开销，摘要未提供。</p>\n<p><b>领域归类：</b>具身智能与机器人控制评估</p>\n<hr>\n\n<h3>11. AeroRSI: Recursive Self-Improvement for Aerial Vision-Language Navigation（AeroRSI：用于空中视觉-语言导航的递归自我改进）</h3>\n<p><b>社区热度：</b> 👍 7 Upvotes</p>\n<p><b>论文链接：</b> <a href=\"https://arxiv.org/abs/2611.24077\">arXiv 原文</a></p>\n<p><b>摘要来源：</b> <a href=\"https://huggingface.co/papers/2611.24077\">Hugging Face</a></p>\n<details><summary>查看原始摘要</summary><p>Vision-language-action (VLA) models enable unmanned aerial vehicles (UAVs) to follow natural-language instructions, yet still fail frequently in closed-loop flight. Correcting these failures requires repairs, i.e., actions that avoid them at the states the policy itself reaches, which human pilots cannot label at scale and rule-based planners cannot supply reliably. In this paper, we present AeroRSI, a recursive self-improvement framework in which an aerial navigation policy iteratively learns from its own failures. Our key insight is that a failing policy should judge its own repairs by flying on from them. Judged in this way, its sampled actions and even rule-based proposals that hurt it when imitated directly become reliable supervision. Moreover, an episode terminates at its first failure, concealing subsequent failures until the earlier ones are repaired. AeroRSI thus renews its supervision in every round, anchoring the failures of the current policy, verifying repairs by its continuation, and distilling them while keeping its behavior elsewhere. On TravelUAV, three rounds raise the success rate of a supervised 2B-parameter policy from 46.4% to 67.5% and reduce collisions by half, surpassing the previous state of the art by 10.6 points from the same initialization without extra human labels or inference cost. Code and models are available at https://github.com/starsholic/AeroRSI.</p></details>\n<p><b>中文摘要翻译（AI 翻译）：</b></p><p>视觉-语言-动作（VLA）模型使无人机（UAV）能够遵循自然语言指令，但在闭环飞行中仍然经常失败。纠正这些失败需要修复，即在策略本身到达的状态下避免失败的行动，而人类飞行员无法大规模标注这些行动，基于规则的规划器也无法可靠地提供。在本文中，我们提出了AeroRSI，一个递归自我改进框架，其中空中导航策略迭代地从其自身的失败中学习。我们的关键见解是，失败策略应该通过继续飞行来评估其自身的修复。通过这种方式评估，其采样的动作甚至直接模仿时会损害它的基于规则的提议都变成了可靠的监督。此外，一个回合在其第一次失败时终止，隐藏后续的失败直到早期的失败被修复。因此，AeroRSI在每一轮中更新其监督，锚定当前策略的失败，通过其延续验证修复，并在保持其他行为的同时蒸馏它们。在TravelUAV上，三轮迭代将受监督的2B参数策略的成功率从46.4%提高到67.5%，并将碰撞减少一半，在相同初始化下超越了先前最先进的方法10.6个百分点，且无需额外的人类标签或推理成本。代码和模型可在 https://github.com/starsholic/AeroRSI 获取。</p>\n<p><b>基于摘要的解读（AI 生成，未读取全文）：</b></p>\n<p><b>研究任务：</b>解决无人机在闭环视觉-语言导航中频繁失败的问题，通过递归自我改进框架从自身失败中学习以纠正失败。</p>\n<p><b>核心亮点：</b>提出AeroRSI递归自我改进框架；关键见解是失败策略通过继续飞行来评估自身的修复动作；在TravelUAV数据集上，三轮迭代使2B参数策略成功率从46.4%提升至67.5%，碰撞减少一半，超越SOTA 10.6个百分点，且无额外人类标签或推理成本。</p>\n<p><b>分析与局限：</b>摘要未提供关于该方法在不同数据集上的泛化能力、2B参数模型的具体架构细节、以及继续飞行评估修复的具体算法实现细节。局限性方面，摘要未提供关于该方法在更复杂环境或不同无人机硬件平台上的表现评估。</p>\n<p><b>领域归类：</b>计算机视觉与机器人学 / 无人机导航与强化学习</p>\n<hr>\n\n<h3>12. Taking Apart and Putting Together: Tracking Objects Through Physical Transformations（拆解与组装：通过物理变换跟踪物体）</h3>\n<p><b>社区热度：</b> 👍 5 Upvotes</p>\n<p><b>论文链接：</b> <a href=\"https://arxiv.org/abs/2611.27398\">arXiv 原文</a></p>\n<p><b>摘要来源：</b> <a href=\"https://huggingface.co/papers/2611.27398\">Hugging Face</a></p>\n<details><summary>查看原始摘要</summary><p>We introduce Transformation Tracking and Understanding (TTU), extending video object tracking to environments where objects undergo physical assemblies and disassemblies. TTU requires continuously tracking objects through transformations, identifying new entities, maintaining a state graph of their relationships, and assigning semantic labels to transformations. While foundation models (e.g., SAM 2/3) maintain tracklets through appearance changes, they cannot update semantic identities as objects physically evolve. Prior work addresses only disassemblies, relying on expensive searches triggered only when tracking fails. We propose Tracking Instances via Proposals and Overlaps (TIPO), a training-free framework that continuously infers transformations via a generate-evaluate-judge pipeline. TIPO generates split and merge proposals from disjoint mask components, scores them against mask-decoder priors using inner and external overlap, and queries an MLLM on the top proposal for visual verification and semantic labeling. To benchmark TTU, we curate Video Instances, States, and Transformation Annotations (VISTA), a dataset including state graphs with 124 assembly and 132 disassembly events across 50 sequences and over 26,000 frames. TIPO achieves state-of-the-art tracking and state-graph accuracy on VISTA, while operating 6times to 15times faster than prior methods. Project page: https://davidegardenal.github.io/tipo-tracking</p></details>\n<p><b>中文摘要翻译（AI 翻译）：</b></p><p>我们引入了变换跟踪与理解（TTU），将视频目标跟踪扩展到物体经历物理组装和拆卸的环境中。TTU需要连续跟踪变换过程中的物体，识别新实体，维护它们关系的状态图，并为变换分配语义标签。虽然基础模型（例如SAM 2/3）能够在外观变化时保持跟踪片段，但它们无法在物体物理演化时更新语义身份。先前的工作仅解决拆卸问题，依赖于仅在跟踪失败时触发的昂贵搜索。我们提出了通过提议和重叠跟踪实例（TIPO），这是一个免训练框架，通过生成-评估-判断管道连续推断变换。TIPO从不相交的掩码组件生成拆分和合并提议，使用内部和外部重叠根据掩码解码器先验对它们进行评分，并在顶级提议上查询多模态大语言模型（MLLM）以进行视觉验证和语义标注。为了对TTU进行基准测试，我们整理了视频实例、状态和变换注释（VISTA），该数据集包括跨越50个序列和超过26,000帧的124个组装和132个拆卸事件的状态图。TIPO在VISTA上实现了最先进的跟踪和状态图精度，同时运行速度比先前方法快6倍到15倍。项目主页：https://davidegardenal.github.io/tipo-tracking</p>\n<p><b>基于摘要的解读（AI 生成，未读取全文）：</b></p>\n<p><b>研究任务：</b>将视频目标跟踪扩展到物体经历物理组装和拆卸的环境，实现变换跟踪与理解（TTU）。</p>\n<p><b>核心亮点：</b>提出TTU任务及TIPO免训练框架，通过生成-评估-判断管道连续推断变换；构建VISTA基准数据集，包含50个序列、超26000帧及124个组装和132个拆卸事件；TIPO在VISTA上达到SOTA精度，且速度比先前方法快6到15倍。</p>\n<p><b>分析与局限：</b>摘要未提供TIPO框架中MLLM的具体模型名称、掩码解码器先验的具体设计细节，以及VISTA数据集中物体的具体类别或场景类型。局限性方面，摘要未提供该方法在更极端的遮挡、光照变化或更大规模数据集上的表现评估。</p>\n<p><b>领域归类：</b>计算机视觉 / 视频目标跟踪与理解</p>\n<hr>\n\n<h3>13. PURE: A Diagnostic Benchmark for Multi-Granularity Multimodal Identity Matching（PURE：多粒度多模态身份匹配的诊断性基准）</h3>\n<p><b>社区热度：</b> 👍 5 Upvotes</p>\n<p><b>论文链接：</b> <a href=\"https://arxiv.org/abs/2611.22343\">arXiv 原文</a></p>\n<p><b>摘要来源：</b> <a href=\"https://huggingface.co/papers/2611.22343\">Hugging Face</a></p>\n<details><summary>查看原始摘要</summary><p>Identity matching asks whether two records denote the same identity, yet the answer depends on the target granularity. Two records may match at the base level but not at the variant level: they share an underlying design while differing in attributes such as color or size. Final matching accuracy does not separately characterize the capabilities involved. To study this problem, we use e-commerce as a challenging real-world domain. We introduce PURE, a diagnostic benchmark for multi-granularity multimodal identity matching covering four capability dimensions: Perception, Understanding, Reasoning, and Evidence-grounded Judgment. The benchmark comprises 1,457 multiple-choice questions across 14 tasks, derived from real-world matching pairs and verified by two domain experts. Across ten recent MLLMs, overall scores range from 47.1% to 86.0%. Understanding receives the highest mean score and Judgment the lowest, with weaknesses in visual difference localization and variant-level rule judgment. Modality ablations show that models benefit from multimodal evidence but can incorrectly identify conflicts between matching records. In direct matching, most models recognize matching pairs more reliably than non-matching pairs at the base level, whereas the reverse holds at the variant level. PURE therefore reveals what aggregate matching accuracy hides: not only whether models judge a pair correctly, but where they struggle to interpret evidence and apply matching criteria.</p></details>\n<p><b>中文摘要翻译（AI 翻译）：</b></p><p>身份匹配询问两条记录是否表示同一身份，但答案取决于目标粒度。两条记录可能在基础层面上匹配，但在变体层面上不匹配：它们共享底层设计，但在颜色或大小等属性上不同。最终的匹配准确率无法分别表征所涉及的能力。为了研究这个问题，我们使用电子商务作为一个具有挑战性的现实世界领域。我们引入了PURE，一个用于多粒度多模态身份匹配的诊断性基准，涵盖四个能力维度：感知、理解、推理和基于证据的判断。该基准包含跨14个任务的1,457个多项选择题，源自现实世界的匹配对并由两位领域专家验证。在十个最近的多模态大语言模型（MLLM）中，总体得分范围从47.1%到86.0%。理解获得最高平均分，判断获得最低分，在视觉差异定位和变体级规则判断方面存在弱点。模态消融表明，模型从多模态证据中受益，但可能会错误地识别匹配记录之间的冲突。在直接匹配中，大多数模型在基础层面上识别匹配对比非匹配对更可靠，而在变体层面上则相反。因此，PURE揭示了总体匹配准确率所隐藏的内容：不仅模型是否正确判断了一对，还包括它们在解释证据和应用匹配标准方面遇到困难的地方。</p>\n<p><b>基于摘要的解读（AI 生成，未读取全文）：</b></p>\n<p><b>研究任务：</b>研究多粒度多模态身份匹配问题，评估模型在感知、理解、推理和基于证据的判断四个维度上的能力。</p>\n<p><b>核心亮点：</b>提出PURE诊断性基准，包含14个任务的1457个多选题，由领域专家验证；评估了10个近期MLLM，总体得分在47.1%至86.0%之间；揭示了模型在变体级规则判断和视觉差异定位上的弱点，以及多模态证据的利弊。</p>\n<p><b>分析与局限：</b>摘要未提供10个MLLM的具体名称、电子商务领域的具体商品类别，以及PURE基准中14个任务的具体分类细节。局限性方面，摘要未提供该基准在非电子商务领域的泛化能力评估，也未提及模型在复杂推理链条中的具体错误案例。</p>\n<p><b>领域归类：</b>自然语言处理与多模态学习 / 多模态身份匹配与基准测试</p>\n<hr>\n\n<h3>14. Moving Generality from Model to Modeler: LLM Agents for PHM on a Deployment-Style Benchmark（将通用性从模型转移到建模者：在部署风格基准上用于PHM的LLM智能体）</h3>\n<p><b>社区热度：</b> 👍 4 Upvotes</p>\n<p><b>论文链接：</b> <a href=\"https://arxiv.org/abs/2611.25252\">arXiv 原文</a></p>\n<p><b>摘要来源：</b> <a href=\"https://huggingface.co/papers/2611.25252\">Hugging Face</a></p>\n<details><summary>查看原始摘要</summary><p>Coding agents built on large language models (LLMs) now help develop many models published as general solutions. Should generality instead reside in the agent that builds a model for each new task? We examine this question in prognostics and health management (PHM), where every model must work on unseen equipment. Our deployment-style benchmark, NextUnit-Bench, covers 24 public datasets split into 58 folds that hold out units or operating conditions; each agent has two hours to deliver an executable predictor, then run on the hidden units. First, frontier agents outperform AutoML, which reaches less than half the best agent&#x27;s score, and faithful implementations of published methods on four datasets, of which only 6 of 30 beat the strongest agent&#x27;s own design; published accuracies, where reproducible, rest on the papers&#x27; own conventions, and a single convention, capping the remaining life of test engines, can halve the reported error. Second, the agents&#x27; advantage is a design made on each machine&#x27;s data; once made, a plain-text plan of a few hundred words carries most of the gap between two frontier agents, and given a weaker agent&#x27;s plan, the strongest agent falls to that agent&#x27;s level, often to identical predictions. Before touching the data, however, it matters little whose plan an agent carries out, and domain toolkits appear to help neither: what sets the strongest apart is how much it learns from the data. Third, such designs reach only implementers that can execute them: given the strongest agent&#x27;s designs, a locally deployable open-weight model delivers half as often, even when they are lightened, and scores no higher than without them. Generality, we argue, is not disappearing but moving, from the model to the modeler.</p></details>\n<p><b>中文摘要翻译（AI 翻译）：</b></p><p>构建在大语言模型（LLM）上的编码智能体现在帮助开发许多作为通用解决方案发布的模型。通用性是否应该存在于为每个新任务构建模型的智能体中？我们在预测与健康管理（PHM）中研究这个问题，其中每个模型都必须在未见过的设备上工作。我们的部署风格基准NextUnit-Bench涵盖24个公共数据集，分为58个留出单元或操作条件的折叠；每个智能体有两个小时来交付一个可执行的预测器，然后在隐藏单元上运行。首先，前沿智能体优于AutoML（其得分不到最佳智能体的一半），以及在四个数据集上已发布方法的忠实实现，其中30个中只有6个击败了最强智能体自己的设计；在可重现的情况下，已发布的准确率依赖于论文自己的约定，而单一约定（限制测试发动机的剩余寿命）可以将报告的误差减半。其次，智能体的优势在于基于每台机器数据做出的设计；一旦做出，几百个字的纯文本计划就承载了两个前沿智能体之间的大部分差距，并且给定较弱智能体的计划，最强智能体会下降到该智能体的水平，通常是相同的预测。然而，在接触数据之前，智能体执行谁的计划并不重要，领域工具包似乎也没有帮助：使最强智能体脱颖而出的是它从数据中学习的程度。第三，这些设计只能到达能够执行它们的实现者：给定最强智能体的设计，本地可部署的开放权重模型交付成功的频率只有一半，即使它们被简化，得分也不高于没有它们时。我们认为，通用性并没有消失，而是从模型转移到了建模者。</p>\n<p><b>基于摘要的解读（AI 生成，未读取全文）：</b></p>\n<p><b>研究任务：</b>研究在预测与健康管理（PHM）任务中，通用性是存在于模型本身还是存在于为每个新任务构建模型的LLM编码智能体中。</p>\n<p><b>核心亮点：</b>提出部署风格基准NextUnit-Bench，包含24个数据集的58个折叠；发现前沿LLM智能体显著优于AutoML和已发布方法的实现；证明智能体的优势源于基于特定机器数据的设计（纯文本计划），且最强智能体的核心在于其从数据中学习的能力；指出通用性正从模型转移到建模者（智能体）。</p>\n<p><b>分析与局限：</b>摘要未提供NextUnit-Bench中24个公共数据集的具体名称、PHM任务的具体设备类型，以及前沿智能体和AutoML的具体模型名称。局限性方面，摘要未提供该智能体框架在PHM以外领域的泛化能力评估，也未详细说明纯文本计划的具体格式和生成机制。</p>\n<p><b>领域归类：</b>人工智能与机器学习 / LLM智能体与自动化机器学习</p>\n<hr>\n\n<h3>15. Intent Contracts: Taking Tools Away from Agents（意图契约：从智能体中剥夺工具）</h3>\n<p><b>社区热度：</b> 👍 4 Upvotes</p>\n<p><b>论文链接：</b> <a href=\"https://arxiv.org/abs/2611.24025\">arXiv 原文</a></p>\n<p><b>摘要来源：</b> <a href=\"https://huggingface.co/papers/2611.24025\">Hugging Face</a></p>\n<details><summary>查看原始摘要</summary><p>Intent contracts are an authorization interface for tool-using LLM agents in which the planning model holds no tools. For each step it submits a short logged contract: a goal, a verbatim quotation of the user, and scope fields. Code validates the contract, and a small trusted model checks it against the user&#x27;s words and writes the tool call itself. Provided the validation and dispatch code is correct, every executed call is written by the trusted model, the planner&#x27;s influence on a call is confined to a contract logged before it, and the trusted side decides how much of a request to carry out. We compare contracts with two reviewers of planner-written commands: one sees only the user&#x27;s words and the command, the information boundary of a reasoning-blind permission classifier, and one also sees the planner&#x27;s goal and a checked quotation. With gpt-6.1-terra as planner and GLM-5.3-Flash as the trusted model on three AmPermBench task families, every object changed under contracts is named in the goal of the contract that produced the change; under review the planner names objects in its commands and rarely in its goals. When the planner adds work the user never asked for, contracts complete the user&#x27;s task in 27/30 runs and the intent-visible reviewer in 16/30, because a reviewer can only refuse a whole command. Contracts do not reduce unauthorized actions. They are indistinguishable from blind review, and once the benchmark&#x27;s environment terms are clarified, every condition that changes state hits a wrong target in 40-49% of those runs. That error is the planner&#x27;s choice of objects for an ambiguous reference, which no trusted model here can see the environment to check; telling the executor to decline when unsure does not change it. We evaluate benign over-reach with one pair of models, not adversarial planners. We release the plugin and run records.</p></details>\n<p><b>中文摘要翻译（AI 翻译）：</b></p><p>意图契约是用于使用工具的LLM智能体的授权接口，其中规划模型不持有任何工具。对于每一步，它提交一个简短的日志契约：一个目标、用户原话的逐字引用以及范围字段。代码验证该契约，一个小型受信任模型根据用户的话检查它并自行编写工具调用。假设验证和调度代码是正确的，每个执行的调用都由受信任模型编写，规划者对调用的影响仅限于在其之前记录的契约，并且受信任方决定执行请求的多少。我们将契约与规划者编写命令的两种审查器进行比较：一种只看到用户的话和命令（推理盲权限分类器的信息边界），另一种还看到规划者的目标和检查过的引用。在三个AmPermBench任务族中，以gpt-6.1-terra为规划者，GLM-5.3-Flash为受信任模型，契约下更改的每个对象都在产生更改的契约目标中命名；而在审查下，规划者在其命令中命名对象，很少在其目标中命名。当规划者添加用户从未要求的工作时，契约在27/30次运行中完成了用户的任务，而意图可见审查器在16/30次运行中完成，因为审查器只能拒绝整个命令。契约没有减少未经授权的行动。它们与盲审查没有区别，并且一旦基准的环境术语被澄清，在40-49%的此类运行中，每个改变状态的条件都会击中错误的目标。该错误是规划者为模糊引用选择的对象，这里没有受信任模型可以查看环境进行检查；告诉执行者在不确定时拒绝并没有改变这一点。我们使用一对模型评估了良性越界，而不是对抗性规划者。我们发布了插件和运行记录。</p>\n<p><b>基于摘要的解读（AI 生成，未读取全文）：</b></p>\n<p><b>研究任务：</b>提出意图契约（Intent Contracts）作为使用工具的LLM智能体的授权接口，通过将工具从规划模型中剥离并交由受信任模型执行，以限制智能体的越界行为。</p>\n<p><b>核心亮点：</b>提出意图契约机制，规划模型仅提交目标、用户原话和范围字段，由受信任模型编写工具调用；在AmPermBench上，契约在规划者添加额外工作时，任务完成率（27/30）高于意图可见审查器（16/30）；揭示了当前机制在模糊引用导致的目标错误（40-49%）方面仍存在局限。</p>\n<p><b>分析与局限：</b>摘要未提供AmPermBench三个任务族的具体细节、gpt-6.1-terra和GLM-5.3-Flash的具体架构或参数规模，以及意图契约在对抗性规划者情况下的表现。局限性方面，摘要明确指出契约未能减少未经授权的操作，且在处理模糊引用时存在40-49%的错误率，且仅使用一对模型评估了良性越界，未评估对抗性场景。</p>\n<p><b>领域归类：</b>自然语言处理与人工智能安全 / LLM智能体授权与安全控制</p>\n<hr>\n\n<h3>16. Prune to Expand: Training Prompt Enhancers with Less to Imitate（修剪以扩展：用更少的模仿来训练提示增强器）</h3>\n<p><b>社区热度：</b> 👍 4 Upvotes</p>\n<p><b>论文链接：</b> <a href=\"https://arxiv.org/abs/2611.27229\">arXiv 原文</a></p>\n<p><b>摘要来源：</b> <a href=\"https://huggingface.co/papers/2611.27229\">Hugging Face</a></p>\n<details><summary>查看原始摘要</summary><p>Prompt enhancement (PE) refines concise user prompts into detailed descriptions to improve the compositional aesthetics of generated images while preserving user intent. A common practice constructs supervised fine-tuning (SFT) pairs by deriving short, user-like prompts from dense captions, implicitly assuming that captions that improve image generation also provide effective supervision. In this paper, however, we uncover a counterintuitive finding: PE models trained on caption pairs with substantial generation gains perform comparably to those trained on pairs with only marginal gains. We argue that dense captions can impose redundant supervision by requiring PE models to reproduce image-specific details weakly related to user intent. Motivated by this discrepancy, we introduce Prune to Expand (P2E), a simple text-only method that refines dense-caption supervision by selectively removing redundant sentences under a per-example deletion bound while preserving explicit user requirements and informative visual structure. Extensive experiments under identical training configurations demonstrate that P2E improves alignment with human preferences and visual quality over conventional dense-caption SFT across diverse image categories and visual generators.</p></details>\n<p><b>中文摘要翻译（AI 翻译）：</b></p><p>提示增强（PE）将简洁的用户提示细化为详细描述，以在保留用户意图的同时提高生成图像的组合美学。一种常见的做法是通过从密集描述中派生简短的、类似用户的提示来构建监督微调（SFT）对，隐含地假设能改善图像生成的描述也能提供有效的监督。然而，在本文中，我们发现了一个反直觉的发现：在具有显著生成增益的描述对上训练的PE模型，与仅在具有边际增益的描述对上训练的模型表现相当。我们认为，密集描述会强加冗余的监督，因为它要求PE模型重现与用户意图关系微弱的特定于图像的细节。受这种差异的启发，我们引入了“修剪以扩展”（P2E），这是一种简单的纯文本方法，通过在每个示例的删除边界下选择性地删除冗余句子来细化密集描述监督，同时保留明确的用户要求和信息丰富的视觉结构。在相同训练配置下的广泛实验表明，与传统的密集描述SFT相比，P2E在多种图像类别和视觉生成器中提高了与人类偏好的对齐度和视觉质量。</p>\n<p><b>基于摘要的解读（AI 生成，未读取全文）：</b></p>\n<p><b>研究任务：</b>改进提示增强（PE）模型的训练方法，通过优化密集描述监督来提升生成图像的质量和对齐度。</p>\n<p><b>核心亮点：</b>发现PE模型在具有显著生成增益和边际增益的描述对上训练表现相当的反直觉现象；提出P2E方法，通过选择性删除冗余句子来优化密集描述监督；实验证明P2E在多种图像类别和生成器中提升了人类偏好对齐度和视觉质量。</p>\n<p><b>分析与局限：</b>摘要指出密集描述会引入与用户意图关系微弱的冗余监督，P2E通过设定删除边界去除这些冗余。分析表明该方法有效减少了冗余信息。局限方面，摘要未提供关于P2E方法在不同删除边界设置下的具体消融实验结果、计算开销或更广泛的失败案例分析。</p>\n<p><b>领域归类：</b>计算机视觉与自然语言处理/多模态生成与提示工程</p>\n<hr>\n\n<h3>17. How Feedback-Free Self-Evolution Reshapes Agent Skills: A Systematic Study（无反馈自我进化如何重塑智能体技能：一项系统性研究）</h3>\n<p><b>社区热度：</b> 👍 3 Upvotes</p>\n<p><b>论文链接：</b> <a href=\"https://arxiv.org/abs/2611.25534\">arXiv 原文</a></p>\n<p><b>摘要来源：</b> <a href=\"https://huggingface.co/papers/2611.25534\">Hugging Face</a></p>\n<details><summary>查看原始摘要</summary><p>Agent skills are documents in which experts write down procedural knowledge, and models increasingly maintain them by rewriting them without feedback. Such rewriting could adapt a skill to the model that uses it or erode the expert knowledge that makes it useful, yet how skills evolve under this feedback-free self-evolution has not been studied. We let models rewrite expert skills round after round without any task, run or judgment and run agents built on the same models with the rewritten skills. Our experiments show that the skills lose value rather than improve, as every model we test performs worse with them on every benchmark, by 15 points on average on SkillsBench after thirty rounds. Sampling each model&#x27;s prior with skills it writes from the topic alone, we find that rewriting pulls skills toward this prior and gives up first the knowledge outside it. Putting this knowledge back recovers much of the lost pass rate, so an expert&#x27;s skill is valuable largely for what the model does not write on its own. Building on this insight, SkillDiff marks this knowledge in place and raises the pass rate on SkillsBench by 4.8 points on average without feedback or any change to the skill&#x27;s text. Project repository: https://github.com/LitaoGuo/How-Self-Evolution-Reshapes-Skills.</p></details>\n<p><b>中文摘要翻译（AI 翻译）：</b></p><p>智能体技能是专家记录程序性知识的文档，模型越来越多地通过在没有反馈的情况下重写它们来维护这些技能。这种重写可以使技能适应使用它的模型，或者侵蚀使其有用的专家知识，然而，在这种无反馈的自我进化下技能如何演变尚未被研究。我们让模型在一轮又一轮中重写专家技能，没有任何任务、运行或判断，并使用重写后的技能运行建立在相同模型上的智能体。我们的实验表明，技能失去了价值而不是得到了改善，因为我们测试的每个模型在每个基准测试中使用这些技能的表现都更差，在三十轮后在SkillsBench上平均下降了15分。通过仅从主题中编写技能来对每个模型的先验进行采样，我们发现重写将技能拉向这个先验，并首先放弃了先验之外的知识。将这些知识放回去可以恢复大部分丢失的通过率，因此专家的技能的价值很大程度上在于模型自己不会写的内容。基于这一见解，SkillDiff就地标记这些知识，并在没有反馈或对技能文本进行任何更改的情况下，将SkillsBench上的平均通过率提高了4.8分。项目仓库：https://github.com/LitaoGuo/How-Self-Evolution-Reshapes-Skills。</p>\n<p><b>基于摘要的解读（AI 生成，未读取全文）：</b></p>\n<p><b>研究任务：</b>研究在无反馈自我进化过程中，模型重写专家技能对智能体技能价值的影响，并提出改进方法。</p>\n<p><b>核心亮点：</b>发现无反馈重写会导致技能价值丧失，在SkillsBench上30轮后平均下降15分；揭示重写使技能向模型先验靠拢并丢失先验外知识；提出SkillDiff方法，通过就地标记知识，在无反馈和文本更改的情况下将SkillsBench通过率平均提高4.8分。</p>\n<p><b>分析与局限：</b>摘要通过实验证明了无反馈自我进化会导致专家知识流失，并提出了SkillDiff来缓解这一问题。分析表明，专家技能的价值在于补充模型自身知识的不足。局限方面，摘要未提供SkillDiff方法在不同模型或不同技能类型上的泛化能力评估，也未提供长期多轮重写下的具体表现衰减曲线。</p>\n<p><b>领域归类：</b>人工智能/智能体与技能学习</p>\n<hr>\n\n<h3>18. Exploited Before It Was Fixed? Vulnerability Timelines from Open, Machine-Readable Evidence（在修复前被利用？来自开放、机器可读证据的漏洞时间线）</h3>\n<p><b>社区热度：</b> 👍 3 Upvotes</p>\n<p><b>论文链接：</b> <a href=\"https://arxiv.org/abs/2611.22479\">arXiv 原文</a></p>\n<p><b>摘要来源：</b> <a href=\"https://huggingface.co/papers/2611.22479\">Hugging Face</a></p>\n<details><summary>查看原始摘要</summary><p>-05-X-03), Known Exploited Vulnerabilities (KEV) catalogs, and exploitation sightings.<br>  We introduce an evidence model implemented in Vulnerability-Lookup that selects the earliest evidence for each lifecycle event, distinguishes vulnerability-specific records, preserves date precision, and ensures traceability to original sources.<br>  Among 3,758 vulnerability identifiers with exploitation evidence, 98% have disclosure dates, while only 15.7% have patch evidence. Vendor-side dates required by VTEM are entirely absent. Most exploitation dates originate from catalog listings, including 1,041 entries associated with bulk catalog imports. After excluding these entries and ambiguous same-day observations, 59 vulnerabilities exhibit patch evidence following exploitation evidence, with a median interval of 7.6 days, predominantly between catalog listings and distributor fixes.<br>  Evidence traceability also exposes systematic measurement errors: one collector incorrectly classified exploit publications as active exploitation, accounting for 40% of initial exploitation dates, while another catalog assigned vulnerability publication timestamps to 11% of its listings.<br>  Our findings demonstrate that exploitation-to-patch intervals are computationally measurable, but their reliability depends on the availability, precision, and provenance of published evidence. We identify the additional disclosure, exploitation observation, and patch availability timestamps needed to improve vulnerability lifecycle measurements.</p></details>\n<p><b>中文摘要翻译（AI 翻译）：</b></p><p>-05-X-03）、已知被利用漏洞（KEV）目录和利用目击事件。我们引入了一个在Vulnerability-Lookup中实现的证据模型，该模型为每个生命周期事件选择最早的证据，区分特定于漏洞的记录，保留日期精度，并确保可追溯到原始来源。在3,758个具有利用证据的漏洞标识符中，98%具有披露日期，而只有15.7%具有补丁证据。VTEM要求的供应商端日期完全缺失。大多数利用日期来源于目录列表，包括与批量目录导入相关的1,041个条目。在排除这些条目和模糊的当天观察后，59个漏洞表现出补丁证据跟随利用证据，中位间隔为7.6天，主要发生在目录列表和分发商修复之间。证据可追溯性还暴露了系统性的测量错误：一个收集器错误地将漏洞利用发布分类为主动利用，占初始利用日期的40%，而另一个目录将漏洞发布时间戳分配给了其11%的列表。我们的发现表明，利用到补丁的间隔在计算上是可测量的，但其可靠性取决于已发布证据的可用性、精度和来源。我们确定了改善漏洞生命周期测量所需的额外披露、利用观察和补丁可用性的时间戳。</p>\n<p><b>基于摘要的解读（AI 生成，未读取全文）：</b></p>\n<p><b>研究任务：</b>构建基于开放、机器可读证据的漏洞生命周期时间线模型，以测量和分析漏洞从利用到修复的间隔。</p>\n<p><b>核心亮点：</b>提出Vulnerability-Lookup证据模型，选择最早证据并保留日期精度；分析3,758个漏洞标识符，发现98%有披露日期，仅15.7%有补丁证据，59个漏洞的利用到补丁中位间隔为7.6天；揭示系统性测量错误，如40%的初始利用日期被错误分类，11%的列表时间戳分配错误。</p>\n<p><b>分析与局限：</b>摘要通过构建证据模型和大规模数据分析，量化了漏洞利用到修复的时间间隔，并揭示了现有数据源中的系统性测量错误。分析表明，提高测量可靠性需要更精确和可追溯的证据。局限方面，摘要未提供该模型在处理非结构化或模糊时间戳时的具体算法细节，也未评估不同数据源融合时的冲突解决机制。</p>\n<p><b>领域归类：</b>网络安全/漏洞分析与生命周期管理</p>\n<hr>\n\n<h3>19. Explicit Style Extraction for Personalized Long-Form Text Generation（用于个性化长文本生成的显式风格提取）</h3>\n<p><b>社区热度：</b> 👍 3 Upvotes</p>\n<p><b>论文链接：</b> <a href=\"https://arxiv.org/abs/2611.27211\">arXiv 原文</a></p>\n<p><b>摘要来源：</b> <a href=\"https://huggingface.co/papers/2611.27211\">Hugging Face</a></p>\n<details><summary>查看原始摘要</summary><p>Personalized long-form generation asks a language model to write new text the way a specific user would. The standard recipe, retrieval-augmented generation, places a few of the user&#x27;s past texts in the prompt but leaves the model to decide what to take from them. We introduce StylePrism, a taxonomy of 28 stylistic aspects in seven categories, and SP-Refine, an inference-time method that makes style extraction an explicit step: the model first fills StylePrism with the user&#x27;s patterns, quoted evidence, and habits to avoid, then drafts from the user&#x27;s samples and revises the draft twice against this profile, guided by its own style scores. On the three long-form tasks of LongLaMP with three LLMs, SP-Refine outperforms LongLaMP&#x27;s retrieval-augmented baseline in 25 of 27 ROUGE and METEOR comparisons, by 10.2% on average and by up to 35.8%. Annotating users&#x27; own texts with the extracted profiles shows that StylePrism captures concrete, checkable habits, from the order of rhetorical moves to a reviewer&#x27;s sign-off. Ablations show that the profile helps as revision guidance, not as a replacement for the samples: writing from the profile alone is worse in all 27 comparisons, while a single implicit-inference call is a cheaper alternative that comes close. Oracle variants that let the reviser see the reference, together with reference-free controls, show that larger refinement gains require information unavailable at inference time.</p></details>\n<p><b>中文摘要翻译（AI 翻译）：</b></p><p>个性化长文本生成要求语言模型以特定用户的方式撰写新文本。标准方法检索增强生成将用户过去的一些文本放在提示中，但让模型自行决定从中提取什么。我们引入了StylePrism，一个包含七个类别中28个风格方面的分类法，以及SP-Refine，一种使风格提取成为显式步骤的推理时方法：模型首先用用户的模式、引用的证据和要避免的习惯填充StylePrism，然后根据用户的样本起草，并针对此配置文件修改草稿两次，由其自身的风格分数指导。在LongLaMP的三个长文本任务上使用三个LLM，SP-Refine在27次ROUGE和METEOR比较中的25次中优于LongLaMP的检索增强基线，平均高出10.2%，最高达35.8%。用提取的配置文件注释用户自己的文本表明，StylePrism捕获了具体的、可检查的习惯，从修辞动作的顺序到审阅者的签名。消融实验表明，配置文件作为修改指导有帮助，而不是作为样本的替代：仅从配置文件编写在所有27次比较中表现更差，而单次隐式推理调用是一种接近的更便宜的替代方案。让修改者看到参考的Oracle变体以及无参考控制表明，更大的细化增益需要推理时不可用的信息。</p>\n<p><b>基于摘要的解读（AI 生成，未读取全文）：</b></p>\n<p><b>研究任务：</b>提出一种显式风格提取方法（SP-Refine）和风格分类法（StylePrism），以提升个性化长文本生成的质量。</p>\n<p><b>核心亮点：</b>提出包含28个风格方面的StylePrism分类法和SP-Refine推理时方法；在LongLaMP的3个任务上，SP-Refine在27次比较中的25次优于基线，平均提升10.2%，最高达35.8%；消融实验证明风格配置文件作为修改指导有效，且单次隐式推理调用是更具性价比的替代方案。</p>\n<p><b>分析与局限：</b>摘要通过StylePrism和SP-Refine将隐式的风格提取显式化，显著提升了长文本生成的风格对齐度。分析表明，风格配置文件应作为修改指导而非样本替代，且更大的提升依赖于推理时不可用的参考信息。局限方面，摘要未提供SP-Refine方法在推理时的具体计算开销或延迟增加情况，也未评估该方法在非LongLaMP数据集上的泛化能力。</p>\n<p><b>领域归类：</b>自然语言处理/个性化文本生成</p>\n<hr>\n\n<h3>20. Which Dwarf Is This? Doppeldwarf-306 and Near-Identical Instance Retrieval（这是哪个矮人？Doppeldwarf-306与近乎相同的实例检索）</h3>\n<p><b>社区热度：</b> 👍 2 Upvotes</p>\n<p><b>论文链接：</b> <a href=\"https://arxiv.org/abs/2611.27490\">arXiv 原文</a></p>\n<p><b>摘要来源：</b> <a href=\"https://huggingface.co/papers/2611.27490\">Hugging Face</a></p>\n<details><summary>查看原始摘要</summary><p>Most established instance-retrieval benchmarks emphasise landmarks; small sculptures from visually similar series offer a complementary challenge. We introduce Doppeldwarf-306: 1,691 openly licensed photographs of 306 bronze dwarf statues in Wrocław, Poland, many made in themed series that share one style, with the photographer of each image recorded. With no training, nearest-neighbour search over frozen DINOv2 features names the right statue first for 93.1% of leave-one-out queries, and the best of thirteen backbones from seven pretraining paradigms reaches 94.7%. Accuracy falls slowly as candidates are added: for DINOv2, by about 0.8 points each time their number doubles. A natural design for a phone guide compares a photograph only with statues near the user. In simulation this helps, but less than an equal number of randomly chosen statues does, so random subsampling overstates its value; a permutation test ties the penalty to the real layout (p = 0.005). Used as a weight instead of a filter, location raises DINOv2 from 93.4% to 98.7% for a simulated user 25 m from the statue. With the query&#x27;s photographer withheld, learned local-feature matching raises DINOv2 accuracy from 81.8% to 85.5% and also improves DINOv3. Comparing the two best candidates cuts DINOv2&#x27;s false acceptance of unknown statues from 38.3% to 19.6% at 90% known acceptance.</p></details>\n<p><b>中文摘要翻译（AI 翻译）：</b></p><p>大多数已建立的实例检索基准强调地标；来自视觉相似系列的小型雕塑提供了一个互补的挑战。我们引入了Doppeldwarf-306：1,691张公开许可的波兰弗罗茨瓦夫306座青铜矮人雕像的照片，其中许多是在共享一种风格的主题系列中制作的，并记录了每张图像的摄影师。无需训练，在冻结的DINOv2特征上进行最近邻搜索，在93.1%的留一查询中首先命名正确的雕像，来自七个预训练范式的十三个主干中最好的达到了94.7%。随着候选者的增加，准确率下降缓慢：对于DINOv2，每次数量翻倍时下降约0.8个百分点。手机指南的自然设计仅将照片与用户附近的雕像进行比较。在模拟中这有帮助，但不如同等数量的随机选择雕像的帮助大，因此随机子采样高估了其价值；排列检验将惩罚与真实布局联系起来（p = 0.005）。将位置用作权重而不是过滤器，对于距离雕像25米的模拟用户，位置将DINOv2从93.4%提高到98.7%。在隐藏查询摄影师信息的情况下，学习的局部特征匹配将DINOv2准确率从81.8%提高到85.5%，并同样提高了DINOv3。比较两个最佳候选者，在90%的已知接受率下，将DINOv2对未知雕像的错误接受率从38.3%降低到19.6%。</p>\n<p><b>基于摘要的解读（AI 生成，未读取全文）：</b></p>\n<p><b>研究任务：</b>构建Doppeldwarf-306数据集并评估多种视觉模型在视觉相似实例检索任务上的性能，探索提升检索准确率的方法。</p>\n<p><b>核心亮点：</b>提出Doppeldwarf-306数据集，包含1,691张306座青铜矮人雕像的照片；无需训练的DINOv2特征最近邻搜索在留一查询中达到93.1%准确率，最佳主干达94.7%；发现将位置作为权重可将准确率提升至98.7%，学习的局部特征匹配和比较最佳候选者能显著降低错误接受率。</p>\n<p><b>分析与局限：</b>摘要通过构建高度相似的实例检索数据集，评估了现有视觉模型的能力，并提出了利用位置权重、局部特征匹配和候选比较等策略来提升检索性能。分析表明，随机子采样会高估局部位置过滤的价值，而位置作为权重更有效。局限方面，摘要未提供该数据集在更广泛的非青铜雕像或非弗罗茨瓦夫场景下的泛化验证，也未详细说明学习的局部特征匹配的具体网络架构和训练细节。</p>\n<p><b>领域归类：</b>计算机视觉/实例检索与图像识别</p>\n<hr>\n\n<h3>21. Search From the Start: Search-Native Pretraining for Language Models（从一开始搜索：面向语言模型的搜索原生预训练）</h3>\n<p><b>社区热度：</b> 👍 2 Upvotes</p>\n<p><b>论文链接：</b> <a href=\"https://arxiv.org/abs/2611.26809\">arXiv 原文</a></p>\n<p><b>摘要来源：</b> <a href=\"https://huggingface.co/papers/2611.26809\">Hugging Face</a></p>\n<details><summary>查看原始摘要</summary><p>Modern language models (LMs) are increasingly deployed with access to search tools at inference. Yet pretraining remains predominantly focused on predicting static text, with search capabilities typically introduced during post-training. We propose Search-Native Pretraining as a practical route to teach search capability during pretraining from ordinary text corpora. Specifically, we augment pretraining corpus at scale with web-search queries and retrieve web response using a local index. Training on this augmented corpus teaches models to generate search calls and incorporate retrieved evidence during language modeling. Across Wikipedia and DCLM-Edu corpora and 360M to 3.3B parameter scales, search-pretrained models (&quot;QueryLM&quot;) show improved performance on knowledge-intensive tasks and higher steerability toward the retrieved evidence. Crucially, their advantage persists after supervised fine-tuning of both search-pretrained and conventionally pretrained models, indicating that the tested post-training procedures do not fully recover the capabilities developed during pretraining. Throughout our experiments, we find that a 1.4B QueryLM consistently beats or matches the performance of a FLOP-matched 3.3B baseline model across all knowledge intensive tasks. These results establish search-pretraining as a practical way to develop foundational search capabilities during pretraining. We release the training artifacts, including model checkpoints and data.</p></details>\n<p><b>中文摘要翻译（AI 翻译）：</b></p><p>现代语言模型（LMs）在推理时越来越多地部署为可访问搜索工具。然而，预训练仍然主要集中于预测静态文本，搜索能力通常在后训练阶段引入。我们提出搜索原生预训练（Search-Native Pretraining），作为在预训练阶段从普通文本语料库中教授搜索能力的实用途径。具体而言，我们在大规模预训练语料库中增加了网络搜索查询，并使用本地索引检索网络响应。在这个增强语料库上的训练教会模型在语言建模过程中生成搜索调用并整合检索到的证据。在Wikipedia和DCLM-Edu语料库以及360M到3.3B参数规模上，搜索预训练模型（“QueryLM”）在知识密集型任务上表现出更好的性能，并且对检索到的证据具有更高的可控性。至关重要的是，在对搜索预训练和常规预训练模型进行监督微调后，它们的优势依然存在，这表明测试的后训练程序未能完全恢复在预训练期间开发的能力。在整个实验中，我们发现1.4B的QueryLM在所有知识密集型任务上始终击败或匹配了计算量（FLOP）匹配的3.3B基线模型的性能。这些结果确立了搜索预训练是在预训练期间发展基础搜索能力的实用方法。我们发布了训练产物，包括模型检查点和数据。</p>\n<p><b>基于摘要的解读（AI 生成，未读取全文）：</b></p>\n<p><b>研究任务：</b>在预训练阶段赋予语言模型搜索能力，使其能够生成搜索调用并整合检索证据。</p>\n<p><b>核心亮点：</b>1. 提出搜索原生预训练方法，通过在网络搜索查询增强的语料库上训练来教授搜索能力。2. 搜索预训练模型在知识密集型任务上表现更好，且对检索证据的可控性更高。3. 预训练带来的搜索优势在监督微调后依然存在，表明后训练无法完全弥补预训练的缺失。4. 1.4B参数模型在知识密集型任务上达到或超越3.3B基线模型。</p>\n<p><b>分析与局限：</b>基于摘要的分析：该方法证明了在预训练阶段引入搜索能力的有效性，且后训练无法完全弥补预训练带来的搜索优势。局限：摘要未提供具体的模型失败案例、非知识密集型任务的表现或计算开销等局限性信息（摘要未提供）。</p>\n<p><b>领域归类：</b>自然语言处理 / 语言模型预训练</p>\n<hr>\n\n<h3>22. GameWM: Toward Next-Generation Video Games with Interaction-Centric World Models（GameWM：迈向以交互为中心的世界模型的下一代视频游戏）</h3>\n<p><b>社区热度：</b> 👍 2 Upvotes</p>\n<p><b>论文链接：</b> <a href=\"https://arxiv.org/abs/2611.19247\">arXiv 原文</a></p>\n<p><b>摘要来源：</b> <a href=\"https://huggingface.co/papers/2611.19247\">Hugging Face</a></p>\n<details><summary>查看原始摘要</summary><p>For more than half a century, video games have pursued better graphics, more natural interaction, and more engaging gameplay. Generative video models (VMs) now bear on all three. Neural networks already draw most of the pixels in shipped games, and recent world models let a lightweight game engine keep the world state while a VM turns the engine&#x27;s coarse proxy video into final frames. These systems, however, treat the VM as a renderer that only restyles motion the engine has already authored, which leaves most of its generative capacity unused and limits the diversity a game can offer. We present GameWM, a design for next-generation games built on a clear division of labor. The GameWM-engine keeps what must be exact: rules, state, camera, and the layout of the world, which also spares the video model from having to remember it. The GameWM-VM generates what is expensive to author by hand: the look of the world and the detail of the player&#x27;s interactions. One game mechanic can then be realized in many visually and physically distinct ways, while its outcome stays exactly as the engine computed it. To realize this division of labor, we build GameWM as a complete system: a data engine centered on interactions rather than exploration, an interface through which authored character sheets, scene art, and skill descriptions enter the model, and a model family from 5B to 33B parameters with a real-time causal variant for play. Together they give every player a fresh version of the same game: each player&#x27;s own character, world, and skills turn the same engine mechanics into a new experience, while every event keeps the timing and outcome the GameWM-engine computed.</p></details>\n<p><b>中文摘要翻译（AI 翻译）：</b></p><p>半个多世纪以来，视频游戏一直在追求更好的图形、更自然的交互和更吸引人的游戏玩法。生成式视频模型（VMs）现在承担着这三方面的重任。神经网络已经绘制了已发布游戏中大部分像素，最近的世界模型让轻量级游戏引擎保持世界状态，同时VM将引擎的粗略代理视频转化为最终帧。然而，这些系统将VM视为仅对引擎已创作的运动进行重新风格化的渲染器，这使其大部分生成能力未被使用，并限制了游戏能提供的多样性。我们提出了GameWM，这是一种基于明确分工的下一代游戏设计。GameWM引擎保持必须精确的内容：规则、状态、摄像机和世界布局，这也使视频模型免于记忆这些内容。GameWM-VM生成手工创作成本高昂的内容：世界的外观和玩家交互的细节。然后，一种游戏机制可以以多种视觉和物理上不同的方式实现，而其结果完全保持引擎计算的结果。为了实现这种分工，我们将GameWM构建为一个完整的系统：一个以交互而非探索为中心的数据引擎，一个通过该接口将创作的角色表、场景艺术和技能描述输入模型的接口，以及一个包含5B到33B参数并具有用于游玩的实时因果变体的模型家族。它们共同为玩家提供同一游戏的全新版本：每个玩家自己的角色、世界和技能将相同的引擎机制转化为新的体验，而每个事件都保持GameWM引擎计算的时间和结果。</p>\n<p><b>基于摘要的解读（AI 生成，未读取全文）：</b></p>\n<p><b>研究任务：</b>设计并构建一种名为GameWM的下一代视频游戏系统，通过明确游戏引擎与生成式视频模型的分工，实现以交互为中心的世界模型。</p>\n<p><b>核心亮点：</b>1. 提出明确分工的设计：GameWM引擎负责精确的规则、状态和布局，GameWM-VM负责生成世界外观和交互细节。2. 允许单一游戏机制以多种视觉和物理方式实现，同时保持引擎计算的结果不变。3. 构建了包含数据引擎、控制输入接口以及5B至33B参数模型家族（含实时因果变体）的完整系统。</p>\n<p><b>分析与局限：</b>基于摘要的分析：该研究指出了现有系统将视频模型仅作为渲染器的局限性，并提出了通过引擎与视频模型明确分工来解决该问题的方案，实现了机制结果的精确控制与视觉表现的多样性。局限：摘要未提供该系统在实际玩家测试中的表现、生成视频的具体质量指标、实时变体的具体帧率或计算资源消耗等局限性信息（摘要未提供）。</p>\n<p><b>领域归类：</b>计算机视觉与图形学 / 生成式视频模型与游戏引擎</p>\n<hr>\n\n<h3>23. Motion-Aware Reward Modeling for Instruction-Guided Video Editing（用于指令引导视频编辑的运动感知奖励建模）</h3>\n<p><b>社区热度：</b> 👍 2 Upvotes</p>\n<p><b>论文链接：</b> <a href=\"https://arxiv.org/abs/2611.22495\">arXiv 原文</a></p>\n<p><b>摘要来源：</b> <a href=\"https://huggingface.co/papers/2611.22495\">Hugging Face</a></p>\n<details><summary>查看原始摘要</summary><p>Reward models for instruction-guided video editing can favor temporal consistency at the expense of motion. We study this failure, termed motion collapse, using controlled motion-suppression variants of real edits. On VE-Bench, the evaluated composite reward prefers a motion-suppressed candidate in 97% of cases. Learned video rewards and a VLM judge also struggle with mild suppression, while latent optimization and reward-guided fine-tuning exploit this weakness to increase reward as motion declines. A linear probe of our base reward backbone performs near chance on mild suppression, motivating an explicit inter-frame dynamics input. We propose a motion-aware reward model that combines an RGB frame-difference stream with preference training against motion-suppressed and fabricated-motion negatives. A distillation anchor preserves alignment with human quality judgments. On the VE-Bench motion ladder, our model reduces the rate of selecting motion-suppressed candidates to 0% while achieving a Spearman correlation of 0.57 with human quality ratings. It also detects unseen suppression variants and preserves motion during reward-guided fine-tuning on two editing pipelines. These results support explicitly modeling motion in rewards for video editing.</p></details>\n<p><b>中文摘要翻译（AI 翻译）：</b></p><p>用于指令引导视频编辑的奖励模型可能会以牺牲运动为代价来倾向于时间一致性。我们使用真实编辑的受控运动抑制变体来研究这种被称为运动崩溃（motion collapse）的失败。在VE-Bench上，评估的复合奖励在97%的情况下偏好运动抑制的候选者。学习到的视频奖励和VLM评判者在面对轻度抑制时也表现挣扎，而潜在优化和奖励引导的微调利用这一弱点，在运动下降时增加奖励。我们基础奖励主干的线性探针在轻度抑制上的表现接近随机，这促使我们引入显式的帧间动态输入。我们提出了一种运动感知奖励模型，该模型结合了RGB帧差分流与针对运动抑制和伪造运动负样本的偏好训练。蒸馏锚点保持了与人类质量判断的对齐。在VE-Bench运动阶梯上，我们的模型将选择运动抑制候选者的比率降低到0%，同时实现了与人类质量评分0.57的斯皮尔曼相关性。它还能检测未见过的抑制变体，并在两个编辑管线的奖励引导微调期间保持运动。这些结果支持在视频编辑的奖励中显式建模运动。</p>\n<p><b>基于摘要的解读（AI 生成，未读取全文）：</b></p>\n<p><b>研究任务：</b>解决指令引导视频编辑中奖励模型偏好时间一致性而牺牲运动的“运动崩溃”问题，提出一种运动感知奖励模型。</p>\n<p><b>核心亮点：</b>1. 揭示并量化了现有奖励模型中的“运动崩溃”现象（在VE-Bench上97%偏好运动抑制候选者）。2. 提出结合RGB帧差分流和针对运动抑制/伪造运动负样本偏好训练的运动感知奖励模型。3. 在VE-Bench上将选择运动抑制候选者的比率降至0%，与人类评分的斯皮尔曼相关性达到0.57。4. 能够检测未见过的抑制变体，并在微调中保持运动。</p>\n<p><b>分析与局限：</b>基于摘要的分析：研究深入分析了现有奖励模型偏好时间一致性而牺牲运动的“运动崩溃”缺陷，提出的运动感知奖励模型有效解决了该问题，显著降低了选择运动抑制候选者的概率并提升了与人类评分的相关性。局限：摘要未提供该模型在更广泛的视频编辑任务上的泛化能力、计算开销或对极端运动情况下的具体表现等局限性信息（摘要未提供）。</p>\n<p><b>领域归类：</b>计算机视觉 / 视频编辑与奖励模型</p>\n<hr>\n\n<h3>24. Seeing the Invisible: How Vision-Language Models Read, Predict and Trace Radio Fields（看见不可见之物：视觉语言模型如何读取、预测和追踪无线电场）</h3>\n<p><b>社区热度：</b> 👍 1 Upvotes</p>\n<p><b>论文链接：</b> <a href=\"https://arxiv.org/abs/2611.28123\">arXiv 原文</a></p>\n<p><b>摘要来源：</b> <a href=\"https://huggingface.co/papers/2611.28123\">Hugging Face</a></p>\n<details><summary>查看原始摘要</summary><p>Operating in the physical world requires reasoning beyond what cameras directly capture. In a city, radio signals are invisible to the lens, yet their strength is governed by the buildings and streets an image does show. Given only these visible structures, can vision-language models (VLMs) infer the invisible radio field they shape? Probing true physical reasoning requires exact fields in real cities, alongside controlled interventions where a single physical factor changes. We build a label-free engine that turns any coordinate on Earth into a ray-traceable city, simulates matched single-factor counterfactuals, and computes every answer exactly. This yields RadioVISTA, a benchmark and training dataset for visual reasoning about invisible fields. Physically, a radio field is the sum of its propagation paths, yet across six continents we uncover a striking field-path dissociation: frontier VLMs accurately judge where a field is strong, but fail to tell whether a single direct or one-wall path exists. Open models fail even earlier at reading the field itself, and are systematically wrong, scoring below random guessing even when credited for any of four attempts. On unseen cities, fine-tuning brings a 9B open model close to frontier proprietary models on fields, yet neither supervised nor reinforcement fine-tuning improves path tracing. Supervising only final answers teaches models to approximate the field, yet leaves single-path geometry out of reach.</p></details>\n<p><b>中文摘要翻译（AI 翻译）：</b></p><p>在物理世界中运行需要推理超越相机直接捕捉的内容。在城市中，无线电信号对镜头是不可见的，但它们的强度由图像确实显示的建筑和街道决定。仅给定这些可见结构，视觉语言模型（VLMs）能否推断出它们塑造的不可见无线电场？探测真正的物理推理需要真实城市中的精确电场，以及单个物理因素发生变化的受控干预。我们构建了一个无标签引擎，将地球上的任何坐标转化为可射线追踪的城市，模拟匹配的单因素反事实，并精确计算每个答案。这产生了RadioVISTA，一个用于不可见场视觉推理的基准和训练数据集。在物理上，无线电场是其传播路径的总和，但在六大洲中，我们发现了一个显著的场-路径分离现象：前沿VLM能准确判断电场在哪里强，但无法分辨是否存在单条直射路径或单墙路径。开源模型在读取电场本身时失败得更早，并且存在系统性错误，即使在四次尝试中任何一次得分都计入的情况下，得分也低于随机猜测。在未见过的城市中，微调使一个9B的开源模型在电场判断上接近前沿闭源模型，但无论是监督微调还是强化微调都未能改善路径追踪。仅监督最终答案教会了模型近似电场，但使单路径几何变得不可企及。</p>\n<p><b>基于摘要的解读（AI 生成，未读取全文）：</b></p>\n<p><b>研究任务：</b>探究视觉语言模型能否仅根据可见的城市结构推断不可见的无线电场及其传播路径，并构建相关基准数据集进行评估。</p>\n<p><b>核心亮点：</b>1. 构建了无标签引擎和RadioVISTA基准/训练数据集，用于评估和训练VLM对不可见无线电场的视觉推理能力。2. 发现前沿VLM存在“场-路径分离”现象：能准确判断电场强度分布，但无法识别具体的传播路径。3. 揭示开源模型在电场读取上存在系统性错误，表现低于随机猜测。4. 证明微调可提升电场近似能力，但无法改善单路径几何的追踪能力。</p>\n<p><b>分析与局限：</b>基于摘要的分析：研究通过构建精确的物理引擎和RadioVISTA基准，深入评估了VLM对不可见无线电场的推理能力，揭示了当前模型在路径追踪上的根本缺陷及“场-路径分离”现象。局限：摘要未提供RadioVISTA数据集的具体规模、模型训练的具体超参数、或该推理能力在真实物理部署中的实际验证情况等局限性信息（摘要未提供）。</p>\n<p><b>领域归类：</b>计算机视觉 / 视觉语言模型与物理推理</p>\n<hr>\n\n<h3>25. From Points to Trajectories: Rethinking Multimodal Alignment for Physical Events（从点到轨迹：重新思考物理事件的多模态对齐）</h3>\n<p><b>社区热度：</b> 👍 1 Upvotes</p>\n<p><b>论文链接：</b> <a href=\"https://arxiv.org/abs/2611.24249\">arXiv 原文</a></p>\n<p><b>摘要来源：</b> <a href=\"https://huggingface.co/papers/2611.24249\">Hugging Face</a></p>\n<details><summary>查看原始摘要</summary><p>Advancing physical artificial intelligence (Physical AI) requires moving beyond static object recognition to ground how real-world mechanics (e.g., impact, friction, and force transfer) unfold over time. While multimodal aligners seek to capture these interactions by matching multi-sensor streams, prevailing architectures compress each temporal sequence into a single pooled embedding. We show that this paradigm fails on twin events: distinct physical executions recorded under identical task conditions. Collapsing the temporal dimension averages out transient cross-modal dynamics, effectively reducing physical event alignment to static scene recognition. Formally, we prove that as sequence length increases, any temporally pooled representation converges to the stationary recording condition. Consequently, as windows grow, no choice of loss function or embedding geometry can disambiguate twin events from pooled features alone. Instead, we show that physical events are uniquely identified by the event gap, namely the instantaneous, synchronous co-fluctuations across modalities that are erased by pooling and accumulate only along unpooled trajectories. To recover this signal, we introduce CounterPoint, a lightweight plug-in module that strips out each modality&#x27;s temporal mean to score frame-level cross-modal agreement. Integrated across four state-of-the-art (SOTA) multimodal aligners, CounterPoint shifts representations from coarse condition matching to fine-grained physical event alignment, consistently outperforming existing temporal alignment methods.</p></details>\n<p><b>中文摘要翻译（AI 翻译）：</b></p><p>推进物理人工智能（Physical AI）需要超越静态物体识别，以理解真实世界力学（如冲击、摩擦和力传递）如何随时间展开。虽然多模态对齐器试图通过匹配多传感器流来捕捉这些交互，但主流架构将每个时间序列压缩为单个池化嵌入。我们表明，这种范式在孪生事件（在相同任务条件下记录的不同物理执行）上会失败。折叠时间维度会平均掉瞬态的跨模态动态，有效地将物理事件对齐简化为静态场景识别。形式上，我们证明随着序列长度增加，任何时间池化表示都会收敛到静态记录条件。因此，随着窗口增大，仅靠池化特征，无论选择何种损失函数或嵌入几何，都无法消除孪生事件的歧义。相反，我们表明物理事件是由事件间隙（event gap）唯一标识的，即跨模态的瞬时、同步协同波动，这些波动被池化擦除，仅沿未池化轨迹累积。为了恢复这一信号，我们引入了CounterPoint，这是一个轻量级的即插即用模块，它剥离每个模态的时间均值以对帧级跨模态一致性进行评分。CounterPoint集成到四个最先进（SOTA）的多模态对齐器中，将表示从粗略的条件匹配转变为细粒度的物理事件对齐，始终优于现有的时间对齐方法。</p>\n<p><b>基于摘要的解读（AI 生成，未读取全文）：</b></p>\n<p><b>研究任务：</b>解决多模态对齐器在物理事件对齐中因时间池化导致的“孪生事件”混淆问题，提出从时间序列池化转向轨迹级对齐的新范式。</p>\n<p><b>核心亮点：</b>1. 揭示主流时间池化架构在“孪生事件”对齐上的失败，并形式化证明时间池化表示会收敛于静态条件。2. 提出物理事件由“事件间隙”（跨模态瞬时同步协同波动）唯一标识的理论。3. 提出CounterPoint轻量级即插即用模块，通过剥离时间均值来评分帧级跨模态一致性。4. 在四个SOTA多模态对齐器上的集成实验表明，该方法实现了细粒度的物理事件对齐并优于现有方法。</p>\n<p><b>分析与局限：</b>基于摘要的分析：研究从理论和实验两方面论证了时间池化在物理事件对齐中的局限性，提出了基于“事件间隙”的理论，并设计了CounterPoint模块有效实现了细粒度的物理事件对齐。局限：摘要未提供CounterPoint模块引入的具体计算开销、在更长序列或更复杂物理交互场景下的具体表现数据等局限性信息（摘要未提供）。</p>\n<p><b>领域归类：</b>多模态学习 / 物理人工智能与多模态对齐</p>\n<hr>\n\n<h3>26. Autoregressive View Model（自回归视图模型）</h3>\n<p><b>社区热度：</b> 👍 1 Upvotes</p>\n<p><b>论文链接：</b> <a href=\"https://arxiv.org/abs/2611.23417\">arXiv 原文</a></p>\n<p><b>摘要来源：</b> <a href=\"https://huggingface.co/papers/2611.23417\">Hugging Face</a></p>\n<details><summary>查看原始摘要</summary><p>We present the Autoregressive View Model (AVM), which generates a scene as a stream of views without constructing an explicit 3D representation. Through a unified in-context interface, AVM conditions on images or videos to generate short clips along a requested camera path. Visual context grounds reconstruction and interpolation, while a learned prior enables extrapolation into unseen regions. AVM retrieves relevant views from inputs and generated history to form a bounded active context. We fine-tune a pretrained bidirectional video diffusion transformer with flow matching in an N-in-1-out formulation. We then tune a causal model on its own rollouts to improve photorealism, reduce denoising steps, and limit long-horizon drift. We scale training to approximately 8M scenes and video clips. We evaluate generation capacity and scene persistence across benchmarks for camera control, text control, visual quality, dynamics, sparse and 4D reconstruction, and long-horizon consistency. The results demonstrate that AVM adapts to diverse input and output settings through one in-context interface.</p></details>\n<p><b>中文摘要翻译（AI 翻译）：</b></p><p>我们提出了自回归视图模型（AVM），它将场景生成为视图流，而无需构建显式的3D表示。通过统一的上下文内接口，AVM以图像或视频为条件，沿请求的相机路径生成短片段。视觉上下文为重建和插值提供基础，而学习到的先验则能够外推到未见区域。AVM从输入和生成的历史中检索相关视图，以形成有界的活跃上下文。我们在N进1出的公式中，使用流匹配对预训练的双向视频扩散Transformer进行微调。然后，我们在其自身的展开上微调因果模型，以提高照片真实感、减少去噪步骤并限制长视野漂移。我们将训练规模扩大到约800万个场景和视频片段。我们在相机控制、文本控制、视觉质量、动态、稀疏和4D重建以及长视野一致性的基准测试中评估了生成能力和场景持久性。结果表明，AVM通过一个上下文内接口适应了多样化的输入和输出设置。</p>\n<p><b>基于摘要的解读（AI 生成，未读取全文）：</b></p>\n<p><b>研究任务：</b>生成场景视图流而无需构建显式3D表示，沿请求的相机路径生成短片段，并在相机控制、文本控制、视觉质量、动态、稀疏和4D重建以及长视野一致性等基准上评估生成能力和场景持久性。</p>\n<p><b>核心亮点：</b>1. 提出自回归视图模型（AVM），将场景生成为视图流，无需显式3D表示。2. 通过统一的上下文内接口，以图像或视频为条件沿相机路径生成短片段。3. 采用N进1出公式和流匹配微调双向视频扩散Transformer，并在自身展开上微调因果模型以提升真实感并减少去噪步骤。4. 训练规模扩大至约800万个场景和视频片段。</p>\n<p><b>分析与局限：</b>分析：AVM通过上下文内接口和检索机制形成有界活跃上下文，结合双向视频扩散Transformer和因果模型，实现了无需显式3D表示的场景视图流生成，能够适应多样化的输入和输出设置。局限：摘要未提供具体的性能指标数字、与其他方法的定量对比结果以及具体的局限性讨论。</p>\n<p><b>领域归类：</b>计算机视觉与视频生成</p>\n<hr>\n</details>"
+}
