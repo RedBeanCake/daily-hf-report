@@ -1,17 +1,17 @@
 {
-  "run_id": "45908124216",
+  "run_id": "46078240177",
   "run_attempt": "1",
-  "commit": "f7889664714e71644164dd5261d62a90d283345c",
+  "commit": "86b1da044fc44bb8c0d82b9127a28f21ccd1fd83",
   "report": {
-    "hf_count": 57,
+    "hf_count": 21,
     "github_count": 15,
-    "page_path": "./archive/2026_11_27.html",
+    "page_path": "./archive/2026_11_28.html",
     "mode": "daily",
-    "generated_at": "2026-11-27T06:59:14.274393+08:00"
+    "generated_at": "2026-11-28T06:42:35.697573+08:00"
   },
   "files": {
-    "index.html": "3f1c5cfa46f293c6fa6b74db1d8ccfa4c5356c197e28afc0ede4b6b613a800ae",
-    "archive/2026_11_27.html": "1289f50d12a216b56645cfd0654a14f601405a2ee93b1fe160e9bdbc974ba9b3",
-    "archive/2026_11_27.json": "9ea25781ff5d33c5f286369262b6a686fce49c2e98d20dd00c37796d0af7b499"
+    "index.html": "854afb1ad9c695334f81d9cce486fc5771b327e02104a518b5707436885dfa87",
+    "archive/2026_11_28.html": "ab4d785c687d91a1866a009d25bfa7ad54d9d4da183aa8ffda1118208a484678",
+    "archive/2026_11_28.json": "d25b37a12e44dbbfda6bee1aab2d1b975a96df441b732d5c03a273bf2252976f"
   }
 }
